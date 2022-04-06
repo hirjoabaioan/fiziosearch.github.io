@@ -45,16 +45,16 @@
 // }
 
 
-const nav = document.querySelector('nav');
+// const nav = document.querySelector('nav');
 
-window.addEventListener('scroll', function() {
-  const offset = window.pageYOffset;
+// window.addEventListener('scroll', function() {
+//   const offset = window.pageYOffset;
   
-  if(offset > 75)
-    nav.classList.add('scroll')
-  else 
-    nav.classList.remove('scroll')
-});
+//   if(offset > 75)
+//     nav.classList.add('scroll')
+//   else 
+//     nav.classList.remove('scroll')
+// });
 
 
 
@@ -121,6 +121,7 @@ function displayTherapists(therapists) {
 
 function showData(){
     document.getElementById("show-data").classList.remove("hide");
+    document.getElementById("hide-data").classList.add("hide");
 }
 
 $('.but-data').click(()=>{

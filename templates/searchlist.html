@@ -50,12 +50,12 @@
                     </div>
                     
                     <div class="d-flex justify-content-center align-items-center h-100">
-                        <div class="row justify-content-center align-items-center m-0 h-100">
+                        <div class="row justify-content-center align-items-center m-0 h-100" id="hide-data">
                             <div class="p-5 col-4">
                                 <div class="ts-title justify-content-center align-items-center p-2">
                                     <h2>Listă terapeuți</h2>
                                 </div>
-                                <div class="d-flex ts-list-container w-100">
+                                <div class="ts-list-container w-100">
                                     <div class="search-container">
                                         <div class="d-flex justify-content-center align-items-center search" onclick="searchTherapists()" >
                                             <input id="therapist-name" type="text" placeholder="Introduceți numele">
@@ -108,8 +108,8 @@
                                 <div class="container p-10 h-100">
                                     <div class="t-container h-100 d-flex row">
                                         <div class="t-description d-flex col-12 row">
-                                            <div class="picture d-flex justify-content-center align-items-top col-4">
-                                                <i class="bi bi-person-circle"></i>
+                                            <div class="d-flex justify-content-center align-items-top col-4">
+                                                <i class=" picture bi bi-person-circle"></i>
                                             </div>
                                             <div class="name col-8">
                                                 <h3>Hîrjoabă Ioan</h3>
@@ -124,7 +124,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="t-about col-12 row">
+                                        <div class="d-flex t-about col-12 ms-auto row">
                                             <div class="col-8">
                                                 <div class="t-bio">
                                                     <h3>Despre Ioan</h3>
@@ -135,13 +135,13 @@
                                                 
                                             </div>
                                             <div class="t-contact col-4">
-                                                <div>
+                                                <div class="d-flex col-12 w-auto justify-content-start align-items-center order-2 box-el">
                                                     <button class="but btn btn-primary but-data" id="show" onclick="showData()">Afișează datele</button>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="t-data col-12 row hide" id="show-data">
+                                        <!-- <div class="t-data col-12 row hide" id="show-data">
                                             <div class="col-8 container d-flex justify-content-right align-items-top">
                                                 <p class="d-flex justify-content-right align-items-top">
                                                     Pe moment platforma încă este în construcție. Dacă vă interesează această platformă, ne puteți lăsa adresa dumneavoastră de email și în momentul lansării veți fi notificat. Vă mulțumim pentru că ați accesat această platformă.
@@ -158,9 +158,7 @@
                                                     </div>
                                                 </form>
                                             </div>
-
-
-                                        </div>
+                                        </div> -->
                                         
                                     </div>
                                     
@@ -169,22 +167,20 @@
                         </div>
 
                         
+                        <div class="container row justify-content-center align-items-center hide" id="show-data">
+                            <p>Pe moment platforma încă este în construcție. Dacă vă interesează această platformă, puteți să completați acest formular la finalul căruia puteți să ne lăsați adresa dumneavoastră de email și în momentul lansării platformei veți fi notificat. Vă mulțumim pentru că ați accesat această platformă.</p> 
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAmH96Xu3JsrpiLmhG1ctzh19TRSO3-NnLEM-kDu5CQi7zdA/viewform?embedded=true" width="640" height="1447" frameborder="0" marginheight="0" marginwidth="0">Se încarcă…</iframe>
+                        </div>
+                        
+                        
                     </div>
+                    
                 </div>
             </div>
 
             
         </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
-    <input type="text" id="email">
-    <input type="button" value="add to list" id="add" onclick="addEmail()">
-    <br>
-    <ul id="list"></ul>
-    <p>
-        Button Clicke <span id="display">0</span> Times
-    </p>
-
     <!-- <footer class="footer bg-light text-center text-lg-start text-white">
 
         <div class="p-4" id="footer_container">

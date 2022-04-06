@@ -137,7 +137,9 @@ body {
 
 
 .picture {
-    font-size: 100px;
+    max-width: 100%;
+    height: auto;
+    font-size: 2rem;
     padding-top: -50px;
 }
 
