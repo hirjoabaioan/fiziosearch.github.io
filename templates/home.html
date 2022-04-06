@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
+
+</head>
+<body>
+    
+    <div id="nav-placeholder">
+        Nav
+    </div>
+
+    <script>
+        // $.get("nav.html", function(data){
+        //     $("#nav-placeholder").replaceWith(data);
+        // });
+
+        jQuery(document).ready(function(){
+            jQuery("#nav-placeholder").load("nav.html");
+        });
+    </script>
+
+
+
+    <div id="test">
+        Test
+    </div>
+
+    <button>Click me to hide paragraphs</button>
+
+    
+    
+
+    
+</body>
+    <!-- <script src="../static/js/home.js"></script> -->
+    
+</html>
