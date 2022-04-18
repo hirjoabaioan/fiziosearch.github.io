@@ -156,6 +156,3 @@ btn.onclick = function () {
     count++;
     disp.innerHTML = count; 
 }
-
-
-
