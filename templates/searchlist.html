@@ -47,58 +47,33 @@
                     <div id="banner" class="row justify-content-center align-items-center m-0 p-0">
                     </div>
                     
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <div class="row justify-content-center align-items-center m-0 h-100" id="hide-data">
-                            <div class="p-5 col-lg-4 col-sm-0 small-hide">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex row justify-content-center align-items-center m-0" id="hide-data">
+                            <div class="col-lg-4 col-sm-0 small-hide">
                                 <div class="ts-title justify-content-center align-items-center p-2">
                                     <h2>Listă terapeuți</h2>
                                 </div>
-                                <div class="ts-list-container w-100">
-                                    <div class="search-container">
+                                <div class="ts-list-container">
+                                    <div class="search-container m-4">
                                         <div class="d-flex justify-content-center align-items-center search" onclick="searchTherapists()" >
                                             <input id="therapist-name" type="text" placeholder="Introduceți numele">
                                             <i class="bi bi-arrow-right-circle-fill"></i>
                                         </div>
                                     </div>
-                                    <div class="ts-list ts-scroll">
+                                    <div class="ts-scroll ts-list">
                                         <div class="ts-container ts-container-background">
-                                                <div class="ts-info-container">
-                                                    <div class="ts-pic">1234567890</div>
-                                                    <div class="ts-details">
-                                                        <span>Hîrjoabă Ioan</span> <br/>
-                                                        <span>4/5 (189)</span>
-                                                    </div>  
+                                            <div class="d-flex row p-2 ts-info-container">
+                                                <div class="col-4 ts-pic">
+                                                    <img src="../static/images/call-ico.png" class="ts-pic" alt="profile pic">
                                                 </div>
+                                                <div class="col-1"></div>
+                                                <div class="col-7 align-items-end ts-details">
+                                                    <span>Hîrjoabă Ioan</span> <br/>
+                                                    <span>4/5 (189)</span>
+                                                </div>  
+                                            </div>
                                         </div>
 
-                                        <div class="ts-container ts-container-background">
-                                            <div class="ts-info-container">
-                                                <div class="ts-pic">1234567890</div>
-                                                <div class="ts-details">
-                                                    <span>Hîrjoabă Ioan</span> <br/>
-                                                    <span>4/5 (189)</span>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="ts-container ts-container-background">
-                                            <div class="ts-info-container">
-                                                <div class="ts-pic">1234567890</div>
-                                                <div class="ts-details">
-                                                    <span>Hîrjoabă Ioan</span> <br/>
-                                                    <span>4/5 (189)</span>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="ts-container ts-container-background">
-                                            <div class="ts-info-container">
-                                                <div class="ts-pic">1234567890</div>
-                                                <div class="ts-details">
-                                                    <span>Hîrjoabă Ioan</span> <br/>
-                                                    <span>4/5 (189)</span>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +82,7 @@
                                     <div class="t-container h-100 d-flex row">
                                         <div class="t-description d-flex col-12 row">
                                             <div class="d-flex justify-content-center align-items-top col-4">
-                                                <i class=" picture bi bi-person-circle"></i>
+                                                <i class=" picture bi bi-person-circle"></i>                                                
                                             </div>
                                             <div class="name col-8">
                                                 <h3>Hîrjoabă Ioan</h3>
@@ -179,59 +154,6 @@
             
         </div>
     </div>
-    <!-- <footer class="footer bg-light text-center text-lg-start text-white">
-
-        <div class="p-4" id="footer_container">
-            <div class="col-lg-4 col-md-12 mb-4 mb-sm-0 container">
-                <div class="container">
-                    <h5 class="text-uppercase">Despre noi</h5>
-                    <p>
-                        Fiziosearch este o platformă online în care îți poți căuta un terapeut sau un tehnician maseur care să vină
-                        în întâmpinarea nevoilor tale fizice.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-12 mb-4 mb-sm-0 order-1 container">
-                <h5 class="text-uppercase">Contact</h5>
-                <p>
-                Telefon: 0123456789 <br>
-                E-mail: email@email.com
-                </p>
-              </div>
-      
-            <div class="col-lg-4 col-sm-12 mb-4 mb-sm-0 order-2 container">
-                <h5 class="text-uppercase">Media</h5>
-
-                <hr class="mb-4" style="margin-left:0px; color:aliceblue; height: 3px;">
-        
-                <section class="mb-4">
-                    <a class="btn btn-outline-light btn-floating m-2 med" href="#!" role="button">
-                        <i class="bi bi-facebook imed"></i>
-                    </a>
-            
-                    <a class="btn btn-outline-light btn-floating m-2 med" href="#!" role="button">
-                        <i class="bi bi-google imed"></i>
-                    </a>
-            
-                    <a class="btn btn-outline-light btn-floating m-2 med" href="#!" role="button">
-                        <i class="bi bi-instagram imed"></i>
-                    </a>
-            
-                    <a class="btn btn-outline-light btn-floating m-2 med" href="#!" role="button">
-                        <i class="bi bi-linkedin imed"></i>
-                    </a>
-                </section>
-            </div>
-          </div>
-        </div>
-      
-        <div class="text-center p-3 copyright"">
-          © 2021 Copyright: 
-          <a class="text-light" href="#">Fiziosearch</a>
-        </div>
-    </footer> -->
-
 
 
     <!-- <script>
