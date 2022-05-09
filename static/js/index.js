@@ -1,66 +1,3 @@
-// $.get("templates/nav.html", function(data){
-//     $("#nav-placeholder").replaceWith(data);
-// });
-
-
-
-// Hide Header on on scroll down
-// var didScroll;
-// var lastScrollTop = 0;
-// var delta = 5;
-// var navbarHeight = $('nav').outerHeight();
-
-// $(window).scroll(function(event){
-//     didScroll = true;
-// });
-
-// setInterval(function() {
-//     if (didScroll) {
-//         hasScrolled();
-//         didScroll = false;
-//     }
-// }, 150);
-
-// function hasScrolled() {
-//     var st = $(this).scrollTop();
-//     var h = 150;
-    
-//     // Make sure they scroll more than delta
-//     if(Math.abs(lastScrollTop - st) <= delta)
-//         return;
-    
-//     // If they scrolled down and are past the navbar, add class .nav-up.
-//     // This is necessary so you never see what is "behind" the navbar.
-//     if (st > lastScrollTop && st > navbarHeight){
-//         // Scroll Down
-//         $('nav').removeClass('nav-d').addClass('nav-u');
-//     } else {
-//         // Scroll Up
-//         if(st + $(window).height() < $(document).height()+h) {
-//             $('nav').removeClass('nav-u').addClass('nav-d');
-//         }
-//     }
-    
-//     lastScrollTop = st;
-// }
-
-
-// const nav = document.querySelector('nav');
-
-// window.addEventListener('scroll', function() {
-//   const offset = window.pageYOffset;
-  
-//   if(offset > 75)
-//     nav.classList.add('scroll')
-//   else 
-//     nav.classList.remove('scroll')
-// });
-
-
-
-
-
-
 var pageURL = $(location).attr("href");
 
 var pageAdress = "http://127.0.0.1:8000/"
@@ -71,45 +8,25 @@ if (pageURL == pageAdress){
 };
 
 
-function searchTherapists(){
-    var foundTherapists = [];
-    var tName = document.getElementById('therapist-name').value;
-    if(tName){
-        therapists.forEach(function(therapist){
-            var fName = therapist.name;
-            if (tName === fName){
-                foundTherapists.push(therapist);
-            }
-        });
-    }
-    else {
-        foundTherapists = therapists;
-    }
-
-    displayTherapists(foundTherapists);
-    showTherapistData(foundTherapists);
-    setOnClickListener();
-}
-
-
-// function clearLocations(){
-//     infoWindow.close();
-//     for (var i = 0; i < markers.length; i++) {
-//         markers[i].setMap(null);
+// function searchTherapists(){
+//     var foundTherapists = [];
+//     var tName = document.getElementById('therapist-name').value;
+//     if(tName){
+//         therapists.forEach(function(therapist){
+//             var fName = therapist.name;
+//             if (tName === fName){
+//                 foundTherapists.push(therapist);
+//             }
+//         });
 //     }
-//     markers.length = 0;
+//     else {
+//         foundTherapists = therapists;
+//     }
+
+//     displayTherapists(foundTherapists);
+//     showTherapistData(foundTherapists);
+    
 // }
-
-
-function setOnClickListener() {
-    var storeElements = document.querySelectorAll('.store-container');
-    storeElements.forEach(function(elem, index){
-        elem.addEventListener('click', function(){
-            
-        })
-    });
-}
-
 
 
 // function displayTherapists(therapists) {
@@ -137,25 +54,32 @@ function setOnClickListener() {
 //             </div>
 //         `
 //     });
-//     document.querySelector('.ts-list').innerHTML = therapistsHtml;
+//     $(".ts-list").html(therapistsHtml);
 // }
-
-
 
 
 // function showTherapistData(therapists) {
-//     therapists.forEach(function(therapist, index){
+	
+//     $(".ts-container").on('click', function(){
+//         var i = $(this).attr("id")-1;
+//       console.log(i);
+//       therapists.forEach(function(therapist){
+//                   var id = Number(therapist.id);
+          
+//           console.log("Is " + id + " == " +  i + " ?");
+//           console.log(Number(id) == i);
+          
+//           var name = therapist.name;
+//           var email = therapist.email;
+//           var phone =therapist.phoneNumber;
+//           var reviews = therapist.reviews;
+//           if(i == id)
+//               createDetails(name, email, phone, reviews, id);
+//       });
+//     })
+//   }
 
-//         var name = therapist.name;
-//         var email = therapist.email;
-//         var phone =therapist.phoneNumber;
-//         var reviews = therapist.reviews;
-
-//         createDetails(name, email, phone, reviews, index)
-//     });
-// }
-
-// function createDetails(name, email, phone, reviews, index) {
+// function createDetails(name, email, phone, reviews, id) {
 //     var html =`
 //     <div class="window">
 //         <div class="name-open">
@@ -182,6 +106,31 @@ function setOnClickListener() {
 
 
 
+
+
+
+
+
+
+  function searchTherapists(){
+    var foundTherapists = [];
+    var tName = document.getElementById('therapist-name').value;
+    if(tName){
+        therapists.forEach(function(therapist){
+            var fName = therapist.name;
+            if (tName === fName){
+                foundTherapists.push(therapist);
+            }
+        });
+    }
+    else {
+        foundTherapists = therapists;
+    }
+
+    displayTherapists(foundTherapists);
+    showTherapistData(foundTherapists);
+
+}
 
 
 function displayTherapists(therapists) {
@@ -217,14 +166,9 @@ function displayTherapists(therapists) {
 function showTherapistData(therapists) {
 	
   $(".ts-container").click(function(){
-  	var i = $(this).attr("id")-1;
-    console.log(i);
+  	var i = $(this).attr("id");
     therapists.forEach(function(therapist){
-				var id = Number(therapist.id);
-        
-        console.log("Is " + id + " == " +  i + " ?");
-        console.log(Number(id) == i);
-        
+		var id = Number(therapist.id);
         var name = therapist.name;
         var email = therapist.email;
         var phone =therapist.phoneNumber;
@@ -269,7 +213,23 @@ function createDetails(name, email, phone, reviews, id) {
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function showData(){
