@@ -210,30 +210,9 @@ function createDetails(name, email, phone, reviews, id) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function showData(){
     document.getElementById("show-data").classList.remove("hide");
+    document.getElementById("hide-data").classList.remove("d-flex");
     document.getElementById("hide-data").classList.add("hide");
 }
 
