@@ -8,9 +8,18 @@ if (pageURL == pageAdress){
 };
 
 
+function closeWindow(){
+    var replace = `
+    <div class="d-flex jusify-content-start align-items-center" style="width: 500px;">
+        <span>Alege un terapeut din listă</span>
+    </div>
+    `;
+    document.getElementById('cont').innerHTML = replace;
+};
 
 
-  function searchTherapists(){
+
+function searchTherapists(){
     var foundTherapists = [];
     var tName = document.getElementById('therapist-name').value;
     if(tName){
@@ -42,7 +51,7 @@ function displayTherapists(therapists) {
 
 
         therapistsHtml += `
-            <div class="ts-container" id="${index + 1}" onlcick="therapistPage()">
+            <div class="ts-container" id="${index + 1}" onlcick="showTherapistPage()">
                 <div class="ts-container-background">
                     <div class="d-flex row p-2 justify-content-between">
                         <div class="col-2 ts-pic">
@@ -84,14 +93,26 @@ function showTherapistData(therapists) {
   }
   
   function createDetails(name, email, phone, reviews, id, profession, specialization, exp, about, courses, address) {
-          console.log("da");
-      var html =`
-      <div class="col-12 d-flex row justify-content-center align-items-top p-0 t-description">
+    var cours = [];
+
+    courses.forEach(function(course){
+        cours.push(`<div class="col-12 d-flex row justyfy-content-start align-items-center">
+            <span class="col-12 fw-bold lead-text">${course}</span>
+        </div>`)
+    });
+        
+    var html =`
+        <div class="container p-2 h-100">
+            <div class="d-flex row h-100 t-container">
+                    <div class="col-12 d-flex row justify-content-center align-items-top p-0 t-description">
                       <div class="d-flex justify-content-center align-items-center col-4">
                         <i class="picture bi bi-person-circle"></i>                         
                       </div>
                       <div class="col-8 d-flex row justify-content-center align-items-center">
-                        <div class="col-12 name d-flex justify-content-start align-items-center">
+                        <div class="d-flex justify-content-end align-items-center m-0 p-0" onclick="closeWindow()">
+                            <span class="fw-bolder" id="close">X</span>
+                        </div>
+                        <div class="col-12 mb-5 name d-flex justify-content-start align-items-center">
                           <span class="h1">${name}</span>
                         </div>
                         <div class="col-12 d-flex row datas justify-content-start align-items-center">
@@ -168,24 +189,8 @@ function showTherapistData(therapists) {
                               <span class="h3 fs-5 fw-bold">Cursuri și acreditări</span>
                             </div>
                             <hr>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <span class="col-12 fw-bold lead-text">${courses}</span>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <span class="col-12 fw-bold lead-text">IUMEIHO</span>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <span class="col-12 fw-bold lead-text">Kinesiotapping</span>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <span class="col-12 fw-bold lead-text">Kinesiotapping</span>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <span class="col-12 fw-bold lead-text">Kinesiotapping</span>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <span class="col-12 fw-bold lead-text">Kinesiotapping</span>
-                            </div>
+                            ${cours}
+                            
                           </div>
                           
                            <div class="col-6 d-flex row sumar">
@@ -202,8 +207,11 @@ function showTherapistData(therapists) {
   
                         </div>
                     </div>
+                    </div>
+                    </div>
+    
       `;    
-      document.querySelector('.t-container').innerHTML = html;
+      document.querySelector('#cont').innerHTML = html;
   
     }
   
