@@ -131,9 +131,6 @@ body {
     font-size: 5rem;
 }
 
-.name {
-    font-size: 2rem;
-}
 
 .datas {
     margin-top: -4rem;
@@ -141,6 +138,11 @@ body {
 
 .t-about {
     /* margin-top: -100px; */
+}
+
+.t-list {
+    height: 300px;
+    overflow-y: scroll;
 }
 
 .hide {
