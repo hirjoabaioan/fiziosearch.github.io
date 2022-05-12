@@ -215,7 +215,9 @@ function showTherapistData(therapists) {
   
     }
   
-
+$('home').on('click', function(){
+	alert.('working');
+});
 
 
 function showData(phone){
