@@ -217,7 +217,7 @@ function showTherapistData(therapists) {
   
 
 
-setIntereval(function showData(phone){
+setInterval(function showData(phone){
     document.getElementById("show-data").classList.remove("hide");
     document.getElementById("hide-data").classList.remove("d-flex");
     document.getElementById("hide-data").classList.add("hide");
