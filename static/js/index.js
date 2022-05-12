@@ -282,8 +282,13 @@ $('.but-data').click(()=>{
 
 setInterval(function(){
   let c = $("div").find("#check").text();
-  if(c == "Chestionar")
-	        $('phone').removeClass('hide');   
+  console.log("1);
+  if(c == "Chestionar"){
+	  console.log("2);
+	  $('#show-data').addClass('hide');
+	  $('#phone').removeClass('hide');
+	  
+  };
 }, 1000);
 
 
