@@ -285,8 +285,8 @@ setInterval(function(){
   console.log("1");
   if(c == "Chestionar"){
 	  console.log("2");
-    document.getElementById("show-data").classList.add("hide");
-    document.getElementById("phone").classList.remove("hide");	  
+    $("div").find("#show-data").addClass("hide");
+    $("div").find("#phone").removeClass("hide");  
   };
 }, 1000);
 
