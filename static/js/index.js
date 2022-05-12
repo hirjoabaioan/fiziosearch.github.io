@@ -281,12 +281,9 @@ $('.but-data').click(()=>{
 
 
 setInterval(function(){
-    
-    $("div:contains('Chestionar')").css("background-color", "yellow");
-    if($('div').is("div:contains('Chestionar')"))
-	        $('phone').removeClass('hide');
-    /* $("show-data").innerHTML = h */
-    
+  let c = $("div").find("#check").text();
+  if(c == "Chestionar")
+	        $('phone').removeClass('hide');   
 }, 1000);
 
 
