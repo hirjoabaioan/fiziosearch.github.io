@@ -217,7 +217,7 @@ function showTherapistData(therapists) {
   
 
 
-setInterval(function showData(phone){
+function showData(phone){
 
   document.getElementById("show-data").classList.remove("hide");
   document.getElementById("hide-data").classList.remove("d-flex");
@@ -227,7 +227,7 @@ setInterval(function showData(phone){
   
   console.log("1");
 
-  setInterval(function(){
+  setInterval(function change(){
     console.log("2")
     var c = $('#check').text();
     console.log(c)
@@ -235,7 +235,7 @@ setInterval(function showData(phone){
       console.log("3");
       $('.show-data').html(h);
   }, 1000);
-}, 1000);
+}
 
 
 $('#showphone').click(function(){
