@@ -218,20 +218,23 @@ function showTherapistData(therapists) {
 
 
 setInterval(function showData(phone){
-    document.getElementById("show-data").classList.remove("hide");
-    document.getElementById("hide-data").classList.remove("d-flex");
-    document.getElementById("hide-data").classList.add("hide");
 
-    var h = `<span>${phone}</span>`
-    
-    console.log("1");
+  document.getElementById("show-data").classList.remove("hide");
+  document.getElementById("hide-data").classList.remove("d-flex");
+  document.getElementById("hide-data").classList.add("hide");
 
-    setInterval(function(){
-      console.log("2")
-      var c = $('#check').text();
-      if(c == "Chestionar")
-        $('.show-data').html(h);
-    }, 1000);
+  var h = `<span>${phone}</span>`
+  
+  console.log("1");
+
+  setInterval(function(){
+    console.log("2")
+    var c = $('#check').text();
+    console.log(c)
+    if(c == "Chestionar")
+      console.log("3");
+      $('.show-data').html(h);
+  }, 1000);
 }, 1000);
 
 
