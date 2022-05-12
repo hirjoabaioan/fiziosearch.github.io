@@ -227,14 +227,23 @@ function showData(phone){
   
   console.log("1");
 
-  setInterval(function change(){
-    console.log("2")
+  $('iframe').on('load', function change(){
+    console.log("2");
     var c = $('#check').text();
-    console.log(c)
+    console.log(c);
     if(c == "Chestionar")
       console.log("3");
       $('.show-data').html(h);
-  }, 1000);
+  })
+
+  // setInterval(function change(){
+  //   console.log("2");
+  //   var c = $('#check').text();
+  //   console.log(c);
+  //   if(c == "Chestionar")
+  //     console.log("3");
+  //     $('.show-data').html(h);
+  // }, 1000);
 }
 
 
