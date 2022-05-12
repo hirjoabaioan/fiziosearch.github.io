@@ -127,7 +127,7 @@ function showTherapistData(therapists) {
                           <div class="col-6">
                             <div class="t-contact">
                               <div class="d-flex col-12 w-auto justify-content-start align-items-center order-2 box-el">
-                                <button class="but btn btn-primary but-data" id="show" onclick="showData()">Afișează datele</button>
+                                <button class="but btn btn-primary but-data" id="show" onclick="showData(${phone})">Afișează datele</button>
                               </div>
                             </div>
                           </div>                                    
@@ -218,11 +218,34 @@ function showTherapistData(therapists) {
 
 
 
-function showData(){
+function showData(phone){
     document.getElementById("show-data").classList.remove("hide");
     document.getElementById("hide-data").classList.remove("d-flex");
     document.getElementById("hide-data").classList.add("hide");
+
+    var h = `<span>${phone}</span>`
+    
+
+    $('.l4V7wb, .Fxmcue').click(function(){
+      document.click("show-data").innerHTML = h;
+    }) //match any element with name=myElementName. i.e: <div name="myElementName"></div>
 }
+
+$('#showphone').click(function(){
+  var check = $(".vHW8K").innerText;
+  console.log(check);
+  if (check == "Răspunsul tău a fost înregistrat, îți mulțumim pentru timpul acordat!")
+    $("show-data").innerHTML = h;
+});
+
+function showPhone(){
+  var check = $(".vHW8K").innerText;
+  console.log(check);
+  if (check == "Răspunsul tău a fost înregistrat, îți mulțumim pentru timpul acordat!")
+    $("show-data").innerHTML = h;
+}
+
+
 
 $('.but-data').click(()=>{
     $('#data').removeClass('hide');
