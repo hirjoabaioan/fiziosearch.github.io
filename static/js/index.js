@@ -216,7 +216,7 @@ function showTherapistData(therapists) {
     }
   
 $('home').on('click', function(){
-	alert.('working');
+	alert('working');
 });
 
 
