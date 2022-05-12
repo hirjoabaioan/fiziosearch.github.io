@@ -24,7 +24,7 @@ let therapists = [{
     "profession": "Fizioterapeut",
     "specialization": "Terapii",
     "exp": "4 ani",
-    "reviews": "124",
+    "reviews": "128",
     "courses": ["Ergon", "Yumeiho", "Bobath"],
     "about": "Despre mine",
     "reviews": "235",
