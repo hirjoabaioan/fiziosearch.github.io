@@ -216,7 +216,7 @@ function showTherapistData(therapists) {
         <span class="fw-bolder">Telefon:   </span><span>${phone}</span>
       `;
 
-      $('$cont').html(html);
+      $('#cont').html(html);
       $('#phone').html(htmlTwo);
   
     }
