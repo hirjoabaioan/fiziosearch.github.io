@@ -282,9 +282,9 @@ $('.but-data').click(()=>{
 
 setInterval(function(){
   let c = $("div").find("#check").text();
-  console.log("1);
+  console.log("1");
   if(c == "Chestionar"){
-	  console.log("2);
+	  console.log("2");
 	  $('#show-data').addClass('hide');
 	  $('#phone').removeClass('hide');
 	  
