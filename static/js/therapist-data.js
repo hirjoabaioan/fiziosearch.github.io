@@ -8,7 +8,7 @@ let therapists = [{
     "profession": "Fizioterapeut",
     "specialization": "Terapii",
     "exp": "4 ani",
-    "reviews": "124",
+    "reviews": "123",
     "courses": ["IASTM", "Yumeiho", "Cupping"],
     "about": "Despre mine",
     "available": true,
