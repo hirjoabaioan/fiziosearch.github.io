@@ -224,13 +224,14 @@ setIntereval(function showData(phone){
 
     var h = `<span>${phone}</span>`
     
+    console.log("1");
 
-    $('#testing').on('load', function(){
-      console.log("")
+    setInterval(function(){
+      console.log("2")
       var c = $('#check').text();
       if(c == "Chestionar")
         $('.show-data').html(h);
-    });
+    }, 1000);
 }, 1000);
 
 
