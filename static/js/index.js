@@ -217,7 +217,7 @@ function showTherapistData(therapists) {
   
 
 
-function showData(phone){
+setIntereval(function showData(phone){
     document.getElementById("show-data").classList.remove("hide");
     document.getElementById("hide-data").classList.remove("d-flex");
     document.getElementById("hide-data").classList.add("hide");
@@ -225,13 +225,13 @@ function showData(phone){
     var h = `<span>${phone}</span>`
     
 
-    $('#testing').on('load', setInterval(function(){
+    $('#testing').on('load', function(){
       console.log("")
       var c = $('#check').text();
       if(c == "Chestionar")
         $('.show-data').html(h);
-    }), 1000);
-}
+    });
+}, 1000);
 
 
 $('#showphone').click(function(){
