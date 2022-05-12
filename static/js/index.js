@@ -216,8 +216,8 @@ function showTherapistData(therapists) {
         <span class="fw-bolder">Telefon:   </span><span>${phone}</span>
       `;
 
-      $('#cont').html(html);
-      $('#phone').html(htmlTwo);
+      document.querySelector('#cont').innerHTML = html;
+      document.querySelector('#phone').innerHTML = htmlTwo;
   
     }
   
