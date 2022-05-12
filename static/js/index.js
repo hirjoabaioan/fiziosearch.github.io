@@ -5,7 +5,7 @@
 //     $(document).ready(function() {
 //         $('nav').removeClass('sticky-top').addClass('fixed-top');
 //     });
-// };
+// }
 
 
 function closeWindow(){
