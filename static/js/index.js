@@ -1,11 +1,11 @@
-var pageURL = $(location).attr("href");
+// var pageURL = $(location).attr("href");
 
-var pageAdress = "https://hirjoabaioan.github.io/fiziosearch.github.io/"
-if (pageURL == pageAdress){
-    $(document).ready(function() {
-        $('nav').removeClass('sticky-top').addClass('fixed-top');
-    });
-};
+// var pageAdress = "https://hirjoabaioan.github.io/fiziosearch.github.io/"
+// if (pageURL == pageAdress){
+//     $(document).ready(function() {
+//         $('nav').removeClass('sticky-top').addClass('fixed-top');
+//     });
+// };
 
 
 function closeWindow(){
