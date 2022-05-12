@@ -273,7 +273,7 @@ $('.but-data').click(()=>{
 
 
 // setInterval(function(){
-// 		console.log("");
+// 		console.log("")
 //     let c = $('iframe').contents().find("#testing:contains('Chestionar')");
 //     let d = $('#testing').text();
 //     console.log(d);
