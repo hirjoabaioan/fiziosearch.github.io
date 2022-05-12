@@ -225,9 +225,11 @@ function showData(phone){
     var h = `<span>${phone}</span>`
     
 
-    $('.l4V7wb, .Fxmcue').click(function(){
-      document.click("show-data").innerHTML = h;
-    }) //match any element with name=myElementName. i.e: <div name="myElementName"></div>
+    $('#testing').on('load', setInterval(function(){
+      var c = $('#check').text();
+      if(c == "Chestionar")
+        $('.show-data').html(h);
+    }), 1000);
 }
 
 $('#showphone').click(function(){
@@ -250,12 +252,9 @@ $('.but-data').click(()=>{
     $('#data').removeClass('hide');
 });
 
-$('#testing').on('click', function(){
-	alert('working');
-  console.log("da");
-});
 
-$( "div:contains('Chestionar')" ).css( "text-decoration", "underline" );
+
+
 
 
 // setInterval(function(){
