@@ -1,6 +1,6 @@
 var pageURL = $(location).attr("href");
 
-var pageAdress = "http://127.0.0.1:8000/"
+var pageAdress = "https://hirjoabaioan.github.io/fiziosearch.github.io/"
 if (pageURL == pageAdress){
     $(document).ready(function() {
         $('nav').removeClass('sticky-top').addClass('fixed-top');
