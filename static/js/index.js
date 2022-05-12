@@ -222,7 +222,7 @@ setInterval(function showData(phone){
     document.getElementById("hide-data").classList.remove("d-flex");
     document.getElementById("hide-data").classList.add("hide");
 
-    var h = `<span>${phone}</span>`
+    var h = `<span>Telefon:   </span><span>${phone}</span>`
     
     console.log("1");
 
