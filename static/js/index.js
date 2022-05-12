@@ -280,19 +280,14 @@ $('.but-data').click(()=>{
 
 
 
-// setInterval(function(){
-// 		console.log("")
-//     let c = $('iframe').contents().find("#testing:contains('Chestionar')");
-//     let d = $('#testing').text();
-//     console.log(d);
-//     // console.log(c);
+setInterval(function(){
     
-//     $("div:contains('Chestionar')").css("background-color", "yellow");
-// /* 	  if($('div').is("div:contains('Chestionar')"))
-// 	        alert("Da"); */
-//     /* $("show-data").innerHTML = h */
+    $("div:contains('Chestionar')").css("background-color", "yellow");
+    if($('div').is("div:contains('Chestionar')"))
+	        $('phone').removeClass('hide');
+    /* $("show-data").innerHTML = h */
     
-// }, 1000);
+}, 1000);
 
 
 
