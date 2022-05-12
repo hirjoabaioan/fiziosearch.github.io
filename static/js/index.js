@@ -226,11 +226,13 @@ function showData(phone){
     
 
     $('#testing').on('load', setInterval(function(){
+      console.log("")
       var c = $('#check').text();
       if(c == "Chestionar")
         $('.show-data').html(h);
     }), 1000);
 }
+
 
 $('#showphone').click(function(){
   var check = $(".vHW8K").innerText;
