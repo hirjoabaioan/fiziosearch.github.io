@@ -236,7 +236,7 @@ function showData(){
 
   // $('iframe').on('load')
   // function change(){
-  //   console.log("2");
+  //   console.log("2")
   //   var c = $('#check').text();
   //   console.log(c);
   //   if(c == "Chestionar")
