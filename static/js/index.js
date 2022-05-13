@@ -7,6 +7,8 @@
 //     });
 // }
 
+// Global
+let phoneNumber = "";
 
 function closeWindow(){
     var replace = `
@@ -215,6 +217,8 @@ function showTherapistData(therapists) {
       var htmlTwo = `
         <span class="fw-bolder">Telefon:   </span><span>${phone}</span>
       `;
+	  
+      phoneNumber = phone;
 
       document.querySelector('#cont').innerHTML = html;
       document.querySelector('#phone').innerHTML = htmlTwo;
@@ -231,6 +235,10 @@ function showData(){
 
 }
 
+function change(){
+  if(phoneNumber.length > 1)
+	  alert("Da");
+}
 
 $('#showphone').click(function(){
   var check = $(".vHW8K").innerText;
@@ -246,11 +254,6 @@ function showPhone(){
     $("show-data").innerHTML = h;
 }
 
-
-
-$('.but-data').click(()=>{
-    $('#data').removeClass('hide');
-});
 
 
 $('iframe').on('load', function(){
