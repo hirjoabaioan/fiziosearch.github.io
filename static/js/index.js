@@ -267,9 +267,7 @@ setInterval(function(){
   let c = $("div").find("#check").text();
   console.log("1");
   if(c == "Chestionar"){
-    $('#phone').removeClass('hide');
-    console.log("3");
-    $('#show-data').addClass('hide');
+    $('#check').text("Număr de telefon: " + phoneNumber);
   };
 }, 1000);
 
