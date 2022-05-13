@@ -8,7 +8,7 @@
 // }
 
 // Global
-let phoneNumber = "";
+var phoneNumber = "";
 
 function closeWindow(){
     var replace = `
@@ -226,7 +226,7 @@ function showTherapistData(therapists) {
   
     }
   
-
+console.log(phoneNumber);
 
 function showData(){
 
