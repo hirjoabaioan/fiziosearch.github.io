@@ -219,6 +219,7 @@ function showTherapistData(therapists) {
       `;
 	  
       phoneNumber = phone;
+      console.log(phoneNumber);
 
       document.querySelector('#cont').innerHTML = html;
       document.querySelector('#phone').innerHTML = htmlTwo;
@@ -265,9 +266,9 @@ $('iframe').on('load', function(){
 
 setInterval(function(){
   let c = $("div").find("#check").text();
-  console.log("1");
+ 
   if(c == "Chestionar"){
-    $('#check').text("Număr de telefon: " + phoneNumber);
+    $('#check').text(phoneNumber);
   };
 }, 1000);
 
