@@ -229,29 +229,6 @@ function showData(){
   document.getElementById("hide-data").classList.remove("d-flex");
   document.getElementById("hide-data").classList.add("hide");
 
-  // var h = `<span>Telefon   </span><span>${phone}</span>`
-  
-  // console.log("1");
-
-
-  // $('iframe').on('load')
-  // function change(){
-  //   console.log("2")
-  //   var c = $('#check').text();
-  //   console.log(c);
-  //   if(c == "Chestionar")
-  //     console.log("3");
-  //     $('.show-data').html(h);
-  // }
-
-  // setInterval(function change(){
-  //   console.log("2");
-  //   var c = $('#check').text();
-  //   console.log(c);
-  //   if(c == "Chestionar")
-  //     console.log("3");
-  //     $('.show-data').html(h);
-  // }, 1000);
 }
 
 
@@ -276,7 +253,10 @@ $('.but-data').click(()=>{
 });
 
 
-
+$('iframe').on('load', function(){
+  if($('#check').length)
+    alert('incarcat');
+})
 
 
 
@@ -284,9 +264,9 @@ setInterval(function(){
   let c = $("div").find("#check").text();
   console.log("1");
   if(c == "Chestionar"){
-	  console.log("2");
-    $("div").find("#show-data").addClass("hide");
-    $("div").find("#phone").removeClass("hide");  
+    $('#phone').removeClass('hide');
+    console.log("3");
+    $('#show-data').addClass('hide');
   };
 }, 1000);
 
