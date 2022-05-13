@@ -7,8 +7,7 @@
 //     });
 // }
 
-// Global
-var phoneNumber = "";
+
 
 function closeWindow(){
     var replace = `
@@ -41,6 +40,53 @@ function searchTherapists(){
 
 }
 
+function showNumbers(){
+
+  var tableCreate = "";
+  var tr = "";
+  var trName = "";
+  var trPhone = "";
+  var trEmail = "";
+
+
+
+  therapists.forEach(function(therapist){
+    var id = therapist.id + 1;
+    var name = therapist.name;
+    var phone = therapist.phoneNumber;
+    var email = therapist.email;
+
+    tr +=`
+    <tr>
+      <td>${name}</td>
+      <td>${phone}</td>
+      <td>${email}</td>
+    </tr>`;
+
+    trName += `
+      <td>${name}</td>
+    `
+    trPhone += `
+    <td>${phone}</td>
+    `
+    trEmail += `
+    <td>${email}</td>
+  `
+  });
+
+  tableCreate = `
+  <thead>
+    <th>Nume</th>
+    <th>Telefon</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    ${tr}
+  </tbody>
+  `
+
+  $('#testing').html(tableCreate);
+}
 
 function displayTherapists(therapists) {
     
@@ -79,8 +125,6 @@ function showTherapistData(therapists) {
       therapists.forEach(function(therapist){
           var id = Number(therapist.id);
           var name = therapist.name;
-          var email = therapist.email;
-          var phone =therapist.phoneNumber;
           var reviews = therapist.reviews;
           var profession = therapist.profession;
           var specialization = therapist.specialization;
@@ -89,12 +133,12 @@ function showTherapistData(therapists) {
           var courses = therapist.courses;
           var address = therapist.address;
           if(i == id)
-              createDetails(name, email, phone, reviews, id, profession, specialization, exp, about, courses, address);
+              createDetails(name, reviews, profession, specialization, exp, about, courses, address);
       });
     })
   }
   
-  function createDetails(name, email, phone, reviews, id, profession, specialization, exp, about, courses, address) {
+  function createDetails(name, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
 
     courses.forEach(function(course){
@@ -214,19 +258,10 @@ function showTherapistData(therapists) {
     
       `;
       
-      var htmlTwo = `
-        <span class="fw-bolder">Telefon:   </span><span>${phone}</span>
-      `;
-	  
-      phoneNumber = phone;
-      console.log(phoneNumber);
 
       document.querySelector('#cont').innerHTML = html;
-      document.querySelector('#phone').innerHTML = htmlTwo;
   
     }
-  
-console.log(phoneNumber);
 
 function showData(){
 
@@ -235,44 +270,6 @@ function showData(){
   document.getElementById("hide-data").classList.add("hide");
 
 }
-
-function change(){
-  if(phoneNumber.length > 1)
-	  alert("Da");
-}
-
-$('#showphone').click(function(){
-  var check = $(".vHW8K").innerText;
-  console.log(check);
-  if (check == "Răspunsul tău a fost înregistrat, îți mulțumim pentru timpul acordat!")
-    $("show-data").innerHTML = h;
-});
-
-function showPhone(){
-  var check = $(".vHW8K").innerText;
-  console.log(check);
-  if (check == "Răspunsul tău a fost înregistrat, îți mulțumim pentru timpul acordat!")
-    $("show-data").innerHTML = h;
-}
-
-
-
-$('iframe').on('load', function(){
-  if($('#check').length)
-    alert('incarcat');
-})
-
-
-
-setInterval(function(){
-  let c = $("div").find("#check").text();
- 
-  if(c == "Chestionar"){
-    $('#check').text(phoneNumber);
-  };
-}, 1000);
-
-
 
 
 function addEmail() {
@@ -290,15 +287,3 @@ var userObj = {
     "email": "email@email.com",
 }
 
-// localStorage.setItem("userDetails, userObj");
-
-// var details = localStorage.getItem("userDetails");
-
-
-// var count = 0;
-// var btn = document.getElementById("show");
-// var disp = document.getElementById("display");
-// btn.onclick = function () {
-//     count++;
-//     disp.innerHTML = count; 
-// }
