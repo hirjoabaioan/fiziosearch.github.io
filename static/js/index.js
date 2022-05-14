@@ -263,6 +263,13 @@ function showTherapistData(therapists) {
   
     }
 
+
+function copyLink(){
+  var coppiedLink = $('#toCopy').text();
+  navigator.clipboard.writeText(coppiedLink);
+  alert(coppiedLink);
+}
+
 function showData(){
 
   document.getElementById("show-data").classList.remove("hide");
