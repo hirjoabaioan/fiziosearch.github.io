@@ -263,7 +263,7 @@ function showTherapistData(therapists) {
   
     }
 
-//new
+//this new
 function copyLink(){
   var coppiedLink = $('#toCopy').text();
   console.log(coppiedLink);
