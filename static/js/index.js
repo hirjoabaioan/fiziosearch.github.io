@@ -7,15 +7,25 @@
 //     });
 // }
 
-
+var windowCheck = true;
 
 function closeWindow(){
+  console.log("press");
+  console.log($(window).width() > 995);
+  console.log($(window).width());
+  // if($(window).width() > 995){
+    console.log(">995");
     var replace = `
-    <div class="d-flex jusify-content-start align-items-center" style="width: 500px;">
-        <span>Alege un terapeut din listă</span>
+    <div class="d-flex jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
+        <span id="txtCheck">Alege un terapeut din listă</span>
     </div>
     `;
     document.getElementById('cont').innerHTML = replace;
+  // }
+  console.log("pass");
+  windowCheck = false;
+  $('#hide-call').removeClass('hide-call');
+  $('#data-on').addClass('hide-call');
 };
 
 
@@ -37,56 +47,9 @@ function searchTherapists(){
 
     displayTherapists(foundTherapists);
     showTherapistData(foundTherapists);
-
 }
 
-function showNumbers(){
 
-  var tableCreate = "";
-  var tr = "";
-  var trName = "";
-  var trPhone = "";
-  var trEmail = "";
-
-
-
-  therapists.forEach(function(therapist){
-    var id = therapist.id + 1;
-    var name = therapist.name;
-    var phone = therapist.phoneNumber;
-    var email = therapist.email;
-
-    tr +=`
-    <tr>
-      <td>${name}</td>
-      <td>${phone}</td>
-      <td>${email}</td>
-    </tr>`;
-
-    trName += `
-      <td>${name}</td>
-    `
-    trPhone += `
-    <td>${phone}</td>
-    `
-    trEmail += `
-    <td>${email}</td>
-  `
-  });
-
-  tableCreate = `
-  <thead>
-    <th>Nume</th>
-    <th>Telefon</th>
-    <th>Email</th>
-  </thead>
-  <tbody>
-    ${tr}
-  </tbody>
-  `
-
-  $('#testing').html(tableCreate);
-}
 
 function displayTherapists(therapists) {
     
@@ -118,10 +81,34 @@ function displayTherapists(therapists) {
     
 }
 
+$(window).resize(function(){
+  if($(window).width() < 995 & $('#txtCheck').text() == "Alege un terapeut din listă" & windowCheck){
+    $('#hide-call').removeClass('hide-call');
+    console.log($(window).width() + " " + $('#txtCheck').text() + " " + windowCheck);
+  }
+
+  if($(window).width() < 995 & $('#close').text() == "X" & windowCheck){
+    $('#data-on').addClass('hide-call');
+    $('#hide-call').removeClass('hide-call');
+    console.log($(window).width() + " " + $('#close').text() + " " + windowCheck)
+  }
+  if($('#txtCheck').text() == "Alege un terapeut din listă" || $('#close').text() == "X"  & windowCheck){
+    console.log($('#txtCheck').text() + " " + $('#close').text()+ " " + windowCheck)
+    $('#data-on').removeClass('hide-call');
+    $('#hide-call').removeClass('hide-call');
+  }
+  if($(window).width() > 995){
+    $('#data-on').removeClass('hide-call');
+    $('#hide-call').removeClass('hide-call');
+  }
+  
+  console.log("fail");
+});
+
 function showTherapistData(therapists) {
-	
+    
     $(".ts-container").click(function(){
-        var i = $(this).attr("id");
+    var i = $(this).attr("id");
       therapists.forEach(function(therapist){
           var id = Number(therapist.id);
           var name = therapist.name;
@@ -132,8 +119,12 @@ function showTherapistData(therapists) {
           var about = therapist.about;
           var courses = therapist.courses;
           var address = therapist.address;
-          if(i == id)
+          if(i == id){
+            $('#cont').removeClass('s-h');
+              if($(window).width() < 995)
+                $('#hide-call').addClass('hide-call');
               createDetails(name, reviews, profession, specialization, exp, about, courses, address);
+          }
       });
     })
   }
@@ -148,7 +139,7 @@ function showTherapistData(therapists) {
     });
         
     var html =`
-        <div class="container p-2 h-100">
+        <div class="container p-2 h-100" id="data-on">
             <div class="d-flex row h-100 t-container">
                     <div class="col-12 d-flex row justify-content-center align-items-top p-0 t-description">
                       <div class="d-flex justify-content-center align-items-center col-4">
@@ -263,22 +254,13 @@ function showTherapistData(therapists) {
   
     }
 
-//this new
-function copyLink(){
-  var coppiedLink = $('#toCopy').text();
-  console.log(coppiedLink);
-  navigator.clipboard.writeText(coppiedLink);
-  alert(coppiedLink);
-}
 
 function showData(){
-
-  document.getElementById("show-data").classList.remove("hide");
-  document.getElementById("hide-data").classList.remove("d-flex");
-  document.getElementById("hide-data").classList.add("hide");
+  $('#show-data').removeClass('hide');
+  $('#hide-data').removeClass('d-flex');
+  $('#hide-data').addClass('hide');
 
 }
-
 
 function addEmail() {
     var text = document.getElementById("email").value;

@@ -16,19 +16,50 @@
 
 </head>
 <body>
-    <div class="container d-flex row" id='testing'>
-        <span class="col-12 h1 fw-bold">Chestionar</span>
-        <span class="col-12">Răspunsul dumneavoastră a fost înregistrat, vă mulțumim pentru timpul acordat!</span>
-        <button class="but btn btn-primary" onclick="showNumbers()">Afișați terapeutul ales</button>
-    </div>
+    <div class="container d-flex row">
+        <div class="col-12 d-flex row mt-5" id="testing">
+            <div class="col-12">
+                <span class="h1 fw-bold">Chestionar</span>
+            </div class="col-12 p-5 mt-5">
+            <div>
+                <span class="p-5">Răspunsul dumneavoastră a fost înregistrat, vă mulțumim pentru timpul acordat!</span>
+            </div class="col-12 mt-5">
+            <div>
+                <button class="mt-4 but btn btn-primary" onclick="showNumbers()">Afișați terapeutul ales</button>
+            </div>
+            
+        </div>
+        
     
-    <div>
-        <span>Dacă doriți ca și alte persoane să afle despre platforma Fiziosearch vă rugăm să le trimiteți următorul link:</span><br>
-        <a href="https://hirjoabaioan.github.io/fiziosearch.github.io/" id="toCopy">https://hirjoabaioan.github.io/fiziosearch.github.io/</a><br>
-        <button class="" onclick="copyLink()">Copiază linkul</button>
+    
+        <div class="col-12 d-flex row mt-5">
+            <div class="col-12">
+                <span>Dacă doriți ca și alte persoane să afle despre platforma Fiziosearch vă rugăm să le trimiteți următorul link:</span><br>
+            </div>
+
+            <div class="col-12 d-flex p-3">
+                <div class="row d-flex justify-content-start">
+                    <div class="ps-0 col-md-6">
+                        <div class="card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <!-- <span class="text-line me-2">
+                                    https://hirjoabaioan.github.io/fiziosearch.github.io
+                                </span> -->
+                                <button onclick="copy()" id="copyLink" class="btn btn-sm btn-secondary copy-button d-flex">
+                                    <span class="text-truncate">https://hirjoabaioan.github.io/fiziosearch.github.io</span>
+                                </button>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>   
+                <!-- <a href="https://hirjoabaioan.github.io/fiziosearch.github.io/" id="toCopy">https://hirjoabaioan.github.io/fiziosearch.github.io/</a><br> -->
+                <!-- <button class="" onclick="copyLink()">Copiază linkul</button> -->
+            </div>        
+            
+        </div>
     </div>
 
 
-    <script src="../static/js/index.js"></script>
+    <script src="../static/js/thankyou.js"></script>
 </body>
 </html>

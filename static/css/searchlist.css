@@ -104,6 +104,9 @@ body {
     background-color: #CCCCCC;
 }
 
+.hide-call {
+    display: none;
+}
 
 .ts-pic {
     color: #B5ADAD;
@@ -174,11 +177,11 @@ body {
 
 
 @media only screen and (max-width: 700px) {
-    .small-hide {
-        display: none;
+    #startPage{
+        display: none !important;
     }
-
     .s-h {
+        display: none !important;
         height: 700px;
     }
 }
