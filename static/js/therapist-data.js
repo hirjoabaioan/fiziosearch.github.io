@@ -30,5 +30,21 @@ let therapists = [{
     "available": true,
 },
 
+{
+    "id": "3",
+    "picture": "Voinea.jpeg",
+    "name": "Voinea Emanuel",
+    "phoneNumber": "0727308807",
+    "email": "voinea_emanuel@yahoo.com",
+    "address": "Sectorul 1, Sectorul 2, Sectorul 3",
+    "profession": "Fizioterapeut",
+    "specialization": "Recuperare ortopedico-traumatică",
+    "exp": "01.01.2018",
+    "reviews": "0",
+    "courses": ["SGA", "IASTM", "DynamicTape", "KinesioTape", "FlossBand", "Cupping Therapy", "BeautyTaping"],
+    "about": "Sunt o fire pozitiva care are rabdare in lucrul cu pacientul pentru a obtine cele mai bune rezultate. Comunicarea si adaptabilitatea la nevoile acestuia sunt aspecte importante pentru mine in recuperarea diferitelor afectiuni.",
+    "available": true,
+},
+
 
 ];
