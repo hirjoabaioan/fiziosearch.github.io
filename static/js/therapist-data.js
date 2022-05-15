@@ -46,5 +46,21 @@ let therapists = [{
     "available": true,
 },
 
+{ 
+    "id": "",
+    "picture": "",
+    "name": "Chivu Alexandra",
+    "phoneNumber": "0720196197",
+    "email": "ada.chivu@yahoo.com",
+    "address": "Unirii, Dristor, Mărășești, Tineretului, Lizeanu - Maica Domnului, Universitate, Piața Romană, Piața Victoriei",
+    "profession": "Fizioterapeut",
+    "specialization": "Limfedem",
+    "exp": "01.01.2017",
+    "reviews": "0",
+    "courses": ["Managementul limfedemului", "Limfologie aplicată", "OMTRO", "IPNF", "Recuperare cardiovasculară"],
+    "about": "",
+    "available": true,
+},
+
 
 ];
