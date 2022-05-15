@@ -192,4 +192,13 @@ body {
         display: none !important;
         height: 700px;
     }
+    .profile-cropper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ts-pic {
+        width: 30px;
+        height: 30px;
+    }
 }
