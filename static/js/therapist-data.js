@@ -48,7 +48,7 @@ let therapists = [{
 
 { 
     "id": "4",
-    "picture": "",
+    "picture": "call-ico.png",
     "name": "Chivu Alexandra",
     "phoneNumber": "0720196197",
     "email": "ada.chivu@yahoo.com",
