@@ -7,6 +7,9 @@
 //     });
 // }
 
+// $('mainMenu')
+
+
 var windowCheck = true;
 
 function closeWindow(){
