@@ -7,21 +7,21 @@
 //     });
 // }
 
-$('mainMenu a').on('click', function(e){
-  e.preventDefault();
-  insertContent($(this).attr('href'));
-})
+// $('mainMenu a').on('click', function(e){
+//   e.preventDefault();
+//   insertContent($(this).attr('href'));
+// })
 
-function insertContent(pageHref){
-  pageHref = pageHref.replace('#', '');
-  $.ajax({
-    url: `templates/${pageHref}.html`,
-  }).done(function(data){
-    console.log(data);
-    $('#pageContent').html(data);;
-  })
-}
-window.onload = insertContent(location.hash);
+// function insertContent(pageHref){
+//   pageHref = pageHref.replace('#', '');
+//   $.ajax({
+//     url: `templates/${pageHref}.html`,
+//   }).done(function(data){
+//     console.log(data);
+//     $('#pageContent').html(data);;
+//   })
+// }
+// window.onload = insertContent(location.hash);
 
 
 
@@ -83,9 +83,9 @@ function displayTherapists(therapists) {
         therapistsHtml += `
             <div class="ts-container" id="${index + 1}" onlcick="showTherapistPage()">
                 <div class="ts-container-background">
-                    <div class="d-flex row p-2 justify-content-between">
-                        <div class="col-2 ts-pic">
-                            <img src="../static/images/${pic}" class="ts-pic" alt="profile pic">
+                    <div class="d-flex row p-2 ">
+                        <div class="col-2 ts-pic d-flex justify-content-center align-items-center">
+                            <img src="../static/images/${pic}" class="profile-picture" alt="profile pic">
                         </div>
                         <div class="col-10 d-flex row ts-details">
                             <span class="col-12">${name}</span>
@@ -128,13 +128,15 @@ function showTherapistData(therapists) {
     
     $(".ts-container").click(function(){
     var i = $(this).attr("id");
+    var today = new Date();
       therapists.forEach(function(therapist){
           var id = Number(therapist.id);
+          var picture = therapist.picture;
           var name = therapist.name;
           var reviews = therapist.reviews;
           var profession = therapist.profession;
           var specialization = therapist.specialization;
-          var exp = therapist.exp;
+          var exp = today.getFullYear() - new Date(therapist.exp).getFullYear();
           var about = therapist.about;
           var courses = therapist.courses;
           var address = therapist.address;
@@ -142,13 +144,13 @@ function showTherapistData(therapists) {
             $('#cont').removeClass('s-h');
               if($(window).width() < 995)
                 $('#hide-call').addClass('hide-call');
-              createDetails(name, reviews, profession, specialization, exp, about, courses, address);
+              createDetails(name, picture, reviews, profession, specialization, exp, about, courses, address);
           }
       });
     })
   }
   
-  function createDetails(name, reviews,profession, specialization, exp, about, courses, address) {
+  function createDetails(name, picture, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
 
     courses.forEach(function(course){
@@ -156,13 +158,13 @@ function showTherapistData(therapists) {
             <span class="col-12 fw-bold lead-text">${course}</span>
         </div>`)
     });
-        
+        // <i class="picture bi bi-person-circle"></i>
     var html =`
         <div class="container p-2 h-100" id="data-on">
             <div class="d-flex row h-100 t-container">
-                    <div class="col-12 d-flex row justify-content-center align-items-top p-0 t-description">
-                      <div class="d-flex justify-content-center align-items-center col-4">
-                        <i class="picture bi bi-person-circle"></i>                         
+                    <div class="col-12 d-flex row justify-content-center align-items-center p-2 t-description">
+                      <div class="d-flex justify-content-center align-items-center col-4 profile-cropper">
+                        <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
                       </div>
                       <div class="col-8 d-flex row justify-content-center align-items-center">
                         <div class="d-flex justify-content-end align-items-center m-0 p-0" onclick="closeWindow()">

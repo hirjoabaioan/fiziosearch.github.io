@@ -109,13 +109,11 @@ body {
 }
 
 .ts-pic {
-    color: #B5ADAD;
-    max-width: 50px;
-    height: auto;
-    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
-    /* margin-top: 15px;
-    margin-bottom: 15px; */
 }
 
 .ts-details {
@@ -134,10 +132,20 @@ body {
 }
 
 
-.picture {
-    font-size: 5rem;
+.profile-cropper {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
+.profile-picture {
+    display: inline;
+    margin: auto;
+    height: 100%;
+    width: auto;
+}
 
 .datas {
     margin-top: -4rem;
