@@ -21,7 +21,7 @@ let therapists = [{
     "phoneNumber": "0726 771 141",
     "email": "ruxandra.tudosoiu@gmail.com",
     "address": "Sector 1, Sector 2, Sector 3",
-    "profession": "Fiziotearpeut",
+    "profession": "Fizioterapeut",
     "specialization": "Recuperare pediatrică",
     "exp": "01.06.2012",
     "reviews": "0",
