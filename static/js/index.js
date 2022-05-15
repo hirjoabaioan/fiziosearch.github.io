@@ -7,7 +7,23 @@
 //     });
 // }
 
-// $('mainMenu')
+$('mainMenu a').on('click', function(e){
+  e.preventDefault();
+  insertContent($(this).attr('href'));
+})
+
+function insertContent(pageHref){
+  pageHref = pageHref.replace('#', '');
+  $.ajax({
+    url: `templates/${pageHref}.html`,
+  }).done(function(data){
+    console.log(data);
+    $('#pageContent').html(data);;
+  })
+}
+window.onload = insertContent(location.hash);
+
+
 
 
 var windowCheck = true;
