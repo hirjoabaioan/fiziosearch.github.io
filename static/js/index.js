@@ -77,19 +77,19 @@ function displayTherapists(therapists) {
     therapists.forEach(function(therapist, index){
         var pic = therapist.picture;
         var name = therapist.name;
-        var review = therapist.reviews;
+        var address = therapist.address;
 
 
         therapistsHtml += `
             <div class="ts-container" id="${index + 1}" onlcick="showTherapistPage()">
                 <div class="ts-container-background">
-                    <div class="d-flex row p-2 ">
-                        <div class="col-2 ts-pic d-flex justify-content-center align-items-center">
+                    <div class="d-flex row p-2 justify-content-between align-items-center">
+                        <div class="col-2 ms-2 ts-pic d-flex justify-content-center align-items-center">
                             <img src="../static/images/${pic}" class="profile-picture" alt="profile pic">
                         </div>
                         <div class="col-10 d-flex row ts-details">
                             <span class="col-12">${name}</span>
-                            <span class="col-12">${review}</span>
+                            <span class="col-12 d-inline-block text-truncate trunc">${address}</span>
                         </div>
                     </div>
                 </div>
@@ -174,22 +174,22 @@ function showTherapistData(therapists) {
                           <span class="h1">${name}</span>
                         </div>
                         <div class="col-12 d-flex row datas justify-content-start align-items-center">
-                          <div class="col-6">
+                          <div class="col-12">
                             <div class="titlu">
                               <span>${profession}</span>
                             </div>
                             <div class="address">
                               <span>${address}</span>
                             </div>
-                          </div>
-                          <div class="col-6">
-                            <div class="t-contact">
+                          </div>                                  
+                        </div>
+                        <div class="col-12 d-flex justify-content-end align-items-center">
+                            <div class="t-contact d-flex">
                               <div class="d-flex col-12 w-auto justify-content-start align-items-center order-2 box-el">
                                 <button class="but btn btn-primary but-data" id="show" onclick="showData()">Afișează datele</button>
                               </div>
                             </div>
-                          </div>                                    
-                        </div>
+                          </div>  
                       
                         <!-- <div class="t-reviews col-12">
                             <i class="bi bi-star-fill"></i>

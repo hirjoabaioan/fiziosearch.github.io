@@ -85,6 +85,11 @@ body {
     overflow-y: scroll;
 }
 
+.trunc {
+    max-width: 250px;
+    font-size: 12px;
+}
+
 .ts-container {
     align-items: center;
     border-bottom: 1px solid #979797;
@@ -114,6 +119,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .ts-details {
@@ -145,6 +151,7 @@ body {
     margin: auto;
     height: 100%;
     width: auto;
+    object-fit: cover;
 }
 
 .datas {
@@ -193,12 +200,12 @@ body {
         height: 700px;
     }
     .profile-cropper {
-        width: 50px;
-        height: 500px;
+        width: 80px;
+        height: 80px;
     }
 
     .ts-pic {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
     }
 }
