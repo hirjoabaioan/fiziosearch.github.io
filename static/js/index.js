@@ -47,26 +47,115 @@ function closeWindow(){
   $('#data-on').addClass('hide-call');
 };
 
+function namesList (){
+  var names = [];
+  var locations = [];
+  therapists.forEach(function(therapist){
+      names.push(therapist.name);
+  })
+}
+
+
+
+// function searchTherapists(){
+//     var foundTherapists = [];
+//     var searchItem = $('#therapist-name').val();
+//     var values = therapists
+//     var location = $
+//     if(searchItem){
+//       //cautat dupa nume
+//         therapists.forEach(function(therapist){
+//             var fName = therapist.name;
+//             if (searchItem === fName){
+//                 foundTherapists.push(therapist);
+//             }
+//         });
+//       //cautat dupa locatie
+        
+//         therapists.forEach(function(therapist){
+//           var fAddress = therapist.address;
+//           for(var loc = 0; loc<fAddress.length; loc++){
+//             if(searchItem === fAddress[loc])
+//               foundTherapists.push(therapist);
+//           }
+//         });
+
+        
+//       //cautat dupa sector - daca se cauta sectorul sa arate terapeutii care opereaza in sectorul respectiv chiar daca ei nu au dat sectorul ci doar zona de operare
+//       var keys = Object.getOwnPropertyNames(locations);
+//       console.log(keys);
+//       keys.forEach(i =>{
+//         // compara daca 
+//         for(var j = 0; j<locations[i].length; j++){
+//           cosnole.log(locations[i][j]);
+//           if(locations[i][j] === searchItem){
+//               foundTherapists.push(therapist);
+//           }
+//         }
+//       });
+//     }
+//     else {
+//         foundTherapists = therapists;
+//     }
+
+//     displayTherapists(foundTherapists);
+//     showTherapistData(foundTherapists);
+// }
 
 
 function searchTherapists(){
     var foundTherapists = [];
-    var tName = document.getElementById('therapist-name').value;
-    if(tName){
+    var searchItem = $('#therapist-name').val();
+    var loc = ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6"]
+    var values = therapists;
+    var id = therapists.id; // verifica sa nu existe dubluri inainte de a afisa rezultatele
+    if(searchItem){
+      //cautat dupa nume
         therapists.forEach(function(therapist){
             var fName = therapist.name;
-            if (tName === fName){
+            if (searchItem === fName){
                 foundTherapists.push(therapist);
             }
         });
+      //cautat dupa locatie
+      
+
+
+  /* if(!loc.includes(searchItem)){ */
+      therapists.forEach(function(therapist){
+            var fAddress = therapist.address;
+            for(var loc = 0; loc<fAddress.length; loc++){
+              if(searchItem === fAddress[loc])
+                foundTherapists.push(therapist);
+            }
+          });
+         /*  } */
+
+        
+      //cautat dupa sector - daca se cauta sectorul sa arate terapeutii care opereaza in sectorul respectiv chiar daca ei nu au dat sectorul ci doar zona de operare
+      therapists.forEach(function(therapist){
+      var keys = Object.getOwnPropertyNames(locations);
+      keys.forEach(i =>{
+      var fAddress = therapist.address;
+     if(i === searchItem){
+     	for(var terLoc = 0; terLoc<fAddress.length; terLoc++){
+        for(var j = 0; j<locations[i].length; j++){
+          if(locations[i][j] === fAddress[terLoc]){
+              foundTherapists.push(therapist);
+          }
+        }
+       }
+       }
+      });
+      });
     }
     else {
         foundTherapists = therapists;
     }
-
     displayTherapists(foundTherapists);
     showTherapistData(foundTherapists);
 }
+
 
 
 
@@ -74,14 +163,15 @@ function displayTherapists(therapists) {
     
     var therapistsHtml = "";
 
-    therapists.forEach(function(therapist, index){
+    therapists.forEach(function(therapist){
+        var id = therapist.id;
         var pic = therapist.picture;
         var name = therapist.name;
         var address = therapist.address;
 
 
         therapistsHtml += `
-            <div class="ts-container" id="${index + 1}" onlcick="showTherapistPage()">
+            <div class="ts-container" id="${id}" onlcick="showTherapistPage()">
                 <div class="ts-container-background">
                     <div class="d-flex row p-2 justify-content-between align-items-center">
                         <div class="col-2 ms-2 ts-pic d-flex justify-content-center align-items-center">
