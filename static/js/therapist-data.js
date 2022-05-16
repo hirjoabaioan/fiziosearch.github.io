@@ -1,6 +1,6 @@
 let therapists = [{
     "id": "1",
-    "picture": "call-ico.png",
+    "picture": "Dumitrescu.jpeg",
     "name": "Dumitrescu Robert Cristian",
     "phoneNumber": "0720457951",
     "email": "dumitrescurobert31@gmail.com",
@@ -48,7 +48,7 @@ let therapists = [{
 
 { 
     "id": "4",
-    "picture": "call-ico.png",
+    "picture": "Chivu.jpeg",
     "name": "Chivu Alexandra",
     "phoneNumber": "0720196197",
     "email": "ada.chivu@yahoo.com",
@@ -62,5 +62,34 @@ let therapists = [{
     "available": true,
 },
 
+{ "id": "5",
+"picture": "Linu.jpeg",
+"name": "Linu Mădălina",
+"phoneNumber": "0745808171",
+"email": "madalinu98@gmail.com",
+"address": "Delfinului, Iancului, Tei, Doamna Ghica",
+"profession": "Fizioterapeut",
+"specialization": "Recuperare pediatrica",
+"exp": "01.01/2020",
+"reviews": "0",
+"courses": ["Kinesiotaping", "Masaj reflexogen", "Schroth"],
+"about": "Sunt o persoană empatică, răbdătoare, îmi place să lucrez cu copiii. Recuperarea reprezintă o pasiune pentru mine, nu un simplu job.",
+"available": true,
+},
+
+{ "id": "6",
+"picture": "Micu.jpeg",
+"name": "Micu Sorina",
+"phoneNumber": "0724310906",
+"email": "micusorina91@gmail.com",
+"address": "",
+"profession": "Fizioterapeut",
+"specialization": "Recuperare pediatrică",
+"exp": "01.01.2013",
+"reviews": "0",
+"courses": ["Vojta", "Schroth", "Kinesiotaping", "Posturologie"],
+"about": "",
+"available": true,
+},
 
 ];
