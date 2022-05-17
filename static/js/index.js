@@ -27,6 +27,7 @@
 
 
 var windowCheck = true;
+var checkText = "Caută un terapeut în funcție de sectorul sau cartierul în care locuiești!";
 
 function closeWindow(){
   console.log("press");
@@ -102,56 +103,61 @@ function namesList (){
 //     showTherapistData(foundTherapists);
 // }
 
+var search = $('#therapist-name');
+search.on('keypress', function(e){
+  if (e.which == 13){
+    searchTherapists()
+  }
+});
 
 function searchTherapists(){
     var foundTherapists = [];
     var searchItem = $('#therapist-name').val();
-    var loc = ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6"]
-    var values = therapists;
+    var tsList = [];
     var id = therapists.id; // verifica sa nu existe dubluri inainte de a afisa rezultatele
     if(searchItem){
+
       //cautat dupa nume
-        therapists.forEach(function(therapist){
-            var fName = therapist.name;
-            if (searchItem === fName){
-                foundTherapists.push(therapist);
-            }
-        });
-      //cautat dupa locatie
-      
-
-
-  /* if(!loc.includes(searchItem)){ */
       therapists.forEach(function(therapist){
-            var fAddress = therapist.address;
-            for(var loc = 0; loc<fAddress.length; loc++){
-              if(searchItem === fAddress[loc])
-                foundTherapists.push(therapist);
-            }
-          });
-         /*  } */
+        var fName = therapist.name;
+        if (searchItem === fName){
+          foundTherapists.push(therapist);
+        }
+      });
+
+      //cautat dupa locatie
+      therapists.forEach(function(therapist){
+        var fAddress = therapist.address;
+        for(var loc = 0; loc<fAddress.length; loc++){
+          if(searchItem === fAddress[loc])
+            foundTherapists.push(therapist);
+        }
+      });
 
         
-      //cautat dupa sector - daca se cauta sectorul sa arate terapeutii care opereaza in sectorul respectiv chiar daca ei nu au dat sectorul ci doar zona de operare
+      //cautat dupa sector 
       therapists.forEach(function(therapist){
-      var keys = Object.getOwnPropertyNames(locations);
-      keys.forEach(i =>{
-      var fAddress = therapist.address;
-     if(i === searchItem){
-     	for(var terLoc = 0; terLoc<fAddress.length; terLoc++){
-        for(var j = 0; j<locations[i].length; j++){
-          if(locations[i][j] === fAddress[terLoc]){
-              foundTherapists.push(therapist);
-          }
-        }
-       }
-       }
-      });
+        var keys = Object.getOwnPropertyNames(locations);
+        keys.forEach(i =>{
+          var fAddress = therapist.address;
+            if(i === searchItem){
+              for(var terLoc = 0; terLoc<fAddress.length; terLoc++){
+                for(var j = 0; j<locations[i].length; j++){
+                  if(locations[i][j] === fAddress[terLoc]){
+                      foundTherapists.push(therapist);
+                  }
+                }
+              }
+            }
+        });
       });
     }
     else {
         foundTherapists = therapists;
     }
+    // Elimina dublurile
+    foundTherapists = foundTherapists.filter((value, index, self) => index === self.findIndex((t) => (t.id === value.id)));
+      
     displayTherapists(foundTherapists);
     showTherapistData(foundTherapists);
 }
@@ -169,6 +175,11 @@ function displayTherapists(therapists) {
         var name = therapist.name;
         var address = therapist.address;
 
+        var loc = [];
+        address.forEach(function(address){
+          loc.push(`<span class="loc-ls">${address}; </span>`);
+        })
+
 
         therapistsHtml += `
             <div class="ts-container" id="${id}" onlcick="showTherapistPage()">
@@ -179,7 +190,7 @@ function displayTherapists(therapists) {
                         </div>
                         <div class="col-10 d-flex row ts-details">
                             <span class="col-12">${name}</span>
-                            <span class="col-12 d-inline-block text-truncate trunc">${address}</span>
+                            <span class="col-12 d-inline-block text-truncate trunc t-loc">${loc}</span>
                         </div>
                     </div>
                 </div>
@@ -191,8 +202,10 @@ function displayTherapists(therapists) {
 }
 
 $(window).resize(function(){
-  if($(window).width() < 995 & $('#txtCheck').text() == "Alege un terapeut din listă" & windowCheck){
+
+  if($(window).width() < 995 & $('#txtCheck').text() == checkText & windowCheck){
     $('#hide-call').removeClass('hide-call');
+    $('#data-on').addClass('hide-call');
     console.log($(window).width() + " " + $('#txtCheck').text() + " " + windowCheck);
   }
 
@@ -201,7 +214,7 @@ $(window).resize(function(){
     $('#hide-call').removeClass('hide-call');
     console.log($(window).width() + " " + $('#close').text() + " " + windowCheck)
   }
-  if($('#txtCheck').text() == "Alege un terapeut din listă" || $('#close').text() == "X"  & windowCheck){
+  if($('#txtCheck').text() == checkText || $('#close').text() == "X"  & windowCheck){
     console.log($('#txtCheck').text() + " " + $('#close').text()+ " " + windowCheck)
     $('#data-on').removeClass('hide-call');
     $('#hide-call').removeClass('hide-call');
@@ -248,6 +261,11 @@ function showTherapistData(therapists) {
             <span class="col-12 fw-bold lead-text">${course}</span>
         </div>`)
     });
+
+    var loc = [];
+    address.forEach(function(address){
+      loc.push(`<span class="loc-ls">${address}; </span>`);
+    })
         // <i class="picture bi bi-person-circle"></i>
     var html =`
         <div class="container p-2 h-100" id="data-on">
@@ -268,8 +286,8 @@ function showTherapistData(therapists) {
                             <div class="titlu">
                               <span>${profession}</span>
                             </div>
-                            <div class="address">
-                              <span>${address}</span>
+                            <div class="specializasion">
+                            <span>${specialization}</span>
                             </div>
                           </div>                                  
                         </div>
@@ -320,8 +338,8 @@ function showTherapistData(therapists) {
                             </div>
                             <hr>
                             <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                              <span class="col-8 fw-bold lead-text">Aprecieri:</span>
-                              <span class="col-4 after-text">*****</span>
+                              <span class="col-8 fw-bold lead-text">Locații:</span>
+                              <div class="col-4 after-text address"></div>
                             </div>
                             <div class="col-12 d-flex row justyfy-content-between align-items-center">
                               <span class="col-8 fw-bold lead-text">Recenzii:</span>
@@ -347,7 +365,7 @@ function showTherapistData(therapists) {
                             </div>
                             <hr>
                             <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <p class="col-12 lead-text">${about}</p>
+                              <p class="col-12 m-0 p-0 lead-text loc-ls">${about}</p>
                             </div>
                             
                           </div>
@@ -362,6 +380,7 @@ function showTherapistData(therapists) {
       
 
       document.querySelector('#cont').innerHTML = html;
+      $('.address').html(loc);
   
     }
 
