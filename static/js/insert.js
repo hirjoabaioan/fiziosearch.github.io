@@ -1,5 +1,6 @@
 function copyToClipboard(){
     var name = $('#name').val();
+    var prename = $('#prename').val();
     var phoneNumber = $('#phoneNumber').val();
     var email = $('#email').val();
     var address = $('#address').val();
@@ -17,6 +18,7 @@ function copyToClipboard(){
             "id": "",<br>
             "picture": ".jpeg",<br>
             "name": "${name}",<br>
+            "prename": "${prename}",<br>
             "phoneNumber": "${phoneNumber}",<br>
             "email": "${email}",<br>
             "address": [${address}],<br>

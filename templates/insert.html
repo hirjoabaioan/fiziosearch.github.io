@@ -12,8 +12,11 @@
 </head>
 <body>
     <div>
-        <label for="name">Nume și prenume: </label><br>
+        <label for="name">Nume: </label><br>
         <input type="text" id="name" name="name"><br>
+
+        <label for="prename">Prenumerenume: </label><br>
+        <input type="text" id="prename" name="prename"><br>
 
         <label for="phoneNumber">Telefon: </label><br>
         <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
@@ -22,7 +25,7 @@
         <input type="text" id="email" name="email"><br><br>
         
         <label for="address">Locație: </label><br>
-        <input type="text" id="address" name="address"><br><br>
+        <textarea name="address" id="address" cols="30" rows="10"></textarea><br><br>
 
         <label for="profession">Profesie: </label><br>
         <input type="text" id="profession" name="profession"><br><br>
@@ -34,10 +37,10 @@
         <input type="text" id="exp" name="exp"><br><br>
  
         <label for="courses">Cursuri: </label><br>
-        <input type="text" id="courses" name="courses"><br><br>
+        <textarea name="courses" id="courses" cols="30" rows="10"></textarea><br><br>
  
         <label for="about">Despre: </label><br>
-        <input type="text" id="about" name="about"><br><br>
+        <textarea name="about" id="about" cols="30" rows="10"></textarea><br><br>
 
         <button type="submit" onclick="copyToClipboard()">Submit</button>
       </div> 
