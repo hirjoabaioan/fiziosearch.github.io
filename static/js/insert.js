@@ -19,12 +19,12 @@ function copyToClipboard(){
             "name": "${name}",<br>
             "phoneNumber": "${phoneNumber}",<br>
             "email": "${email}",<br>
-            "address": ["${address}"],<br>
+            "address": [${address}],<br>
             "profession": "${profession}",<br>
             "specialization": "${specialization}",<br>
             "exp": "${exp}",<br>
             "reviews": "0",<br>
-            "courses": ["${courses}"],<br>
+            "courses": [${courses}],<br>
             "about": "${about}",<br>
             "available": true,<br>
         },
