@@ -239,7 +239,7 @@ function showTherapistData(therapists) {
           var reviews = therapist.reviews;
           var profession = therapist.profession;
           var specialization = therapist.specialization;
-          var exp = today.getFullYear() - new Date(therapist.exp).getFullYear();
+          var exp = (today.getFullYear() - new Date(therapist.exp).getFullYear()) + "&nbsp;ani";
           var about = therapist.about;
           var courses = therapist.courses;
           var address = therapist.address;
@@ -328,7 +328,9 @@ function showTherapistData(therapists) {
                             </div>
                             <div class="col-12 d-flex row align-items-center">
                               <span class="col-8 fw-bold lead-text">Experiență:</span>
-                              <span class="col-4 after-text justify-content-end">${exp}</span>
+                              <div class="col-4 after-text justify-content-start">
+                                <span>${exp}</span>
+                              </div>
                             </div>
                           </div>
                           
