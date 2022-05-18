@@ -173,6 +173,7 @@ function displayTherapists(therapists) {
         var id = therapist.id;
         var pic = therapist.picture;
         var name = therapist.name;
+        var prename = therapist.prename;
         var address = therapist.address;
 
         var loc = [];
@@ -189,7 +190,7 @@ function displayTherapists(therapists) {
                             <img src="../static/images/${pic}" class="profile-picture" alt="profile pic">
                         </div>
                         <div class="col-10 d-flex row ts-details">
-                            <span class="col-12">${name}</span>
+                            <span class="col-12">${name} ${prename}</span>
                             <span class="col-12 d-inline-block text-truncate trunc t-loc">${loc}</span>
                         </div>
                     </div>
@@ -236,6 +237,7 @@ function showTherapistData(therapists) {
           var id = Number(therapist.id);
           var picture = therapist.picture;
           var name = therapist.name;
+          var prename = therapist.prename;
           var reviews = therapist.reviews;
           var profession = therapist.profession;
           var specialization = therapist.specialization;
@@ -247,13 +249,13 @@ function showTherapistData(therapists) {
             $('#cont').removeClass('s-h');
               if($(window).width() < 995)
                 $('#hide-call').addClass('hide-call');
-              createDetails(name, picture, reviews, profession, specialization, exp, about, courses, address);
+              createDetails(name, prename, picture, reviews, profession, specialization, exp, about, courses, address);
           }
       });
     })
   }
   
-  function createDetails(name, picture, reviews,profession, specialization, exp, about, courses, address) {
+  function createDetails(name, prename, picture, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
 
     courses.forEach(function(course){
@@ -279,7 +281,7 @@ function showTherapistData(therapists) {
                             <span class="fw-bolder" id="close">X</span>
                         </div>
                         <div class="col-12 mb-5 name d-flex justify-content-start align-items-center">
-                          <span class="h1">${name}</span>
+                          <span class="h1">${name} ${prename}</span>
                         </div>
                         <div class="col-12 d-flex row datas justify-content-start align-items-center">
                           <div class="col-12">
