@@ -158,8 +158,7 @@ function searchTherapists(){
     // Elimina dublurile
     foundTherapists = foundTherapists.filter((value, index, self) => index === self.findIndex((t) => (t.id === value.id)));
     
-    
-    displayTherapists(foundTherapists);
+    displayTherapists(foundTherapists.sort(()=> Math.random() - 0.5));
     showTherapistData(foundTherapists);
 }
 
