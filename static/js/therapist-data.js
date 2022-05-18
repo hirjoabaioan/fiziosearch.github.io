@@ -257,22 +257,22 @@ let therapists = [{
 
 
 // fara poza
-// { 
-//     "id": "16",
-//     "picture": "profile.jpeg",
-//     "name": "Voica",
-//     "prename": "Florentin Alin",
-//     "phoneNumber": "0762699991",
-//     "email": "voicaalin21@gmail.com",
-//     "address": ["Sector&nbsp;1", "Ilfov","Baneasa", "Sisesti", "1 Mai", "Floreasca", "Dorobanti", "Arcul de Triumf", "Aviatorilor"],
-//     "profession": "Fizioterapeut",
-//     "specialization": "",
-//     "exp": "01.01.2005",
-//     "reviews": "0",
-//     "courses": ["Dynamic tape", "Rockford tape", "OMTRO", "IASTM"],
-//     "about": "",
-//     "available": true,
-// },
+{ 
+    "id": "16",
+    "picture": "Voica.jpeg",
+    "name": "Voica",
+    "prename": "Florentin Alin",
+    "phoneNumber": "0762699991",
+    "email": "voicaalin21@gmail.com",
+    "address": ["Sector&nbsp;1", "Ilfov","Baneasa", "Sisesti", "1 Mai", "Floreasca", "Dorobanti", "Arcul de Triumf", "Aviatorilor"],
+    "profession": "Fizioterapeut",
+    "specialization": "Recuperare traumatică",
+    "exp": "01.01.2005",
+    "reviews": "0",
+    "courses": ["Dynamic tape", "Rockford tape", "OMTRO", "IASTM"],
+    "about": "",
+    "available": true,
+},
 
 { 
     "id": "17",
