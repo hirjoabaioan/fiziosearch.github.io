@@ -344,7 +344,7 @@ let therapists = [{
 
 { 
     "id": "21",
-    "picture": "Paun.jpeg",
+    "picture": "Paun.jpg",
     "name": "Paun",
     "prename": "Ion",
     "phoneNumber": "0737091693",
