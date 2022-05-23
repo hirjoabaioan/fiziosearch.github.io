@@ -35,21 +35,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Găsește un kinetoterapeut la domciliu!">
-    <title>Fizioterapeuți</title>
+    <title>Acasă</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../static/css/navbar.css">
     <link rel="stylesheet" href="../static/css/searchlist.css">
+    <link rel="stylesheet" href="../static/css/register.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../static/js/jquery.js"></script>
-    <script src="../static/js/therapist-data.js"></script>
-    <script src="../static/js/locations.js"></script>
-
-
+   
 </head>
-<body class="custom-scrollbar-css" onload="searchTherapists()">
+<body class="custom-scrollbar-css">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X63TLN"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -80,58 +78,32 @@
                 </div>
             </div>
         </nav>
+
         <div class="d-flex align-items-center justify-content-center row m-0">
             <div class="d-flex row w-100 m-0 p-0">
                 <div class="col-12 p-0" id="up">
                     <div id="banner" class="row justify-content-center align-items-center m-0 p-0">
-                    </div>                    
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="d-flex row justify-content-center align-items-center m-0" id="hide-data">
-                            <div class="col-lg-4 col-sm-0" id="hide-call">
-                                <div class="ts-title d-flex justify-content-start align-items-center p-2">
-                                    <span class="h2">Listă terapeuți</span>
-                                </div>
-                                <div class="ts-list-container">
-                                    <div class="search-container m-4">
-                                        <div class="d-flex justify-content-center align-items-center search" onclick="searchTherapists()" id="myBtn">
-                                            <input id="therapist-name" type="text" placeholder="Introduceți numele">
-                                            <i class="bi bi-arrow-right-circle-fill"></i>
-                                        </div>
-                                    </div>
-                                    <div class="ts-scroll ts-list p-2">
-                                        <!-- <div class="ts-container ts-container-background">
-                                            <div class="d-flex row p-2 ts-info-container">
-                                                <div class="col-4 ts-pic">
-                                                    <img src="../static/images/call-ico.jpg" class="profile-picture" alt="profile pic">
-                                                </div>
-                                                <div class="col-1"></div>
-                                                <div class="col-7 align-items-end ts-details">
-                                                    <span>Nume Prenume</span> <br/>
-                                                    <span></span>
-                                                </div>  
-                                            </div>
-                                        </div> -->
+                    </div>                
+                    <div class="m-0 d-flex row justify-content-center align-items-center">
+                        <div class="col-6 p-5 d-flex justify-content-center align-items-center">
+                            <div class="p-5 d-flex card">
+                                <button type="button" class="but btn btn-success btn-data" id="btn2" onclick="showData()">Înregistrare pacienți</button>
+                            </div>
+                        </div>
 
-                                    </div>
-                                </div>
+                        <div class="col-6 p-5 d-flex justify-content-center align-items-center">
+                            <div class="p-5 d-flex card">
+                                <button type="button" class="but btn btn-success btn-data" id="btn1" onclick="redirectLink()">Înregistrare terapeuți</button>
                             </div>
-                            <div class="col-lg-8 col-md-12 col-sm-12 p-5 s-h m-h b-h d-flex jusify-content-start align-items-top small-hide" id="cont">
-                                <div class="d-flex mt-5 pt-4 jusify-content-start align-items-top" style="width: 500px;" id="startPage">
-                                    <span id="txtCheck">Caută un terapeut în funcție de sectorul sau cartierul în care locuiești!</span>
-                                </div>
-                            </div>
-                        </div>              
+                        </div>
+
+                        <iframe class="hide" onclick="showPhone()" id="show-ifrm" src="https://docs.google.com/forms/d/e/1FAIpQLSfAmH96Xu3JsrpiLmhG1ctzh19TRSO3-NnLEM-kDu5CQi7zdA/viewform?embedded=true" width="640" height="1447" frameborder="0" marginheight="0" marginwidth="0">Se încarcă…</iframe>
                     </div>
-                </div>            
+                </div>
             </div>
         </div>
     </div>
 
-
-
-    <script src="../static/js/index.js"></script>
-
-
-
+    <script src="../static/js/register.js"></script>
 </body>
 </html>

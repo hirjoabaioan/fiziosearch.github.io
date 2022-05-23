@@ -39,6 +39,11 @@ function showNumbers(){
     `;
 
     $('#testing').html(tableCreate);
+    $(window.frameElement).parent().addClass('Adaugat');
+    console.log($(window.frameElement).parent().html());
+    console.log("A");
+    console.log($('#para').text());
+    console.log($('.a-frame')).css('background-color', 'red');
 }
 
 

@@ -14,9 +14,9 @@ function copyToClipboard(){
     var t = "";
     t = `
         <p>
-        {
+        {<br>
             "id": "",<br>
-            "picture": ".jpeg",<br>
+            "picture": "${name}&nbsp;${prename}.jpeg",<br>
             "name": "${name}",<br>
             "prename": "${prename}",<br>
             "phoneNumber": "${phoneNumber}",<br>

@@ -40,7 +40,8 @@ function closeWindow(){
         <span id="txtCheck">Alege un terapeut din listă</span>
     </div>
     `;
-    document.getElementById('cont').innerHTML = replace;
+
+    $('#cont').html(replace);
   // }
   console.log("pass");
   windowCheck = false;
@@ -238,6 +239,8 @@ function showTherapistData(therapists) {
           var picture = therapist.picture;
           var name = therapist.name;
           var prename = therapist.prename;
+          var phoneNumber = therapist.phoneNumber;
+          var email = therapist.email;
           var reviews = therapist.reviews;
           var profession = therapist.profession;
           var specialization = therapist.specialization;
@@ -249,136 +252,132 @@ function showTherapistData(therapists) {
             $('#cont').removeClass('s-h');
               if($(window).width() < 995)
                 $('#hide-call').addClass('hide-call');
-              createDetails(name, prename, picture, reviews, profession, specialization, exp, about, courses, address);
+              createDetails(name, prename, phoneNumber, email, picture, reviews, profession, specialization, exp, about, courses, address);
           }
       });
     })
   }
   
-  function createDetails(name, prename, picture, reviews,profession, specialization, exp, about, courses, address) {
+  function createDetails(name, prename,  phoneNumber, email, picture, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
+    var loc = [];
+    var email = (typeof email === 'undefined' || email === '') ? '' : `<span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">Email:</span>&nbsp;${email}</span>`;
 
-    courses.forEach(function(course){
-        cours.push(`<div class="col-12 d-flex row justyfy-content-start align-items-center">
-            <span class="col-12 fw-bold lead-text">${course}</span>
+    courses.forEach(function(cour){
+        cours.push(`
+        <div class="col-12 d-flex row justyfy-content-start align-items-center">
+            <span class="col-12 fw-bold lead-text">${cour}</span>
         </div>`)
     });
 
-    var loc = [];
-    address.forEach(function(address){
-      loc.push(`<span class="loc-ls">${address}; </span>`);
+
+    address.forEach(function(addr){
+      loc.push(`<span class="loc-ls">${addr}; </span>`);
     })
         // <i class="picture bi bi-person-circle"></i>
     var html =`
         <div class="container p-2 h-100" id="data-on">
-            <div class="d-flex row h-100 t-container">
-                    <div class="col-12 d-flex row justify-content-center align-items-center p-2 t-description">
-                      <div class="d-flex justify-content-center align-items-center col-4 profile-cropper">
-                        <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
-                      </div>
-                      <div class="col-8 d-flex row justify-content-center align-items-center">
-                        <div class="d-flex justify-content-end align-items-center m-0 p-0" onclick="closeWindow()">
-                            <span class="fw-bolder" id="close">X</span>
-                        </div>
-                        <div class="col-12 mb-5 name d-flex justify-content-start align-items-center">
-                          <span class="h1">${name} ${prename}</span>
-                        </div>
-                        <div class="col-12 d-flex row datas justify-content-start align-items-center">
-                          <div class="col-12">
-                            <div class="titlu">
-                              <span>${profession}</span>
-                            </div>
-                            <div class="specializasion">
-                            <span>${specialization}</span>
-                            </div>
-                          </div>                                  
-                        </div>
-                        <div class="col-12 d-flex justify-content-end align-items-center">
-                            <div class="t-contact d-flex">
-                              <div class="d-flex col-12 w-auto justify-content-start align-items-center order-2 box-el">
-                                <button class="but btn btn-primary but-data" id="show" onclick="showData()">Afișează datele</button>
-                              </div>
-                            </div>
-                          </div>  
-                      
-                        <!-- <div class="t-reviews col-12">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
-                       </div> -->
+          
+          <div class="d-flex row h-100 t-container">
+            <div class="d-flex justify-content-end align-items-center" onclick="closeWindow()">
+              <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="col-12 d-flex row justify-content-center align-items-center p-2 t-description">
+              <div class="d-flex justify-content-center align-items-center col-4 profile-cropper">
+                <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
+              </div>
+              <div class="col-8 d-flex row justify-content-center align-items-center">
+                
+                <div class="col-12 mb-5 name d-flex justify-content-start align-items-center">
+                  <span class="h1">${name} ${prename}</span>
+                </div>
+                <div class="col-12 d-flex row datas justify-content-start align-items-center">
+                  <div class="col-12">
+                    <div class="titlu">
+                      <span>${profession}</span>
+                    </div>
+                    <div class="specializasion">
+                    <span>${specialization}</span>
+                    </div>
+                  </div>                                  
+                </div>
+                <div class="col-12 d-flex justify-content-end align-items-center">
+                  <div class="t-contact d-flex">
+                    <div class="d-flex col-12 w-auto justify-content-end align-items-center">
+                      <button class="but btn btn-primary btn-data" id="hide" onclick="showData()">Afișează datele</button>
+                      <div class="hide" id="show-data">
+                        <div class="d-flex row">
+                          <span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">Telefon:</span>&nbsp;${phoneNumber}</span>  
+                          ${email}
+                        </div>                
                       </div>
                     </div>
-                    
-                    
-                    <div class="d-flex col-12 row justify-content-center align-items-center t-about">
-                      <div class="d-flex row ts-scroll  t-list">
-                        <div class="col-12 d-flex row justify-content-between align-items-top">
-                          <div class="col-6 d-flex row sumar justify-content-center align-items-top">
-                            <div class="col-12 d-flex">
-                              <span class="h3 fs-5 fw-bold">Sumar</span>
-                            </div>
-                            <hr>
-                            <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                              <span class="col-8 fw-bold lead-text">Profesie:</span>
-                              <span class="col-4 after-text">${profession}</span>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                              <span class="col-8 fw-bold lead-text">Specializare:</span>
-                              <span class="col-4 after-text justify-content-end">${specialization}</span>
-                            </div>
-                            <div class="col-12 d-flex row align-items-center">
-                              <span class="col-8 fw-bold lead-text">Experiență:</span>
-                              <div class="col-4 after-text justify-content-start">
-                                <span>${exp}</span>
-                              </div>
-                            </div>
-                          </div>
-                          
-                           <div class="col-6 d-flex row sumar justify-content-center align-items-top">
-                            <div class="col-12 d-flex">
-                              <span class="h3 fs-5 fw-bold">Activitate</span>
-                            </div>
-                            <hr>
-                            <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                              <span class="col-8 fw-bold lead-text">Locații:</span>
-                              <div class="col-4 after-text address"></div>
-                            </div>
-                            <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                              <span class="col-8 fw-bold lead-text">Recenzii:</span>
-                              <span class="col-4 after-text justify-content-end">${reviews}</span>
-                            </div>
-                            
-                          </div>
-                        </div>
-                        
-                        <div class="col-12 d-flex pt-5 row justify-content-between align-items-center">
-                          <div class="col-6 d-flex row sumar">
-                            <div class="col-12 d-flex">
-                              <span class="h3 fs-5 fw-bold">Cursuri și acreditări</span>
-                            </div>
-                            <hr>
-                            ${cours}
-                            
-                          </div>
-                          
-                           <div class="col-6 d-flex row sumar">
-                            <div class="col-12 d-flex">
-                              <span class="h3 fs-5 fw-bold">Despre</span>
-                            </div>
-                            <hr>
-                            <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                              <p class="col-12 m-0 p-0 lead-text loc-ls">${about}</p>
-                            </div>
-                            
-                          </div>
-                        </div>
-  
-                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex col-12 row justify-content-center align-items-center t-about">
+              <div class="d-flex row ts-scroll  t-list">
+                <div class="col-12 d-flex row justify-content-between align-items-top">
+                  <div class="col-6 d-flex row sumar justify-content-center align-items-top">
+                    <div class="col-12 d-flex">
+                      <span class="h3 fs-5 fw-bold">Sumar</span>
                     </div>
+                    <hr>
+                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
+                      <span class="col-8 fw-bold lead-text">Profesie:</span>
+                      <span class="col-4 after-text">${profession}</span>
                     </div>
+                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
+                      <span class="col-8 fw-bold lead-text">Specializare:</span>
+                      <span class="col-4 after-text justify-content-end">${specialization}</span>
                     </div>
+                    <div class="col-12 d-flex row align-items-center">
+                      <span class="col-8 fw-bold lead-text">Experiență:</span>
+                      <div class="col-4 after-text justify-content-start">
+                        <span>${exp}</span>
+                      </div>
+                    </div>
+                  </div>      
+                  <div class="col-6 d-flex row sumar justify-content-center align-items-top">
+                    <div class="col-12 d-flex">
+                      <span class="h3 fs-5 fw-bold">Activitate</span>
+                    </div>
+                    <hr>
+                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
+                      <span class="col-8 fw-bold lead-text">Locații:</span>
+                      <div class="col-4 after-text address">
+
+                      </div>
+                    </div>
+                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
+                      <span class="col-8 fw-bold lead-text">Recenzii:</span>
+                      <span class="col-4 after-text justify-content-end">${reviews}</span>
+                    </div> 
+                  </div>
+                </div>
+                <div class="col-12 d-flex pt-5 row justify-content-between align-items-center">
+                  <div class="col-6 d-flex row sumar">
+                    <div class="col-12 d-flex">
+                      <span class="h3 fs-5 fw-bold">Cursuri și acreditări</span>
+                    </div>
+                    <hr>
+                      ${cours}
+                  </div>
+                  <div class="col-6 d-flex row sumar">
+                    <div class="col-12 d-flex">
+                      <span class="h3 fs-5 fw-bold">Despre</span>
+                    </div>
+                    <hr>
+                    <div class="col-12 d-flex row justyfy-content-start align-items-center">
+                      <p class="col-12 m-0 p-0 lead-text loc-ls">${about}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     
       `;
       
@@ -388,12 +387,16 @@ function showTherapistData(therapists) {
   
     }
 
+// $(document).ready(function(){
+//   $('#hide').click(function(){
+//     $('#hide').hide();
+//     $('#show-data').show();
+//   });
+// });
 
 function showData(){
-  $('#show-data').removeClass('hide');
-  $('#hide-data').removeClass('d-flex');
-  $('#hide-data').addClass('hide');
-
+  $('#hide').hide();
+  $('#show-data').show();
 }
 
 function addEmail() {
