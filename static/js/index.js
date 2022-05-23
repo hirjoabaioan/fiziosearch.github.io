@@ -252,13 +252,13 @@ function showTherapistData(therapists) {
             $('#cont').removeClass('s-h');
               if($(window).width() < 995)
                 $('#hide-call').addClass('hide-call');
-              createDetails(name, prename, phoneNumber, email, picture, reviews, profession, specialization, exp, about, courses, address);
+              createDetails(id, name, prename, phoneNumber, email, picture, reviews, profession, specialization, exp, about, courses, address);
           }
       });
     })
   }
   
-  function createDetails(name, prename,  phoneNumber, email, picture, reviews,profession, specialization, exp, about, courses, address) {
+  function createDetails(id, name, prename,  phoneNumber, email, picture, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
     var loc = [];
     var email = (typeof email === 'undefined' || email === '') ? '' : `<span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">Email:</span>&nbsp;${email}</span>`;
@@ -304,7 +304,7 @@ function showTherapistData(therapists) {
                 <div class="col-12 d-flex justify-content-end align-items-center">
                   <div class="t-contact d-flex">
                     <div class="d-flex col-12 w-auto justify-content-end align-items-center">
-                      <button class="but btn btn-primary btn-data" id="hide" onclick="showData()">Afișează datele</button>
+                      <button class="but btn btn-primary btn-data" id="hide ${id}" onclick="showData()">Afișează datele</button>
                       <div class="hide" id="show-data">
                         <div class="d-flex row">
                           <span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">Telefon:</span>&nbsp;${phoneNumber}</span>  
@@ -395,7 +395,7 @@ function showTherapistData(therapists) {
 // });
 
 function showData(){
-  $('#hide').hide();
+  $('.btn-data').hide();
   $('#show-data').show();
 }
 
