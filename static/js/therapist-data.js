@@ -411,8 +411,8 @@ let therapists = [{
 },
 
 {
-    "id": "",
-    "picture": "Buliga Constantin-Mădălin.jpeg",
+    "id": "25",
+    "picture": "Buliga Constantin-Madalin.jpeg",
     "name": "Buliga",
     "prename": "Constantin-Mădălin",
     "phoneNumber": "0761515122",
