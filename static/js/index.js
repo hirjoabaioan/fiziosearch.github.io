@@ -322,7 +322,7 @@ function showTherapistData(therapists) {
               </div>
             </div>
             <div class="d-flex col-12 row justify-content-center align-items-center t-about">
-              <div class="d-flex row ts-scroll  t-list">
+              <div class="d-flex row ts-scroll t-list overflow-auto">
                 <div class="col-12 d-flex row justify-content-between align-items-top">
                   <div class="col-6 d-flex row sumar justify-content-center align-items-top">
                     <div class="col-12 d-flex">

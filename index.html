@@ -61,20 +61,16 @@
                 <a class="navbar-brand ms-5 md-auto" href="#">
                     <img src="static/images/FizioSearch.png" alt="Brand" width="0" height="0" class="d-inline-block align-text-top" id="brand"> <!--#Home-->
                 </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse w-100 order-mr-0" id="navbarNav">
+                </button> -->
+                <div class="d-flex order-mr-0" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Acasă</a> <!--#Home-->
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="templates/contact.html">Contact</a> <!--#Contact-->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="templates/register.html">Înregistrare</a> <!--#Register-->
+                            <a class="nav-link active d-flex" aria-current="page" href="templates/register.html"><!--#Register-->
+                                <i class="bi bi-person-plus"></i>
+                                <span id="n-sm-hide">&nbsp; &nbsp;Înregistrare</span>
+                            </a> 
                         </li>
                     </ul>
                 </div>
@@ -85,13 +81,15 @@
                 <div class="d-flex row w-100 m-0 p-0">
                     <div class="col-12 p-0" id="up">
                         <div id="banner" class="row justify-content-center align-items-center m-0 p-0">
-                            <div class="row d-flex order-1">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <h1 class="banner-txt display-1" id="ft">Caută un terapeut</h1>
-                                </div>
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <h3 class="banner-txt display-4" id="st">în apropiere de tine.</h3>
-                                </div>
+                            <div class="row d-flex justify-content-center align-items-center order-1">
+                                <a href="templates/searchlist.html" class="but btn btn-primary btn-xl m-0 d-flex justify-content-center align-items-center" type="button">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <h1 class="banner-txt display-1" id="ft">Caută un terapeut</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <h3 class="banner-txt display-4" id="st">în apropiere de tine.</h3>
+                                    </div>
+                                </a>
                             </div>
                             <br>
                             <div class="d-flex col-lg-12 mb-4 mb-sm-0 justify-content-center align-items-center order-2 bar-box ">
@@ -126,9 +124,9 @@
                                                 <input type="text" class="inp form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Locația">
                                             </div>
                                         </div> -->
-                                        <div class="d-flex col-12 w-auto justify-content-center align-items-center order-2 box-el">
-                                            <a href="templates/searchlist.html" class="but btn btn-primary btn-lg m-0" type="button">
-                                                <span class="h-1 d-1 fw-bolder">Search</span>
+                                        <div class="d-flex col-12 justify-content-center align-items-center">
+                                            <a href="templates/searchlist.html" class="but btn btn-primary btn-xl m-0 d-flex justify-content-center align-items-center" type="button">
+                                                <span class="h-1 d-1 fs-1 fw-bolder">Search</span>
                                             </a>
                                         </div>
                                     </div>

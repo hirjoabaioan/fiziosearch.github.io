@@ -59,20 +59,16 @@
                 <a class="navbar-brand ms-5 md-auto" href="../index.html">
                     <img src="../static/images/FizioSearch.png" alt="Brand" width="0" height="0" class="d-inline-block align-text-top" id="brand">
                 </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse w-100 order-mr-0" id="navbarNav">
+                </button> -->
+                <div class="d-flex order-mr-0" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Acasă</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="register.html">Înregistrare</a> <!--#Register-->
+                            <a class="nav-link active d-flex" aria-current="page" href="register.html"><!--#Register-->
+                                <i class="bi bi-person-plus"></i>
+                                <span id="n-sm-hide">&nbsp; &nbsp;Înregistrare</span>
+                            </a> 
                         </li>
                     </ul>
                 </div>
@@ -85,19 +81,56 @@
                     <div id="banner" class="row justify-content-center align-items-center m-0 p-0">
                     </div>                
                     <div class="m-0 d-flex row justify-content-center align-items-center">
-                        <div class="col-6 p-5 d-flex justify-content-center align-items-center">
-                            <div class="p-5 d-flex card">
-                                <button type="button" class="but btn btn-success btn-data" id="btn2" onclick="showData()">Înregistrare pacienți</button>
+                        <!-- <div class="col-12 w-50 card d-flex row justify-content-center align-items-center">
+                            <div class="col-6">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="p-5 d-flex card">
+                                        S
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="p-5 d-flex card">
+                                       T 
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <div class="col-12">
+                            <div class="p-3 m-2 d-flex justify-content-center align-items-center">
+                                <div class="card p-5 d-flex justify-content-center align-items-center shadow-sm p-3 mb-5 bg-body rounded">
+                                    <div class="col-12 d-flex row justify-content-center align-items-center">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <div class="p-3 d-flex justify-content-center align-items-center">
+                                                    <button type="button" class="but btn btn-success btn-data" id="btn2" onclick="showData()">Pacienți</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <div class="p-3 d-flex justify-content-center align-items-center">
+                                                    <button type="button" class="but btn btn-success btn-data" id="btn1" onclick="redirectLink()">Terapeuți</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 m-4 d-flex justify-content-center align-items-center">
+                                        <iframe class="" onclick="showPhone()" id="show-ifrm" src="https://docs.google.com/forms/d/e/1FAIpQLSfAmH96Xu3JsrpiLmhG1ctzh19TRSO3-NnLEM-kDu5CQi7zdA/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Se încarcă…</iframe>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-6 p-5 d-flex justify-content-center align-items-center">
-                            <div class="p-5 d-flex card">
-                                <button type="button" class="but btn btn-success btn-data" id="btn1" onclick="redirectLink()">Înregistrare terapeuți</button>
-                            </div>
-                        </div>
-
-                        <iframe class="hide" onclick="showPhone()" id="show-ifrm" src="https://docs.google.com/forms/d/e/1FAIpQLSfAmH96Xu3JsrpiLmhG1ctzh19TRSO3-NnLEM-kDu5CQi7zdA/viewform?embedded=true" width="640" height="1447" frameborder="0" marginheight="0" marginwidth="0">Se încarcă…</iframe>
+                        
+                        
+                        
+                        
                     </div>
                 </div>
             </div>

@@ -61,20 +61,16 @@
                 <a class="navbar-brand ms-5 md-auto" href="../index.html">
                     <img src="../static/images/FizioSearch.png" alt="Brand" width="0" height="0" class="d-inline-block align-text-top" id="brand">
                 </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse w-100 order-mr-0" id="navbarNav">
+                </button> -->
+                <div class="d-flex order-mr-0" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Acasă</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="register.html">Înregistrare</a> <!--#Register-->
+                            <a class="nav-link active d-flex" aria-current="page" href="register.html"><!--#Register-->
+                                <i class="bi bi-person-plus"></i>
+                                <span id="n-sm-hide">&nbsp; &nbsp;Înregistrare</span>
+                            </a> 
                         </li>
                     </ul>
                 </div>
@@ -98,7 +94,7 @@
                                             <i class="bi bi-arrow-right-circle-fill"></i>
                                         </div>
                                     </div>
-                                    <div class="ts-scroll ts-list p-2">
+                                    <div class="ts-scroll ts-list overflow-auto p-2">
                                         <!-- <div class="ts-container ts-container-background">
                                             <div class="d-flex row p-2 ts-info-container">
                                                 <div class="col-4 ts-pic">
