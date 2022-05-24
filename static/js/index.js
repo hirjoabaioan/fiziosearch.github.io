@@ -310,7 +310,7 @@ function showTherapistData(therapists) {
                           <span class="col-12 d-flex justify-content-end align-items-center">
                             <span class="fw-bold">Telefon:</span>&nbsp;
                             <button onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
-                                    <span class="txt">${phoneNumber}</span>
+                                    ${phoneNumber}
                             </button>
                           </span>  
                           ${email}
