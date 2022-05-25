@@ -304,12 +304,12 @@ function showTherapistData(therapists) {
                 <div class="col-12 d-flex justify-content-end align-items-center">
                   <div class="t-contact d-flex justify-content-center align-items-center">
                     <div class="d-flex col-12 w-100 justify-content-end align-items-center">
-                      <button class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()">Afișează datele</button>
+                      <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()">Afișează datele</button>
                       <div class="hide w-100" id="show-data">
                         <div class="d-flex row">
                           <span class="col-12 d-flex justify-content-end align-items-center">
                             <span class="fw-bold">Telefon:</span>&nbsp;
-                            <button onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
+                            <button type="button" onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
                                     ${phoneNumber}
                             </button>
                           </span>  
