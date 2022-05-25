@@ -147,15 +147,12 @@ color: black;
 
 
 .link {
-  color: #dce9fd;
+  color: #5c9dff!important;
   cursor: pointer;
   text-decoration: none;
+  background-color: white;
 }
 
-.arrow-icon {
- 
-
-}
 .link--arrowed .arrow-icon {
   position: relative;
   top: -1px;
@@ -172,4 +169,12 @@ color: black;
 }
 .link--arrowed:hover .arrow-icon--circle {
   stroke-dashoffset: 0;
+}
+
+.link:hover {
+  background-color: #c1d9fd!important;
+}
+
+.linka:hover {
+  color: blue;
 }
