@@ -261,7 +261,14 @@ function showTherapistData(therapists) {
   function createDetails(id, name, prename,  phoneNumber, email, picture, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
     var loc = [];
-    var email = (typeof email === 'undefined' || email === '') ? '' : `<span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">Email:</span>&nbsp;${email}</span>`;
+    var emailText = isNaN((Number(email*1))) ? 'Email' : 'WhatsApp';;
+    console.log(typeof email);
+    var email = (typeof email === 'undefined' || email === '') ? '' : isNaN((Number(email*1))) ? `<span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">${emailText}:</span>&nbsp;${email}</span>`: `<span class="col-12 d-flex justify-content-end align-items-center">
+    <span class="fw-bold">WhatsApp:</span>&nbsp;
+    <button type="button" onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
+            ${phoneNumber}
+    </button>
+  </span>`;
 
     courses.forEach(function(cour){
         cours.push(`
@@ -306,7 +313,7 @@ function showTherapistData(therapists) {
                     <div class="d-flex col-12 w-100 justify-content-end align-items-center">
                       <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()">Afișează datele</button>
                       <div class="hide w-100" id="show-data">
-                        <div class="d-flex row">
+                        <div class="d-flex row p-5 m-2">
                           <span class="col-12 d-flex justify-content-end align-items-center">
                             <span class="fw-bold">Telefon:</span>&nbsp;
                             <button type="button" onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">

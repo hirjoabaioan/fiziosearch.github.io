@@ -23,3 +23,15 @@ function copy(phone) {
 
     return result;
 }
+
+
+setInterval(function(){
+    var change =  $('.change')
+    if(change.hasClass('bi-exclamation-triangle')){
+        change.removeClass('bi-exclamation-triangle');
+        change.addClass('bi-exclamation-triangle-fill')
+    } else if(change.hasClass('bi-exclamation-triangle-fill')){
+        change.removeClass('bi-exclamation-triangle-fill')
+        change.addClass('bi-exclamation-triangle');
+    }
+}, 800);
