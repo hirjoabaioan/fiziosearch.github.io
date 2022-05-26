@@ -446,7 +446,7 @@ let therapists = [{
 
 {
     "id": "27",
-    "picture": "Albu Alina.jpeg", // "Albu Alina.jpeg",
+    "picture": "Albu Alina.jpg",
     "name": "Albu",
     "prename": "Alina",
     "phoneNumber": "0725513899",
@@ -578,5 +578,23 @@ let therapists = [{
     "courses": ["Masaj"],
     "about": "",
     "available": true,
-    },
+},
+
+{
+    "id": "34",
+    "picture": "Demetrescu Cristian-Dragos.jpeg",
+    "name": "Demetrescu",
+    "prename": "Cristian-Dragos",
+    "phoneNumber": "0729604294",
+    "email": "kinetizeyourlife@gmail.com",
+    "address": ["Sector 1", "Sector 3", "Sector 4", "Sector 5", "Comuna Berceni", "Popesti Leordeni"],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie",
+    "exp": "01.01.2018",
+    "reviews": "0",
+    "courses": ["Masaj", "OMTRO"],
+    "about": "",
+    "available": true,
+},
+    
 ];
