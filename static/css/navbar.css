@@ -106,4 +106,8 @@ nav.scroll {
     #n-sm-hide {
         display: none;
     }
+
+    .small {
+        font-size: -1em;
+    }
 }
