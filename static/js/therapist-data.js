@@ -545,4 +545,21 @@ let therapists = [{
     "about": "",
     "available": true,
 },
+
+// {
+//     "id": "32",
+//     "picture": "Hirjoaba Ioan.jpeg",
+//     "name": "Hirjoaba",
+//     "prename": "Ioan",
+//     "phoneNumber": "0754579331",
+//     "email": "hirjoaba.ioan@gmail.com",
+//     "address": ["Sector&nbsp;3", "Titan", "Dristor", "Ozana", "Baba Novac", "Nicolae Grigorescu"],
+//     "profession": "Fizioterapeut",
+//     "specialization": "Recuperare oropedico-traumatica, neurologică și a coloanei vertebrale",
+//     "exp": "01.01.2020",
+//     "reviews": "0",
+//     "courses": ["Dynamic Taping", "Kinesio Taping", "IASTM", "Masaj", "Cupping", "Flossing", "Stretching Global Activ", "Trigger Point", "Terapie Structurală Miofascială", "FNP Concept"],
+//     "about": "",
+//     "available": true,
+// },
 ];
