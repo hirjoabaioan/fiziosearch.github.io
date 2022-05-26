@@ -287,7 +287,7 @@ function showTherapistData(therapists) {
           
           <div class="d-flex row h-100 t-container">
             <div class="d-flex justify-content-end align-items-center" onclick="closeWindow()">
-              <button type="button" class="btn-close" aria-label="Close"></button>
+              <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
             </div>
             <div class="col-12 d-flex row justify-content-center align-items-center p-2 t-description">
               <div class="d-flex justify-content-center align-items-center col-4 profile-cropper">
@@ -311,12 +311,12 @@ function showTherapistData(therapists) {
                 <div class="col-12 d-flex justify-content-end align-items-center">
                   <div class="t-contact d-flex justify-content-center align-items-center">
                     <div class="d-flex col-12 w-100 justify-content-end align-items-center">
-                      <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()">Afișează datele</button>
+                      <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()" name="showData" text="Afișează datele">Afișează datele</button>
                       <div class="hide w-100" id="show-data">
                         <div class="d-flex row p-5 m-2">
                           <span class="col-12 d-flex justify-content-end align-items-center">
                             <span class="fw-bold">Telefon:</span>&nbsp;
-                            <button type="button" onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
+                            <button type="button" onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn" name="showPhone" text="${phoneNumber}">
                                     ${phoneNumber}
                             </button>
                           </span>  
