@@ -263,12 +263,24 @@ function showTherapistData(therapists) {
     var loc = [];
     var emailText = isNaN((Number(email*1))) ? 'Email' : 'WhatsApp';;
     console.log(typeof email);
-    var email = (typeof email === 'undefined' || email === '') ? '' : isNaN((Number(email*1))) ? `<span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">${emailText}:</span>&nbsp;${email}</span>`: `<span class="col-12 d-flex justify-content-end align-items-center">
+    var email = (typeof email === 'undefined' || email === '') ? '' : isNaN((Number(email*1))) ? `<br><span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">${emailText}:</span>&nbsp;${email}</span>`: `
+    <br><span class="col-12 d-flex justify-content-end align-items-center">
     <span class="fw-bold">WhatsApp:</span>&nbsp;
-    <button type="button" onclick="copy(${phoneNumber})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
-            ${phoneNumber}
+    <button type="button" onclick="copy(${email})" id="showPhoneFor_${id}" class="btn btn-sm btn-secondary copy-button d-flex my-btn">
+            ${email}
     </button>
   </span>`;
+
+  var about = (about === 'undefined' || about === '') ? '' : `
+  <div class="col-6 d-flex row sumar">
+    <div class="col-12 d-flex">
+      <span class="h3 fs-5 fw-bold">Despre</span>
+    </div>
+    <hr>
+    <div class="col-12 d-flex row justyfy-content-start align-items-center">
+      <p class="col-12 m-0 p-0 lead-text loc-ls">${about}</p>
+    </div>
+  </div>`
 
     courses.forEach(function(cour){
         cours.push(`
@@ -330,8 +342,8 @@ function showTherapistData(therapists) {
             </div>
             <div class="d-flex col-12 row justify-content-center align-items-center t-about">
               <div class="d-flex row ts-scroll t-list overflow-auto">
-                <div class="col-12 d-flex row justify-content-between align-items-top">
-                  <div class="col-6 d-flex row sumar justify-content-center align-items-top">
+                <div class="col-12 d-flex row justify-content-between align-items-center">
+                  <div class="col-6 d-flex row sumar justify-content-start align-items-top">
                     <div class="col-12 d-flex">
                       <span class="h3 fs-5 fw-bold">Sumar</span>
                     </div>
@@ -351,19 +363,19 @@ function showTherapistData(therapists) {
                       </div>
                     </div>
                   </div>      
-                  <div class="col-6 d-flex row sumar justify-content-center align-items-top">
+                  <div class="col-6 d-flex row sumar justify-content-start align-items-top">
                     <div class="col-12 d-flex">
                       <span class="h3 fs-5 fw-bold">Activitate</span>
                     </div>
                     <hr>
-                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
+                    <div class="col-12 d-flex row justyfy-content-start align-items-center">
                       <span class="col-8 fw-bold lead-text">Locații:</span>
                       <div class="col-4 after-text address">
 
                       </div>
                     </div>
-                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                      <span class="col-8 fw-bold lead-text">Recenzii:</span>
+                    <div class="col-12 d-flex row justyfy-content-start align-items-center">
+                      <span class="col-8 fw-bold lead-text">Număr accesări:</span>
                       <span class="col-4 after-text justify-content-end">${reviews}</span>
                     </div> 
                   </div>
@@ -376,15 +388,7 @@ function showTherapistData(therapists) {
                     <hr>
                       ${cours}
                   </div>
-                  <div class="col-6 d-flex row sumar">
-                    <div class="col-12 d-flex">
-                      <span class="h3 fs-5 fw-bold">Despre</span>
-                    </div>
-                    <hr>
-                    <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                      <p class="col-12 m-0 p-0 lead-text loc-ls">${about}</p>
-                    </div>
-                  </div>
+                  ${about}
                 </div>
               </div>
             </div>
