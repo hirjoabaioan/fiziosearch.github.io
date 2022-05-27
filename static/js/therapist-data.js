@@ -107,7 +107,7 @@ let therapists = [{
     "prename": "Constatin-Albert",
     "phoneNumber": "0764077799",
     "email": "nba_albert@yahoo.com",
-    "address": ["Sector&nbsp;2", "Iancului"],
+    "address": ["Sector&nbsp;1", "Sector&nbsp;2", "Sector&nbsp;3", "Sector&nbsp;4", "Sector&nbsp;5", "Sector&nbsp;6", "Iancului"],
     "profession": "Fizioterapeut",
     "specialization": "Recuperare oropedico-traumatica, neurologică și a coloanei vertebrale",
     "exp": "01.01.2018",

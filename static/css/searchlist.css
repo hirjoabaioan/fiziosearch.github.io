@@ -168,8 +168,12 @@ background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
 
 #close {
     cursor: pointer;
+    height: 30px !important;
 }
 
+.t-description {
+    margin-top: -5em!important;
+}
 
 .profile-cropper {
     width: 150px;
@@ -191,6 +195,9 @@ background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
     margin-top: -4rem;
 }
 
+.contacting {
+    margin-top: -4em!important;
+}
 
 .t-list {
     height: 300px;

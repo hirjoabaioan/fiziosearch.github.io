@@ -272,19 +272,19 @@ function showTherapistData(therapists) {
   </span>`;
 
   var about = (about === 'undefined' || about === '') ? '' : `
-  <div class="col-6 d-flex row sumar">
+  <div class="col-6 d-flex row sumar justyfy-content-start align-items-center">
     <div class="col-12 d-flex">
       <span class="h3 fs-5 fw-bold">Despre</span>
     </div>
     <hr>
-    <div class="col-12 d-flex row justyfy-content-start align-items-center">
+    <div class="col-12 d-flex row justyfy-content-start align-items-top">
       <p class="col-12 m-0 p-0 lead-text loc-ls">${about}</p>
     </div>
   </div>`
 
     courses.forEach(function(cour){
         cours.push(`
-        <div class="col-12 d-flex row justyfy-content-start align-items-center">
+        <div class="col-12 d-flex row justyfy-content-start align-items-top">
             <span class="col-12 fw-bold lead-text">${cour}</span>
         </div>`)
     });
@@ -295,19 +295,18 @@ function showTherapistData(therapists) {
     })
         // <i class="picture bi bi-person-circle"></i>
     var html =`
-        <div class="container p-2 h-100" id="data-on">
-          
+        <div class="container p-2 h-100" id="data-on">\
           <div class="d-flex row h-100 t-container">
-            <div class="d-flex justify-content-end align-items-center" onclick="closeWindow()">
+            <div class="d-flex m-0 justify-content-end align-items-center" onclick="closeWindow()" id="close">
               <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
             </div>
-            <div class="col-12 d-flex row justify-content-center align-items-center p-2 t-description">
-              <div class="d-flex justify-content-center align-items-center col-4 profile-cropper">
+            <div class="col-12 d-flex row justify-content-between align-items-top m-0 p-0 t-description">
+              <div class="d-flex justify-content-center align-items-center col-2 profile-cropper">
                 <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
               </div>
-              <div class="col-8 d-flex row justify-content-center align-items-center">
+              <div class="col-10 d-flex row justify-content-center align-items-top">
                 
-                <div class="col-12 mb-5 name d-flex justify-content-start align-items-center">
+                <div class="col-12 mb-3 name d-flex justify-content-start align-items-center">
                   <span class="h1">${name} ${prename}</span>
                 </div>
                 <div class="col-12 d-flex row datas justify-content-start align-items-center">
@@ -320,7 +319,7 @@ function showTherapistData(therapists) {
                     </div>
                   </div>                                  
                 </div>
-                <div class="col-12 d-flex justify-content-end align-items-center">
+                <div class="col-12 d-flex justify-content-end align-items-top contacting">
                   <div class="t-contact d-flex justify-content-center align-items-center">
                     <div class="d-flex col-12 w-100 justify-content-end align-items-center">
                       <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()" name="showData" text="Afișează datele">Afișează datele</button>
@@ -340,25 +339,25 @@ function showTherapistData(therapists) {
                 </div>
               </div>
             </div>
-            <div class="d-flex col-12 row justify-content-center align-items-center t-about">
-              <div class="d-flex row ts-scroll t-list overflow-auto">
+            <div class="d-inline-block col-12 m-0 p-0 row t-about">
+              <div class="d-flex row ts-scroll t-list m-0 p-0">
                 <div class="col-12 d-flex row justify-content-between align-items-center">
                   <div class="col-6 d-flex row sumar justify-content-start align-items-top">
                     <div class="col-12 d-flex">
                       <span class="h3 fs-5 fw-bold">Sumar</span>
                     </div>
                     <hr>
-                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                      <span class="col-8 fw-bold lead-text">Profesie:</span>
-                      <span class="col-4 after-text">${profession}</span>
+                    <div class="col-12 d-flex row justyfy-content-center align-items-top">
+                      <span class="col-sm-12 fw-bold lead-text">Profesie:</span>
+                      <span class="col-4 ps-4 after-text">${profession}</span>
                     </div>
-                    <div class="col-12 d-flex row justyfy-content-between align-items-center">
-                      <span class="col-8 fw-bold lead-text">Specializare:</span>
-                      <span class="col-4 after-text justify-content-end">${specialization}</span>
+                    <div class="col-12 d-flex row justyfy-content-center align-items-top">
+                      <span class="col-sm-12 fw-bold lead-text">Specializare:</span>
+                      <span class="col-4 ps-4 after-text justify-content-end">${specialization}</span>
                     </div>
-                    <div class="col-12 d-flex row align-items-center">
-                      <span class="col-8 fw-bold lead-text">Experiență:</span>
-                      <div class="col-4 after-text justify-content-start">
+                    <div class="col-12 d-flex row justyfy-content-center align-items-top">
+                      <span class="col-sm-12 fw-bold lead-text">Experiență:</span>
+                      <div class="col-4 ps-4 after-text justify-content-start">
                         <span>${exp}</span>
                       </div>
                     </div>
@@ -368,20 +367,20 @@ function showTherapistData(therapists) {
                       <span class="h3 fs-5 fw-bold">Activitate</span>
                     </div>
                     <hr>
-                    <div class="col-12 d-flex row justyfy-content-start align-items-center">
-                      <span class="col-8 fw-bold lead-text">Locații:</span>
-                      <div class="col-4 after-text address">
+                    <div class="col-12 d-flex row justyfy-content-center align-items-top">
+                      <span class="col-sm-12 fw-bold lead-text">Locații:</span>
+                      <div class="col-12 d-flex row ps-4 after-text address">
 
                       </div>
                     </div>
-                    <div class="col-12 d-flex row justyfy-content-start align-items-center">
+                    <div class="col-12 d-flex row justyfy-content-center align-items-center">
                       <span class="col-8 fw-bold lead-text">Număr accesări:</span>
-                      <span class="col-4 after-text justify-content-end">${reviews}</span>
+                      <span class="col-4 ps-4 after-text justify-content-end">${reviews}</span>
                     </div> 
                   </div>
                 </div>
-                <div class="col-12 d-flex pt-5 row justify-content-between align-items-center">
-                  <div class="col-6 d-flex row sumar">
+                <div class="col-12 d-flex row justify-content-between align-items-center">
+                  <div class="col-6 d-flex row sumar justify-content-start align-items-center">
                     <div class="col-12 d-flex">
                       <span class="h3 fs-5 fw-bold">Cursuri și acreditări</span>
                     </div>
