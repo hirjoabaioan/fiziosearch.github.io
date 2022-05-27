@@ -188,7 +188,7 @@ function displayTherapists(therapists) {
                 <div class="ts-container-background">
                     <div class="d-flex row p-2 justify-content-between align-items-center">
                         <div class="col-2 ms-2 ts-pic d-flex justify-content-center align-items-center">
-                            <img src="../static/images/${pic}" class="profile-picture" alt="profile pic">
+                            <img src="../static/images/profiles/${pic}" class="profile-picture" alt="profile pic">
                         </div>
                         <div class="col-10 d-flex row ts-details">
                             <span class="col-12">${name} ${prename}</span>
@@ -293,7 +293,6 @@ function showTherapistData(therapists) {
     address.forEach(function(addr){
       loc.push(`<span class="loc-ls">${addr}; </span>`);
     })
-        // <i class="picture bi bi-person-circle"></i>
     var html =`
         <div class="container p-2 h-100" id="data-on">\
           <div class="d-flex row h-100 t-container">
@@ -302,7 +301,7 @@ function showTherapistData(therapists) {
             </div>
             <div class="col-12 d-flex row justify-content-between align-items-top m-0 p-2 t-description">
               <div class="d-flex justify-content-center align-items-center col-2 profile-cropper">
-                <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
+                <img src="../static/images/profiles/${picture}" class="profile-picture" alt="profile pic">                         
               </div>
               <div class="col-10 d-flex row justify-content-center align-items-top">
                 
