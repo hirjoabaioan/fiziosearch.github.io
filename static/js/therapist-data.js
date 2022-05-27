@@ -1,4 +1,60 @@
-let therapists = [{
+let therapists = [
+
+/////// Alta zona ///////
+
+// {
+//     "id": "",
+//     "picture": "Hangiu Cosmin.jpeg",
+//     "name": "Hangiu",
+//     "prename": "Cosmin",
+//     "phoneNumber": "0761930377",
+//     "email": "maseur.terapeut@yahoo.com",
+//     "address": ["Iasi",],
+//     "profession": "Tehnician maseur",
+//     "specialization": "Masaj",
+//     "exp": "01.01.2019",
+//     "reviews": "0",
+//     "courses": ["Masaj", ],
+//     "about": "",
+//     "available": true,
+// },
+
+// {
+//     "id": "",
+//     "picture": "Cuzminschi Maria Alexandra.jpeg",
+//     "name": "Cuzminschi",
+//     "prename": "Maria Alexandra",
+//     "phoneNumber": "0731538254",
+//     "email": "maria.alexandracma97@gmail.com",
+//     "address": ["Slobozia" ],
+//     "profession": "Fizioterapeut",
+//     "specialization": "Kinetoterapie, Recuperare ortopedico-traumatica, sportiva si a coloanei vertebrale",
+//     "exp": "01.01.2020",
+//     "reviews": "0",
+//     "courses": ["Dynamic Taping", "Kinesio Taping", "IASTM", "Cupping", "Flossing", "OMTRO", "Tehnici Miotensive", "Trigger Point"],
+//     "about": "",
+//     "available": true,
+// },
+
+// {
+//     "id": "",
+//     "picture": "Veres Bogdan.jpeg",
+//     "name": "Veres",
+//     "prename": "Bogdan",
+//     "phoneNumber": "0741610937",
+//     "email": "kinedbo@gmail.com",
+//     "address": ["Cluj", "Marasti", "Soporului", "Manastur", "Floresti", "Centru", "Intre Lacuri"],
+//     "profession": "Fizioterapeut",
+//     "specialization": "Kinetoterapie, Recuperare neurologica, ortopedico-traumatica, pediatrica, sportiva si a coloanei vertebrale",
+//     "exp": "01.01.2017",
+//     "reviews": "0",
+//     "courses": ["Kinesio Taping", "Trigger Point", "Schroth", "Vojta"],
+//     "about": "",
+//     "available": true,
+// },
+    
+    
+{
     "id": "1",
     "picture": "Dumitrescu.jpeg",
     "name": "Dumitrescu",
@@ -256,7 +312,6 @@ let therapists = [{
 },
 
 
-// fara poza
 { 
     "id": "16",
     "picture": "Voica.jpeg",
@@ -376,6 +431,7 @@ let therapists = [{
     "available": true,
 },
 
+// Dezactivat
 //{ 
 //    "id": "23",
 //    "picture": "Dragu Alexandru.jpeg",
@@ -512,23 +568,6 @@ let therapists = [{
     "available": true,
 },
 
-// {
-//     "id": "",
-//     "picture": "Hangiu Cosmin.jpeg",
-//     "name": "Hangiu",
-//     "prename": "Cosmin",
-//     "phoneNumber": "0761930377",
-//     "email": "maseur.terapeut@yahoo.com",
-//     "address": ["Iasi",],
-//     "profession": "Tehnician maseur",
-//     "specialization": "Masaj",
-//     "exp": "01.01.2019",
-//     "reviews": "0",
-//     "courses": ["Masaj", ],
-//     "about": "",
-//     "available": true,
-// },
-
 {
     "id": "31",
     "picture": "Gologan Olesea.jpeg",
@@ -593,6 +632,74 @@ let therapists = [{
     "exp": "01.01.2018",
     "reviews": "0",
     "courses": ["Masaj", "OMTRO"],
+    "about": "",
+    "available": true,
+},
+
+{
+    "id": "35",
+    "picture": "Dumitrof Alex.jpg",
+    "name": "Dumitrof",
+    "prename": "Alex",
+    "phoneNumber": "0767060747",
+    "email": "alexdumitrof@gmail.com",
+    "address": ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Ilfov", "Chitila", "Bucureștii Noi", "Dorobanților", "Primăverii", "Floreasca"],
+    "profession": "Fizioterapeut",
+    "specialization": "Recuperare neurologica, ortopedico-traumatica, pediatrica, sportiva si a coloanei vertebrale",
+    "exp": "01.01.2010",
+    "reviews": "0",
+    "courses": ["Masaj", "Reflexoterapie", "Osteopatie", "Posturologie", "Recuperare cardiovasculară", "Respirație Posturală", "Încărcare Neuromusculară"],
+    "about": "",
+    "available": true,
+},
+
+{
+    "id": "36",
+    "picture": "Ghita Iulia Luiza.jpeg",
+    "name": "Ghita",
+    "prename": "Iulia Luiza",
+    "phoneNumber": "0761153516",
+    "email": "ghita_luiza@yahoo.com",
+    "address": ["Sector 4", "Sector 5", "Sector 6", "Ilfov", "Rahova", "Militari", "Berceni", "Bragadiru" ],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie, Masaj, Recuperare ortopedico-traumatica si sportiva",
+    "exp": "01.01.2019",
+    "reviews": "0",
+    "courses": ["Dynamic Taping", "Kinesio Taping", "IASTM", "Cupping", "Flossing", "Stretching Global Activ", "Mobility Stick"],
+    "about": "",
+    "available": true,
+},
+
+{
+    "id": "37",
+    "picture": "Dobrescu Iulia.jpeg",
+    "name": "Dobrescu",
+    "prename": "Iulia",
+    "phoneNumber": "0722537753",
+    "email": "iulia.dobrescu95@gmail.com",
+    "address": ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Brancoveanu", "Piata Sudului", "Tineretului", "Dristor"],
+    "profession": "Tehnician Maseur",
+    "specialization": "Masaj",
+    "exp": "01.01.2016",
+    "reviews": "0",
+    "courses": ["Kinesio Taping", "Masaj", "Cupping", "Drenaj limfatic", "Reflexoterapie", "Trigger Point"],
+    "about": "",
+    "available": true,
+},
+
+{
+    "id": "38",
+    "picture": "Stefanescu Ana Maria.jpeg",
+    "name": "Stefanescu",
+    "prename": "Ana Maria",
+    "phoneNumber": "0751168582",
+    "email": "opricescua@gmail.com",
+    "address": ["Sector 4", "Eroii revolutiei", "Constantin Brancoveanu", "Soseaua Giurgiului", "Piata Sudului", "Aparatorii Patriei" ],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie, Masaj",
+    "exp": "01.01.2019",
+    "reviews": "0",
+    "courses": ["Masaj"],
     "about": "",
     "available": true,
 },
