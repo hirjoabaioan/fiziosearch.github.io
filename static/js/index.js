@@ -304,7 +304,7 @@ function showTherapistData(therapists) {
               <div class="d-flex justify-content-center align-items-center col-2 profile-cropper">
                 <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
               </div>
-              <div class="col-10 d-flex row justify-content-center align-items-top">
+              <div class="col-lg-9 col-md-9 col-sm-10 d-flex row justify-content-center align-items-top">
                 
                 <div class="col-12 mb-3 name d-flex justify-content-start align-items-center">
                   <span class="h1">${name} ${prename}</span>
