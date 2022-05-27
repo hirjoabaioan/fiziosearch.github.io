@@ -300,7 +300,7 @@ function showTherapistData(therapists) {
             <div class="d-flex m-0 justify-content-end align-items-center" onclick="closeWindow()" id="close">
               <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
             </div>
-            <div class="col-12 d-flex row justify-content-between align-items-top m-0 p-0 t-description">
+            <div class="col-12 d-flex row justify-content-between align-items-top m-0 p-2 t-description">
               <div class="d-flex justify-content-center align-items-center col-2 profile-cropper">
                 <img src="../static/images/${picture}" class="profile-picture" alt="profile pic">                         
               </div>
