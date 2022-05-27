@@ -103,7 +103,7 @@ nav.scroll {
 
 @media only screen and (max-width: 490px) {
 
-    #n-sm-hide {
+    .n-sm-hide {
         display: none;
     }
 
