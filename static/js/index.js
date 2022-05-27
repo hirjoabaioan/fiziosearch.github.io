@@ -1,33 +1,11 @@
-// var pageURL = $(location).attr("href");
-
-// var pageAdress = "https://hirjoabaioan.github.io/fiziosearch.github.io/"
-// if (pageURL == pageAdress){
-//     $(document).ready(function() {
-//         $('nav').removeClass('sticky-top').addClass('fixed-top');
-//     });
-// }
-
-// $('mainMenu a').on('click', function(e){
-//   e.preventDefault();
-//   insertContent($(this).attr('href'));
-// })
-
-// function insertContent(pageHref){
-//   pageHref = pageHref.replace('#', '');
-//   $.ajax({
-//     url: `templates/${pageHref}.html`,
-//   }).done(function(data){
-//     console.log(data);
-//     $('#pageContent').html(data);;
-//   })
-// }
-// window.onload = insertContent(location.hash);
-
-
-
-
 var windowCheck = true;
 var checkText = "Caută un terapeut în funcție de sectorul sau cartierul în care locuiești!";
+var search = $('#therapist-name');
+search.on('keypress', function(e){
+  if (e.which == 13){
+    searchTherapists()
+  }
+});
 
 function closeWindow(){
   console.log("press");
@@ -59,57 +37,6 @@ function namesList (){
 
 
 
-// function searchTherapists(){
-//     var foundTherapists = [];
-//     var searchItem = $('#therapist-name').val();
-//     var values = therapists
-//     var location = $
-//     if(searchItem){
-//       //cautat dupa nume
-//         therapists.forEach(function(therapist){
-//             var fName = therapist.name;
-//             if (searchItem === fName){
-//                 foundTherapists.push(therapist);
-//             }
-//         });
-//       //cautat dupa locatie
-        
-//         therapists.forEach(function(therapist){
-//           var fAddress = therapist.address;
-//           for(var loc = 0; loc<fAddress.length; loc++){
-//             if(searchItem === fAddress[loc])
-//               foundTherapists.push(therapist);
-//           }
-//         });
-
-        
-//       //cautat dupa sector - daca se cauta sectorul sa arate terapeutii care opereaza in sectorul respectiv chiar daca ei nu au dat sectorul ci doar zona de operare
-//       var keys = Object.getOwnPropertyNames(locations);
-//       console.log(keys);
-//       keys.forEach(i =>{
-//         // compara daca 
-//         for(var j = 0; j<locations[i].length; j++){
-//           cosnole.log(locations[i][j]);
-//           if(locations[i][j] === searchItem){
-//               foundTherapists.push(therapist);
-//           }
-//         }
-//       });
-//     }
-//     else {
-//         foundTherapists = therapists;
-//     }
-
-//     displayTherapists(foundTherapists);
-//     showTherapistData(foundTherapists);
-// }
-
-var search = $('#therapist-name');
-search.on('keypress', function(e){
-  if (e.which == 13){
-    searchTherapists()
-  }
-});
 
 function searchTherapists(){
     var foundTherapists = [];
@@ -401,12 +328,6 @@ function showTherapistData(therapists) {
   
     }
 
-// $(document).ready(function(){
-//   $('#hide').click(function(){
-//     $('#hide').hide();
-//     $('#show-data').show();
-//   });
-// });
 
 function showData(){
   $('.btn-data').hide();

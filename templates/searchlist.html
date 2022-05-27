@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fizioterapeuți - Caută terapeuți în apropiere!</title>
+    <meta name="keywords" content="kinetoteapeut, kinetoteapeuti, fizioterapeut, fizioterapeuti, masuer, maseuri, tehnician maseur, terapii alternative, recuperare medicala, domicilii, domiciliu, masaj, masaje, kinetoterapie, fizioterapie, recuperare, pediatrie, recuperare copii, recuperare sportivi, ">
+    <meta name="description" content="Găsește un kinetoterapeut sau un maseur care să vină la tine acasă!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <meta name="facebook:card" content="Găsește un kinetoterapeut sau un maseur care să vină la tine acasă!">
+    <meta name="facebook:site" content="fiziosearch.ro">
+    <meta name="instagram:card" content="Găsește un kinetoterapeut sau un maseur care să vină la tine acasă!">
+    <meta name="instagram:site" content="fiziosearch.ro">
+
+    <meta property="og:description" content="Găsește un kinetoterapeut sau un maseur care să vină la tine acasă!">
+    <meta property="og:locale" content="ro_ro">
+    <meta property="og:site_name" content="Fiziosearch">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fiziosearch - Caută terapeuți în apropiere!">
+    <meta property="og:image", content="https://www.fiziosearch.ro/static/images/facebookImage.png">
+    <meta property="og:url" content="https://www.fiziosearch.ro">
+
+    <link rel="canonical" href="https://www.fiziosearch.ro">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/searchlist.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLX5WQPVRB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,7 +39,6 @@
         
     </script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-224309463-1">
     </script>
     <script>
@@ -22,25 +49,12 @@
         gtag('config', 'UA-224309463-1');
     </script>
 
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-5X63TLN');
     </script>
-    <!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Găsește un kinetoterapeut la domciliu!">
-    <title>Fizioterapeuți</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../static/css/navbar.css">
-    <link rel="stylesheet" href="../static/css/searchlist.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../static/js/jquery.js"></script>
@@ -50,11 +64,9 @@
 
 </head>
 <body class="custom-scrollbar-css" onload="searchTherapists()">
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X63TLN"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="bg-change" class="content-base">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark nav-d scroll" id="nav">
             <div class="container-fluid order-0 container">
