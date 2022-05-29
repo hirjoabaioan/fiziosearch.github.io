@@ -227,10 +227,10 @@ function showTherapistData(therapists) {
               <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
             </div>
             <div class="col-12 d-flex row justify-content-between align-items-top m-0 p-2 t-description">
-              <div class="d-flex justify-content-center align-items-center col-2 profile-cropper">
+              <div class="d-flex justify-content-center align-items-center col-1 profile-cropper">
                 <img src="../static/images/profiles/${picture}" class="profile-picture" alt="profile pic">                         
               </div>
-              <div class="col-10 d-flex row justify-content-center align-items-top">
+              <div class="col-9 d-flex row justify-content-center align-items-top">
                 
                 <div class="col-12 mb-3 name d-flex justify-content-start align-items-center">
                   <span class="h1">${name} ${prename}</span>

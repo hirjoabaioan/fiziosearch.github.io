@@ -237,6 +237,21 @@ background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
     color: #514C4C;
 }
 
+#startPage {
+    margin-top: 5em !important;
+}
+
+.point {
+    size: 20px;
+    position: relative;
+    animation: point 1s infinite;
+}
+
+@keyframes point {
+    0% {left: 0px;}
+    50% {left: 10px;}
+    100% {left: 0px;}
+}
 
 .t-container {
     border: 1px solid #111;
