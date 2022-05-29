@@ -52,6 +52,23 @@ let therapists = [
 //     "about": "",
 //     "available": true,
 // },
+
+// {
+//     "id": "",
+//     "picture": "Oachesu Bianca.jpeg",
+//     "name": "Oachesu",
+//     "prename": "Bianca",
+//     "phoneNumber": "0785545998",
+//     "email": "boachesu@yahoo.com",
+//     "address": ["Timisoara", "Giroci"],
+//     "profession": "Fizioterapeut",
+//     "specialization": "Kinetoterapie și masaj",
+//     "exp": "01.01.2022",
+//     "reviews": "0",
+//     "courses": ["Masaj", "FNP Concept", "Respirație Posturală",],
+//     "about": "",
+//     "available": true,
+// },
     
     
 {
@@ -703,5 +720,24 @@ let therapists = [
     "about": "",
     "available": true,
 },
+
+{
+    "id": "39",
+    "picture": "Constantinescu Bogdan Cosmin.jpeg",
+    "name": "Constantinescu",
+    "prename": "Bogdan Cosmin",
+    "phoneNumber": "0769645511",
+    "email": "bogdan868@yahoo.com",
+    "address": ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Ilfov", "Drumul Taberei"],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie și masaj",
+    "exp": "01.01.2015",
+    "reviews": "0",
+    "courses": ["Dynamic Taping", "Kinesio Taping", "IASTM", "Masaj", "Cupping", "Flossing", "Yumeiho", "Tehnici Miotensive", "Stretching Global Activ", "Trigger Point", "FNP Concept", "Schroth", "Mckenzie", "Recuperare cardiovasculară", "Respirație Posturală", "Încărcare Neuromusculară",],
+    "about": "",
+    "available": true,
+},
+
+
     
 ];
