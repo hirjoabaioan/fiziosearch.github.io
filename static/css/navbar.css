@@ -79,16 +79,16 @@ nav.scroll {
 
 @media screen and (min-width: 1024px){
     #brand {
-        width: 230px;
-        height: 45px;
+        width: 250px;
+        height: 50px;
     }
 
 }
 
 @media screen and (max-width: 1024px) {
     #brand {
-        width: 210px;
-        height: 40px;
+        width: 250px;
+        height: 50px;
     }
 }
 
@@ -96,8 +96,8 @@ nav.scroll {
 @media only screen and (max-width: 700px) {
 
     #brand {
-        width: 160px;
-        height: 35px;
+        width: 180px;
+        height: 40px;
     }
 }
 
