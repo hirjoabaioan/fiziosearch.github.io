@@ -738,6 +738,38 @@ let therapists = [
     "available": true,
 },
 
-
+{
+    "id": "40",
+    "picture": "Coman Sabin Gabriel.jpeg",
+    "name": "Coman",
+    "prename": "Sabin Gabriel",
+    "phoneNumber": "0753061318",
+    "email": "sabincoman98@gmail.com",
+    "address": ["Sector 2", "Sector 3", "Pantelimon", "Branesti"],
+    "profession": "Fizioterapeut",
+    "specialization": "Recuperare traumatica",
+    "exp": "01.01.2020",
+    "reviews": "0",
+    "courses": ["Kinesio Taping", "Dynamic Taping", "IASTM", "Cupping", "Flossing"],
+    "about": "",
+    "available": true,
+},
     
+{
+    "id": "41",
+    "picture": "Rotaru Radu-George.jpeg",
+    "name": "Rotaru",
+    "prename": "Radu-George",
+    "phoneNumber": "0753263411",
+    "email": "george_Vic245@yahoo.com",
+    "address": ["Sector 1", "Sector 2", "Sector 3", "Floreasca", "Arena Nationala"],
+    "profession": "Fizioterapeut",
+    "specialization": "Recupearare ortopedico-traumatica",
+    "exp": "01.01.2020",
+    "reviews": "0",
+    "courses": ["Kinesio Taping", "Dynamic Taping", "IASTM", "Cupping", "Flossing", "Masaj", "Drenaj limfatic"],
+    "about": "",
+    "available": true,
+},
+
 ];
