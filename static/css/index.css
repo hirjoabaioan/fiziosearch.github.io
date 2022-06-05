@@ -28,6 +28,14 @@ body{
     margin-top: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
 
 /*********** Scrollbar ***********/
 
@@ -125,13 +133,53 @@ select,input,button,textarea,button {
 
 /*** footer starts ***/
 
-.footer {
-    flex-shrink: 0;
-    box-shadow: 0px -2px 10px 0px #888888;
+.down {
+  background-color: rgb(20, 20, 20);
 }
 
-#footer_container{
-    background-color: rgb(41, 40, 150);
+.footer {
+  height: 600px;
+  flex-shrink: 0;
+  box-shadow: 0px -2px 10px 0px #888888;
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+.footer-brand img {
+  width: 450px;
+
+}
+
+.descr {
+  font-size: 1.2em;
+}
+
+.fb-a {
+  color: white;
+}
+
+.fb {
+  font-size: 1.4em;
+}
+
+.fb-a:hover {
+  color: rgb(194, 194, 194);
+}
+
+.fb:hover {
+  color: rgb(194, 194, 194);
+}
+
+.ut {
+  font-size: 1.8em;
+}
+
+.utils {
+  font-size: 1.5em;
+}
+
+.utils li a {
+  color: white;
 }
 
 .med {border-radius: 50%;}
@@ -140,7 +188,23 @@ select,input,button,textarea,button {
 color: black;
 }
 
-.copyright {background-color: rgb(0, 0, 0);}
+.line {
+  background-color: white;
+}
+
+.copyright {
+  border-top: 0.5px solid rgb(71, 71, 71);
+  height: 80px;
+  background-color: rgb(20, 20, 20);
+  font-size: 1.2em;
+  color: rgb(128, 128, 128);
+}
+
+.copyright a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: white;
+}
 
 
 /*** animated arrow ***/
@@ -177,4 +241,89 @@ color: black;
 
 .linka:hover {
   color: blue;
+}
+
+.card-ico {
+  width: 200px;
+  height: 200px;
+}
+
+.card-ico img {
+  width: 100%;
+  height: auto;
+}
+
+.section-img-right {
+  height: 600px;
+}
+
+/* .section-img-left {
+  width: 1000px;
+} */
+
+.section-img img {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 1.8em;
+}
+
+.card-info-text {
+  color: rgb(145, 145, 145);
+  font-size: 1.3em;
+}
+
+.single {
+  font-size: 1.6em;
+}
+
+@media screen and (max-width: 1490px) {
+  .section-img-right {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .section-img-resize {
+    width: 1000px;
+  }
+
+  .footer-brand img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .footer-brand img {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .section-img-resize {
+    width: 1000px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .o-xs {
+    order: 1!important;
+  }
+  .section-img-resize {
+    order: 0!important;
+  }
+
+  .footer-brand img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section-img-resize {
+    width: 1000px;
+    height: 200px;
+  }
 }
