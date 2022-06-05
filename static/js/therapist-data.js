@@ -235,9 +235,9 @@ let therapists = [
     "profession": "Fizioterapeut",
     "specialization": "Recuperare oropedico-traumatica și a coloanei vertebrale",
     "exp": "01.01.2014",
-    "reviews": "0",
+    "reviews": "2",
     "courses": ["IASTM", "Cupping", "Kinesio Taping", "Yumeiho", "Osteopatie"],
-    "about": "2",
+    "about": "",
     "available": true,
 },
 
@@ -322,7 +322,7 @@ let therapists = [
     "profession": "Fizioterapeut",
     "specialization": "Recuperarea coloanei vertebrale si Masaj",
     "exp": "01.01.2016",
-    "reviews": "4",
+    "reviews": "5",
     "courses": ["Curs diagnosticare prin extra-simturi", "Radiestezie", "Reiki", "Metafizica chineza", "Masaj terapeutic", "Reflexoterapie",],
     "about": "Abordez procesul de vindecare multidimensional, pentru ca suntem formati din trinitatea corp fizic- minte- suflet. Lucrez pe traume psiho-emotionale care se manifesta in plan fizic prin durere, contracturi etc. ",
     "available": true,
@@ -664,7 +664,7 @@ let therapists = [
     "profession": "Fizioterapeut",
     "specialization": "Recuperare neurologica, ortopedico-traumatica, pediatrica, sportiva si a coloanei vertebrale",
     "exp": "01.01.2010",
-    "reviews": "0",
+    "reviews": "1",
     "courses": ["Masaj", "Reflexoterapie", "Osteopatie", "Posturologie", "Recuperare cardiovasculară", "Respirație Posturală", "Încărcare Neuromusculară"],
     "about": "",
     "available": true,
@@ -715,7 +715,7 @@ let therapists = [
     "profession": "Fizioterapeut",
     "specialization": "Kinetoterapie, Masaj",
     "exp": "01.01.2019",
-    "reviews": "0",
+    "reviews": "5",
     "courses": ["Masaj"],
     "about": "",
     "available": true,
@@ -757,7 +757,7 @@ let therapists = [
     
 {
     "id": "41",
-    "picture": "Rotaru Radu-George.jpeg",
+    "picture": "Rotaru Radu-George.jpg",
     "name": "Rotaru",
     "prename": "Radu-George",
     "phoneNumber": "0753263411",
@@ -773,3 +773,15 @@ let therapists = [
 },
 
 ];
+
+// List id+names
+// function tNameL(){
+//     var name = [];
+//     var id = [];
+//     therapists.forEach(function(t){
+//         id.push(t.id);
+//         name.push(t.name);
+//     })
+//     console.log(id);
+//     console.log(name);
+// }
