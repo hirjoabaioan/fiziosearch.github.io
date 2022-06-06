@@ -3,19 +3,19 @@
 @charset "UTF-8";
 
 body, html{
-    font: 13px/1.231 Arial, Helvetica, sans-serif;
-    *font-size: small;
-    *font: x-small;
-    width: auto;
-    height: 100%;
+  font: 13px/1.231 Arial, Helvetica, sans-serif;
+  *font-size: small;
+  *font: x-small;
+  width: auto;
+  height: 100%;
 }
 
 body{
-    display: flex;
-    flex-direction: column;
-    background: rgb(255, 255, 255);    /* not all browsers set white as the default background color  */
-    color: #444;         /* color is set to create not too much contrast with the background color */
-    line-height: 1.4;    /* line-height is to ensure that text is legible enough (enough space between the lines) */
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);    /* not all browsers set white as the default background color  */
+  color: #444;         /* color is set to create not too much contrast with the background color */
+  line-height: 1.4;    /* line-height is to ensure that text is legible enough (enough space between the lines) */
 }
 
 .con {
@@ -24,8 +24,8 @@ body{
 }
 
 .content-base {
-    flex: 1 0 auto;
-    margin-top: auto;
+  flex: 1 0 auto;
+  margin-top: auto;
 }
 
 a {
@@ -41,28 +41,28 @@ li {
 
 
 .custom-scrollbar-css {
-    height: 200px;
-  }
+  height: 200px;
+}
   
 .custom-scrollbar-css {
-overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 /* scrollbar width */
 .custom-scrollbar-css::-webkit-scrollbar {
-width: 10px;
+  width: 10px;
 }
 
 /* scrollbar track */
 .custom-scrollbar-css::-webkit-scrollbar-track {
-background: linear-gradient(to top, rgb(191, 241, 255) 0%, rgb(174, 237, 254) 50%);
+  background: linear-gradient(to top, rgb(191, 241, 255) 0%, rgb(174, 237, 254) 50%);
 }
 
 /* scrollbar handle */
 .custom-scrollbar-css::-webkit-scrollbar-thumb {
-border-radius: 1rem;
-background-color: #00d2ff;
-background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+  border-radius: 1rem;
+  background-color: #00d2ff;
+  background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
 }
 
 
@@ -70,65 +70,153 @@ background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
 /*********** Other Global Styles ***********/
 
 select,input,button,textarea,button {
-    font:99% arial,helvetica,clean,sans-serif;
-  }
+  font:99% arial,helvetica,clean,sans-serif;
+}
 
-  pre,code,kbd,samp,tt {
-    font-family:monospace;
-    *font-size:108%;
-    line-height:100%;
-  }
+pre,code,kbd,samp,tt {
+  font-family:monospace;
+  *font-size:108%;
+  line-height:100%;
+}
 
-  h1 {
-      /*18px*/
-      font-size:138.5%;
-  }
-  
-  h2 {
-      /*16px*/
-      font-size:123.1%;
-  }
-  
-  h3 {
-      /*14px*/
-      font-size:108%;
-  }
+h1 {
+  /*18px*/
+  font-size:138.5%;
+}
+
+h2 {
+  /*16px*/
+  font-size:123.1%;
+}
+
+h3 {
+  /*14px*/
+  font-size:108%;
+}
   
 /* margin and padding values are reset for all these elements*/
-  body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td {
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1,h2,h3,h4,h5,h6,p,blockquote{
-      /* top & bottom margin based on font size */
-      margin:1em 0;
-  }
-  
-  h1,h2,h3,h4,h5,h6,strong,th,dt,b {
-      /*bringing boldness back to headers and the strong element*/
-      font-weight:bold;
-  }
-  
-  em,blockquote, q, em, cite, dfn, i, cite, var, address {
-      /*bringing italics back */
-      font-style:italic;
-  }
+body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
 
-  /* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors)
-   */
-  fieldset, img {
-    border: 0;
-  }
+h1,h2,h3,h4,h5,h6,p,blockquote{
+  /* top & bottom margin based on font size */
+  margin:1em 0;
+}
 
-  /* we use margin for hr for the same reason we do for table */
-  hr {
-    margin-right: 30px;
-    margin-left: 30px;
-    border-style: inset;
-    border-width: 1px;
-  }
+h1,h2,h3,h4,h5,h6,strong,th,dt,b {
+  /*bringing boldness back to headers and the strong element*/
+  font-weight:bold;
+}
 
+em,blockquote, q, em, cite, dfn, i, cite, var, address {
+  /*bringing italics back */
+  font-style:italic;
+}
+
+/* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors)
+  */
+fieldset, img {
+  border: 0;
+}
+
+/* we use margin for hr for the same reason we do for table */
+hr {
+  margin-right: 30px;
+  margin-left: 30px;
+  border-style: inset;
+  border-width: 1px;
+}
+
+/**************** Content ****************/
+
+.card-a {
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 0px #cfcfcf;
+  position: relative;
+  bottom: 0px;
+  transition: bottom 0.5s linear;
+}
+
+.card-a:hover {
+  bottom: 20px;
+  color: black;
+}
+
+
+/*** animated arrow ***/
+
+
+.link {
+  color: #5c9dff!important;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: white;
+}
+
+.link--arrowed .arrow-icon {
+  position: relative;
+  top: -1px;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+.link--arrowed .arrow-icon--circle {
+  transition: stroke-dashoffset 0.3s ease;
+  stroke-dasharray: 95;
+  stroke-dashoffset: 95;
+}
+.link--arrowed:hover .arrow-icon {
+  transform: translate3d(5px, 0, 0);
+}
+.link--arrowed:hover .arrow-icon--circle {
+  stroke-dashoffset: 0;
+}
+
+.link:hover {
+  background-color: #c1d9fd!important;
+}
+
+.linka:hover {
+  color: blue;
+}
+
+.card-ico {
+  width: 200px;
+  height: 200px;
+}
+
+.card-ico img {
+  width: 100%;
+  height: auto;
+}
+
+.section-img-right {
+  height: 600px;
+}
+
+/* .section-img-left {
+  width: 1000px;
+} */
+
+.section-img img {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 1.8em;
+}
+
+.card-info-text {
+  color: rgb(145, 145, 145);
+  font-size: 1.3em;
+}
+
+.single {
+  font-size: 1.6em;
+}
 
 
 /*** footer starts ***/
@@ -204,79 +292,6 @@ color: black;
   text-decoration: none;
   font-size: 1.3em;
   color: white;
-}
-
-
-/*** animated arrow ***/
-
-
-.link {
-  color: #5c9dff!important;
-  cursor: pointer;
-  text-decoration: none;
-  background-color: white;
-}
-
-.link--arrowed .arrow-icon {
-  position: relative;
-  top: -1px;
-  transition: transform 0.3s ease;
-  vertical-align: middle;
-}
-.link--arrowed .arrow-icon--circle {
-  transition: stroke-dashoffset 0.3s ease;
-  stroke-dasharray: 95;
-  stroke-dashoffset: 95;
-}
-.link--arrowed:hover .arrow-icon {
-  transform: translate3d(5px, 0, 0);
-}
-.link--arrowed:hover .arrow-icon--circle {
-  stroke-dashoffset: 0;
-}
-
-.link:hover {
-  background-color: #c1d9fd!important;
-}
-
-.linka:hover {
-  color: blue;
-}
-
-.card-ico {
-  width: 200px;
-  height: 200px;
-}
-
-.card-ico img {
-  width: 100%;
-  height: auto;
-}
-
-.section-img-right {
-  height: 600px;
-}
-
-/* .section-img-left {
-  width: 1000px;
-} */
-
-.section-img img {
-  width: 100%;
-  height: auto;
-}
-
-.card-title {
-  font-size: 1.8em;
-}
-
-.card-info-text {
-  color: rgb(145, 145, 145);
-  font-size: 1.3em;
-}
-
-.single {
-  font-size: 1.6em;
 }
 
 @media screen and (max-width: 1490px) {
