@@ -469,7 +469,7 @@ let therapists = [
 {
     "id": "24",
     "picture": "Cicu Cosmin Alexandru.jpg",
-    "name": "Cicu",
+    "name": "Ciucu",
     "prename": "Cosmin Alexandru",
     "phoneNumber": "0773321844",
     "email": "cosminalex653@gmail.com",
