@@ -1,0 +1,170 @@
+body {
+    height: 100%;
+}
+/*********** Other Global Styles ***********/
+
+select,input,button,textarea,button {
+    font:99% arial,helvetica,clean,sans-serif;
+}
+
+pre,code,kbd,samp,tt {
+    font-family:monospace;
+    *font-size:108%;
+    line-height:100%;
+}
+
+h1 {
+    /*18px*/
+    font-size:138.5%;
+}
+
+h2 {
+    /*16px*/
+    font-size:123.1%;
+}
+
+h3 {
+    /*14px*/
+    font-size:108%;
+}
+
+/* margin and padding values are reset for all these elements*/
+body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,blockquote{
+    /* top & bottom margin based on font size */
+    margin:1em 0;
+}
+
+h1,h2,h3,h4,h5,h6,strong,th,dt,b {
+    /*bringing boldness back to headers and the strong element*/
+    font-weight:bold;
+}
+
+em,blockquote, q, em, cite, dfn, i, cite, var, address {
+    /*bringing italics back */
+    font-style:italic;
+}
+
+/* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors)
+*/
+fieldset, img {
+    border: 0;
+}
+
+/* we use margin for hr for the same reason we do for table */
+hr {
+    margin-right: 30px;
+    margin-left: 30px;
+    border-style: inset;
+    border-width: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 0px;
+    margin-top: -150px;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-color:  linear-gradient(rgba(100, 100, 100, 0.452), rgba(255, 255, 255, 0));
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/*********** Scrollbar ***********/
+
+
+.custom-scrollbar-css {
+    height: 200px;
+  }
+  
+.custom-scrollbar-css {
+overflow-y: scroll;
+}
+
+/* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+width: 10px;
+}
+
+/* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+background: linear-gradient(to top, rgb(191, 241, 255) 0%, rgb(174, 237, 254) 50%);
+}
+
+/* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+border-radius: 1rem;
+background-color: #00d2ff;
+background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+}
+
+
+/*********** Container ***********/
+
+.post-card {
+    box-shadow: -2px 1px 10px 3px #cfcfcf;
+}
+
+.post-img {
+    height: 500px;
+    width: 100%;
+}
+
+.post-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.post-categ {
+    color: rgb(168, 168, 70);
+
+}
+
+.post-categ-sg{
+    border-top: 1px solid rgb(168, 168, 70);
+    border-bottom: 1px solid rgb(168, 168, 70);
+}
+
+.post-short {
+    font-size: 0.8em;
+    color: rgb(126, 125, 125);
+}
+
+.post-link a:hover {
+    color: rgb(88, 88, 88);
+}
+
+.sc-holder {
+    background-color: rgb(243, 243, 243);
+    border-radius: 10px;
+}
+
+.sm-card {
+    box-shadow: -2px 1px 10px 3px #cfcfcf;
+    border: 0px;
+}
+
+.logo-card {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-card img {
+    width: 100%;
+    height: auto;
+}
