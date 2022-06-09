@@ -772,6 +772,23 @@ let therapists = [
     "available": true,
 },
 
+{
+    "id": "42",
+    "picture": "Dragoi Cornel.jpeg",
+    "name": "Dragoi",
+    "prename": "Cornel",
+    "phoneNumber": "0723204693",
+    "email": "dragoicornel1986@yahoo.com",
+    "address": ["Sector 1", "Sector 2", "Sector 3", "Sector 4"],
+    "profession": "Fizioterapeut",
+    "specialization": "Recuperare neurologica",
+    "exp": "01.01.2012",
+    "reviews": "0",
+    "courses": ["Beauty Taping", "Dynamic Taping", "Kinesio Taping", "IASTM", "Masaj", "Cupping", "Flossing", "Osteopatie",],
+    "about": "",
+    "available": true,
+},
+
 ];
 
 // List id+names
