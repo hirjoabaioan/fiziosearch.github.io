@@ -120,8 +120,27 @@ let therapists = [
 //     "about": "",
 //     "available": true,
 // },
+
+
+// {
+//     "id": "",
+//     "picture": "Miron Sebastian.jpeg",
+//     "name": "Miron",
+//     "prename": "Sebastian",
+//     "phoneNumber": "0720741341",
+//     "email": "sebastianmiron@yahoo.com",
+//     "address": ["Timisoara"],
+//     "profession": "Fizioterapeut",
+//     "specialization": "Kinetoterapie, Traumatologie, Recuperare sportiva, Recuperarea coloanei vertebrale",
+//     "exp": "01.01.2008",
+//     "reviews": "0",
+//     "courses": ["Kinesio Taping", "Flossing", "Tehnici Miotensive", "Trigger Point", "Terapie Structurală Miofascială", "Mckenzie Posturologie", "Recuperare cardiovasculară", "Respirație Posturală"],
+//     "about": "Fizioterapeut specializat in Danemarca in recuperarea sportiva ",
+//     "available": true,
+// },
     
-    
+
+// București-IF
 {
     "id": "1",
     "picture": "Dumitrescu.jpeg",
@@ -891,7 +910,39 @@ let therapists = [
     "available": true,
 },
 
+{
+    "id": "46",
+    "picture": "Spiridon Ioana.jpg",
+    "name": "Spiridon",
+    "prename": "Ioana",
+    "phoneNumber": "0730725176",
+    "email": "ioana.spiridon93@yahoo.com",
+    "address": ["Sector 1", "Bucureștii Noi", "Pajura", "1 Mai" ],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie, Masaj, Traumatologie, Recuperare sportiva, Recuperarea coloanei vertebrale, Osteopatie",
+    "exp": "01.01.2016",
+    "reviews": "0",
+    "courses": ["Masaj", "Osteopatie", "Tehnici Miotensive", "Terapie Structurală Miofascială", "Posturologie"],
+    "about": "",
+    "available": true,
+},
 
+{
+    "id": "47",
+    "picture": "Rosu Valentin.jpeg",
+    "name": "Rosu",
+    "prename": "Valentin",
+    "phoneNumber": "0728051173",
+    "email": "valentin_rosu96@yahoo.com",
+    "address": ["Sector 1", "Sector 6", "Crangasi", "Militari" ],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie, Neurologie, Traumatologie, Recuperare sportiva, Recuperarea coloanei vertebrale",
+    "exp": "01.01.2018",
+    "reviews": "0",
+    "courses": ["OMTRO", "Stretching Global Activ", "Posturologie", "Recuperare cardiovasculară", "Respirație Posturală"],
+    "about": "",
+    "available": true,
+},
 
 ];
 
