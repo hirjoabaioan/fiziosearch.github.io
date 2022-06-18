@@ -209,6 +209,7 @@ function showTherapistData(therapists) {
           var prename = therapist.prename;
           var phoneNumber = therapist.phoneNumber;
           var email = therapist.email;
+          var web = therapist.web;
           var reviews = therapist.reviews;
           var profession = therapist.profession;
           var specialization = therapist.specialization;
@@ -220,16 +221,16 @@ function showTherapistData(therapists) {
             $('#cont').removeClass('s-h');
               if($(window).width() < 995)
                 $('#hide-call').addClass('hide-call');
-              createDetails(id, name, prename, phoneNumber, email, picture, reviews, profession, specialization, exp, about, courses, address);
+              createDetails(id, name, prename, phoneNumber, email, web, picture, reviews, profession, specialization, exp, about, courses, address);
           }
       });
     })
   }
   
-  function createDetails(id, name, prename,  phoneNumber, email, picture, reviews,profession, specialization, exp, about, courses, address) {
+  function createDetails(id, name, prename,  phoneNumber, email, web, picture, reviews,profession, specialization, exp, about, courses, address) {
     var cours = [];
     var loc = [];
-    var emailText = isNaN((Number(email*1))) ? 'Email' : 'WhatsApp';;
+    var emailText = isNaN((Number(email*1))) ? 'Email' : 'WhatsApp';
     console.log(typeof email);
     var email = (typeof email === 'undefined' || email === '') ? '' : isNaN((Number(email*1))) ? `<br><span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">${emailText}:</span>&nbsp;${email}</span>`: `
     <br><span class="col-12 d-flex justify-content-end align-items-center">
@@ -238,6 +239,10 @@ function showTherapistData(therapists) {
             ${email}
     </button>
   </span>`;
+
+    var web = (typeof web === 'undefined' || web === '') ? '' : `
+      <br>
+        <span class="col-12 d-flex justify-content-end align-items-center"><span class="fw-bold">Adresă web:</span>&nbsp;<a href="${web}">${name} ${prename}</a></span>`;
 
   var about = (about === 'undefined' || about === '') ? '' : `
   <div class="col-6 d-flex row sumar justyfy-content-start align-items-center">
@@ -299,6 +304,7 @@ function showTherapistData(therapists) {
                             </button>
                           </span>  
                           ${email}
+                          ${web}
                         </div>                
                       </div>
                     </div>

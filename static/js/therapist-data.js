@@ -944,6 +944,41 @@ let therapists = [
     "available": true,
 },
 
+{
+    "id": "48",
+    "picture": "Voica Radu Ioan.jpg",
+    "name": "Voica",
+    "prename": "Radu Ioan",
+    "phoneNumber": "0723626278",
+    "web": "https://www.facebook.com/Radu.Ioan.Voica.Fizioterapeut",
+    "email": "voica_radu@hotmail.com",
+    "address": ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6",],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie, Traumatologie, Pediatrie, Recuperare sportivă, Recuperarea coloanei vertebrale",
+    "exp": "01.01.2015",
+    "reviews": "0",
+    "courses": ["Kinesio Taping", "OMTRO", "Stretching Global Activ", "Schroth", "Posturologie"],
+    "about": "",
+    "available": true,
+},
+
+{
+    "id": "49",
+    "picture": "Dragnea Eveline.jpg",
+    "name": "Dragnea",
+    "prename": "Eveline",
+    "phoneNumber": "0723045480",
+    "email": "eveline.dragnea@gmail.com",
+    "address": ["Sector 6", "Drumul Taberei"],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie",
+    "exp": "01.01.2021",
+    "reviews": "0",
+    "courses": ["Masaj"],
+    "about": "",
+    "available": true,
+},
+
 ];
 
 // List id+names
