@@ -294,7 +294,7 @@ function showTherapistData(therapists) {
                 <div class="col-12 d-flex justify-content-end align-items-top contacting">
                   <div class="t-contact d-flex justify-content-center align-items-center">
                     <div class="d-flex col-12 w-100 justify-content-end align-items-center">
-                      <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()" name="showData" text="Afișează datele">Afișează datele</button>
+                      <button type="button" class="but btn btn-primary btn-data" id="showDataFor_${id}" onclick="showData()" name="showData" text="Afișează datele">Afișează numărul de telefon</button>
                       <div class="hide w-100" id="show-data">
                         <div class="d-flex row p-5 m-2">
                           <span class="col-12 d-flex justify-content-end align-items-center">
