@@ -304,6 +304,10 @@ background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
     margin-top: -100px;
 }
 
+.t-contact{
+    margin-top: 0px !important;
+}
+
 .email-container button {
     padding: 10px;
     margin-top: 10px;
@@ -395,5 +399,11 @@ background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
     .loc-ls {
         font-size: 11px;
     }
+
+@media screen and (max-width: 550px) {
+    .t-contact{
+        margin-top: 40px !important;
+    }
+}
 
 }
