@@ -138,6 +138,23 @@ let therapists = [
 //     "about": "Fizioterapeut specializat in Danemarca in recuperarea sportiva ",
 //     "available": true,
 // },
+
+// {
+//     "id": "",
+//     "picture": "Aurel.jpeg",
+//     "name": "",
+//     "prename": "Aurel",
+//     "phoneNumber": "0743865026",
+//     "email": "maseurterapeutaurel@gmail.com",
+//     "address": ["Iasi"],
+//     "profession": "Tehnician maseur",
+//     "specialization": "Kinetoterapie, Masaj,Recuperare sportiva, Recuperarea coloanei vertebrale",
+//     "exp": "01.01.2016",
+//     "reviews": "0",
+//     "courses": ["Masaj", "Cupping", "Drenaj limfatic", "Reflexoterapie", "Osteopatie"],
+//     "about": "",
+//     "available": true,
+// },
     
 
 // București-IF
@@ -683,7 +700,7 @@ let therapists = [
     "profession": "Fizioterapeut",
     "specialization": "Recuperare oropedico-traumatica, neurologică și a coloanei vertebrale",
     "exp": "01.01.2018",
-    "reviews": "0",
+    "reviews": "1",
     "courses": ["Dynamic Taping", "Kinesio Taping", "IASTM", "FMT Blades Advanced IASTM", "Masaj", "Cupping", "Flossing", "Stretching Global Activ", "Terapie Structurală Miofascială"],
     "about": "",
     "available": true,
@@ -978,6 +995,23 @@ let therapists = [
     "about": "",
     "available": true,
 },
+
+{
+    "id": "50",
+    "picture": "Hotnog Andreea Ramona.jpg",
+    "name": "Hotnog",
+    "prename": "Andreea Ramona",
+    "phoneNumber": "0760585689",
+    "email": "ramona.andreea32@yahoo.ro",
+    "address": ["Sector 2", "Sector 3"],
+    "profession": "Fizioterapeut",
+    "specialization": "Kinetoterapie, Neurologie, Traumatologie, Recuperare sportiva",
+    "exp": "01.01.2016",
+    "reviews": "0",
+    "courses": ["Dynamic Taping", "Kinesio Taping", "IASTM", "Masaj", "Cupping", "Flossing", "Trigger Point", "Terapie Structurală Miofascială"],
+    "about": "",
+    "available": true,
+    },
 
 ];
 
