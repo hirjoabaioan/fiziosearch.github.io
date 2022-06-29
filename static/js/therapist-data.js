@@ -420,23 +420,23 @@ let therapists = [
     "available": true,
 },
 
-
-{ 
-    "id": "16",
-    "picture": "Voica.jpeg",
-    "name": "Voica",
-    "prename": "Florentin Alin",
-    "phoneNumber": "0762699991",
-    "email": "voicaalin21@gmail.com",
-    "address": ["Sector&nbsp;1", "Ilfov","Baneasa", "Sisesti", "1 Mai", "Floreasca", "Dorobanti", "Arcul de Triumf", "Aviatorilor"],
-    "profession": "Fizioterapeut",
-    "specialization": "Recupearare ortopedico-traumatica",
-    "exp": "01.01.2005",
-    "reviews": "0",
-    "courses": ["Dynamic Taping", "Kinesio Taping", "OMTRO", "IASTM"],
-    "about": "",
-    "available": true,
-},
+// CTK
+// { 
+//     "id": "16",
+//     "picture": "Voica.jpeg",
+//     "name": "Voica",
+//     "prename": "Florentin Alin",
+//     "phoneNumber": "0762699991",
+//     "email": "voicaalin21@gmail.com",
+//     "address": ["Sector&nbsp;1", "Ilfov","Baneasa", "Sisesti", "1 Mai", "Floreasca", "Dorobanti", "Arcul de Triumf", "Aviatorilor"],
+//     "profession": "Fizioterapeut",
+//     "specialization": "Recupearare ortopedico-traumatica",
+//     "exp": "01.01.2005",
+//     "reviews": "0",
+//     "courses": ["Dynamic Taping", "Kinesio Taping", "OMTRO", "IASTM"],
+//     "about": "",
+//     "available": true,
+// },
 
 { 
     "id": "17",
