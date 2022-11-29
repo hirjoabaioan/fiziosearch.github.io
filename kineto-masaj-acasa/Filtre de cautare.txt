@@ -1,0 +1,83 @@
+Posibilitatea să adăugăm mai multe Servicii/Terapii/Specializări în viitor. Atunci când terapeuții își aleg ce specializări au și ce terapii fac, au posibilitatea să pună și alte terapii/specializări care nu se regăsesc în liste (eventual le verificăm noi, dacă sunt ok și corecte și le adăugăm în aceste liste).
+Specializările și Terapiile sunt pentru cei care doresc să caute ceva anume. Putem pune un tracker să vedem câte persoane folosesc aceste 2 filtre de căutare.
+
+Ordinea filtrelor: Servicii --> Specializări (info dacă nu cunoaște specilizarea, poate lăsa gol) --> Terapii (info dacă nu cunoaște terapia, poate lăsa gol)
+
+Servicii:
+    - Maseur
+    - Fizioterapeut
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Speciliazări maseur: NaN
+
+Terapii maseur:
+    - Masaj (preselectată dacă se alege masuer ca serviciu)
+    - Masaj de relaxare
+    - Masaj terapeutic
+    - Masaj anticelulitic
+    - Masaj de drenaj limfatic
+    - Reflexoterapie
+    - Cupping
+    - Masaj cu miere
+    - Masaj cu bambus
+    - Acupunctură
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Specializări:
+    - Kinetoterapie (preselectată dacă s-a ales fizioterapeut la servicii - daca se poate)
+    - Masaj (preselectată dacă s-a ales masaj la servicii - daca se poate)
+    - Cardiologie
+    - Balnceologie
+    - Geriartrie
+    - Limfedem
+    - Neurologie
+    - Pediatrie
+    - Traumatologie
+    - Recuperare sportivă
+
+
+
+Terapii fizioterapeut (dacă reușești să faci să apară terapiile în funcție de specializări, aceste terapii vor apărea dacă nu se alege o specializare):
+    - Kinetoterapie (preselectată daca se alege fizioterapeut ca serviciu)
+    - Acupunctură
+    - Aplicări benzi
+    - Chiropraxie
+    - Cupping
+    - Dry Needling
+    - Electroterapie
+    - IASTM
+    - Masaj
+    - Masaj terapeutic
+    - Masaj de drenaj limfatic
+    - McKenzie
+    - Osteopatie
+    - Reflexotierapie
+    - Schrot
+    - Terapie manuală
+    - Trigger point
+    - Vojta
+    - Yumeiho
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Nu sunt obligatorii:
+
+Dacă reușești să apară și terapiile în funcție de specializări, putem pune anumite terapii în funcție de specializări:
+    - Pediatrie: toate terapiile de mai sus FĂRĂ:
+        - Acupunctură 
+        - Chiropraxie 
+        - Dry Needling
+        - Electroterapie (în special aceasta, având în vedere că nu se face electroterapie pe copiii până-n 14 ani, decât sub îndrumarea și cu acordul unui medic)
+        - Osteopatie
+        - Trigger point
+	  - Yumeiho
+
+    - Geriartrie: toate terapiile FĂRĂ:
+        - Vojta
+        - Alte terapii care vor fi adresate doar copiilor

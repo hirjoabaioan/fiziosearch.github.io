@@ -1,0 +1,354 @@
+/* Generale */
+html {
+    font-size: 1.2rem;
+    height: 100%;
+}
+
+body {
+    font-family: 'Times New Roman', serif !important;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited{
+    background-color: #108F96 !important;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0e686d !important;
+}
+
+.btn-secondary, .btn-secondary:active, .btn-secondary:visited{
+    background-color: #F6F7F8 !important;
+    border: none;
+    color: black !important;
+}
+
+.btn-secondary:hover {
+    background-color: #e4e4e4 !important;
+    color: black !important;
+    border: none;
+}
+
+body {
+    height: 100%;
+}
+
+.dropdown-item {
+    text-align: left !important;
+}
+
+/* footer {
+    position: fixed;
+} */
+
+
+/** În pagină **/
+
+/* Navigația */
+.nav-link {
+    font-size: 1.2rem !important;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: 6vh;
+}
+
+.auth-img {
+    width: 80%;
+    height: 100%;
+}
+
+.auth-show-name {
+    display: none !important;
+}
+
+#auth-link {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Conținut Pagina principală*/
+.upper-text {
+    background-color: #108F96;
+    color: white;
+}
+
+.wide-text {
+    margin-top: 4vh;
+    color: white;
+}
+
+.cover{
+    background-color: rgba(0, 0, 0, 0.281);
+}
+
+.banner {
+    width: 100%;
+    height: 60vh;
+    background-image: url("img/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: 150% 150%;
+    background-position-y: 50%;
+    background-position-x: 50%;
+}
+
+.form-container {
+    margin-top: 16vh;
+    width: 80vw;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 30px; 
+}
+
+
+/* .form-container div button{
+    width: 80% !important;
+} */
+
+/* .down-scroll {
+
+} */
+
+
+.card-img-top {
+    width: 100%;
+    height: 50%;
+}
+
+.arrow {
+    width: 3%;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    
+}
+
+.arrow-invert {
+    width: 6%;
+    margin-left: 10%;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+/* Înregistrare și Autentificare */
+
+.img-hide {
+    display: none;
+}
+
+.register-title {
+    font-weight: bold !important;
+}
+
+.register-subtitle {
+    font-weight: light !important;
+    font-size: 0.5em !important;
+}
+
+.form-control, .form-control:active, .form-control:focus, .form-control:focus:active {
+    background-color: #108F96;
+    /* border-color: #108F96; */
+    border-radius: 30px;
+    color: white;
+}
+
+.form-text {
+    font-size: 0.6rem;
+    color: red;
+}
+
+.register-buton button{
+    border-radius: 100px !important; /*verificĂ aici*/
+}
+
+
+::placeholder {
+    color: white !important;
+    opacity: 1 !important;
+  }
+  
+:-ms-input-placeholder {
+   color: white !important;
+  }
+  
+::-ms-input-placeholder {
+   color: white !important;
+  }
+
+/* Despre kineto și masaj */
+
+.servicii-title {
+    color: #108F96;
+    font-weight: bold;
+    border-bottom: 3px solid #108F96;
+    line-height: 180%;
+    padding-right: 10%;
+}
+
+.servicii-imagine img {
+    width: 70%;
+    height: 35vh;
+    border-radius: 147% 106% 97% 106%;
+}
+
+.servicii-header {
+    font-weight: bold;
+}
+
+.servicii-subheader {
+    font-weight: bold;
+    color: #108F96;
+}
+
+.servicii-button button {
+    border-radius: 50px;
+}
+
+.servicii-button button a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Breakpoints */
+@media only screen and (max-width:360px){
+    .navbar-brand img {
+        height: 5vh;
+        margin-left: 10%;
+    }
+
+    .navbar-toggler-icon {
+        width: 1em !important;
+        height: 1em !important;
+    }
+
+    #auth-img {
+        width: 60%;
+    }
+}
+
+@media all and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+
+    .navbar-brand img {
+        height: 10vh;
+    }
+
+    .upper-text h1{
+        font-size: 150%;
+    }
+
+    .banner {
+        height: 100vh;
+    }
+
+    .form-container {
+        margin-top: 25vh;
+        width: 80vh;
+        border-radius: 30px; 
+    }
+
+    /* .form-container div button{
+        width: 80% !important;
+    } */
+
+    .img-hide {
+        width: 15vw !important;
+    }
+
+    .servicii-imagine img{
+        width: 50%;
+        height: 60vh;
+    }
+}
+
+@media only screen and (min-width: 790px){
+    
+    .navbar-brand img {
+        width: 100%;
+    }
+
+    .auth-show-name {
+        display: flex !important;
+        font-size: 0.85em;
+    }
+
+    .upper-text h1{
+        visibility: hidden;
+    }
+    
+    .upper-text {
+        height: 2vh;
+        background-color: #cfcfcf;
+        color:#cfcfcf;
+    }
+
+    .banner {
+        height: 70vh;
+        background-image: url("img/banner-w.jpg");
+        background-repeat: no-repeat;
+        background-size: 120% 180%;
+        background-position-y: 90%;
+        background-position-x: 50%;
+    }
+
+    .wide-text {
+        margin-top: 20vh;
+    }
+
+    .form-container {
+        margin-top: 30vh;
+        width: 90vw;
+    }
+
+    .form-container .dropdown select {
+        width: 80% !important;
+    }
+
+    .searchButtonIndex {
+        width: 80% !important;
+    }
+
+    .findout-text {
+        margin-top: -1% !important;
+    }
+
+    .down-scroll {
+        margin-top: 1% !important;
+    }
+
+    .down-scroll img{
+        width: 4%;
+        height: 100%;
+    }
+
+    .pacient {
+        background-image: url("img/pacienti-register.jpg");
+    }
+
+    .terapeut {
+        background-image: url("img/terapeuti-register.jpg")
+    }
+
+    .img-hide {
+        display: block;
+        width: 28vw;
+        height: 60vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0px 150px 0px 0px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .img-hide {
+        width: 20vw;
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    .img-hide {
+        width: 15vw;
+    }
+}
