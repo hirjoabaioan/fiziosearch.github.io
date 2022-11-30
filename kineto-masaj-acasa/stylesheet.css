@@ -33,6 +33,10 @@ body {
     height: 100%;
 }
 
+.dropdown-menu {
+    text-align: center !important;
+}
+
 .dropdown-item {
     text-align: left !important;
 }
