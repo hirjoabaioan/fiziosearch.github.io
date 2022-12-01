@@ -6,6 +6,7 @@ html {
 
 body {
     font-family: 'Times New Roman', serif !important;
+    height: 100%;
 }
 
 a {
@@ -33,10 +34,6 @@ a {
     border: none;
 }
 
-body {
-    height: 100%;
-}
-
 .dropdown-menu {
     text-align: center !important;
 }
@@ -45,9 +42,14 @@ body {
     text-align: left !important;
 }
 
-/* footer {
-    position: fixed;
-} */
+footer {
+    color: white;
+    
+}
+
+footer li{
+    list-style-type: none !important;
+}
 
 
 /** În pagină **/
@@ -72,14 +74,18 @@ body {
 }
 
 #auth-link {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: black;
 }
 
 /* Subsolul */
 #footer-brand {
-    width: 70%;
-    height: 80%;
+    width: 100%;
+}
+
+.media-header {
+    font-size: 1rem;
+    color: white;
 }
 
 .social-link {
@@ -88,8 +94,8 @@ body {
 }
 
 .social-img {
-    width: 100%;
-    height: auto;
+    width: 2vh;
+    height: 4vh;
 }
 
 .social-img:hover {
@@ -97,10 +103,34 @@ body {
     -webkit-filter: invert(100%);
 }
 
-.brand-socialmedia h4 {
-    font-size: 1.1em;
-    color: white;
+#footer-menu {
+    text-align: center !important;
 }
+
+.utility-links {
+    text-align: center !important;
+}
+
+#utility-after {
+    display: none !important;
+}
+
+#utility-wide {
+    display: none !important;
+}
+
+.footer-links {
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
 
 /* Conținut Pagina principală*/
 .upper-text {
@@ -151,8 +181,8 @@ body {
 }
 
 .arrow {
-    width: 3%;
-    margin-top: 1.5%;
+    width: 8%;
+    /* margin-top: 1.5%; */
     margin-left: 10%;
     
 }
@@ -240,7 +270,7 @@ body {
 
 .servicii-button button a{
     color: white;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 
@@ -294,6 +324,48 @@ body {
         width: 50%;
         height: 60vh;
     }
+
+    #footer-brand {
+        width: 70%;
+    }
+
+    .media-header {
+        font-size: 1.2rem;
+    }
+
+    .social-img {
+        width: 5vh;
+        height: 9vh;
+    }
+
+    .utility-links ul li{
+        display: inline !important;
+        padding: 1vw!important
+    }
+
+    #utility-before {
+        display: none !important;
+    }
+
+    #utility-after {
+        display: flex !important;
+    }
+}
+
+@media only screen and (orientation: portrait) and (hover: none) and (pointer: coarse) and (min-height: 790px){
+    #utility-before {
+        display: none !important;
+    }
+
+    #utility-after {
+        display: flex !important;
+    }
+
+    .utility-links ul li{
+        display: inline !important;
+        padding: 1vw!important
+    }
+
 }
 
 @media only screen and (min-width: 790px){
@@ -376,6 +448,30 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 0px 150px 0px 0px;
+    }
+
+    #brand-socialmedia {
+        align-items: left !important;
+    }
+
+    #footer-brand {
+        width: 60%;
+    }
+
+    #utility-before {
+        display: none !important;
+    }
+
+    #utility-after {
+        display: none !important;
+    }
+
+    #utility-wide{
+        display: flex !important;
+    }
+
+    #footer-button {
+        width: 50% !important;
     }
 }
 

@@ -52,15 +52,15 @@
     </nav>
 
     <!-- Conținutul -->
-    <div class="d-flex row justify-content-center align-items-center m-0 mt-2 p-2" index="container">
+    <div class="d-flex row justify-content-center align-items-center m-0 mt-2 mb-4 p-2" index="container">
         <div class="d-flex col-12 justify-content-start align-items-center">
             <h1 class="servicii-title">Servicii</h1>
         </div>
         <div class="d-flex col-12 row justify-content-center align-items-center m-0 ">
-            <div class="d-flex col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 justify-content-center align-items-center servicii-imagine">
+            <div class="d-flex col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 justify-content-center align-items-center servicii-imagine">
                 <img src="../img/backtreat.jpg" alt="Servicii">
             </div>
-            <div class="d-flex col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 row justify-content-center align-items-center">
+            <div class="d-flex col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 row justify-content-center align-items-center mt-4">
                 <h1 class="col-12 servicii-header">
                     Programați o ședință cu unul dintre fizioterapeuții de pe platformă
                 </h1>
@@ -82,41 +82,62 @@
         </div>
     </div>
     <!-- Subsol -->
-    <footer class="footer row mt-auto mb-0 ms-0 m-0 py-3 bg-dark">
-        <div class="col-4 row brand-socialmedia">
-            <div class="col-12">
-                <a href="../index.html">
+    <footer class="footer d-flex justify-content-center align-items-center row mt-auto mb-0 ms-0 m-0 py-3 pb-0 bg-dark">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center brand-socialmedia">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <a href="../index.html" class="d-flex justify-content-center align-items-center">
                     <img id="footer-brand" src="../img/Logo-transp-wide-white.png" alt="Kineto și Masaj">
                 </a>
             </div>
-            <div class="col-12 row d-flex justify-content-center align-items-center">
-                <h4 class="text-center">Descoperă-ne și pe:</h4>
-                <a href="" class="social-link">
+            <div class="col-12 row d-flex justify-content-center align-items-center mt-4">
+                <h4 class="text-center media-header">Descoperă-ne și pe:</h4>
+                <a href="" class="social-link, d-flex justify-content-center align-items-center">
                     <img class="social-img" src="../img/facebook.png" alt="Facebook">
                 </a>
                 <!-- <img src="" alt="Instagram"> -->
             </div>
         </div>
-        <div class="col-4">
-            <ul>
-                <li><a href="">Termeni și Condiții</a></li>
-                <li><a href="">Politica de confidențialitate</a></li>
-                <li><a href="">ANPC</a></li>
-            </ul>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center mt-3 mb-3">
+            <a href="#" class="w-75 btn btn-secondary" id="footer-button" type="button">
+                Caută terapeuți
+                <img class="arrow" src="../img/arrow.png" alt="Despre kinetoterapeuți">
+            </a>
         </div>
-        <div class="col-4">
-            <ul>
-                <li><a href="">Acasă</a></li>
-                <li><a href="">Despre noi</a></li>
-                <li><a href="">Contactează-ne</a></li>
-            </ul>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center" id="footer-menu">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex row justify-content-start align-items-center">
+                <ul class="p-0">
+                    <li class="mt-1"><a href="" class="footer-links">Acasă</a></li>
+                    <li class="mt-1"><a href="" class="footer-links">Despre noi</a></li>
+                    <li class="mt-1"><a href="" class="footer-links">Contactează-ne</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex row justify-content-start align-items-center utility-links" id="utility-wide">
+                <ul class="p-0 mt-2">
+                    <li class="mt-2"><a href="" class="footer-links">Politica de confidențialitate</a></li>
+                    <li class="mt-2"><a href="" class="footer-links">Termeni și condiții</a></li>
+                    <li class="mt-2"><a href="" class="footer-links">ANPC</a></li>
+                </ul>
+            </div>
         </div>
-        <p>
-            &copy; 2023 Kineto și Masaj - Terapeuți la tine acasă! | S.C. Home Help Search S.R.L.
-            <a href="">Politica de confidențialitate</a>
-            <a href="">Termeni și condiții</a>
-            <a href="">ANPC</a>
-        </p>
+        <div class="col-12 d-flex row justify-content-center align-items-center copyright mb-0">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-1 d-flex row justify-content-start align-items-center utility-links" id="utility-before">
+                <ul class="p-0 mt-2">
+                    <li class="mt-2"><a href="" class="footer-links">Politica de confidențialitate</a></li>
+                    <li class="mt-2"><a href="" class="footer-links">Termeni și condiții</a></li>
+                    <li class="mt-2"><a href="" class="footer-links">ANPC</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                &copy; 2023 Kineto și Masaj - Terapeuți la tine acasă! | S.C. Home Help Search S.R.L.
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-1 d-flex row justify-content-start align-items-center utility-links" id="utility-after">
+                <ul class="p-0 mt-2">
+                    <li class="mt-2"><a href="" class="footer-links">Politica de confidențialitate</a></li>
+                    <li class="mt-2"><a href="" class="footer-links">Termeni și condiții</a></li>
+                    <li class="mt-2"><a href="" class="footer-links">ANPC</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
 </body>
