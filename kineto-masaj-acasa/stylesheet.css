@@ -6,7 +6,7 @@ html {
 
 body {
     font-family: 'Times New Roman', serif !important;
-    height: 100%;
+    /* height: 100%; */
 }
 
 a {
@@ -369,6 +369,10 @@ footer li{
 }
 
 @media only screen and (min-width: 790px){
+
+    body {
+        height: 65%;
+    }
     
     .navbar-brand img {
         width: 100%;
