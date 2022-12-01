@@ -51,37 +51,100 @@
         </div>
     </nav>
 
-    <!-- Conținutul -->
-    <div class="d-flex row justify-content-center align-items-center m-0 mt-2 mb-4 p-2" index="container">
-        <div class="d-flex col-12 justify-content-start align-items-center">
-            <h1 class="servicii-title">Servicii</h1>
+    <div class="d-flex row justify-content-center h-100 m-0 p-0">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center m-0 p-0" id="lista-container">
+            <div class="col-12 justify-content-center align-items-center">
+                <h2 class="text-center text- register-title">
+                    Listă terapeuți <br>
+                    <small class="text-muted register-subtitle">Găsește terapeutul cel mai apropiat</small>
+                </h2>
+            </div>
+            <div class="col-12 d-flex row justify-content-center align-items-center p-2" id="search">
+                <div class="col-12 input-group p-2" id="search-box">
+                    <input type="text" class="form-control" placeholder="Caută locație sau terapeut..." aria-label="Caută" aria-describedby="addon">
+                    <span class="input-group-text btn btn-success" id="addon">
+                        <img src="../img/search.png" id="search-icon" alt="Caută">
+                    </span>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12" id="">
+                    <div class="d-flex justify-content-center align-content-center col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
+                        <select name="ChooseCounty" onchange="NameOfCountry(this);" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuJudet" data-bs-toggle="dropdown" aria-expanded="false">
+                            <option class="dropdown-menu" aria-labelledby="dropdownMenuJudet">Servicii</option>
+                            <option class="dropdown-item" value="București">București</option>
+                            <option class="dropdown-item" value="Alba">Alba</option>
+                            <option class="dropdown-item" value="Arad">Arad</option>
+                            <option class="dropdown-item" value="Argeș">Argeș</option>
+                            <option class="dropdown-item" value="Bacău">Bacău</option>
+                            <option class="dropdown-item" value="Bihor">Bihor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="d-flex justify-content-center align-content-center col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
+                        <select name="ChooseCounty" onchange="NameOfCountry(this);" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuJudet" data-bs-toggle="dropdown" aria-expanded="false">
+                            <option class="dropdown-menu" aria-labelledby="dropdownMenuJudet">Specializări</option>
+                            <option class="dropdown-item" value="București">București</option>
+                            <option class="dropdown-item" value="Alba">Alba</option>
+                            <option class="dropdown-item" value="Arad">Arad</option>
+                            <option class="dropdown-item" value="Argeș">Argeș</option>
+                            <option class="dropdown-item" value="Bacău">Bacău</option>
+                            <option class="dropdown-item" value="Bihor">Bihor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center" id="lista">
+                <div class="d-flex justify-content-center row terapeut-box">
+                    <div class="col-3 terap-box-pic">
+                        <img src="../img/TopbarProfile.png" alt="Hîrjoabă Ioan">
+                    </div>
+                    <div class="col-7">
+                        <span class="terap-box-name">Hîrjoabă Ioan</span>
+                    </div>
+                    <div class="col-2 terap-box-avail">
+                        O
+                    </div>
+                    <div class="col-12 d-flex terap-box-terap">
+                        <span>Terapii</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="d-flex col-12 row justify-content-center align-items-center m-0 ">
-            <div class="d-flex col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 justify-content-center align-items-center servicii-imagine">
-                <img src="../img/backtreat.jpg" alt="Servicii">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center m-0 p-0" id="informatii">
+            <div class="col-12">
+                <div id="nume">
+                    <img src="" alt="">
+                    <h3>Hîrjoabă Ioan</h3>
+                    <span>O</span>
+                    Locații
+                    <div>
+                        Contact
+                    </div>
+                </div>
             </div>
-            <div class="d-flex col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 row justify-content-center align-items-center mt-4">
-                <h1 class="col-12 servicii-header">
-                    Programați o ședință cu unul dintre fizioterapeuții de pe platformă
-                </h1>
-                <h4 class="col-12 servicii-subheader p-2 text-uppercase">
-                    Toți fizioterapeuții sunt acreditați de către Colegiul Fizioterapeuților din România
-                </h4>
-                <p class="col-12 servicii-para">
-                    Kinetoterapia reprezintă o metodă de tratare a afecțiunilor prin intermediul mișcării și este realizată cu ajutorul unui kinetoterapeut sau fizioterapeut în scopul prevenirii sau recuperării unei afecțiuni și a menținerii unei stări de sănătate cât mai bune.
-                </p>
-                <p class="col-12">
-                    Deși kinetoterapia presupune terapia prin mișcare, iar fizioterapia reprezintă terapia cu ajutorul unor agenți fizici (căldură, curenți, lumină, unde magnetice, etc.) cele două forme de terapie se completează reciproc, iar fizioterapeutul este acreditat să folosească tehnici și echipamente din amândouă în funcție de afecțiunea dumneavoastră.
-                </p>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div id="activitate">
+
+                </div>
+                <div id="recenzii">
+
+                </div>
             </div>
-            <div class="d-flex col-12 justify-content-end align-items-center me-5 servicii-button">
-                <button class="btn btn-primary">
-                    <a href="#">Caută un fizioterapeut</a>
-                </button>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div id="descriere">
+
+                </div>
+                <div id="cursuri">
+
+                </div>
+                <div id="servicii">
+
+                </div>
             </div>
         </div>
     </div>
-    <!-- Subsol -->
+
+        <!-- Subsol -->
     <footer class="footer d-flex justify-content-center align-items-center row mt-auto mb-0 ms-0 m-0 py-3 pb-0 bg-dark">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center brand-socialmedia">
             <div class="col-12 d-flex justify-content-center align-items-center">
@@ -108,7 +171,7 @@
                 <ul class="p-0">
                     <li class="mt-1"><a href="../index.html" class="footer-links">Acasă</a></li>
                     <li class="mt-1"><a href="about-us.html" class="footer-links">Despre noi</a></li>
-                    <li class="mt-1"><a href="contact.html" class="footer-links">Contactează-ne</a></li>
+                    <li class="mt-1"><a href="#" class="footer-links">Contactează-ne</a></li>
                 </ul>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex row justify-content-start align-items-center utility-links" id="utility-wide">
@@ -139,6 +202,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

@@ -1,13 +1,14 @@
 /* Generale */
-html {
-    font-size: 1.2rem;
-    height: 100% !important;
+@font-face {
+    font-family: montserrat;
+    src: url("fonts/montserrat_full_version/Montserrat-Regular.otf");
 }
 
-body {
-    font-family: 'Times New Roman', serif !important;
-    /* height: 100%; */
+html {
+    font-size: 1.2rem;
 }
+
+
 
 a {
     text-decoration: none !important;
@@ -16,6 +17,7 @@ a {
 .btn-primary, .btn-primary:active, .btn-primary:visited{
     background-color: #108F96 !important;
     font-weight: bold;
+    border-radius: 100px !important; /*verificĂ aici*/
 }
 
 .btn-primary:hover {
@@ -26,6 +28,7 @@ a {
     background-color: #F6F7F8 !important;
     border: none;
     color: black !important;
+    border-radius: 100px !important; /*verificĂ aici*/
 }
 
 .btn-secondary:hover {
@@ -293,6 +296,39 @@ footer li{
 }
 
 
+/* About Us */
+
+.aboutus-img {
+    width: 60%;
+    border-radius: 50px;
+}
+
+
+/* Contact */
+
+.contact-title {
+    border-bottom: 3px solid #108F96;
+    padding-bottom: 5%;
+}
+
+.contact-buton {
+    border-top: 3px solid #108F96;
+    padding-top: 5%;
+}
+
+.contact {
+    background-image: url("img/contact.jpg");
+}
+
+
+
+/* Căutare */
+
+#search-icon {
+    height: 20px;
+    width: 20px;
+}
+
 
 /* Breakpoints */
 @media only screen and (max-width:360px){
@@ -369,6 +405,11 @@ footer li{
     #utility-after {
         display: flex !important;
     }
+
+    #aboutus-first {
+        border-right: 3px solid #108F96;
+    }
+    
 }
 
 @media only screen and (orientation: portrait) and (hover: none) and (pointer: coarse) and (min-height: 790px){
@@ -389,9 +430,6 @@ footer li{
 
 @media only screen and (min-width: 790px){
 
-    body {
-        height: 65%;
-    }
     
     .navbar-brand img {
         width: 100%;
@@ -496,6 +534,11 @@ footer li{
     #footer-button {
         width: 50% !important;
     }
+
+    #aboutus-first {
+        border-right: 3px solid #108F96;
+    }
+    
 }
 
 @media only screen and (min-width: 1200px){
