@@ -403,7 +403,7 @@ footer li{
     
 }
 
-#locatii h5 {
+.info-titles {
     font-size: 1rem;
     padding-left: 5%;
     padding-top: 0.4%;
@@ -416,6 +416,16 @@ footer li{
 #locatii span {
     font-size: 0.8rem;
 }
+
+th {
+    text-align: center;
+}
+
+td {
+    border-top: 2px solid #ffffff;
+    text-align: left;
+    padding: 4%;
+  }
 
 
 /* Breakpoints */
