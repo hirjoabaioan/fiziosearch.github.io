@@ -60,38 +60,40 @@
                 </h2>
             </div>
             <div class="col-12 d-flex row justify-content-center align-items-center p-2" id="search">
-                <div class="col-12 input-group p-2" id="search-box">
-                    <input type="text" class="form-control" placeholder="Caută locație sau terapeut..." aria-label="Caută" aria-describedby="addon">
-                    <span class="input-group-text btn btn-success" id="addon">
-                        <img src="../img/search.png" id="search-icon" alt="Caută">
-                    </span>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12" id="">
-                    <div class="d-flex justify-content-center align-content-center col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
-                        <select name="ChooseCounty" onchange="NameOfCountry(this);" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuJudet" data-bs-toggle="dropdown" aria-expanded="false">
-                            <option class="dropdown-menu" aria-labelledby="dropdownMenuJudet">Servicii</option>
-                            <option class="dropdown-item" value="București">București</option>
-                            <option class="dropdown-item" value="Alba">Alba</option>
-                            <option class="dropdown-item" value="Arad">Arad</option>
-                            <option class="dropdown-item" value="Argeș">Argeș</option>
-                            <option class="dropdown-item" value="Bacău">Bacău</option>
-                            <option class="dropdown-item" value="Bihor">Bihor</option>
-                        </select>
+                <form action="" method="">
+                    <div class="col-12 input-group p-2" id="search-box">
+                        <input type="text" class="form-control" placeholder="Caută locație sau terapeut..." aria-label="Caută" aria-describedby="addon">
+                        <span class="input-group-text btn btn-success" id="addon">
+                            <img src="../img/search.png" id="search-icon" alt="Caută">
+                        </span>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="d-flex justify-content-center align-content-center col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
-                        <select name="ChooseCounty" onchange="NameOfCountry(this);" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuJudet" data-bs-toggle="dropdown" aria-expanded="false">
-                            <option class="dropdown-menu" aria-labelledby="dropdownMenuJudet">Specializări</option>
-                            <option class="dropdown-item" value="București">București</option>
-                            <option class="dropdown-item" value="Alba">Alba</option>
-                            <option class="dropdown-item" value="Arad">Arad</option>
-                            <option class="dropdown-item" value="Argeș">Argeș</option>
-                            <option class="dropdown-item" value="Bacău">Bacău</option>
-                            <option class="dropdown-item" value="Bihor">Bihor</option>
-                        </select>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12" id="">
+                        <div class="d-flex justify-content-center align-content-center col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
+                            <select name="ChooseCounty" onchange="NameOfCountry(this);" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuJudet" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="" aria-labelledby="dropdownMenuJudet">Servicii</option>
+                                <option class="" value="București">București</option>
+                                <option class="" value="Alba">Alba</option>
+                                <option class="" value="Arad">Arad</option>
+                                <option class="" value="Argeș">Argeș</option>
+                                <option class="" value="Bacău">Bacău</option>
+                                <option class="" value="Bihor">Bihor</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="d-flex justify-content-center align-content-center col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
+                            <select name="ChooseCounty" onchange="NameOfCountry(this);" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuJudet" data-bs-toggle="dropdown" aria-expanded="false">
+                                <option class="dropdown-menu" aria-labelledby="dropdownMenuJudet">Specializări</option>
+                                <option class="dropdown-item" value="București">București</option>
+                                <option class="dropdown-item" value="Alba">Alba</option>
+                                <option class="dropdown-item" value="Arad">Arad</option>
+                                <option class="dropdown-item" value="Argeș">Argeș</option>
+                                <option class="dropdown-item" value="Bacău">Bacău</option>
+                                <option class="dropdown-item" value="Bihor">Bihor</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-12 d-flex justify-content-center" id="lista">
                 <div class="d-flex justify-content-center row terapeut-box">
