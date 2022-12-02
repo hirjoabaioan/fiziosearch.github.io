@@ -324,9 +324,97 @@ footer li{
 
 /* Căutare */
 
+#lista-container, #informatii{
+    background-color: #DEE4E8;
+}
+
+#lista-container {
+    border-bottom: 5px solid white;
+}
+
+#informatii {
+    /* display: none !important; */
+}
+
+#lista {
+    border: 2px solid white;
+}
+
 #search-icon {
     height: 20px;
     width: 20px;
+}
+
+.terapeut-box {
+    border-bottom: 2px solid white;
+}
+
+.terap-box-pic {
+
+    width: 20vw;
+    height: 7vh;
+}
+
+.terap-box-pic img {
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+}
+
+.text-truncate {
+    font-size: 0.7rem;
+    max-width: 80%;
+}
+
+
+.text-truncate span::after {
+    content: "...";
+}
+
+.dot{
+    height: 10px;
+    width: 10px;
+    
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.on {
+    background-color: rgb(60, 180, 24);
+}
+
+.off {
+    background-color: rgb(180, 24, 24);
+}
+
+
+#nume h3{
+    font-size: 1.2rem;
+}
+
+#locatii {
+    
+}
+
+#locatii h5 {
+    font-size: 1rem;
+    padding-left: 5%;
+    padding-top: 0.4%;
+    padding-bottom: 0.4%;
+    border-radius: 50px;
+    background-color: #1F5065;
+    color: white;
+}
+
+#locatii span {
+    font-size: 0.8rem;
 }
 
 
