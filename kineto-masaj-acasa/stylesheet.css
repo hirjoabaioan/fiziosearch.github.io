@@ -1,7 +1,7 @@
 /* Generale */
 @font-face {
-    font-family: montserrat;
-    src: url("fonts/montserrat_full_version/Montserrat-Regular.otf");
+    font-family: aileron;
+    src: url("fonts/aileron/Aileron-Regular.otf") !important;
 }
 
 html {
