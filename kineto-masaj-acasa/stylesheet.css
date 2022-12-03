@@ -348,9 +348,7 @@ footer li{
     background-color: #DEE4E8;
 }
 
-#lista-container {
-    border-bottom: 5px solid white;
-}
+
 
 /* #informatii {
     display: none !important;
@@ -782,43 +780,9 @@ td {
         border-radius: 80px 0px 0px 80px !important;
     }
 
-    .register-title{
-        font-size: 3rem;
-    }
-
-    #search-box input {
-        font-size: 1.6rem;
-    }
-
-    #search-button {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    #search-icon {
-        height: 30px;
-        width: 30px;
-    }
-
-    #dropdownSpecializari, #dropdownServicii, .terap-box-container {
-        font-size: 1.8rem;
-    }
-
-    .terap-box-terap {
-        font-size: 1rem;
-    }
-
     .terap-box-pic {
-        width: 4vw;
+        width: 5vw;
         height: 6vh;
-    }
-
-    .terap-box-name {
-        font-size: 2rem;
-    }
-
-    .terap-box-terap {
-        font-size: 1.2rem;
     }
 
     #informatii-header {
@@ -830,45 +794,12 @@ td {
     left: 94% !important;
     }
 
-    #nume h3{
-        font-size: 3rem;
-    }
-
-    .dot {
-        width: 1rem;
-        height: 1rem;
-    }
-
     .info-pic{
 
     }
 
     #informatii {
         border-radius: 0px 80px 80px 0px !important;
-    }
-
-    #informatii h5 {
-        font-size: 1.8rem;
-    }
-
-    #informatii h6 {
-        font-size: 1.6rem;
-    }
-
-    #informatii p, #informatii table {
-        font-size: 1.5rem;
-    }
-
-    #informatii th{
-        font-size: 1.8rem;
-    }
-
-    #informatii td, #informatii span {
-        font-size: 1.5rem;
-    }
-
-    #locatii span, .contact-button, .contact-info > :is(a, button) {
-        font-size: 1.5rem;
     }
 
     #search-telefon::before {
@@ -884,6 +815,13 @@ td {
     }
     
 
+}
+
+@media only screen and (max-width: 1300px){
+    .terap-box-pic {
+        width: 8vw;
+        height: 8vh;
+    }
 }
 
 @media only screen and (min-width: 1200px){
