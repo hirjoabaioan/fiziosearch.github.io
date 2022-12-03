@@ -57,6 +57,27 @@ footer li{
 
 /** În pagină **/
 
+/*********** Scrollbar ***********/
+  
+
+/* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+/* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+    background: linear-gradient(to top, #ffffff 0%, #ffffff 50%);
+}
+
+/* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #47868E;
+    background-image: linear-gradient(to top, #47868E 0%, #47868E 100%);
+}
+
+
 /* Navigația */
 .nav-link {
     font-size: 1.2rem !important;
@@ -208,7 +229,6 @@ footer li{
 }
 
 .register-subtitle {
-    font-weight: light !important;
     font-size: 0.5em !important;
 }
 
@@ -332,12 +352,34 @@ footer li{
     border-bottom: 5px solid white;
 }
 
-#informatii {
-    /* display: none !important; */
-}
+/* #informatii {
+    display: none !important;
+} */
 
 #lista {
-    border: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 50vh;
+}
+
+
+#lista::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+#lista::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #B7B7B7;
+}
+
+/* scrollbar track */
+#lista::-webkit-scrollbar-track {
+    background: white;
+}
+
+
+#search-box input{
+    font-size: .8rem;
 }
 
 #search-icon {
@@ -348,6 +390,11 @@ footer li{
 .terapeut-box {
     border-bottom: 2px solid white;
 }
+
+.terapeut-box:hover {
+    background-color: #d2d8db;
+}
+
 
 .terap-box-pic {
 
@@ -394,6 +441,17 @@ footer li{
     background-color: rgb(180, 24, 24);
 }
 
+#close {
+    cursor: pointer;
+    font-size: 1rem;
+    height: 30px !important;
+    display: block !important;
+    float: right !important;
+    position: relative !important;
+    left: 88% !important;
+    top: 0% !important;
+    width: 1.33% !important;
+}
 
 #nume h3{
     font-size: 1.2rem;
@@ -417,15 +475,52 @@ footer li{
     font-size: 0.8rem;
 }
 
+.msg-button {
+    font-size: 0.8rem;
+    color: black;
+}
+
+#search-recenzii {
+    height: 50vh;
+}
+
+
+#search-recenzii::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+#search-recenzii::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #B7B7B7;
+}
+
+/* scrollbar track */
+#search-recenzii::-webkit-scrollbar-track {
+    background: white;
+}
+
+
 th {
     text-align: center;
 }
 
 td {
-    border-top: 2px solid #ffffff;
-    text-align: left;
+    border-top: 4px solid #ffffff;
     padding: 4%;
-  }
+    font-size: 0.8rem;
+}
+
+.search-terap-table td {
+    text-align: center;
+}
+
+.search-time::after {
+    content: " min";
+}
+
+.search-price::after {
+    content: " RON";
+}
 
 
 /* Breakpoints */
@@ -444,6 +539,7 @@ td {
         width: 60%;
     }
 }
+
 
 @media all and (orientation: landscape) and (hover: none) and (pointer: coarse) {
 
@@ -507,8 +603,31 @@ td {
     #aboutus-first {
         border-right: 3px solid #108F96;
     }
-    
+
+
+    #lista {
+        height: 80vh;
+    }
+
+    #lista-container {
+        margin: 2% !important;
+        width: 83.33333333% !important;
+    }
+
+    .terap-box-pic {
+        width: 15vw;
+        height: 20vh;
+    }
+     
 }
+
+@media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) and (min-height: 790px){
+    .terap-box-pic {
+        width: 11vw;
+        height: 12vh;
+    }
+}
+
 
 @media only screen and (orientation: portrait) and (hover: none) and (pointer: coarse) and (min-height: 790px){
     #utility-before {
@@ -522,6 +641,15 @@ td {
     .utility-links ul li{
         display: inline !important;
         padding: 1vw!important
+    }
+
+    #lista-container, #informatii {
+        width: 91.66666667% !important;
+    }
+
+    .terap-box-pic {
+        width: 16vw !important;
+        height: 9vh !important;
     }
 
 }
@@ -637,6 +765,125 @@ td {
         border-right: 3px solid #108F96;
     }
     
+    .terap-box-pic {
+        width: 11vw;
+        height: 12vh;
+    }
+
+    #lista::-webkit-scrollbar {
+        width: 1rem;
+    }
+}
+
+@media only screen and (min-width:790px) and (hover: hover) and (pointer: fine) {
+
+    #lista-container {
+        border-right: 10px solid white !important;
+        border-radius: 80px 0px 0px 80px !important;
+    }
+
+    .register-title{
+        font-size: 3rem;
+    }
+
+    #search-box input {
+        font-size: 1.6rem;
+    }
+
+    #search-button {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #search-icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    #dropdownSpecializari, #dropdownServicii, .terap-box-container {
+        font-size: 1.8rem;
+    }
+
+    .terap-box-terap {
+        font-size: 1rem;
+    }
+
+    .terap-box-pic {
+        width: 4vw;
+        height: 6vh;
+    }
+
+    .terap-box-name {
+        font-size: 2rem;
+    }
+
+    .terap-box-terap {
+        font-size: 1.2rem;
+    }
+
+    #informatii-header {
+        margin-top: -3% !important;
+    }
+
+    #close {
+    font-size: 1.4rem;
+    left: 94% !important;
+    }
+
+    #nume h3{
+        font-size: 3rem;
+    }
+
+    .dot {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .info-pic{
+
+    }
+
+    #informatii {
+        border-radius: 0px 80px 80px 0px !important;
+    }
+
+    #informatii h5 {
+        font-size: 1.8rem;
+    }
+
+    #informatii h6 {
+        font-size: 1.6rem;
+    }
+
+    #informatii p, #informatii table {
+        font-size: 1.5rem;
+    }
+
+    #informatii th{
+        font-size: 1.8rem;
+    }
+
+    #informatii td, #informatii span {
+        font-size: 1.5rem;
+    }
+
+    #locatii span, .contact-button, .contact-info > :is(a, button) {
+        font-size: 1.5rem;
+    }
+
+    #search-telefon::before {
+        content: "Telefon: ";
+    }
+
+    #search-email::before {
+        content: "Email: ";
+    }
+
+    #search-recenzii {
+        height: 25vh;
+    }
+    
+
 }
 
 @media only screen and (min-width: 1200px){
