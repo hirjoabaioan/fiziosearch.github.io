@@ -521,7 +521,141 @@ td {
 }
 
 
-/* Breakpoints */
+/* Dashboard Nav*/
+
+    #dash-nav {
+        background-color: #E9EAE9;
+        height: 100vh !important;
+    }
+
+    #dash-container {
+        height: 100vh !important;
+    }
+
+    #collapsed-menu {
+        height: 80vh;
+    }
+
+    #dash-content {
+        height: 99vh;
+    }
+
+    .spacer {
+        aspect-ratio: 900/600;
+        width: 180%;
+        /* background-repeat: no-repeat; */
+        background-position: center;
+        /* background-size: cover; */
+        position: absolute;
+        -ms-transform: rotate(40deg);
+        transform: rotate(40deg);
+        margin-left: -18%;
+    }
+    
+    .layer1 {
+        background-image: url('img/waves-layerd.svg');
+    }
+
+    #collapsedLinks .nav-item {
+        width: 8vw;
+        margin-top: 0.5rem;
+    }
+
+    .dash-notif {
+        width: 5vw !important;
+        margin-top: 0.1rem !important;
+    }
+
+    #collapsedLinks img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #collapsedLinks img:hover {
+        filter: invert(15%);
+        -webkit-filter: invert(15%);
+    }
+
+    #dash-notif-first {
+        border-top: 3px solid white;
+        padding-top: .3rem;
+    }
+
+    #dash-notif-last {
+        border-bottom: 3px solid white;
+        padding-bottom: .3rem;
+    }
+
+    #offcanvasNavbar {
+        background-color: #E9EAE9;
+    }
+
+    #dash-menu-img {
+        width: 30vw;
+        height: 12vh;
+    }
+
+    #dash-menu-img img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+
+    #dash-menu-title h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #40697B;
+    }
+
+    #notification-aria {
+        border-top: 2px solid white;
+        padding-top: .5rem;
+        width: 36%;
+    }
+
+    .dash-drops select{
+        font-size: .8rem !important;
+        width: 35vw;
+    }
+
+    .notification-pic {
+        width: 6vw;
+    }
+
+    .notification-pic img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .notification-pic img:hover {
+        filter: invert(15%);
+        -webkit-filter: invert(15%);
+    }
+
+    .dash-links a {
+        width: 20vw;
+        color: #40697B;
+        font-weight: bolder;
+        font-size: .9rem !important;
+    }
+
+    .dash-links a:hover {
+        color: #72b9d8;
+
+    }
+
+    .dash-links a img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .dash-links a img:hover {
+        filter: invert(15%);
+        -webkit-filter: invert(15%);
+    }
+
+/***** Breakpoints ******/
+
 @media only screen and (max-width:360px){
     .navbar-brand img {
         height: 5vh;
@@ -607,6 +741,10 @@ td {
         height: 80vh;
     }
 
+    #toggleButton {
+        margin-bottom: 0px !important;
+    }
+
     #lista-container {
         margin: 2% !important;
         width: 83.33333333% !important;
@@ -616,16 +754,31 @@ td {
         width: 15vw;
         height: 20vh;
     }
+
+    #collapsed-menu {
+        margin-bottom: 0px !important;
+        height: 75vh;
+    }
+
+    #collapsedLinks .nav-item {
+        width: 4vw;
+        margin-top: .2rem;
+    }
+    
+    .dash-notif {
+        width: 2.5vw !important;
+    }
+
+    #dash-menu-img {
+        width: 20vw;
+        height: 25vh;
+    }
+
+    .dash-links a {
+        width: 12vw;
+    }
      
 }
-
-@media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) and (min-height: 790px){
-    .terap-box-pic {
-        width: 11vw;
-        height: 12vh;
-    }
-}
-
 
 @media only screen and (orientation: portrait) and (hover: none) and (pointer: coarse) and (min-height: 790px){
     #utility-before {
@@ -650,11 +803,61 @@ td {
         height: 9vh !important;
     }
 
+    .dash-notif {
+        width: 4vw !important;
+        margin-top: .5rem !important;
+    }
+
+    #collapsedLinks .nav-item {
+        width: 6vw;
+        margin-top: .8rem;
+    }
+
+    #dash-menu-img {
+        width: 22vw;
+    }
+
+    .dash-links a {
+        width: 11vw;
+        font-size: 1.4rem !important;
+        margin-top: .5rem;
+    }
+
+    .dash-links a img{
+        width: 50px;
+    }
+
+
 }
+
+@media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) and (min-height: 750px){
+    .terap-box-pic {
+        width: 11vw;
+        height: 12vh;
+    }
+
+    #collapsedLinks .nav-item {
+        margin-top: 1.2rem;
+    }
+
+    #dash-menu-img {
+        width: 15vw;
+        height: 18vh;
+    }
+
+    .dash-links a {
+        width: 8vw;
+    }
+
+    .dash-links a img{
+        width: 50px;
+    }
+
+}
+
 
 @media only screen and (min-width: 790px){
 
-    
     .navbar-brand img {
         width: 100%;
     }
@@ -770,6 +973,26 @@ td {
 
     #lista::-webkit-scrollbar {
         width: 1rem;
+    }
+
+    #collapsedLinks .nav-item {
+        width: 2.5vw;
+        margin-top: .8rem;
+    }
+
+    .dash-notif {
+        width: 1.5vw !important;
+        margin-top: .5rem !important;
+    }
+
+    #dash-menu-img {
+        width: 9vw;
+        height: 14vh;
+    }
+
+    .dash-links a {
+        width: 4vw;
+        font-size: 1rem !important;
     }
 }
 
