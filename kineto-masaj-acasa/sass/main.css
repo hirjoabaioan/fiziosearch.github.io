@@ -415,7 +415,7 @@ nav img {
 @media (min-width: 900px) {
   .banner {
     height: 50vh;
-    background-image: url("../../img/banner-w.webp");
+    background-image: url("../img/banner-w.webp");
     background-size: 150% 170%;
     background-position-y: 95%;
   }
@@ -614,7 +614,7 @@ nav img {
 }
 
 .contact {
-  background-image: url("../../img/contact.webp");
+  background-image: url("../img/contact.webp");
 }
 
 .contact-form textarea {
@@ -622,11 +622,11 @@ nav img {
 }
 
 .pacient {
-  background-image: url("../../img/pacienti-register.webp");
+  background-image: url("../img/pacienti-register.webp");
 }
 
 .terapeut {
-  background-image: url("../../img/terapeuti-register.webp");
+  background-image: url("../img/terapeuti-register.webp");
 }
 
 .register-title {
