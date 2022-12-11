@@ -1,0 +1,139 @@
+@use '../abstracts' as *;
+
+
+html {
+    font-size: $font-size;
+}
+
+body {
+    font-family: "Aileron", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    position: relative;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none !important;
+    color: $black;
+
+    &:hover {
+        color: darken($primary-color, 10%) !important;
+    }
+}
+
+li {
+    list-style-type: none !important;
+}
+
+main {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+  
+footer {
+    bottom: 0;
+    width: 100%;
+    color: $white;
+}
+
+::placeholder {
+    color: white !important;
+    opacity: 1 !important;
+  }
+  
+:-ms-input-placeholder {
+   color: white !important;
+  }
+  
+::-ms-input-placeholder {
+   color: white !important;
+  }
+
+
+/* =============
+    ScrollBar
+   =============
+*/
+
+/* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+/* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+    background: linear-gradient(to top, #ffffff 0%, #ffffff 50%);
+}
+
+/* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #47868E;
+    background-image: linear-gradient(to top, #47868E 0%, #47868E 100%);
+}
+
+.title-underline {
+    width: 75%;
+    margin-left: 12.5% !important;
+    margin: 4%;
+    border: 2px solid $primary-color;
+    opacity: 1;
+    border-radius: $border-radius;
+}
+
+.form-check-input {
+    box-shadow: none !important;
+
+    &:hover, &:focus {
+        border-color: $primary-color;
+    }
+
+    &:checked {
+        background-color: $primary-color;
+    }
+}
+
+
+.form-control, .form-control:active, .form-control:focus, .form-control:focus:active {
+    background-color: $input-color;
+    border-radius: $border-radius;
+    color: $white;
+    box-shadow: none !important;
+
+    &::placeholder {
+        color: $white;
+    }
+
+    &:hover, &:focus {
+        border-color: $primary-color;
+    }
+
+}
+
+.form-text {
+    font-size: 0.6rem;
+    color: red;
+}
+
+.img-hide {
+    display: none;
+
+    @include tablet-wide {
+        // width: 28vw;
+        display: block;
+        width: 20%;
+        height: 80%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 25%;
+        border-radius: 0px 150px 0px 0px;
+    }
+
+    @include laptop {
+        width: 15%;
+    }
+
+    @include desktop {
+        width: 12%;
+    }
+}

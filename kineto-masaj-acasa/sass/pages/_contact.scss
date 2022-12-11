@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.contact {
+    background-image: url("../../img/contact.jpg");
+}
+
+.contact-form textarea {
+    border-radius: $border-radius - 20px !important;
+}

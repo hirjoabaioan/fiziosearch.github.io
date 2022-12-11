@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.servicii {
+    &-title {
+        color: $primary-color;
+        font-weight: bold;
+        border-bottom: 3px solid $primary-color;
+        line-height: 180%;
+        padding-right: 10%;
+    }
+
+    h4 {
+        font-weight: bold;
+        color: $primary-color;
+    }
+
+
+    img {
+        width: 70%;
+        height: 35vh;
+        border-radius: 147% 106% 97% 106%;
+    
+        @include tablet {
+            width: 50%;
+            height: 60vh;
+        }
+    
+        @include tablet-wide {
+            width: 100%;
+            height: 30vh;
+        }
+    
+        @include laptop {
+            width: 100%;
+            height: 45vh;
+        }
+    
+        @include desktop {
+            width: 70%;
+            height: 35vh;
+        }
+    }
+        
+    a {
+        color: $white;
+    }
+}
+
+

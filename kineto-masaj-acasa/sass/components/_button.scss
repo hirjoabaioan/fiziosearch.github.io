@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+
+.btn-primary {
+    background-color: $primary-color;
+    border-radius: $border-radius;
+    font-weight: bold;
+
+    &:hover, &:focus {
+        background-color: lighten($primary-color, 5%);
+    }
+
+    &:active {
+        background-color: darken($primary-color, 5%) !important;
+    }
+}
+
+.btn-secondary {
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    color: $black !important;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($secondary-color, 5%) !important;
+    }
+}
+
+.btn-success {
+    background-color: $btn-success-color;
+    border-radius: $border-radius;
+    font-weight: bold;
+
+    &:hover, &:focus {
+        background-color: $btn-success-color-hover;        
+    }
+
+    &:active {
+        background-color: $btn-success-color-active !important;
+    }
+}

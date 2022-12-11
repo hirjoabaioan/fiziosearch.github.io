@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body class="custom-scrollbar-css overflow-auto h-100">
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/Logo-transp-wide-black.png" alt="Kiento și masaj la tine acasă">
+                </a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="about-us.html">Despre Noi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Înregistrare</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="pacienti-inregistrare.html">Pacienți</a></li>
+                            <li><a class="dropdown-item" href="terapeuti-inregistrare.html">Terapeuți</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <li class="nav-link">
+                            <a class="d-flex justify-content-center align-content-center" id="auth-link" href="autentificare.html">
+                                <span class="auth-show-name pe-2 d-flex justify-content-center align-items-center">Salut, Ioan!</span> <!-- Apare numele dacă este logat și nu în varianta mobile -->
+                                <img src="../img/TopbarProfile.png" class="auth-img" alt="Profil"> 
+                            </a>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="m-5">
+        <button class="btn btn-primary">Caută un terapeut sau o locație</button>
+        <button class="btn btn-secondary">Hey</button>
+        <br><br>
+        <form action="">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Caută locație sau terapeut..." aria-label="Caută" aria-describedby="search-button">
+                <button class="btn btn-success" id="search-button" type="button">
+                    <img src="/simg/search.png" id="search-icon" alt="Caută">
+                </button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <!-- <div class="image-one">
+            <img src="img/profiles/1 (2).jpeg" alt="">
+        </div> -->
+
+        <div class="d-flex row gap-3">
+            <div class="image-two col-12" style="background-image: url(img/profiles/PozaH.jpeg)"></div>
+            <div class="image-two col-12" style="background-image: url(img/profiles/PozaP.jpg)"></div>
+            <div class="image-two col-12" style="background-image: url(img/profiles/PozaW.jpeg)"></div>
+            
+        </div>
+        <div class="poza col-12">
+            <img src="img/profiles/PozaP.jpg" alt="">
+        </div>
+        
+
+    </main>
+
+    <footer class="bg-dark m-0 p-2">
+        Subsol
+    </footer>
+</body>
+</html>

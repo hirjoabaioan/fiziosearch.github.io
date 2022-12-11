@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.pacient {
+    background-image: url("../../img/pacienti-register.jpg");
+}
+
+.terapeut {
+    background-image: url("../../img/terapeuti-register.jpg")
+}
+
+
+.register-title {
+    font-weight: bold !important;
+}
+
+.register-subtitle {
+    font-size: 0.5em !important;
+}
+
+.register-form {
+    a {
+        color: $primary-color;
+    }
+}
+
+.auth-link img{
+    width: 15%;
+}

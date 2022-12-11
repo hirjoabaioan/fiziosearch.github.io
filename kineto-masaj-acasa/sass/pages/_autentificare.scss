@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.auth-text {
+    font-size: $font-size + .2rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+}
+
+.auth-text::before, .auth-text::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+}

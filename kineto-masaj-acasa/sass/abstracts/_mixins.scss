@@ -1,0 +1,65 @@
+@use 'animations' as *;
+
+/* =============
+    Breakpoints
+   =============
+*/
+@mixin phone {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet-wide {
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin desktop-big {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+
+/* =============
+    Animations
+   =============
+*/
+
+@mixin slide-down ($duration, $timing ,$iteration, $direction, $fill) {
+    -webkit-animation: slide-bottom $duration $timing $iteration $direction $fill;
+    -moz-animation: slide-bottom $duration $timing $iteration $direction $fill;
+	        animation: slide-bottom $duration $timing $iteration $direction $fill;
+}
+
+@mixin link-hover ($duration, $timing ,$iteration, $direction, $fill) {
+    -webkit-animation: slide-bottom $duration $timing $iteration $direction $fill;
+    -moz-animation: slide-bottom $duration $timing $iteration $direction $fill;
+	        animation: slide-bottom $duration $timing $iteration $direction $fill;
+}
