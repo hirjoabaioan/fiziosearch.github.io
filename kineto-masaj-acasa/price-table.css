@@ -1,0 +1,481 @@
+/*!
+* Pricely v1.0
+*
+* Copyright 2013 - Forever, Weborithm.com
+*
+* Designed and built by Weborithm
+*/
+.table-container:after,
+.table-container:after,
+.table-panels:after,
+.pricely-chart-three:after,
+.panel-heading li:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* Parent Pricely Holder */
+/* Fonts */
+.table-container {
+  font-family: "Karla", sans-serif;
+}
+
+.table-container h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.table-container .bi {
+  color: #9b9b9b;
+}
+
+/* Vertical Alignment	
+#pricely-vertical { display: table; width: 100%; }
+#pricely-align { display: table-cell; vertical-align: middle; } */
+/* Headings */
+.table-container .panel-heading {
+  font-size: 22px;
+  margin: 0;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.pricely-chart-one h3 span {
+  display: block;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  padding: 5px 0 0;
+  text-transform: uppercase;
+}
+
+/* Headings Formatting */
+.panel-label {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 0 auto 10px;
+  text-transform: uppercase;
+}
+
+.panel-offer .panel-label {
+  font-weight: 600;
+}
+
+.panel-figure {
+  padding: 20px 0 30px;
+  position: relative;
+}
+
+.panel-currency {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  top: 30px;
+}
+
+.panel-amount {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 70px;
+  padding: 0 0 0 17px;
+}
+
+.panel-foreword {
+  display: block;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  padding: 0;
+}
+
+.panel-paragraph {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 20px;
+  text-align: left;
+}
+
+.panel-paragraph span {
+  font-size: 28px;
+}
+
+/* Headings - Backgrounds */
+.table-container .with-diagonal {
+  background-image: url(../img/diagonal-left.png);
+}
+
+.table-container .with-featured-diagonal {
+  background-image: url(../img/diagonal-right.png);
+  font-weight: 600;
+}
+
+.table-container .with-boxes {
+  background-image: url(../img/boxes.png);
+}
+
+.table-container .with-checks-1 {
+  background-image: url(../img/checks_1.png);
+}
+
+.table-container .with-checks-2 {
+  background-image: url(../img/checks_2.png);
+}
+
+.table-container .with-checks-3 {
+  background-image: url(../img/checks_3.png);
+}
+
+/* Panel + Panel Header + Panel Footer */
+.table-container .panel {
+  margin: 0;
+}
+
+.pricely-chart-two .panel,
+.pricely-chart-two .panel-heading {
+  border-radius: 0;
+}
+
+.table-container .panel-footer {
+  padding: 10px;
+}
+
+.pricely-chart-two .panel-footer {
+  border-width: 0 1px 1px 1px;
+  margin: 0px 0px 10px;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Collapse */
+.table-container .panel-collapse p {
+  margin: 10px 0;
+}
+
+/* Images */
+.table-container .img-responsive {
+  max-width: inherit;
+  width: 100%;
+}
+
+/* Call to Action Buttons */
+.pricely-chart-one .pricely-call a {
+  font-size: 18px;
+}
+
+.col-md-2 .pricely-call a {
+  font-size: 16px; /* Smaller font for narrow columns */
+}
+
+.pricely-chart-two .pricely-call a {
+  font-size: 20px;
+}
+
+/* Pricely Indicators */
+ol.pricely-indicators {
+  position: static;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+ol.pricely-indicators li.active {
+  background: #f7931f;
+  border-color: #f7931f;
+  margin: 1px 3px;
+}
+
+ol.pricely-indicators li {
+  background: #fff;
+  border-color: #ebebeb;
+  height: 12px;
+  width: 12px;
+  margin: 1px 3px;
+  padding: 6px;
+}
+
+/* Tooltip */
+.tooltip {
+  font-family: "Karla", sans-serif;
+}
+
+.pricely-tooltip:hover {
+  cursor: pointer;
+}
+
+/* Modal */
+.table-container .modal p {
+  margin: 0;
+}
+
+.table-container .modal-body {
+  padding: 0;
+}
+
+.table-container .modal-body .thumbnail {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.table-container .modal p.modal-text {
+  padding: 10px 15px;
+}
+
+/* Buttons */
+.panel-footer .btn {
+  line-height: 44px;
+}
+
+.btn-wide {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+/* Icons */
+.table-panels .bi {
+  display: block;
+  text-align: center;
+}
+
+.table-panels .bi {
+  color: #108F96;
+}
+
+.table-panels .bi-x {
+  color: #B94A61;
+}
+
+/*===== Price Chart Specific =====*/
+/* Classic */
+/* Business */
+/* Professional */
+.table-panels .panel-heading, .panel-footer {
+  border-radius: 0;
+  min-height: 260px;
+  max-height: 260px;
+}
+
+.table-panels li li.list-group-item {
+  border-left-width: 1px;
+  border-radius: 0;
+  min-height: 45px;
+}
+
+.table-panels li.panel-offer li.list-group-item {
+  border-left-width: 1px;
+  border-radius: 0;
+  min-height: 45px;
+}
+
+.table-panels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.table-panels li.panel-offer,
+.table-panels li.panel-inner {
+  padding: 0;
+}
+
+.table-panels .panel-heading {
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.table-panels li:first-child .panel-heading {
+  border-left: 0px solid #ddd;
+  border-top: 0px solid #ddd;
+}
+
+.table-container li.list-group-item .feature-hide {
+  display: none;
+}
+
+.table-container li.bi {
+  display: inline-block;
+}
+
+.table-container li .panel-paragraph .bi {
+  display: block;
+}
+
+.table-container li.list-group-item {
+  text-align: center;
+}
+
+.table-first-panel .list-group-item {
+  border-left: 0px solid #ddd !important;
+}
+
+.first-list-item {
+  border-top: 0px solid #ddd !important;
+}
+
+.last-list-item {
+  border-bottom: 0px solid #ddd !important;
+}
+
+/* Wizard */
+.pricely-wizard {
+  text-align: center;
+}
+
+.pricely-wizard .dropdown-menu {
+  box-shadow: none;
+}
+
+.pricely-wizard .dropdown-menu span {
+  display: block;
+  padding: 5px 10px;
+}
+
+.pricely-wizard .pricely-inline {
+  display: inline;
+}
+
+.pricely-wizard p.dropdown {
+  background: #eee;
+  border: 1px solid #fff;
+  padding: 3px 9px;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.pricely-wizard p.dropdown:hover {
+  background: #f9f9f9;
+  border-color: #eee;
+  color: #fff;
+}
+
+.pricely-wizard p.dropdown a:focus,
+.pricely-wizard p.dropdown a:hover {
+  text-decoration: none;
+}
+
+.pricely-wizard p.dropdown span a {
+  -webkit-transition: 0.2s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: 0.2s ease-in-out; /** Firefox **/
+  -o-transition: 0.2s ease-in-out; /** Opera **/
+}
+
+.pricely-wizard p.dropdown span a:hover {
+  padding-left: 3px;
+  -webkit-transition: 0.2s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: 0.2s ease-in-out; /** Firefox **/
+  -o-transition: 0.2s ease-in-out; /** Opera **/
+  text-decoration: none;
+}
+
+.pricely-wizard p.pricely-wizard-selection {
+  background: #5BC0DE;
+  color: #fff;
+  display: inline-block;
+  margin: -1px 0 10px 0;
+  padding: 3px 9px;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.pricely-wizard .tab-panel span .bi {
+  font-size: 2rem;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 7px;
+}
+
+.pricely-wizard .tab-inner {
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.pricely-wizard .tab-inner-child {
+  margin: 1px 0 0;
+  padding: 20px 0 0;
+}
+
+.pricely-wizard .panel {
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.pricely-wizard .panel .panel-heading {
+  border: 0;
+  box-shadow: none;
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 0\0 ) { /* Specific to IE */
+  .panel-currency {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    top: -30px;
+  }
+  .panel-amount {
+    font-size: 65px;
+    line-height: 65px;
+  }
+  .table-container .panel-footer {
+    margin: 0 0 20px;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  .pricely-chart-one {
+    margin-bottom: 20px;
+  }
+  .tab-content {
+    border-left: 0;
+  }
+  .table-panels li li.list-group-item {
+    border-left-width: 1px;
+    text-align: center;
+  }
+  .table-container .panel-heading {
+    padding: 15px 10px;
+  }
+  .table-panels .panel-heading {
+    border-left: 1px solid #ddd;
+    min-height: inherit;
+  }
+  .table-container li.list-group-item .feature-hide {
+    display: inline;
+    padding: 0 0 0 10px;
+  }
+  .table-panels li.panel-offer {
+    display: none;
+  }
+  .table-panels .bi {
+    display: inline-block;
+    text-align: center;
+  }
+  .panel-foreword,
+.panel-label {
+    display: inline-block;
+    margin: 0;
+  }
+  .panel-foreword:before {
+    content: " ";
+  }
+}
+@media screen and (max-width: 767px) {
+  #pricely-align {
+    display: inherit;
+    margin: 0 0 40px;
+    vertical-align: none;
+  }
+}/*# sourceMappingURL=price-table.css.map */

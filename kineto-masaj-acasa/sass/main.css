@@ -204,7 +204,6 @@ footer {
   background-color: #F3F4F4;
   border-radius: 50px;
   text-align: center;
-  font-weight: bold;
   border: none;
   color: black !important;
 }
@@ -394,7 +393,7 @@ nav img {
 .banner {
   width: 100vw;
   height: 65vh;
-  background-image: url("../../img/banner.webp");
+  background-image: url("../img/banner.webp");
   background-repeat: no-repeat;
   background-size: 280% 110%;
   background-position-y: 100%;
@@ -506,13 +505,34 @@ nav img {
   -webkit-filter: invert(100%);
 }
 
-@media (min-width: 768px) {
-  .content-howto h1 {
-    font-size: 1.2rem;
+.content-howto h1 {
+  font-size: 2rem;
+}
+.content-howto h3 {
+  font-size: 0.8rem;
+}
+@media (min-width: 600px) {
+  .content-howto h3 {
+    font-size: 1rem;
   }
 }
 .content-howto img {
   width: 80%;
+}
+@media (min-width: 600px) {
+  .content-howto img {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .content-howto img {
+    width: 70%;
+  }
+}
+@media (min-width: 1024px) {
+  .content-howto img {
+    width: 70%;
+  }
 }
 
 .servicii-title {

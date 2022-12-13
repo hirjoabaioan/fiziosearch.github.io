@@ -23,7 +23,7 @@
 .banner {
     width: 100vw;
     height: 65vh;
-    background-image: url("img/banner.webp");
+    background-image: url("../img/banner.webp");
     background-repeat: no-repeat;
     background-size: 280% 110%;
     background-position-y: 100%;
@@ -41,7 +41,7 @@
 
     @include tablet-landscape {
         height: 50vh;
-        background-image: url("img/banner-w.webp");
+        background-image: url("../img/banner-w.webp");
         background-size: 150% 170%;
         background-position-y: 95%;
     }
@@ -141,13 +141,33 @@
 }
 
 .content-howto {
+
     h1 {
-        @include tablet-wide {
-            font-size: $font-size + 0.2rem;
+        font-size: $font-size + 1rem;
+
+    }
+
+    h3 {
+        font-size: $font-size - 0.2rem;
+
+        @include tablet {
+            font-size: $font-size;
         }
     }
     
     img {
         width: 80%;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include tablet-wide {
+            width: 70%;
+        }
+
+        @include laptop {
+            width: 70%;
+        }
     }
 }
