@@ -252,6 +252,10 @@ footer {
   }
 }
 
+.btn {
+  padding: 0.5rem !important;
+}
+
 .btn-primary {
   background-color: #108F96;
   border-radius: 50px;
@@ -705,102 +709,85 @@ nav img {
   border-radius: 30px !important;
 }
 
-#lista-container, #informatii {
-  background-color: #DEE4E8;
-}
-
 .container-list, .container-informatii {
-  background-color: #f2f2f2;
+  background-color: #e6e6e6;
+  border-radius: 40px;
 }
 
-/* #informatii {
-    display: none !important;
-} */
-#lista {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  height: 50vh;
+.container-list h2 {
+  padding-top: 1rem;
+  text-align: center;
 }
-
-#lista::-webkit-scrollbar {
-  width: 0.5rem;
+.container-list form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid white;
 }
-
-#lista::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: #B7B7B7;
-}
-
-/* scrollbar track */
-#lista::-webkit-scrollbar-track {
-  background: white;
-}
-
-#search-box input {
-  font-size: 0.8rem;
-}
-
-#search-icon {
-  height: 20px;
+.container-list form img {
   width: 20px;
 }
 
+.container-informatii {
+  display: none !important;
+}
+
+.lista-container {
+  padding: 0.5rem;
+  border-bottom: 4px solid white;
+}
+
+.lista {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+.lista::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.lista::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #B7B7B7;
+}
+.lista::-webkit-scrollbar-track {
+  background: white;
+}
+
 .terapeut-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-bottom: 2px solid white;
 }
-
-.terapeut-box:hover {
-  background-color: #d2d8db;
+.terapeut-box:hover, .terapeut-box:focus, .terapeut-box:active {
+  background-color: #cccccc;
 }
-
-.terap-box-pic {
-  width: 20vw;
-  height: 7vh;
+.terapeut-box-pic {
+  width: 6rem;
 }
-
-.terap-box-pic img {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+.terapeut-box-pic img {
   border-radius: 50px;
+}
+.terapeut-box-content {
+  display: flex;
+  align-items: center;
+}
+.terapeut-box-content-name {
+  display: flex;
+  align-items: center;
+}
+
+.bi {
+  font-size: 2rem;
+  color: green;
 }
 
 .text-truncate {
   font-size: 0.7rem;
-  max-width: 80%;
+  max-width: 90%;
 }
-
 .text-truncate span::after {
   content: "...";
-}
-
-.dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.on {
-  background-color: rgb(60, 180, 24);
-}
-
-.off {
-  background-color: rgb(180, 24, 24);
-}
-
-#close {
-  cursor: pointer;
-  font-size: 1rem;
-  height: 30px !important;
-  display: block !important;
-  float: right !important;
-  position: relative !important;
-  left: 88% !important;
-  top: 0% !important;
-  width: 1.33% !important;
 }
 
 #nume h3 {
