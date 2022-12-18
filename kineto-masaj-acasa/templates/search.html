@@ -50,7 +50,7 @@
     </header>
 
     <main class="col-md-8 col-xs-12 d-flex row justify-content-center align-items-center w-100 m-0 mt-4 mb-2 p-2 gap-2">
-        <div class="col-sx-12 col-ms-11 col-md-3 col-lg-4 col-xl-3 m-0 ms-xl-3 ms-lg-2 p-0 container-lista">
+        <div class="col-sx-12 col-ms-11 col-md-3 col-lg-4 col-xl-3 m-0 ms-xl-3 ms-lg-2 p-0 container-list">
             <h2>
                 Listă terapeuți <br>
                 <span>Găsește terapeutul cel mai apropiat</span>
@@ -94,11 +94,16 @@
                         <div class="terapeut-box-content-name">
                             <span>Hîrjoabă Ioan</span>
                         </div>
-                        <div>
+                        <div class="terapeut-box-content-avail">
                             <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
                             <i class="bi bi-dot"></i>
                         </div>
                         <div>
+                            <span class="terapeut-box-content-locatii">
+                                București, Sector 3, Sector 4, Chiajna
+                            </span>
+                        </div>
+                        <div class="terapeut-box-content-terapii">
                             <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
                             <span>Terapie 1, Terapie 2, Terapie 3,</span>
                         </div>
@@ -108,12 +113,137 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-11 col-md-8 col-lg-7 col-xl-8 m-0 me-xl-3 me-lg-2 p-2 container-informatii">
-            
+        <div class="col-xs-12 col-sm-11 col-md-8 col-lg-7 col-xl-8 m-0 me-xl-3 me-lg-2 p-2 container-informatii" id="containerInformatii">
+            <div>
+                <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X" data-bs-dismiss="container-informatii" data-bs-target="#containerInformatii"></button>
+            </div>
+            <div class="col-12 row informatii-section-one">
+                <div class="informatii-section-one-pic">
+                    <img src="../img/profiles/PozaH.jpeg" alt="{Nume Terapeut Selectat}">
+                </div>
+                <div class="row">
+                    <div class="informatii-section-one-nume">
+                        <h3 class="m-0">Hîrjoabă Ioan</h3>
+                    </div>
+                    <div class="informatii-section-one-avail">
+                        <i class="bi bi-dot"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="informatii-section-one-locatii">
+                        <h5 class="info-titles">Locații</h5>
+                        <span class="">
+                            București, Sector 3, Sector 4, Chiajna, Șindrilița
+                        </span>
+                    </div>
+                    <div class="informatii-section-one-contact">
+                        <h5 class="info-title">Contact</h5>
+                        <!-- Acest div apare după ce se apasă butonul de contact -->
+                        <div class="row">
+                            <!-- Butonul dispare dupa ce este apasat si apar datele de contact -->
+                            <button class="btn btn-primary contact-button" text="Contact">Contact</button>
+                            <!-- Datele de contact apar dupa apasarea butonului de deasupra -->
+                            <div class="row contact-info">
+                                <a href="tel:075-457-9331" class="btn btn-secondary msg-button med search-telefon">0754579331</a>
+                                <a href="mailto:hirjoaba_ioan@yahoo.com" class="btn btn-secondary msg-button med text-center search-email">hirjoaba_ioan@yahoo.com</a>
+                                <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="informatii-section-two">
+                <div class="informatii-section-two-activitate">
+                    <h5 class="info-titles">Activitate</h5>
+                    <div class="">
+                        <!-- Doar unul dintre calificative va fi afișat în funcție de recenziile acordate de pacienți: Foarte Bun | Bun | Rău | Foarte rău -->
+                        <div>
+                            <h6>Rating general:</h6>
+                            <span>Bun</span>
+                        </div>
+                        <div>
+                            <h6>Recenzii primite:</h6>
+                            <span>40</span>
+                        </div>
+                        <div>
+                            <h6>Experiență:</h6>
+                            <span>4 ani</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="informatii-section-two-descriere">
+                    <h5 class="info-titles">Descriere</h5>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum beatae velit dicta ratione consequatur sapiente, earum deleniti libero, eum autem vel id aut eos fuga ullam laboriosam. Aspernatur, maiores nostrum?
+                    </p>
+                </div>
+            </div>
+            <div class="informatii-section-three">
+                <div class="table-responsive informatii-section-three-servicii">
+                    <h5 class="info-titles">Servicii</h5>
+                    <table class="table">
+                        <tr>
+                            <th class="col">Terapie</th>
+                            <th class="col">Durată</th>
+                            <th class="col">Tarif</th>
+                        </tr>
+                        <tr>
+                            <td>Masaj</td>
+                            <td class="informatii-time">30</td>
+                            <td class="informatii-price">100</td>
+                        </tr>
+                        <tr>
+                            <td>Terapie manuală</td>
+                            <td class="informatii-time">30</td>
+                            <td class="informatii-price">150</td>
+                        </tr>
+                        <tr>
+                            <td>Ventuze</td>
+                            <td class="informatii-time">15</td>
+                            <td class="informatii-price">50</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-responsive informatii-section-three-recenzii">
+                    <h5 class="info-titles">Recenzii</h5>
+                    <div class="overflow-auto" id="search-recenzii">
+                        <table class="table">
+                            <tr>
+                                <th class="col">Client</th>
+                                <th class="col">Recenzie</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.
+                                </td>
+                                <td>Bună</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.
+                                </td>
+                                <td>Bună</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.
+                                </td>
+                                <td>Bună</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.
+                                </td>
+                                <td>Bună</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- Subsol -->
+
     <footer class="col-12 d-flex row justify-content-center align-items-center w-100 mt-auto m-0 ms-0 p-0 py-3 bg-dark">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center text-center">
             <a href="../index.html" class="col-12">

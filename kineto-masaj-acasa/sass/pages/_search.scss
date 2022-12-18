@@ -1,0 +1,188 @@
+@use '../abstracts' as *;
+
+
+#lista-container, #informatii{
+    background-color: #DEE4E8;
+}
+
+.container-list, .container-informatii {
+    background-color: darken($white, 5%);
+}
+
+
+.container-list {
+    h2 {
+        
+    }
+}
+
+
+/* #informatii {
+    display: none !important;
+} */
+
+#lista {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 50vh;
+}
+
+
+#lista::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+#lista::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #B7B7B7;
+}
+
+/* scrollbar track */
+#lista::-webkit-scrollbar-track {
+    background: white;
+}
+
+
+#search-box input{
+    font-size: .8rem;
+}
+
+#search-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.terapeut-box {
+    border-bottom: 2px solid white;
+}
+
+.terapeut-box:hover {
+    background-color: #d2d8db;
+}
+
+
+.terap-box-pic {
+
+    width: 20vw;
+    height: 7vh;
+}
+
+.terap-box-pic img {
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+}
+
+.text-truncate {
+    font-size: 0.7rem;
+    max-width: 80%;
+}
+
+
+.text-truncate span::after {
+    content: "...";
+}
+
+.dot{
+    height: 10px;
+    width: 10px;
+    
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.on {
+    background-color: rgb(60, 180, 24);
+}
+
+.off {
+    background-color: rgb(180, 24, 24);
+}
+
+#close {
+    cursor: pointer;
+    font-size: 1rem;
+    height: 30px !important;
+    display: block !important;
+    float: right !important;
+    position: relative !important;
+    left: 88% !important;
+    top: 0% !important;
+    width: 1.33% !important;
+}
+
+#nume h3{
+    font-size: 1.2rem;
+}
+
+#locatii {
+    
+}
+
+.info-titles {
+    font-size: 1rem;
+    padding-left: 5%;
+    padding-top: 0.4%;
+    padding-bottom: 0.4%;
+    border-radius: 50px;
+    background-color: #1F5065;
+    color: white;
+}
+
+#locatii span {
+    font-size: 0.8rem;
+}
+
+.msg-button {
+    font-size: 0.8rem;
+    color: black;
+}
+
+#search-recenzii {
+    height: 50vh;
+}
+
+
+#search-recenzii::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+#search-recenzii::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #B7B7B7;
+}
+
+/* scrollbar track */
+#search-recenzii::-webkit-scrollbar-track {
+    background: white;
+}
+
+
+th {
+    text-align: center;
+}
+
+td {
+    border-top: 4px solid #ffffff;
+    padding: 4%;
+    font-size: 0.8rem;
+}
+
+.search-terap-table td {
+    text-align: center;
+}
+
+.search-time::after {
+    content: " min";
+}
+
+.search-price::after {
+    content: " RON";
+}

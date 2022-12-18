@@ -1,3 +1,67 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  paading: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body, html {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 @font-face {
   font-family: "Aileron";
   src: url("fonts/aileron/Aileron-Regular.otf") format("otf");
@@ -639,6 +703,167 @@ nav img {
 
 .contact-form textarea {
   border-radius: 30px !important;
+}
+
+#lista-container, #informatii {
+  background-color: #DEE4E8;
+}
+
+.container-list, .container-informatii {
+  background-color: #f2f2f2;
+}
+
+/* #informatii {
+    display: none !important;
+} */
+#lista {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  height: 50vh;
+}
+
+#lista::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#lista::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #B7B7B7;
+}
+
+/* scrollbar track */
+#lista::-webkit-scrollbar-track {
+  background: white;
+}
+
+#search-box input {
+  font-size: 0.8rem;
+}
+
+#search-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.terapeut-box {
+  border-bottom: 2px solid white;
+}
+
+.terapeut-box:hover {
+  background-color: #d2d8db;
+}
+
+.terap-box-pic {
+  width: 20vw;
+  height: 7vh;
+}
+
+.terap-box-pic img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.text-truncate {
+  font-size: 0.7rem;
+  max-width: 80%;
+}
+
+.text-truncate span::after {
+  content: "...";
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.on {
+  background-color: rgb(60, 180, 24);
+}
+
+.off {
+  background-color: rgb(180, 24, 24);
+}
+
+#close {
+  cursor: pointer;
+  font-size: 1rem;
+  height: 30px !important;
+  display: block !important;
+  float: right !important;
+  position: relative !important;
+  left: 88% !important;
+  top: 0% !important;
+  width: 1.33% !important;
+}
+
+#nume h3 {
+  font-size: 1.2rem;
+}
+
+.info-titles {
+  font-size: 1rem;
+  padding-left: 5%;
+  padding-top: 0.4%;
+  padding-bottom: 0.4%;
+  border-radius: 50px;
+  background-color: #1F5065;
+  color: white;
+}
+
+#locatii span {
+  font-size: 0.8rem;
+}
+
+.msg-button {
+  font-size: 0.8rem;
+  color: black;
+}
+
+#search-recenzii {
+  height: 50vh;
+}
+
+#search-recenzii::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#search-recenzii::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #B7B7B7;
+}
+
+/* scrollbar track */
+#search-recenzii::-webkit-scrollbar-track {
+  background: white;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  border-top: 4px solid #ffffff;
+  padding: 4%;
+  font-size: 0.8rem;
+}
+
+.search-terap-table td {
+  text-align: center;
+}
+
+.search-time::after {
+  content: " min";
+}
+
+.search-price::after {
+  content: " RON";
 }
 
 .pacient {
