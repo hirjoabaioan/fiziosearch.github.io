@@ -2,7 +2,7 @@
 @use '../components' as *;
 
 nav {
-    background-color: #DEE4E8 !important;
+    background-color: darken($white, 2%) !important;
     
     .nav-link {
         font-size: $font-size+0.2rem;
