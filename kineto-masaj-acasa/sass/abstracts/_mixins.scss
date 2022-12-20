@@ -1,41 +1,42 @@
 @use 'animations' as *;
+@use 'variables' as *;
 
 /* =============
     Breakpoints
    =============
 */
 @mixin phone {
-    @media (max-width: 599px) {
+    @media (max-width: 37.5rem) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (min-width: 600px) {
+    @media (min-width: 37.5rem) {
         @content;
     }
 }
 
 @mixin tablet-wide {
-    @media (min-width: 768px){
+    @media (min-width: 48rem){
         @content;
     }
 }
 
 @mixin tablet-landscape {
-    @media (min-width: 900px) {
+    @media (min-width: 56.25rem) {
         @content;
     }
 }
 
 @mixin laptop {
-    @media (min-width: 1024px) {
+    @media (min-width: 64rem) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: 1200px) {
+    @media (min-width: 75rem) {
         @content;
     }
 }
@@ -63,3 +64,19 @@
     -moz-animation: slide-bottom $duration $timing $iteration $direction $fill;
 	        animation: slide-bottom $duration $timing $iteration $direction $fill;
 }
+
+
+/* =============
+    Others
+   =============
+*/
+
+// @mixin font-size ($extra-size: 0rem, $operator: '+', $view-width){
+    
+//     @if $operator == '-' {
+//         font-size: calc(1rem - $extra-size - $view-height);
+//     }
+
+//     font-size: calc(1rem + $extra-size + $view-height);
+    
+// }

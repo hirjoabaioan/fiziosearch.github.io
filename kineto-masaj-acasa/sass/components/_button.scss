@@ -33,15 +33,15 @@
 }
 
 .btn-success {
-    background-color: $btn-success-color;
+    background-color: $tertiary-color;
     border-radius: $border-radius;
     font-weight: bold;
 
     &:hover, &:focus {
-        background-color: $btn-success-color-hover;        
+        background-color: lighten($tertiary-color, 5%);        
     }
 
     &:active {
-        background-color: $btn-success-color-active !important;
+        background-color: darken($tertiary-color, 5%) !important;
     }
 }

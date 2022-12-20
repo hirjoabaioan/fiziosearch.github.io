@@ -1,166 +1,298 @@
-@use '../abstracts' as *;
+// @use '../abstracts' as *;
+// /* Căutare */
 
-.container-list, .container-informatii {
-    background-color: darken($white, 10%);
-    border-radius: 40px;
-}
-
-
-.container-list {
-    h2 {
-        padding-top: 1rem;
-        text-align: center;
-    }
-
-    form {
-        display: flex;
-        justify-content: center;
-        padding-bottom: 1.5rem;
-        border-bottom: 4px solid $white;
-    }
-
-    form img {
-        width: 20px;
-    }
-}
+// .list-container, .info-container{
+//     background-color: #DEE4E8;
+// }
 
 
-.container-informatii {
-    display: none !important;
-}
 
-.lista-container {
-    padding: .5rem;
-    border-bottom: 4px solid $white;
-}
+// /* .info-container {
+//     display: none !important;
+// } */
 
-.lista {
-    display: flex;
-    justify-content: center;
-    height: 50vh;
-    // padding: 5%;
+// .lista-terapeuti {
+//     border-top: 2px solid $white;
+//     border-bottom: 2px solid $white;
+//     height: 50vh;
+// }
 
-    &::-webkit-scrollbar {
-        width: 0.3rem;
-    }
 
-    &::-webkit-scrollbar-thumb {
-        border-radius: 1rem;
-        background: #B7B7B7;
-    }
+// .lista-terapeuti ::-webkit-scrollbar {
+//     width: 0.5rem;
+// }
 
-    &::-webkit-scrollbar-track {
-        background: $white;
-    }
-}
+// .lista-terapeuti ::-webkit-scrollbar-thumb {
+//     border-radius: 1rem;
+//     background: #B7B7B7;
+// }
 
-.terapeut-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid $white;
+// /* scrollbar track */
+// .lista-terapeuti ::-webkit-scrollbar-track {
+//     background: $white;
+// }
 
-    &:hover, &:focus, &:active{
-        background-color: darken($white, 20%);
-    }
-    &-pic {
-        width: 6rem;
 
-        img {
-            border-radius:50px;
-        }
-    }
+// #search-box input{
+//     font-size: $font-size - .2rem;
+// }
 
-    &-content {
-        display: flex;
-        align-items: center;
+// #search-icon {
+//     height: 20px;
+//     width: 20px;
+// }
 
-        &-name {
-            display: flex;
-            align-items: center;
-        }
-    }
-}
+// .terapeut-box {
+//     border-bottom: 2px solid $white;
+// }
 
-.bi {
-    font-size: $font-size + 1rem;
-    color: $green;
-}
+// .terapeut-box:hover {
+//     background-color: #d2d8db;
+// }
 
-.text-truncate {
-    font-size: 0.7rem;
-    max-width: 90%;
 
-    span::after {
-        content: "...";
-    }
-}
+// .terap-box-pic {
 
-#nume h3{
-    font-size: 1.2rem;
-}
+//     width: 4rem;
 
-#locatii {
+//     @include tablet {
+//         // width: 15vw;
+//     }
+
+//     @include tablet-wide {
+//         width: 6rem;
+//     }
+
+//     @include laptop {
+//         width: 10rem;
+//     }
+
+//     @include desktop {
+//         width: 15rem;
+//     }
+
+// }
+
+// .terap-box-pic img {
+//     width: 100%;
+//     border-radius: 50px;
+//     object-fit: cover;
+// }
+
+// .text-truncate {
+//     font-size: $font-size - 0.3rem;
+//     max-width: 80%;
+// }
+
+
+// .text-truncate span::after {
+//     content: "...";
+// }
+
+// .dot{
+//     height: 10px;
+//     width: 10px;
     
-}
+//     border-radius: 50%;
+//     display: inline-block;
+// }
 
-.info-titles {
-    font-size: 1rem;
-    padding-left: 5%;
-    padding-top: 0.4%;
-    padding-bottom: 0.4%;
-    border-radius: 50px;
-    background-color: #1F5065;
-    color: white;
-}
+// .on {
+//     background-color: rgb(60, 180, 24);
+// }
 
-#locatii span {
-    font-size: 0.8rem;
-}
+// .off {
+//     background-color: rgb(180, 24, 24);
+// }
 
-.msg-button {
-    font-size: 0.8rem;
-    color: black;
-}
+// #close {
+//     cursor: pointer;
+//     font-size: $font-size;
+//     height: 30px !important;
+//     display: block !important;
+//     float: right !important;
+//     position: relative !important;
+//     left: 88% !important;
+//     top: 0% !important;
+//     width: 1.33% !important;
+// }
 
-#search-recenzii {
-    height: 50vh;
-}
+// #nume h3{
+//     font-size: $font-size + .2rem;
+// }
+
+// #locatii {
+    
+// }
+
+// .info-titles {
+//     font-size: $font-size;
+//     padding-left: 5%;
+//     padding-top: 0.4%;
+//     padding-bottom: 0.4%;
+//     border-radius: 50px;
+//     background-color: #1F5065;
+//     color: $white;
+// }
+
+// #locatii span {
+//     font-size: $font-size - .2rem;
+// }
+
+// .msg-button {
+//     font-size: $font-size - 0.2rem;
+//     color: $black;
+// }
+
+// #search-recenzii {
+//     height: 50vh;
+// }
 
 
-#search-recenzii::-webkit-scrollbar {
-    width: 0.5rem;
-}
+// #search-recenzii::-webkit-scrollbar {
+//     width: 0.5rem;
+// }
 
-#search-recenzii::-webkit-scrollbar-thumb {
-    border-radius: 1rem;
-    background: #B7B7B7;
-}
+// #search-recenzii::-webkit-scrollbar-thumb {
+//     border-radius: 1rem;
+//     background: #B7B7B7;
+// }
 
-/* scrollbar track */
-#search-recenzii::-webkit-scrollbar-track {
-    background: white;
-}
+// /* scrollbar track */
+// #search-recenzii::-webkit-scrollbar-track {
+//     background: $white;
+// }
 
 
-th {
-    text-align: center;
-}
+// th {
+//     text-align: center;
+// }
 
-td {
-    border-top: 4px solid #ffffff;
-    padding: 4%;
-    font-size: 0.8rem;
-}
+// td {
+//     border-top: 4px solid $white;
+//     padding: 4%;
+//     font-size: $font-size - 0.2rem;
+// }
 
-.search-terap-table td {
-    text-align: center;
-}
+// .search-terap-table td {
+//     text-align: center;
+// }
 
-.search-time::after {
-    content: " min";
-}
+// .search-time::after {
+//     content: " min";
+// }
 
-.search-price::after {
-    content: " RON";
-}
+// .search-price::after {
+//     content: " RON";
+// }
+
+
+// @media all and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+//     .media-header {
+//         font-size: $font-size + .2rem;
+//     }
+
+//     .social-img {
+//         width: 5vh;
+//         height: 9vh;
+//     }
+
+//     .lista-terapeuti {
+//         height: 80vh;
+//     }
+
+//     .list-container {
+//         margin: 2% !important;
+//         width: 83.33333333% !important;
+//     }
+
+//     .terap-box-pic {
+//         // width: 15vw;
+//         // height: 20vh;
+//     }
+// }
+
+// @media only screen and (orientation: portrait) and (hover: none) and (pointer: coarse) and (min-height: 790px){
+//     .list-container, .info-container {
+//         width: 91.66666667% !important;
+//     }
+
+//     .terap-box-pic {
+//         // width: 16vw !important;
+//         // height: 9vh !important;
+//     }
+// }
+
+
+// @media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) and (min-height: 750px){
+//     .terap-box-pic {
+//         // width: 11vw;
+//         // height: 12vh;
+//     }
+
+// }
+
+// @media only screen and (min-width: 790px){
+    
+//     .social-link {
+//         width: 10%;
+//         height: auto;
+//     }
+
+//     .terap-box-pic {
+//         // width: 11vw;
+//         // height: 12vh;
+//     }
+
+//     .lista-terapeuti ::-webkit-scrollbar {
+//         width: 1rem;
+//     }
+// }
+
+// @media only screen and (min-width:790px) and (hover: hover) and (pointer: fine) {
+//     .list-container {
+//         border-right: 10px solid $white !important;
+//         border-radius: 80px 0px 0px 80px !important;
+//     }
+
+//     .terap-box-pic {
+//         // width: 5vw;
+//         // height: 6vh;
+//     }
+
+//     #informatii-header {
+//         margin-top: -3% !important;
+//     }
+
+//     #close {
+//     font-size: $font-size + .4rem;
+//     left: 94% !important;
+//     }
+
+//     .info-pic{
+
+//     }
+
+//     .info-container {
+//         border-radius: 0px 80px 80px 0px !important;
+//     }
+
+//     #search-telefon::before {
+//         content: "Telefon: ";
+//     }
+
+//     #search-email::before {
+//         content: "Email: ";
+//     }
+
+//     #search-recenzii {
+//         height: 25vh;
+//     }
+// }
+
+// @media only screen and (max-width: 1300px){
+//     .terap-box-pic {
+//         // width: 8vw;
+//         // height: 8vh;
+//     }
+// }

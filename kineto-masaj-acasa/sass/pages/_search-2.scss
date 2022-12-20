@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+
+.list-container {
+    background-color: darken($white, 10%);
+    border-radius: 2rem;
+    padding-bottom: 3rem !important;
+}
+
+.search-area {
+    text-align: center;
+    margin: 1rem 0 0 0;
+    border-bottom: 0.5rem solid $white;
+}
+
+.search-box {
+
+    input::placeholder {
+        font-size: $font-size - 0.2rem;
+    }
+
+    button {
+        width: 2.5rem;
+    }
+
+    @include tablet {
+        .input-group {
+            width: 75%;
+            margin: auto;
+        }
+    }
+}
+
+.list-area {
+    height: 80vh;
+    padding: 1rem 0;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: $tertiary-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $white;
+        border-radius: 1rem;
+    }
+}
+
+.therapist-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-top: 0.2rem solid $white;
+    border-bottom: 0.2rem solid $white;
+    padding: 1rem;
+
+    &-pic {
+        width: 12rem;
+    
+        img {
+            border-radius: 50%;
+        }
+
+        @include tablet {
+            width: 6rem;
+        }
+
+    }
+
+    &-info, &-info div {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    &-name {
+        font-size: $font-size + 0.2rem;
+    }
+
+    &-locations, &-therapies {
+        padding: 0.2rem 1rem;
+        font-size: $font-size - 0.2rem;
+        max-width: 95%;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    svg {
+        width: 3rem;
+        height: 3rem;
+        color: green;
+    }
+}

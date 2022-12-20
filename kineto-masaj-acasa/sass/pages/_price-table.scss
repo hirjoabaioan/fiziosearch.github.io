@@ -124,33 +124,35 @@ ul {
     @include laptop {
         justify-content: center;
     }
-}
 
-.bi {
-    padding-left: 1rem;
-    // font-size: $font-size + .2rem;
-    margin-left: 5%;
-
-    &-check {
-        color: $primary-color;
-    }
+    .bi {
+        padding-left: 1rem;
+        // font-size: $font-size + .2rem;
+        margin-left: 5%;
     
-    &-x {
-        color: $red;
-    }
-
-    @include tablet {
-        margin-left: 25%;
-    }
-
-    @include tablet-wide {
-        margin-left: 0;
-    }
-
-    @include laptop {
-        text-align: center;
+        &-check {
+            color: $primary-color;
+        }
+        
+        &-x {
+            color: $red;
+        }
+    
+        @include tablet {
+            margin-left: 25%;
+        }
+    
+        @include tablet-wide {
+            margin-left: 0;
+        }
+    
+        @include laptop {
+            text-align: center;
+        }
     }
 }
+
+
 
 .feature-hide {
     display: inline !important;

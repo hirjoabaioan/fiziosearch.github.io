@@ -50,233 +50,282 @@
         </nav>
     </header>
 
-    <main class="col-md-8 col-xs-12 d-flex row justify-content-center align-items-center w-100 m-0 mt-4 mb-2 p-2 gap-2">
-        <div class="col-sx-12 col-ms-11 col-md-3 col-lg-4 col-xl-3 m-0 p-2 pb-5 container-list">
-            <h2 class="register-title">
-                Listă terapeuți <br>
-                <span class="text-muted register-subtitle">Găsește terapeutul cel mai apropiat</span>
-            </h2>
-            <form class="row" action="" method="">
-                <div class="d-flex justify-content-center input-group search-box p-4">
-                    <input type="text" class="form-control" placeholder="Caută după locație sau terapeut...">
-                    <button class="btn btn-success" id="search-button" type="button">
-                        <img src="../img/search.webp" alt="Caută">
-                    </button>
+    <main class="col-12 d-flex row justify-content-center align-items-center m-0 mt-4 mb-2 p-2 gap-2">
+        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-11 col-xs-12 m-0 ms-xl-3 ms-lg-2 p-0 h-100 list-container">
+            <div class="mt-2 d-flex justify-content-center align-items-center">
+                <h2 class="text-center register-title">
+                    Listă terapeuți <br>
+                    <small class="text-muted register-subtitle">Găsește terapeutul cel mai apropiat</small>
+                </h2>
+            </div>
+            <form action="" method="" class="col-12 d-flex row justify-content-center p-2 m-0 list-form">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-12 d-flex justify-content-center">
+                    <div class="input-group d-flex justify-content-center text-center p-2" id="search-box">
+                        <input type="text" class="form-control" placeholder="Caută o locație sau un terapeut..." aria-label="Caută" aria-describedby="search-button">
+                        <button class="btn btn-success" id="search-button" type="button">
+                            <img src="../img/search.webp" id="search-icon" alt="Caută">
+                        </button>
+                    </div>
                 </div>
-                <div class="col-5 d-flex justify-content-center align-content-center m-0 p-0 dropdown">
-                    <select title="Servicii" name="Servicii" onchange="" class="btn btn-secondary dropdown-toggle" id="dropdownServicii" data-bs-toggle="dropdown" aria-expanded="false">
-                        <option selected>Servicii</option>
-                        <option value="1">București</option>
-                        <option value="2">Alba</option>
-                        <option value="3">Arad</option>
-                        <option value="4">Argeș</option>
-                        <option value="5">Bacău</option>
-                        <option value="6">Bihor</option>
-                    </select>
+                <div class="col-6 d-flex justify-content-center m-0">
+                    <div class="d-flex justify-content-center align-content-center col-xl-12 col-lg-12 col-md-8 col-sm-8 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
+                        <select title="Servicii" name="Servicii" onchange="" class="col-xl-10 col-lg-10 col-md-8 col-sm-8 col-sm-12 col-xs-12 btn btn-secondary dropdown-toggle" type="button" id="dropdownServicii" data-bs-toggle="dropdown" aria-expanded="false">
+                            <option class="" aria-labelledby="dropdownServicii">Servicii</option>
+                            <option class="" value="București">București</option>
+                            <option class="" value="Alba">Alba</option>
+                            <option class="" value="Arad">Arad</option>
+                            <option class="" value="Argeș">Argeș</option>
+                            <option class="" value="Bacău">Bacău</option>
+                            <option class="" value="Bihor">Bihor</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-5 d-flex justify-content-center align-content-center m-0 p-0 dropdown">
-                    <select title="Servicii" name="Servicii" onchange="" class="btn btn-secondary dropdown-toggle" id="dropdownServicii" data-bs-toggle="dropdown" aria-expanded="false">
-                        <option selected>Terapii</option>
-                        <option value="1">București</option>
-                        <option value="2">Alba</option>
-                        <option value="3">Arad</option>
-                        <option value="4">Argeș</option>
-                        <option value="5">Bacău</option>
-                        <option value="6">Bihor</option>
-                    </select>
+                <div class="col-6 d-flex justify-content-center m-0">
+                    <div class="d-flex justify-content-center align-content-center col-xl-12 col-lg-12 col-md-8 col-sm-8 col-sm-12 col-xs-12 mt-2 mb-2 m-0 p-0 dropdown">
+                        <select title="Specializari" name="Specializari" onchange="" class="col-xl-10 col-lg-10 col-md-8 col-sm-8 col-sm-12 col-xs-12 btn btn-secondary dropdown-toggle" type="button" id="dropdownSpecializari" data-bs-toggle="dropdown" aria-expanded="false">
+                            <option class="" aria-labelledby="dropdownSpecializari">Specializări</option>
+                            <option class="" value="București">București</option>
+                            <option class="" value="Alba">Alba</option>
+                            <option class="" value="Arad">Arad</option>
+                            <option class="" value="Argeș">Argeș</option>
+                            <option class="" value="Bacău">Bacău</option>
+                            <option class="" value="Bihor">Bihor</option>
+                        </select>
+                    </div>
                 </div>
+                
             </form>
-            <div class="lista-container">
-                <div class="row overflow-auto lista">
-                    <div class="row terapeut-box py-3" onclick="showTherapistInfo()">
-                        <div class="col-1 terapeut-box-pic">
+            <div class="p-4">
+                <div class="row d-flex justify-content-center p-2 m-xl-2 m-lg-2 overflow-auto lista-terapeuti">
+                    
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
                             <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
                         </div>
-                        <div class="col-9 row terapeut-box-content">
-                            <div class="col-12 terapeut-box-content-name">
-                                <span>Hîrjoabă Ioan</span>
-                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
-                                <i class="bi bi-dot"></i>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
                             </div>
-                            <span class="terapeut-box-content-locatii text-truncate">
-                                București, Sector 3, Sector 4, Chiajna
-                            </span>
-                            <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
-                            <span class="terapeut-box-content-terapii text-truncate">
-                                Terapie 1, Terapie 2, Terapie 3
-                            </span>
-                        </div>                        
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="row terapeut-box py-3" onclick="showTherapistInfo()">
-                        <div class="col-1 terapeut-box-pic">
-                            <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
+                            <img src="../img/profiles/PozaP.webp" alt="Hîrjoabă Ioan">
                         </div>
-                        <div class="col-9 row terapeut-box-content">
-                            <div class="col-12 terapeut-box-content-name">
-                                <span>Hîrjoabă Ioan</span>
-                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
-                                <i class="bi bi-dot"></i>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
                             </div>
-                            <span class="terapeut-box-content-locatii text-truncate">
-                                București, Sector 3, Sector 4, Chiajna
-                            </span>
-                            <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
-                            <span class="terapeut-box-content-terapii text-truncate">
-                                Terapie 1, Terapie 2, Terapie 3
-                            </span>
-                        </div>                        
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row terapeut-box py-3" onclick="showTherapistInfo()">
-                        <div class="col-1 terapeut-box-pic">
-                            <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
+
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
+                            <img src="../img/profiles/PozaH.webp" alt="Hîrjoabă Ioan">
                         </div>
-                        <div class="col-9 row terapeut-box-content">
-                            <div class="col-12 terapeut-box-content-name">
-                                <span>Hîrjoabă Ioan</span>
-                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
-                                <i class="bi bi-dot"></i>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
                             </div>
-                            <span class="terapeut-box-content-locatii text-truncate">
-                                București, Sector 3, Sector 4, Chiajna
-                            </span>
-                            <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
-                            <span class="terapeut-box-content-terapii text-truncate">
-                                Terapie 1, Terapie 2, Terapie 3
-                            </span>
-                        </div>                        
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row terapeut-box py-3" onclick="showTherapistInfo()">
-                        <div class="col-1 terapeut-box-pic">
+
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
                             <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
                         </div>
-                        <div class="col-9 row terapeut-box-content">
-                            <div class="col-12 terapeut-box-content-name">
-                                <span>Hîrjoabă Ioan</span>
-                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
-                                <i class="bi bi-dot"></i>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
                             </div>
-                            <span class="terapeut-box-content-locatii text-truncate">
-                                București, Sector 3, Sector 4, Chiajna
-                            </span>
-                            <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
-                            <span class="terapeut-box-content-terapii text-truncate">
-                                Terapie 1, Terapie 2, Terapie 3
-                            </span>
-                        </div>                        
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row terapeut-box py-3" onclick="showTherapistInfo()">
-                        <div class="col-1 terapeut-box-pic">
-                            <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
+
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
+                            <img src="../img/profiles/PozaP.webp" alt="Hîrjoabă Ioan">
                         </div>
-                        <div class="col-9 row terapeut-box-content">
-                            <div class="col-12 terapeut-box-content-name">
-                                <span>Hîrjoabă Ioan</span>
-                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
-                                <i class="bi bi-dot"></i>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
                             </div>
-                            <span class="terapeut-box-content-locatii text-truncate">
-                                București, Sector 3, Sector 4, Chiajna
-                            </span>
-                            <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
-                            <span class="terapeut-box-content-terapii text-truncate">
-                                Terapie 1, Terapie 2, Terapie 3
-                            </span>
-                        </div>                        
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row terapeut-box py-3" onclick="showTherapistInfo()">
-                        <div class="col-1 terapeut-box-pic">
+
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
                             <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
                         </div>
-                        <div class="col-9 row terapeut-box-content">
-                            <div class="col-12 terapeut-box-content-name">
-                                <span>Hîrjoabă Ioan</span>
-                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
-                                <i class="bi bi-dot"></i>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
                             </div>
-                            <span class="terapeut-box-content-locatii text-truncate">
-                                București, Sector 3, Sector 4, Chiajna
-                            </span>
-                            <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
-                            <span class="terapeut-box-content-terapii text-truncate">
-                                Terapie 1, Terapie 2, Terapie 3
-                            </span>
-                        </div>                        
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex row justify-content-center align-items-center row terapeut-box p-2 ps-xl-1 ps-lg-1 ps-md-5 ps-sm-5 ps-xs-5 pe-xl-1 pe-lg-1 pe-md-5 pe-sm-5 pe-xs-5" onclick="showTherapistInfo()">
+                        <div class="col-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 terap-box-pic">
+                            <!-- Poza -->
+                            <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
+                        </div>
+                        <div class="col-9 col-xl-8 col-lg-8 col-md-8 col-sm-9 col-xs-9 ps-sm-3 pe-sm-3 d-flex justify-content-start align-items-center row terap-box-content">
+                            <div class="col-10">
+                                <!-- Nume și prenume -->
+                                <span class="terap-box-name">Hîrjoabă Ioan</span>
+                            </div>
+                            <div class="col-2 terap-box-avail">
+                                <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                                <span class="dot on"></span>
+                            </div>
+                            <div class="col-12 d-flex terap-box-terap text-truncate">
+                                <!-- Terapiile/Specializările 2-3 după care restul sunt truncate -->
+                                <span>Terapie 1, Terapie 2, Terapie 3,</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
-        <div class="col-xs-12 col-sm-11 col-md-8 col-lg-7 col-xl-8 m-0 p-2 container-informatii" id="containerInformatii">
-            <div>
-                <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X" data-bs-dismiss="container-informatii" data-bs-target="#containerInformatii"></button>
-            </div>
-            <div class="col-12 row informatii-section-one">
-                <div class="informatii-section-one-pic">
-                    <img src="../img/profiles/PozaH.jpeg" alt="{Nume Terapeut Selectat}">
+        <div class="col-xl-8 col-lg-7 col-md-8 col-sm-11 col-xs-12 row justify-content-start align-items-start m-0 me-xl-3 me-lg-2 p-2 h-100 info-container">
+            <div class="d-flex m-0 justify-content-end align-items-center" onclick="closeTherapistInfo()" id="close">
+                <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
+              </div>
+            <div class="col-12 col-xl-12 col-lg-12 d-flex row justify-content-lx-start justify-content-lg-start justify-content-center align-items-center p-2 m-0 mt-2 mt-xl-4 mt-lg-4" id="informatii-header">
+                <div class="col-3 col-xl-4 col-lg-4 terap-box-pic info-pic">
+                    <!-- Poza terapeutului-->
+                    <img src="../img/profiles/PozaW.webp" alt="Hîrjoabă Ioan">
                 </div>
-                <div class="row">
-                    <div class="informatii-section-one-nume">
+                <div class="col-9 d-flex row justify-content-start align-items-center">
+                    <div class="col-10 col-xl-6 col-lg-6 p-0 m-0" id="nume">
+                        <!-- Numele terapeutului -->
                         <h3 class="m-0">Hîrjoabă Ioan</h3>
                     </div>
-                    <div class="informatii-section-one-avail">
-                        <i class="bi bi-dot"></i>
+                    <div class="col-2 col-xl-2 col-lg-2 terap-box-avail">
+                        <!-- Arată dacă este activ (clasa "on") sau inactiv (clasa "off") -->
+                        <span class="dot on"></span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="informatii-section-one-locatii">
+                <div class="col-12 d-flex row justify-content-lx-start justify-content-lg-start justify-content-center align-items-start p-0">
+                    <div class="col-12 col-xl-6 col-lg-6 mt-4 p-0 p-xl-2 p-lg-2" id="locatii">
                         <h5 class="info-titles">Locații</h5>
-                        <span class="">
-                            București, Sector 3, Sector 4, Chiajna, Șindrilița
-                        </span>
+                        <!-- Locatiile in care merge terapeutul -->
+                        <span class="d-flex ps-4 pe-4 text-wrap">București, Sector 3, Sector 4, Chiajna, Șindrilița</span>
                     </div>
-                    <div class="informatii-section-one-contact">
-                        <h5 class="info-title">Contact</h5>
+                    <div class="col-12 col-xl-6 col-lg-6 mt-4 p-0 p-xl-2 p-lg-2">
+                        <h5 class="info-titles">Contact</h5>
                         <!-- Acest div apare după ce se apasă butonul de contact -->
-                        <div class="row">
+                        <div class="d-flex row justify-content-center m-0 ps-4 pe-4">
                             <!-- Butonul dispare dupa ce este apasat si apar datele de contact -->
-                            <button class="btn btn-primary contact-button" text="Contact">Contact</button>
+                            <button class="col-12 col-xl-10 col-lg-10 btn btn-primary contact-button">Contactează terapeutul</button>
                             <!-- Datele de contact apar dupa apasarea butonului de deasupra -->
-                            <div class="row contact-info">
-                                <a href="tel:075-457-9331" class="btn btn-secondary msg-button med search-telefon">0754579331</a>
-                                <a href="mailto:hirjoaba_ioan@yahoo.com" class="btn btn-secondary msg-button med text-center search-email">hirjoaba_ioan@yahoo.com</a>
-                                <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
-                            </div>
+                            <div class="col-lx-12 col-lg-12 d-flex row justify-content-center m-0 p-0 contact-info">
+                                <a href="tel:075-457-9331" class="col-10 col-lx-5 col-lg-5 m-1 p-2 btn btn-secondary msg-button med text-center" id="search-telefon">0754579331</a>
+                                <a href="mailto:hirjoaba_ioan@yahoo.com" class="col-10 col-lx-6 col-lg-6 m-1 p-2 btn btn-secondary msg-button med text-center" id="search-email">hirjoaba_ioan@yahoo.com</a>
+                                <button class="col-10 col-lx-6 col-lg-10 m-1 p-2 btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+                            </div> 
                         </div>
+
                     </div>
                 </div>
             </div>
-            <div class="informatii-section-two">
-                <div class="informatii-section-two-activitate">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex row p-0 m-0 mt-3">
+                <div class="col-12 mt-2" id="activitate">
                     <h5 class="info-titles">Activitate</h5>
-                    <div class="">
+                    <div class="m-0 ps-4 pe-4">
                         <!-- Doar unul dintre calificative va fi afișat în funcție de recenziile acordate de pacienți: Foarte Bun | Bun | Rău | Foarte rău -->
-                        <div>
-                            <h6>Rating general:</h6>
-                            <span>Bun</span>
+                        <div class="d-flex row">
+                            <h6 class="col-8">Rating general:</h6> <span class="col-4">Bun</span>
                         </div>
-                        <div>
-                            <h6>Recenzii primite:</h6>
-                            <span>40</span>
+                        <div class="d-flex row">
+                            <h6 class="col-8">Recenzii primite:</h6> <span class="col-4">40</span>
                         </div>
-                        <div>
-                            <h6>Experiență:</h6>
-                            <span>4 ani</span>
+                        <div class="d-flex row">
+                            <h6 class="col-8">Experiența:</h6> <span class="col-4">4 ani</span>
                         </div>
                     </div>
                 </div>
-                <div class="informatii-section-two-descriere">
+                <div class="col-12 mt-2" id="descriere">
                     <h5 class="info-titles">Descriere</h5>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum beatae velit dicta ratione consequatur sapiente, earum deleniti libero, eum autem vel id aut eos fuga ullam laboriosam. Aspernatur, maiores nostrum?
+                    <p class="m-0 ps-4 pe-4">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.
+                    
                     </p>
                 </div>
+                <div class="col-12 mt-2" id="cursuri">
+                    <h5 class="info-titles">Cursuri</h5>
+                    <p class="m-0 ps-4 pe-4">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores voluptatem.
+                    </p>
+                </div>
+                
             </div>
-            <div class="informatii-section-three">
-                <div class="table-responsive informatii-section-three-servicii">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex row p-0 m-0 mt-3">
+                
+                <div class="col-12 mt-2 table-responsive" id="servicii">
                     <h5 class="info-titles">Servicii</h5>
-                    <table class="table">
+                    <table class="table search-terap-table ps-2 pe-2">
                         <tr>
                             <th class="col">Terapie</th>
                             <th class="col">Durată</th>
@@ -284,25 +333,25 @@
                         </tr>
                         <tr>
                             <td>Masaj</td>
-                            <td class="informatii-time">30</td>
-                            <td class="informatii-price">100</td>
+                            <td class="search-time">30</td>
+                            <td class="search-price">100</td>
                         </tr>
                         <tr>
                             <td>Terapie manuală</td>
-                            <td class="informatii-time">30</td>
-                            <td class="informatii-price">150</td>
+                            <td class="search-time">30</td>
+                            <td class="search-price">150</td>
                         </tr>
                         <tr>
                             <td>Ventuze</td>
-                            <td class="informatii-time">15</td>
-                            <td class="informatii-price">50</td>
+                            <td class="search-time">15</td>
+                            <td class="search-price">50</td>
                         </tr>
                     </table>
                 </div>
-                <div class="table-responsive informatii-section-three-recenzii">
+                <div class="col-12 mt-2 table-responsive" id="recenzii">
                     <h5 class="info-titles">Recenzii</h5>
                     <div class="overflow-auto" id="search-recenzii">
-                        <table class="table">
+                        <table class="table ps-2 pe-2">
                             <tr>
                                 <th class="col">Client</th>
                                 <th class="col">Recenzie</th>
@@ -339,7 +388,7 @@
     </main>
 
 
-    <footer class="col-12 d-flex row justify-content-center align-items-center w-100 mt-auto m-0 ms-0 p-0 py-3 bg-dark">
+    <footer class="col-12 d-flex row justify-content-center align-items-center mt-auto m-0 ms-0 p-0 py-3 bg-dark">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex row justify-content-center align-items-center text-center">
             <a href="../index.html" class="col-12">
                 <img id="footer-brand" src="../img/Logo-transp-wide-white.webp" alt="Kineto și Masaj">
@@ -351,9 +400,9 @@
                 </a>
             </div>
         </div>
-        <a href="search.html" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12  mt-3 mb-3 text-center footer-search btn btn-secondary text-center footer-search" type="button">
+        <a href="search.html" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-3 mb-3 d-flex align-items-center justify-content-center gap-2 text-center footer-search btn btn-secondary" type="button">
             Caută terapeuți
-            <img class="arrow" src="../img/arrow.webpg" alt="Despre kinetoterapeuți">
+            <i class="bi bi-arrow-right-circle"></i>
         </a>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 m-2 d-flex row justify-content-center align-items-center text-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0 m-0">
@@ -378,6 +427,9 @@
             </span>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="../javascript.js"></script>
     
 </body>
 </html>
