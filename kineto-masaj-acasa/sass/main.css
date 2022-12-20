@@ -718,9 +718,10 @@ nav img {
 }
 
 .list-container {
-  background-color: #e6e6e6;
+  background-color: #d9d9d9;
   border-radius: 2rem;
   padding-bottom: 3rem !important;
+  width: 90%;
 }
 
 .search-area {

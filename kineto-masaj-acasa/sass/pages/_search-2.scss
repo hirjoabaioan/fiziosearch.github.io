@@ -2,9 +2,10 @@
 
 
 .list-container {
-    background-color: darken($white, 10%);
+    background-color: darken($white, 15%);
     border-radius: 2rem;
     padding-bottom: 3rem !important;
+    width: 90%;
 }
 
 .search-area {
@@ -14,7 +15,6 @@
 }
 
 .search-box {
-
     input::placeholder {
         font-size: $font-size - 0.2rem;
     }
