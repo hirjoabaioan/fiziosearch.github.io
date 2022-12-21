@@ -42,7 +42,7 @@
 }
 
 @mixin desktop-big {
-    @media (min-width: 1800px) {
+    @media (min-width: 100rem) {
         @content;
     }
 }

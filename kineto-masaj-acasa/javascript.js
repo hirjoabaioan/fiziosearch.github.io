@@ -1,4 +1,4 @@
-$('.msg-button').hide();
+$('.contact-info').hide();
 
 if(window.matchMedia("(hover: none) and (pointer: coarse)").matches){
     $('.info-container').hide();
@@ -7,26 +7,26 @@ if(window.matchMedia("(hover: none) and (pointer: coarse)").matches){
 }
 
 $('.contact-button').click(function(){
-    $('.msg-button').show();
+    $('.contact-info').show();
     $(this).hide();
 });
 
 
 function showTherapistInfo() {
-    if(window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
-        $('.list-container').removeClass('d-flex');
+    if(window.matchMedia("(max-width: 57rem)").matches) {
+        $('.list-container').removeClass('grid');
         $('.list-container').hide();
     }
     $('.info-container').show();
-    $('.info-container').addClass('d-flex');
+    $('.info-container').addClass('grid');
 
 }
 
 function closeTherapistInfo() {
-    if(window.matchMedia("(hover: none) and (pointer: coarse)").matches){
+    if(window.matchMedia("(max-width: 57rem)").matches){
         $('.list-container').addClass('d-flex');
         $('.list-container').show();
-        $('informatii').removeClass('d-flex');
+        $('.info-container').removeClass('grid');
         $('.info-container').hide();
     }
     var replace = `

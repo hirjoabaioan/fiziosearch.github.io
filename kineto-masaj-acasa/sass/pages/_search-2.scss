@@ -1,17 +1,62 @@
 @use '../abstracts' as *;
 
 
-.list-container {
+// .info-container {
+//     display: none !important;
+// }
+
+.list-container, .info-container {
     background-color: darken($white, 15%);
     border-radius: 2rem;
-    padding-bottom: 3rem !important;
+    padding-bottom: 2rem !important;
     width: 90%;
+
+    img {
+        border-radius: 50%;
+    }
+
+    @include tablet-wide {
+        margin: 0 !important;
+    }
+}
+
+.list-container {
+    @include laptop {
+        width: 25%;
+    }
+}
+
+.list-form {
+
+    @include tablet-wide {
+    .input-group {
+        width: 100%;
+        margin: 0;
+        padding: 0 !important;
+    }
+    }
+}
+
+.info-container {
+    @include laptop {
+        width: 70%;
+    }
 }
 
 .search-area {
     text-align: center;
     margin: 1rem 0 0 0;
     border-bottom: 0.5rem solid $white;
+
+    @include tablet {
+        .register-title{
+            font-size: $font-size + 0.6rem;
+        }
+    }
+
+    @include tablet-wide {
+        font-size: calc(2.325rem + .9vw);
+    }
 }
 
 .search-box {
@@ -29,11 +74,24 @@
             margin: auto;
         }
     }
+
+    .dropdown {
+        width: 45%;
+
+        select {
+            width: 100%;
+        }
+
+        @include phone {
+            width: 100% !important;
+        }
+    }
 }
 
 .list-area {
-    height: 80vh;
+    height: 50rem;
     padding: 1rem 0;
+    border-bottom: 4px solid $white;
 
     &::-webkit-scrollbar {
         width: 0.5rem;
@@ -48,6 +106,10 @@
         background: $white;
         border-radius: 1rem;
     }
+
+    @include laptop {
+        height: 50rem;
+    }
 }
 
 .therapist-box {
@@ -55,21 +117,19 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    border-top: 0.2rem solid $white;
     border-bottom: 0.2rem solid $white;
     padding: 1rem;
 
     &-pic {
-        width: 12rem;
-    
-        img {
-            border-radius: 50%;
-        }
+        width: calc(8rem + .5vw);
 
         @include tablet {
-            width: 6rem;
+            width: calc(10rem + .5vw);
         }
 
+        // @include laptop {
+        //     width: 6rem;
+        // }
     }
 
     &-info, &-info div {
@@ -79,7 +139,29 @@
     }
     
     &-name {
-        font-size: $font-size + 0.2rem;
+        font-size: $font-size + 0.4rem;
+        font-weight: 600;
+
+        @include phone {
+            font-size: $font-size - 0.2rem;
+        }
+
+        @include tablet {
+            font-size: $font-size - 0.2rem;
+        }
+
+        @include tablet-wide {
+            font-size: $font-size + 0.2rem;
+        }
+    }
+
+    svg {
+        width: 3rem;
+        color: green;
+
+        @include phone {
+            width: 2rem;
+        }
     }
 
     &-locations, &-therapies {
@@ -90,11 +172,185 @@
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @include phone {
+            font-size: $font-size - 0.4rem;
+        }
+
+        @include tablet-wide {
+            font-size: $font-size - 0.3rem;
+            padding: 0.2rem 0.5rem;
+        }
+    }
+}
+
+.info-container {
+    // display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three';
+
+    .info-header {
+        grid-area: one;
+    }
+
+    .info-bio {
+        grid-area: two;
+    }
+
+    .info-long {
+        grid-area: three;
+    }
+
+    @include laptop {
+        display: grid;
+        grid-template-areas: 
+        'one one'
+        'two three';
+    }
+}
+
+.header-pn {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: flex-start;
+    align-items: center;
+    
+    &-pic {
+        width: 6rem;
+    
+        @include tablet {
+            width: 8rem;
+        }
+    }
+
+    &-name {
+        font-size: $font-size + 0.2rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: $font-size + 1rem;
+        }
     }
 
     svg {
-        width: 3rem;
-        height: 3rem;
+        width: 5rem;
         color: green;
+
+        @include phone {
+            width: 3rem;
+        }
+    }
+}
+
+.header-locations {
+    margin-bottom: 1rem;
+}
+
+.contact-button {
+    width: 50%;
+    margin: 0.5em 50%;
+
+    @include phone {
+        font-size: 1rem !important;
+    }
+
+}
+
+.contact-info {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 1rem 0 !important;
+
+    .msg-button {
+        font-size: $font-size;
+
+        @include tablet-wide {
+            width: 48%;
+            margin: auto;
+        }
+    }
+
+    @include tablet-wide {
+        width: 85%;
+        #search-telefon::before {
+            content: "Telefon: ";
+        }
+
+        #search-email::before {
+            content: "Email: ";
+        }
+    }
+}
+
+
+
+.info-titles {
+    font-size: $font-size + 0.1rem;
+    padding: 0.25rem 0;
+    padding-left: 5%;
+    border-radius: 50px;
+    background-color: $tertiary-color;
+    color: $white;
+
+    @include tablet {
+        font-size: $font-size + 0.5rem;
+    }
+}
+
+.info-long-services {
+    
+    .info-long-table {
+        text-align: center;
+        width: 75%;
+        margin-left: 10%;
+    }
+}
+
+.info-long-table {
+  
+    tr {
+        border-bottom: 4px solid $white;
+    
+        &:first-child {
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+    
+    td {
+        border-bottom: 4px solid $white;
+        padding: 4%;
+        font-size: $font-size - 0.2rem;
+
+        &:nth-child(2), &:nth-child(3) {
+            text-align: center;
+        }
+    }
+}
+
+.reviews-container {
+    height: 15rem;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #B7B7B7;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $white;
+        border-radius: 1rem;
+    }
+
+    @include laptop {
+        height: 20rem;
     }
 }

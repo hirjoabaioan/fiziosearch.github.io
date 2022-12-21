@@ -8,7 +8,7 @@
 /* Remove default margin */
 * {
   margin: 0;
-  paading: 0;
+  padding: 0;
   font: inherit;
 }
 
@@ -717,17 +717,55 @@ nav img {
   border-radius: 30px !important;
 }
 
-.list-container {
+.list-container, .info-container {
   background-color: #d9d9d9;
   border-radius: 2rem;
-  padding-bottom: 3rem !important;
+  padding-bottom: 2rem !important;
   width: 90%;
+}
+.list-container img, .info-container img {
+  border-radius: 50%;
+}
+@media (min-width: 48rem) {
+  .list-container, .info-container {
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 64rem) {
+  .list-container {
+    width: 25%;
+  }
+}
+
+@media (min-width: 48rem) {
+  .list-form .input-group {
+    width: 100%;
+    margin: 0;
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: 64rem) {
+  .info-container {
+    width: 70%;
+  }
 }
 
 .search-area {
   text-align: center;
   margin: 1rem 0 0 0;
   border-bottom: 0.5rem solid white;
+}
+@media (min-width: 37.5rem) {
+  .search-area .register-title {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 48rem) {
+  .search-area {
+    font-size: calc(2.325rem + 0.9vw);
+  }
 }
 
 .search-box input::-moz-placeholder {
@@ -750,10 +788,22 @@ nav img {
     margin: auto;
   }
 }
+.search-box .dropdown {
+  width: 45%;
+}
+.search-box .dropdown select {
+  width: 100%;
+}
+@media (max-width: 37.5rem) {
+  .search-box .dropdown {
+    width: 100% !important;
+  }
+}
 
 .list-area {
-  height: 80vh;
+  height: 50rem;
   padding: 1rem 0;
+  border-bottom: 4px solid white;
 }
 .list-area::-webkit-scrollbar {
   width: 0.5rem;
@@ -766,25 +816,26 @@ nav img {
   background: white;
   border-radius: 1rem;
 }
+@media (min-width: 64rem) {
+  .list-area {
+    height: 50rem;
+  }
+}
 
 .therapist-box {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  border-top: 0.2rem solid white;
   border-bottom: 0.2rem solid white;
   padding: 1rem;
 }
 .therapist-box-pic {
-  width: 12rem;
-}
-.therapist-box-pic img {
-  border-radius: 50%;
+  width: calc(8rem + 0.5vw);
 }
 @media (min-width: 37.5rem) {
   .therapist-box-pic {
-    width: 6rem;
+    width: calc(10rem + 0.5vw);
   }
 }
 .therapist-box-info, .therapist-box-info div {
@@ -793,7 +844,32 @@ nav img {
   align-items: center;
 }
 .therapist-box-name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+@media (max-width: 37.5rem) {
+  .therapist-box-name {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 37.5rem) {
+  .therapist-box-name {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 48rem) {
+  .therapist-box-name {
+    font-size: 1.2rem;
+  }
+}
+.therapist-box svg {
+  width: 3rem;
+  color: green;
+}
+@media (max-width: 37.5rem) {
+  .therapist-box svg {
+    width: 2rem;
+  }
 }
 .therapist-box-locations, .therapist-box-therapies {
   padding: 0.2rem 1rem;
@@ -804,10 +880,167 @@ nav img {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.therapist-box svg {
-  width: 3rem;
-  height: 3rem;
+@media (max-width: 37.5rem) {
+  .therapist-box-locations, .therapist-box-therapies {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 48rem) {
+  .therapist-box-locations, .therapist-box-therapies {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+.info-container {
+  gap: 1rem;
+  grid-template-areas: "one" "two" "three";
+}
+.info-container .info-header {
+  grid-area: one;
+}
+.info-container .info-bio {
+  grid-area: two;
+}
+.info-container .info-long {
+  grid-area: three;
+}
+@media (min-width: 64rem) {
+  .info-container {
+    display: grid;
+    grid-template-areas: "one one" "two three";
+  }
+}
+
+.header-pn {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header-pn-pic {
+  width: 6rem;
+}
+@media (min-width: 37.5rem) {
+  .header-pn-pic {
+    width: 8rem;
+  }
+}
+.header-pn-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+@media (min-width: 37.5rem) {
+  .header-pn-name {
+    font-size: 2rem;
+  }
+}
+.header-pn svg {
+  width: 5rem;
   color: green;
+}
+@media (max-width: 37.5rem) {
+  .header-pn svg {
+    width: 3rem;
+  }
+}
+
+.header-locations {
+  margin-bottom: 1rem;
+}
+
+.contact-button {
+  width: 50%;
+  margin: 0.5em 50%;
+}
+@media (max-width: 37.5rem) {
+  .contact-button {
+    font-size: 1rem !important;
+  }
+}
+
+.contact-info {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem 0 !important;
+}
+.contact-info .msg-button {
+  font-size: 1rem;
+}
+@media (min-width: 48rem) {
+  .contact-info .msg-button {
+    width: 48%;
+    margin: auto;
+  }
+}
+@media (min-width: 48rem) {
+  .contact-info {
+    width: 85%;
+  }
+  .contact-info #search-telefon::before {
+    content: "Telefon: ";
+  }
+  .contact-info #search-email::before {
+    content: "Email: ";
+  }
+}
+
+.info-titles {
+  font-size: 1.1rem;
+  padding: 0.25rem 0;
+  padding-left: 5%;
+  border-radius: 50px;
+  background-color: #1F5065;
+  color: white;
+}
+@media (min-width: 37.5rem) {
+  .info-titles {
+    font-size: 1.5rem;
+  }
+}
+
+.info-long-services .info-long-table {
+  text-align: center;
+  width: 75%;
+  margin-left: 10%;
+}
+
+.info-long-table tr {
+  border-bottom: 4px solid white;
+}
+.info-long-table tr:first-child {
+  text-align: center;
+  font-weight: bold;
+}
+.info-long-table td {
+  border-bottom: 4px solid white;
+  padding: 4%;
+  font-size: 0.8rem;
+}
+.info-long-table td:nth-child(2), .info-long-table td:nth-child(3) {
+  text-align: center;
+}
+
+.reviews-container {
+  height: 15rem;
+}
+.reviews-container::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.reviews-container::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #B7B7B7;
+}
+.reviews-container::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 1rem;
+}
+@media (min-width: 64rem) {
+  .reviews-container {
+    height: 20rem;
+  }
 }
 
 .pacient {
