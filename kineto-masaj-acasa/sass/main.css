@@ -62,10 +62,6 @@ picture {
     scroll-behavior: auto !important;
   }
 }
-@font-face {
-  font-family: "Aileron";
-  src: url("fonts/aileron/Aileron-Regular.otf") format("otf");
-}
 @-webkit-keyframes slide-bottom {
   0% {
     transform: translateY(0);
@@ -110,8 +106,18 @@ picture {
     Others
    =============
 */
+/* =============
+    Font-size
+   =============
+*/
+@font-face {
+  font-family: "Aileron";
+  src: url("fonts/aileron/Aileron-Regular.otf") format("otf");
+}
 html {
   font-size: 1rem;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 body {
@@ -770,14 +776,20 @@ nav img {
 
 .search-box input::-moz-placeholder {
   font-size: 0.8rem;
+  font-size: clamp(0.25rem, 1vw + 1rem, 1rem);
+  font-weight: 200;
 }
 
 .search-box input:-ms-input-placeholder {
   font-size: 0.8rem;
+  font-size: clamp(0.25rem, 1vw + 1rem, 1rem);
+  font-weight: 200;
 }
 
 .search-box input::placeholder {
   font-size: 0.8rem;
+  font-size: clamp(0.25rem, 1vw + 1rem, 1rem);
+  font-weight: 200;
 }
 .search-box button {
   width: 2.5rem;
@@ -845,7 +857,7 @@ nav img {
 }
 .therapist-box-name {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 @media (max-width: 37.5rem) {
   .therapist-box-name {
@@ -1207,6 +1219,7 @@ ul li {
 .feature-hide {
   display: inline !important;
   padding-right: 0.5rem;
+  width: 50%;
 }
 @media (min-width: 64rem) {
   .feature-hide {

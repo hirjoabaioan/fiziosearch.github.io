@@ -80,3 +80,38 @@
 //     font-size: calc(1rem + $extra-size + $view-height);
     
 // }
+
+
+/* =============
+    Font-size
+   =============
+*/
+
+
+@mixin font(
+    $option, 
+    $weight: 0,
+    $font-min: 0, 
+    $font-vw: 0, 
+    $font-max: 0) {
+
+    @if $option==xl {
+        font-size: clamp(2rem, 8vw + 1rem, 4rem);
+        font-weight: 600;
+    } @else if $option==lg {
+        font-size: clamp(1.5rem, 6vw + 1rem, 3rem);
+        font-weight: 500;
+    } @else if $option==md {
+        font-size: clamp(1rem, 4vw + 1rem, 2rem);
+        font-weight: 400;
+    } @else if $option==sm {
+        font-size: clamp(0.5rem, 2vw + 1rem, 1.5rem);
+        font-weight: 300;
+    } @else if $option==xs {
+        font-size: clamp(0.25rem, 1vw + 1rem, 1rem);
+        font-weight: 200;
+    } @else if $option==opt {
+        font-size: clamp($font-min, $font-vw + 1rem, $font-max);
+        font-weight: $weight;
+    }    
+  }
