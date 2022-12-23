@@ -1,3 +1,6 @@
+if (top.location.pathname === '/templates/search.html')
+{
+
 $('.contact-info').hide();
 
 $(window).resize (function (){
@@ -53,12 +56,11 @@ function closeTherapistInfo() {
 
 }
 
-function show (){
-
-}
 
 // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     
 // }else{
 
 // }
+
+}
