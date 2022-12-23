@@ -1,8 +1,19 @@
 $('.contact-info').hide();
 
-if(window.matchMedia("(hover: none) and (pointer: coarse)").matches){
+$(window).resize (function (){
+    if($(window).width() < 750 && $('.list-container').is(":visible")){
+        $('.info-container').hide();
+    }else if($(window).width() > 751) {
+        $('.info-container').show();
+    }
+
+})
+
+if(window.matchMedia("(max-width: 47rem)").matches){
     $('.info-container').hide();
-}else {
+}
+
+if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
     $('.med').removeClass('btn btn-secondary');
 }
 
@@ -13,8 +24,8 @@ $('.contact-button').click(function(){
 
 
 function showTherapistInfo() {
-    if(window.matchMedia("(max-width: 57rem)").matches) {
-        $('.list-container').removeClass('grid');
+    if(window.matchMedia("(max-width: 47rem)").matches) {
+        $('.list-container').removeClass('d-flex');
         $('.list-container').hide();
     }
     $('.info-container').show();
@@ -23,19 +34,23 @@ function showTherapistInfo() {
 }
 
 function closeTherapistInfo() {
-    if(window.matchMedia("(max-width: 57rem)").matches){
+    if(window.matchMedia("(max-width: 47rem)").matches){
         $('.list-container').addClass('d-flex');
         $('.list-container').show();
         $('.info-container').removeClass('grid');
         $('.info-container').hide();
     }
-    var replace = `
-    <div class="d-flex jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
-        <span id="txtCheck">Alege un terapeut din listă</span>
-    </div>
-    `;
 
-    $('.info-container').html(replace);
+    if(window.matchMedia("(min-width: 47rem)").matches){
+        var replace = `
+        <div class="grid jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
+            <span id="txtCheck">Alege un terapeut din listă</span>
+        </div>
+        `;
+    
+        $('.info-container').html(replace);
+    }
+
 }
 
 function show (){

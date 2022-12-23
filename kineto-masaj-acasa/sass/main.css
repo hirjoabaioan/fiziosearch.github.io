@@ -738,6 +738,11 @@ nav img {
   }
 }
 
+@media (min-width: 48rem) {
+  .list-container {
+    width: 35%;
+  }
+}
 @media (min-width: 64rem) {
   .list-container {
     width: 25%;
@@ -752,6 +757,11 @@ nav img {
   }
 }
 
+@media (min-width: 48rem) {
+  .info-container {
+    width: 60%;
+  }
+}
 @media (min-width: 64rem) {
   .info-container {
     width: 70%;
@@ -828,6 +838,11 @@ nav img {
   background: white;
   border-radius: 1rem;
 }
+@media (min-width: 48rem) {
+  .list-area {
+    height: 68rem;
+  }
+}
 @media (min-width: 64rem) {
   .list-area {
     height: 50rem;
@@ -843,12 +858,7 @@ nav img {
   padding: 1rem;
 }
 .therapist-box-pic {
-  width: calc(8rem + 0.5vw);
-}
-@media (min-width: 37.5rem) {
-  .therapist-box-pic {
-    width: calc(10rem + 0.5vw);
-  }
+  width: clamp(10rem, 2vw + 0.5rem, 14rem);
 }
 .therapist-box-info, .therapist-box-info div {
   display: flex;
@@ -866,7 +876,7 @@ nav img {
 }
 @media (min-width: 37.5rem) {
   .therapist-box-name {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 48rem) {
@@ -988,14 +998,16 @@ nav img {
   }
 }
 @media (min-width: 48rem) {
-  .contact-info {
-    width: 85%;
-  }
   .contact-info #search-telefon::before {
     content: "Telefon: ";
   }
   .contact-info #search-email::before {
     content: "Email: ";
+  }
+}
+@media (min-width: 64rem) {
+  .contact-info {
+    width: 60%;
   }
 }
 
