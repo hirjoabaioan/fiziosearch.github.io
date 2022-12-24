@@ -1,14 +1,11 @@
 @use '../abstracts' as *;
 
 
-// .dash-container {
-//     height: 100vh !important;
-// }
-
 .dash-nav {
     background-color: darken($white, 5%) !important;
     align-items: flex-start;
 }
+
 
 .collapsed-menu {
     height: 80vh;
@@ -18,37 +15,60 @@
     height: 100vh;
 }
 
-
+.navbar-toggler {
+    @include tablet {
+        margin-bottom: 1rem !important;
+    }
+    
+}
 
 .collapsedLinks {
     img {
         width: 100%;
+        transition: transform .2s;
 
         &:hover, &:focus, &:active {
-            filter: invert(15%);
-            -webkit-filter: invert(15%);
+            filter: hue-rotate(360deg) saturate(3) contrast(50%);
+            -webkit-filter: hue-rotate(360deg) saturate(3) contrast(50%);
+
+            -ms-transform: scale(1.2); /* IE 9 */
+            -webkit-transform: scale(1.2); /* Safari 3-8 */
+            transform: scale(1.2); 
+
+            @include tablet {
+                -ms-transform: scale(1.5); /* IE 9 */
+                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                transform: scale(1.5); 
+            }
         }
     }
 
     .nav-item {
-        width: clamp(1rem, 8vw + 1rem, 1.5rem);
+        width: clamp(1.5rem, 10vw + 1rem, 2rem);
         margin-top: 0.5rem;
+
+        @include tablet {
+            margin-top: 1.2rem;
+        }
     }
 }
 
 .dash-notif {
-    width: clamp(0.5rem, 5vw + 1rem, 1rem) !important;
-    margin-top: 0.1rem !important;
+    width: clamp(0.725rem, 6vw + 1rem, 1.5rem) !important;
+
+    @include tablet {
+        margin-top: 1rem !important;
+    }
 }
 
 .dash-notif-first {
     border-top: 3px solid $white;
-    padding-top: .3rem;
+    padding-top: .4rem;
 }
 
 .dash-notif-last {
     border-bottom: 3px solid $white;
-    padding-bottom: .3rem;
+    padding-bottom: .4rem;
 }
 
 #offcanvasNavbar {
@@ -56,8 +76,7 @@
 }
 
 .dash-menu-img {
-    width: 30vw;
-    height: 12vh;
+    width: clamp(8rem, 10vw + 1rem, 12rem);
 
     img {
         border-radius: 50%;
@@ -66,20 +85,20 @@
 }
 
 .dash-menu-title h3 {
-    font-size: 1.2rem;
+    font-size: $font-size + 0.2rem;
     font-weight: bold;
-    color: #40697B;
+    color: $tertiary-color;
 }
 
 .notification-aria {
-    border-top: 2px solid white;
+    border-top: 2px solid $white;
     padding-top: .5rem;
     width: 36%;
 }
 
 .dash-drops select{
-    font-size: .8rem !important;
-    width: 35vw;
+    font-size: $font-size !important;
+    width: 100%;
 }
 
 .notification-pic {
@@ -88,100 +107,39 @@
     img {
         width: 100%;
 
-        &:hover, &:focus, &:active {
-            filter: invert(15%);
-            -webkit-filter: invert(15%);
+    }
+
+
+}
+
+.dash-links {
+
+    a {
+        width: clamp(4rem, 10vw + 1rem, 5.5rem);
+        color: $tertiary-color;
+        font-weight: bolder;
+        font-size: clamp(0.8rem, 5vw + 1rem, 1.2rem);
+
+        &:hover, &:focus, &:active, &:target {
+            filter: hue-rotate(360deg) saturate(3) contrast(50%);
+            -webkit-filter: hue-rotate(360deg) saturate(3) contrast(50%);
+
+            -ms-transform: scale(1.2); /* IE 9 */
+            -webkit-transform: scale(1.2); /* Safari 3-8 */
+            transform: scale(1.2); 
+
         }
-    }
 
+        img{
+            width: 100%;    
 
-}
-
-.dash-links a {
-    width: 20vw;
-    color: #40697B;
-    font-weight: bolder;
-    font-size: .9rem !important;
-
-    &:hover, &:focus, &:active {
-        color: #72b9d8;
-    }
-
-    img{
-        width: 100%;    
-
-        &:hover, &:focus, &:active {
-            filter: invert(15%);
-            -webkit-filter: invert(15%);
+            
         }
-    }
-}
 
-@media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) and (min-height: 750px){
-
-    .collapsedLinks .nav-item {
-        margin-top: 1.2rem;
-    }
-
-    .dash-menu-img {
-        width: 15vw;
-        height: 18vh;
-    }
-
-    .dash-links a {
-        width: 8vw;
-    }
-
-    .dash-links a img{
-        width: 50px;
-    }
-}
-
-@media only screen and (orientation: portrait) and (hover: none) and (pointer: coarse) and (min-height: 790px){
-.dash-notif {
-    width: 4vw !important;
-    margin-top: .5rem !important;
-}
-
-.collapsedLinks .nav-item {
-    width: 6vw;
-    margin-top: .8rem;
-}
-
-.dash-menu-img {
-    width: 22vw;
-}
-
-.dash-links a {
-    width: 11vw;
-    font-size: 1.4rem !important;
-    margin-top: .5rem;
-}
-
-.dash-links a img{
-    width: 50px;
-}
-}
-
-
-@media only screen and (min-width: 790px){
-    .collapsedLinks .nav-item {
-        width: 2.5vw;
-        margin-top: .8rem;
-    }
-    .dash-notif {
-        width: 1.5vw !important;
-        margin-top: .5rem !important;
-    }
-
-    .dash-menu-img {
-        width: 9vw;
-        height: 14vh;
-    }
-
-    .dash-links a {
-        width: 4vw;
-        font-size: 1rem !important;
+        @include tablet {
+                font-size: $font-size + 0.4rem !important;
+                margin-top: .5rem;
+        }
     }
 }
 
