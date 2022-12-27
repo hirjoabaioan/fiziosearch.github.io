@@ -1372,6 +1372,105 @@ ul li {
   padding: 1rem;
 }
 
+@media (min-width: 48rem) {
+  .dash-content {
+    width: 80%;
+    margin: auto;
+    height: 80%;
+  }
+}
+
+.dash-tables {
+  display: grid;
+  grid-template-areas: "contacts" "terapies" "notif" "schedule";
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  color: #1F5065;
+}
+.dash-tables h3 {
+  font-size: 1.3rem;
+}
+.dash-tables .info-contacts {
+  grid-area: contacts;
+}
+.dash-tables .title-underline {
+  border: 2px solid white;
+}
+.dash-tables .info-terapii {
+  grid-area: terapies;
+}
+.dash-tables .info-terapii span {
+  font-size: 2rem;
+}
+.dash-tables .info-notif {
+  grid-area: notif;
+  font-size: 0.8rem;
+  width: 100%;
+}
+.dash-tables .info-programari {
+  grid-area: schedule;
+  font-size: 0.8rem;
+  width: 100%;
+}
+.dash-tables .info-contacts, .dash-tables .info-terapii {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.dash-tables .info-contacts, .dash-tables .info-terapii, .dash-tables .info-notif, .dash-tables .info-programari {
+  background-color: #eafcfd;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 12rem;
+}
+@media (min-width: 48rem) {
+  .dash-tables .info-contacts, .dash-tables .info-terapii, .dash-tables .info-notif, .dash-tables .info-programari {
+    height: 15rem;
+  }
+}
+@media (min-width: 64rem) {
+  .dash-tables .info-contacts, .dash-tables .info-terapii, .dash-tables .info-notif, .dash-tables .info-programari {
+    height: 12rem;
+  }
+}
+@media (min-width: 37.5rem) {
+  .dash-tables {
+    gap: 2rem;
+    grid-template-areas: "contacts notif" "terapies schedule";
+  }
+}
+.dash-tables table {
+  position: relative;
+}
+.dash-tables tr {
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+.dash-tables td {
+  padding-bottom: 1rem;
+}
+.dash-tables td:nth-child(2) {
+  padding-left: 3rem;
+}
+@media (min-width: 48rem) {
+  .dash-tables td:nth-child(2) {
+    padding-left: 10rem;
+  }
+}
+.dash-tables .row-link::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+.dash-tables tr:hover, .dash-tables a:hover {
+  color: #15bbc4 !important;
+}
+
 .image-one {
   display: inline-block;
   position: relative;
