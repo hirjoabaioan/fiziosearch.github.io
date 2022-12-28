@@ -12,7 +12,7 @@
 </head>
 <body class="d-flex m-0 p-0">
     <div class="d-flex w-100 m-0 p-0 dash-container">
-        <nav class="col-2 col-md-1 m-0 p-2 fixed-left navbar bg-light dash-nav">
+        <nav class="m-0 p-2 fixed-left navbar bg-light dash-nav">
           <div class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid">
               <button class="col-12 d-flex justify-content-center align-items-center mb-5 navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggleButton">
                   <span class="navbar-toggler-icon"></span>
@@ -175,10 +175,10 @@
               </div>
           </div>
         </nav>
-        <div class="col-10 col-md-11 d-flex justify-content-center align-items-center m-0 p-2 ps-3 h-100 container">
+        <div class="d-flex justify-content-center align-items-center m-0 p-2 ps-3 h-100 containers">
           <div class="py-2 overflow-auto custom-scrollbar-css dash-content">
-            <div class="h-100 dash-tables">
-              <div class="row m-0 w-100 info-contacts">
+            <div class="row gap-2 h-100 dash-tables m-0">
+              <div class="row m-0 info-contacts">
                 <h3 class="d-flex justify-content-center align-items-center row gap-2 info-terapeuti-contactati">
                   Terapeuți contactați
                   <span>3</span>
@@ -189,10 +189,14 @@
                   <span>1</span>
                 </h3>
               </div>
-              <h3 class="row m-0 w-100 info-terapii">
-                Total terapii realizate
-                <span>35</span>
-              </h3>
+
+              <div class="m-0 info-terapii">
+                <h3 class="d-flex justify-content-center align-items-center row gap-2">
+                  Total terapii realizate
+                  <span class="">35</span>
+                </h3>
+              </div>
+              
               <div class="info-notif">
                 <table>
                   <tr>
@@ -213,6 +217,7 @@
                   </tr>
                 </table>
               </div>
+              
               <div class="info-programari">
                 <table>
                   <tr>

@@ -10,63 +10,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="sass/main.css">
 </head>
-<body class="">
-    <div class="d-flex row justify-content-start align-items-start m-0 p-0 dash-container">
-        <nav class="col-2 col-xl-1 col-lg-1 fixed-left navbar bg-light m-0 h-100 dash-nav">
-          <div class="container-fluid d-flex row justify-content-center align-items-center m-0 mb-5 p-0 gap-3">
-              <button class="w-xl-50 w-lg-50 w-md-75 w-sm-75 w-xs-75 navbar-toggler col-12 col-xl-6 col-lg-6 d-flex justify-content-center align-items-center mb-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggleButton">
+<body class="d-flex m-0 p-0">
+    <div class="d-flex w-100 m-0 p-0 dash-container">
+        <nav class="m-0 p-2 fixed-left navbar bg-light dash-nav">
+          <div class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid">
+              <button class="col-12 d-flex justify-content-center align-items-center mb-5 navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggleButton">
                   <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="col-12 d-flex align-items-start justify-content-start row m-0 overflow-auto" id="collapsed-menu">
-                <ul class="flex-column justify-content-center align-items-center flex-grow-1 navbar-nav p-0 m-0" id="collapsedLinks">
-                  <li class="nav-item dash-notif" id="dash-notif-first">
-                    <a href=""><img src="img/message icon.webp" alt="Notificare platformă"></a>
+              <div class="m-0 p-0 overflow-auto collapsed-menu">
+                <ul class="flex-column justify-content-center align-items-center flex-grow-1 p-0 m-0 gap-2 navbar-nav collapsedLinks">
+                  <li class="nav-item dash-notif dash-notif-first">
+                    <a href="">
+                      <img src="img/message icon.webp" alt="Notificare platformă">
+                    </a>
                   </li>
                   <li class="nav-item dash-notif">
-                    <a href=""><img src="img/notif icon.webp" alt="Notificare platformă"></a>
+                    <a href="">
+                      <img src="img/notif icon.webp" alt="Notificare platformă">
+                    </a>
                   </li>
-                  <li class="nav-item dash-notif" id="dash-notif-last">
-                    <a href=""><img src="img/schedule icon.webp" alt="Notificare platformă"></a>
-                  </li>
-                  <li class="nav-item">
-                    <a href=""><img src="img/search-col.webp" alt="Notificare platformă"></a>
-                  </li>
-                  <li class="nav-item">
-                    <a href=""><img src="img/dashboard icon.webp" alt=""></a>
+                  <li class="nav-item dash-notif dash-notif-last">
+                    <a href="">
+                      <img src="img/schedule icon.webp" alt="Notificare platformă">
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a href=""><img src="img/programari icon.webp" alt=""></a>
+                    <a href="">
+                      <img src="img/search-col.webp" alt="Notificare platformă">
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a href=""><img src="img/home icon.webp" alt=""></a>
+                    <a href="">
+                      <img src="img/dashboard icon.webp" alt="">
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a href=""><img src="img/setari icon.webp" alt=""></a>
+                    <a href="">
+                      <img src="img/programari icon.webp" alt="">
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a href=""><img src="img/contact icon.webp" alt=""></a>
+                    <a href="">
+                      <img src="img/home icon.webp" alt="">
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a href=""><img src="img/logout icon.webp" alt=""></a>
+                    <a href="">
+                      <img src="img/setari icon.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="">
+                      <img src="img/contact icon.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="">
+                      <img src="img/logout icon.webp" alt="">
+                    </a>
                   </li>
                 </ul>
               </div>
 
-              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                   <div class="d-flex justify-content-end">
                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Close"></button>
                   </div>
                 <div class="offcanvas-body m-0 p-0">
                   <div class="d-flex row justify-content-center align-items-center m-0">
-                      <div class="col-12 d-flex justify-content-center" id="dash-menu-img">
+                      <div class="col-12 d-flex justify-content-center dash-menu-img">
                           <img src="img/profiles/1_ (3).jpg" alt="imagine utilizator">
                       </div>
-                      <div class="col-12 d-flex justify-content-center mt-2" id="dash-menu-title">
+                      <div class="col-12 d-flex justify-content-center mt-2 dash-menu-title">
                           <h3>
                               Bine ai venit, Ioan!
                           </h3>
                       </div>
-                      <div class="col-12 d-flex justify-content-center align-items-center mt-2 gap-1" id="notification-aria">
+                      <div class="col-12 d-flex justify-content-center align-items-center mt-2 gap-2 notification-aria">
                         <div class="notification-pic gap-3">
                             <img src="img/message icon.webp" alt="Notificare platformă">
                         </div>
@@ -90,7 +110,7 @@
                           <div class="col-6 d-flex">
                               <div class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops">
                                   <select name="Specialization" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSpecializari" data-bs-toggle="dropdown" aria-expanded="false">
-                                      <option class="dropdown-menu" aria-labelledby="dropdownMenuServicii">Specializări</option>
+                                      <option class="dropdown-menu" aria-labelledby="dropdownMenuSpecializari">Specializări</option>
                                       <option class="dropdown-item" value="Kinetoterapie">Kinetoterapie</option>
                                       <option class="dropdown-item" value="Masaj">Masaj</option>
                                       <option class="dropdown-item" value="Cardiologie">Cardiologie</option>
@@ -100,10 +120,10 @@
                               </div>
                           </div>
                           <div class="col-12">
-                              <div class="input-group d-flex justify-content-center text-center p-2" id="search-box">
+                              <div class="input-group d-flex justify-content-center text-center p-2 search-box">
                                   <input type="text" class="form-control" placeholder="Caută un terapeut..." aria-label="Caută" aria-describedby="search-button">
-                                  <button class="btn btn-success" id="search-button" type="button">
-                                      <img src="img/search.webp" id="search-icon" alt="Caută">
+                                  <button class="btn btn-success search-button" type="button">
+                                      <img src="img/search.webp" class="search-icon" alt="Caută">
                                   </button>
                               </div>
                           </div>
@@ -155,20 +175,70 @@
               </div>
           </div>
         </nav>
-        <div class="col-10 col-xl-11 col-lg-11 container d-flex justify-content-center align-items-center m-0 p-2 h-100">
-          <div class="overflow-auto" id="dash-content">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste tempore repudiandae autem aut eligendi! Nihil sapiente quidem ullam dignissimos beatae cupiditate tenetur modi recusandae voluptate dolor consectetur, fugiat magnam possimus.
-              Culpa ducimus hic illum sit. Numquam recusandae quidem eaque, iure error nostrum, sint fuga maiores a dolor perferendis dolorem velit laudantium. Voluptatum minus libero repudiandae enim rerum eveniet nemo cupiditate!
-              Enim asperiores nesciunt tempora! Voluptatum at veniam provident, deserunt corrupti molestias quo? Consectetur repellendus blanditiis quam perferendis necessitatibus eaque nemo cupiditate ducimus, sunt est enim, reiciendis perspiciatis molestiae tempora et!
-              Eligendi quas praesentium eaque necessitatibus, ipsa quis provident aut error neque aliquid consectetur dignissimos assumenda amet suscipit, quos asperiores est similique delectus odit ullam animi. Asperiores ipsum neque eius ducimus!
-              Neque incidunt provident aut laboriosam ratione amet, optio eum id dolorum quasi delectus facere quaerat esse earum assumenda at tempore animi aliquam consequuntur mollitia accusamus veniam. Voluptatum cumque mollitia repellendus?
-              Ullam minus nihil sunt, eum sint tenetur consequatur quas excepturi ad quidem beatae voluptates sapiente? Dignissimos dolorum itaque molestias voluptatem. Tenetur at mollitia animi perspiciatis quaerat quae corrupti sit fuga?
-              Repellat reiciendis placeat temporibus, minima quos libero dignissimos vel expedita possimus, officiis cumque repellendus veritatis dolor? Suscipit numquam tempore minus neque repellat pariatur, porro aliquam illum hic! Voluptatibus, minus ipsum?
-              Voluptate deleniti voluptates, perspiciatis consequuntur dolor aut, omnis exercitationem ad iusto ullam porro nemo quaerat? Repudiandae quae, autem sequi reprehenderit aliquam, delectus, quaerat rerum officiis beatae architecto facilis ut odio.
-              Corporis adipisci dicta blanditiis cupiditate ratione, aspernatur ad culpa atque, facere sapiente ipsam, nemo aut similique! Quibusdam beatae nulla rem corporis accusamus laudantium, provident deleniti quam nostrum magni eligendi et.
-              Eum voluptatibus harum iure vitae, quae cupiditate? Deserunt laboriosam molestias hic consectetur ipsa repudiandae fugit laudantium optio illum odit mollitia molestiae harum, perferendis vel officiis eos ratione et minima eum.
-            </p>
+        <div class="d-flex justify-content-center align-items-center m-0 p-2 ps-3 h-100 containers">
+          <div class="py-2 overflow-auto custom-scrollbar-css dash-content">
+            <div class="row gap-2 h-100 dash-tables m-0">
+              <div class="row m-0 info-contacts">
+                <h3 class="d-flex justify-content-center align-items-center row gap-2 info-terapeuti-contactati">
+                  Terapeuți contactați
+                  <span>3</span>
+                </h3>
+                <hr class="title-underline">
+                <h3 class="d-flex justify-content-center align-items-center row gap-2 info-recenzii-lasate">
+                  Recenzii lăsate
+                  <span>1</span>
+                </h3>
+              </div>
+              
+              <div class="info-notif">
+                <table>
+                  <tr>
+                    <td><a href="#" class="row-link">23.05.2022</a></td>
+                    <td>Update Platformă</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">11.07.2022</a></td>
+                    <td>Ultimele Noutăți</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">17.07.2022</a></td>
+                    <td>Recenzie</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">06.11.2022</a></td>
+                    <td>Formular Feedback</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="m-0 info-terapii">
+                <h3 class="d-flex justify-content-center align-items-center row gap-2">
+                  Total terapii realizate
+                  <span class="">35</span>
+                </h3>
+              </div>
+              
+              <div class="info-programari">
+                <table>
+                  <tr>
+                    <td><a href="#" class="row-link">23.05.2022</a></td>
+                    <td>Kinetoterapie</td>
+                  </th>
+                  <tr>
+                    <td><a href="#" class="row-link">11.07.2022</a></td>
+                    <td>Masaj</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">17.07.2022</a></td>
+                    <td>Kinetoterapie</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">06.11.2022</a></td>
+                    <td>Kinetoterapie</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
           </div>
             
         </div>

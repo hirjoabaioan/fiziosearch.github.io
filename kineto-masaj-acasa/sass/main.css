@@ -1372,11 +1372,44 @@ ul li {
   padding: 1rem;
 }
 
+.dash-nav {
+  width: 15% !important;
+}
+@media (max-width: 37.5rem) {
+  .dash-nav {
+    width: 20% !important;
+  }
+}
 @media (min-width: 48rem) {
+  .dash-nav {
+    width: 8% !important;
+  }
+}
+@media (min-width: 75rem) {
+  .dash-nav {
+    width: 6% !important;
+  }
+}
+
+.containers {
+  width: 90% !important;
+}
+@media (max-width: 37.5rem) {
+  .containers {
+    width: 80% !important;
+    margin: 0 !important;
+    padding: 1% !important;
+  }
+}
+
+.dash-content {
+  width: 100%;
+}
+@media (max-width: 37.5rem) {
   .dash-content {
-    width: 80%;
-    margin: auto;
-    height: 80%;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
   }
 }
 
@@ -1388,17 +1421,59 @@ ul li {
   gap: 1rem;
   color: #1F5065;
 }
+@media (min-width: 37.5rem) {
+  .dash-tables {
+    margin-top: 8% !important;
+    max-height: 50%;
+  }
+}
+@media (min-width: 48rem) {
+  .dash-tables {
+    margin-top: 25% !important;
+  }
+}
+@media (min-width: 64rem) {
+  .dash-tables {
+    max-width: 80vw;
+    margin-top: 15% !important;
+  }
+}
 .dash-tables h3 {
   font-size: 1.3rem;
 }
 .dash-tables .info-contacts {
   grid-area: contacts;
+  flex: 0 0 auto;
+  width: 100%;
+}
+@media (min-width: 48rem) {
+  .dash-tables .info-contacts {
+    width: 75%;
+  }
+}
+@media (min-width: 64rem) {
+  .dash-tables .info-contacts {
+    width: 60%;
+  }
 }
 .dash-tables .title-underline {
   border: 2px solid white;
+  margin: 0;
 }
 .dash-tables .info-terapii {
   grid-area: terapies;
+  width: 100%;
+  flex: 0 0 auto;
+}
+@media (min-width: 48rem) {
+  .dash-tables .info-terapii {
+    width: 75%;
+  }
+}
+@media (min-width: 64rem) {
+  .dash-tables .info-terapii {
+    width: 60%;
+  }
 }
 .dash-tables .info-terapii span {
   font-size: 2rem;
@@ -1407,11 +1482,20 @@ ul li {
   grid-area: notif;
   font-size: 0.8rem;
   width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+}
+@media (max-width: 37.5rem) {
+  .dash-tables .info-notif {
+    margin: 2rem 0;
+  }
 }
 .dash-tables .info-programari {
   grid-area: schedule;
   font-size: 0.8rem;
   width: 100%;
+  flex: 0 0 auto;
+  display: flex;
 }
 .dash-tables .info-contacts, .dash-tables .info-terapii {
   display: flex;
@@ -1423,17 +1507,7 @@ ul li {
   background-color: #eafcfd;
   border-radius: 10px;
   padding: 1rem;
-  height: 12rem;
-}
-@media (min-width: 48rem) {
-  .dash-tables .info-contacts, .dash-tables .info-terapii, .dash-tables .info-notif, .dash-tables .info-programari {
-    height: 15rem;
-  }
-}
-@media (min-width: 64rem) {
-  .dash-tables .info-contacts, .dash-tables .info-terapii, .dash-tables .info-notif, .dash-tables .info-programari {
-    height: 12rem;
-  }
+  min-height: 12rem;
 }
 @media (min-width: 37.5rem) {
   .dash-tables {
@@ -1443,10 +1517,14 @@ ul li {
 }
 .dash-tables table {
   position: relative;
+  margin: auto;
 }
 .dash-tables tr {
   height: 1.5rem;
   line-height: 1.5rem;
+}
+.dash-tables tr:nth-child(4) td:nth-child(2) {
+  padding-bottom: 0.2rem !important;
 }
 .dash-tables td {
   padding-bottom: 1rem;
