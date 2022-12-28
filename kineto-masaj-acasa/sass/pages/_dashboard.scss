@@ -16,10 +16,8 @@
     }
 }
 
-
-
 .containers {
-    width: 90% !important;
+    width: 95% !important;
     
     @include phone {
         width: 80% !important;
@@ -36,13 +34,6 @@
         padding: 0 !important;
         gap: 0 !important; 
     }
-
-
-    // @include tablet-wide{
-    //     width: 80%;
-    //     margin: auto;
-    //     height: 80%;
-    // }
 }
 
 .dash-tables {
@@ -83,12 +74,14 @@
         @include laptop {
             width: 60%;
         }
+
+        .title-underline {
+            border: 2px solid $white;
+            margin: 0;
+        }
     }
 
-    .title-underline {
-        border: 2px solid $white;
-        margin: 0;
-    }
+    
 
     .info-terapii {
         grid-area: terapies;

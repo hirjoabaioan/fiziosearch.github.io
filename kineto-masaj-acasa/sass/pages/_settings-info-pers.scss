@@ -1,0 +1,132 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+$degree-color: lighten($primary-color, 5%);
+
+.upper-menu {
+    position: inherit !important;
+    background: rgba(145,203,207,1);
+    background: -moz-linear-gradient(180deg, rgba(145,203,207,1) 5%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(145,203,207,1) 5%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgba(145,203,207,1) 5%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#91cbcf",endColorstr="#ffffff",GradientType=1);
+}
+
+.upper-hide {
+    display: none;
+
+    @include tablet-wide {
+        display: inline;
+    }
+}
+
+.upper-image {
+    width: clamp(8rem, 5vw + 1rem, 12rem);
+
+    img {
+        width: 100%;
+    }
+}
+
+.upper-menu-info {
+    width: 100% !important;
+
+
+    @include tablet-wide {
+        width: 80% !important;
+    }
+
+    @include laptop {
+        width: 85% !important;
+    }
+}
+
+.dash-settings-header {
+    text-align: center;
+
+    h1 {
+        color: $tertiary-color;
+        font-weight: 900;
+        letter-spacing: 0.575rem;
+        font-size: calc(1rem + 1.5vw);
+        
+    
+        @include laptop {
+            letter-spacing: 0.75rem;
+        }
+    }
+    
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+
+    a{
+        font-size: $font-size - 0.2rem;
+        font-weight: $fw-bold;
+        width: 6rem;
+
+        @include tablet-wide {
+            font-size: $font-size;
+            width: 8rem;
+        }
+    }
+
+    @include laptop {
+        gap: 1rem;
+    }
+}
+
+
+.settings-info {
+    &-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: clamp(8rem, 10vw + 1rem, 12rem);
+        margin: auto;
+        border-radius: 50%;
+
+        .photo-change {
+            // position: absolute;
+            margin: auto;
+            // height: 102px;
+            // width: 102px;
+            background-color: transparent;
+
+
+            @media (hover:hover) and (pointer:fine) {
+                display: none;
+                position: fixed;
+                &:hover, &:target, &:active, &:focus {
+                    display: inline;
+                    position: absolute;
+                }
+            }
+        }   
+
+        img {
+            margin: auto;
+            border-radius: 50%;
+            width: 100%;
+
+            &:hover, &:target, &:active, &:focus {
+                filter: drop-shadow(0 0 2px black) grayscale(90%);
+            }   
+        }
+
+        button {
+            font-size: $font-size;
+            width: 6rem;
+        }
+    }
+
+    h2 {
+        text-align: center !important;
+    }
+    
+}

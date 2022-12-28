@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 if (top.location.pathname === '/templates/search.html')
 {
 
@@ -56,11 +58,28 @@ function closeTherapistInfo() {
 
 }
 
-
-// if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-    
-// }else{
-
-// }
-
 }
+
+
+})
+
+
+$('.settings-info-img, .photo-change').focus(
+    function(){
+        $('.photo-change').css('display', 'inline');
+        // $('.photo-change').css('position', 'absolute');
+    },
+    function(){
+        $('.photo-change').css('display', 'none');
+    }
+);
+
+$('.settings-info-img, .photo-change').keydown(
+    function(){
+        $('.photo-change').css('display', 'inline');
+        // $('.photo-change').css('position', 'absolute');
+    },
+    function(){
+        $('.photo-change').css('display', 'none');
+    }
+);
