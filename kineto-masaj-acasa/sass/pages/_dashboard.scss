@@ -21,8 +21,6 @@
     
     @include phone {
         width: 80% !important;
-        margin: 0 !important;
-        padding: 1% !important;
     }
 }
 
@@ -30,8 +28,6 @@
     width: 100%;
 
     @include phone {
-        margin: 0 !important;
-        padding: 0 !important;
         gap: 0 !important; 
     }
 }
@@ -45,17 +41,15 @@
     color: $tertiary-color;
 
     @include tablet {
-        margin-top: 8% !important; 
         max-height: 50%;
     }
 
     @include tablet-wide {
-        margin-top: 25% !important;
+        margin-top: 15% !important;
     }
 
     @include laptop {
         max-width: 80vw;
-        margin-top: 15% !important;
     }
 
     h3 {

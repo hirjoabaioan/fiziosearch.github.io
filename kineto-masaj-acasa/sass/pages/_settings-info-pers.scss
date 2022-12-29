@@ -48,7 +48,7 @@ $degree-color: lighten($primary-color, 5%);
         color: $tertiary-color;
         font-weight: 900;
         letter-spacing: 0.575rem;
-        font-size: calc(1rem + 1.5vw);
+        font-size: calc(1rem + 2.5vw);
         
     
         @include laptop {
