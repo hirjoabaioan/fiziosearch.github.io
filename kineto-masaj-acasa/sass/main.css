@@ -521,7 +521,7 @@ nav img {
 
 #offcanvasNavbar {
   background-color: #e6e6e6;
-  background-image: url("../../img/side-menu.png");
+  background-image: url("../../img/side-menu-waves.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1427,7 +1427,7 @@ ul li {
 }
 @media (min-width: 48rem) {
   .dash-tables {
-    margin-top: 15% !important;
+    margin-top: 10% !important;
   }
 }
 @media (min-width: 64rem) {
@@ -1546,6 +1546,11 @@ ul li {
   color: #15bbc4 !important;
 }
 
+.end-space {
+  max-height: 2vh;
+  min-height: 1vh;
+}
+
 .upper-menu {
   position: inherit !important;
   background: rgb(145, 203, 207);
@@ -1657,6 +1662,12 @@ ul li {
 }
 .settings-info h2 {
   text-align: center !important;
+}
+.settings-info form {
+  margin: auto;
+}
+.settings-info .speczializari-checks {
+  max-height: 50vh;
 }
 
 .image-one {

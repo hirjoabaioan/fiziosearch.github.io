@@ -3,6 +3,11 @@
 
 $degree-color: lighten($primary-color, 5%);
 
+.end-space {
+    max-height: 2vh;
+    min-height: 1vh;
+}
+
 .upper-menu {
     position: inherit !important;
     background: rgba(145,203,207,1);
@@ -55,7 +60,6 @@ $degree-color: lighten($primary-color, 5%);
             letter-spacing: 0.75rem;
         }
     }
-    
 }
 
 .menu-buttons {
@@ -128,5 +132,20 @@ $degree-color: lighten($primary-color, 5%);
     h2 {
         text-align: center !important;
     }
-    
+
+    form {
+        margin: auto;
+    }
+
+    .speczializari-checks {
+        max-height: 50vh;
+    }
 }
+
+.info-form {
+    // display: grid;
+    // grid-template-columns: 2fr;
+    // justify-content: center;
+    // align-items: center;
+}
+
