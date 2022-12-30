@@ -64,22 +64,19 @@ function closeTherapistInfo() {
 })
 
 
-$('.settings-info-img, .photo-change').focus(
-    function(){
-        $('.photo-change').css('display', 'inline');
-        // $('.photo-change').css('position', 'absolute');
-    },
-    function(){
-        $('.photo-change').css('display', 'none');
+$(document).ready(function(){
+    // Prepare the preview for profile picture
+        $("#wizard-picture").change(function(){
+            readURL(this);
+        });
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+    
+            reader.onload = function (e) {
+                $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
     }
-);
-
-$('.settings-info-img, .photo-change').keydown(
-    function(){
-        $('.photo-change').css('display', 'inline');
-        // $('.photo-change').css('position', 'absolute');
-    },
-    function(){
-        $('.photo-change').css('display', 'none');
-    }
-);

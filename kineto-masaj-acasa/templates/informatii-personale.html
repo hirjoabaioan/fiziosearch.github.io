@@ -195,15 +195,20 @@
                     </div>
                 </nav>
                 <div class="row gap-2 h-100 settings-info m-0 mt-4 p-2">
-                    <div class="row gap-2 settings-info-img mb-4" tabindex="0">
-                        
-                        <img src="../img/user icon.png" alt="">
-                        <span tabindex="0" class="photo-change">Schimbă</span>
-                    </div>
-                    <form class="contact-form info-form">
-                        <h2>Date personale</h2>
-                        <hr class="title-underline">
-                        <div class="mb-3">
+                    
+                    <form class="contact-form info-form row">
+                        <div class="row gap-2 container settings-info-img mb-4">
+                            <div class="settings-img">
+                                <div class="mb-3 settings-upload">
+                                    <img src="../img/user icon.png" class="picture-src" id="wizardPicturePreview" title="" alt="poza-de-profil">
+                                    <input type="file" id="wizard-picture" class="" title="pic-change">
+                                </div>
+                                <h6 class="btn btn-primary">Alege o poză</h6>
+                            </div>
+                        </div>
+                        <div class="mb-3 settings-personal">
+                            <h2>Date personale</h2>
+                            <hr class="title-underline">
                             <div class="mb-2">
                                 <input type="text" class="form-control" aria-describedby="nameHelp" placeholder="Nume" requierd>
                                 <div id="nameHelp" class="form-text">Introdu numele.</div>
@@ -221,7 +226,7 @@
                                 <div id="telefonHelp" class="form-text">Introdu numărul de telefon format din 10 cifre.</div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 settings-terapeuti">
                             <div class="mb-2">
                                 <input type="number" min="1950" max="2099" step="1" class="form-control" aria-describedby="yearHelp" placeholder="Anul certificării" requierd>
                                 <div id="yearHelp" class="form-text">Alege anul ultimei certificări (licență sau masaj).</div>
@@ -231,9 +236,10 @@
                                 <div id="nruHelp" class="form-text">Introdu NRU.</div>
                             </div>
                         </div>
-                        <h2>Activitate</h2>
-                        <hr class="title-underline">
-                        <div class="mb-3">
+                        
+                        <div class="mb-3 settings-activitate">
+                            <h2>Activitate</h2>
+                            <hr class="title-underline">
                             <div class="mb-2">
                                 <div class="overflow-auto speczializari-checks" aria-describedby="specsHelp">
                                     <div class="form-check">
@@ -303,11 +309,12 @@
                             <textarea class="mb-2 form-control" id="cursuriHelp" rows="5" placeholder="Cursuri și acreditări"></textarea>
                             <textarea class="mb-2 form-control" id="descriereHelp" rows="5" placeholder="Scrie o scurtă descriere"></textarea>
                         </div>
-                        <h2>Zonele de interes</h2>
-                        <hr class="title-underline">
-                        <div class="mb-3">
+                        
+                        <div class="mb-3 settings-zone">
+                            <h2>Zonele de interes</h2>
+                            <hr class="title-underline">
                             <div class="col-12 m-0 p-0 my-2 d-flex row justify-content-center gap-2">
-                                <div class="col-6 p-0 dropdown">
+                                <div class="col-6 d-flex justify-content-center p-0 dropdown">
                                     <select title="Servicii" name="Județe" onchange="" class="btn btn-primary dropdown-toggle" type="button" id="dropdownJudete" aria-expanded="false">
                                         <option selected>Județ</option>
                                         <option value="2">București</option>
@@ -318,7 +325,7 @@
                                         <option value="7">Bihor</option>
                                     </select>
                                 </div>
-                                <div class="col-6 p-0 dropdown">
+                                <div class="col-6 d-flex justify-content-center p-0 dropdown">
                                     <select title="Specializari" name="Localități" onchange="" class=" btn btn-primary dropdown-toggle" type="button" id="dropdownLocalitati" aria-expanded="false">
                                         <option selected>Localități</option>
                                         <option value="2">București</option>
@@ -331,11 +338,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
+
+                        <div class="mb-3 settings-locatii-alese">
                             <h5>Localitățile alese</h5>
                             <p>București, Sector 2, Sector 3, Chiajna</p>
                         </div>
-                        <button class="btn btn-primary">Actualizează datele</button>
+                        <div class="d-flex justify-content-center m-0 p-0">
+                            <button type="button" class="btn btn-primary">Actualizează datele</button>
+                        </div>
+                        
                     </form>
                     <div class="mx-2 px-2 end-space"></div>                 
                 </div>
