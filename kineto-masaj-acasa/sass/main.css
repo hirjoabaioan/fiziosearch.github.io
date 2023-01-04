@@ -859,7 +859,7 @@ nav img {
 }
 
 .list-container, .info-container {
-  background-color: #d9d9d9;
+  background-color: #f2f2f2;
   border-radius: 2rem;
   padding-bottom: 2rem !important;
   width: 90%;
@@ -961,6 +961,7 @@ nav img {
   height: 50rem;
   padding: 1rem 0;
   border-bottom: 4px solid white;
+  background-color: white;
 }
 .list-area::-webkit-scrollbar {
   width: 0.5rem;
@@ -988,9 +989,18 @@ nav img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  border-bottom: 0.2rem solid white;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: #f2f2f2;
   padding: 1rem;
+}
+.therapist-box:hover {
+  background-color: #e3e3e3;
+  box-shadow: 0px 0px 25px -7px rgba(0, 0, 0, 0.75);
+  margin: 0.4rem;
+  border-bottom: 0;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 .therapist-box-pic {
   width: clamp(10rem, 2vw + 0.5rem, 14rem);
@@ -1837,15 +1847,32 @@ ul li {
 .info-files {
   text-align: center;
 }
+.info-files h6 div {
+  text-align: center;
+  cursor: pointer;
+}
+.info-files h6 div:hover, .info-files h6 div:focus, .info-files h6 div:active, .info-files h6 div:target {
+  color: #0b6368;
+}
+@media (min-width: 37.5rem) {
+  .info-files h6 div {
+    width: 45%;
+  }
+}
+@media (min-width: 48rem) {
+  .info-files h6 div {
+    width: 40%;
+  }
+}
 .info-files .bi-file-earmark-fill, .info-files .bi-globe {
-  font-size: 3rem;
+  font-size: clamp(0.7rem, 5vw + 1rem, 4rem);
   padding: 0;
 }
 .info-files span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.6rem;
+  font-size: clamp(0.7rem, 5vw + 1rem, 0.9rem);
 }
 
 .image-one {

@@ -4,8 +4,26 @@
 
 .info-files {
     text-align: center;
+
+    h6 div {
+        text-align: center;
+        cursor: pointer;
+
+        &:hover, &:focus, &:active, &:target {
+            color: #0b6368;
+        }
+
+        @include tablet {
+            width: 45%;
+        }
+
+        @include tablet-wide {
+            width: 40%;
+        }
+    }
+
     .bi-file-earmark-fill, .bi-globe {
-        font-size: $font-size + 2rem;
+        font-size: clamp($font-size - 0.3rem, 5vw + 1rem, $font-size + 3rem);
         padding: 0;
     }
 
@@ -13,6 +31,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: $font-size - 0.4rem;
+        font-size: clamp($font-size - 0.3rem, 5vw + 1rem, $font-size - 0.1rem);
     }
 }
