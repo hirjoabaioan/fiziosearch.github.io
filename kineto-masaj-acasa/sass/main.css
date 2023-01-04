@@ -296,6 +296,7 @@ footer {
 }
 .btn-success:hover, .btn-success:focus {
   background-color: #255f79;
+  color: white !important;
 }
 .btn-success:active {
   background-color: #194151 !important;
@@ -461,6 +462,10 @@ nav img {
   background-color: #f2f2f2 !important;
   align-items: flex-start;
 }
+.dash-nav .active {
+  filter: hue-rotate(360deg) saturate(5) contrast(50%);
+  -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+}
 
 .collapsed-menu {
   height: 80vh;
@@ -481,12 +486,12 @@ nav img {
   transition: transform 0.2s;
 }
 .collapsedLinks img:hover, .collapsedLinks img:focus, .collapsedLinks img:active {
-  filter: hue-rotate(360deg) saturate(3) contrast(50%);
-  -webkit-filter: hue-rotate(360deg) saturate(3) contrast(50%); /* IE 9 */ /* Safari 3-8 */
+  filter: hue-rotate(360deg) saturate(5) contrast(50%);
+  -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
   transform: scale(1.2);
 }
 @media (min-width: 37.5rem) {
-  .collapsedLinks img:hover, .collapsedLinks img:focus, .collapsedLinks img:active { /* IE 9 */ /* Safari 3-8 */
+  .collapsedLinks img:hover, .collapsedLinks img:focus, .collapsedLinks img:active {
     transform: scale(1.5);
   }
 }
@@ -557,6 +562,11 @@ nav img {
 .notification-pic img {
   width: 100%;
 }
+.notification-pic img:hover, .notification-pic img:focus, .notification-pic img:active {
+  filter: hue-rotate(360deg) saturate(5) contrast(50%);
+  -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+  transform: scale(1.2);
+}
 
 .dash-links a {
   width: clamp(4rem, 10vw + 1rem, 5.5rem);
@@ -565,8 +575,8 @@ nav img {
   font-size: clamp(0.8rem, 5vw + 1rem, 1.2rem);
 }
 .dash-links a:hover, .dash-links a:focus, .dash-links a:active, .dash-links a:target {
-  filter: hue-rotate(360deg) saturate(3) contrast(50%);
-  -webkit-filter: hue-rotate(360deg) saturate(3) contrast(50%); /* IE 9 */ /* Safari 3-8 */
+  filter: hue-rotate(360deg) saturate(5) contrast(50%);
+  -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
   transform: scale(1.2);
 }
 .dash-links a img {
@@ -1546,104 +1556,136 @@ ul li {
   color: #15bbc4 !important;
 }
 
-.end-space {
-  max-height: 2vh;
-  min-height: 1vh;
-}
-
-.upper-menu {
+.uppernav-menu {
   position: inherit !important;
   background: rgb(145, 203, 207);
   background: linear-gradient(180deg, rgb(145, 203, 207) 5%, rgb(255, 255, 255) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#91cbcf",endColorstr="#ffffff",GradientType=1);
 }
 
-.upper-hide {
+.uppernav-hide {
   display: none;
 }
 @media (min-width: 48rem) {
-  .upper-hide {
+  .uppernav-hide {
     display: inline;
   }
 }
 
-.upper-image {
+.uppernav-image {
   width: clamp(8rem, 5vw + 1rem, 12rem);
 }
-.upper-image img {
+.uppernav-image img {
   width: 100%;
 }
 
-.upper-menu-info {
+.uppernav-menu-info {
   width: 100% !important;
 }
 @media (min-width: 48rem) {
-  .upper-menu-info {
+  .uppernav-menu-info {
     width: 80% !important;
   }
 }
 @media (min-width: 64rem) {
-  .upper-menu-info {
+  .uppernav-menu-info {
     width: 85% !important;
   }
 }
 
-.dash-settings-header {
+.uppernav-header {
   text-align: center;
 }
-.dash-settings-header h1 {
+.uppernav-header h1 {
   color: #1F5065;
   font-weight: 900;
   letter-spacing: 0.575rem;
   font-size: calc(1rem + 2.5vw);
 }
 @media (min-width: 64rem) {
-  .dash-settings-header h1 {
+  .uppernav-header h1 {
     letter-spacing: 0.75rem;
   }
 }
 
-.menu-buttons {
+.uppernav-menu-buttons {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
 }
-.menu-buttons a {
+.uppernav-menu-buttons a {
   font-size: 0.8rem;
   font-weight: 600;
   width: 6rem;
 }
 @media (min-width: 48rem) {
-  .menu-buttons a {
+  .uppernav-menu-buttons a {
     font-size: 1rem;
     width: 8rem;
   }
 }
+.uppernav-menu-buttons .active, .uppernav-menu-buttons .active:hover, .uppernav-menu-buttons .active:focus, .uppernav-menu-buttons .active:active, .uppernav-menu-buttons .active:target {
+  background-color: #cbcfcf !important;
+  color: #108F96 !important;
+}
 @media (min-width: 64rem) {
-  .menu-buttons {
+  .uppernav-menu-buttons {
     gap: 1rem;
   }
 }
 
-.settings-info {
+.end-space {
+  max-height: 2vh;
+  min-height: 1vh;
+}
+
+.settings-profil {
   align-items: center;
   justify-content: center;
   display: flex;
 }
-.settings-info-img {
+.settings-profil .info-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 37.5rem) {
+  .settings-profil .info-form .settings-personal {
+    max-width: 49%;
+  }
+}
+@media (min-width: 48rem) {
+  .settings-profil .info-form {
+    width: 70%;
+  }
+}
+.settings-profil .info-form button {
+  margin: auto;
+}
+.settings-profil h2 {
+  text-align: start !important;
+  color: #1F5065;
+  font-weight: 600;
+}
+.settings-profil .title-underline {
+  width: 100%;
+  margin: 1rem;
+  margin-left: 0 !important;
+}
+.settings-profil-img {
   width: 100%;
 }
 @media (min-width: 37.5rem) {
-  .settings-info-img {
+  .settings-profil-img {
     width: 49%;
   }
 }
-.settings-info-img .settings-img {
+.settings-profil-img .settings-img {
   position: relative;
   text-align: center;
 }
-.settings-info-img .settings-upload {
+.settings-profil-img .settings-upload {
   width: 6rem;
   height: 6rem;
   background-color: #999999;
@@ -1656,42 +1698,42 @@ ul li {
   -webkit-transition: all 0.2s;
 }
 @media (min-width: 37.5rem) {
-  .settings-info-img .settings-upload {
+  .settings-profil-img .settings-upload {
     width: 10rem;
     height: 10rem;
   }
 }
 @media (min-width: 64rem) {
-  .settings-info-img .settings-upload {
+  .settings-profil-img .settings-upload {
     width: 14rem;
     height: 14rem;
   }
 }
-.settings-info-img .settings-upload:hover, .settings-info-img .settings-upload:active, .settings-info-img .settings-upload:focus, .settings-info-img .settings-upload:target {
+.settings-profil-img .settings-upload:hover, .settings-profil-img .settings-upload:active, .settings-profil-img .settings-upload:focus, .settings-profil-img .settings-upload:target {
   border-color: #2ca8ff !important;
 }
-.settings-info-img h6 {
+.settings-profil-img h6 {
   font-size: 0.7rem;
   margin: auto;
 }
 @media (min-width: 37.5rem) {
-  .settings-info-img h6 {
+  .settings-profil-img h6 {
     font-size: 1.2rem;
   }
 }
-.settings-info-img .content.ct-wizard-green .settings-upload:hover {
+.settings-profil-img .content.ct-wizard-green .settings-upload:hover {
   border-color: #05ae0e;
 }
-.settings-info-img .content.ct-wizard-blue .settings-upload:hover {
+.settings-profil-img .content.ct-wizard-blue .settings-upload:hover {
   border-color: #3472f7;
 }
-.settings-info-img .content.ct-wizard-orange .settings-upload:hover {
+.settings-profil-img .content.ct-wizard-orange .settings-upload:hover {
   border-color: #ff9500;
 }
-.settings-info-img .content.ct-wizard-red .settings-upload:hover {
+.settings-profil-img .content.ct-wizard-red .settings-upload:hover {
   border-color: #ff3b30;
 }
-.settings-info-img .settings-upload input[type=file] {
+.settings-profil-img .settings-upload input[type=file] {
   cursor: pointer;
   display: block;
   height: 100%;
@@ -1701,39 +1743,109 @@ ul li {
   top: 0;
   width: 50%;
 }
-.settings-info-img .settings-upload input[type=file]:hover, .settings-info-img .settings-upload input[type=file]:active, .settings-info-img .settings-upload input[type=file]:focus, .settings-info-img .settings-upload input[type=file]:target {
+.settings-profil-img .settings-upload input[type=file]:hover, .settings-profil-img .settings-upload input[type=file]:active, .settings-profil-img .settings-upload input[type=file]:focus, .settings-profil-img .settings-upload input[type=file]:target {
   box-shadow: red;
 }
-.settings-info-img .picture-src {
+.settings-profil-img .picture-src {
   width: 100%;
 }
-.settings-info h2 {
-  text-align: start !important;
+.settings-profil .speczializari-checks {
+  max-height: 50vh;
 }
-.settings-info .title-underline {
+.settings-profil .dropdown {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin-left: 0 !important;
 }
-.settings-info form {
+@media (min-width: 37.5rem) {
+  .settings-profil .dropdown {
+    width: 49%;
+  }
+}
+.settings-profil .dropdown select {
+  width: 80%;
+}
+
+.settings-profil .panel-list {
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+@media (min-width: 48rem) {
+  .settings-profil .panel-list {
+    margin: auto;
+    width: 50%;
+  }
+}
+.settings-profil .panel-list li {
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.125rem;
+}
+.settings-profil .panel-list span {
+  margin: auto !important;
+}
+.settings-profil table {
+  border-collapse: collapse;
+  text-align: center;
+  margin: auto;
+}
+.settings-profil table tr {
+  border-bottom: 2px solid #ddd;
+}
+.settings-profil table tr:first-child {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+@media (min-width: 37.5rem) {
+  .settings-profil table tr:first-child {
+    font-size: 1.2rem;
+  }
+}
+.settings-profil table td {
+  border-bottom: 2px solid #ddd;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+@media (min-width: 37.5rem) {
+  .settings-profil table td {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+.other-sets .checks, .other-sets .abo-change {
+  width: 100%;
+}
+@media (min-width: 48rem) {
+  .other-sets .checks, .other-sets .abo-change {
+    width: 50%;
+  }
+}
+.other-sets .checks {
+  margin: auto !important;
+}
+@media (min-width: 37.5rem) {
+  .other-sets .checks div, .other-sets .abo-change a {
+    margin-left: 25%;
+  }
+}
+
+.currency-add::after {
+  content: " RON";
+}
+
+.info-files {
+  text-align: center;
+}
+.info-files .bi-file-earmark-fill, .info-files .bi-globe {
+  font-size: 3rem;
+  padding: 0;
+}
+.info-files span {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-@media (min-width: 37.5rem) {
-  .settings-info form .settings-personal {
-    max-width: 49%;
-  }
-}
-@media (min-width: 48rem) {
-  .settings-info form {
-    width: 70%;
-  }
-}
-.settings-info form button {
-  margin: auto;
-}
-.settings-info .speczializari-checks {
-  max-height: 50vh;
+  font-size: 0.6rem;
 }
 
 .image-one {

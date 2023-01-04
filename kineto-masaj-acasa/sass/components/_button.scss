@@ -38,7 +38,8 @@
     font-weight: bold;
 
     &:hover, &:focus {
-        background-color: lighten($tertiary-color, 5%);        
+        background-color: lighten($tertiary-color, 5%);  
+        color: $white !important;     
     }
 
     &:active {

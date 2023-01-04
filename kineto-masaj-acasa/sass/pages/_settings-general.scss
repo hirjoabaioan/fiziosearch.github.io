@@ -1,0 +1,90 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+
+.uppernav-menu {
+    position: inherit !important;
+    background: rgba(145,203,207,1);
+    background: -moz-linear-gradient(180deg, rgba(145,203,207,1) 5%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(145,203,207,1) 5%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgba(145,203,207,1) 5%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#91cbcf",endColorstr="#ffffff",GradientType=1);
+}
+
+.uppernav-hide {
+    display: none;
+
+    @include tablet-wide {
+        display: inline;
+    }
+}
+
+.uppernav-image {
+    width: clamp(8rem, 5vw + 1rem, 12rem);
+
+    img {
+        width: 100%;
+    }
+}
+
+.uppernav-menu-info {
+    width: 100% !important;
+
+
+    @include tablet-wide {
+        width: 80% !important;
+    }
+
+    @include laptop {
+        width: 85% !important;
+    }
+}
+
+.uppernav-header {
+    text-align: center;
+
+    h1 {
+        color: $tertiary-color;
+        font-weight: 900;
+        letter-spacing: 0.575rem;
+        font-size: calc(1rem + 2.5vw);
+        
+    
+        @include laptop {
+            letter-spacing: 0.75rem;
+        }
+    }
+}
+
+.uppernav-menu-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+
+    a{
+        font-size: $font-size - 0.2rem;
+        font-weight: $fw-bold;
+        width: 6rem;
+
+        @include tablet-wide {
+            font-size: $font-size;
+            width: 8rem;
+        }
+    }
+
+    .active, .active:hover, .active:focus, .active:active, .active:target {
+        background-color: darken($secondary-color, 15%) !important;
+        color: $primary-color !important;
+    }
+
+    @include laptop {
+        gap: 1rem;
+    }
+}
+
+
+.end-space {
+    max-height: 2vh;
+    min-height: 1vh;
+}

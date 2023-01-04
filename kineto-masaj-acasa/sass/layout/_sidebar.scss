@@ -4,6 +4,11 @@
 .dash-nav {
     background-color: darken($white, 5%) !important;
     align-items: flex-start;
+
+    .active {
+            filter: hue-rotate(360deg) saturate(5) contrast(50%);
+            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+    }
 }
 
 
@@ -28,16 +33,16 @@
         transition: transform .2s;
 
         &:hover, &:focus, &:active {
-            filter: hue-rotate(360deg) saturate(3) contrast(50%);
-            -webkit-filter: hue-rotate(360deg) saturate(3) contrast(50%);
+            filter: hue-rotate(360deg) saturate(5) contrast(50%);
+            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
 
-            -ms-transform: scale(1.2); /* IE 9 */
-            -webkit-transform: scale(1.2); /* Safari 3-8 */
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
             transform: scale(1.2); 
 
             @include tablet {
-                -ms-transform: scale(1.5); /* IE 9 */
-                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                -ms-transform: scale(1.5);
+                -webkit-transform: scale(1.5);
                 transform: scale(1.5); 
             }
         }
@@ -110,6 +115,14 @@
     img {
         width: 100%;
 
+        &:hover, &:focus, &:active {
+            filter: hue-rotate(360deg) saturate(5) contrast(50%);
+            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2); 
+        }
     }
 
 
@@ -124,11 +137,11 @@
         font-size: clamp(0.8rem, 5vw + 1rem, 1.2rem);
 
         &:hover, &:focus, &:active, &:target {
-            filter: hue-rotate(360deg) saturate(3) contrast(50%);
-            -webkit-filter: hue-rotate(360deg) saturate(3) contrast(50%);
+            filter: hue-rotate(360deg) saturate(5) contrast(50%);
+            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
 
-            -ms-transform: scale(1.2); /* IE 9 */
-            -webkit-transform: scale(1.2); /* Safari 3-8 */
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
             transform: scale(1.2); 
 
         }

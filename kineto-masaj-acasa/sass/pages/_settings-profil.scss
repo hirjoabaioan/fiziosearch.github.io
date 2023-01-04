@@ -1,0 +1,144 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+
+.settings-profil {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+    .info-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .settings-personal {
+            @include tablet {
+                max-width: 49%;
+            }
+        }
+
+        @include tablet-wide {
+            width: 70%;
+        }
+
+        button {
+            margin: auto;
+        }
+    }
+
+    h2 {
+        text-align: start !important;
+        color: $tertiary-color;
+        font-weight: $fw-bold;
+    }
+
+    .title-underline {
+        width: 100%;
+        margin: 1rem;
+        margin-left: 0 !important;
+    }
+
+    &-img {
+        width: 100%;
+
+        @include tablet {
+            width: 49%;
+        }
+
+        .settings-img{
+            position: relative;
+            
+            text-align: center;
+        }
+
+        .settings-upload{
+            width: 6rem;
+            height: 6rem;
+            background-color: #999999;
+            border: 4px solid #CCCCCC;
+            color: #FFFFFF;
+            border-radius: 50%;
+            margin: 0px auto;
+            overflow: hidden;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+
+            @include tablet {
+                width: 10rem;
+                height: 10rem;
+            }
+
+            @include laptop {
+                width: 14rem;
+                height: 14rem;
+            }
+
+            &:hover, &:active, &:focus, &:target {
+                border-color: #2ca8ff !important;
+            }
+        }
+
+        h6{
+            font-size: $font-size - 0.3rem;
+            margin: auto;
+
+            @include tablet {
+                font-size: $font-size + 0.2rem;
+            }
+        }
+
+        .content.ct-wizard-green .settings-upload:hover{
+            border-color: #05ae0e;
+        }
+
+        .content.ct-wizard-blue .settings-upload:hover{
+            border-color: #3472f7;
+        }
+        
+        .content.ct-wizard-orange .settings-upload:hover{
+            border-color: #ff9500;
+        }
+
+        .content.ct-wizard-red .settings-upload:hover{
+            border-color: #ff3b30;
+        }
+
+        .settings-upload input[type="file"] {
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            left: 25%;
+            opacity: 0 !important;
+            position: absolute;
+            top: 0;
+            width: 50%;
+
+            &:hover, &:active, &:focus, &:target  {
+                box-shadow: red;
+            }
+        }
+        
+        .picture-src{
+            width: 100%;
+        }
+    }
+
+    .speczializari-checks {
+        max-height: 50vh;
+    }
+
+    .dropdown {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @include tablet {
+            width: 49%;
+        }
+
+        select {
+            width: 80%;
+        }
+    }
+}
