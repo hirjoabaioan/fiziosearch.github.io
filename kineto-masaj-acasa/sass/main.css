@@ -1924,6 +1924,11 @@ ul li {
 }
 .tarif-table .bi-trash3 {
   color: red;
+  cursor: pointer;
+  font-size: 1.2rem !important;
+}
+.tarif-table .bi-trash3:hover {
+  color: #cc0000;
 }
 
 .image-one {

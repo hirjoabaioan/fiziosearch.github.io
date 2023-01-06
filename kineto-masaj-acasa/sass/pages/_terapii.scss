@@ -62,5 +62,11 @@
 
     .bi-trash3 {
         color: $red;
+        cursor: pointer;
+        font-size: $font-size + 0.2rem !important;
+
+        &:hover {
+            color: darken($red, 10%);
+        }
     }
 }
