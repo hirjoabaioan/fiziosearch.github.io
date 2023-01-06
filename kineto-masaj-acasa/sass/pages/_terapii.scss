@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.duration-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    &-input {
+
+        input{
+            font-size: clamp($font-size - 0.4rem, 1vw + 0.2rem, $font-size) !important;
+        }
+
+        @include tablet {
+            width: 25%;
+        }
+    }
+
+    .dash-drops {
+        @include tablet {
+            width: 50%;
+        }
+
+        #dropdownDurataOre {
+            border-radius: 1rem 0 0 1rem !important;
+        }
+
+        #dropdownDurataMin {
+            border-radius: 0 1rem 1rem 0 !important;
+        }
+
+        #dropdownDurataOre, #dropdownDurataMin {
+            font-size: clamp($font-size - 0.4rem, 1vw + 0.2rem, $font-size) !important;
+
+            // @include tablet {
+            //     font-size: $font-size !important;
+            // }
+        }
+    }
+}
+
+.duration-send {    
+    button {
+        width: 100%;
+        @include tablet {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+            width: 50%;
+        }
+    }
+}
+
+.tarif-table {
+    table {
+        width: 100%;
+
+        @include tablet {
+            width: 80%;
+        }
+    }
+
+    .bi-trash3 {
+        color: $red;
+    }
+}

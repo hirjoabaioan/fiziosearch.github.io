@@ -56,12 +56,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="setari-profil.html" class="active">
+                            <a href="setari-profil.html" class="">
                                 <img src="../img/setari icon.webp" alt="Setări">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="dash-contact.html" class="">
+                            <a href="dash-contact.html" class="active">
                                 <img src="../img/contact icon.webp" alt="Contact">
                             </a>
                         </li>
@@ -159,13 +159,13 @@
                                 </a>
                             </li>
                             <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
-                                <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active" aria-current="page" href="setari-profil.html">
+                                <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="setari-profil.html">
                                     <img src="../img/setari icon.webp" alt="">
                                     Setări
                                 </a>
                             </li>
                             <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
-                                <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="dash-contact.html">
+                                <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active" aria-current="page" href="dash-contact.html">
                                     <img src="../img/contact icon.webp" alt="">
                                     Contact
                                 </a>
@@ -191,128 +191,88 @@
                     <div class="col-9 uppernav-menu-info">
                         <div class="uppernav-header">
                             <h1>
-                                Informații personale
+                                Terapii realizate
                             </h1>
                         </div>
-                        <div class="row uppernav-menu-buttons">
-                            <a href="setari-profil.html" class="btn btn-secondary">Profil</a>
-                            <a href="setari-securitate.html" class="btn btn-secondary">Securitate</a>
-                            <a href="setari-abonamente.html" class="btn btn-secondary active">Abonamente</a>
-                            <a href="setari-informatii.html" class="btn btn-secondary">Informatii</a>
-                        </div>
+
                     </div>
                 </nav>
                 <div class="row gap-2 settings-profil m-0 mt-4 p-2">
                     <div class="info-form row">
-                        <div class="mb-4">
-                            <h2>Abonamente</h2>
+                        <h2 class="col-12 text-center contact-title">
+                            Adaugă o terapie sau o specializare
                             <hr class="title-underline">
-                            <h6>
-                                Tipul de abonament: 
-                                <span class="fw-bold abonament">Bronze</span>
-                            </h6>
-                            <h6>
-                                Plan tarifar: 
-                                <span class="fw-bold plan">Lunar</span> <!-- sau Anual-->
-                            </h6>
-                            <h6>
-                                Tarif: 
-                                <span class="fw-bold tarif">50RON</span> <!-- sau suma pentru anual-->
-                            </h6>
-                            <h6>
-                                Data expirării: 
-                                <span class="fw-bold data">23.01.2023</span> <!-- Se face roșu dacă a expirat-->
-                            </h6>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <h2>Inclus în plan</h2>
-                            <hr class="title-underline">
-                            <ul class="panel-list p-0">
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Listare în căutări</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Puteți fi contactat</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Chat</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Propriile terapii și tarife</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Alegeți zonele de interes</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Raport lunar</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">5 contactări săptămânale</span> 
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mb-4">
-                            <h2>Alte setări</h2>
-                            <hr class="title-underline">
-                            <div class="d-flex row justify-content-center align-items-center other-sets">
-                                <div class="mb-3 checks">
-                                    <div class="mb-2 form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="activitatySwitch">
-                                        <label class="form-check-label" for="activitatySwitch">Reînnoire automată abonament</label>
-                                    </div>
-                                    <div class="mb-2 form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="activitatySwitch">
-                                        <label class="form-check-label" for="activitatySwitch">Dezactivare abonament</label>
-                                    </div>
+                        </h2>
+                        <!-- Toate tagurile div cu clasa form-text sunt erorile care apar atunci cand nu se completeaza corect inputurile, altfel nu apar -->
+                        <form method="post" name="form" class="col-12 mt-3 needs-validation contact-form">
+                            <div class="col-12 row m-0 p-0 duration-area">
+                                <div class="mb-3 p-0 duration-area-input">
+                                    <input type="text" class="form-control" aria-describedby="teraNameHelp" placeholder="Terapie/Specializare" required>
+                                    <label class="form-text" id="teraNameHelp">
+                                        Introdu denumirea terapiei sau a specializării pe care dorești să o tarifezi
+                                    </label>
                                 </div>
-                                <div class="abo-change">
-                                    <a href="abonamente.html" class="btn btn-success">Schimbă abonamentul</a>
+    
+                                <div class="d-flex justify-content-center align-content-center col-12 mb-3 p-0 dropdown dash-drops">
+                                    <select title="DurataOre" name="DurataOre" class="btn btn-success dropdown-toggle" type="button" id="dropdownDurataOre" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <option selected>Durată h</option>
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                    </select>
+                                    <select title="DurataMin" name="DurataMin" class="btn btn-success dropdown-toggle" type="button" id="dropdownDurataMin" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <option selected>Durată min</option>
+                                        <option value="00">00</option>
+                                        <option value="05">05</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                        <option value="35">35</option>
+                                        <option value="40">40</option>
+                                        <option value="45">45</option>
+                                        <option value="50">50</option>
+                                        <option value="55">55</option>
+                                    </select>
+                                </div>
+    
+                                <div class="mb-3 p-0 duration-area-input">
+                                    <input type="text" class="form-control" aria-describedby="tarifHelp" placeholder="Tariful terapiei" requierd>
+                                    <div id="tarifHelp" class="form-text">Introduceți doar tariful în cifre.</div>
                                 </div>
                             </div>
-                        </div>
+                            
+            
+                            <div class="col-12 d-flex justify-content-end duration-send">
+                                <button type="submit" class="btn btn-primary">Trimite</button>
+                            </div>
+                        </form>
 
-                        <div class="mb-4">
-                            <h2>Istoric plăți</h2>
-                            <hr class="title-underline">
-                            <table>
+                        <div class="mt-4 tarif-table">
+                            <table class="mt-4">
                                 <tr>
-                                    <th>Data</th>
-                                    <th>Suma</th>
-                                    <th>Tip abonament</th>
-                                    <th>Stare</th>
+                                    <th>Denumire</th>
+                                    <th>Durată</th>
+                                    <th>Traif</th>
                                 </tr>
                                 <tr>
-                                    <td>22.11.2022</td>
-                                    <td class="currency-add">50</td>
-                                    <td>Bronze</td>
-                                    <!--Detecteaza cu JS valoarea (Achitat/În așteptare/Respins)
-                                        și colorează textul (Verde/Portocaliu/Roșu)-->
-                                    <td class="stare-plată">Achitat</td>
+                                    <td>Masaj</td>
+                                    <td>00:30</td>
+                                    <td class="currency-add">100</td>
+                                    <td>
+                                        <i class="bi bi-trash3"></i>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>22.12.2022</td>
-                                    <td class="currency-add">50</td>
-                                    <td>Bronze</td>
-                                    <!--Detecteaza cu JS valoarea (Achitat/În așteptare/Respins)
-                                        și colorează textul (Verde/Portocaliu/Roșu)-->
-                                    <td class="stare-plată">În așteptare</td>
-                                </tr>
-                                <tr>
-                                    <td>22.01.2023</td>
-                                    <td class="currency-add">150</td>
-                                    <td>Gold</td>
-                                    <!--Detecteaza cu JS valoarea (Achitat/În așteptare/Respins)
-                                        și colorează textul (Verde/Portocaliu/Roșu)-->
-                                    <td class="stare-plată">Respins</td>
+                                    <td>Kinetoterapie</td>
+                                    <td>01:00</td>
+                                    <td class="currency-add">200</td>
+                                    <td>
+                                        <i class="bi bi-trash3"></i>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -322,6 +282,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="../javascript.js"></script>
 </body>
