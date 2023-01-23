@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Calendar</title>
+        <style>
+            /* CSS for styling the calendar */
+            .calendar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .calendar-header {
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            .calendar-weekday {
+                width: 14.28%;
+                text-align: center;
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .calendar-day {
+                width: 14.28%;
+                text-align: center;
+                font-size: 18px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+            }
+            .calendar-day.today {
+                background-color: #f9f9f9;
+            }
+            .calendar-day.selected {
+                background-color: #e6e6e6;
+            }
+            .calendar-event {
+                font-size: 12px;
+                margin-top: 5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">Previous</button>
+                <span id="month-year"></span>
+                <button id="next-month">Next</button>
+                <br>
+                <button id="view-day">Day</button>
+                <button id="view-week">Week</button>
+                <button id="view-month">Month</button>
+            </div>
+            <div class="calendar-weekday">Sun</div>
+            <div class="calendar-weekday">Mon</div>
+            <div class="calendar-weekday">Tue</div>
+            <div class="calendar-weekday">Wed</div>
+            <div class="calendar-weekday">Thu</div>
+            <div class="calendar-weekday">Fri</div>
+            <div class="calendar-weekday">Sat</div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+            <div class="calendar-day"></div>
+        </div>
+        <div id="event-form" style="display: none;">
+            <form>
+                <label>Event:</label>
+                <input type="text" id="event-name" placeholder="Enter event name">
+                <br>
+                <label>Date:</label>
+                <input type="date" id="event-date">
+                <br>
+                <label>Time:</label>
+                <input type="time" id="event-time">
+                <br>
+                <button type="button" id="add-event">Add Event</button>
+                <button type="button" id="cancel-event">Cancel</button>
+            </form>
+        </div>
+
+        <script>
+            // JavaScript for creating and displaying the calendar
+            let date = new Date();
+            let month = date.getMonth();
+            let year = date.getFullYear();
+            let selectedDate;
+            let view = 'month';
+            // Function to create the calendar
+            function createCalendar() {
+                let daysInMonth = new Date(year, month + 1, 0).getDate();
+                let firstDayOfMonth = new Date(year, month, 1).getDay();
+                let days = document.querySelectorAll('.calendar-day');
+                let monthYear = document.querySelector('#month-year');
+
+                monthYear.innerHTML = date.toLocaleString('default', { month: 'long' }) + ' ' + year;
+
+                for (let i = 0; i < days.length; i++) {
+                    days[i].innerHTML = '';
+                    days[i].classList.remove('today', 'selected');
+                    if (i >= firstDayOfMonth && i < firstDayOfMonth + daysInMonth) {
+                        let day = i - firstDayOfMonth + 1;
+                        days[i].innerHTML = day;
+                        if (month === date.getMonth() && year === date.getFullYear() && day === date.getDate()) {
+                        days[i].classList.add('today');
+                        }
+                        days[i].addEventListener('click', function() {
+                            selectedDate = new Date(year, month, day);
+                            showEventForm();
+                        });
+                    }
+                }
+            }
+
+            // Function to show the event form
+            function showEventForm() {
+                let eventForm = document.querySelector('#event-form');
+                eventForm.style.display = 'block';
+                let eventName = document.querySelector('#event-name');
+                let eventDate = document.querySelector('#event-date');
+                let eventTime = document.querySelector('#event-time');
+                let addEvent = document.querySelector('#add-event');
+                let cancelEvent = document.querySelector('#cancel-event');
+
+                eventDate.value = selectedDate.toISOString().substring(0,10);
+                eventTime.value = selectedDate.toLocaleTimeString();
+
+                addEvent.addEventListener('click', function() {
+                    let event = eventName.value;
+                    let day = document.querySelector(`div[data-date="${eventDate.value}"]`);
+                    day.innerHTML += `<div class="calendar-event">${event}</div>`;
+                    eventForm.style.display = 'none';
+                });
+
+                cancelEvent.addEventListener('click', function() {
+                    eventForm.style.display = 'none';
+                });
+            }
+
+            createCalendar();
+
+            // Event listeners for navigating through months
+            let prevMonth = document.querySelector('#prev-month');
+            prevMonth.addEventListener('click', function() {
+                if (month === 0) {
+                month = 11;
+                year--;
+                } else {
+                month--;
+                }
+                createCalendar();
+            });
+
+            let nextMonth = document.querySelector('#next-month');
+            nextMonth.addEventListener('click', function() {
+                if (month === 11) {
+                month = 0;
+                year++;
+                } else {
+                    console.log('luna> ' + month);
+                month++;
+                }
+                createCalendar();
+            });
+
+            // Event listeners for changing view
+            let viewDay = document.querySelector('#view-day');
+            viewDay.addEventListener('click', function() {
+                view = 'day';
+                // code for displaying a single day
+            });
+
+            let viewWeek = document.querySelector('#view-week');
+            viewWeek.addEventListener('click', function() {
+                view = 'week';
+                // code for displaying a week
+            });
+
+            let viewMonth = document.querySelector('#view-month');
+            viewMonth.addEventListener('click', function() {
+                view = 'month';
+                // code for displaying a month
+            });
+        </script>
+    </body>
+</html>

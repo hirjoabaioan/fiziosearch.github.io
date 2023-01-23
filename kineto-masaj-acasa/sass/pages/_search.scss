@@ -246,11 +246,7 @@
     align-items: center;
     
     &-pic {
-        width: 6rem;
-    
-        @include tablet {
-            width: 8rem;
-        }
+        width: clamp(5rem, 8vw + 1rem, 12rem);
     }
 
     &-name {

@@ -1,2 +1,79 @@
 @use '../abstracts' as *;
 @use '../base' as *;
+
+
+.messages {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .list-area {
+        height: 30rem;
+    }
+
+    .person-box-pic {
+        width: clamp(4rem, 2vw + 0.5rem, 14rem);
+    }
+
+    .info-container {
+        display: flex;
+    }
+
+    .info-header {
+        border-bottom: 1rem solid $white;
+    }
+
+    .header-pn-pic {
+        width: clamp(5rem, 6vw + 1rem, 12rem);
+    }
+
+    .messages-border-box {
+        border: 0.2rem solid $white;
+        border-radius: 0 0 1rem 1rem;
+        padding: 1rem;
+        padding-bottom: 0;
+    }
+
+    .messages-box {
+        height: 27rem;
+        padding-right: 1rem;
+
+        .message-box {
+            width: 51%;
+            background-color: darken($white, 15%);
+            margin: 1rem;
+            padding: 0.25rem;
+        }
+
+        .message-received {
+            border-radius: 0 1rem 1rem 1rem;
+            text-align: left;
+        }
+
+        .message-sent {
+            border-radius: 1rem 0 1rem 1rem;
+            margin-right: 0;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .mess-name {
+            font-weight: $fw-bold;
+
+            &::after {
+                content: ": ";
+            }
+        }
+
+        .mess-date {
+            // margin-left: auto;
+            // width: 55%;
+            text-align: center;
+        }
+    }
+
+    .send-file {
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}

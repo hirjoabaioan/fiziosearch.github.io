@@ -1087,12 +1087,7 @@ nav img {
   align-items: center;
 }
 .header-pn-pic {
-  width: 6rem;
-}
-@media (min-width: 37.5rem) {
-  .header-pn-pic {
-    width: 8rem;
-  }
+  width: clamp(5rem, 8vw + 1rem, 12rem);
 }
 .header-pn-name {
   font-size: 1.2rem;
@@ -1929,6 +1924,66 @@ ul li {
 }
 .tarif-table .bi-trash3:hover {
   color: #cc0000;
+}
+
+.messages {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.messages .list-area {
+  height: 30rem;
+}
+.messages .person-box-pic {
+  width: clamp(4rem, 2vw + 0.5rem, 14rem);
+}
+.messages .info-container {
+  display: flex;
+}
+.messages .info-header {
+  border-bottom: 1rem solid white;
+}
+.messages .header-pn-pic {
+  width: clamp(5rem, 6vw + 1rem, 12rem);
+}
+.messages .messages-border-box {
+  border: 0.2rem solid white;
+  border-radius: 0 0 1rem 1rem;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.messages .messages-box {
+  height: 27rem;
+  padding-right: 1rem;
+}
+.messages .messages-box .message-box {
+  width: 51%;
+  background-color: #d9d9d9;
+  margin: 1rem;
+  padding: 0.25rem;
+}
+.messages .messages-box .message-received {
+  border-radius: 0 1rem 1rem 1rem;
+  text-align: left;
+}
+.messages .messages-box .message-sent {
+  border-radius: 1rem 0 1rem 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+.messages .messages-box .mess-name {
+  font-weight: 600;
+}
+.messages .messages-box .mess-name::after {
+  content: ": ";
+}
+.messages .messages-box .mess-date {
+  text-align: center;
+}
+.messages .send-file {
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .image-one {
