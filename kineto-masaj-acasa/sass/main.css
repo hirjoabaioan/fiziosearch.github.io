@@ -985,7 +985,7 @@ nav img {
   }
 }
 
-.therapist-box {
+.person-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -994,7 +994,7 @@ nav img {
   background-color: #f2f2f2;
   padding: 1rem;
 }
-.therapist-box:hover {
+.person-box:hover {
   background-color: #e3e3e3;
   box-shadow: 0px 0px 25px -7px rgba(0, 0, 0, 0.75);
   margin: 0.4rem;
@@ -1002,43 +1002,43 @@ nav img {
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
 }
-.therapist-box-pic {
+.person-box-pic {
   width: clamp(10rem, 2vw + 0.5rem, 14rem);
 }
-.therapist-box-info, .therapist-box-info div {
+.person-box-info, .person-box-info div {
   display: flex;
   justify-content: start;
   align-items: center;
 }
-.therapist-box-name {
+.person-box-name {
   font-size: 1.4rem;
   font-weight: 600 !important;
 }
 @media (max-width: 37.5rem) {
-  .therapist-box-name {
+  .person-box-name {
     font-size: 0.8rem;
   }
 }
 @media (min-width: 37.5rem) {
-  .therapist-box-name {
+  .person-box-name {
     font-size: 1rem;
   }
 }
 @media (min-width: 48rem) {
-  .therapist-box-name {
+  .person-box-name {
     font-size: 1.2rem;
   }
 }
-.therapist-box svg {
+.person-box svg {
   width: 3rem;
   color: green;
 }
 @media (max-width: 37.5rem) {
-  .therapist-box svg {
+  .person-box svg {
     width: 2rem;
   }
 }
-.therapist-box-locations, .therapist-box-therapies {
+.person-box-locations, .person-box-therapies {
   padding: 0.2rem 1rem;
   font-size: 0.8rem;
   max-width: 95%;
@@ -1048,12 +1048,12 @@ nav img {
   overflow: hidden;
 }
 @media (max-width: 37.5rem) {
-  .therapist-box-locations, .therapist-box-therapies {
+  .person-box-locations, .person-box-therapies {
     font-size: 0.6rem;
   }
 }
 @media (min-width: 48rem) {
-  .therapist-box-locations, .therapist-box-therapies {
+  .person-box-locations, .person-box-therapies {
     font-size: 0.7rem;
     padding: 0.2rem 0.5rem;
   }
