@@ -183,84 +183,76 @@
           </div>
         </nav>
         <div class="d-flex justify-content-center align-items-center m-0 p-0 h-100 containers">
-          <div class="m-0 p-0 pb-4 overflow-auto custom-scrollbar-css dash-content">
-            <nav class="m-0 p-0 d-flex row fixed-top navbar uppernav-menu">
-              <div class="col-1 uppernav-image uppernav-hide">
-                  <img src="../img/dasboard-upper.png" alt="" class="stanga">
-              </div>
-              <div class="col-9 uppernav-menu-info">
-                  <div class="uppernav-header">
-                      <h1>
-                          Dashboard
-                      </h1>
-                  </div>
-              </div>
-            </nav>
-            <div class="row gap-2 dash-tables m-0 mt-4 p-2">
-              <div class="row m-0 info-contacts">
-                <h3 class="d-flex justify-content-center align-items-center row gap-2 info-terapeuti-contactati">
-                  Terapeuți contactați
-                  <span>3</span>
-                </h3>
-                <hr class="title-underline">
-                <h3 class="d-flex justify-content-center align-items-center row gap-2 info-recenzii-lasate">
-                  Recenzii lăsate
-                  <span>1</span>
-                </h3>
-              </div>
+            <div class="m-0 p-0 pb-4 overflow-auto custom-scrollbar-css dash-content">
+                <nav class="m-0 p-0 d-flex row fixed-top navbar uppernav-menu">
+                <div class="col-1 uppernav-image uppernav-hide">
+                    <img src="../img/dasboard-upper.png" alt="" class="stanga">
+                </div>
+                <div class="col-9 uppernav-menu-info">
+                    <div class="uppernav-header">
+                        <h1>
+                            Dashboard
+                        </h1>
+                    </div>
+                </div>
+                </nav>
+                <div class="dash-info m-0 mt-4 p-2">
+                    <div class="dash-therapists" >
 
-              <div class="m-0 info-terapii">
-                <h3 class="d-flex justify-content-center align-items-center row gap-2">
-                  Total terapii realizate
-                  <span class="">35</span>
-                </h3>
-              </div>
-              
-              <div class="info-notif">
-                <table>
-                  <tr>
-                    <td><a href="#" class="row-link">23.05.2022</a></td>
-                    <td>Update Platformă</td>
-                  </tr>
-                  <tr>
-                    <td><a href="#" class="row-link">11.07.2022</a></td>
-                    <td>Ultimele Noutăți</td>
-                  </tr>
-                  <tr>
-                    <td><a href="#" class="row-link">17.07.2022</a></td>
-                    <td>Recenzie</td>
-                  </tr>
-                  <tr>
-                    <td><a href="#" class="row-link">06.11.2022</a></td>
-                    <td>Formular Feedback</td>
-                  </tr>
-                </table>
-              </div>
-              
-              <div class="info-programari">
-                <table>
-                  <tr>
-                    <td><a href="#" class="row-link">23.05.2022</a></td>
-                    <td>Kinetoterapie</td>
-                  </th>
-                  <tr>
-                    <td><a href="#" class="row-link">11.07.2022</a></td>
-                    <td>Masaj</td>
-                  </tr>
-                  <tr>
-                    <td><a href="#" class="row-link">17.07.2022</a></td>
-                    <td>Kinetoterapie</td>
-                  </tr>
-                  <tr>
-                    <td><a href="#" class="row-link">06.11.2022</a></td>
-                    <td>Kinetoterapie</td>
-                  </tr>
-                </table>
-              </div>
+                        <div class="d-flex gap-4 first-row justify-content-center align-items-center">
+                            <div class="row avail">
+                                <span class="first-row-text">Disponibilitate</span>
+                                <div class="button r" id="button-1">
+                                    <input type="checkbox" class="checkbox">
+                                    <div class="knobs"></div>
+                                    <div class="layer"></div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex row justify-content-center align-items-center number-of-contacts text-center">
+                                <span class="first-row-text">Contactări în ultimele 30 de zile</span>
+                                <span class="first-row-contacts-number">30</span>
+                            </div>
+
+                            <div class="d-flex row justify-content-center align-items-center text-center">
+                                <span class="first-row-text">Total terapii realizate/luna</span>
+                                <span class="first-row-therapies-number">30</span>
+                            </div>
+                        </div>
+
+                        
+
+
+
+                        <div>
+                            Suma realizata din terapiile care au fost trecute in tarife/luna
+                        </div>
+
+                        <div>
+                            buto activare/dezactivare disponibilitate - abo continua nu se opreste,
+                            apare doa rin lista ca fiind indisponibil in a mai lua noi pacienti (bulina rosie)
+                            pacientii pot in continuare sa trimita mesaje, terapeutii le vad atunci cand reactiveaza contul,
+                            se adauga la numarul de contactari totale lunare, la final de luna primesc email cu datele
+                        </div>
+
+                        <div>
+                            Urmatoarele 5 programari
+                        </div>
+
+                        <div>
+                            ultimele 5 programari
+                        </div>
+
+                        <div>grafic cu sumele realizate in ultimul an/luna</div>
+                    </div>
+                
+                </div>
             </div>
-          </div>
             
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="../javascript.js"></script>
 </body>
 </html>

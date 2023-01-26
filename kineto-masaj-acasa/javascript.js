@@ -1,15 +1,15 @@
 $(document).ready(function(){
 
+    if (top.location.pathname === '/templates/search.html' || 
+        top.location.pathname === '/templates/mesagerie.html' ){
 
         $('.contact-info').hide();
 
         $(window).resize (function (){
             if($(window).width() < 750 && $('.list-container').is(":visible")){
-                console.log("work1");
                 $('.info-container').hide();
             }else if($(window).width() > 751) {
                 $('.info-container').show();
-                console.log("work2");
             }
 
         })
@@ -55,6 +55,24 @@ $(document).ready(function(){
                 $('.info-container').html(replace);
             }
         });
+    }
+
+    if(top.location.pathname === '/templates/notificari.html'){
+        $(".notification-condition").each(function(){
+            if($(this).text() === "Văzut"){
+                $(this).css({"color": "grey"});
+                $(this).siblings().css({"color": "grey"});
+            }
+        });
+    }
+
+    if(top.location.pathname === '/dashboard-terapeut.html'){
+        if($(".checkbox").is(":checked")){
+            // Terapeut indisponibil
+        } else {
+            // Terapeut disponibil
+        }
+    }
 })
 
 
@@ -74,3 +92,5 @@ $(document).ready(function(){
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+

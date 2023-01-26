@@ -9,6 +9,10 @@
 
     .list-area {
         height: 30rem;
+
+        @include tablet {
+            height: 37rem;
+        }
     }
 
     .person-box-pic {
@@ -17,6 +21,8 @@
 
     .info-container {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .info-header {
@@ -35,34 +41,76 @@
     }
 
     .messages-box {
-        height: 27rem;
-        padding-right: 1rem;
+        height: 20rem;
+
+        @include tablet {
+            height: 27rem;
+        }
+
+        padding-right: 0.25rem;
+        
+        .message-pic {
+            width: clamp(3rem, 8vw + 2rem, 4rem);
+
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
 
         .message-box {
-            width: 51%;
-            background-color: darken($white, 15%);
+            display: flex;
+            width: 90%;
             margin: 1rem;
             padding: 0.25rem;
         }
 
+        .message-general {
+            background-color: $input-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem;
+        }
+
         .message-received {
-            border-radius: 0 1rem 1rem 1rem;
+            align-items: center;
+            justify-content: flex-start;
             text-align: left;
+            margin-left: 1rem;
+
+            .message-pic {
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            &-text {
+                border-radius: 0 1rem 1rem 1rem;
+            }
         }
 
         .message-sent {
-            border-radius: 1rem 0 1rem 1rem;
+            align-items: center;
+            justify-content: flex-end;
             margin-right: 0;
+            padding-right: 0;
             margin-left: auto;
             text-align: right;
+
+            .message-pic {
+
+            }
+
+            &-text {
+                border-radius: 1rem 0 1rem 1rem;
+            }
         }
 
-        .mess-name {
-            font-weight: $fw-bold;
-
-            &::after {
-                content: ": ";
-            }
+        .mess-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.25rem;
         }
 
         .mess-date {
@@ -75,5 +123,9 @@
     .send-file {
         font-size: 1rem;
         cursor: pointer;
+    }
+
+    .input-group {
+        // height: 1rem;
     }
 }

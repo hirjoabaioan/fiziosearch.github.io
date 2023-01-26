@@ -26,7 +26,7 @@
                             </a>
                         </li>
                         <li class="nav-item dash-notif">
-                            <a href="notificari.html" class="">
+                            <a href="notificari.html" class="active">
                                 <img src="../img/notif icon.webp" alt="Notificări platformă">
                             </a>
                         </li>
@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="setari-profil.html" class="active">
+                            <a href="setari-profil.html" class="">
                                 <img src="../img/setari icon.webp" alt="Setări">
                             </a>
                         </li>
@@ -93,7 +93,7 @@
                                         <img src="../img/message icon.webp" alt="Mesagerie platformă">
                                     </a>
                                 </div>
-                                <div class="notification-pic gap-3">
+                                <div class="notification-pic gap-3 active">
                                     <a href="notificari.html" class="nav-link">
                                         <img src="../img/notif icon.webp" alt="Notificări platformă">
                                     </a>
@@ -159,7 +159,7 @@
                                 </a>
                             </li>
                             <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
-                                <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active" aria-current="page" href="setari-profil.html">
+                                <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="setari-profil.html">
                                     <img src="../img/setari icon.webp" alt="">
                                     Setări
                                 </a>
@@ -191,131 +191,45 @@
                     <div class="col-9 uppernav-menu-info">
                         <div class="uppernav-header">
                             <h1>
-                                Informații personale
+                                Notificări
                             </h1>
-                        </div>
-                        <div class="row uppernav-menu-buttons">
-                            <a href="setari-profil.html" class="btn btn-secondary">Profil</a>
-                            <a href="setari-securitate.html" class="btn btn-secondary">Securitate</a>
-                            <a href="setari-abonamente.html" class="btn btn-secondary active">Abonamente</a>
-                            <a href="setari-informatii.html" class="btn btn-secondary">Informatii</a>
                         </div>
                     </div>
                 </nav>
                 <div class="row gap-2 settings-profil m-0 mt-4 p-2">
-                    <div class="info-form row">
-                        <div class="mb-4">
-                            <h2>Abonamente</h2>
-                            <hr class="title-underline">
-                            <h6>
-                                Tipul de abonament: 
-                                <span class="fw-bold abonament">Bronze</span>
-                            </h6>
-                            <h6>
-                                Plan tarifar: 
-                                <span class="fw-bold plan">Lunar</span> <!-- sau Anual-->
-                            </h6>
-                            <h6>
-                                Tarif: 
-                                <span class="fw-bold tarif">50RON</span> <!-- sau suma pentru anual-->
-                            </h6>
-                            <h6>
-                                Data expirării: 
-                                <span class="fw-bold data">23.01.2023</span> <!-- Se face roșu dacă a expirat-->
-                            </h6>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <h2>Inclus în plan</h2>
-                            <hr class="title-underline">
-                            <ul class="panel-list p-0">
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Listare în căutări</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Puteți fi contactat</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Chat</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Propriile terapii și tarife</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Alegeți zonele de interes</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">Raport lunar</span> 
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="col-2 bi bi-check"></span>
-                                    <span class="col-10">5 contactări săptămânale</span> 
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mb-4">
-                            <h2>Alte setări</h2>
-                            <hr class="title-underline">
-                            <div class="d-flex row justify-content-center align-items-center other-sets">
-                                <div class="mb-3 checks">
-                                    <div class="mb-2 form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="activitySwitch">
-                                        <label class="form-check-label" for="activitySwitch">Reînnoire automată abonament</label>
-                                    </div>
-                                    <div class="mb-2 form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="activitySwitch">
-                                        <label class="form-check-label" for="activitySwitch">Dezactivare abonament</label>
-                                    </div>
-                                </div>
-                                <div class="abo-change">
-                                    <a href="abonamente.html" class="btn btn-success">Schimbă abonamentul</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <h2>Istoric plăți</h2>
-                            <hr class="title-underline">
-                            <table>
-                                <tr>
-                                    <th>Data</th>
-                                    <th>Suma</th>
-                                    <th>Tip abonament</th>
-                                    <th>Stare</th>
-                                </tr>
-                                <tr>
-                                    <td>22.11.2022</td>
-                                    <td class="currency-add">50</td>
-                                    <td>Bronze</td>
-                                    <!--Detecteaza cu JS valoarea (Achitat/În așteptare/Respins)
-                                        și colorează textul (Verde/Portocaliu/Roșu)-->
-                                    <td class="stare-plată">Achitat</td>
-                                </tr>
-                                <tr>
-                                    <td>22.12.2022</td>
-                                    <td class="currency-add">50</td>
-                                    <td>Bronze</td>
-                                    <!--Detecteaza cu JS valoarea (Achitat/În așteptare/Respins)
-                                        și colorează textul (Verde/Portocaliu/Roșu)-->
-                                    <td class="stare-plată">În așteptare</td>
-                                </tr>
-                                <tr>
-                                    <td>22.01.2023</td>
-                                    <td class="currency-add">150</td>
-                                    <td>Gold</td>
-                                    <!--Detecteaza cu JS valoarea (Achitat/În așteptare/Respins)
-                                        și colorează textul (Verde/Portocaliu/Roșu)-->
-                                    <td class="stare-plată">Respins</td>
-                                </tr>
-                            </table>
-                        </div>
+                    <div class="notificari row">
+                        <table class="">
+                            <tr>
+                                <th>Dată</th>
+                                <th>Tip</th>
+                                <th>Denumire</th>
+                                <th>Stare</th>
+                            </tr>
+                            <tr onclick="sendToPage()">
+                                <td>20.03.2022</td>
+                                <td>Feedback</td>
+                                <td>Despre platformă</td>
+                                <td class="notification-condition">Văzut</td>
+                            </tr>
+                            <tr onclick="sendToPage()">
+                                <td>08.05.2022</td>
+                                <td>Platformă</td>
+                                <td>Mentenanță</td>
+                                <td class="notification-condition">Văzut</td>
+                            </tr>
+                            <tr onclick="sendToPage()">
+                                <td>12.06.2022</td>
+                                <td>Mesaj</td>
+                                <td>Hîrjoabă Ioan</td>
+                                <td class="notification-condition">Văzut</td>
+                            </tr>
+                            <tr onclick="sendToPage()">
+                                <td>15.08.2022</td>
+                                <td>Programare</td>
+                                <td>Verifică în calendar</td>
+                                <td class="notification-condition">Vezi</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="mx-2 px-2 end-space"></div>                 
                 </div>

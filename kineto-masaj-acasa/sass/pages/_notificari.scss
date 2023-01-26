@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.notificari {
+    table tr:not(:first-child){
+
+        &:hover, &:focus, &:active, &:target {
+            background: lighten($dark-gray, 25%);
+            cursor: pointer;
+        }
+    }
+}

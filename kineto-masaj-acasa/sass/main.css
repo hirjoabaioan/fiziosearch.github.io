@@ -1427,7 +1427,7 @@ ul li {
   }
 }
 
-.dash-tables {
+.dash-patients {
   display: grid;
   grid-template-areas: "contacts" "terapies" "notif" "schedule";
   align-items: center;
@@ -1436,61 +1436,61 @@ ul li {
   color: #1F5065;
 }
 @media (min-width: 37.5rem) {
-  .dash-tables {
+  .dash-patients {
     max-height: 50%;
   }
 }
 @media (min-width: 48rem) {
-  .dash-tables {
+  .dash-patients {
     margin-top: 10% !important;
   }
 }
 @media (min-width: 64rem) {
-  .dash-tables {
+  .dash-patients {
     max-width: 80vw;
   }
 }
-.dash-tables h3 {
+.dash-patients h3 {
   font-size: 1.3rem;
 }
-.dash-tables .info-contacts {
+.dash-patients .info-contacts {
   grid-area: contacts;
   flex: 0 0 auto;
   width: 100%;
 }
 @media (min-width: 48rem) {
-  .dash-tables .info-contacts {
+  .dash-patients .info-contacts {
     width: 75%;
   }
 }
 @media (min-width: 64rem) {
-  .dash-tables .info-contacts {
+  .dash-patients .info-contacts {
     width: 60%;
   }
 }
-.dash-tables .info-contacts .title-underline {
+.dash-patients .info-contacts .title-underline {
   border: 2px solid white;
   margin: 0;
 }
-.dash-tables .info-terapii {
+.dash-patients .info-terapii {
   grid-area: terapies;
   width: 100%;
   flex: 0 0 auto;
 }
 @media (min-width: 48rem) {
-  .dash-tables .info-terapii {
+  .dash-patients .info-terapii {
     width: 75%;
   }
 }
 @media (min-width: 64rem) {
-  .dash-tables .info-terapii {
+  .dash-patients .info-terapii {
     width: 60%;
   }
 }
-.dash-tables .info-terapii span {
+.dash-patients .info-terapii span {
   font-size: 2rem;
 }
-.dash-tables .info-notif {
+.dash-patients .info-notif {
   grid-area: notif;
   font-size: 0.8rem;
   width: 100%;
@@ -1498,58 +1498,58 @@ ul li {
   display: flex;
 }
 @media (max-width: 37.5rem) {
-  .dash-tables .info-notif {
+  .dash-patients .info-notif {
     margin: 2rem 0;
   }
 }
-.dash-tables .info-programari {
+.dash-patients .info-programari {
   grid-area: schedule;
   font-size: 0.8rem;
   width: 100%;
   flex: 0 0 auto;
   display: flex;
 }
-.dash-tables .info-contacts, .dash-tables .info-terapii {
+.dash-patients .info-contacts, .dash-patients .info-terapii {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.dash-tables .info-contacts, .dash-tables .info-terapii, .dash-tables .info-notif, .dash-tables .info-programari {
+.dash-patients .info-contacts, .dash-patients .info-terapii, .dash-patients .info-notif, .dash-patients .info-programari {
   background-color: #eafcfd;
   border-radius: 10px;
   padding: 1rem;
   min-height: 12rem;
 }
 @media (min-width: 37.5rem) {
-  .dash-tables {
+  .dash-patients {
     gap: 2rem;
     grid-template-areas: "contacts notif" "terapies schedule";
   }
 }
-.dash-tables table {
+.dash-patients table {
   position: relative;
   margin: auto;
 }
-.dash-tables tr {
+.dash-patients tr {
   height: 1.5rem;
   line-height: 1.5rem;
 }
-.dash-tables tr:nth-child(4) td:nth-child(2) {
+.dash-patients tr:nth-child(4) td:nth-child(2) {
   padding-bottom: 0.2rem !important;
 }
-.dash-tables td {
+.dash-patients td {
   padding-bottom: 1rem;
 }
-.dash-tables td:nth-child(2) {
+.dash-patients td:nth-child(2) {
   padding-left: 3rem;
 }
 @media (min-width: 48rem) {
-  .dash-tables td:nth-child(2) {
+  .dash-patients td:nth-child(2) {
     padding-left: 10rem;
   }
 }
-.dash-tables .row-link::before {
+.dash-patients .row-link::before {
   content: "";
   display: block;
   position: absolute;
@@ -1557,8 +1557,87 @@ ul li {
   width: 100%;
   height: 2.5rem;
 }
-.dash-tables tr:hover, .dash-tables a:hover {
+.dash-patients tr:hover, .dash-patients a:hover {
   color: #15bbc4 !important;
+}
+
+.dash-therapists .first-row-text {
+  color: #1F5065;
+  font-weight: 700;
+  text-align: center;
+}
+.dash-therapists .avail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dash-therapists .avail .knobs,
+.dash-therapists .avail .layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.dash-therapists .avail .button {
+  position: relative;
+  width: 6rem;
+  height: 3rem;
+  margin: 1rem;
+  overflow: hidden;
+}
+.dash-therapists .avail .button.r,
+.dash-therapists .avail .button.r .layer {
+  border-radius: 5rem;
+}
+.dash-therapists .avail .checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.dash-therapists .avail .knobs {
+  z-index: 2;
+}
+.dash-therapists .avail .layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+.dash-therapists .avail #button-1 .knobs:before {
+  content: "";
+  position: absolute;
+  top: 0.08rem;
+  left: 0.15rem;
+  width: 2.85rem;
+  height: 2.85rem;
+  color: #fff;
+  font-size: 0.4rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 1.2rem 0.4rem;
+  background-color: #108F96;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+.dash-therapists .avail #button-1 .checkbox:checked + .knobs:before {
+  content: "";
+  left: 2.95rem;
+  padding: 1.2rem 0.2rem;
+  background-color: #f44336;
+}
+.dash-therapists .avail #button-1 .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+}
+.dash-therapists .avail #button-1 .knobs,
+.dash-therapists .avail #button-1 .knobs:before,
+.dash-therapists .avail #button-1 .layer {
+  transition: 0.3s ease all;
 }
 
 .uppernav-menu {
@@ -1934,11 +2013,18 @@ ul li {
 .messages .list-area {
   height: 30rem;
 }
+@media (min-width: 37.5rem) {
+  .messages .list-area {
+    height: 37rem;
+  }
+}
 .messages .person-box-pic {
   width: clamp(4rem, 2vw + 0.5rem, 14rem);
 }
 .messages .info-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .messages .info-header {
   border-bottom: 1rem solid white;
@@ -1953,36 +2039,73 @@ ul li {
   padding-bottom: 0;
 }
 .messages .messages-box {
-  height: 27rem;
-  padding-right: 1rem;
+  height: 20rem;
+  padding-right: 0.25rem;
+}
+@media (min-width: 37.5rem) {
+  .messages .messages-box {
+    height: 27rem;
+  }
+}
+.messages .messages-box .message-pic {
+  width: clamp(3rem, 8vw + 2rem, 4rem);
+}
+.messages .messages-box .message-pic img {
+  width: 100%;
+  height: 100%;
 }
 .messages .messages-box .message-box {
-  width: 51%;
-  background-color: #d9d9d9;
+  display: flex;
+  width: 90%;
   margin: 1rem;
   padding: 0.25rem;
 }
+.messages .messages-box .message-general {
+  background-color: #9DD0D3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
 .messages .messages-box .message-received {
-  border-radius: 0 1rem 1rem 1rem;
+  align-items: center;
+  justify-content: flex-start;
   text-align: left;
+  margin-left: 1rem;
+}
+.messages .messages-box .message-received .message-pic {
+  margin-left: 0;
+  padding-left: 0;
+}
+.messages .messages-box .message-received-text {
+  border-radius: 0 1rem 1rem 1rem;
 }
 .messages .messages-box .message-sent {
-  border-radius: 1rem 0 1rem 1rem;
+  align-items: center;
+  justify-content: flex-end;
   margin-right: 0;
+  padding-right: 0;
   margin-left: auto;
   text-align: right;
 }
-.messages .messages-box .mess-name {
-  font-weight: 600;
+.messages .messages-box .message-sent-text {
+  border-radius: 1rem 0 1rem 1rem;
 }
-.messages .messages-box .mess-name::after {
-  content: ": ";
+.messages .messages-box .mess-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
 }
 .messages .messages-box .mess-date {
   text-align: center;
 }
 .messages .send-file {
   font-size: 1rem;
+  cursor: pointer;
+}
+.notificari table tr:not(:first-child):hover, .notificari table tr:not(:first-child):focus, .notificari table tr:not(:first-child):active, .notificari table tr:not(:first-child):target {
+  background: #cfcfcf;
   cursor: pointer;
 }
 
