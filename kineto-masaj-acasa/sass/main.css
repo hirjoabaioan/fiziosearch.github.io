@@ -1736,6 +1736,10 @@ tr:hover, a:hover {
   justify-content: center;
   align-items: center;
 }
+.dash-therapists .first-row #sumChart {
+  width: 100%;
+  max-width: 30rem;
+}
 .dash-therapists .second-row {
   display: flex;
   justify-content: center;
