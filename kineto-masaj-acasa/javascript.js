@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
     if (top.location.pathname === '/templates/search.html' || 
         top.location.pathname === '/templates/mesagerie.html' ){
@@ -67,14 +69,24 @@ $(document).ready(function(){
     }
 
     if(top.location.pathname === '/dashboard-terapeut.html'){
-        if($(".checkbox").is(":checked")){
-            // Terapeut indisponibil
-        } else {
-            // Terapeut disponibil
-        }
+        
+
+        
     }
+    
 })
 
+function checkerFunction() {
+    if($("#checker").is(":checked")){
+        $("#toggle-inactive").css("color", "#f44336");
+        $("#toggle-active").css("color", "black");
+        // Terapeut indisponibil
+    } else {
+        $("#toggle-active").css("color", "#108F96");
+        $("#toggle-inactive").css("color", "black");
+        // Terapeut disponibil
+    }
+}
 
 $(document).ready(function(){
     // Prepare the preview for profile picture

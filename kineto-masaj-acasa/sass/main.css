@@ -1545,6 +1545,7 @@ tr:hover, a:hover {
 .dash-table table {
   position: relative;
   margin: auto;
+  font-size: 0.8rem;
 }
 .dash-table tr {
   height: 1.5rem;
@@ -1564,7 +1565,33 @@ tr:hover, a:hover {
     padding-left: 10rem;
   }
 }
+@media (min-width: 48rem) {
+  .dash-table {
+    width: 45%;
+  }
+}
 
+.dash-titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #1F5065;
+  font-weight: 700;
+}
+
+.dash-sub {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.dash-therapists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+}
 .dash-therapists .first-row {
   display: flex;
   justify-content: center;
@@ -1576,10 +1603,10 @@ tr:hover, a:hover {
   align-items: center;
   text-align: center;
 }
-.dash-therapists .first-row-text {
-  color: #1F5065;
-  font-weight: 700;
-  text-align: center;
+.dash-therapists .first-row .abo-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dash-therapists .first-row .avail-toggle {
   display: flex;
@@ -1653,6 +1680,61 @@ tr:hover, a:hover {
 .dash-therapists .first-row .avail-toggle #button-1 .knobs:before,
 .dash-therapists .first-row .avail-toggle #button-1 .layer {
   transition: 0.3s ease all;
+}
+.dash-therapists .first-row .dash-toggle-sub {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+.dash-therapists .first-row .dash-toggle-sub #toggle-active {
+  color: #108F96;
+}
+.dash-therapists .first-row .dash-toggle-sub #toggle-separator {
+  color: #1F5065;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.dash-therapists .first-row .dash-exp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 37.5rem) {
+  .dash-therapists .first-row .dash-exp {
+    width: 30%;
+  }
+}
+@media (min-width: 48rem) {
+  .dash-therapists .first-row .dash-exp {
+    width: 25%;
+  }
+}
+@media (min-width: 64rem) {
+  .dash-therapists .first-row .dash-exp {
+    width: 20%;
+  }
+}
+.dash-therapists .first-row .expire-dates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.dash-therapists .first-row .dash-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dash-therapists .first-row .dash-info-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dash-therapists .first-row .dash-info-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dash-therapists .second-row {
   display: flex;

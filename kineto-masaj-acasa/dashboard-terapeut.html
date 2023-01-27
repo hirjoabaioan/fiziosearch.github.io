@@ -197,45 +197,55 @@
                 </div>
                 </nav>
                 <div class="dash-info m-0 mt-4 p-2">
-                    <div class="dash-therapists" >
-
+                    <div class="row dash-therapists">
                         <div class="row gap-4 first-row">
-                            <div class="d-flex justify-content-center align-items-center abo-info">
+                            <div class="gap-2 abo-info">
                                 <div class="row avail-toggle">
-                                    <span class="first-row-text">Disponibilitate</span>
+                                    <span class="dash-titles">Disponibilitate</span>
                                     <div class="button r" id="button-1">
-                                        <input type="checkbox" class="checkbox">
+                                        <input type="checkbox" class="checkbox" id="checker" onclick="checkerFunction()">
                                         <div class="knobs"></div>
                                         <div class="layer"></div>
                                     </div>
+                                    <span class="dash-toggle-sub"><span id="toggle-active">Activ</span> <span id="toggle-separator">|</span> <span id="toggle-inactive">Inactiv</span></span>
                                 </div>
-                                <div class="row d-flex justify-content-center align-items-center">
-                                    <div>
-                                        Expirare ALP
-                                        12.03.2023
+                                <div class="row dash-exp">
+                                    <!-- Apare doar pentru kinetoterapeuți -->
+                                    <div class="row expire-dates">
+                                        <span class="dash-titles">Expirare ALP</span>
+                                        <span>12.03.2023</span>
                                     </div>
-                                    <div>
-                                        Expirare ABO
-                                        12.03.2023
+                                    <div class="row expire-dates">
+                                        <span class="dash-titles">Expirare Abonament</span>
+                                        <span>12.03.2023</span>
                                     </div>
                                 </div>
                             </div>
-                            
-
-                            <div class="row number-of-contacts">
-                                <span class="first-row-text">Contactări în ultimele 30 de zile</span>
-                                <span class="first-row-contacts-number">30</span>
-                            </div>
-
-                            <div class="row number-of-therapies">
-                                <span class="first-row-text">Total terapii realizate în ultimele 30 de zile</span>
-                                <span class="first-row-therapies-number">30</span>
+                            <div class="row gap-4 dash-info">
+                                <div class="gap-4 dash-info-text m-0 p-0">
+                                    <div 
+                                    class="row number-of-contacts"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-title="În ultimele 30 de zile">
+                                        <span class="dash-titles">Contactări</span>
+                                        <span class="dash-sub">30</span>
+                                    </div>
+                                    <div 
+                                    class="row number-of-therapies"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-title="În ultimele 30 de zile">
+                                        <span class="dash-titles">
+                                            Total terapii realizate
+                                        </span>
+                                        <span class="dash-sub">30</span>
+                                    </div>
+                                </div>
+                                <div class="row dash-info-table">grafic cu sumele realizate in ultimul an/luna</div>
                             </div>
                         </div>
-
-                        <div>grafic cu sumele realizate in ultimul an/luna</div>
-
-                        <div class="row d-flex gap-4 second-row justify-content-center align-items-center">
+                        <div class="row gap-4 second-row">
                             <div class="second-row-first-element info-programari dash-table">
                                 <table>
                                 <tr>

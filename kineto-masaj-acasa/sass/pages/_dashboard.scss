@@ -156,6 +156,7 @@
     table { 
         position: relative;
         margin: auto;
+        font-size: $font-size - 0.2rem;
     }
 
     tr {
@@ -178,9 +179,32 @@
             
         }
     }
+
+    @include tablet-wide {
+        width: 45%;
+    }
+}
+
+.dash-titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $tertiary-color;
+    font-weight: $fw-bolder;
+}
+
+.dash-sub {
+    font-size: $font-size + 1rem;
+    font-weight: $fw-bold;
 }
 
 .dash-therapists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: auto;
 
     .first-row {
         display: flex;
@@ -194,10 +218,10 @@
             text-align: center ;
         }
 
-        &-text {
-            color: $tertiary-color;
-            font-weight: $fw-bolder;
-            text-align: center;
+        .abo-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .avail-toggle {
@@ -284,15 +308,74 @@
                 transition: 0.3s ease all;
             }
         }
+
+        .dash-toggle-sub {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: $font-size - 0.2rem;
+
+            #toggle-active {
+                color: $primary-color;
+            }
+
+            #toggle-separator {
+                color: $tertiary-color;
+                font-size: $font-size + 0.2rem;
+                font-weight: $fw-bolder;
+            }
+        }
+
+        .dash-exp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            @include tablet {
+                width: 30%;
+            }
+
+            @include tablet-wide {
+                width: 25%;
+            }
+
+            @include laptop {
+                width: 20%;
+            }
+        }
+
+        .expire-dates {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .dash-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &-table {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
-
-
 
     .second-row {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
+
     }
 }
 
