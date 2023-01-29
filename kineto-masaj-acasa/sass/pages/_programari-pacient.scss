@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.programator-nav {
+    a {
+        font-size: $font-size - 0.3rem;
+        width: 8rem;
+
+        @include tablet-wide {
+            font-size: $font-size - 0.2rem;
+            width: 6rem;
+        }
+    }
+}

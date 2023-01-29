@@ -2215,6 +2215,17 @@ tr:hover, a:hover {
   cursor: pointer;
 }
 
+.programator-nav a {
+  font-size: 0.7rem;
+  width: 8rem;
+}
+@media (min-width: 48rem) {
+  .programator-nav a {
+    font-size: 0.8rem;
+    width: 6rem;
+  }
+}
+
 .image-one {
   display: inline-block;
   position: relative;
