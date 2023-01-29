@@ -148,9 +148,7 @@
     height: 2.5rem;
   }
 
-  tr:hover, a:hover {
-    color: lighten($primary-color, 10%) !important;
-}
+
 
 .dash-table {
     table { 
@@ -182,6 +180,10 @@
 
     @include tablet-wide {
         width: 45%;
+    }
+
+    tr:hover, a:hover {
+        color: lighten($primary-color, 10%) !important;
     }
 }
 
