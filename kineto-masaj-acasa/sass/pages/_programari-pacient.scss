@@ -21,42 +21,68 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: auto;
+        height: 75vh;
+        // height: 30rem;
+
+        // @include tablet {
+        //     height: 60rem;
+        // }
+
+        // @include tablet-wide {
+        //     height: 40rem;
+        // }
+
+        // @include laptop {
+        //     height: 50rem;
+        // }
 }
 
 
 .tabel {
     display: table;
-    width: 90%;
-    // height: 10rem;
+    // width: 100%;
+    // position: sticky;
+    // top: 0;
+    background-color: $silver;
+    border-radius: $border-radius - 40px;
+    gap: 0.5rem;
 
     &-header {
         display: table-header-group;
         font-weight: $fw-bolder;
         font-size: clamp($font-size - 0.5rem, 0.5vw + 0.4rem, $font-size);
+        position: sticky;
+        margin-top: 0;
 
         @include tablet{
             font-size: clamp($font-size - 0.5rem, 1vw + 0.5rem, $font-size);
         }
 
-        &-cell {
-
+        .tabel-cell {
+            position: sticky;
+            margin-top: 0;
         }
     }
 
     &-body {
-        display: table-row-group;
-        
+        display: table-row-group;        
 
-        &-cell {
+        .tabel-cell {
             
         }
     }
 
     &-row {
         display: table-row;
+        background-color: $silver;
+        border-radius: $border-radius;
+        margin: 0.25rem 0.5rem;
+        
 
         &:hover {
-            color: red;
+            color: green;
+            
         }
     }
 
@@ -64,15 +90,18 @@
         display: table-cell;
         padding: 0.5rem 0.25rem ;
         font-size: clamp($font-size - 0.5rem, 0.5vw + 0.4rem, $font-size);
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid $white;
         text-align: center;
         vertical-align: middle;
         margin-top: 0 auto;
+        word-wrap: break-word;
+        
 
         @include tablet{
             font-size: clamp($font-size - 0.5rem, 1vw + 0.5rem, $font-size);
         }
     }
+
 
 
     .name-data {
@@ -81,6 +110,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            font-weight: $fw-bold;
         }
     }
 
@@ -107,6 +137,7 @@
         text-align: center;
         width: clamp($font-size, 1vw + 0.4rem, $font-size + 1rem);
         height: clamp($font-size, 1vw + 0.4rem, $font-size + 1rem);
+        color: $tertiary-color;
     }
 
     .program-profile-img {
@@ -125,12 +156,23 @@
 
 }
 
+.tabel-footer {
+    background-color: $silver;
+    display:table-footer-group;
+    height: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    margin-top: -5px;
+
+    .tabel-cell {
+        border-bottom: none;
+    }
+}
+
+
 .tabel-programari {
     width: 90%;
     margin: 0;
     padding: 0;
-
-    
 
     th {
         font-weight: $fw-bolder;
@@ -144,11 +186,15 @@
         }
     }
 
+    tr:not(:first-child):hover {
+        background-color: darken($white, 5%);
+    }
+
     .name-data {
         @include tablet {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             border: none;
             gap: 0.5rem;
         }
@@ -164,11 +210,25 @@
 
         @include tablet {
             gap: 0.5rem;
-            margin-top: 12.5%;
+            position: relative;
+            bottom: 0.25rem;
+        }
+
+        @include tablet-wide {
+            bottom: 0.85rem;
+        }
+
+        @include laptop {
+            bottom: 1.25rem;
+        }
+
+        @include desktop {
+            bottom: 1.75rem;
         }
     }
 
     a {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
