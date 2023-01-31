@@ -2433,6 +2433,22 @@ ul li {
   border-radius: 50px;
 }
 
+.programator-nav a {
+  font-size: 0.7rem;
+  width: 45%;
+}
+@media (min-width: 37.5rem) {
+  .programator-nav a {
+    font-size: 0.8rem;
+    width: 35%;
+  }
+}
+@media (min-width: 64rem) {
+  .programator-nav a {
+    width: 25%;
+  }
+}
+
 .image-one {
   display: inline-block;
   position: relative;
