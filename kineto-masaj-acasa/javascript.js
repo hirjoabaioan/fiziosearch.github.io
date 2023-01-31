@@ -128,3 +128,27 @@ $(document).ready(function(){
     }
 
 
+const rows = document.querySelectorAll(".program-table tr.collapsible");
+
+rows.forEach(row => {
+  const contentRow = row.nextElementSibling;
+  contentRow.style.display = "none";
+  contentRow.style.translation = "max-height 0.5s ease-out";
+  row.addEventListener("click", function() {
+    rows.forEach(otherRow => {
+      if (otherRow !== this) {
+        const otherContentRow = otherRow.nextElementSibling;
+        otherContentRow.style.maxHeight = "0";
+        otherContentRow.style.display = "none";
+      }
+    });
+    contentRow.style.display = contentRow.style.display === "none" ? "table-row" : "none";
+  });
+});
+
+
+
+
+
+
+

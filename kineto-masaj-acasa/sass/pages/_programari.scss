@@ -16,3 +16,107 @@
         }
     }
 }
+
+.table-container {
+    width: 90%;
+    // min-height: 70vh;
+    border-radius: $border-radius - 2rem;
+
+    .no-tbody {
+        tbody {
+            display: none !important;
+        }
+    }
+
+    .program-table {
+        width: 100%;
+        overflow-y: auto;
+        display: block;
+
+        tbody {
+            display: block;
+            height: 28rem;
+            overflow-y: auto;
+        }
+
+        thead, tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        th {
+            font-size: clamp($font-size - 0.1rem, 0.5vw + 0.4rem, $font-size + 0.5rem);
+        }
+
+        td {
+            font-size: clamp($font-size - 0.3rem, 0.5vw + 0.4rem, $font-size + 0.2rem);
+            font-weight: $fw-light;
+        }
+    }
+
+    
+    .collapsible-content {
+        display: none;
+        border-bottom: 2px solid $border-color;
+        
+    
+        td {
+            
+            border-bottom: none !important;
+            text-align: center;
+            width: 100vw;
+            padding-top: 0;
+            padding-bottom: 0;
+            transition: height 2s ease-in;
+        }
+    }
+    
+    .mobile-hide {
+        display: none;
+
+        @include tablet {
+            display: table-cell;
+        }
+    }
+
+    .name-data {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border: none;
+        gap: 0.5rem;
+    }
+
+    .program-profile-img {
+        width: clamp(4rem, 5vw + 0.5rem, 5rem);
+        min-width: 2rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+        }
+    }
+
+    .extra-info {
+        
+        background-color: darken($white, 5%);
+        // box-shadow: rgb(50 50 93 / 25%) 0px 0px 33px -2px inset, rgb(0 0 0 / 30%) 0px 15px 21px -16px inset
+        box-shadow: rgba(50, 50, 93, 0.25)  0px 10px 10px 2px inset, 
+                    rgba(0, 0, 0, 0.3) 0px 2px 5px 0px inset,
+                    rgba(50, 50, 93, 0.25) 0px -3px 7px 1px inset;
+        padding: 1rem;
+
+        .info-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: start;
+        }
+
+    }
+}
+
+
+  
