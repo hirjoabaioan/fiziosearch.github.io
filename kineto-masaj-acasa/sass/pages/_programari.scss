@@ -22,6 +22,9 @@
     // min-height: 70vh;
     border-radius: $border-radius - 2rem;
 
+    min-height: 80vh;
+    max-height: 90vh;
+
     .no-tbody {
         tbody {
             display: none !important;
@@ -35,8 +38,12 @@
 
         tbody {
             display: block;
-            height: 28rem;
+            height: 75vh;
             overflow-y: auto;
+
+            @include tablet {
+                height: 70vh;
+            }
         }
 
         thead, tbody tr {
@@ -59,7 +66,6 @@
     .collapsible-content {
         display: none;
         border-bottom: 2px solid $border-color;
-        
     
         td {
             
@@ -70,7 +76,9 @@
             padding-bottom: 0;
             transition: height 2s ease-in;
         }
+
     }
+
     
     .mobile-hide {
         display: none;
@@ -88,9 +96,14 @@
         gap: 0.5rem;
     }
 
+    .icon-data{
+        
+    }
+
     .program-profile-img {
-        width: clamp(4rem, 5vw + 0.5rem, 5rem);
+        // width: clamp(4rem, 5vw + 0.5rem, 5rem);
         min-width: 2rem;
+        max-width: 5rem;
 
         img {
             width: 100%;
@@ -110,9 +123,47 @@
 
         .info-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             text-align: start;
+            width: 100%;
+
+            @include tablet {
+                flex-wrap: nowrap;
+            }
+
+            .sesion-data {
+                width: 100%;
+
+                @include tablet {
+                    width: 50%;
+                }
+                
+                &-single {
+                    display:flex;
+                    justify-content: space-between;
+                    gap: 1rem;
+                }
+            }
+
+            .icon-data {
+                width: 100%;
+
+                @include tablet {
+                    width: 50%;
+                }
+                
+                &-single {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1rem;
+
+                    @include tablet {
+                        justify-content: flex-end;
+                    }
+                }
+            }
         }
 
     }
