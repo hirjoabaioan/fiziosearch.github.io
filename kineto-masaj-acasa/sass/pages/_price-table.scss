@@ -1,177 +1,173 @@
-@use '../abstracts' as*;
+@use "../abstracts" as *;
 
 ul {
-    & li {
-        display: inline;
-    }
+  & li {
+    display: inline;
+  }
 }
 
 .table-panels {
-    display: grid;
-    grid-gap: 1rem;
+  display: grid;
+  grid-gap: 1rem;
 
-    li {
+  @include tablet-wide {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-    }
-
-    @include tablet-wide {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    @include laptop {
-        grid-template-columns: repeat(5, 1fr);
-    }
-    
-    
+  @include laptop {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .panel-default {
-    margin-right: -1rem !important;
-    font-weight: 600;
-    
-    .panel-list li {
-        justify-content: left !important;
-    }
+  margin-right: -1rem !important;
+  font-weight: 600;
+
+  .panel-list li {
+    justify-content: left !important;
+  }
 }
 
 .panel-inner {
-    border: 1px solid $border-color;
-    border-radius: 10px;
-    text-align: left;
-    
-    &:hover, &:focus, &:active {
-        box-shadow: 0 0 5px 1px $dark-gray;
-        position: relative;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  text-align: left;
 
-        .panel-label {
-            border-radius: 10px 10px 0 0;
-            color: $black;
-        }
+  &:hover,
+  &:focus,
+  &:active,
+  &:target,
+  .panel-button:target {
+    box-shadow: 0 0 5px 1px $dark-gray;
+    position: relative;
 
-        .starter {
-            background-color: $green;
-        }
-
-        .bronze {
-            background-color: $bronze;
-        }
-
-        .silver {
-            background-color: $silver;
-        }
-
-        .gold {
-            background-color: $gold;
-        }
+    .panel-label {
+      border-radius: 10px 10px 0 0;
+      color: $black;
     }
+
+    .starter {
+      background-color: $green;
+    }
+
+    .bronze {
+      background-color: $bronze;
+    }
+
+    .silver {
+      background-color: $silver;
+    }
+
+    .gold {
+      background-color: $gold;
+    }
+  }
 }
 
-.panel-heading, .panel-footer {
-    min-height: 8rem;
-    margin-left: 0px;
-    margin-right: 0px;
+.panel-heading,
+.panel-footer {
+  min-height: 8rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .panel-label {
-    color: $dark-gray;
-    padding-top: 1rem;
-    font-size: calc($font-size + 1rem + .2vw);
+  color: $dark-gray;
+  padding-top: 1rem;
+  font-size: calc($font-size + 1rem + 0.2vw);
 }
 
 .panel-figure {
-    font-size: calc($font-size + .2rem + .2vw);
+  font-size: calc($font-size + 0.2rem + 0.2vw);
 }
 
 .table-first-panel {
-    display: none !important;
+  display: none !important;
 
-    & ul li {
-        border-left: 0px solid $border-color;
-        border-right: 0px solid $border-color;
-        border-radius: 0px !important;
-    }
+  & ul li {
+    border-left: 0px solid $border-color;
+    border-right: 0px solid $border-color;
+    border-radius: 0px !important;
+  }
 
-    @include laptop {
-        display: grid !important;
-    }
+  @include laptop {
+    display: grid !important;
+  }
 }
 
 .panel-list {
-    
-    border-radius: 0px;
-    li {
-        border-left: 0px solid $border-color;
-        border-right: 0px solid $border-color;
-    }
+  border-radius: 0px;
+  li {
+    border-left: 0px solid $border-color;
+    border-right: 0px solid $border-color;
+  }
 }
 
 .first-list-item {
-    border-top: 0px solid $border-color;
+  border-top: 0px solid $border-color;
 }
 
 .last-list-item {
-    border-bottom: 0px solid $border-color
+  border-bottom: 0px solid $border-color;
 }
 
 .list-group-item {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    // font-size: calc($font-size + .5rem);
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  // font-size: calc($font-size + .5rem);
+
+  @include laptop {
+    justify-content: center;
+  }
+
+  .bi {
+    padding-left: 1rem;
+    // font-size: $font-size + .2rem;
+    margin-left: 5%;
+
+    &-check {
+      color: $primary-color;
+    }
+
+    &-x {
+      color: $red;
+    }
+
+    @include tablet {
+      margin-left: 25%;
+    }
+
+    @include tablet-wide {
+      margin-left: 0;
+    }
 
     @include laptop {
-        justify-content: center;
+      text-align: center;
     }
-
-    .bi {
-        padding-left: 1rem;
-        // font-size: $font-size + .2rem;
-        margin-left: 5%;
-    
-        &-check {
-            color: $primary-color;
-        }
-        
-        &-x {
-            color: $red;
-        }
-    
-        @include tablet {
-            margin-left: 25%;
-        }
-    
-        @include tablet-wide {
-            margin-left: 0;
-        }
-    
-        @include laptop {
-            text-align: center;
-        }
-    }
+  }
 }
 
-
-
 .feature-hide {
-    display: inline !important;
-    padding-right: 0.5rem;
-    width: 50%;
+  display: inline !important;
+  padding-right: 0.5rem;
+  width: 50%;
 
-    @include laptop {
-        display: none !important;
-    }
+  @include laptop {
+    display: none !important;
+  }
 }
 
 .panel-foreword {
-    text-align: center;
-    font-weight: 500;
-    font-size: $font-size;
-    // margin-top: 1rem !important;
+  text-align: center;
+  font-weight: 500;
+  font-size: $font-size;
+  // margin-top: 1rem !important;
 }
 
-.btn  {
-    font-size: $font-size + .2rem;
-    padding: 1rem;
+.btn {
+  font-size: $font-size + 0.2rem;
+  padding: 1rem;
 }

@@ -1,173 +1,174 @@
-@use '../abstracts' as *;
-@use '../components' as *;
+@use "../abstracts" as *;
+@use "../components" as *;
 
 .upper-text {
-    background-color: $primary-color;
-    color: $white;
+  background-color: $primary-color;
+  color: $white;
 
-    h1 {
-        font-size: $font-size + .2rem;
-
-        @include tablet {
-            font-size: $font-size + .8rem;
-        }
-
-        @include tablet-landscape {
-            display: none !important;
-        }
-    }
-
-    
-}
-
-.banner {
-    width: 100vw;
-    height: 65vh;
-    background-image: url("../img/banner.webp");
-    background-repeat: no-repeat;
-    background-size: 280% 110%;
-    background-position-y: 100%;
-    background-position-x: 30%;
+  h2 {
+    font-size: $font-size + 0.2rem;
 
     @include tablet {
-        height: 90vh;
-        background-size: 140% 120%;
-        background-position-x: 55%;
-    }
-
-    @include tablet-wide {
-        height: 55vh;
+      font-size: $font-size + 0.8rem;
     }
 
     @include tablet-landscape {
-        height: 50vh;
-        background-image: url("../img/banner-w.webp");
-        background-size: 150% 170%;
-        background-position-y: 95%;
+      display: none !important;
     }
-
-    @include desktop {
-        height: 70vh;
-        background-size: 100% 160%;
-        background-position-y: 90%;
-    }
+  }
 }
 
-.cover{
-    background-color: transparentize($black, 0.6);
+.banner {
+  width: 100vw;
+  height: 65vh;
+  background-image: url("../img/banner.webp");
+  background-repeat: no-repeat;
+  background-size: 280% 110%;
+  background-position-y: 100%;
+  background-position-x: 30%;
 
-    .wide-text {
-        // margin-top: 5vh;
-        color: $white;
+  @include tablet {
+    height: 90vh;
+    background-size: 140% 120%;
+    background-position-x: 55%;
+  }
 
-        @include tablet-landscape{
-            // margin-top: 10vh;
-        }
-    }
+  @include tablet-wide {
+    height: 55vh;
+  }
+
+  @include tablet-landscape {
+    height: 50vh;
+    background-image: url("../img/banner-w.webp");
+    background-size: 150% 170%;
+    background-position-y: 95%;
+  }
+
+  @include desktop {
+    height: 70vh;
+    background-size: 100% 160%;
+    background-position-y: 90%;
+  }
+}
+
+.cover {
+  background-color: transparentize($black, 0.6);
+
+  .wide-text {
+    color: $white;
 
     h1 {
-        font-size: $font-size + 0.2rem;
-        padding-top: 2rem;
+      font-size: $font-size + 0.8rem;
 
-        @include tablet {
-            font-size: $font-size + 0.7rem;
-        }
-
-        @include tablet-landscape{
-            font-size: $font-size + 0.8rem;
-        }
+      @include tablet-wide {
+        font-size: $font-size + 1.5rem;
+      }
     }
+  }
 
-    form {
-        margin-bottom: 15vh;
-    }
-}
-
-
-
-.form-container {
-    // margin-top: 16vh;
-    width: 75vw;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.616);
-    border-radius: 30px; 
-
-    select, button{
-        width: 60% !important;
-        @include tablet-wide {
-            width: 85% !important;
-        }
-    }
-
+  h1 {
+    font-size: $font-size + 0.2rem;
+    padding-top: 2rem;
 
     @include tablet {
-        width: 80vw;
+      font-size: $font-size + 0.7rem;
     }
+
+    @include tablet-landscape {
+      font-size: $font-size + 0.8rem;
+    }
+  }
+
+  form {
+    margin-bottom: 15vh;
+  }
+}
+
+.form-container {
+  // margin-top: 16vh;
+  width: 75vw;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.616);
+  border-radius: 30px;
+
+  select,
+  button {
+    width: 60% !important;
+    @include tablet-wide {
+      width: 85% !important;
+    }
+  }
+
+  @include tablet {
+    width: 80vw;
+  }
 }
 
 /* .down-scroll {
 
 } */
 
-.down-scroll img{
-    width: 15%;
+.down-scroll img {
+  width: 15%;
 
-    @include laptop {
-        width: 5%;
-    }
+  @include laptop {
+    width: 5%;
+  }
 }
 
 .slide-down {
-    @include slide-down(1s, ease-out, infinite, alternate, forwards);
+  @include slide-down(1s, ease-out, infinite, alternate, forwards);
 }
 
-
 .card-img-top {
-    width: 100%;
-    height: 50%;
+  width: 100%;
+  height: 50%;
 }
 
 .arrow {
-    width: 8%;
-    margin-left: 10%;
-    
+  width: 8%;
+  margin-left: 10%;
 }
 
 .arrow-invert {
-    width: 6%;
-    margin-left: 10%;
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
+  width: 6%;
+  margin-left: 10%;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
 }
 
 .content-howto {
+  h1 {
+    font-size: $font-size + 1rem;
+  }
 
-    h1 {
-        font-size: $font-size + 1rem;
+  h3 {
+    font-size: $font-size - 0.2rem;
 
+    @include tablet {
+      font-size: $font-size;
+    }
+  }
+
+  img {
+    width: 80%;
+
+    @include tablet {
+      width: 50%;
     }
 
-    h3 {
-        font-size: $font-size - 0.2rem;
-
-        @include tablet {
-            font-size: $font-size;
-        }
+    @include tablet-wide {
+      width: 70%;
     }
-    
-    img {
-        width: 80%;
 
-        @include tablet {
-            width: 50%;
-        }
-
-        @include tablet-wide {
-            width: 70%;
-        }
-
-        @include laptop {
-            width: 70%;
-        }
+    @include laptop {
+      width: 70%;
     }
+  }
+}
+
+.media {
+  @include laptop {
+    width: 80%;
+  }
 }

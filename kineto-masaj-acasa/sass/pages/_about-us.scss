@@ -1,38 +1,56 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .about-us-found {
-    width: 50vw;
-    
+  width: 50vw;
 
-    @include tablet {
-        width: 30vw;
-    }
+  @include tablet {
+    width: 30vw;
+  }
 
-    @include laptop {
-        width: 20vw;
-    }
+  @include laptop {
+    width: 20vw;
+  }
 
-    @include desktop {
-        width: 15vw;
-    }
+  @include desktop {
+    width: 15vw;
+  }
 
-    img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50px;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
 
-    small {
-        font-size: $font-size - 0.2 !important;
+  small {
+    font-size: $font-size - 0.2 !important;
+  }
+}
+
+.about-us {
+  &-content {
+    @include tablet-wide {
+      width: 85%;
     }
+  }
+
+  &-header {
+    text-align: center;
+  }
+
+  &-subheader {
+  }
+
+  &-text {
+    padding-left: 1rem;
+  }
 }
 
 #about-us-first {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 
-    @include tablet {
-        border-right: 3px solid $primary-color;
-        margin-bottom: 0;
-        margin-right: 2%;
-    }
+  @include tablet {
+    border-right: 3px solid $primary-color;
+    margin-bottom: 0;
+    margin-right: 2%;
+  }
 }
