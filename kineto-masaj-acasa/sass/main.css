@@ -2587,6 +2587,42 @@ ul li {
   }
 }
 
+@media (min-width: 37.5rem) {
+  .t-p {
+    width: 80%;
+  }
+}
+.t-p p {
+  margin: 0.5rem, 0, 1rem, 0;
+  font-size: 1rem;
+  line-height: 115%;
+  text-align: justify;
+}
+.t-p a {
+  text-decoration: underline !important;
+}
+.t-p h2 {
+  margin: 0.5rem, 0, 0, 0;
+  line-height: 115%;
+  border: none;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.t-p h3 {
+  margin: 0.5rem, 0, 0, 0;
+  line-height: 115%;
+  border: none;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.t-p-header {
+  line-height: 1rem;
+  border: none;
+  color: #108f96;
+}
+
 body {
   color: rgb(34, 34, 34);
 }

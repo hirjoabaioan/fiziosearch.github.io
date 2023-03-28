@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.t-p {
+  @include tablet {
+    width: 80%;
+  }
+  p {
+    margin: 0.5rem, 0, 1rem, 0;
+    font-size: 1rem;
+    line-height: 115%;
+    text-align: justify;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+
+  h2 {
+    margin: 0.5rem, 0, 0, 0;
+    line-height: 115%;
+    border: none;
+    // background-color: #fadad2;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  h3 {
+    margin: 0.5rem, 0, 0, 0;
+    line-height: 115%;
+    border: none;
+    // background-color: #fadad2;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+
+  &-header {
+    line-height: 1rem;
+    border: none;
+    color: $primary-color;
+  }
+}
