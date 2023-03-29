@@ -1,82 +1,51 @@
-@use '../abstracts' as *;
-@use '../base' as *;
-
+@use "../abstracts" as *;
+@use "../base" as *;
 
 .settings-profil {
-    .panel-list {
-        border-radius: 10px;
-        font-size: $font-size - 0.1rem;
-        
-        @include tablet-wide {
-            margin: auto;
-            width: 50%;
-        }
+  .panel-list {
+    border-radius: 10px;
+    font-size: $font-size - 0.1rem;
 
-        li {
-            border: 1px solid $border-color;
-            padding: 0.5rem 0.125rem;
-        }
-
-        span {
-            margin: auto !important;
-        }
+    @include tablet-wide {
+      margin: auto;
+      width: 50%;
     }
 
-    table {
-        border-collapse: collapse;
-        text-align: center;
-        margin: auto;
-        // width: 75%;
-
-        & tr {
-            border-bottom: 2px solid $border-color;
-
-            &:first-child {
-                text-align: center;
-                font-weight: $fw-bold;
-                font-size: $font-size - 0.3rem;
-
-                @include tablet {
-                    font-size: $font-size + 0.2rem;
-                }
-            }
-        }
-
-        & td {
-            border-bottom: 2px solid $border-color;
-            padding: 0.5rem;
-            font-size: $font-size - 0.3rem;
-
-            @include tablet {
-                padding: 0.8rem;
-                font-size: $font-size;
-            }
-        }
+    li {
+      border: 1px solid $border-color;
+      padding: 0.5rem 0.125rem;
     }
+
+    span {
+      margin: auto !important;
+    }
+  }
 }
 
 .other-sets {
-    .checks, .abo-change {
-        width: 100%;
+  .checks,
+  .abo-change {
+    width: 100%;
 
-        @include tablet-wide {
-            width: 50%;
-        }
+    @include tablet-wide {
+      width: 50%;
     }
+  }
 
-    .checks {
-        margin: auto !important;
+  .checks {
+    margin: auto !important;
+  }
+
+  .checks div,
+  .abo-change a {
+    @include tablet {
+      margin-left: 25%;
     }
-    
-    .checks div, .abo-change a {
-        @include tablet {
-            margin-left: 25%;
-        }
-    }
+  }
 }
 
 .currency-add {
-    &::after {
-        content: " RON";
-    }
+  &::after {
+    content: " RON";
+  }
 }

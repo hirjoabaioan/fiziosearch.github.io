@@ -1,72 +1,90 @@
-@use '../abstracts' as *;
-@use '../base' as *;
+@use "../abstracts" as *;
+@use "../base" as *;
 
-.duration-area {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    &-input {
-
-        input{
-            font-size: clamp($font-size - 0.4rem, 1vw + 0.2rem, $font-size) !important;
-        }
-
-        @include tablet {
-            width: 25%;
-        }
-    }
-
-    .dash-drops {
-        @include tablet {
-            width: 50%;
-        }
-
-        #dropdownDurataOre {
-            border-radius: 1rem 0 0 1rem !important;
-        }
-
-        #dropdownDurataMin {
-            border-radius: 0 1rem 1rem 0 !important;
-        }
-
-        #dropdownDurataOre, #dropdownDurataMin {
-            font-size: clamp($font-size - 0.4rem, 1vw + 0.2rem, $font-size) !important;
-
-            // @include tablet {
-            //     font-size: $font-size !important;
-            // }
-        }
-    }
+.terap-container {
+  @include tablet {
+    width: 80% !important;
+  }
 }
 
-.duration-send {    
-    button {
-        width: 100%;
-        @include tablet {
-            margin-left: auto !important;
-            margin-right: 0 !important;
-            width: 50%;
-        }
+.duration-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include tablet {
+    column-gap: 0.5rem;
+  }
+
+  &-input {
+    input {
+      font-size: clamp(
+        $font-size - 0.4rem,
+        1vw + 0.2rem,
+        $font-size
+      ) !important;
     }
+
+    @include tablet {
+      width: 23%;
+    }
+  }
+
+  .dash-drops {
+    @include tablet {
+      width: 48%;
+    }
+
+    #dropdownDurataOre {
+      border-radius: 1rem 0 0 1rem !important;
+    }
+
+    #dropdownDurataMin {
+      border-radius: 0 1rem 1rem 0 !important;
+    }
+
+    #dropdownDurataOre,
+    #dropdownDurataMin {
+      font-size: clamp(
+        $font-size - 0.4rem,
+        1vw + 0.2rem,
+        $font-size
+      ) !important;
+    }
+  }
+}
+
+.duration-send {
+  button {
+    width: 100%;
+    @include tablet {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      width: 50%;
+    }
+
+    @include laptop {
+      width: 25%;
+    }
+  }
 }
 
 .tarif-table {
-    table {
-        width: 100%;
+  table {
+    width: 100%;
 
-        @include tablet {
-            width: 80%;
-        }
+    @include tablet {
+      width: 80%;
     }
+  }
 
-    .bi-trash3 {
-        color: $red;
-        cursor: pointer;
-        font-size: $font-size + 0.2rem !important;
+  .bi-trash3 {
+    color: $red;
+    cursor: pointer;
+    font-size: $font-size + 0.2rem !important;
 
-        &:hover {
-            color: darken($red, 10%);
-        }
+    &:hover {
+      color: darken($red, 10%);
     }
+  }
 }

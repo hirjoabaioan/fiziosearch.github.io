@@ -1,36 +1,43 @@
-@use '../abstracts' as *;
-@use '../base' as *;
-
+@use "../abstracts" as *;
+@use "../base" as *;
 
 .info-files {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+
+  h6 div {
     text-align: center;
+    cursor: pointer;
 
-    h6 div {
-        text-align: center;
-        cursor: pointer;
-
-        &:hover, &:focus, &:active, &:target {
-            color: #0b6368;
-        }
-
-        @include tablet {
-            width: 45%;
-        }
-
-        @include tablet-wide {
-            width: 40%;
-        }
+    &:hover,
+    &:focus,
+    &:active,
+    &:target {
+      color: #0b6368;
     }
 
-    .bi-file-earmark-fill, .bi-globe {
-        font-size: clamp($font-size - 0.3rem, 5vw + 1rem, $font-size + 3rem);
-        padding: 0;
+    @include tablet {
+      width: 45%;
     }
 
-    span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: clamp($font-size - 0.3rem, 5vw + 1rem, $font-size - 0.1rem);
+    @include tablet-wide {
+      width: 40%;
     }
+  }
+
+  .bi-file-earmark-fill,
+  .bi-globe {
+    font-size: clamp($font-size - 0.3rem, 5vw + 1rem, $font-size + 3rem);
+    padding: 0;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp($font-size - 0.3rem, 5vw + 1rem, $font-size - 0.1rem);
+  }
 }
