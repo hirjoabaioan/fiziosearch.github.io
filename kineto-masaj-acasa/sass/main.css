@@ -1997,6 +1997,12 @@ ul li {
   border-collapse: collapse;
   text-align: center;
   margin: auto;
+  width: 100%;
+}
+@media (min-width: 37.5rem) {
+  .settings-profil table {
+    width: 75%;
+  }
 }
 .settings-profil table tr {
   border-bottom: 2px solid #ddd;
@@ -2014,12 +2020,20 @@ ul li {
 .settings-profil table td {
   border-bottom: 2px solid #ddd;
   padding: 0.125rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 @media (min-width: 37.5rem) {
   .settings-profil table td {
     padding: 0.8rem;
     font-size: 1rem;
+  }
+}
+.settings-profil .dash-contact-button .btn {
+  width: 45%;
+}
+@media (min-width: 37.5rem) {
+  .settings-profil .dash-contact-button .btn {
+    width: 33.3333%;
   }
 }
 
@@ -2073,20 +2087,25 @@ ul li {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
 }
-.info-files h6 div {
+@media (min-width: 37.5rem) {
+  .info-files-container {
+    width: 30%;
+  }
+}
+.info-files-container div {
   text-align: center;
   cursor: pointer;
 }
-.info-files h6 div:hover, .info-files h6 div:focus, .info-files h6 div:active, .info-files h6 div:target {
+.info-files-container div:hover, .info-files-container div:focus, .info-files-container div:active, .info-files-container div:target {
   color: #0b6368;
 }
 @media (min-width: 37.5rem) {
-  .info-files h6 div {
+  .info-files-container div {
     width: 45%;
   }
 }
 @media (min-width: 48rem) {
-  .info-files h6 div {
+  .info-files-container div {
     width: 40%;
   }
 }
@@ -2274,6 +2293,11 @@ ul li {
 .messages .send-file {
   font-size: 1rem;
   cursor: pointer;
+}
+@media (min-width: 64rem) {
+  .notificari {
+    width: 75%;
+  }
 }
 .notificari table tr:not(:first-child):hover, .notificari table tr:not(:first-child):focus, .notificari table tr:not(:first-child):active, .notificari table tr:not(:first-child):target {
   background: #cfcfcf;
@@ -2675,6 +2699,18 @@ ul li {
   line-height: 1rem;
   border: none;
   color: #108f96;
+}
+
+.utilities-wrapper {
+  justify-content: center;
+  align-items: center;
+}
+.utilities-wrapper .deconectare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
 }
 
 body {

@@ -8,23 +8,29 @@
   align-items: center;
   column-gap: 2rem;
 
-  h6 div {
-    text-align: center;
-    cursor: pointer;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &:target {
-      color: #0b6368;
-    }
-
+  &-container {
     @include tablet {
-      width: 45%;
+      width: 30%;
     }
 
-    @include tablet-wide {
-      width: 40%;
+    div {
+      text-align: center;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:target {
+        color: #0b6368;
+      }
+
+      @include tablet {
+        width: 45%;
+      }
+
+      @include tablet-wide {
+        width: 40%;
+      }
     }
   }
 

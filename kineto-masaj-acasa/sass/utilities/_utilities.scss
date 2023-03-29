@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.utilities-wrapper {
+  justify-content: center;
+  align-items: center;
+
+  .deconectare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+}

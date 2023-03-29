@@ -1,12 +1,18 @@
-@use '../abstracts' as *;
-@use '../base' as *;
+@use "../abstracts" as *;
+@use "../base" as *;
 
 .notificari {
-    table tr:not(:first-child){
+  @include laptop {
+    width: 75%;
+  }
 
-        &:hover, &:focus, &:active, &:target {
-            background: lighten($dark-gray, 25%);
-            cursor: pointer;
-        }
+  table tr:not(:first-child) {
+    &:hover,
+    &:focus,
+    &:active,
+    &:target {
+      background: lighten($dark-gray, 25%);
+      cursor: pointer;
     }
+  }
 }

@@ -159,7 +159,11 @@
     border-collapse: collapse;
     text-align: center;
     margin: auto;
-    // width: 75%;
+    width: 100%;
+
+    @include tablet {
+      width: 75%;
+    }
 
     & tr {
       border-bottom: 2px solid $border-color;
@@ -178,11 +182,21 @@
     & td {
       border-bottom: 2px solid $border-color;
       padding: 0.125rem;
-      font-size: $font-size - 0.3rem;
+      font-size: $font-size - 0.4rem;
 
       @include tablet {
         padding: 0.8rem;
         font-size: $font-size;
+      }
+    }
+  }
+
+  .dash-contact-button {
+    .btn {
+      width: 45%;
+
+      @include tablet {
+        width: 33.3333%;
       }
     }
   }
