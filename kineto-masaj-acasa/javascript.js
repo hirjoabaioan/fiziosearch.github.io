@@ -105,6 +105,10 @@ $(document).ready(function () {
       },
     });
   }
+
+  if (top.location.pathname === "/templates/abonamente2.html") {
+    // hide next and prev buttons
+  }
 });
 
 function checkerFunction() {
@@ -119,6 +123,7 @@ function checkerFunction() {
   }
 }
 
+//vezi in ce pagini e
 $(document).ready(function () {
   // Prepare the preview for profile picture
   $("#wizard-picture").change(function () {

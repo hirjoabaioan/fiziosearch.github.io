@@ -11,6 +11,12 @@
 // h5 is 0.8 em
 // h6 is 0.7 em
 
+:root {
+  .card {
+    --bs-card-cap-bg: rgba(0, 0, 0, 0);
+  }
+}
+
 body {
   color: $black;
 }

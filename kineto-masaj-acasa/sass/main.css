@@ -2701,6 +2701,117 @@ ul li {
   color: #108f96;
 }
 
+.subscriptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+@media (min-width: 37.5rem) {
+  .subscriptions {
+    max-width: 60vw;
+  }
+}
+.subscriptions .mobile-hide {
+  display: none;
+}
+@media (min-width: 64rem) {
+  .subscriptions .mobile-hide {
+    display: block;
+  }
+}
+.subscriptions .card,
+.subscriptions .description,
+.subscriptions .carousel-inner {
+  margin: 2.5rem auto;
+}
+@media (min-width: 37.5rem) {
+  .subscriptions .card,
+  .subscriptions .description,
+  .subscriptions .carousel-inner {
+    width: 90%;
+  }
+}
+.subscriptions .carousel {
+  margin: 0 auto !important;
+}
+.subscriptions .carousel-control-next {
+  right: -2rem;
+}
+@media (min-width: 37.5rem) {
+  .subscriptions .carousel-control-next {
+    right: -1rem;
+  }
+}
+.subscriptions .carousel-control-prev {
+  left: -2rem;
+}
+@media (min-width: 37.5rem) {
+  .subscriptions .carousel-control-prev {
+    left: -1rem;
+  }
+}
+.subscriptions .card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+.subscriptions .card-header h2 {
+  font-size: calc(2rem + 1vw);
+  font-weight: 600;
+}
+.subscriptions .card-header .sub-sum-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.subscriptions .card-header .amount {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.subscriptions .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.subscriptions .card-content .group-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.subscriptions .card-content .group-box .marks {
+  width: 28%;
+  text-align: center;
+}
+.subscriptions .card-content .group-box .text {
+  width: 70%;
+}
+.subscriptions .card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1rem;
+  align-items: center;
+  padding-top: 2rem;
+}
+.subscriptions .card-footer .text {
+  font-weight: 600;
+}
+
 .utilities-wrapper {
   justify-content: center;
   align-items: center;
@@ -2711,6 +2822,10 @@ ul li {
   align-items: center;
   text-align: center;
   padding: 1rem;
+}
+
+:root .card {
+  --bs-card-cap-bg: rgba(0, 0, 0, 0);
 }
 
 body {

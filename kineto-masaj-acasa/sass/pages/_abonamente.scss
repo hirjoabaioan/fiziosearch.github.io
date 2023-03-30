@@ -1,0 +1,124 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.subscriptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  max-width: 80vw;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: 60vw;
+  }
+
+  .mobile-hide {
+    display: none;
+
+    @include laptop {
+      display: block;
+    }
+  }
+
+  .card,
+  .description,
+  .carousel-inner {
+    @include tablet {
+      width: 90%;
+    }
+    margin: 2.5rem auto;
+  }
+
+  .carousel {
+    margin: 0 auto !important;
+  }
+
+  .carousel-control-next {
+    right: -2rem;
+    @include tablet {
+      right: -1rem;
+    }
+  }
+
+  .carousel-control-prev {
+    left: -2rem;
+
+    @include tablet {
+      left: -1rem;
+    }
+  }
+
+  .free,
+  .bronze,
+  .silver,
+  .gold {
+    // background-color: $white !important;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 2rem;
+
+    h2 {
+      font-size: calc($font-size + 1rem + 1vw);
+      font-weight: $fw-bold;
+    }
+
+    .sub-sum-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.5rem;
+    }
+
+    .amount {
+      font-size: $font-size + 2.5rem;
+      font-weight: $fw-bold;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .group-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      column-gap: 0.5rem;
+      padding: 1rem;
+      border-bottom: 1px solid $border-color;
+
+      .marks {
+        width: 28%;
+        text-align: center;
+      }
+
+      .text {
+        width: 70%;
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+    align-items: center;
+    padding-top: 2rem;
+
+    .text {
+      font-weight: $fw-bold;
+    }
+  }
+}
