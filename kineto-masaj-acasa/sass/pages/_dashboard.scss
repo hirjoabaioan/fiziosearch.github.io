@@ -1,388 +1,405 @@
-@use '../abstracts' as *;
-@use '../base' as *;
+@use "../abstracts" as *;
+@use "../base" as *;
 
 .dash-nav {
-    width: 15% !important;
+  width: 15% !important;
 
-    @include phone {
-        width: 20% !important;
-    }
+  @include phone {
+    width: 20% !important;
+  }
 
-    @include tablet-wide {
-        width: 8% !important;
-    }
+  @include tablet-wide {
+    width: 8% !important;
+  }
 
-    @include desktop {
-        width: 6% !important;
-    }
+  @include desktop {
+    width: 6% !important;
+  }
 }
 
 .containers {
-    width: 95% !important;
-    
-    @include phone {
-        width: 80% !important;
-    }
+  width: 95% !important;
+
+  @include phone {
+    width: 80% !important;
+  }
 }
 
 .dash-content {
-    width: 100%;
+  width: 100%;
 
-    @include phone {
-        gap: 0 !important; 
-    }
+  @include phone {
+    gap: 0 !important;
+  }
+}
+
+.dash-patients,
+.dash-therapists {
+  @include laptop {
+    max-width: 70vw;
+  }
 }
 
 .dash-patients {
-    display: grid;
-    grid-template-areas: "contacts" "terapies" "notif" "schedule";
-    align-items: center;
-    justify-items: center;
-    gap: 1rem;
-    color: $tertiary-color;
+  display: grid;
+  grid-template-areas: "contacts" "terapies" "notif" "schedule";
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  color: $tertiary-color;
 
-    @include tablet {
-        max-height: 50%;
-    }
+  @include tablet {
+    max-height: 50%;
+  }
+
+  @include tablet-wide {
+    margin-top: 10% !important;
+  }
+
+  h3 {
+    font-size: $font-size + 0.3rem;
+  }
+
+  .info-contacts {
+    grid-area: contacts;
+    flex: 0 0 auto;
+    width: 100%;
 
     @include tablet-wide {
-        margin-top: 10% !important;
+      width: 75%;
     }
 
     @include laptop {
-        max-width: 80vw;
+      width: 60%;
     }
 
-    h3 {
-        font-size: $font-size + 0.3rem;
+    .title-underline {
+      border: 2px solid $white;
+      margin: 0;
+    }
+  }
+
+  .info-terapii {
+    grid-area: terapies;
+    width: 100%;
+    flex: 0 0 auto;
+
+    @include tablet-wide {
+      width: 75%;
     }
 
-    .info-contacts {
-        grid-area: contacts;
-        flex: 0 0 auto;
-        width: 100%;
-
-        @include tablet-wide {
-            width: 75%;
-        }
-
-        @include laptop {
-            width: 60%;
-        }
-
-        .title-underline {
-            border: 2px solid $white;
-            margin: 0;
-        }
+    @include laptop {
+      width: 60%;
     }
 
-    
-
-    .info-terapii {
-        grid-area: terapies;
-        width: 100%;
-        flex: 0 0 auto;
-
-        @include tablet-wide {
-            width: 75%;
-        }
-
-        @include laptop {
-            width: 60%;
-        }
-
-        span {
-            font-size: $font-size + 1rem;
-        }
+    span {
+      font-size: $font-size + 1rem;
     }
+  }
 
-    .info-notif {
-        grid-area: notif;
-        font-size: $font-size - 0.2rem;
-        width: 100%;
-        flex: 0 0 auto;
-        display: flex;
+  .info-notif {
+    grid-area: notif;
+    font-size: $font-size - 0.2rem;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
 
-        @include phone{
-            margin: 2rem 0;
-        }
-        
+    @include phone {
+      margin: 2rem 0;
     }
+  }
 
-    .info-programari {
-        grid-area: schedule;
-        font-size: $font-size - 0.2rem;
-        width: 100%;
-        flex: 0 0 auto;
-        display: flex;
+  .info-programari {
+    grid-area: schedule;
+    font-size: $font-size - 0.2rem;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+  }
 
-    }
+  .info-contacts,
+  .info-terapii {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-    .info-contacts, .info-terapii {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    @include tablet {
-        gap: 2rem;
-        grid-template-areas: "contacts notif" "terapies schedule";
-    }
-    
+  @include tablet {
+    gap: 2rem;
+    grid-template-areas: "contacts notif" "terapies schedule";
+  }
 }
 
-.info-contacts, .info-terapii, .info-notif, .info-programari {
-    background-color: lighten($primary-color, 63%);
-    border-radius: 10px;
-    padding: 1rem;
-    min-height: 12rem;
+.info-contacts,
+.info-terapii,
+.info-notif,
+.info-programari {
+  background-color: lighten($primary-color, 63%);
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 12rem;
 }
 
 .row-link::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2.5rem;
-  }
-
-
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+}
 
 .dash-table {
-    table { 
-        position: relative;
-        margin: auto;
-        font-size: $font-size - 0.2rem;
+  table {
+    position: relative;
+    margin: auto;
+    font-size: $font-size - 0.2rem;
+  }
+
+  tr {
+    height: 1.5rem;
+    line-height: 1.5rem;
+
+    &:nth-child(4) td:nth-child(2) {
+      padding-bottom: 0.2rem !important;
+    }
+  }
+
+  td {
+    padding-bottom: 1rem;
+
+    @include phone {
+      font-size: $font-size - 0.35rem;
     }
 
-    tr {
-        height: 1.5rem;
-        line-height: 1.5rem;
-
-        &:nth-child(4) td:nth-child(2) {
-            padding-bottom: 0.2rem !important;
-        }
+    &:nth-child(2) {
+      padding-left: 3rem;
+      @include tablet-wide {
+        padding-left: 10rem;
       }
-
-    td {
-        padding-bottom: 1rem;
-        
-        &:nth-child(2){
-            padding-left: 3rem;
-            @include tablet-wide {
-                padding-left: 10rem;
-            }
-            
-        }
     }
+  }
 
-    @include tablet-wide {
-        width: 45%;
-    }
+  @include tablet-wide {
+    width: 45%;
+  }
 
-    tr:hover, a:hover {
-        color: lighten($primary-color, 10%) !important;
-    }
+  tr:hover,
+  a:hover {
+    color: lighten($primary-color, 10%) !important;
+  }
 }
 
 .dash-titles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: $tertiary-color;
-    font-weight: $fw-bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $tertiary-color;
+  font-weight: $fw-bolder;
 }
 
 .dash-sub {
-    font-size: $font-size + 1rem;
-    font-weight: $fw-bold;
+  @include phone {
+    font-size: $font-size + 0.5rem;
+  }
+  font-size: $font-size + 1rem;
+  font-weight: $fw-bold;
+}
+
+.dash-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dash-therapists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  @include desktop {
+    width: calc(30vw + (25rem + 10%));
+  }
+
+  .first-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
-    margin: auto;
 
-    .first-row {
+    & > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .abo-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avail-toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .knobs,
+      .layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .button {
+        position: relative;
+        width: 3rem;
+        height: 1.5rem;
+        margin: 0.5rem;
+        overflow: hidden;
+      }
+
+      .button.r,
+      .button.r .layer {
+        border-radius: 5rem;
+      }
+
+      .checkbox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      .knobs {
+        z-index: 2;
+      }
+
+      .layer {
+        width: 100%;
+        background-color: #ebf7fc;
+        transition: 0.3s ease all;
+        z-index: 1;
+      }
+
+      #button-1 .knobs:before {
+        content: "";
+        position: absolute;
+        top: 0.06rem;
+        left: 0.1rem;
+        width: 1.45rem;
+        height: 0.5rem;
+        color: #fff;
+        font-size: 0.4rem;
+        font-weight: bold;
+        line-height: 1;
+        padding: 0.7rem 0.4rem;
+        background-color: $primary-color;
+        border-radius: 50%;
+        transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+      }
+
+      #button-1 .checkbox:checked + .knobs:before {
+        content: "";
+        left: 1.45rem;
+        padding: 0.7rem 0.4rem;
+        background-color: $deny;
+      }
+
+      #button-1 .checkbox:checked ~ .layer {
+        background-color: #fcebeb;
+      }
+
+      #button-1 .knobs,
+      #button-1 .knobs:before,
+      #button-1 .layer {
+        transition: 0.3s ease all;
+      }
+    }
+
+    .dash-toggle-sub {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: $font-size - 0.2rem;
+
+      #toggle-active {
+        color: $primary-color;
+      }
+
+      #toggle-separator {
+        color: $tertiary-color;
+        font-size: $font-size + 0.2rem;
+        font-weight: $fw-bolder;
+      }
+    }
+
+    .dash-exp {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include tablet {
+        width: 30%;
+      }
+
+      @include tablet-wide {
+        width: 25%;
+      }
+
+      @include laptop {
+        width: 20%;
+      }
+    }
+
+    .expire-dates {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include phone {
+        // padding: 0;
+        font-size: $font-size - 0.2rem;
+      }
+    }
+
+    .dash-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-text {
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        & > * {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center ;
-        }
+      }
 
-        .abo-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .avail-toggle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .knobs,
-            .layer {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-            }
-    
-            .button {
-                position: relative;
-                width: 3rem;
-                height: 1.5rem;
-                margin: 0.5rem;
-                overflow: hidden;
-            }
-            
-            .button.r,
-            .button.r .layer {
-                border-radius: 5rem;
-            }
-            
-            .checkbox {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                padding: 0;
-                margin: 0;
-                opacity: 0;
-                cursor: pointer;
-                z-index: 3;
-            }
-            
-            .knobs {
-                z-index: 2;
-            }
-            
-            .layer {
-                width: 100%;
-                background-color: #ebf7fc;
-                transition: 0.3s ease all;
-                z-index: 1;
-            }
-            
-    
-            #button-1 .knobs:before {
-                content: "";
-                position: absolute;
-                top: 0.06rem;
-                left: 0.1rem;
-                width: 1.45rem;
-                height: 0.5rem;
-                color: #fff;
-                font-size: 0.4rem;
-                font-weight: bold;
-                line-height: 1;
-                padding: 0.7rem 0.4rem;
-                background-color: $primary-color;
-                border-radius: 50%;
-                transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-            }
-            
-            #button-1 .checkbox:checked + .knobs:before {
-                content: "";
-                left: 1.45rem;
-                padding: 0.7rem 0.4rem;
-                background-color: $deny;
-            }
-            
-            #button-1 .checkbox:checked ~ .layer {
-                background-color: #fcebeb;
-            }
-            
-            #button-1 .knobs,
-            #button-1 .knobs:before,
-            #button-1 .layer {
-                transition: 0.3s ease all;
-            }
-        }
-
-        .dash-toggle-sub {
-            text-align: center;
-            margin-top: 0.5rem;
-            font-size: $font-size - 0.2rem;
-
-            #toggle-active {
-                color: $primary-color;
-            }
-
-            #toggle-separator {
-                color: $tertiary-color;
-                font-size: $font-size + 0.2rem;
-                font-weight: $fw-bolder;
-            }
-        }
-
-        .dash-exp {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            @include tablet {
-                width: 30%;
-            }
-
-            @include tablet-wide {
-                width: 25%;
-            }
-
-            @include laptop {
-                width: 20%;
-            }
-        }
-
-        .expire-dates {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .dash-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &-text {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &-table {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        #sumChart {
-            width: 100%;
-            max-width: 30rem;
-        }
-    }
-
-    .second-row {
+      &-table {
         display: flex;
         justify-content: center;
         align-items: center;
-
-
+      }
     }
+
+    #sumChart {
+      width: 100%;
+      max-width: 30rem;
+    }
+  }
+
+  .second-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-

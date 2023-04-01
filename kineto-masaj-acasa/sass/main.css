@@ -694,20 +694,58 @@ nav img {
   }
 }
 
-/* .down-scroll {
-
-} */
-.down-scroll img {
-  width: 15%;
+.scroll-down-section-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
-@media (min-width: 64rem) {
-  .down-scroll img {
-    width: 5%;
+.scroll-down-section-overlay .overlay-image-wrapper {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-top: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+}
+@media (min-width: 48rem) {
+  .scroll-down-section-overlay .overlay-image-wrapper {
+    display: none !important;
+  }
+}
+.scroll-down-section-overlay .down-scroll {
+  display: flex !important;
+  width: 4rem;
+}
+.scroll-down-section .findout-text {
+  text-align: center;
+  display: none;
+}
+@media (min-width: 48rem) {
+  .scroll-down-section .findout-text {
+    display: inline-block;
   }
 }
 
-.slide-down {
+.down-scroll {
+  display: none !important;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+}
+.down-scroll img {
+  width: 100%;
+}
+.down-scroll .slide-down {
   animation: slide-bottom 1s ease-out infinite alternate forwards;
+}
+@media (min-width: 48rem) {
+  .down-scroll {
+    display: flex !important;
+  }
 }
 
 .card-img-top {
@@ -763,6 +801,17 @@ nav img {
   }
 }
 
+main {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 75rem) {
+  .main-content {
+    width: 80vw !important;
+  }
+}
+
 .servicii-title {
   color: #108f96;
   font-weight: bold;
@@ -774,34 +823,16 @@ nav img {
   font-weight: bold;
   color: #108f96;
 }
+.servicii .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(20rem, 15rem + 5vw, 50rem);
+}
 .servicii img {
-  width: 70%;
-  height: 35vh;
+  width: 100%;
+  height: 100%;
   border-radius: 147% 106% 97% 106%;
-}
-@media (min-width: 37.5rem) {
-  .servicii img {
-    width: 50%;
-    height: 60vh;
-  }
-}
-@media (min-width: 48rem) {
-  .servicii img {
-    width: 100%;
-    height: 30vh;
-  }
-}
-@media (min-width: 64rem) {
-  .servicii img {
-    width: 100%;
-    height: 45vh;
-  }
-}
-@media (min-width: 75rem) {
-  .servicii img {
-    width: 70%;
-    height: 35vh;
-  }
 }
 .servicii a {
   color: white;
@@ -1284,6 +1315,13 @@ nav img {
   }
 }
 
+@media (min-width: 64rem) {
+  .dash-patients,
+  .dash-therapists {
+    max-width: 70vw;
+  }
+}
+
 .dash-patients {
   display: grid;
   grid-template-areas: "contacts" "terapies" "notif" "schedule";
@@ -1300,11 +1338,6 @@ nav img {
 @media (min-width: 48rem) {
   .dash-patients {
     margin-top: 10% !important;
-  }
-}
-@media (min-width: 64rem) {
-  .dash-patients {
-    max-width: 80vw;
   }
 }
 .dash-patients h3 {
@@ -1366,7 +1399,8 @@ nav img {
   flex: 0 0 auto;
   display: flex;
 }
-.dash-patients .info-contacts, .dash-patients .info-terapii {
+.dash-patients .info-contacts,
+.dash-patients .info-terapii {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1379,7 +1413,10 @@ nav img {
   }
 }
 
-.info-contacts, .info-terapii, .info-notif, .info-programari {
+.info-contacts,
+.info-terapii,
+.info-notif,
+.info-programari {
   background-color: #eafcfd;
   border-radius: 10px;
   padding: 1rem;
@@ -1410,6 +1447,11 @@ nav img {
 .dash-table td {
   padding-bottom: 1rem;
 }
+@media (max-width: 37.5rem) {
+  .dash-table td {
+    font-size: 0.65rem;
+  }
+}
 .dash-table td:nth-child(2) {
   padding-left: 3rem;
 }
@@ -1423,7 +1465,8 @@ nav img {
     width: 45%;
   }
 }
-.dash-table tr:hover, .dash-table a:hover {
+.dash-table tr:hover,
+.dash-table a:hover {
   color: #15bbc4 !important;
 }
 
@@ -1440,13 +1483,28 @@ nav img {
   font-size: 2rem;
   font-weight: 600;
 }
+@media (max-width: 37.5rem) {
+  .dash-sub {
+    font-size: 1.5rem;
+  }
+}
+
+.dash-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .dash-therapists {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
-  margin: auto;
+  margin: 0;
+}
+@media (min-width: 75rem) {
+  .dash-therapists {
+    width: calc(30vw + 25rem + 10%);
+  }
 }
 .dash-therapists .first-row {
   display: flex;
@@ -1576,6 +1634,11 @@ nav img {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+@media (max-width: 37.5rem) {
+  .dash-therapists .first-row .expire-dates {
+    font-size: 0.8rem;
+  }
 }
 .dash-therapists .first-row .dash-info {
   display: flex;
