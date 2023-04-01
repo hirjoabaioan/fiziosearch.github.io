@@ -105,68 +105,38 @@
 }
 
 .scroll-down-section {
-  &-overlay {
+  .down-scroll {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
 
-    .overlay-image-wrapper {
-      background-color: $white;
-      padding: 0.5rem;
-      border-radius: 1rem;
-      margin-top: -2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    width: 4rem;
 
-      width: 4rem;
-
-      @include tablet-wide {
-        display: none !important;
-      }
+    img {
+      width: 100%;
     }
 
-    .down-scroll {
-      display: flex !important;
-      width: 4rem;
+    .slide-down {
+      @include slide-down(1s, ease-out, infinite, alternate, forwards);
     }
   }
 
   .findout-text {
     text-align: center;
-    display: none;
-
-    @include tablet-wide {
-      display: inline-block;
-    }
-  }
-}
-
-.down-scroll {
-  display: none !important;
-  justify-content: center;
-  align-items: center;
-
-  width: 4rem;
-
-  img {
-    width: 100%;
-  }
-
-  .slide-down {
-    @include slide-down(1s, ease-out, infinite, alternate, forwards);
-  }
-
-  @include tablet-wide {
-    display: flex !important;
   }
 }
 
 .card-img-top {
   width: 100%;
   height: 50%;
+}
+
+.card-body {
+  .bi {
+    padding: 0 2rem;
+    margin-right: -4rem;
+    font-size: clamp($font-size, 0.2vw + 0.5rem, 1.5rem);
+  }
 }
 
 .arrow {
