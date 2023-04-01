@@ -77,7 +77,7 @@ $(document).ready(function () {
   }
 
   if (
-    top.location.pathname === "/templates/pacienti/dashboard-terapeut.html" ||
+    top.location.pathname === "/templates/pacienti/dashboard-pacient.html" ||
     top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html"
   ) {
     let ySums = [300, 450, 200, 150, 300, 400, 100, 150, 300, 150];
@@ -105,9 +105,32 @@ $(document).ready(function () {
       },
     });
   }
-
-  if (top.location.pathname === "/templates/abonamente2.html") {
+  console.log(top.location.pathname);
+  if (top.location.pathname === "/templates/abonamente.html") {
     // hide next and prev buttons
+    if ($(window).width() > 1023) {
+      $(".rem-carousel").removeClass("carousel carousel-dark slide");
+      $(".rem-inner").removeClass("carousel-inner");
+      $(".rem-item").removeClass("carousel-item");
+      //   $(".inner-cards").addClass("row");
+      $(".desktop-hide").css({ display: "none" });
+    }
+    $(window).resize(function () {
+      if ($(window).width() > 1023) {
+        $(".rem-carousel").removeClass("carousel carousel-dark slide");
+        $(".rem-inner").removeClass("carousel-inner");
+        $(".rem-item").removeClass("carousel-item");
+        $(".inner-cards").addClass("row");
+        $(".desktop-hide").css({ display: "none" });
+      }
+      if ($(window).width() < 1024) {
+        $(".rem-carousel").addClass("carousel carousel-dark slide");
+        $(".rem-inner").addClass("carousel-inner");
+        $(".rem-item").addClass("carousel-item");
+        $(".inner-cards").removeClass("row");
+        $(".desktop-hide").css({ display: "flex" });
+      }
+    });
   }
 });
 
