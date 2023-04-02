@@ -32,29 +32,90 @@ nav {
     }
   }
 
-  .auth-profile {
-    width: 50px;
-    height: 50px;
-    background-image: url("../../img/profiles/PozaW.webp"); //Schimbam sursa imaginii daca nu este logat cu: img/TopbarProfile.png
-    -webkit-border-radius: 50%;
-    -webkit-background-clip: padding-box;
-    -moz-border-radius: 50%;
-    -moz-background-clip: padding;
-    border-radius: 50%;
-    background-clip: padding-box;
-    // margin: 7px 0 0 5px;
-    float: left;
-    background-size: cover;
-    background-position: center center;
-
-    @include laptop {
-      width: 60px;
-      height: 60px;
-    }
-  }
-
   img {
     width: 100%;
     height: 100%;
+  }
+}
+
+.auth-profile {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("../../img/profiles/PozaW.webp"); //Schimbam sursa imaginii daca nu este logat cu: img/TopbarProfile.png
+  -webkit-border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50%;
+  -moz-background-clip: padding;
+  border-radius: 50%;
+  background-clip: padding-box;
+  // margin: 7px 0 0 5px;
+  float: left;
+  background-size: cover;
+  background-position: center center;
+
+  @include laptop {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.popover-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0;
+  margin-top: -1rem;
+
+  .popover-content-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .popover-content-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .auth-profile {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    span {
+      font-size: clamp($font-size, 0.2rem + 0.5rem, 1.5rem);
+    }
+  }
+
+  .popover-content-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    .auth {
+      display: none !important;
+    }
+
+    .nav-link {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 1rem;
+      padding: 0.8rem;
+      margin-top: -0.1rem;
+      .popover-links-image {
+        width: 1.8rem;
+      }
+
+      span {
+        font-size: clamp($font-size, 0.2rem + 0.5rem, 1.5rem);
+      }
+    }
   }
 }

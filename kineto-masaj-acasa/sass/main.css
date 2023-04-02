@@ -429,9 +429,14 @@ nav .navbar-brand {
     width: 15%;
   }
 }
-nav .auth-profile {
-  width: 50px;
-  height: 50px;
+nav img {
+  width: 100%;
+  height: 100%;
+}
+
+.auth-profile {
+  width: 3rem;
+  height: 3rem;
   background-image: url("../../img/profiles/PozaW.webp");
   -webkit-border-radius: 50%;
   -webkit-background-clip: padding-box;
@@ -444,14 +449,65 @@ nav .auth-profile {
   background-position: center center;
 }
 @media (min-width: 64rem) {
-  nav .auth-profile {
-    width: 60px;
-    height: 60px;
+  .auth-profile {
+    width: 4rem;
+    height: 4rem;
   }
 }
-nav img {
+
+.popover-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0;
+  margin-top: -1rem;
+}
+.popover-body .popover-content-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.popover-body .popover-content-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.popover-body .popover-content-header .auth-profile {
+  width: 6rem;
+  height: 6rem;
+}
+.popover-body .popover-content-header span {
+  font-size: 1rem;
+}
+.popover-body .popover-content-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+}
+.popover-body .popover-content-links .auth {
+  display: none !important;
+}
+.popover-body .popover-content-links .nav-link {
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  padding: 0.8rem;
+  margin-top: -0.1rem;
+}
+.popover-body .popover-content-links .nav-link .popover-links-image {
+  width: 1.8rem;
+}
+.popover-body .popover-content-links .nav-link span {
+  font-size: 1rem;
 }
 
 .dash-nav {

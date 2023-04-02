@@ -1,10 +1,28 @@
 $(document).ready(function () {
+  //BS Tooltips
   const tooltipTriggerList = document.querySelectorAll(
     '[data-bs-toggle="tooltip"]'
   );
   const tooltipList = [...tooltipTriggerList].map(
     (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
   );
+
+  //BS Popovers
+  const list = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="popover"]')
+  );
+  list.map((el) => {
+    let opts = {
+      animation: true,
+    };
+    if (el.hasAttribute("data-bs-content-id")) {
+      opts.content = document.getElementById(
+        el.getAttribute("data-bs-content-id")
+      ).innerHTML;
+      opts.html = true;
+    }
+    new bootstrap.Popover(el, opts);
+  });
 
   if (
     top.location.pathname === "/templates/pacienti/search.html" ||
