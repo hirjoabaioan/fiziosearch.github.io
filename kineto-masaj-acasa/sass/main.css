@@ -485,7 +485,7 @@ nav img {
 }
 .popover-body .popover-content-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   width: 70%;
@@ -494,9 +494,8 @@ nav img {
   display: none !important;
 }
 .popover-body .popover-content-links .nav-link {
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
