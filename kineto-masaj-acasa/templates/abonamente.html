@@ -89,10 +89,54 @@
               </li>
             </ul>
           </div>
-          <a class="nav-link auth m-0 p-0" href="autentificare.html">
+          <a
+            tabindex="0"
+            class="btn auth m-0 p-0"
+            role="button"
+            data-bs-toggle="popover"
+            data-bs-trigger="focus"
+            data-bs-placement="bottom"
+            data-bs-content-id="popover-content"
+            data-bs-customClass="d-flex justify-content-center align-items-center"
+          >
             <!-- Apare poza de profil doar dacă este logat -->
             <!-- Pune un over text pentru selectie de intrare in dashboard Principal, Setari sau logout -->
             <div class="auth-profile"></div>
+            <div id="popover-content" class="d-none">
+              <div class="popover-content-body row">
+                <div class="popover-content-header">
+                  <div class="auth-profile"></div>
+                  <br />
+                  <h3 class="popover-name">Nume Și prenume</h3>
+                  <span class="popover-function">Kinetoterapeut</span>
+                </div>
+
+                <hr />
+                <div class="popover-content-links">
+                  <a class="nav-link" href="terapeuti/dashboard-terapeut.html">
+                    <div class="popover-links-image">
+                      <img src="../img/dashboard icon.webp" alt="Dashboard" />
+                    </div>
+
+                    <span>Dashboard</span>
+                  </a>
+                  <a class="nav-link" href="terapeuti/setari-profil.html">
+                    <div class="popover-links-image">
+                      <img src="../img/setari icon.webp" alt="Setări" />
+                    </div>
+
+                    <span>Setări</span>
+                  </a>
+                  <a class="nav-link" href="deconectare.html">
+                    <div class="popover-links-image">
+                      <img src="../img/logout icon.webp" alt="Ieșire" />
+                    </div>
+
+                    <span>Ieșire</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </a>
         </div>
       </nav>
