@@ -1,160 +1,165 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
-
-.dash-nav {
-    background-color: darken($white, 5%) !important;
-    align-items: flex-start;
-
-    .active {
-            filter: hue-rotate(360deg) saturate(5) contrast(50%);
-            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
-    }
+.dash-container {
+  .position-absolute {
+    font-size: 0.6rem;
+    padding: 0.15rem;
+  }
 }
 
+.dash-nav {
+  background-color: darken($white, 5%) !important;
+  align-items: flex-start;
+
+  .active {
+    filter: hue-rotate(360deg) saturate(5) contrast(50%);
+    -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+  }
+}
 
 .collapsed-menu {
-    height: 80vh;
+  height: 80vh;
 }
 
 .dash-content {
-    height: 100vh;
+  height: 100vh;
 }
 
 .navbar-toggler {
-    @include tablet {
-        margin-bottom: 1rem !important;
-    }
-    
+  @include tablet {
+    margin-bottom: 1rem !important;
+  }
 }
 
 .collapsedLinks {
-    img {
-        width: 100%;
-        transition: transform .2s;
+  img {
+    width: 100%;
+    transition: transform 0.2s;
 
-        &:hover, &:focus, &:active {
-            filter: hue-rotate(360deg) saturate(5) contrast(50%);
-            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+    &:hover,
+    &:focus,
+    &:active {
+      filter: hue-rotate(360deg) saturate(5) contrast(50%);
+      -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
 
-            -ms-transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-            transform: scale(1.2); 
+      -ms-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
 
-            @include tablet {
-                -ms-transform: scale(1.5);
-                -webkit-transform: scale(1.5);
-                transform: scale(1.5); 
-            }
-        }
+      @include tablet {
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+      }
     }
+  }
 
-    .nav-item {
-        width: clamp(1.5rem, 10vw + 1rem, 2rem);
-        margin-top: 0.5rem;
+  .nav-item {
+    width: clamp(1.5rem, 10vw + 1rem, 2rem);
+    margin-top: 0.5rem;
 
-        @include tablet {
-            margin-top: 1.2rem;
-        }
+    @include tablet {
+      margin-top: 1.2rem;
     }
+  }
 }
 
 .dash-notif {
-    width: clamp(0.725rem, 6vw + 1rem, 1.5rem) !important;
+  width: clamp(0.725rem, 6vw + 1rem, 1.5rem) !important;
 
-    @include tablet {
-        margin-top: 1rem !important;
-    }
+  @include tablet {
+    margin-top: 1rem !important;
+  }
 }
 
 .dash-notif-first {
-    border-top: 3px solid $white;
-    padding-top: .4rem;
+  border-top: 3px solid $white;
+  padding-top: 0.4rem;
 }
 
 .dash-notif-last {
-    border-bottom: 3px solid $white;
-    padding-bottom: .4rem;
+  border-bottom: 3px solid $white;
+  padding-bottom: 0.4rem;
 }
 
 #offcanvasNavbar {
-    background-color: darken($white, 10%);
-    background-image: url('../../img/side-menu-waves.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: darken($white, 10%);
+  background-image: url("../../img/side-menu-waves.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .dash-menu-img {
-    width: clamp(8rem, 10vw + 1rem, 12rem);
+  width: clamp(8rem, 10vw + 1rem, 12rem);
 
-    img {
-        border-radius: 50%;
-        width: 100%;
-    }
+  img {
+    border-radius: 50%;
+    width: 100%;
+  }
 }
 
 .dash-menu-title h3 {
-    font-size: $font-size + 0.2rem;
-    font-weight: bold;
-    color: $tertiary-color;
+  font-size: $font-size + 0.2rem;
+  font-weight: bold;
+  color: $tertiary-color;
 }
 
 .notification-aria {
-    border-top: 2px solid $white;
-    padding-top: .5rem;
-    width: 36%;
+  border-top: 2px solid $white;
+  padding-top: 0.5rem;
+  width: 36%;
 }
 
-.dash-drops select{
-    font-size: $font-size !important;
-    width: 100%;
+.dash-drops select {
+  font-size: $font-size !important;
+  width: 100%;
 }
 
 .notification-pic {
-    width: 6vw;
+  width: 6vw;
 
-    img {
-        width: 100%;
+  img {
+    width: 100%;
 
-        &:hover, &:focus, &:active {
-            filter: hue-rotate(360deg) saturate(5) contrast(50%);
-            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
+    &:hover,
+    &:focus,
+    &:active {
+      filter: hue-rotate(360deg) saturate(5) contrast(50%);
+      -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
 
-            -ms-transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-            transform: scale(1.2); 
-        }
+      -ms-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
     }
-
-
+  }
 }
 
 .dash-links {
+  a {
+    width: clamp(4rem, 10vw + 1rem, 5.5rem);
+    color: $tertiary-color;
+    font-weight: bolder;
+    font-size: clamp(0.8rem, 5vw + 1rem, 1.2rem);
 
-    a {
-        width: clamp(4rem, 10vw + 1rem, 5.5rem);
-        color: $tertiary-color;
-        font-weight: bolder;
-        font-size: clamp(0.8rem, 5vw + 1rem, 1.2rem);
+    &:hover,
+    &:focus,
+    &:active,
+    &:target {
+      filter: hue-rotate(360deg) saturate(5) contrast(50%);
+      -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
 
-        &:hover, &:focus, &:active, &:target {
-            filter: hue-rotate(360deg) saturate(5) contrast(50%);
-            -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
-
-            -ms-transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-            transform: scale(1.2); 
-
-        }
-
-        img{
-            width: 100%;    
-
-            
-        }
-
-        @include tablet {
-                font-size: $font-size + 0.4rem !important;
-                margin-top: .5rem;
-        }
+      -ms-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
     }
+
+    img {
+      width: 100%;
+    }
+
+    @include tablet {
+      font-size: $font-size + 0.4rem !important;
+      margin-top: 0.5rem;
+    }
+  }
 }

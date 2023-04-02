@@ -1,10 +1,6 @@
 @use "../abstracts" as *;
 @use "../base" as *;
 
-// .info-container {
-//     display: none !important;
-// }
-
 .list-container,
 .info-container {
   background-color: darken($white, 5%);

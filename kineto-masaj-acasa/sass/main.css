@@ -509,6 +509,11 @@ nav img {
   font-size: 1rem;
 }
 
+.dash-container .position-absolute {
+  font-size: 0.6rem;
+  padding: 0.15rem;
+}
+
 .dash-nav {
   background-color: #f2f2f2 !important;
   align-items: flex-start;

@@ -25,9 +25,8 @@ $(document).ready(function () {
   });
 
   if (
-    top.location.pathname === "/templates/pacienti/search.html" ||
+    top.location.pathname === "/templates/search.html" ||
     top.location.pathname === "/templates/pacienti/mesagerie.html" ||
-    top.location.pathname === "/templates/terapeuti/search.html" ||
     top.location.pathname === "/templates/terapeuti/mesagerie.html"
   ) {
     $(".contact-info").hide();
