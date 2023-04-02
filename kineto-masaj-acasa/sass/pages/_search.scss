@@ -1,381 +1,378 @@
-@use '../abstracts' as *;
-@use '../base' as *;
-
+@use "../abstracts" as *;
+@use "../base" as *;
 
 // .info-container {
 //     display: none !important;
 // }
 
-.list-container, .info-container {
-    background-color: darken($white, 5%);
-    border-radius: 2rem;
-    padding-bottom: 2rem !important;
-    width: 90%;
+.list-container,
+.info-container {
+  background-color: darken($white, 5%);
+  border-radius: 2rem;
+  padding-bottom: 2rem !important;
+  width: 90%;
 
-    img {
-        border-radius: 50%;
-    }
+  img {
+    border-radius: 50%;
+  }
 
-    @include tablet-wide {
-        margin: 0 !important;
-    }
+  @include tablet-wide {
+    margin: 0 !important;
+  }
 }
 
 .list-container {
-    @include tablet-wide {
-        width: 35%;
-    }
-    @include laptop {
-        width: 25%;
-    }
+  @include tablet-wide {
+    width: 35%;
+  }
+  @include laptop {
+    width: 25%;
+  }
 }
 
 .list-form {
-
-    @include tablet-wide {
-        .input-group {
-            width: 100%;
-            margin: 0;
-            padding: 0 !important;
-        }
+  @include tablet-wide {
+    .input-group {
+      width: 100%;
+      margin: 0;
+      padding: 0 !important;
     }
+  }
 }
 
 .info-container {
-    @include tablet-wide {
-        width: 60%;
-    }
+  @include tablet-wide {
+    width: 60%;
+  }
 
-    @include laptop {
-        width: 70%;
-    }
+  @include laptop {
+    width: 70%;
+  }
 }
 
 .search-area {
-    text-align: center;
-    margin: 1rem 0 0 0;
-    border-bottom: 0.5rem solid $white;
+  text-align: center;
+  margin: 1rem 0 0 0;
+  border-bottom: 0.5rem solid $white;
 
-    @include tablet {
-        .register-title{
-            font-size: $font-size + 0.6rem;
-        }
+  @include tablet {
+    .register-title {
+      font-size: $font-size + 0.6rem;
     }
+  }
 
-    @include tablet-wide {
-        font-size: calc(2.325rem + .9vw);
-    }
+  @include tablet-wide {
+    font-size: calc(2.325rem + 0.9vw);
+  }
 }
 
 .search-box {
-    input::placeholder {
-        font-size: $font-size - 0.2rem;
-        @include font (xs) ;
+  input::placeholder {
+    font-size: $font-size - 0.2rem;
+    @include font(xs);
+  }
+
+  button {
+    width: 2.5rem;
+  }
+
+  @include tablet {
+    .input-group {
+      width: 75%;
+      margin: auto;
+    }
+  }
+
+  .dropdown {
+    width: 45%;
+
+    select {
+      width: 100%;
     }
 
-    button {
-        width: 2.5rem;
+    @include phone {
+      width: 100% !important;
     }
-
-    @include tablet {
-        .input-group {
-            width: 75%;
-            margin: auto;
-        }
-    }
-
-    .dropdown {
-        width: 45%;
-
-        select {
-            width: 100%;
-        }
-
-        @include phone {
-            width: 100% !important;
-        }
-    }
+  }
 }
 
 .list-area {
+  height: 50rem;
+  padding: 1rem 0;
+  border-bottom: 4px solid $white;
+  background-color: $white;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: $tertiary-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white;
+    border-radius: 1rem;
+  }
+
+  @include tablet-wide {
+    height: 68rem;
+  }
+
+  @include laptop {
     height: 50rem;
-    padding: 1rem 0;
-    border-bottom: 4px solid $white;
-    background-color: $white;
-
-    &::-webkit-scrollbar {
-        width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 1rem;
-        background: $tertiary-color;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: $white;
-        border-radius: 1rem;
-    }
-
-    @include tablet-wide {
-        height: 68rem;
-    }
-
-    @include laptop {
-        height: 50rem;
-    }
+  }
 }
 
 .person-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: darken($white, 5%);
+  padding: 1rem;
+
+  &:hover {
+    background-color: #e3e3e3;
+    -webkit-box-shadow: 0px 0px 25px -7px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 0px 25px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 25px -7px rgb(0 0 0 / 75%);
+    margin: 0.4rem;
+    border-bottom: 0;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+  }
+
+  &-pic {
+    width: clamp(10rem, 2vw + 0.5rem, 14rem);
+
+    // @include tablet {
+    //     width: calc(10rem + .5vw);
+    // }
+
+    // @include laptop {
+    //     width: 6rem;
+    // }
+  }
+
+  &-info,
+  &-info div {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem;
-    border-radius: 1rem;
-    background-color: darken($white, 5%);
-    padding: 1rem;
-
-    &:hover {
-        background-color: #e3e3e3;
-        -webkit-box-shadow: 0px 0px 25px -7px rgb(0 0 0 / 75%);
-        -moz-box-shadow: 0px 0px 25px -7px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 25px -7px rgb(0 0 0 / 75%);
-        margin: 0.4rem;
-        border-bottom: 0;
-        transition: all 0.3s ease-out;
-        -webkit-transition: all 0.3s ease-out;
-    }
-
-    &-pic {
-        width: clamp(10rem, 2vw + .5rem, 14rem);
-
-        // @include tablet {
-        //     width: calc(10rem + .5vw);
-        // }
-
-        // @include laptop {
-        //     width: 6rem;
-        // }
-    }
-
-    &-info, &-info div {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
-    
-    &-name {
-        font-size: $font-size + 0.4rem;
-        font-weight: 600 !important;
-
-        @include phone {
-            font-size: $font-size - 0.2rem;
-        }
-
-        @include tablet {
-            font-size: $font-size;
-        }
-
-        @include tablet-wide {
-            font-size: $font-size + 0.2rem;
-        }
-    }
-
-    svg {
-        width: 3rem;
-        color: green;
-
-        @include phone {
-            width: 2rem;
-        }
-    }
-
-    &-locations, &-therapies {
-        padding: 0.2rem 1rem;
-        font-size: $font-size - 0.2rem;
-        max-width: 95%;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-
-        @include phone {
-            font-size: $font-size - 0.4rem;
-        }
-
-        @include tablet-wide {
-            font-size: $font-size - 0.3rem;
-            padding: 0.2rem 0.5rem;
-        }
-    }
-}
-
-.info-container {
-    // display: grid;
-    gap: 1rem;
-    grid-template-areas: 
-    'one'
-    'two'
-    'three';
-
-    .info-header {
-        grid-area: one;
-    }
-
-    .info-bio {
-        grid-area: two;
-    }
-
-    .info-long {
-        grid-area: three;
-    }
-
-    @include laptop {
-        display: grid;
-        grid-template-areas: 
-        'one one'
-        'two three';
-    }
-}
-
-.header-pn {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
     justify-content: flex-start;
     align-items: center;
-    
-    &-pic {
-        width: clamp(5rem, 8vw + 1rem, 12rem);
-    }
+  }
 
-    &-name {
-        font-size: $font-size + 0.2rem;
-        font-weight: 600;
-
-        @include tablet {
-            font-size: $font-size + 1rem;
-        }
-    }
-
-    svg {
-        width: 5rem;
-        color: green;
-
-        @include phone {
-            width: 3rem;
-        }
-    }
-}
-
-.header-locations {
-    margin-bottom: 1rem;
-}
-
-.contact-button {
-    width: 50%;
-    margin: 0.5em 50%;
+  &-name {
+    font-size: $font-size + 0.4rem;
+    font-weight: 600 !important;
 
     @include phone {
-        font-size: $font-size !important;
+      font-size: $font-size - 0.2rem;
     }
 
-}
-
-.contact-info {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    margin: 1rem 0 !important;
-
-    .msg-button {
-        font-size: $font-size;
-
-        @include tablet-wide {
-            width: 48%;
-            margin: auto;
-        }
+    @include tablet {
+      font-size: $font-size;
     }
 
     @include tablet-wide {
-        #search-telefon::before {
-            content: "Telefon: ";
-        }
+      font-size: $font-size + 0.2rem;
+    }
+  }
 
-        #search-email::before {
-            content: "Email: ";
-        }
+  svg {
+    width: 3rem;
+    color: green;
+
+    @include phone {
+      width: 2rem;
+    }
+  }
+
+  &-locations,
+  &-therapies {
+    padding: 0.2rem 1rem;
+    font-size: $font-size - 0.2rem;
+    max-width: 95%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @include phone {
+      font-size: $font-size - 0.4rem;
     }
 
-    @include laptop {
-        width: 60%;
+    @include tablet-wide {
+      font-size: $font-size - 0.3rem;
+      padding: 0.2rem 0.5rem;
     }
+  }
 }
 
+.info-container {
+  // display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "one"
+    "two"
+    "three";
 
+  .info-header {
+    grid-area: one;
+  }
 
-.info-titles {
-    font-size: $font-size + 0.1rem;
-    padding: 0.25rem 0;
-    padding-left: 5%;
-    border-radius: 50px;
-    background-color: $tertiary-color;
-    color: $white;
+  .info-bio {
+    grid-area: two;
+  }
+
+  .info-long {
+    grid-area: three;
+  }
+
+  @include laptop {
+    display: grid;
+    grid-template-areas:
+      "one one"
+      "two three";
+  }
+}
+
+.header-pn {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: flex-start;
+  align-items: center;
+
+  &-pic {
+    width: clamp(5rem, 8vw + 1rem, 12rem);
+  }
+
+  &-name {
+    font-size: $font-size + 0.2rem;
+    font-weight: 600;
 
     @include tablet {
-        font-size: $font-size + 0.5rem;
+      font-size: $font-size + 1rem;
     }
+  }
+
+  svg {
+    width: 5rem;
+    color: green;
+
+    @include phone {
+      width: 3rem;
+    }
+  }
+}
+
+.header-locations {
+  margin-bottom: 1rem;
+}
+
+.contact-button {
+  width: 50%;
+  margin: 0.5em 50%;
+
+  @include phone {
+    font-size: $font-size !important;
+  }
+}
+
+.contact-info {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem 0 !important;
+
+  .msg-button {
+    font-size: $font-size;
+
+    @include tablet-wide {
+      width: 48%;
+      margin: auto;
+    }
+  }
+
+  @include tablet-wide {
+    #search-telefon::before {
+      content: "Telefon: ";
+    }
+
+    #search-email::before {
+      content: "Email: ";
+    }
+  }
+
+  @include laptop {
+    width: 60%;
+  }
+}
+
+.info-titles {
+  font-size: $font-size + 0.1rem;
+  padding: 0.25rem 0;
+  padding-left: 5%;
+  border-radius: 50px;
+  background-color: $tertiary-color;
+  color: $white;
+
+  @include tablet {
+    font-size: $font-size + 0.5rem;
+  }
 }
 
 .info-long-services {
-    
-    .info-long-table {
-        text-align: center;
-        width: 75%;
-        margin-left: 10%;
-    }
+  .info-long-table {
+    text-align: center;
+    width: 75%;
+    margin-left: 10%;
+  }
 }
 
 .info-long-table {
-  
-    tr {
-        border-bottom: 4px solid $white;
-    
-        &:first-child {
-            text-align: center;
-            font-weight: bold;
-        }
-    }
-    
-    td {
-        border-bottom: 4px solid $white;
-        padding: 4%;
-        font-size: $font-size - 0.2rem;
+  tr {
+    border-bottom: 4px solid $white;
 
-        &:nth-child(2), &:nth-child(3) {
-            text-align: center;
-        }
+    &:first-child {
+      text-align: center;
+      font-weight: bold;
     }
+  }
+
+  td {
+    border-bottom: 4px solid $white;
+    padding: 4%;
+    font-size: $font-size - 0.2rem;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      text-align: center;
+    }
+  }
 }
 
 .reviews-container {
-    height: 15rem;
+  height: 15rem;
 
-    &::-webkit-scrollbar {
-        width: 0.5rem;
-    }
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        border-radius: 1rem;
-        background: #B7B7B7;
-    }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #b7b7b7;
+  }
 
-    &::-webkit-scrollbar-track {
-        background: $white;
-        border-radius: 1rem;
-    }
+  &::-webkit-scrollbar-track {
+    background: $white;
+    border-radius: 1rem;
+  }
 
-    @include laptop {
-        height: 20rem;
-    }
+  @include laptop {
+    height: 20rem;
+  }
 }

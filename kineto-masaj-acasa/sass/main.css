@@ -934,17 +934,20 @@ main {
   border-radius: 1.75rem !important;
 }
 
-.list-container, .info-container {
+.list-container,
+.info-container {
   background-color: #f2f2f2;
   border-radius: 2rem;
   padding-bottom: 2rem !important;
   width: 90%;
 }
-.list-container img, .info-container img {
+.list-container img,
+.info-container img {
   border-radius: 50%;
 }
 @media (min-width: 48rem) {
-  .list-container, .info-container {
+  .list-container,
+  .info-container {
     margin: 0 !important;
   }
 }
@@ -1077,7 +1080,7 @@ main {
 }
 .person-box-info, .person-box-info div {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .person-box-name {
@@ -1265,7 +1268,7 @@ main {
 }
 .reviews-container::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: #B7B7B7;
+  background: #b7b7b7;
 }
 .reviews-container::-webkit-scrollbar-track {
   background: white;

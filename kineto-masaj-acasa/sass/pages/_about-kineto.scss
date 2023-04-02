@@ -27,30 +27,9 @@ main {
   }
 
   .img-container {
-    // width: 50%;
-    // height: 20vh;
-
-    // @include phone {
-    //   width: 60%;
-    //   height: 10vh;
-    // }
-
-    // @include tablet-wide {
-    //   width: 30%;
-    //   height: 25vh;
-    // }
-
-    // @include laptop {
-    //   height: 25vh;
-    // }
-
-    // @include desktop {
-    //   width: 15%;
-    // }
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: clamp(20rem, 15rem + 5vw, 50rem);
   }
 
