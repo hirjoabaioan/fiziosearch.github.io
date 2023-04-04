@@ -1578,32 +1578,38 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.dash-therapists .first-row .avail-toggle {
+@media (min-width: 48rem) {
+  .dash-therapists .first-row .abo-info {
+    flex-direction: row;
+  }
+}
+.dash-therapists .first-row .disponibility {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.dash-therapists .first-row .avail-toggle .knobs,
-.dash-therapists .first-row .avail-toggle .layer {
+.dash-therapists .first-row .disponibility .knobs,
+.dash-therapists .first-row .disponibility .layer {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 }
-.dash-therapists .first-row .avail-toggle .button {
+.dash-therapists .first-row .disponibility .button {
   position: relative;
   width: 3rem;
   height: 1.5rem;
   margin: 0.5rem;
   overflow: hidden;
 }
-.dash-therapists .first-row .avail-toggle .button.r,
-.dash-therapists .first-row .avail-toggle .button.r .layer {
+.dash-therapists .first-row .disponibility .button.r,
+.dash-therapists .first-row .disponibility .button.r .layer {
   border-radius: 5rem;
 }
-.dash-therapists .first-row .avail-toggle .checkbox {
+.dash-therapists .first-row .disponibility .checkbox {
   position: relative;
   width: 100%;
   height: 100%;
@@ -1613,16 +1619,16 @@ main {
   cursor: pointer;
   z-index: 3;
 }
-.dash-therapists .first-row .avail-toggle .knobs {
+.dash-therapists .first-row .disponibility .knobs {
   z-index: 2;
 }
-.dash-therapists .first-row .avail-toggle .layer {
+.dash-therapists .first-row .disponibility .layer {
   width: 100%;
   background-color: #ebf7fc;
   transition: 0.3s ease all;
   z-index: 1;
 }
-.dash-therapists .first-row .avail-toggle #button-1 .knobs:before {
+.dash-therapists .first-row .disponibility #button-1 .knobs:before {
   content: "";
   position: absolute;
   top: 0.06rem;
@@ -1638,18 +1644,18 @@ main {
   border-radius: 50%;
   transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
-.dash-therapists .first-row .avail-toggle #button-1 .checkbox:checked + .knobs:before {
+.dash-therapists .first-row .disponibility #button-1 .checkbox:checked + .knobs:before {
   content: "";
   left: 1.45rem;
   padding: 0.7rem 0.4rem;
   background-color: #f44336;
 }
-.dash-therapists .first-row .avail-toggle #button-1 .checkbox:checked ~ .layer {
+.dash-therapists .first-row .disponibility #button-1 .checkbox:checked ~ .layer {
   background-color: #fcebeb;
 }
-.dash-therapists .first-row .avail-toggle #button-1 .knobs,
-.dash-therapists .first-row .avail-toggle #button-1 .knobs:before,
-.dash-therapists .first-row .avail-toggle #button-1 .layer {
+.dash-therapists .first-row .disponibility #button-1 .knobs,
+.dash-therapists .first-row .disponibility #button-1 .knobs:before,
+.dash-therapists .first-row .disponibility #button-1 .layer {
   transition: 0.3s ease all;
 }
 .dash-therapists .first-row .dash-toggle-sub {
@@ -1665,25 +1671,20 @@ main {
   font-size: 1.2rem;
   font-weight: 700;
 }
-.dash-therapists .first-row .dash-exp {
+.dash-therapists .first-row .dash-expire-dates {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 @media (min-width: 37.5rem) {
-  .dash-therapists .first-row .dash-exp {
-    width: 30%;
+  .dash-therapists .first-row .dash-expire-dates {
+    width: 45%;
   }
 }
 @media (min-width: 48rem) {
-  .dash-therapists .first-row .dash-exp {
-    width: 25%;
-  }
-}
-@media (min-width: 64rem) {
-  .dash-therapists .first-row .dash-exp {
-    width: 20%;
+  .dash-therapists .first-row .dash-expire-dates {
+    width: 100%;
   }
 }
 .dash-therapists .first-row .expire-dates {
@@ -1697,6 +1698,11 @@ main {
     padding: 0;
     font-size: 0.8rem;
   }
+}
+.dash-therapists .first-row .dash-info-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dash-therapists .first-row .dash-info {
   display: flex;

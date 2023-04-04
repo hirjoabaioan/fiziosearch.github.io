@@ -247,38 +247,32 @@
                 <div class="dash-info m-0 mt-4 p-2">
                     <div class="row dash-therapists">
                         <div class="row mb-4 gap-4 first-row">
-                            <div class="gap-2 abo-info">
-                                <div class="row avail-toggle">
-                                    <span class="dash-titles">Disponibilitate</span>
-                                    <div class="button r" id="button-1">
-                                        <input type="checkbox" class="checkbox" id="checker" onclick="checkerFunction()">
-                                        <div class="knobs"></div>
-                                        <div class="layer"></div>
+                            <div class="gap-4 abo-info m-0 p-0">
+                                <div class="gap-4 m-0 p-0 dash-info-text w-100">
+                                    <div class="row disponibility">
+                                        <span class="dash-titles">Disponibilitate</span>
+                                        <div class="button r" id="button-1">
+                                            <input type="checkbox" class="checkbox" id="checker" onclick="checkerFunction()">
+                                            <div class="knobs"></div>
+                                            <div class="layer"></div>
+                                        </div>
+                                        <span class="dash-toggle-sub"><span id="toggle-active">Activ</span> <span id="toggle-separator">|</span> <span id="toggle-inactive">Inactiv</span></span>
                                     </div>
-                                    <span class="dash-toggle-sub"><span id="toggle-active">Activ</span> <span id="toggle-separator">|</span> <span id="toggle-inactive">Inactiv</span></span>
+                                    <div class="row dash-expire-dates">
+                                        <!-- Apare doar pentru kinetoterapeuți -->
+                                        <div class="row expire-dates">
+                                            <span class="dash-titles">Expirare ALP</span>
+                                            <span>12.03.2023</span>
+                                        </div>
+                                        <div class="row expire-dates">
+                                            <span class="dash-titles">Expirare Abonament</span>
+                                            <span>12.03.2023</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="row dash-exp">
-                                    <!-- Apare doar pentru kinetoterapeuți -->
-                                    <div class="row expire-dates">
-                                        <span class="dash-titles">Expirare ALP</span>
-                                        <span>12.03.2023</span>
-                                    </div>
-                                    <div class="row expire-dates">
-                                        <span class="dash-titles">Expirare Abonament</span>
-                                        <span>12.03.2023</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row gap-4 dash-info">
-                                <div class="gap-4 dash-info-text m-0 p-0">
-                                    <div 
-                                    class="row number-of-contacts"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-placement="top"
-                                    data-bs-title="În ultimele 30 de zile">
-                                        <span class="dash-titles">Contactări</span>
-                                        <span class="dash-sub">30</span>
-                                    </div>
+                                
+                                <div class="gap-4 dash-info-text m-0 p-0 w-100">
+                                    
                                     <div 
                                     class="row number-of-therapies"
                                     data-bs-toggle="tooltip"
@@ -289,7 +283,18 @@
                                         </span>
                                         <span class="dash-sub">30</span>
                                     </div>
+                                    <div 
+                                    class="row number-of-contacts"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-title="În ultimele 30 de zile">
+                                        <span class="dash-titles">Contactări</span>
+                                        <span class="dash-sub">30</span>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="row gap-4 dash-info">
+                                
                                 <div class="row dash-info-table">
                                     <!-- grafic cu sumele realizate in ultimul an/luna -->
                                     <canvas id="sumChart"></canvas>
