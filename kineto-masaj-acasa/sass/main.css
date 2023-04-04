@@ -517,14 +517,30 @@ nav img {
 .dash-nav {
   background-color: #f2f2f2 !important;
   align-items: flex-start;
+  width: 15% !important;
 }
 .dash-nav .active {
   filter: hue-rotate(360deg) saturate(5) contrast(50%);
   -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
 }
+@media (max-width: 37.5rem) {
+  .dash-nav {
+    width: 22% !important;
+  }
+}
+@media (min-width: 48rem) {
+  .dash-nav {
+    width: 9% !important;
+  }
+}
+@media (min-width: 75rem) {
+  .dash-nav {
+    width: 6% !important;
+  }
+}
 
 .collapsed-menu {
-  height: 80vh;
+  height: 85vh;
 }
 
 .dash-content {
@@ -537,6 +553,24 @@ nav img {
   }
 }
 
+.container-fluid .custom-scrollbar-css::-webkit-scrollbar,
+.offcanvas-body .custom-scrollbar-css::-webkit-scrollbar {
+  width: 0.2rem;
+}
+.container-fluid .custom-scrollbar-css::-webkit-scrollbar-track,
+.offcanvas-body .custom-scrollbar-css::-webkit-scrollbar-track {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+.collapsedLinks {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
 .collapsedLinks img {
   width: 100%;
   transition: transform 0.2s;
@@ -572,12 +606,12 @@ nav img {
 
 .dash-notif-first {
   border-top: 3px solid white;
-  padding-top: 0.4rem;
+  padding-top: 1em;
 }
 
 .dash-notif-last {
   border-bottom: 3px solid white;
-  padding-bottom: 0.4rem;
+  padding-bottom: 1rem;
 }
 
 #offcanvasNavbar {
@@ -1309,22 +1343,96 @@ main {
   width: 15%;
 }
 
-.dash-nav {
-  width: 15% !important;
+.uppernav-menu {
+  position: inherit !important;
+  background: rgb(145, 203, 207);
+  background: linear-gradient(180deg, rgb(145, 203, 207) 5%, rgb(255, 255, 255) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#91cbcf",endColorstr="#ffffff",GradientType=1);
 }
-@media (max-width: 37.5rem) {
-  .dash-nav {
-    width: 20% !important;
-  }
+
+.uppernav-hide {
+  display: none;
 }
 @media (min-width: 48rem) {
-  .dash-nav {
-    width: 8% !important;
+  .uppernav-hide {
+    display: inline;
   }
 }
-@media (min-width: 75rem) {
-  .dash-nav {
-    width: 6% !important;
+
+.uppernav-image {
+  width: clamp(8rem, 5vw + 1rem, 12rem);
+}
+.uppernav-image img {
+  width: 100%;
+}
+
+.uppernav-menu-info {
+  width: 100% !important;
+}
+@media (min-width: 48rem) {
+  .uppernav-menu-info {
+    width: 80% !important;
+  }
+}
+@media (min-width: 64rem) {
+  .uppernav-menu-info {
+    width: 85% !important;
+  }
+}
+
+.uppernav-header {
+  text-align: center;
+}
+.uppernav-header h1 {
+  color: #1f5065;
+  font-weight: 900;
+  letter-spacing: 0.575rem;
+}
+@media (max-width: 37.5rem) {
+  .uppernav-header h1 {
+    font-size: clamp(0.8rem, 0.4vw + 0.8rem, 2rem);
+  }
+}
+@media (min-width: 37.5rem) {
+  .uppernav-header h1 {
+    font-size: clamp(1rem, 2.5vw + 1rem, 4rem);
+    letter-spacing: 0.75rem;
+  }
+}
+@media (min-width: 64rem) {
+  .uppernav-header h1 {
+    letter-spacing: 1rem;
+  }
+}
+
+.uppernav-menu-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.uppernav-menu-buttons a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 6rem;
+}
+@media (min-width: 48rem) {
+  .uppernav-menu-buttons a {
+    font-size: 1rem;
+    width: 8rem;
+  }
+}
+.uppernav-menu-buttons .active,
+.uppernav-menu-buttons .active:hover,
+.uppernav-menu-buttons .active:focus,
+.uppernav-menu-buttons .active:active,
+.uppernav-menu-buttons .active:target {
+  background-color: #cbcfcf !important;
+  color: #108f96 !important;
+}
+@media (min-width: 64rem) {
+  .uppernav-menu-buttons {
+    gap: 1rem;
   }
 }
 
@@ -1333,7 +1441,7 @@ main {
 }
 @media (max-width: 37.5rem) {
   .containers {
-    width: 80% !important;
+    width: 78% !important;
   }
 }
 
@@ -1442,88 +1550,6 @@ main {
     gap: 2rem;
     grid-template-areas: "contacts notif" "terapies schedule";
   }
-}
-
-.info-contacts,
-.info-terapii,
-.info-notif,
-.info-programari {
-  background-color: #eafcfd;
-  border-radius: 10px;
-  padding: 1rem;
-  min-height: 12rem;
-}
-
-.row-link::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
-.dash-table table {
-  position: relative;
-  margin: auto;
-  font-size: 0.8rem;
-}
-.dash-table tr {
-  height: 1.5rem;
-  line-height: 1.5rem;
-}
-.dash-table tr:nth-child(4) td:nth-child(2) {
-  padding-bottom: 0.2rem !important;
-}
-.dash-table td {
-  padding-bottom: 1rem;
-}
-@media (max-width: 37.5rem) {
-  .dash-table td {
-    font-size: 0.65rem;
-  }
-}
-.dash-table td:nth-child(2) {
-  padding-left: 3rem;
-}
-@media (min-width: 48rem) {
-  .dash-table td:nth-child(2) {
-    padding-left: 10rem;
-  }
-}
-@media (min-width: 48rem) {
-  .dash-table {
-    width: 45%;
-  }
-}
-.dash-table tr:hover,
-.dash-table a:hover {
-  color: #15bbc4 !important;
-}
-
-.dash-titles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #1f5065;
-  font-weight: 700;
-}
-
-.dash-sub {
-  font-size: 2rem;
-  font-weight: 600;
-}
-@media (max-width: 37.5rem) {
-  .dash-sub {
-    font-size: 1.5rem;
-  }
-}
-
-.dash-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .dash-therapists {
@@ -1668,6 +1694,7 @@ main {
 }
 @media (max-width: 37.5rem) {
   .dash-therapists .first-row .expire-dates {
+    padding: 0;
     font-size: 0.8rem;
   }
 }
@@ -1696,93 +1723,86 @@ main {
   align-items: center;
 }
 
-.uppernav-menu {
-  position: inherit !important;
-  background: rgb(145, 203, 207);
-  background: linear-gradient(180deg, rgb(145, 203, 207) 5%, rgb(255, 255, 255) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#91cbcf",endColorstr="#ffffff",GradientType=1);
+.info-contacts,
+.info-terapii,
+.info-notif,
+.info-programari {
+  background-color: #eafcfd;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 12rem;
 }
 
-.uppernav-hide {
-  display: none;
-}
-@media (min-width: 48rem) {
-  .uppernav-hide {
-    display: inline;
-  }
-}
-
-.uppernav-image {
-  width: clamp(8rem, 5vw + 1rem, 12rem);
-}
-.uppernav-image img {
+.row-link::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
   width: 100%;
+  height: 2.5rem;
 }
 
-.uppernav-menu-info {
-  width: 100% !important;
+.dash-table table {
+  position: relative;
+  margin: auto;
+  font-size: 0.8rem;
+}
+.dash-table tr {
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+.dash-table tr:nth-child(4) td:nth-child(2) {
+  padding-bottom: 0.2rem !important;
+}
+.dash-table td {
+  padding-bottom: 1rem;
+}
+@media (max-width: 37.5rem) {
+  .dash-table td {
+    font-size: 0.65rem;
+  }
+}
+.dash-table td:nth-child(2) {
+  padding-left: 3rem;
 }
 @media (min-width: 48rem) {
-  .uppernav-menu-info {
-    width: 80% !important;
+  .dash-table td:nth-child(2) {
+    padding-left: 10rem;
   }
 }
-@media (min-width: 64rem) {
-  .uppernav-menu-info {
-    width: 85% !important;
+@media (min-width: 48rem) {
+  .dash-table {
+    width: 45%;
   }
+}
+.dash-table tr:hover,
+.dash-table a:hover {
+  color: #15bbc4 !important;
 }
 
-.uppernav-header {
-  text-align: center;
-}
-.uppernav-header h1 {
-  color: #1f5065;
-  font-weight: 900;
-  letter-spacing: 0.575rem;
-  font-size: clamp(0.5rem, 0.2vw + 0.8rem, 4rem);
-}
-@media (min-width: 37.5rem) {
-  .uppernav-header h1 {
-    font-size: clamp(1rem, 2.5vw + 1rem, 4rem);
-    letter-spacing: 0.75rem;
-  }
-}
-@media (min-width: 64rem) {
-  .uppernav-header h1 {
-    letter-spacing: 1rem;
-  }
-}
-
-.uppernav-menu-buttons {
+.dash-titles {
   display: flex;
-  gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: #1f5065;
+  font-weight: 700;
 }
-.uppernav-menu-buttons a {
-  font-size: 0.8rem;
+
+.dash-sub {
+  font-size: 2rem;
   font-weight: 600;
-  width: 6rem;
 }
-@media (min-width: 48rem) {
-  .uppernav-menu-buttons a {
-    font-size: 1rem;
-    width: 8rem;
+@media (max-width: 37.5rem) {
+  .dash-sub {
+    font-size: 1.5rem;
   }
 }
-.uppernav-menu-buttons .active,
-.uppernav-menu-buttons .active:hover,
-.uppernav-menu-buttons .active:focus,
-.uppernav-menu-buttons .active:active,
-.uppernav-menu-buttons .active:target {
-  background-color: #cbcfcf !important;
-  color: #108f96 !important;
-}
-@media (min-width: 64rem) {
-  .uppernav-menu-buttons {
-    gap: 1rem;
-  }
+
+.dash-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .end-space {

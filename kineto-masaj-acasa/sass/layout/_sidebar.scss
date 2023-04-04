@@ -10,15 +10,28 @@
 .dash-nav {
   background-color: darken($white, 5%) !important;
   align-items: flex-start;
+  width: 15% !important;
 
   .active {
     filter: hue-rotate(360deg) saturate(5) contrast(50%);
     -webkit-filter: hue-rotate(360deg) saturate(5) contrast(50%);
   }
+
+  @include phone {
+    width: 22% !important;
+  }
+
+  @include tablet-wide {
+    width: 9% !important;
+  }
+
+  @include desktop {
+    width: 6% !important;
+  }
 }
 
 .collapsed-menu {
-  height: 80vh;
+  height: 85vh;
 }
 
 .dash-content {
@@ -31,7 +44,26 @@
   }
 }
 
+.container-fluid,
+.offcanvas-body {
+  .custom-scrollbar-css::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+
+  .custom-scrollbar-css::-webkit-scrollbar-track {
+    background: linear-gradient(to top, #ffffff00 0%, #ffffff00 50%);
+  }
+}
+
 .collapsedLinks {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+
   img {
     width: 100%;
     transition: transform 0.2s;
@@ -74,12 +106,12 @@
 
 .dash-notif-first {
   border-top: 3px solid $white;
-  padding-top: 0.4rem;
+  padding-top: 1em;
 }
 
 .dash-notif-last {
   border-bottom: 3px solid $white;
-  padding-bottom: 0.4rem;
+  padding-bottom: 1rem;
 }
 
 #offcanvasNavbar {
