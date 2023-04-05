@@ -637,7 +637,8 @@ nav img {
 
 .notification-aria {
   border-top: 2px solid white;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
+  gap: 1rem;
   width: 36%;
 }
 
@@ -647,7 +648,7 @@ nav img {
 }
 
 .notification-pic {
-  width: 6vw;
+  width: 5vw;
 }
 .notification-pic img {
   width: 100%;
@@ -1457,7 +1458,7 @@ main {
 @media (min-width: 64rem) {
   .dash-patients,
   .dash-therapists {
-    max-width: 70vw;
+    max-width: 80vw;
   }
 }
 
@@ -1525,6 +1526,8 @@ main {
   width: 100%;
   flex: 0 0 auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 37.5rem) {
   .dash-patients .info-notif {
@@ -1537,6 +1540,8 @@ main {
   width: 100%;
   flex: 0 0 auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dash-patients .info-contacts,
 .dash-patients .info-terapii {
@@ -1589,6 +1594,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 37.5rem) {
+  .dash-therapists .first-row .disponibility {
+    flex-direction: column !important;
+  }
 }
 .dash-therapists .first-row .disponibility .knobs,
 .dash-therapists .first-row .disponibility .layer {
@@ -1677,6 +1687,11 @@ main {
   align-items: center;
   text-align: center;
 }
+@media (max-width: 37.5rem) {
+  .dash-therapists .first-row .dash-expire-dates {
+    flex-direction: column;
+  }
+}
 @media (min-width: 37.5rem) {
   .dash-therapists .first-row .dash-expire-dates {
     width: 45%;
@@ -1704,6 +1719,11 @@ main {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 37.5rem) {
+  .dash-therapists .first-row .dash-info-text {
+    flex-direction: column;
+  }
+}
 .dash-therapists .first-row .dash-info {
   display: flex;
   justify-content: center;
@@ -1727,6 +1747,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 37.5rem) {
+  .dash-therapists .second-row {
+    padding: 1rem;
+  }
 }
 
 .info-contacts,
@@ -1748,17 +1775,27 @@ main {
   height: 2.5rem;
 }
 
+.dash-table {
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 37.5rem) {
+  .dash-table {
+    padding: 1rem;
+  }
+}
 .dash-table table {
   position: relative;
-  margin: auto;
+  margin: 0;
   font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dash-table tr {
   height: 1.5rem;
   line-height: 1.5rem;
-}
-.dash-table tr:nth-child(4) td:nth-child(2) {
-  padding-bottom: 0.2rem !important;
 }
 .dash-table td {
   padding-bottom: 1rem;
@@ -1769,11 +1806,16 @@ main {
   }
 }
 .dash-table td:nth-child(2) {
-  padding-left: 3rem;
+  padding-left: 1.5rem;
 }
 @media (min-width: 48rem) {
   .dash-table td:nth-child(2) {
-    padding-left: 10rem;
+    padding-left: 3rem;
+  }
+}
+@media (min-width: 64rem) {
+  .dash-table td:nth-child(2) {
+    padding-left: 5rem;
   }
 }
 @media (min-width: 48rem) {

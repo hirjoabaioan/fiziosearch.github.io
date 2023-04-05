@@ -138,7 +138,8 @@
 
 .notification-aria {
   border-top: 2px solid $white;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
+  gap: 1rem;
   width: 36%;
 }
 
@@ -148,7 +149,7 @@
 }
 
 .notification-pic {
-  width: 6vw;
+  width: 5vw;
 
   img {
     width: 100%;
