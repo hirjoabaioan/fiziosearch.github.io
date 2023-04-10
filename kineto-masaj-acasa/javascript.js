@@ -198,34 +198,3 @@ rows.forEach((row) => {
       contentRow.style.display === "none" ? "table-row" : "none";
   });
 });
-
-// const rows = document.querySelectorAll(".program-table tr.collapsible");
-
-// window.addEventListener("resize", function() {
-//   if (window.innerWidth < 37.5 * 16) {
-//     rows.forEach(row => {
-//       const contentRow = row.nextElementSibling;
-//       contentRow.style.display = "none";
-//       contentRow.style.transition = "display 0.5s ease-out";
-//       row.addEventListener("click", function() {
-//         rows.forEach(otherRow => {
-//           if (otherRow !== this) {
-//             const otherContentRow = otherRow.nextElementSibling;
-//             otherContentRow.style.display = "none";
-//           }
-//         });
-//         if (contentRow.style.display === "none") {
-//           contentRow.style.display = "table-row";
-//         } else {
-//           contentRow.style.display = "none";
-//         }
-//       });
-//     });
-//   } else {
-//     rows.forEach(row => {
-//       const contentRow = row.nextElementSibling;
-//       contentRow.style.display = "";
-//       row.removeEventListener("click", function() {});
-//     });
-//   }
-// });

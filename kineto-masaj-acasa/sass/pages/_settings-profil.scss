@@ -6,14 +6,14 @@
   justify-content: center;
   display: flex;
 
-  &-header {
-    .header-first {
-      width: 100%;
-      @include laptop {
-        width: 75%;
-      }
+  .header-first {
+    width: 100%;
+    @include laptop {
+      width: 75% !important;
     }
+  }
 
+  &-header {
     h2 {
       text-align: start !important;
       color: $tertiary-color;

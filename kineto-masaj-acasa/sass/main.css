@@ -1863,12 +1863,12 @@ main {
   justify-content: center;
   display: flex;
 }
-.settings-profil-header .header-first {
+.settings-profil .header-first {
   width: 100%;
 }
 @media (min-width: 64rem) {
-  .settings-profil-header .header-first {
-    width: 75%;
+  .settings-profil .header-first {
+    width: 75% !important;
   }
 }
 .settings-profil-header h2 {
