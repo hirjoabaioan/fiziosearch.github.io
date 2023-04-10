@@ -26,7 +26,7 @@
           class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid"
         >
           <button
-            class="col-12 d-flex justify-content-center align-items-center mb-5 navbar-toggler"
+            class="col-12 d-flex justify-content-center align-items-center mb-4 navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -36,32 +36,50 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="m-0 p-0 overflow-auto collapsed-menu">
-            <ul
-              class="flex-column justify-content-center align-items-center flex-grow-1 p-0 m-0 gap-2 navbar-nav collapsedLinks"
-            >
+          <div
+            class="m-0 p-0 overflow-auto custom-scrollbar-css collapsed-menu"
+          >
+            <ul class="flex-grow-1 navbar-nav collapsedLinks">
               <li class="nav-item dash-notif dash-notif-first">
-                <a href="mesagerie.html" class="">
+                <a href="mesagerie.html" class="position-relative">
                   <img
                     src="../../img/message icon.webp"
                     alt="Mesagerie platformă"
                   />
+                  <span
+                    class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                  >
+                    99+
+                    <span class="visually-hidden">Mesaje necitite</span>
+                  </span>
                 </a>
               </li>
               <li class="nav-item dash-notif">
-                <a href="notificari.html" class="">
+                <a href="notificari.html" class="position-relative">
                   <img
                     src="../../img/notif icon.webp"
                     alt="Notificări platformă"
                   />
+                  <span
+                    class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                  >
+                    99+
+                    <span class="visually-hidden">Notificări</span>
+                  </span>
                 </a>
               </li>
               <li class="nav-item dash-notif dash-notif-last">
-                <a href="calendar.html" class="">
+                <a href="programari.html" class="position-relative active">
                   <img
                     src="../../img/schedule icon.webp"
                     alt="Calendar platformă"
                   />
+                  <span
+                    class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                  >
+                    99+
+                    <span class="visually-hidden"></span>
+                  </span>
                 </a>
               </li>
               <li class="nav-item">
@@ -73,12 +91,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="">
+                <a href="dashboard-pacient.html" class="">
                   <img src="../../img/dashboard icon.webp" alt="Dashboard" />
                 </a>
               </li>
               <li class="nav-item">
-                <a href="programari.html" class="active">
+                <a href="calendar.html" class="active">
                   <img src="../../img/programari icon.webp" alt="Programări" />
                 </a>
               </li>
@@ -122,7 +140,9 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body m-0 p-0">
+            <div
+              class="offcanvas-body m-0 p-0 overflow-auto custom-scrollbar-css"
+            >
               <div
                 class="d-flex row justify-content-center align-items-center m-0"
               >
@@ -138,30 +158,54 @@
                   <h3>Bine ai venit, Ioan!</h3>
                 </div>
                 <div
-                  class="col-12 d-flex justify-content-center align-items-center mt-2 gap-2 notification-aria"
+                  class="col-12 d-flex justify-content-center align-items-center mt-2 notification-aria"
                 >
                   <div class="notification-pic gap-3">
-                    <a href="mesagerie.html" class="nav-link">
+                    <a href="mesagerie.html" class="nav-link position-relative">
                       <img
                         src="../../img/message icon.webp"
                         alt="Mesagerie platformă"
                       />
+                      <span
+                        class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                      >
+                        99+
+                        <span class="visually-hidden">Mesaje necitite</span>
+                      </span>
                     </a>
                   </div>
                   <div class="notification-pic gap-3">
-                    <a href="notificari.html" class="nav-link">
+                    <a
+                      href="notificari.html"
+                      class="nav-link position-relative"
+                    >
                       <img
                         src="../../img/notif icon.webp"
                         alt="Notificări platformă"
                       />
+                      <span
+                        class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                      >
+                        99+
+                        <span class="visually-hidden">Notificări noi</span>
+                      </span>
                     </a>
                   </div>
                   <div class="notification-pic gap-3">
-                    <a href="calendar.html" class="nav-link">
+                    <a
+                      href="programari.html"
+                      class="nav-link position-relative active"
+                    >
                       <img
                         src="../../img/schedule icon.webp"
                         alt="Calendar platformă"
                       />
+                      <span
+                        class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                      >
+                        99+
+                        <span class="visually-hidden"></span>
+                      </span>
                     </a>
                   </div>
                 </div>
@@ -270,7 +314,7 @@
                     <a
                       class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
                       aria-current="page"
-                      href="#"
+                      href="dashboard-pacient.html"
                     >
                       <img
                         class="col-3"
@@ -286,7 +330,7 @@
                     <a
                       class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active"
                       aria-current="page"
-                      href="programari.html"
+                      href="calendar.html"
                     >
                       <img src="../../img/programari icon.webp" alt="" />
                       Programări
@@ -361,12 +405,12 @@
                 <h1>Programator</h1>
               </div>
               <div class="row uppernav-menu-buttons programator-nav">
-                <a href="programari-pacient.html" class="btn btn-secondary"
+                <a
+                  href="programari-pacient.html"
+                  class="btn btn-secondary active"
                   >Programări</a
                 >
-                <a
-                  href="terapeuti-contactati.html"
-                  class="btn btn-secondary active"
+                <a href="terapeuti-contactati.html" class="btn btn-secondary"
                   >Terapeuți contactați</a
                 >
               </div>

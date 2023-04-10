@@ -165,6 +165,10 @@
   margin: 0;
   padding: 0;
 
+  tr {
+    align-items: center;
+  }
+
   th {
     font-weight: $fw-bolder;
     padding: 0.1rem;
@@ -172,6 +176,7 @@
 
   td {
     padding: 0 !important;
+    align-items: center;
   }
 
   th > span,
@@ -194,6 +199,7 @@
       justify-content: flex-start;
       border: none;
       gap: 0.5rem;
+      padding: 5rem 0 !important;
     }
   }
 
@@ -242,7 +248,7 @@
     display: none;
     @include tablet {
       display: inline-block;
-      width: clamp(2rem, 5vw + 0.5rem, 8rem);
+      width: clamp(2rem, 5vw + 0.5rem, 4rem);
     }
 
     img {

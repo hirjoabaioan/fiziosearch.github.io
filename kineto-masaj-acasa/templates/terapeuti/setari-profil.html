@@ -436,9 +436,11 @@
             </div>
           </nav>
           <div class="row gap-2 settings-profil m-0 mt-4 p-2">
-            <form method="get" class="contact-form info-form row">
+            <div class="settings-profil-header header-first">
               <h2>Date personale</h2>
               <hr class="title-underline" />
+            </div>
+            <form method="get" class="contact-form info-form image-form row">
               <div class="row gap-2 container settings-profil-img mb-4">
                 <div class="settings-img">
                   <div class="mb-3 settings-upload">
@@ -459,6 +461,9 @@
                   <h6 class="btn btn-primary">Alege o poză</h6>
                 </div>
               </div>
+            </form>
+
+            <form method="get" class="contact-form info-form row">
               <div class="mb-3 settings-personal">
                 <div class="mb-2">
                   <input
@@ -539,8 +544,11 @@
               </div>
 
               <div class="mb-3 settings-activitate">
-                <h2>Activitate</h2>
-                <hr class="title-underline" />
+                <div class="settings-profil-header">
+                  <h2>Activitate</h2>
+                  <hr class="title-underline" />
+                </div>
+
                 <div class="mb-4">
                   <div
                     class="overflow-auto speczializari-checks"
@@ -677,8 +685,11 @@
               </div>
 
               <div class="mb-3 settings-zone">
-                <h2>Zonele de interes</h2>
-                <hr class="title-underline" />
+                <div class="settings-profil-header">
+                  <h2>Zonele de interes</h2>
+                  <hr class="title-underline" />
+                </div>
+
                 <div
                   class="col-12 m-0 p-0 my-4 d-flex row justify-content-center gap-2"
                 >
@@ -693,6 +704,7 @@
                       aria-expanded="false"
                     >
                       <option selected>Județ</option>
+                      <!-- Generate automat -->
                       <option value="2">București</option>
                       <option value="3">Alba</option>
                       <option value="4">Arad</option>
@@ -701,24 +713,88 @@
                       <option value="7">Bihor</option>
                     </select>
                   </div>
-                  <div class="m-0 p-0 dropdown">
-                    <select
-                      title="Specializari"
-                      name="Localități"
-                      onchange=""
+
+                  <div class="btn-group">
+                    <button
                       class="btn btn-primary dropdown-toggle"
                       type="button"
                       id="dropdownLocalitati"
+                      data-bs-toggle="dropdown"
+                      data-bs-auto-close="outside"
                       aria-expanded="false"
                     >
-                      <option selected>Localități</option>
-                      <option value="2">București</option>
-                      <option value="3">Alba</option>
-                      <option value="4">Arad</option>
-                      <option value="5">Argeș</option>
-                      <option value="6">Bacău</option>
-                      <option value="7">Bihor</option>
-                    </select>
+                      Localități
+                    </button>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownLocalitati"
+                    >
+                      <li>
+                        <div class="form-check dropdown-item">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="localCheckbox"
+                          />
+                          <label class="form-check-label" for="localCheckbox">
+                            Buzău
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check dropdown-item">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="localCheckbox"
+                          />
+                          <label class="form-check-label" for="localCheckbox">
+                            București
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check dropdown-item">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="localCheckbox"
+                          />
+                          <label class="form-check-label" for="localCheckbox">
+                            Chiajna
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check dropdown-item">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="localCheckbox"
+                          />
+                          <label class="form-check-label" for="localCheckbox">
+                            Cluj-Napoca
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check dropdown-item">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="localCheckbox"
+                          />
+                          <label class="form-check-label" for="localCheckbox">
+                            Arad
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

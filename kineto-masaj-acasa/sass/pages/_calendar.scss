@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.calendar-header {
+  text-align: center;
+  font-size: $font-size;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.calendar-weekday {
+  width: 14.28%;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.calendar-day {
+  width: 14.28%;
+  text-align: center;
+  font-size: $font-size - 0.2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.calendar-day.today {
+  background-color: #f9f9f9;
+}
+.calendar-day.selected {
+  background-color: #e6e6e6;
+}
+.calendar-event {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+}

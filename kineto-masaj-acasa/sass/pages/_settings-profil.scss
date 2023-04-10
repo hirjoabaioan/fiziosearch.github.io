@@ -6,16 +6,43 @@
   justify-content: center;
   display: flex;
 
+  &-header {
+    .header-first {
+      width: 100%;
+      @include laptop {
+        width: 75%;
+      }
+    }
+
+    h2 {
+      text-align: start !important;
+      color: $tertiary-color;
+      font-weight: $fw-bold;
+    }
+
+    .title-underline {
+      width: 100%;
+      margin: 1rem;
+      margin-left: 0 !important;
+    }
+  }
+
+  .image-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .info-form {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .settings-personal {
-      @include tablet {
-        max-width: 49%;
-      }
-    }
+    // .settings-personal {
+    //   @include tablet {
+    //     max-width: 49%;
+    //   }
+    // }
 
     @include tablet-wide {
       width: 70%;
@@ -25,25 +52,9 @@
       width: 60%;
     }
 
-    @include desktop {
-      width: 50%;
-    }
-
     button {
       margin: auto;
     }
-  }
-
-  h2 {
-    text-align: start !important;
-    color: $tertiary-color;
-    font-weight: $fw-bold;
-  }
-
-  .title-underline {
-    width: 100%;
-    margin: 1rem;
-    margin-left: 0 !important;
   }
 
   &-img {
@@ -141,7 +152,8 @@
     max-height: 50vh;
   }
 
-  .dropdown {
+  .dropdown,
+  .btn-group {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -152,6 +164,17 @@
 
     select {
       width: 80%;
+    }
+  }
+
+  .btn-group {
+    .dropdown-menu {
+      width: 100%;
+    }
+
+    .dropdown-item {
+      margin-left: 1rem;
+      width: 90% !important;
     }
   }
 

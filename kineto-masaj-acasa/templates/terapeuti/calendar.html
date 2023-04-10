@@ -1,206 +1,639 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Interactive Calendar</title>
-        <style>
-            /* CSS for styling the calendar */
-            .calendar {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .calendar-header {
-                text-align: center;
-                font-size: 20px;
-                margin-bottom: 10px;
-                width: 100%;
-            }
-            .calendar-weekday {
-                width: 14.28%;
-                text-align: center;
-                font-size: 14px;
-                margin-bottom: 5px;
-            }
-            .calendar-day {
-                width: 14.28%;
-                text-align: center;
-                font-size: 18px;
-                padding: 10px;
-                border: 1px solid #ccc;
-                cursor: pointer;
-            }
-            .calendar-day.today {
-                background-color: #f9f9f9;
-            }
-            .calendar-day.selected {
-                background-color: #e6e6e6;
-            }
-            .calendar-event {
-                font-size: 12px;
-                margin-top: 5px;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="calendar">
-            <div class="calendar-header">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="../../img/icon.webp" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../sass/main.css" />
+  </head>
+  <body class="d-flex m-0 p-0">
+    <div class="d-flex w-100 m-0 p-0 dash-container">
+      <nav class="m-0 p-2 fixed-left navbar bg-light dash-nav">
+        <div
+          class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid"
+        >
+          <button
+            class="col-12 d-flex justify-content-center align-items-center mb-4 navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+            id="toggleButton"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="m-0 p-0 overflow-auto custom-scrollbar-css collapsed-menu"
+          >
+            <ul class="flex-grow-1 navbar-nav collapsedLinks">
+              <li class="nav-item dash-notif dash-notif-first">
+                <a href="mesagerie.html" class="position-relative">
+                  <img
+                    src="../../img/message icon.webp"
+                    alt="Mesagerie platformă"
+                  />
+                  <span
+                    class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                  >
+                    99+
+                    <span class="visually-hidden">Mesaje necitite</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dash-notif">
+                <a href="notificari.html" class="position-relative">
+                  <img
+                    src="../../img/notif icon.webp"
+                    alt="Notificări platformă"
+                  />
+                  <span
+                    class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                  >
+                    99+
+                    <span class="visually-hidden">Notificări</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dash-notif dash-notif-last">
+                <a href="programari.html" class="position-relative">
+                  <img
+                    src="../../img/schedule icon.webp"
+                    alt="Calendar platformă"
+                  />
+                  <span
+                    class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                  >
+                    99+
+                    <span class="visually-hidden"></span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../search.html" class="">
+                  <img
+                    src="../../img/search-col.webp"
+                    alt="Căutare terapeuți"
+                  />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="active">
+                  <img src="../../img/dashboard icon.webp" alt="Dashboard" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="calendar.html" class="">
+                  <img src="../../img/programari icon.webp" alt="Programări" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="terapii.html" class="">
+                  <img src="../../img/therapies icon.png" alt="Terapii" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index.html" class="">
+                  <img src="../../img/home icon.webp" alt="Acasă" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="setari-profil.html" class="">
+                  <img src="../../img/setari icon.webp" alt="Setări" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="dash-contact.html" class="">
+                  <img src="../../img/contact icon.webp" alt="Contact" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../deconectare.html" class="">
+                  <img src="../../img/logout icon.webp" alt="Ieșire" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            data-bs-backdrop="true"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="d-flex justify-content-end">
+              <button
+                type="button"
+                class="pt-2 pe-2 btn-close"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="offcanvas-body m-0 p-0 overflow-auto custom-scrollbar-css"
+            >
+              <div
+                class="d-flex row justify-content-center align-items-center m-0"
+              >
+                <div class="col-12 d-flex justify-content-center dash-menu-img">
+                  <img
+                    src="../../img/profiles/1_ (3).jpg"
+                    alt="imagine utilizator"
+                  />
+                </div>
+                <div
+                  class="col-12 d-flex justify-content-center mt-2 dash-menu-title"
+                >
+                  <h3>Bine ai venit, Ioan!</h3>
+                </div>
+                <div
+                  class="col-12 d-flex justify-content-center align-items-center mt-2 notification-aria"
+                >
+                  <div class="notification-pic gap-3">
+                    <a href="mesagerie.html" class="nav-link position-relative">
+                      <img
+                        src="../../img/message icon.webp"
+                        alt="Mesagerie platformă"
+                      />
+                      <span
+                        class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                      >
+                        99+
+                        <span class="visually-hidden">Mesaje necitite</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="notification-pic gap-3">
+                    <a
+                      href="notificari.html"
+                      class="nav-link position-relative"
+                    >
+                      <img
+                        src="../../img/notif icon.webp"
+                        alt="Notificări platformă"
+                      />
+                      <span
+                        class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                      >
+                        99+
+                        <span class="visually-hidden">Notificări noi</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="notification-pic gap-3">
+                    <a
+                      href="programari.html"
+                      class="nav-link position-relative"
+                    >
+                      <img
+                        src="../../img/schedule icon.webp"
+                        alt="Calendar platformă"
+                      />
+                      <span
+                        class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
+                      >
+                        99+
+                        <span class="visually-hidden"></span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <form
+                  class="col-12 d-flex row justify-content-center align-items-center mt-2"
+                  role="search"
+                >
+                  <div class="col-6 d-flex">
+                    <div
+                      class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops"
+                    >
+                      <select
+                        name="Services"
+                        onchange="SelectService(this);"
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuServicii"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <option
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuServicii"
+                        >
+                          Servicii
+                        </option>
+                        <option class="dropdown-item" value="Kinetoterapeut">
+                          Kinetoterapeut
+                        </option>
+                        <option class="dropdown-item" value="Maseur">
+                          Maseur
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6 d-flex">
+                    <div
+                      class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops"
+                    >
+                      <select
+                        name="Specialization"
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuSpecializari"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <option
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuSpecializari"
+                        >
+                          Specializări
+                        </option>
+                        <option class="dropdown-item" value="Kinetoterapie">
+                          Kinetoterapie
+                        </option>
+                        <option class="dropdown-item" value="Masaj">
+                          Masaj
+                        </option>
+                        <option class="dropdown-item" value="Cardiologie">
+                          Cardiologie
+                        </option>
+                        <option class="dropdown-item" value="Balneologie">
+                          Balneologie
+                        </option>
+                        <option class="dropdown-item" value="Limfedem">
+                          Limfedem
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div
+                      class="input-group d-flex justify-content-center text-center p-2 search-box"
+                    >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Caută un terapeut..."
+                        aria-label="Caută"
+                        aria-describedby="search-button"
+                      />
+                      <!-- Cu trimitere la pagina de search cu filtrele selectate mai sus -->
+                      <button
+                        class="btn btn-success search-button"
+                        type="button"
+                      >
+                        <img
+                          src="../../img/search.webp"
+                          class="search-icon"
+                          alt="Caută"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
+              <div class="d-flex justify-content-center align-items-start">
+                <ul
+                  class="col-6 justify-content-center align-items-center flex-column nav"
+                >
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active"
+                      aria-current="page"
+                      href="#"
+                    >
+                      <img
+                        class="col-3"
+                        src="../../img/dashboard icon.webp"
+                        alt="Dashboard"
+                      />
+                      <span class="col-9">Dashboard</span>
+                    </a>
+                  </li>
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
+                      aria-current="page"
+                      href="calendar.html"
+                    >
+                      <img src="../../img/programari icon.webp" alt="" />
+                      Programări
+                    </a>
+                  </li>
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
+                      aria-current="page"
+                      href="terapii.html"
+                    >
+                      <img src="../../img/therapies icon.png" alt="" />
+                      Terapii
+                    </a>
+                  </li>
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
+                      aria-current="page"
+                      href="../../index.html"
+                    >
+                      <img src="../../img/home icon.webp" alt="" />
+                      Acasă
+                    </a>
+                  </li>
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
+                      aria-current="page"
+                      href="setari-profil.html"
+                    >
+                      <img src="../../img/setari icon.webp" alt="" />
+                      Setări
+                    </a>
+                  </li>
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
+                      aria-current="page"
+                      href="dash-contact.html"
+                    >
+                      <img src="../../img/contact icon.webp" alt="" />
+                      Contact
+                    </a>
+                  </li>
+                  <li
+                    class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
+                  >
+                    <a
+                      class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
+                      aria-current="page"
+                      href="../deconectare.html"
+                    >
+                      <img src="../../img/logout icon.webp" alt="" />
+                      Deconectare
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="d-flex justify-content-center align-items-center m-0 p-0 h-100 containers"
+      >
+        <div
+          class="m-0 p-0 pb-4 overflow-auto custom-scrollbar-css dash-content"
+        >
+          <nav class="m-0 p-0 d-flex row fixed-top navbar uppernav-menu">
+            <div class="col-1 uppernav-image uppernav-hide">
+              <img src="../../img/dasboard-upper.png" alt="" class="stanga" />
+            </div>
+            <div class="col-9 uppernav-menu-info">
+              <div class="uppernav-header">
+                <h1>Dashboard</h1>
+              </div>
+            </div>
+          </nav>
+          <div class="dash-info m-0 mt-4 p-2">
+            <div class="calendar">
+              <div class="calendar-header">
                 <button id="prev-month">Previous</button>
                 <span id="month-year"></span>
                 <button id="next-month">Next</button>
-                <br>
+                <br />
                 <button id="view-day">Day</button>
                 <button id="view-week">Week</button>
                 <button id="view-month">Month</button>
+              </div>
+              <div class="calendar-weekday">Sun</div>
+              <div class="calendar-weekday">Mon</div>
+              <div class="calendar-weekday">Tue</div>
+              <div class="calendar-weekday">Wed</div>
+              <div class="calendar-weekday">Thu</div>
+              <div class="calendar-weekday">Fri</div>
+              <div class="calendar-weekday">Sat</div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
             </div>
-            <div class="calendar-weekday">Sun</div>
-            <div class="calendar-weekday">Mon</div>
-            <div class="calendar-weekday">Tue</div>
-            <div class="calendar-weekday">Wed</div>
-            <div class="calendar-weekday">Thu</div>
-            <div class="calendar-weekday">Fri</div>
-            <div class="calendar-weekday">Sat</div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-            <div class="calendar-day"></div>
-        </div>
-        <div id="event-form" style="display: none;">
-            <form>
+            <div id="event-form" style="display: none">
+              <form>
                 <label>Event:</label>
-                <input type="text" id="event-name" placeholder="Enter event name">
-                <br>
+                <input
+                  type="text"
+                  id="event-name"
+                  placeholder="Enter event name"
+                />
+                <br />
                 <label>Date:</label>
-                <input type="date" id="event-date">
-                <br>
+                <input type="date" id="event-date" />
+                <br />
                 <label>Time:</label>
-                <input type="time" id="event-time">
-                <br>
+                <input type="time" id="event-time" />
+                <br />
                 <button type="button" id="add-event">Add Event</button>
                 <button type="button" id="cancel-event">Cancel</button>
-            </form>
-        </div>
+              </form>
+            </div>
 
-        <script>
-            // JavaScript for creating and displaying the calendar
-            let date = new Date();
-            let month = date.getMonth();
-            let year = date.getFullYear();
-            let selectedDate;
-            let view = 'month';
-            // Function to create the calendar
-            function createCalendar() {
+            <script>
+              // JavaScript for creating and displaying the calendar
+              let date = new Date();
+              let month = date.getMonth();
+              let year = date.getFullYear();
+              let selectedDate;
+              let view = "month";
+              // Function to create the calendar
+              function createCalendar() {
                 let daysInMonth = new Date(year, month + 1, 0).getDate();
                 let firstDayOfMonth = new Date(year, month, 1).getDay();
-                let days = document.querySelectorAll('.calendar-day');
-                let monthYear = document.querySelector('#month-year');
+                let days = document.querySelectorAll(".calendar-day");
+                let monthYear = document.querySelector("#month-year");
 
-                monthYear.innerHTML = date.toLocaleString('default', { month: 'long' }) + ' ' + year;
+                monthYear.innerHTML =
+                  date.toLocaleString("default", { month: "long" }) +
+                  " " +
+                  year;
 
                 for (let i = 0; i < days.length; i++) {
-                    days[i].innerHTML = '';
-                    days[i].classList.remove('today', 'selected');
-                    if (i >= firstDayOfMonth && i < firstDayOfMonth + daysInMonth) {
-                        let day = i - firstDayOfMonth + 1;
-                        days[i].innerHTML = day;
-                        if (month === date.getMonth() && year === date.getFullYear() && day === date.getDate()) {
-                        days[i].classList.add('today');
-                        }
-                        days[i].addEventListener('click', function() {
-                            selectedDate = new Date(year, month, day);
-                            showEventForm();
-                        });
+                  days[i].innerHTML = "";
+                  days[i].classList.remove("today", "selected");
+                  if (
+                    i >= firstDayOfMonth &&
+                    i < firstDayOfMonth + daysInMonth
+                  ) {
+                    let day = i - firstDayOfMonth + 1;
+                    days[i].innerHTML = day;
+                    if (
+                      month === date.getMonth() &&
+                      year === date.getFullYear() &&
+                      day === date.getDate()
+                    ) {
+                      days[i].classList.add("today");
                     }
+                    days[i].addEventListener("click", function () {
+                      selectedDate = new Date(year, month, day);
+                      showEventForm();
+                    });
+                  }
                 }
-            }
+              }
 
-            // Function to show the event form
-            function showEventForm() {
-                let eventForm = document.querySelector('#event-form');
-                eventForm.style.display = 'block';
-                let eventName = document.querySelector('#event-name');
-                let eventDate = document.querySelector('#event-date');
-                let eventTime = document.querySelector('#event-time');
-                let addEvent = document.querySelector('#add-event');
-                let cancelEvent = document.querySelector('#cancel-event');
+              // Function to show the event form
+              function showEventForm() {
+                let eventForm = document.querySelector("#event-form");
+                eventForm.style.display = "block";
+                let eventName = document.querySelector("#event-name");
+                let eventDate = document.querySelector("#event-date");
+                let eventTime = document.querySelector("#event-time");
+                let addEvent = document.querySelector("#add-event");
+                let cancelEvent = document.querySelector("#cancel-event");
 
-                eventDate.value = selectedDate.toISOString().substring(0,10);
+                eventDate.value = selectedDate.toISOString().substring(0, 10);
                 eventTime.value = selectedDate.toLocaleTimeString();
 
-                addEvent.addEventListener('click', function() {
-                    let event = eventName.value;
-                    let day = document.querySelector(`div[data-date="${eventDate.value}"]`);
-                    day.innerHTML += `<div class="calendar-event">${event}</div>`;
-                    eventForm.style.display = 'none';
+                addEvent.addEventListener("click", function () {
+                  let event = eventName.value;
+                  let day = document.querySelector(
+                    `div[data-date="${eventDate.value}"]`
+                  );
+                  day.innerHTML += `<div class="calendar-event">${event}</div>`;
+                  eventForm.style.display = "none";
                 });
 
-                cancelEvent.addEventListener('click', function() {
-                    eventForm.style.display = 'none';
+                cancelEvent.addEventListener("click", function () {
+                  eventForm.style.display = "none";
                 });
-            }
+              }
 
-            createCalendar();
+              createCalendar();
 
-            // Event listeners for navigating through months
-            let prevMonth = document.querySelector('#prev-month');
-            prevMonth.addEventListener('click', function() {
+              // Event listeners for navigating through months
+              let prevMonth = document.querySelector("#prev-month");
+              prevMonth.addEventListener("click", function () {
                 if (month === 0) {
-                month = 11;
-                year--;
+                  month = 11;
+                  year--;
                 } else {
-                month--;
+                  month--;
                 }
                 createCalendar();
-            });
+              });
 
-            let nextMonth = document.querySelector('#next-month');
-            nextMonth.addEventListener('click', function() {
+              let nextMonth = document.querySelector("#next-month");
+              nextMonth.addEventListener("click", function () {
                 if (month === 11) {
-                month = 0;
-                year++;
+                  month = 0;
+                  year++;
                 } else {
-                    console.log('luna> ' + month);
-                month++;
+                  console.log("luna> " + month);
+                  month++;
                 }
                 createCalendar();
-            });
+              });
 
-            // Event listeners for changing view
-            let viewDay = document.querySelector('#view-day');
-            viewDay.addEventListener('click', function() {
-                view = 'day';
+              // Event listeners for changing view
+              let viewDay = document.querySelector("#view-day");
+              viewDay.addEventListener("click", function () {
+                view = "day";
                 // code for displaying a single day
-            });
+              });
 
-            let viewWeek = document.querySelector('#view-week');
-            viewWeek.addEventListener('click', function() {
-                view = 'week';
+              let viewWeek = document.querySelector("#view-week");
+              viewWeek.addEventListener("click", function () {
+                view = "week";
                 // code for displaying a week
-            });
+              });
 
-            let viewMonth = document.querySelector('#view-month');
-            viewMonth.addEventListener('click', function() {
-                view = 'month';
+              let viewMonth = document.querySelector("#view-month");
+              viewMonth.addEventListener("click", function () {
+                view = "month";
                 // code for displaying a month
-            });
-        </script>
-    </body>
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../javascript.js"></script>
+  </body>
 </html>

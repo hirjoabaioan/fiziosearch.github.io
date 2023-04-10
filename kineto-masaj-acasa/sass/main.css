@@ -1863,15 +1863,33 @@ main {
   justify-content: center;
   display: flex;
 }
-.settings-profil .info-form {
+.settings-profil-header .header-first {
+  width: 100%;
+}
+@media (min-width: 64rem) {
+  .settings-profil-header .header-first {
+    width: 75%;
+  }
+}
+.settings-profil-header h2 {
+  text-align: start !important;
+  color: #1f5065;
+  font-weight: 600;
+}
+.settings-profil-header .title-underline {
+  width: 100%;
+  margin: 1rem;
+  margin-left: 0 !important;
+}
+.settings-profil .image-form {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 37.5rem) {
-  .settings-profil .info-form .settings-personal {
-    max-width: 49%;
-  }
+.settings-profil .info-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 48rem) {
   .settings-profil .info-form {
@@ -1883,23 +1901,8 @@ main {
     width: 60%;
   }
 }
-@media (min-width: 75rem) {
-  .settings-profil .info-form {
-    width: 50%;
-  }
-}
 .settings-profil .info-form button {
   margin: auto;
-}
-.settings-profil h2 {
-  text-align: start !important;
-  color: #1f5065;
-  font-weight: 600;
-}
-.settings-profil .title-underline {
-  width: 100%;
-  margin: 1rem;
-  margin-left: 0 !important;
 }
 .settings-profil-img {
   width: 100%;
@@ -1980,18 +1983,28 @@ main {
 .settings-profil .speczializari-checks {
   max-height: 50vh;
 }
-.settings-profil .dropdown {
+.settings-profil .dropdown,
+.settings-profil .btn-group {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 @media (min-width: 37.5rem) {
-  .settings-profil .dropdown {
+  .settings-profil .dropdown,
+  .settings-profil .btn-group {
     width: 49%;
   }
 }
-.settings-profil .dropdown select {
+.settings-profil .dropdown select,
+.settings-profil .btn-group select {
   width: 80%;
+}
+.settings-profil .btn-group .dropdown-menu {
+  width: 100%;
+}
+.settings-profil .btn-group .dropdown-item {
+  margin-left: 1rem;
+  width: 90% !important;
 }
 .settings-profil table {
   border-collapse: collapse;
@@ -2441,12 +2454,16 @@ main {
   margin: 0;
   padding: 0;
 }
+.tabel-programari tr {
+  align-items: center;
+}
 .tabel-programari th {
   font-weight: 700;
   padding: 0.1rem;
 }
 .tabel-programari td {
   padding: 0 !important;
+  align-items: center;
 }
 .tabel-programari th > span,
 .tabel-programari td > span {
@@ -2468,6 +2485,7 @@ main {
     justify-content: flex-start;
     border: none;
     gap: 0.5rem;
+    padding: 5rem 0 !important;
   }
 }
 .tabel-programari .icon-data {
@@ -2518,7 +2536,7 @@ main {
 @media (min-width: 37.5rem) {
   .tabel-programari .program-profile-img {
     display: inline-block;
-    width: clamp(2rem, 5vw + 0.5rem, 8rem);
+    width: clamp(2rem, 5vw + 0.5rem, 4rem);
   }
 }
 .tabel-programari .program-profile-img img {
@@ -2540,6 +2558,12 @@ main {
 @media (min-width: 64rem) {
   .programator-nav a {
     width: 25%;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .tabel-programari {
+    width: 90% !important;
   }
 }
 
@@ -2567,7 +2591,8 @@ main {
     height: 70vh;
   }
 }
-.table-container .program-table thead, .table-container .program-table tbody tr {
+.table-container .program-table thead,
+.table-container .program-table tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
@@ -2931,6 +2956,49 @@ main {
 }
 .subscriptions .card-footer .text {
   font-weight: 600;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.calendar-header {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.calendar-weekday {
+  width: 14.28%;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.calendar-day {
+  width: 14.28%;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.calendar-day.today {
+  background-color: #f9f9f9;
+}
+
+.calendar-day.selected {
+  background-color: #e6e6e6;
+}
+
+.calendar-event {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .utilities-wrapper {
