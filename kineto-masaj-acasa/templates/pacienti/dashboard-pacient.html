@@ -1,472 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="../../img/icon.webp">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="../../img/icon.webp" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../../sass/main.css">
-</head>
-<body class="d-flex m-0 p-0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="../../sass/main.css" />
+  </head>
+  <body class="d-flex m-0 p-0">
     <div class="d-flex w-100 m-0 p-0 dash-container">
-        <nav class="m-0 p-2 fixed-left navbar bg-light dash-nav">
-            <div
-              class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid"
-            >
-              <button
-                class="col-12 d-flex justify-content-center align-items-center mb-4 navbar-toggler"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar"
-                aria-label="Toggle navigation"
-                id="toggleButton"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div
-                class="m-0 p-0 overflow-auto custom-scrollbar-css collapsed-menu"
-              >
-                <ul class="flex-grow-1 navbar-nav collapsedLinks">
-                  <li class="nav-item dash-notif dash-notif-first">
-                    <a href="mesagerie.html" class="position-relative">
-                      <img
-                        src="../../img/message icon.webp"
-                        alt="Mesagerie platformă"
-                      />
-                      <span
-                        class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
-                      >
+      <nav class="m-0 p-2 fixed-left navbar bg-light dash-nav">
+        <div class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid">
+          <button class="col-12 d-flex justify-content-center align-items-center mb-4 navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggleButton">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="m-0 p-0 overflow-auto custom-scrollbar-css collapsed-menu">
+            <ul class="flex-grow-1 navbar-nav collapsedLinks">
+              <li class="nav-item dash-notif dash-notif-first">
+                <a href="mesagerie.html" class="position-relative">
+                  <img src="../../img/message icon.webp" alt="Mesagerie platformă" />
+                  <span class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                    99+
+                    <span class="visually-hidden">Mesaje necitite</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dash-notif">
+                <a href="notificari.html" class="position-relative">
+                  <img src="../../img/notif icon.webp" alt="Notificări platformă" />
+                  <span class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                    99+
+                    <span class="visually-hidden">Notificări</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dash-notif dash-notif-last">
+                <a href="programari.html" class="position-relative">
+                  <img src="../../img/schedule icon.webp" alt="Calendar platformă" />
+                  <span class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                    99+
+                    <span class="visually-hidden"></span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../search.html" class="">
+                  <img src="../../img/search-col.webp" alt="Căutare terapeuți" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="dashboard-pacient.html" class="active">
+                  <img src="../../img/dashboard icon.webp" alt="Dashboard" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="calendar.html" class="">
+                  <img src="../../img/programari icon.webp" alt="Programări" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index.html" class="">
+                  <img src="../../img/home icon.webp" alt="Acasă" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="setari-profil.html" class="">
+                  <img src="../../img/setari icon.webp" alt="Setări" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="dash-contact.html" class="">
+                  <img src="../../img/contact icon.webp" alt="Contact" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../deconectare.html" class="">
+                  <img src="../../img/logout icon.webp" alt="Ieșire" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="d-flex justify-content-end">
+              <button type="button" class="pt-2 pe-2 btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body m-0 p-0 overflow-auto custom-scrollbar-css">
+              <div class="d-flex row justify-content-center align-items-center m-0">
+                <div class="col-12 d-flex justify-content-center dash-menu-img">
+                  <img src="../../img/profiles/1_ (3).jpg" alt="imagine utilizator" />
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-2 dash-menu-title">
+                  <h3>Bine ai venit, Ioan!</h3>
+                </div>
+                <div class="col-12 d-flex justify-content-center align-items-center mt-2 notification-aria">
+                  <div class="notification-pic gap-3">
+                    <a href="mesagerie.html" class="nav-link position-relative">
+                      <img src="../../img/message icon.webp" alt="Mesagerie platformă" />
+                      <span class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
                         99+
                         <span class="visually-hidden">Mesaje necitite</span>
                       </span>
                     </a>
-                  </li>
-                  <li class="nav-item dash-notif">
-                    <a href="notificari.html" class="position-relative">
-                      <img
-                        src="../../img/notif icon.webp"
-                        alt="Notificări platformă"
-                      />
-                      <span
-                        class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
-                      >
+                  </div>
+                  <div class="notification-pic gap-3">
+                    <a href="notificari.html" class="nav-link position-relative">
+                      <img src="../../img/notif icon.webp" alt="Notificări platformă" />
+                      <span class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
                         99+
-                        <span class="visually-hidden">Notificări</span>
+                        <span class="visually-hidden">Notificări noi</span>
                       </span>
                     </a>
-                  </li>
-                  <li class="nav-item dash-notif dash-notif-last">
-                    <a href="programari.html" class="position-relative">
-                      <img
-                        src="../../img/schedule icon.webp"
-                        alt="Calendar platformă"
-                      />
-                      <span
-                        class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
-                      >
+                  </div>
+                  <div class="notification-pic gap-3">
+                    <a href="programari.html" class="nav-link position-relative">
+                      <img src="../../img/schedule icon.webp" alt="Calendar platformă" />
+                      <span class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
                         99+
                         <span class="visually-hidden"></span>
                       </span>
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../search.html" class="">
-                      <img
-                        src="../../img/search-col.webp"
-                        alt="Căutare terapeuți"
-                      />
+                  </div>
+                </div>
+                <form class="col-12 d-flex row justify-content-center align-items-center mt-2" role="search">
+                  <div class="col-6 d-flex">
+                    <div class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops">
+                      <select name="Services" onchange="SelectService(this);" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuServicii" data-bs-toggle="dropdown" aria-expanded="false">
+                        <option class="dropdown-menu" aria-labelledby="dropdownMenuServicii">Servicii</option>
+                        <option class="dropdown-item" value="Kinetoterapeut">Kinetoterapeut</option>
+                        <option class="dropdown-item" value="Maseur">Maseur</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6 d-flex">
+                    <div class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops">
+                      <select name="Specialization" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSpecializari" data-bs-toggle="dropdown" aria-expanded="false">
+                        <option class="dropdown-menu" aria-labelledby="dropdownMenuSpecializari">Specializări</option>
+                        <option class="dropdown-item" value="Kinetoterapie">Kinetoterapie</option>
+                        <option class="dropdown-item" value="Masaj">Masaj</option>
+                        <option class="dropdown-item" value="Cardiologie">Cardiologie</option>
+                        <option class="dropdown-item" value="Balneologie">Balneologie</option>
+                        <option class="dropdown-item" value="Limfedem">Limfedem</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="input-group d-flex justify-content-center text-center p-2 search-box">
+                      <input type="text" class="form-control" placeholder="Caută un terapeut..." aria-label="Caută" aria-describedby="search-button" />
+                      <!-- Cu trimitere la pagina de search cu filtrele selectate mai sus -->
+                      <button class="btn btn-success search-button" type="button">
+                        <img src="../../img/search.webp" class="search-icon" alt="Caută" />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
+              <div class="d-flex justify-content-center align-items-start">
+                <ul class="col-6 justify-content-center align-items-center flex-column nav">
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active" aria-current="page" href="dashboard-pacient.html">
+                      <img class="col-3" src="../../img/dashboard icon.webp" alt="Dashboard" />
+                      <span class="col-9">Dashboard</span>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="dashboard-pacient.html" class="active">
-                      <img src="../../img/dashboard icon.webp" alt="Dashboard" />
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="calendar.html">
+                      <img src="../../img/programari icon.webp" alt="" />
+                      Programări
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="calendar.html" class="">
-                      <img src="../../img/programari icon.webp" alt="Programări" />
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="../../index.html">
+                      <img src="../../img/home icon.webp" alt="" />
+                      Acasă
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="../../index.html" class="">
-                      <img src="../../img/home icon.webp" alt="Acasă" />
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="setari-profil.html">
+                      <img src="../../img/setari icon.webp" alt="" />
+                      Setări
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="setari-profil.html" class="">
-                      <img src="../../img/setari icon.webp" alt="Setări" />
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="dash-contact.html">
+                      <img src="../../img/contact icon.webp" alt="" />
+                      Contact
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="dash-contact.html" class="">
-                      <img src="../../img/contact icon.webp" alt="Contact" />
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../deconectare.html" class="">
-                      <img src="../../img/logout icon.webp" alt="Ieșire" />
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="../deconectare.html">
+                      <img src="../../img/logout icon.webp" alt="" />
+                      Deconectare
                     </a>
                   </li>
                 </ul>
               </div>
-    
-              <div
-                class="offcanvas offcanvas-start"
-                data-bs-scroll="true"
-                data-bs-backdrop="true"
-                tabindex="-1"
-                id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel"
-              >
-                <div class="d-flex justify-content-end">
-                  <button
-                    type="button"
-                    class="pt-2 pe-2 btn-close"
-                    data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasNavbar"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div
-                  class="offcanvas-body m-0 p-0 overflow-auto custom-scrollbar-css"
-                >
-                  <div
-                    class="d-flex row justify-content-center align-items-center m-0"
-                  >
-                    <div class="col-12 d-flex justify-content-center dash-menu-img">
-                      <img
-                        src="../../img/profiles/1_ (3).jpg"
-                        alt="imagine utilizator"
-                      />
-                    </div>
-                    <div
-                      class="col-12 d-flex justify-content-center mt-2 dash-menu-title"
-                    >
-                      <h3>Bine ai venit, Ioan!</h3>
-                    </div>
-                    <div
-                      class="col-12 d-flex justify-content-center align-items-center mt-2 notification-aria"
-                    >
-                      <div class="notification-pic gap-3">
-                        <a href="mesagerie.html" class="nav-link position-relative">
-                          <img
-                            src="../../img/message icon.webp"
-                            alt="Mesagerie platformă"
-                          />
-                          <span
-                            class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
-                          >
-                            99+
-                            <span class="visually-hidden">Mesaje necitite</span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="notification-pic gap-3">
-                        <a
-                          href="notificari.html"
-                          class="nav-link position-relative"
-                        >
-                          <img
-                            src="../../img/notif icon.webp"
-                            alt="Notificări platformă"
-                          />
-                          <span
-                            class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
-                          >
-                            99+
-                            <span class="visually-hidden">Notificări noi</span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="notification-pic gap-3">
-                        <a
-                          href="programari.html"
-                          class="nav-link position-relative"
-                        >
-                          <img
-                            src="../../img/schedule icon.webp"
-                            alt="Calendar platformă"
-                          />
-                          <span
-                            class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger"
-                          >
-                            99+
-                            <span class="visually-hidden"></span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                    <form
-                      class="col-12 d-flex row justify-content-center align-items-center mt-2"
-                      role="search"
-                    >
-                      <div class="col-6 d-flex">
-                        <div
-                          class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops"
-                        >
-                          <select
-                            name="Services"
-                            onchange="SelectService(this);"
-                            class="btn btn-secondary dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuServicii"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <option
-                              class="dropdown-menu"
-                              aria-labelledby="dropdownMenuServicii"
-                            >
-                              Servicii
-                            </option>
-                            <option class="dropdown-item" value="Kinetoterapeut">
-                              Kinetoterapeut
-                            </option>
-                            <option class="dropdown-item" value="Maseur">
-                              Maseur
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-6 d-flex">
-                        <div
-                          class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops"
-                        >
-                          <select
-                            name="Specialization"
-                            class="btn btn-secondary dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuSpecializari"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <option
-                              class="dropdown-menu"
-                              aria-labelledby="dropdownMenuSpecializari"
-                            >
-                              Specializări
-                            </option>
-                            <option class="dropdown-item" value="Kinetoterapie">
-                              Kinetoterapie
-                            </option>
-                            <option class="dropdown-item" value="Masaj">
-                              Masaj
-                            </option>
-                            <option class="dropdown-item" value="Cardiologie">
-                              Cardiologie
-                            </option>
-                            <option class="dropdown-item" value="Balneologie">
-                              Balneologie
-                            </option>
-                            <option class="dropdown-item" value="Limfedem">
-                              Limfedem
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div
-                          class="input-group d-flex justify-content-center text-center p-2 search-box"
-                        >
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Caută un terapeut..."
-                            aria-label="Caută"
-                            aria-describedby="search-button"
-                          />
-                          <!-- Cu trimitere la pagina de search cu filtrele selectate mai sus -->
-                          <button
-                            class="btn btn-success search-button"
-                            type="button"
-                          >
-                            <img
-                              src="../../img/search.webp"
-                              class="search-icon"
-                              alt="Caută"
-                            />
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
-                  <div class="d-flex justify-content-center align-items-start">
-                    <ul
-                      class="col-6 justify-content-center align-items-center flex-column nav"
-                    >
-                      <li
-                        class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
-                      >
-                        <a
-                          class="col-12 d-flex justify-content-start align-items-center nav-link gap-3 active"
-                          aria-current="page"
-                          href="dashboard-pacient.html"
-                        >
-                          <img
-                            class="col-3"
-                            src="../../img/dashboard icon.webp"
-                            alt="Dashboard"
-                          />
-                          <span class="col-9">Dashboard</span>
-                        </a>
-                      </li>
-                      <li
-                        class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
-                      >
-                        <a
-                          class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
-                          aria-current="page"
-                          href="calendar.html"
-                        >
-                          <img src="../../img/programari icon.webp" alt="" />
-                          Programări
-                        </a>
-                      </li>
-                      <li
-                        class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
-                      >
-                        <a
-                          class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
-                          aria-current="page"
-                          href="../../index.html"
-                        >
-                          <img src="../../img/home icon.webp" alt="" />
-                          Acasă
-                        </a>
-                      </li>
-                      <li
-                        class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
-                      >
-                        <a
-                          class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
-                          aria-current="page"
-                          href="setari-profil.html"
-                        >
-                          <img src="../../img/setari icon.webp" alt="" />
-                          Setări
-                        </a>
-                      </li>
-                      <li
-                        class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
-                      >
-                        <a
-                          class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
-                          aria-current="page"
-                          href="dash-contact.html"
-                        >
-                          <img src="../../img/contact icon.webp" alt="" />
-                          Contact
-                        </a>
-                      </li>
-                      <li
-                        class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0"
-                      >
-                        <a
-                          class="col-12 d-flex justify-content-start align-items-center nav-link gap-3"
-                          aria-current="page"
-                          href="../deconectare.html"
-                        >
-                          <img src="../../img/logout icon.webp" alt="" />
-                          Deconectare
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex justify-content-center align-items-center m-0 p-0 h-100 containers">
+        <div class="m-0 p-0 pb-4 overflow-auto custom-scrollbar-css dash-content">
+          <nav class="m-0 p-0 d-flex row fixed-top navbar uppernav-menu">
+            <div class="col-1 uppernav-image uppernav-hide">
+              <img src="../../img/dasboard-upper.png" alt="" class="stanga" />
+            </div>
+            <div class="col-9 uppernav-menu-info">
+              <div class="uppernav-header">
+                <h1>Dashboard</h1>
               </div>
             </div>
           </nav>
-        <div class="d-flex justify-content-center align-items-center m-0 p-0 h-100 containers">
-            <div class="m-0 p-0 pb-4 overflow-auto custom-scrollbar-css dash-content">
-                <nav class="m-0 p-0 d-flex row fixed-top navbar uppernav-menu">
-                <div class="col-1 uppernav-image uppernav-hide">
-                    <img src="../../img/dasboard-upper.png" alt="" class="stanga">
-                </div>
-                <div class="col-9 uppernav-menu-info">
-                    <div class="uppernav-header">
-                        <h1>
-                            Dashboard
-                        </h1>
-                    </div>
-                </div>
-                </nav>
-                <div class="dash-info m-0 mt-4 p-2">
-                    <div class="gap-2 m-0 p-0 dash-patients">
-                        <div class="row m-0 info-contacts">
-                            <h3 class="d-flex justify-content-center align-items-center row gap-2 info-terapeuti-contactati">
-                            Terapeuți contactați
-                            <span>3</span>
-                            </h3>
-                            <hr class="title-underline">
-                            <h3 class="d-flex justify-content-center align-items-center row gap-2 info-recenzii-lasate">
-                            Recenzii lăsate
-                            <span>1</span>
-                            </h3>
-                        </div>
-            
-                        <div class="m-0 info-terapii">
-                            <h3 class="d-flex justify-content-center align-items-center row gap-2">
-                            Total terapii realizate
-                            <span class="">35</span>
-                            </h3>
-                        </div>
-                        
-                        <div class="info-notif dash-table">
-                            <table>
-                            <tr>
-                                <td><a href="#" class="row-link">23.05.2022</a></td>
-                                <td>Update Platformă</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="row-link">11.07.2022</a></td>
-                                <td>Ultimele Noutăți</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="row-link">17.07.2022</a></td>
-                                <td>Recenzie</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="row-link">06.11.2022</a></td>
-                                <td>Formular Feedback</td>
-                            </tr>
-                            </table>
-                        </div>
-                        
-                        <div class="info-programari dash-table">
-                            <table>
-                            <tr>
-                                <td><a href="#" class="row-link">23.05.2022</a></td>
-                                <td>Kinetoterapie</td>
-                            </th>
-                            <tr>
-                                <td><a href="#" class="row-link">11.07.2022</a></td>
-                                <td>Masaj</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="row-link">17.07.2022</a></td>
-                                <td>Kinetoterapie</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="row-link">06.11.2022</a></td>
-                                <td>Kinetoterapie</td>
-                            </tr>
-                            </table>
-                        </div>
-                    </div>
-                
-                </div>
+          <div class="dash-info m-0 mt-4 p-2">
+            <div class="gap-2 m-0 p-0 dash-patients">
+              <div class="row m-0 info-contacts">
+                <h3 class="d-flex justify-content-center align-items-center row gap-2 info-terapeuti-contactati">
+                  Terapeuți contactați
+                  <span>3</span>
+                </h3>
+                <hr class="title-underline" />
+                <h3 class="d-flex justify-content-center align-items-center row gap-2 info-recenzii-lasate">
+                  Recenzii lăsate
+                  <span>1</span>
+                </h3>
+              </div>
+
+              <div class="m-0 info-terapii">
+                <h3 class="d-flex justify-content-center align-items-center row gap-2">
+                  Total terapii realizate
+                  <span class="">35</span>
+                </h3>
+              </div>
+
+              <div class="info-notif dash-table">
+                <table>
+                  <tr>
+                    <td><a href="#" class="row-link">23.05.2022</a></td>
+                    <td>Update Platformă</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">11.07.2022</a></td>
+                    <td>Ultimele Noutăți</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">17.07.2022</a></td>
+                    <td>Recenzie</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">06.11.2022</a></td>
+                    <td>Formular Feedback</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="info-programari dash-table">
+                <table>
+                  <tr>
+                    <td><a href="#" class="row-link">23.05.2022</a></td>
+                    <td>Kinetoterapie</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">11.07.2022</a></td>
+                    <td>Masaj</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">17.07.2022</a></td>
+                    <td>Kinetoterapie</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="row-link">06.11.2022</a></td>
+                    <td>Kinetoterapie</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="../../javascript.js"></script>
-</body>
+  </body>
 </html>

@@ -1,34 +1,46 @@
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  "use strict";
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll(".needs-validation");
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach((form) => {
+    form.addEventListener(
+      "submit",
+      (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
+
 $(document).ready(function () {
   //BS Tooltips
-  const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-  const tooltipList = [...tooltipTriggerList].map(
-    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-  );
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 
   //BS Popovers
-  const list = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="popover"]')
-  );
+  const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
   list.map((el) => {
     let opts = {
       animation: true,
     };
     if (el.hasAttribute("data-bs-content-id")) {
-      opts.content = document.getElementById(
-        el.getAttribute("data-bs-content-id")
-      ).innerHTML;
+      opts.content = document.getElementById(el.getAttribute("data-bs-content-id")).innerHTML;
       opts.html = true;
     }
     new bootstrap.Popover(el, opts);
   });
 
-  if (
-    top.location.pathname === "/templates/search.html" ||
-    top.location.pathname === "/templates/pacienti/mesagerie.html" ||
-    top.location.pathname === "/templates/terapeuti/mesagerie.html"
-  ) {
+  if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
     $(".contact-info").hide();
 
     $(window).resize(function () {
@@ -81,10 +93,7 @@ $(document).ready(function () {
     });
   }
 
-  if (
-    top.location.pathname === "/templates/terapeuti/notificari.html" ||
-    top.location.pathname === "/templates/pacienti/notificari.html"
-  ) {
+  if (top.location.pathname === "/templates/terapeuti/notificari.html" || top.location.pathname === "/templates/pacienti/notificari.html") {
     $(".notification-condition").each(function () {
       if ($(this).text() === "Văzut") {
         $(this).css({ color: "grey" });
@@ -93,10 +102,7 @@ $(document).ready(function () {
     });
   }
 
-  if (
-    top.location.pathname === "/templates/pacienti/dashboard-pacient.html" ||
-    top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html"
-  ) {
+  if (top.location.pathname === "/templates/pacienti/dashboard-pacient.html" || top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html") {
     let ySums = [300, 450, 200, 150, 300, 400, 100, 150, 300, 150];
     let xDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -194,7 +200,6 @@ rows.forEach((row) => {
         otherContentRow.style.display = "none";
       }
     });
-    contentRow.style.display =
-      contentRow.style.display === "none" ? "table-row" : "none";
+    contentRow.style.display = contentRow.style.display === "none" ? "table-row" : "none";
   });
 });
