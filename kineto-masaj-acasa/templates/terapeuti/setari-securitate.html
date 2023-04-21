@@ -233,30 +233,47 @@
             </div>
           </nav>
           <div class="row gap-2 settings-profil m-0 mt-4 p-2">
-            <form method="get" class="contact-form info-form row">
+            <div class="settings-profil-header header-first">
+              <h2>Securitate</h2>
+              <hr class="title-underline" />
+            </div>
+            <form method="get" class="contact-form info-form row needs-validation" novalidate>
               <div class="mb-3 settings-personal">
-                <h2>Securitate</h2>
-                <hr class="title-underline" />
-                <div class="mb-2">
-                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" requierd />
-                  <div id="emailHelp" class="form-text">Introdu o adresă de email validă.</div>
+                <div class="col-12 mb-3">
+                  <input type="email" class="form-control" id="email" placeholder="Email" required />
+                  <div class="valid-feedback">Este în regulă!</div>
+                  <div class="invalid-feedback">Introdu o adresă de email validă!</div>
                 </div>
-                <div class="mb-2">
-                  <input type="password" class="form-control" type="text" id="pass" aria-describedby="passHelp" placeholder="Parola" />
-                  <div id="passHelp" class="form-text">
-                    Introdu o parolă care să conțină:
-                    <ul>
-                      <li>minim 8 caractere;</li>
-                      <li>cel puțin o literă mică;</li>
-                      <li>cel puțin o literă mare;</li>
-                      <li>cel puțin un număr;</li>
-                      <li>cel puțin un caracter special;</li>
-                    </ul>
+                <div class="d-flex row mb-3">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input type="password" class="form-control" type="text" id="pass" name="password" placeholder="Parola" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" required />
+
+                    <div class="valid-feedback">Este în regulă!</div>
+                    <div class="invalid-feedback">
+                      Introdu o parolă care să conțină:
+                      <ul>
+                        <li>minim 8 caractere;</li>
+                        <li>cel puțin o literă mică;</li>
+                        <li>cel puțin o literă mare;</li>
+                        <li>cel puțin un număr;</li>
+                        <li>cel puțin un caracter special;</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <div class="mb-2">
-                  <input type="password" class="form-control" type="text" id="pass" aria-describedby="passHelp" placeholder="Repetă parola" />
-                  <div id="passHelp" class="form-text">Parolele nu corespund.</div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input type="password" class="form-control" type="text" id="passCheck" name="passwordCheck" placeholder="Repetă parola" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" required />
+                    <div class="valid-feedback">Este în regulă!</div>
+                    <div class="invalid-feedback">
+                      Introdu o parolă care să conțină:
+                      <ul>
+                        <li>minim 8 caractere;</li>
+                        <li>cel puțin o literă mică;</li>
+                        <li>cel puțin o literă mare;</li>
+                        <li>cel puțin un număr;</li>
+                        <li>cel puțin un caracter special;</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Prin apăsarea switch-ului va apărea un pop-up prin care 
@@ -269,7 +286,7 @@
                 </div>
               </div>
               <div class="d-flex justify-content-center m-0 p-0">
-                <button type="button" class="btn btn-primary">Actualizează datele</button>
+                <button type="submit" class="btn btn-primary">Actualizează datele</button>
               </div>
             </form>
             <div class="mx-2 px-2 end-space"></div>

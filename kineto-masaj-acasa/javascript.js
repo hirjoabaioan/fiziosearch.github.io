@@ -1,33 +1,10 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  "use strict";
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll(".needs-validation");
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add("was-validated");
-      },
-      false
-    );
-  });
-})();
-
+// Accessing the Document through jQuery
 $(document).ready(function () {
-  //BS Tooltips
+  // BS Tooltips
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 
-  //BS Popovers
+  // BS Popovers
   const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
   list.map((el) => {
     let opts = {
@@ -39,6 +16,130 @@ $(document).ready(function () {
     }
     new bootstrap.Popover(el, opts);
   });
+
+  // Script pentru dezactivarea trimiterii formularului dacă sunt câmpuri invalide
+  (() => {
+    "use strict";
+
+    const forms = $(".needs-validation");
+
+    // Loop over forms and prevent submission
+    Array.from(forms).forEach((form) => {
+      // Required Age
+      let requiredAge = 18;
+      if (form.birthday) {
+        // verifica daca este fiziotearpeut sau nu
+        if (top.location.pathname === "/templates/terapeuti/setari-profil.html") {
+          requiredAge = 20;
+        }
+        form.birthday.min = calculateDate(100);
+        form.birthday.max = calculateDate(requiredAge);
+      }
+
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Register password check
+            if (form.password) {
+              const password = form.password;
+              const passwordCheck = form.passwordCheck;
+              const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+              if (password.value !== passwordCheck.value) {
+                if (passwordRegex.test(passwordCheck.value)) {
+                  form.passwordCheck.parentNode.querySelector(".invalid-feedback").innerText = "Parolele nu corespund!";
+                }
+                form.passwordCheck.setCustomValidity("Invalid");
+              } else {
+                form.passwordCheck.setCustomValidity("");
+              }
+
+              // Check if password matches if the user changes the password after pressing submit button
+              form.passwordCheck.addEventListener("keyup", (event) => {
+                if (password.value !== passwordCheck.value) {
+                  event.preventDefault();
+                  event.stopPropagation();
+
+                  if (passwordRegex.test(passwordCheck.value)) {
+                    form.passwordCheck.parentNode.querySelector(".invalid-feedback").innerText = "Parolele nu corespund!";
+                  }
+                  form.passwordCheck.setCustomValidity("Invalid");
+                } else {
+                  form.passwordCheck.setCustomValidity("");
+                }
+              });
+            }
+          }
+
+          // Login password check
+          if (form.loginEmail && form.loginPassword) {
+            console.log("Introdu script pentru verificarea adresei de email si a parolei introduse cu cele salvate in baza de date");
+            const userEmail = "email@email.com";
+            const userPassword = "1234";
+
+            if ((form.loginEmail.value !== userEmail && form.loginPassword.value !== userPassword) || (form.loginEmail.value === userEmail && form.loginPassword.value !== userPassword) || (form.loginEmail.value !== userEmail && form.loginPassword.value === userPassword) || (form.loginEmail.value === "" && form.loginPassword.value === "") || (form.loginEmail.value === userEmail && form.loginPassword.value === "") || (form.loginEmail.value === "" && form.loginPassword.value === userPassword)) {
+              form.loginEmail.setCustomValidity("Invalid");
+              form.loginPassword.setCustomValidity("Invalid");
+            } else {
+              form.loginEmail.setCustomValidity("");
+              form.loginPassword.setCustomValidity("");
+            }
+          }
+
+          // Birthday check
+          if (form.birthday) {
+            // Verifică vârsta
+            const age = calculateAge(form.birthday.value);
+            const birthdayParent = document.querySelector("#birthday").parentNode;
+            const invalidFeedback = birthdayParent.querySelector(".invalid-feedback");
+
+            if (age < requiredAge) {
+              invalidFeedback.innerText = "Nu aveți vârsta necesară pentru a vă putea înregistra!";
+            }
+          }
+          if (form.activity) {
+            // const formChecks = $(".specializari-checks").children(".form-check-input");
+            //NU FUNCTIONEAZA !!!!!!!!!!!!!!!!!!!
+            const formChecks = document.querySelector(".specializari-checks").querySelectorAll(".form-check-input");
+            console.log(formChecks);
+            let selectedItems = [];
+            formChecks.forEach((checkBox) => {
+              if (checkBox.checked) {
+                selectedItems.push(checkBox);
+              } else if (!checkBox.checked || selectedItems.length < 7) {
+                checkBox.required = false;
+              }
+            });
+
+            if (selectedItems.length > 6) {
+              console.log("NU");
+            }
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+
+  function calculateDate(age) {
+    const todayDate = new Date();
+    const calculatedDate = new Date(todayDate.setFullYear(todayDate.getFullYear() - age));
+    return calculatedDate.toJSON().split("T")[0];
+  }
+
+  function calculateAge(userBirthdate) {
+    let today = Date.now();
+    let birthday = new Date(userBirthdate);
+    let month = new Date(today - birthday.getTime());
+    let year = month.getUTCFullYear();
+    let age = Math.abs(year - 1970);
+    return age;
+  }
 
   if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
     $(".contact-info").hide();
@@ -128,7 +229,7 @@ $(document).ready(function () {
       },
     });
   }
-  console.log(top.location.pathname);
+
   if (top.location.pathname === "/templates/abonamente.html") {
     // hide next and prev buttons
     if ($(window).width() > 1023) {

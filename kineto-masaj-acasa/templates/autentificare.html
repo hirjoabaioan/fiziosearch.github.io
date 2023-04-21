@@ -99,16 +99,18 @@
         </div>
         <!-- Toate tagurile div cu clasa form-text sunt erorile care apar atunci cand nu se completeaza corect inputurile, altfel nu apar -->
         <div class="col-12 justify-content-start align-items-center mt-3">
-          <form>
+          <form class="needs-validation register-form" novalidate>
             <!-- Email -->
             <div class="mb-3">
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" />
-              <div id="emailHelp" class="form-text">Adresa de email nu este validă!</div>
+              <input type="email" class="form-control" name="loginEmail" id="email" placeholder="Email" required />
+              <div class="valid-feedback">Este în regulă!</div>
+              <div class="invalid-feedback">Introdu o adresă de email validă!</div>
             </div>
             <!-- Parola -->
-            <div class="">
-              <input type="password" class="form-control" type="text" id="pass" aria-describedby="passHelp" placeholder="Parola" />
-              <div id="passHelp" class="form-text">Parola nu este validă!</div>
+            <div class="mb-3">
+              <input type="password" class="form-control" type="text" name="loginPassword" id="loginPassword" placeholder="Parola" required />
+              <div class="valid-feedback">Este în regulă!</div>
+              <div class="invalid-feedback">Parola nu este validă!</div>
             </div>
 
             <div class="d-flex justify-content-end mb-2 m-0">

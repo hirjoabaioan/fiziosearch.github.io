@@ -252,34 +252,34 @@
             <form method="get" class="contact-form info-form row needs-validation" novalidate>
               <div class="mb-3 settings-personal">
                 <div class="mb-2">
-                  <input type="text" class="form-control" id="nameHelp" placeholder="Nume" required />
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Nume" required />
                   <div class="valid-feedback">Este în regulă!</div>
                   <div class="invalid-feedback">Introdu numele!</div>
                 </div>
                 <div class="mb-2">
-                  <input type="text" class="form-control" id="prenameHelp" placeholder="Prenume" required />
+                  <input type="text" class="form-control" id="prename" name="prename" placeholder="Prenume" required />
                   <div class="valid-feedback">Este în regulă!</div>
                   <div class="invalid-feedback">Introdu prenumele!</div>
                 </div>
                 <div class="mb-2">
-                  <input type="date" name="Birthday" value="" class="form-control" id="dataHelp" placeholder="Data nașterii zz/ll/aaaa" required />
+                  <input type="date" name="birthday" class="form-control" id="birthday" placeholder="Data nașterii zz/ll/aaaa" required />
                   <div class="valid-feedback">Este în regulă!</div>
                   <div class="invalid-feedback">Introdu data nașterii!</div>
                 </div>
                 <div class="mb-2">
-                  <input type="tel" class="form-control" id="telefonHelp" placeholder="Număr de telefon" pattern="[0]{1}[0-9]{2}[0-9]{3}[0-9]{4}" required />
+                  <input type="tel" class="form-control" id="telefon" name="phone" placeholder="Număr de telefon" pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" required />
                   <div class="valid-feedback">Este în regulă!</div>
                   <div class="invalid-feedback">Introdu numărul de telefon format din 10 cifre!</div>
                 </div>
               </div>
               <div class="mb-3 settings-terapeuti">
                 <div class="mb-2">
-                  <input type="number" min="1950" max="2099" step="1" class="form-control" id="yearHelp" placeholder="Anul certificării" required />
+                  <input type="number" min="1950" max="2099" step="1" class="form-control" id="year" name="year" placeholder="Anul certificării" required />
                   <div class="valid-feedback">Este în regulă!</div>
                   <div class="invalid-feedback">Alege anul ultimei certificări (licență sau masaj)!</div>
                 </div>
                 <div class="mb-2">
-                  <input type="text" class="form-control" id="nruHelp" placeholder="NRU" required />
+                  <input type="text" class="form-control" id="nru" name="nru" placeholder="NRU" minlength="10" maxlength="10" required />
                   <div class="valid-feedback">Este în regulă!</div>
                   <div class="invalid-feedback">Introdu NRU valid!</div>
                 </div>
@@ -292,55 +292,52 @@
                 </div>
 
                 <div class="mb-4">
-                  <div class="overflow-auto speczializari-checks" id="specsHelp" required>
+                  <div class="overflow-auto specializari-checks" id="specs">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Kinetoterapie" id="specCheck_1" />
+                      <input class="form-check-input" type="checkbox" value="Kinetoterapie" id="specCheck_1" name="activity" required />
                       <label class="form-check-label" for="specCheck_1"> Kinetoterapie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Masaj" id="specCheck_2" />
+                      <input class="form-check-input" type="checkbox" value="Masaj" id="specCheck_2" required />
                       <label class="form-check-label" for="specCheck_2"> Masaj </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Cardiologie" id="specCheck_3" />
+                      <input class="form-check-input" type="checkbox" value="Cardiologie" id="specCheck_3" required />
                       <label class="form-check-label" for="specCheck_3"> Cardiologie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Balneologie" id="specCheck_4" />
+                      <input class="form-check-input" type="checkbox" value="Balneologie" id="specCheck_4" required />
                       <label class="form-check-label" for="specCheck_4"> Balneologie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Limfedem" id="specCheck_5" />
+                      <input class="form-check-input" type="checkbox" value="Limfedem" id="specCheck_5" required />
                       <label class="form-check-label" for="specCheck_5"> Limfedem </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Geriartrie" id="specCheck_6" />
+                      <input class="form-check-input" type="checkbox" value="Geriartrie" id="specCheck_6" required />
                       <label class="form-check-label" for="specCheck_6"> Geriartrie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Neurologie" id="specCheck_7" />
+                      <input class="form-check-input" type="checkbox" value="Neurologie" id="specCheck_7" required />
                       <label class="form-check-label" for="specCheck_7"> Neurologie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Pediatrie" id="specCheck_8" />
+                      <input class="form-check-input" type="checkbox" value="Pediatrie" id="specCheck_8" required />
                       <label class="form-check-label" for="specCheck_8"> Pediatrie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Traumatologie" id="specCheck_9" />
+                      <input class="form-check-input" type="checkbox" value="Traumatologie" id="specCheck_9" required />
                       <label class="form-check-label" for="specCheck_9"> Traumatologie </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Recuperare sportivă" id="specCheck_10" />
+                      <input class="form-check-input" type="checkbox" value="Recuperare sportivă" id="specCheck_10" required />
                       <label class="form-check-label" for="specCheck_10"> Recuperare sportivă </label>
                     </div>
                   </div>
-                  <!-- <div class="valid-feedback">Este în regulă!</div>
-                  <div class="invalid-feedback">Selectați maxim 6 specializări!</div> -->
-                  <!-- <div id="specsHelp" class="form-text">Selectați maxim 6 specializări.</div> -->
                 </div>
 
-                <textarea class="mb-4 form-control" id="cursuriHelp" rows="5" placeholder="Cursuri și acreditări"></textarea>
-                <textarea class="mb-2 form-control" id="descriereHelp" rows="5" placeholder="Scrie o scurtă descriere"></textarea>
+                <textarea class="mb-4 form-control" id="cursuri" rows="5" placeholder="Cursuri și acreditări"></textarea>
+                <textarea class="mb-2 form-control" id="descriere" rows="5" placeholder="Scrie o scurtă descriere"></textarea>
               </div>
 
               <div class="mb-3 settings-zone">
