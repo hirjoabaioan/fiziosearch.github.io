@@ -10,5 +10,349 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../../sass/main.css" />
   </head>
-  <body></body>
+  <body class="d-flex m-0 p-0">
+    <div class="d-flex w-100 m-0 p-0 dash-container">
+      <nav class="m-0 p-2 fixed-left navbar bg-light dash-nav">
+        <div class="d-flex row justify-content-center align-items-center m-0 p-0 container-fluid">
+          <button class="col-12 d-flex justify-content-center align-items-center mb-4 navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggleButton">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="m-0 p-0 overflow-auto custom-scrollbar-css collapsed-menu">
+            <ul class="flex-grow-1 navbar-nav collapsedLinks">
+              <li class="nav-item dash-notif dash-notif-first">
+                <a href="mesagerie.html" class="position-relative">
+                  <img src="../../img/message icon.webp" alt="Mesagerie platformă" />
+                  <span class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                    99+
+                    <span class="visually-hidden">Mesaje necitite</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dash-notif">
+                <a href="notificari.html" class="position-relative">
+                  <img src="../../img/notif icon.webp" alt="Notificări platformă" />
+                  <span class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                    99+
+                    <span class="visually-hidden">Notificări</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dash-notif dash-notif-last">
+                <a href="#" class="position-relative">
+                  <img src="../../img/schedule icon.webp" alt="Calendar platformă" />
+                  <span class="position-absolute top-0 start-90 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                    99+
+                    <span class="visually-hidden"></span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../search.html" class="">
+                  <img src="../../img/search-col.webp" alt="Căutare terapeuți" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="dashboard-terapeut.html" class="">
+                  <img src="../../img/dashboard icon.webp" alt="Dashboard" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="calendar.html" class="">
+                  <img src="../../img/programari icon.webp" alt="Programări" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="terapii.html" class="">
+                  <img src="../../img/therapies icon.png" alt="Terapii" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index.html" class="">
+                  <img src="../../img/home icon.webp" alt="Acasă" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="setari-profil.html" class="">
+                  <img src="../../img/setari icon.webp" alt="Setări" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="dash-contact.html" class="">
+                  <img src="../../img/contact icon.webp" alt="Contact" />
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../deconectare.html" class="">
+                  <img src="../../img/logout icon.webp" alt="Ieșire" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="d-flex justify-content-end">
+              <button type="button" class="pt-2 pe-2 btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body m-0 p-0 overflow-auto custom-scrollbar-css">
+              <div class="d-flex row justify-content-center align-items-center m-0">
+                <div class="col-12 d-flex justify-content-center dash-menu-img">
+                  <img src="../../img/profiles/1_ (3).jpg" alt="imagine utilizator" />
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-2 dash-menu-title">
+                  <h3>Bine ai venit, Ioan!</h3>
+                </div>
+                <div class="col-12 d-flex justify-content-center align-items-center mt-2 notification-aria">
+                  <div class="notification-pic gap-3">
+                    <a href="mesagerie.html" class="nav-link position-relative">
+                      <img src="../../img/message icon.webp" alt="Mesagerie platformă" />
+                      <span class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                        99+
+                        <span class="visually-hidden">Mesaje necitite</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="notification-pic gap-3">
+                    <a href="notificari.html" class="nav-link position-relative">
+                      <img src="../../img/notif icon.webp" alt="Notificări platformă" />
+                      <span class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                        99+
+                        <span class="visually-hidden">Notificări noi</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="notification-pic gap-3">
+                    <a href="#" class="nav-link position-relative">
+                      <img src="../../img/schedule icon.webp" alt="Calendar platformă" />
+                      <span class="position-absolute top-0 start-100 translate-middle badge-pill rounded-pill text-bg-primary bg-danger">
+                        99+
+                        <span class="visually-hidden"></span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <form class="col-12 d-flex row justify-content-center align-items-center mt-2" role="search">
+                  <div class="col-6 d-flex">
+                    <div class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops">
+                      <select name="Services" onchange="SelectService(this);" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuServicii" data-bs-toggle="dropdown" aria-expanded="false">
+                        <option class="dropdown-menu" aria-labelledby="dropdownMenuServicii">Servicii</option>
+                        <option class="dropdown-item" value="Kinetoterapeut">Kinetoterapeut</option>
+                        <option class="dropdown-item" value="Maseur">Maseur</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6 d-flex">
+                    <div class="d-flex justify-content-center align-content-center col-12 mt-2 mb-2 m-0 p-0 dropdown dash-drops">
+                      <select name="Specialization" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSpecializari" data-bs-toggle="dropdown" aria-expanded="false">
+                        <option class="dropdown-menu" aria-labelledby="dropdownMenuSpecializari">Specializări</option>
+                        <option class="dropdown-item" value="Kinetoterapie">Kinetoterapie</option>
+                        <option class="dropdown-item" value="Masaj">Masaj</option>
+                        <option class="dropdown-item" value="Cardiologie">Cardiologie</option>
+                        <option class="dropdown-item" value="Balneologie">Balneologie</option>
+                        <option class="dropdown-item" value="Limfedem">Limfedem</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="input-group d-flex justify-content-center text-center p-2 search-box">
+                      <input type="text" class="form-control" placeholder="Caută un terapeut..." aria-label="Caută" aria-describedby="search-button" />
+                      <!-- Cu trimitere la pagina de search cu filtrele selectate mai sus -->
+                      <button class="btn btn-success search-button" type="button">
+                        <img src="../../img/search.webp" class="search-icon" alt="Caută" />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
+              <div class="d-flex justify-content-center align-items-start">
+                <ul class="col-6 justify-content-center align-items-center flex-column nav">
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="dashboard-terapeut.html">
+                      <img class="col-3" src="../../img/dashboard icon.webp" alt="Dashboard" />
+                      <span class="col-9">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="calendar.html">
+                      <img src="../../img/programari icon.webp" alt="" />
+                      Programări
+                    </a>
+                  </li>
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="terapii.html">
+                      <img src="../../img/therapies icon.png" alt="" />
+                      Terapii
+                    </a>
+                  </li>
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="../../index.html">
+                      <img src="../../img/home icon.webp" alt="" />
+                      Acasă
+                    </a>
+                  </li>
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="setari-profil.html">
+                      <img src="../../img/setari icon.webp" alt="" />
+                      Setări
+                    </a>
+                  </li>
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="dash-contact.html">
+                      <img src="../../img/contact icon.webp" alt="" />
+                      Contact
+                    </a>
+                  </li>
+                  <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="../deconectare.html">
+                      <img src="../../img/logout icon.webp" alt="" />
+                      Deconectare
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex row justify-content-center align-items-center m-0 p-0 h-100 containers">
+        <div class="m-0 p-0 pb-4 overflow-auto custom-scrollbar-css dash-content">
+          <nav class="m-0 p-0 d-flex row fixed-top navbar uppernav-menu">
+            <div class="col-1 uppernav-image uppernav-hide">
+              <img src="../../img/profile.png" alt="" class="stanga" />
+            </div>
+            <div class="col-9 uppernav-menu-info">
+              <div class="uppernav-header">
+                <h1>Pagina de profil</h1>
+              </div>
+              <div class="row uppernav-menu-buttons programator-nav"></div>
+            </div>
+          </nav>
+          <div class="row gap-2 settings-profil m-0 mt-4 p-2">
+            <div class="container shadow py-2 table-container overflow-auto custom-scrollbar-css profile-view">
+              <div class="m-2 p-2 h-100 info-container">
+                <div class="d-flex row info-header">
+                  <div class="header-pn mt-0 pt-0">
+                    <div class="m-0 p-0 header-pn-pic">
+                      <img src="../../img/profiles/PozaH.webp" alt="{Nume terapeut}" />
+                    </div>
+                    <div class="m-0 p-0 header-pn-name">
+                      <div class="d-flex row justify-content-start align-items-center">
+                        <span class="col-8">Hîrjoabă Ioan</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="col-1 bi bi-dot" viewBox="0 0 16 16">
+                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                      </div>
+                      <span class="profession">Fizioterapeut</span>
+                    </div>
+                  </div>
+                  <div class="header-loc-contact">
+                    <div class="header-locations">
+                      <h5 class="info-titles">Locații</h5>
+                      <div class="m-0 mb-2 ps-4 pe-4">
+                        <span>Locație 1, Locație 2, Locație 3, Locație 4</span>
+                      </div>
+                    </div>
+                    <div class="header-contact">
+                      <h5 class="info-titles">Contact</h5>
+                      <div class="d-flex row justify-content-center m-0 p-0">
+                        <div class="row m-0 p-0 gap-2 contact-info">
+                          <a href="tel:075-457-9331" class="btn btn-secondary msg-button med text-center" id="search-telefon">0754579331</a>
+                          <a href="mailto:hirjoaba_ioan@yahoo.com" class="btn btn-secondary msg-button med text-center" id="search-email">hirjoaba_ioan@yahoo.com</a>
+                          <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-bio">
+                  <div class="mb-4 info-bio-activities">
+                    <h5 class="info-titles">Activitate</h5>
+                    <div class="m-0 ps-4 pe-4">
+                      <!-- Doar unul dintre calificative va fi afișat în funcție de recenziile acordate de pacienți: Foarte Bun | Bun | Rău | Foarte rău -->
+                      <div class="d-flex row">
+                        <h6 class="col-8">Rating general:</h6>
+                        <span class="col-4">Bun</span>
+                      </div>
+                      <div class="d-flex row">
+                        <h6 class="col-8">Recenzii primite:</h6>
+                        <span class="col-4">40</span>
+                      </div>
+                      <div class="d-flex row">
+                        <h6 class="col-8">Experiența:</h6>
+                        <span class="col-4">4 ani</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-4 info-bio-description">
+                    <h5 class="info-titles">Descriere</h5>
+                    <p class="m-0 ps-4 pe-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.</p>
+                  </div>
+                  <div class="mb-4 info-bio-courses">
+                    <h5 class="info-titles">Cursuri</h5>
+                    <p class="m-0 ps-4 pe-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores voluptatem.</p>
+                  </div>
+                </div>
+
+                <div class="info-long">
+                  <div class="col-12 mb-4 table-responsive info-long-services">
+                    <h5 class="info-titles">Servicii</h5>
+                    <table class="table info-long-table ps-2 pe-2">
+                      <tr>
+                        <th class="col">Terapie</th>
+                        <th class="col">Durată</th>
+                        <th class="col">Tarif</th>
+                      </tr>
+                      <tr>
+                        <td>Masaj</td>
+                        <td class="search-time">30</td>
+                        <td class="search-price">100</td>
+                      </tr>
+                      <tr>
+                        <td>Terapie manuală</td>
+                        <td class="search-time">30</td>
+                        <td class="search-price">150</td>
+                      </tr>
+                      <tr>
+                        <td>Ventuze</td>
+                        <td class="search-time">15</td>
+                        <td class="search-price">50</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col-12 table-responsive info-long-reviews">
+                    <h5 class="info-titles">Recenzii</h5>
+                    <div class="overflow-auto reviews-container">
+                      <table class="table info-long-table ps-2 pe-2">
+                        <tr>
+                          <th class="col">Client</th>
+                          <th class="col">Recenzie</th>
+                        </tr>
+                        <tr tabindex="0">
+                          <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                          <td>Bună</td>
+                        </tr>
+                        <tr tabindex="0">
+                          <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                          <td>Bună</td>
+                        </tr>
+                        <tr tabindex="0">
+                          <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                          <td>Bună</td>
+                        </tr>
+                        <tr tabindex="0">
+                          <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                          <td>Bună</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

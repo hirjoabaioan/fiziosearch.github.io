@@ -11,6 +11,14 @@
     @include laptop {
       width: 75% !important;
     }
+
+    svg {
+      width: 2rem;
+
+      @include tablet {
+        width: 3rem;
+      }
+    }
   }
 
   &-header {

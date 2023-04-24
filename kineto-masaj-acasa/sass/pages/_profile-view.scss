@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.profile-view {
+  display: grid;
+  width: 100%;
+
+  @include phone {
+    margin: 0rem !important;
+    padding: 1rem 0rem !important;
+    font-size: clamp(0.5rem, 0.2vw + 0.5rem, 1.5rem);
+  }
+
+  @include laptop {
+    max-height: 80vh;
+  }
+
+  .header-pn-name {
+    @include phone {
+      font-size: clamp(0.4rem, 0.2vw + 0.5rem, 1rem);
+    }
+
+    font-size: $font-size;
+
+    div {
+      width: 100%;
+
+      @include tablet-wide {
+        width: 50%;
+      }
+
+      @include desktop {
+        width: 30%;
+      }
+    }
+  }
+
+  .info-bio-activities {
+    h6 {
+      font-size: 0.8rem;
+
+      @include tablet {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .info-container {
+    width: 80% !important;
+    margin: auto !important;
+
+    #search-email {
+      font-size: clamp(0.4rem, 0.2vw + 0.5rem, 1.5rem) !important;
+    }
+  }
+}
