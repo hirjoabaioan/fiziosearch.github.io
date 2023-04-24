@@ -100,22 +100,22 @@ $(document).ready(function () {
               invalidFeedback.innerText = "Nu aveți vârsta necesară pentru a vă putea înregistra!";
             }
           }
-          if (form.activity) {
-            // const formChecks = $(".specializari-checks").children(".form-check-input");
-            //NU FUNCTIONEAZA !!!!!!!!!!!!!!!!!!!
-            const formChecks = document.querySelector(".specializari-checks").querySelectorAll(".form-check-input");
-            console.log(formChecks);
-            let selectedItems = [];
-            formChecks.forEach((checkBox) => {
-              if (checkBox.checked) {
-                selectedItems.push(checkBox);
-              } else if (!checkBox.checked || selectedItems.length < 7) {
-                checkBox.required = false;
-              }
-            });
 
-            if (selectedItems.length > 6) {
-              console.log("NU");
+          // Activity checkboxes
+          if (form.activity) {
+            const formChecks = document.querySelector(".specializari-checks").querySelectorAll(".form-check-input");
+            const checkedCheckboxes = Array.from(formChecks).filter((checkBox) => checkBox.checked);
+
+            if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 6) {
+              formChecks.forEach((checkBox) => {
+                checkBox.setCustomValidity("Invalid");
+                document.querySelector(".activity-feedback").style.display = "block";
+              });
+            } else {
+              formChecks.forEach((checkBox) => {
+                checkBox.setCustomValidity("");
+                checkBox.required = false;
+              });
             }
           }
 
