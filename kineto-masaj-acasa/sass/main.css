@@ -3006,6 +3006,57 @@ main {
   text-align: center;
 }
 
+.password-change {
+  width: 100%;
+}
+@media (min-width: 48rem) {
+  .password-change {
+    width: 60%;
+  }
+}
+@media (min-width: 75rem) {
+  .password-change {
+    width: 40%;
+  }
+}
+.password-change-img {
+  display: none !important;
+}
+@media (min-width: 37.5rem) {
+  .password-change-img {
+    display: flex !important;
+    width: 30%;
+  }
+}
+@media (min-width: 48rem) {
+  .password-change-img {
+    margin: 2rem;
+  }
+}
+@media (min-width: 64rem) {
+  .password-change-img {
+    width: 20%;
+  }
+}
+
+#container {
+  display: flex;
+  min-height: 80vh;
+  min-height: 80svh;
+  margin-top: auto;
+  width: 100%;
+}
+@media (min-width: 64rem) {
+  #container {
+    width: 75%;
+  }
+}
+@media (min-width: 75rem) {
+  #container {
+    width: 60%;
+  }
+}
+
 .utilities-wrapper {
   justify-content: center;
   align-items: center;
@@ -3020,6 +3071,11 @@ main {
 
 :root .card {
   --bs-card-cap-bg: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+  min-height: 100% !important;
 }
 
 body {
