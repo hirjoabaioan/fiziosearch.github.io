@@ -5,6 +5,13 @@
     Breakpoints
    =============
 */
+
+@mixin s-height {
+  @media (max-height: 30rem){
+    @content;
+  }
+}
+
 @mixin phone {
   @media (max-width: 37.5rem) {
     @content;

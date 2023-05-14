@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@cloudinary/url-gen": "^1.10.0",
+    "imagekit-javascript": "^1.5.5"
+  }
+}

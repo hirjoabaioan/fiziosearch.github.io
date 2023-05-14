@@ -1,3 +1,9 @@
+//Import Cloudinary
+// import { Cloudinary } from "@cloudinary/url-gen";
+// import { Resize } from "@cloudinary/url-gen/actions";
+
+// import ImageKit from "imagekit-javascript";
+
 // Accessing the Document through jQuery
 $(document).ready(function () {
   // BS Tooltips
@@ -256,8 +262,149 @@ $(document).ready(function () {
       }
     });
   }
+
+  // Script for image upload, resizing and compressing
+  // $("#fileInput").change(function () {
+  //   var file = this.files[0];
+  //   var reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   reader.onload = function (event) {
+  //     $("#preview").attr("src", event.target.result);
+  //   };
+  // });
+
+  // const cldInstance = new Cloudinary({ cloud: { cloudName: "ddi3ezx01" } });
+
+  // //Upload image
+  // const uploadWidget = cloudinary.creatUploadWidget(
+  //   {
+  //     cloudName: ddi3ezx01,
+  //     uploadPreset: snqii95m,
+  //     cropping: true,
+  //     sources: ["local"],
+  //     multiple: false,
+  //     folder: "users",
+  //     clientAllowedFormats: ["images"],
+  //     maxImageFileSize: 2000000,
+  //     maxImageWidth: 100,
+  //   },
+  //   (error, result) => {
+  //     if (!error && result && result.event === "success") {
+  //       console.log("Done! Here is the image info: ", result.info);
+  //       document.getElementById("uploadImage").setAttribute("src", result.info.secure_url);
+  //     }
+  //   }
+  // );
+
+  // document.getElementById("upload_widget").addEventListener(
+  //   "click",
+  //   function () {
+  //     uploadWidget.open();
+  //   },
+  //   false
+  // );
+
+  // // Transform
+
+  // const myImage = cldInstance.image("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg").setDeliveryType("fetch").resize(Resize.fill().width(100).height(150));
+
+  // console.log(myImage.toURL());
+  // //res.cloudinary.com/<cloud_name>/image/fetch/c_fill,h_150,w_100/https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg
+
+  // https: $("#compressAndCrop").click(function () {
+  //   var img = document.getElementById("preview");
+  //   var maxSize = 100; // maximum size in KB
+  //   var width = img.width;
+  //   var height = img.height;
+  //   if (width > height) {
+  //     if (width > maxSize * 1024) {
+  //       height *= (maxSize * 1024) / width;
+  //       width = maxSize * 1024;
+  //     }
+  //   } else {
+  //     if (height > maxSize * 1024) {
+  //       width *= (maxSize * 1024) / height;
+  //       height = maxSize * 1024;
+  //     }
+  //   }
+
+  //   $.ajax({
+  //     url: "https://api.cloudinary.com/v1_1/ddi3ezx01/image/upload",
+  //     type: "POST",
+  //     data: {
+  //       file: img.src,
+  //       upload_preset: "snqii95m",
+  //       crop: "fill",
+  //       width: size,
+  //       height: size,
+  //       quality: "auto",
+  //     },
+  //     success: function (data) {
+  //       $("#preview").attr("src", data.secure_url);
+  //     },
+  //   });
+  // });
 });
 
+// const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/ddi3ezx01/upload";
+// const CLOUDINARY_UPLOAD_PRESET = "snqii95m";
+
+// const imgPreview = document.getElementById("img-preview");
+// const fileUpload = document.getElementById("file-upload");
+
+// fileUpload.addEventListener("change", function (event) {
+//   const file = event.target.files[0];
+//   const formData = new FormData();
+//   formData.append("file", file);
+//   formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+//   axios({
+//     url: CLOUDINARY_URL,
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/x-www-form-urlencoded",
+//     },
+//     data: formData,
+//   })
+//     .then(function (res) {
+//       console.log(res);
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+// });
+
+const imagekit = new ImageKit({
+  publicKey: "public_NvmSDeqlwPDb2eKuraNmfVhJsYo=",
+  urlEndpoint: "https://ik.imagekit.io/4eksvaiete",
+  authenticationEndpoint: "http://127.0.0.1:5500/templates/terapeuti/setari-profil.html",
+});
+
+function upload(data) {
+  const file = document.getElementById("file1");
+
+  imagekit
+    .upload({
+      file: file.files[0],
+      fileName: "abc1.jpg",
+      tags: ["tag1"],
+      extensions: [
+        {
+          name: "aws-auto-tagging",
+          minConfidence: 80,
+          maxTags: 10,
+        },
+      ],
+    })
+    .then((result) => {
+      console.log(result);
+    })
+    .then((error) => {
+      console.log(error);
+    });
+}
+
+// For the Activity Switch on therapists Dashboard page
 function checkerFunction() {
   if ($("#checker").is(":checked")) {
     $("#toggle-inactive").css("color", "#f44336");
@@ -277,6 +424,7 @@ $(document).ready(function () {
     readURL(this);
   });
 });
+
 function readURL(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
