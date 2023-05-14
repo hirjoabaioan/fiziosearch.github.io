@@ -113,15 +113,155 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 1.85rem;
 
-    width: 4rem;
-
-    img {
-      width: 100%;
+    .middle-button-object {
+      height: 0.5rem;
+      margin-top: -3vh;
+      border: 2px solid $black;
+      border-radius: $border-radius;
+      position: absolute;
     }
 
-    .slide-down {
-      @include slide-down(1s, ease-out, infinite, alternate, forwards);
+    .scroll-down-object {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      padding: 0.5rem;
+      height: 3.5rem;
+      width: 1.85rem;
+      border: 2px solid $black;
+      // position: absolute;
+      // bottom: 5rem;
+      border-radius: $border-radius;
+      
+
+      &::before, 
+      &::after {
+        content: '';
+        position: absolute;
+        // top: -5%;
+        left: 50%;
+        border: 2px solid $black;
+        height: 0.2rem;
+        width: 0.2rem;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-top: transparent;
+        border-left: transparent;
+        animation: scroll-down 1.5s ease-in-out infinite;
+
+        @include tablet-wide {
+          
+        }
+      }
+
+      &::after {
+        margin-top: 0.5vh;
+        animation-delay: .3s;
+
+      }
+
+      
+
+      @keyframes scroll-down {
+        0% {
+          opacity: 0;
+        }
+
+        30% {
+          opacity: 1;
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+
+        60% {
+          opacity: 1;
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+
+        100% {
+          opacity: 0;
+          margin-top: 10vh;
+        }
+      }
+
+
+
+      @include phone {
+        @keyframes scroll-down {
+          0% {
+            opacity: 0;
+          }
+  
+          30% {
+            opacity: 1;
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+  
+          60% {
+            opacity: 1;
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+  
+          100% {
+            opacity: 0;
+            margin-top: 6vh;
+          }
+        }
+      }
+
+      @include tablet {
+        @keyframes scroll-down {
+          0% {
+            opacity: 0;
+          }
+  
+          30% {
+            opacity: 1;
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+  
+          60% {
+            opacity: 1;
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+  
+          100% {
+            opacity: 0;
+            margin-top: 4.5vh;
+          }
+        }
+      }
+
+      @media (orientation: landscape) and (max-height: 768px) and (max-width: 600px){
+        @keyframes scroll-down {
+          0% {
+            opacity: 0;
+          }
+  
+          30% {
+            opacity: 1;
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+  
+          60% {
+            opacity: 1;
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+  
+          100% {
+            opacity: 0;
+            margin-top: 10vh;
+          }
+        }
+      }
     }
   }
 
@@ -145,14 +285,6 @@
   }
 
   .bi {
-    // padding: 0 2rem;
-    // margin-right: -4rem;
-    // font-size: clamp($font-size, 0.2vw + 0.5rem, 1.5rem);
-
-    // @include phone {
-    //   margin-right: 0rem;
-    // }
-
     font-size: $font-size + 0.25rem;
 
     @include phone {

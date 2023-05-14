@@ -795,13 +795,122 @@ nav img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
+  width: 1.85rem;
 }
-.scroll-down-section .down-scroll img {
-  width: 100%;
+.scroll-down-section .down-scroll .middle-button-object {
+  height: 0.5rem;
+  margin-top: -3vh;
+  border: 2px solid #212427;
+  border-radius: 3rem;
+  position: absolute;
 }
-.scroll-down-section .down-scroll .slide-down {
-  animation: slide-bottom 1s ease-out infinite alternate forwards;
+.scroll-down-section .down-scroll .scroll-down-object {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 0.5rem;
+  height: 3.5rem;
+  width: 1.85rem;
+  border: 2px solid #212427;
+  border-radius: 3rem;
+}
+.scroll-down-section .down-scroll .scroll-down-object::before, .scroll-down-section .down-scroll .scroll-down-object::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border: 2px solid #212427;
+  height: 0.2rem;
+  width: 0.2rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+.scroll-down-section .down-scroll .scroll-down-object::after {
+  margin-top: 0.5vh;
+  animation-delay: 0.3s;
+}
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  60% {
+    opacity: 1;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  100% {
+    opacity: 0;
+    margin-top: 10vh;
+  }
+}
+@media (max-width: 37.5rem) {
+  @keyframes scroll-down {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    60% {
+      opacity: 1;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    100% {
+      opacity: 0;
+      margin-top: 6vh;
+    }
+  }
+}
+@media (min-width: 37.5rem) {
+  @keyframes scroll-down {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    60% {
+      opacity: 1;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    100% {
+      opacity: 0;
+      margin-top: 4.5vh;
+    }
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) and (max-width: 600px) {
+  @keyframes scroll-down {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    60% {
+      opacity: 1;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    100% {
+      opacity: 0;
+      margin-top: 10vh;
+    }
+  }
 }
 .scroll-down-section .findout-text {
   text-align: center;
@@ -3154,6 +3263,7 @@ body {
 
 body {
   color: #212427;
+  scroll-behavior: smooth;
 }
 
 .image-one {
