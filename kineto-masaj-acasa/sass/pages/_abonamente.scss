@@ -206,7 +206,8 @@
         min-height: 6rem;
       }
 
-      .bi {
+      .bi,
+      .marks {
         width: 28%;
         text-align: center;
         font-size: calc($font-size + 1vw);

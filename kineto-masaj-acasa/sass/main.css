@@ -3083,15 +3083,18 @@ main {
     min-height: 6rem;
   }
 }
-.subscriptions .card-content .group-box .bi {
+.subscriptions .card-content .group-box .bi,
+.subscriptions .card-content .group-box .marks {
   width: 28%;
   text-align: center;
   font-size: calc(1rem + 1vw);
 }
-.subscriptions .card-content .group-box .bi-check {
+.subscriptions .card-content .group-box .bi-check,
+.subscriptions .card-content .group-box .marks-check {
   color: #108f96;
 }
-.subscriptions .card-content .group-box .bi-x {
+.subscriptions .card-content .group-box .bi-x,
+.subscriptions .card-content .group-box .marks-x {
   color: red;
 }
 .subscriptions .card-content .group-box .marks,
