@@ -150,9 +150,6 @@
         border-left: transparent;
         animation: scroll-down 1.5s ease-in-out infinite;
 
-        @include tablet-wide {
-          
-        }
       }
 
       &::after {
@@ -306,6 +303,10 @@
 }
 
 .content-howto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   h2 {
     font-size: clamp($font-size - 0.2rem, 1vw + 1rem, $font-size + 1rem);
   }
@@ -333,6 +334,14 @@
       width: 70%;
     }
   }
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .media {

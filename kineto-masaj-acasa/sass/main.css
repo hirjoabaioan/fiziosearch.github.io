@@ -949,6 +949,11 @@ nav img {
   -webkit-filter: invert(100%);
 }
 
+.content-howto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .content-howto h2 {
   font-size: clamp(0.8rem, 1vw + 1rem, 2rem);
 }
@@ -977,6 +982,14 @@ nav img {
   .content-howto img {
     width: 70%;
   }
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 @media (min-width: 64rem) {
