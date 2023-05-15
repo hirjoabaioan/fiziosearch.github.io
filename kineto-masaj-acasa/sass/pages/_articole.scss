@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+@use "../base" as *;
+
+.articles {
+
+    @include tablet {
+        width: 80%;
+    }
+
+    @include laptop {
+        width: 60%;
+    }
+
+    h2 {
+        margin-top: 1.5rem;
+        font-weight: $fw-bold;
+    }
+    
+    p {
+        margin: 1rem 0;
+        text-indent: 1.5rem;
+        text-align: left;
+    } 
+
+    ol {
+        @include tablet {
+            margin-left: 5%;
+            width: 90%;
+        }
+    }
+
+    a {
+        text-decoration: underline !important;
+        color: $primary-color;
+        font-weight: $fw-bold;
+    }
+}

@@ -984,27 +984,27 @@ nav img {
   }
 }
 
-.articles {
+.index-articles {
   gap: 2rem;
 }
-.articles .container {
+.index-articles .container {
   display: flex;
   justify-content: center;
   margin: 0;
   margin-top: 1rem;
   padding: 0;
 }
-.articles .card {
+.index-articles .card {
   display: flex;
   justify-content: center;
   margin: 1rem;
   width: 16rem;
   box-shadow: 10px 8px 8px 0px rgba(0, 0, 0, 0.43);
 }
-.articles .card .card-img-top {
+.index-articles .card .card-img-top {
   height: 30%;
 }
-.articles .card span {
+.index-articles .card span {
   text-align: center;
   padding: 0.25rem;
   color: #108f96;
@@ -3273,6 +3273,37 @@ main {
 }
 .profile-view .info-container #search-email {
   font-size: clamp(0.4rem, 0.2vw + 0.5rem, 1.5rem) !important;
+}
+
+@media (min-width: 37.5rem) {
+  .articles {
+    width: 80%;
+  }
+}
+@media (min-width: 64rem) {
+  .articles {
+    width: 60%;
+  }
+}
+.articles h2 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.articles p {
+  margin: 1rem 0;
+  text-indent: 1.5rem;
+  text-align: left;
+}
+@media (min-width: 37.5rem) {
+  .articles ol {
+    margin-left: 5%;
+    width: 90%;
+  }
+}
+.articles a {
+  text-decoration: underline !important;
+  color: #108f96;
+  font-weight: 600;
 }
 
 .utilities-wrapper {

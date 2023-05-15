@@ -1,0 +1,74 @@
+To create a script that allows users to upload an image, edit it to be square, convert it to webp format, and reduce its file size, you can follow the steps below using JavaScript and some helpful libraries.
+
+1. First, create an HTML input element to allow users to upload the image:
+
+```html
+<input type="file" id="inputImage" accept="image/*" onchange="loadImage()" />
+```
+
+2. Use the JavaScript FileReader API to read the uploaded image:
+
+```javascript
+function loadImage() {
+  const inputImage = document.getElementById('inputImage');
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    const image = new Image();
+    image.src = event.target.result;
+    image.onload = function () {
+      editAndConvertImage(image);
+    };
+  };
+  reader.readAsDataURL(inputImage.files[0]);
+}
+```
+
+3. Edit the image to be square and convert it to webp format using the `canvas` element and `toDataURL` method. Also, use a library like [cropperjs](https://fengyuanchen.github.io/cropperjs/) to crop and resize the image:
+
+```javascript
+function editAndConvertImage(image) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  // Calculate the square dimensions
+  const size = Math.min(image.width, image.height);
+  canvas.width = size;
+  canvas.height = size;
+
+  // Draw the image on the canvas
+  const offsetX = (image.width - size) / 2;
+  const offsetY = (image.height - size) / 2;
+  ctx.drawImage(image, offsetX, offsetY, size, size, 0, 0, size, size);
+
+  // Convert the image to webp format with quality settings
+  const webpImage = canvas.toDataURL('image/webp', 0.8);
+
+  // Call the function to reduce the file size
+  reduceFileSize(webpImage);
+}
+```
+
+4. Reduce the image file size under 100KB using a library like [Compress.js](https://github.com/ltrevisan/Compress.js):
+
+```javascript
+function reduceFileSize(webpImage) {
+  const compress = new Compress();
+  const files = [{ data: webpImage, type: 'image/webp' }];
+  compress
+    .compress(files, {
+      size: 0.8, // Compression ratio
+      quality: 0.75, // Quality of the image
+      maxWidth: 1920, // Maximum width of the output image
+      maxHeight: 1920, // Maximum height of the output image
+      resize: true,
+    })
+    .then((compressedImages) => {
+      const { photo } = compressedImages[0];
+      const compressedImage = `${photo.prefix},${photo.data}`;
+      // Do something with the compressed image (e.g., display or download)
+      console.log(compressedImage);
+    });
+}
+```
+
+With these steps, the script will allow to upload an image, edit it to be square, convert it to webp format, and reduce its file size under 100kb. 
