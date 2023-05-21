@@ -452,3 +452,31 @@ rows.forEach((row) => {
     contentRow.style.display = contentRow.style.display === "none" ? "table-row" : "none";
   });
 });
+
+
+function sortTable(columnIndex) {
+  const table = document.getElementById("myTable");
+  const rows = Array.from(table.rows).slice(1); // Exclude the header row
+  let ascending = true;
+
+  // Check if the table is already sorted in ascending order
+  if (rows[0].cells[columnIndex].innerHTML > rows[1].cells[columnIndex].innerHTML) {
+    ascending = false;
+  }
+
+  rows.sort((a, b) => {
+    const aValue = a.cells[columnIndex].innerHTML;
+    const bValue = b.cells[columnIndex].innerHTML;
+
+    if (ascending) {
+      return aValue.localeCompare(bValue);
+    } else {
+      return bValue.localeCompare(aValue);
+    }
+  });
+
+  // Rebuild the table with the sorted rows
+  for (const row of rows) {
+    table.tBodies[0].appendChild(row);
+  }
+}

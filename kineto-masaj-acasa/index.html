@@ -150,22 +150,24 @@
           </form>
         </div>
       </div>
-      <div class="d-flex justify-content-center align-items-center row scroll-down-section">
+     
+      <div class="scroll-container">
         <div class="m-0 mt-4 p-0 findout-text">
           <h2 class="text-center">Află mai multe!</h2>
         </div>
-          <a href="#section-2" class="m-0 mt-2 p-0 down-scroll">
-            <div class="middle-button-object"></div>
-            <div class="scroll-down-object"></div>
-          </a>
-        
+        <a href="#section-2" class="m-2 mt-2 p-0">
+          <span class="mouse">
+            <span class="mouse-wheel"></span>
+          </span>
+        </a>
       </div>
+     
       <div class="content-services" id="section-2">
         <!-- Servicii -->
         <div class="d-flex row justify-content-center  m-0 mt-5 p-0">
           <h2 class="text-center text-wrap m-0 p-0">Serviciile noastre</h2>
           <div class="col-12 d-flex row justify-content-center  m-0 mt-2 p-0">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center  m-3 card" style="width: 18rem">
+            <div class="d-flex justify-content-center  m-3 card" style="width: 18rem">
               <img src="img/Kineto.webp" class="card-img-top" alt="Kinetoterapeuți" />
               <hr />
               <div class="card-body row d-flex justify-content-center ">
@@ -178,7 +180,7 @@
               </div>
             </div>
 
-            <div class="col-md-6 col-sm-12 d-flex justify-content-center  m-3 card" style="width: 18rem">
+            <div class="d-flex justify-content-center  m-3 card" style="width: 18rem">
               <img src="img/Masaj.webp" class="card-img-top" alt="Masseuri" />
               <hr />
               <div class="card-body row d-flex justify-content-center ">
@@ -214,36 +216,64 @@
       <div class="col-12 index-articles mb-4">
         <div class="d-flex row justify-content-center m-0 mt-5 p-0">
           <h2 class="text-wrap text-center mt-2">Articole relevante</h2>
-          <div class="col-12 d-flex row container">
-  
-            <a href="templates/articole/kinetoterapia.html" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 card">
-              <img src="img/kineto-card-thumb.webp" class="card-img-top my-2" alt="Kinetoterapeuți" />
-              <hr>
-              <div class="card-body row d-flex justify-content-center ">
-                <h3 class="card-title col-12 text-center">Kinetoterapia</h3>
-                <p class="card-text text-center">
-                  Kinetoterapia sau terapia prin mișcare reprezintă un complex de terapii și exerciții atent structurate de către un kinetoterapeut specializat
-                  și adaptate nevoilor fiecărui pacient.
-                </p>
-                <span>Citiți mai multe aici!</span>
+
+          <div class="container">
+            <article class="card-flip">
+              <div class="card-flip-inner">
+                <div class="card-flip-body card-flip-body-front">
+                  <figure class="card-new">
+                    <img src="img/kineto-card-thumb.webp" alt="Kineto" class="card-new-image">
+                    <figcaption class="card-new-body">
+                      <h2 class="card-new-title">Kinetoterapia</h2>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="card-flip-body card-flip-body-back">
+                  <a href="templates/articole/kinetoterapia.html" class="card-link">
+                    <figure class="card-new">
+                      <img src="img/kineto-card-thumb.webp" alt="Kineto" class="card-new-image">
+                      <figcaption class="card-new-body">
+                        <p class="card-new-text">
+                          Kinetoterapia sau terapia prin mișcare reprezintă un complex de terapii și exerciții atent structurate de către un kinetoterapeut specializat
+                      și adaptate nevoilor fiecărui pacient.
+                        </p>
+                        <p class="card-new-subtitle">Citiți mai multe aici</p>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
               </div>
-            </a>
+            </article>
   
-            <a href="templates/articole/masajul.html" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 card">
-              <img src="img/massage-card-thumb.webp" class="card-img-top my-2" alt="Kinetoterapeuți" />
-              <hr>
-              <div class="card-body row d-flex justify-content-center ">
-                <h3 class="card-title col-12 text-center">Masajul</h3>
-                <p class="card-text text-center">
-                  Masajul este o formă de terapie manuală cu numeroase beneficii fizice și mentale. 
-                </p>
-                <span>Citiți mai multe aici!</span>
+            <article class="card-flip">
+              <div class="card-flip-inner">
+                <div class="card-flip-body card-flip-body-front">
+                  <figure class="card-new">
+                    <img src="img/massage-card-thumb.webp" alt="Masaj" class="card-new-image">
+                    <figcaption class="card-new-body">
+                      <h2 class="card-new-title">Masajul</h2>
+                      <!-- <p class="card-new-subtitle">Citiți mai multe aici</p> -->
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="card-flip-body card-flip-body-back">
+                  <a href="templates/articole/masajul.html" class="card-link">
+                    <figure class="card-new">
+                      <img src="img/massage-card-thumb.webp" alt="Masaj" class="card-new-image">
+                      <figcaption class="card-new-body">
+                        <p class="card-new-text">
+                          Masajul este o formă de terapie manuală cu numeroase beneficii fizice și mentale. 
+                        </p>
+                        <p class="card-new-subtitle">Citiți mai multe aici</p>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
               </div>
-            </a>
-  
+            </article>
           </div>
-        </div>
-        
+          
+        </div> 
       </div>
     </main>
 

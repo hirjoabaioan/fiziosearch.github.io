@@ -18,29 +18,130 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
     <link rel="stylesheet" type="text/css" href="sass/main.css" />
+    <link rel="stylesheet" href="node_modules/cropperjs/src/css/cropper.css">
+
+
+    <style>
+      .image-upload-box {
+        margin: 3rem;
+      }
+
+      #container {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid black;
+    overflow: hidden;
+  }
+  #image {
+    position: absolute;
+    cursor: move;
+  }
+    </style>
   </head>
   <body>
-    <div class="row gap-2 settings-profil m-0 mt-4 p-2">
-      <form class="contact-form info-form row needs-validation" novalidate>
-        <div class="mb-2">
-          <label for="nameHelp" class="form-label">Nume</label>
-          <input type="text" class="form-control" id="nameHelp" requierd />
-          <div class="invalid-feedback">Introdu numele.</div>
-          <div class="valid-feedback">Este în regulă!</div>
-        </div>
-        <div class="mb-2">
-          <label for="prenameHelp" class="form-label">Prenume</label>
-          <input type="text" class="form-control" id="prenameHelp" requierd />
-          <div class="invalid-feedback">Introdu prenumele.</div>
-          <div class="valid-feedback">Este în regulă!</div>
-        </div>
+    
+    <!-- <input type="file" id="imageInput">
+    <canvas id="canvas"></canvas>
+    <button id="compressBtn">Compress</button> -->
 
-        <div class="d-flex justify-content-center m-0 p-0">
-          <button type="submit" class="btn btn-primary">Actualizează datele</button>
+      <div class="image-upload-box">
+        <!-- <input type="file" id="fileInput" accept="image/*">
+        <div id="imageContainer">
+            <img id="image" alt="Uploaded image">
         </div>
-      </form>
-    </div>
+        <button id="cropButton">Crop and Compress</button>
+        <img id="result" alt="Cropped and compressed image"> -->
+
+        <input type="file" id="file-input">
+        <div id="container"></div>
+      </div>
+  
+    
+      <script>
+      
+        const fileInput = document.getElementById('file-input');
+          const container = document.getElementById('container');
+      
+          fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+              const img = new Image();
+              img.src = URL.createObjectURL(file);
+              img.onload = () => {
+                img.id = 'image';
+                container.innerHTML = '';
+                container.appendChild(img);
+                makeImageDraggable(img);
+              };
+            }
+          });
+      
+          function makeImageDraggable(img) {
+            let isDragging = false;
+            let startX, startY, imgX, imgY;
+      
+            img.addEventListener('mousedown', (e) => {
+              startX = e.clientX;
+              startY = e.clientY;
+              imgX = parseInt(img.style.left || 0);
+              imgY = parseInt(img.style.top || 0);
+              isDragging = true;
+            });
+      
+            document.addEventListener('mousemove', (e) => {
+              if (!isDragging) return;
+              const dx = e.clientX - startX;
+              const dy = e.clientY - startY;
+              img.style.left = imgX + dx + 'px';
+              img.style.top = imgY + dy + 'px';
+            });
+      
+            document.addEventListener('mouseup', () => {
+              if (!isDragging) return;
+              isDragging = false;
+              compressImage(img, 100, (compressedImg) => {
+                container.innerHTML = '';
+                compressedImg.id = 'image';
+                container.appendChild(compressedImg);
+              });
+            });
+          }
+      
+          function compressImage(img, targetSizeKB, callback) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+            let quality = 0.9;
+            let imageData = canvas.toDataURL('image/jpeg', quality);
+            while (dataURLtoBlob(imageData).size / 1024 > targetSizeKB) {
+              quality -= 0.1;
+              imageData = canvas.toDataURL('image/jpeg', quality);
+            }
+            const compressedImg = new Image();
+            compressedImg.src = imageData;
+            compressedImg.onload = () => callback(compressedImg);
+          }
+      
+          function dataURLtoBlob(dataurl) {
+            const arr = dataurl.split(',');
+            const mime = arr[0].match(/:(.*?);/)[1];
+            const bstr = atob(arr[1]);
+            let n = bstr.length;
+            const u8arr = new Uint8Array(n);
+            while (n--) {
+              u8arr[n] = bstr.charCodeAt(n);
+            }
+            return new Blob([u8arr], { type: mime });
+          }
+        </script>
+
+      
+    
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="javascript.js"></script>
+    <!-- <script src="test.js"></script> -->
+    <!-- <script src="node_modules\cropperjs\src\js\cropper.js"></script> -->
   </body>
 </html>
