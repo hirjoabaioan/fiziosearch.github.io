@@ -261,6 +261,39 @@ $(document).ready(function () {
     });
   }
 
+  //Add hours and minutes to the dropdowns on the TERAPII page
+  if (top.location.pathname === "/templates/terapeuti/terapii.html") {
+    let dropDownHoursInsert = $("#dropdownDurataOre");
+    let dropDownMinutesInsert = $("#dropdownDurataMin");
+    const MAX_HOURS = 10;
+    const MAX_MINUTES = 60;
+    const MINUTES_INCREMENTATION = 5;
+
+
+    for( let hour = 0; hour < MAX_HOURS; hour++){
+      if( hour < 10 ){
+        let optionHourElement = $(`<option value="0${hour}">0${hour}</option>`);
+        dropDownHoursInsert.append(optionHourElement);
+      } else {
+        let optionHourElement = $(`<option value="${hour}"0${hour}</option>`);
+        dropDownHoursInsert.append(optionHourElement);
+      }
+    }
+
+    for(let min = 0; min < MAX_MINUTES; min += MINUTES_INCREMENTATION) {
+      if ( min < 10 ) {
+        let optionMinElement = $(`<option value="0${min}">0${min}</option>`);
+        dropDownMinutesInsert.append(optionMinElement);
+      } else {
+        let optionMinElement = $(`<option value="${min}">${min}</option>`);
+        dropDownMinutesInsert.append(optionMinElement);
+      }
+      
+      
+    }
+  }
+  
+
 
   // For the Activity Switch on therapists Dashboard page
   function checkerFunction() {
