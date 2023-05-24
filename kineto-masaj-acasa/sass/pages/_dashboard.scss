@@ -114,6 +114,8 @@
 
 .dash-content {
   width: 100%;
+  overflow-x: clip !important;
+  overflox-y: auto !important;
 
   @include phone {
     gap: 0 !important;

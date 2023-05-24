@@ -3,145 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="canonical" href="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta name="facebook-domain-verification" content="" />
-    <title>Kineto și masaj | Terapeuți la tine acasă!</title>
-    <link rel="icon" type="image/x-icon" href="img/icon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" type="text/css" href="sass/main.css" />
-    <link rel="stylesheet" href="node_modules/cropperjs/src/css/cropper.css">
-
+    <link rel="stylesheet" href="css/jquery.guillotine.css">
 
     <style>
-      .image-upload-box {
-        margin: 3rem;
+      #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px 40px 40px;
+        -webkit-box-shadow: 0 0 20px 0 #999;
+        -moz-box-shadow: 0 0 20px 0 #999;
+        box-shadow: 0 0 20px #999;
+
+        max-width: 40rem;
+        background-color: #fff;
+        text-align: center;
+
+        place-content: center;
+        place-items: center;
       }
 
-      #container {
-    position: relative;
-    width: 10rem;
-    height: 10rem;
-    border: 1px solid black;
-    overflow: hidden;
-  }
-  #image {
-    position: absolute;
-    cursor: move;
-  }
+      .guillotine-window {
+        padding-top: 100% !important;
+        border-radius: 50%;
+      }
+
+      #frame {
+        border: 1px solid #ccc;
+        /* padding: 5px; */
+        display: block;
+        width: 10rem;
+        /* height: 10rem; */
+        border-radius: 50%;
+        margin-bottom: 2rem;
+      }
+
+      #frame img{
+        overflow-clip-margin: content-box;
+        overflow: clip;
+        /* border-radius: 50%; */
+        /* width: 100%;
+        height: 100%; */
+      }
+
+      #controls {
+        background-color: #1b1b1b;
+        text-align: center;
+        display: block;
+        width: 10rem;
+        margin-top: 2rem;
+        /* margin: auto 30%; */
+      }
+
+      #controls button {
+        display: inline-block;
+        padding: 0 5%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        font-weight: 300;
+        color: #b4b4b4;
+        background-color: #ffffff00;
+        border: none;
+      }
+
+      #data {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        /* margin: auto 15%; */
+        text-align: left;
+        width: 15rem;
+      }
     </style>
   </head>
   <body>
-    
-    <!-- <input type="file" id="imageInput">
-    <canvas id="canvas"></canvas>
-    <button id="compressBtn">Compress</button> -->
-
-      <div class="image-upload-box">
-        <!-- <input type="file" id="fileInput" accept="image/*">
-        <div id="imageContainer">
-            <img id="image" alt="Uploaded image">
+    <div id="content">
+      <h1>Guillotine demo</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae! Quia facilis porro voluptatem incidunt perferendis, hic quaerat optio numquam, magni odio, explicabo ipsa cum id veniam nemo suscipit sapiente.
+      </p>
+      <div class="image-container">
+        <div id="frame">
+          <img id="sample_picture" src="img/banner.webp">
         </div>
-        <button id="cropButton">Crop and Compress</button>
-        <img id="result" alt="Cropped and compressed image"> -->
-
-        <input type="file" id="file-input">
-        <div id="container"></div>
       </div>
-  
-    
-      <script>
       
-        const fileInput = document.getElementById('file-input');
-          const container = document.getElementById('container');
-      
-          fileInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-              const img = new Image();
-              img.src = URL.createObjectURL(file);
-              img.onload = () => {
-                img.id = 'image';
-                container.innerHTML = '';
-                container.appendChild(img);
-                makeImageDraggable(img);
-              };
-            }
-          });
-      
-          function makeImageDraggable(img) {
-            let isDragging = false;
-            let startX, startY, imgX, imgY;
-      
-            img.addEventListener('mousedown', (e) => {
-              startX = e.clientX;
-              startY = e.clientY;
-              imgX = parseInt(img.style.left || 0);
-              imgY = parseInt(img.style.top || 0);
-              isDragging = true;
-            });
-      
-            document.addEventListener('mousemove', (e) => {
-              if (!isDragging) return;
-              const dx = e.clientX - startX;
-              const dy = e.clientY - startY;
-              img.style.left = imgX + dx + 'px';
-              img.style.top = imgY + dy + 'px';
-            });
-      
-            document.addEventListener('mouseup', () => {
-              if (!isDragging) return;
-              isDragging = false;
-              compressImage(img, 100, (compressedImg) => {
-                container.innerHTML = '';
-                compressedImg.id = 'image';
-                container.appendChild(compressedImg);
-              });
-            });
-          }
-      
-          function compressImage(img, targetSizeKB, callback) {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0, img.width, img.height);
-            let quality = 0.9;
-            let imageData = canvas.toDataURL('image/jpeg', quality);
-            while (dataURLtoBlob(imageData).size / 1024 > targetSizeKB) {
-              quality -= 0.1;
-              imageData = canvas.toDataURL('image/jpeg', quality);
-            }
-            const compressedImg = new Image();
-            compressedImg.src = imageData;
-            compressedImg.onload = () => callback(compressedImg);
-          }
-      
-          function dataURLtoBlob(dataurl) {
-            const arr = dataurl.split(',');
-            const mime = arr[0].match(/:(.*?);/)[1];
-            const bstr = atob(arr[1]);
-            let n = bstr.length;
-            const u8arr = new Uint8Array(n);
-            while (n--) {
-              u8arr[n] = bstr.charCodeAt(n);
-            }
-            return new Blob([u8arr], { type: mime });
-          }
-        </script>
+      <div id='controls' class="">
+        <button id='rotate_left'  type='button' title='Rotate left'> <i class="bi bi-arrow-clockwise"></i> </button>
+        <button id='zoom_out'     type='button' title='Zoom out'> <i class="bi bi-zoom-out"></i> </button>
+        <button id='fit'          type='button' title='Fit image'> <i class="bi bi-arrows-move"></i> </button>
+        <button id='zoom_in'      type='button' title='Zoom in'> <i class="bi bi-zoom-in"></i> </button>
+        <button id='rotate_right' type='button' title='Rotate right'> <i class="bi bi-arrow-counterclockwise"></i> </button>
+      </div>
 
-      
-    
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <!-- <script src="test.js"></script> -->
-    <!-- <script src="node_modules\cropperjs\src\js\cropper.js"></script> -->
+    <script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+    <script src="jquery.guillotine.js"></script>
+    <script src="javascript.js"></script>
+    
+    <script>
+
+
+
+
+jQuery(function() {
+      var picture = $('#sample_picture');
+
+      // Make sure the image is completely loaded before calling the plugin
+      picture.one('load', function(){
+        // Initialize plugin (with custom event)
+        picture.guillotine({eventOnChange: 'guillotinechange'});
+
+        // Display inital data
+        var data = picture.guillotine('getData');
+        for(var key in data) { $('#'+key).html(data[key]); }
+        picture.guillotine('rotateLeft');
+        picture.guillotine('rotateRight');
+        picture.guillotine('fit');
+
+        // Bind button actions
+        $('#rotate_left').click(function(){ picture.guillotine('rotateLeft'); });
+        $('#rotate_right').click(function(){ picture.guillotine('rotateRight'); });
+        $('#fit').click(function(){ picture.guillotine('fit'); });
+        $('#zoom_in').click(function(){ picture.guillotine('zoomIn'); });
+        $('#zoom_out').click(function(){ picture.guillotine('zoomOut'); });
+
+        // Update data on change
+        picture.on('guillotinechange', function(ev, data, action) {
+          data.scale = parseFloat(data.scale.toFixed(4));
+          for(var k in data) { $('#'+k).html(data[k]); }
+        });
+      });
+
+      // Make sure the 'load' event is triggered at least once (for cached images)
+      if (picture.prop('complete')) picture.trigger('load')
+
+    });
+    </script>
   </body>
 </html>

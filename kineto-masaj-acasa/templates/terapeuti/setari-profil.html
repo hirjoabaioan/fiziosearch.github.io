@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../../img/icon.webp" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="../../node_modules/imagekit-javascript/dist/imagekit.cjs.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" type="text/css" href="../../sass/main.css" />
   </head>
   <body class="d-flex m-0 p-0">
@@ -246,26 +246,27 @@
                 </a>
               </div>
             </div>
-
-            <div class="d-flex row card">
-              <input type="file" id="file-upload" />
-              <button id="compressAndCrop" class="btn btn-primary">Compress</button>
-              <img src="" alt="Your profile image" id="img-preview" />
-            </div>
-
-            <form action="#" onsubmit="upload()">
-              <input type="file" id="file1" />
-              <input type="submit" value="Send" />
-            </form>
-
-            <form method="get" class="contact-form info-form image-form row">
-              <div class="row gap-2 container settings-profil-img mb-4">
-                <div class="settings-img">
-                  <div class="mb-3 settings-upload">
-                    <img src="../../img/user icon.png" class="picture-src" id="wizardPicturePreview" title="" alt="poza-de-profil" />
-                    <input type="file" id="wizard-picture" class="" title="pic-change" />
+            <form method="get" class="contanct-form info-form image-form row">
+              <div class="row gap-2 container settings-profil-img mb-4" id="content">
+                <div class="settings-img image-container">
+                  <div class="mb-3 settings-upload" id="frame">
+                    <img src="../../img/user icon.png" class="picture-src" id="image-preview" alt="poza-de-profil">
                   </div>
-                  <h6 class="btn btn-primary" id="compressAndCrop">Alege o poză</h6>
+                  <div class="controls">
+                    <button id='rotate_left'  type='button' title='Rotate left'> <i class="bi bi-arrow-clockwise"></i> </button>
+                    <button id='zoom_out'     type='button' title='Zoom out'> <i class="bi bi-zoom-out"></i> </button>
+                    <button id='fit'          type='button' title='Fit image'> <i class="bi bi-arrows-move"></i> </button>
+                    <button id='zoom_in'      type='button' title='Zoom in'> <i class="bi bi-zoom-in"></i> </button>
+                    <button id='rotate_right' type='button' title='Rotate right'> <i class="bi bi-arrow-counterclockwise"></i> </button>
+                  </div>
+            
+                  <input type="file" title="image-upload" name="file-upload" id="image-input" class="hidden" />
+                  <label for="image-input" class="btn btn-primary" id="upload-image">Alege o poză</label>
+
+                  <button type="button" class="btn btn-primary" id="save-image">
+                    Salvează poza
+                  </button>
+            
                 </div>
               </div>
             </form>
@@ -434,9 +435,9 @@
       </div>
     </div>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" cr="https://unpkg.com/imagekit-javascript@1.5.5/dist/imagekit.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="../../jquery.guillotine.js"></script>
     <script src="../../javascript.js"></script>
+
   </body>
 </html>

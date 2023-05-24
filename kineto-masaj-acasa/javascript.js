@@ -1,8 +1,3 @@
-//Import Cloudinary
-// import { Cloudinary } from "@cloudinary/url-gen";
-// import { Resize } from "@cloudinary/url-gen/actions";
-
-// import ImageKit from "imagekit-javascript";
 
 // Accessing the Document through jQuery
 $(document).ready(function () {
@@ -130,22 +125,25 @@ $(document).ready(function () {
         false
       );
     });
+
+    function calculateDate(age) {
+      const todayDate = new Date();
+      const calculatedDate = new Date(todayDate.setFullYear(todayDate.getFullYear() - age));
+      return calculatedDate.toJSON().split("T")[0];
+    }
+  
+    function calculateAge(userBirthdate) {
+      let today = Date.now();
+      let birthday = new Date(userBirthdate);
+      let month = new Date(today - birthday.getTime());
+      let year = month.getUTCFullYear();
+      let age = Math.abs(year - 1970);
+      return age;
+    }
+
+
   })();
 
-  function calculateDate(age) {
-    const todayDate = new Date();
-    const calculatedDate = new Date(todayDate.setFullYear(todayDate.getFullYear() - age));
-    return calculatedDate.toJSON().split("T")[0];
-  }
-
-  function calculateAge(userBirthdate) {
-    let today = Date.now();
-    let birthday = new Date(userBirthdate);
-    let month = new Date(today - birthday.getTime());
-    let year = month.getUTCFullYear();
-    let age = Math.abs(year - 1970);
-    return age;
-  }
 
   if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
     $(".contact-info").hide();
@@ -263,179 +261,160 @@ $(document).ready(function () {
     });
   }
 
-  // Script for image upload, resizing and compressing
-  // $("#fileInput").change(function () {
-  //   var file = this.files[0];
-  //   var reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //   reader.onload = function (event) {
-  //     $("#preview").attr("src", event.target.result);
-  //   };
-  // });
 
-  // const cldInstance = new Cloudinary({ cloud: { cloudName: "ddi3ezx01" } });
+  // For the Activity Switch on therapists Dashboard page
+  function checkerFunction() {
+    if ($("#checker").is(":checked")) {
+      $("#toggle-inactive").css("color", "#f44336");
+      $("#toggle-active").css("color", "black");
+      // Terapeut indisponibil
+    } else {
+      $("#toggle-active").css("color", "#108F96");
+      $("#toggle-inactive").css("color", "black");
+      // Terapeut disponibil
+    }
+  }
 
-  // //Upload image
-  // const uploadWidget = cloudinary.creatUploadWidget(
-  //   {
-  //     cloudName: ddi3ezx01,
-  //     uploadPreset: snqii95m,
-  //     cropping: true,
-  //     sources: ["local"],
-  //     multiple: false,
-  //     folder: "users",
-  //     clientAllowedFormats: ["images"],
-  //     maxImageFileSize: 2000000,
-  //     maxImageWidth: 100,
-  //   },
-  //   (error, result) => {
-  //     if (!error && result && result.event === "success") {
-  //       console.log("Done! Here is the image info: ", result.info);
-  //       document.getElementById("uploadImage").setAttribute("src", result.info.secure_url);
-  //     }
-  //   }
-  // );
 
-  // document.getElementById("upload_widget").addEventListener(
-  //   "click",
-  //   function () {
-  //     uploadWidget.open();
-  //   },
-  //   false
-  // );
+  //Image upload script
+    $('#save-image').css('display', 'none');
+    // Prepare the preview for profile picture
+    $("#image-input").change(function () {
+      readURL(this);
 
-  // // Transform
+      $(".controls").css('display', 'flex');
+      $('#upload-image').css('display', 'none');
+      $('#save-image').css('display', 'inline-block');
+      // $('.settings-upload').css('height', '') 
+      
 
-  // const myImage = cldInstance.image("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg").setDeliveryType("fetch").resize(Resize.fill().width(100).height(150));
+      jQuery(function() {
+        var picture = $('#image-preview');
 
-  // console.log(myImage.toURL());
-  // //res.cloudinary.com/<cloud_name>/image/fetch/c_fill,h_150,w_100/https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg
+        // Make sure the image is completely loaded before calling the plugin
+        picture.one('load', function(){
+          // Initialize plugin (with custom event)
+          picture.guillotine({eventOnChange: 'guillotinechange'});
 
-  // https: $("#compressAndCrop").click(function () {
-  //   var img = document.getElementById("preview");
-  //   var maxSize = 100; // maximum size in KB
-  //   var width = img.width;
-  //   var height = img.height;
-  //   if (width > height) {
-  //     if (width > maxSize * 1024) {
-  //       height *= (maxSize * 1024) / width;
-  //       width = maxSize * 1024;
-  //     }
-  //   } else {
-  //     if (height > maxSize * 1024) {
-  //       width *= (maxSize * 1024) / height;
-  //       height = maxSize * 1024;
-  //     }
-  //   }
+          // Display inital data
+          var data = picture.guillotine('getData');
+          for(var key in data) { $('#'+key).html(data[key]); }
+          picture.guillotine('rotateLeft');
+          picture.guillotine('rotateRight');
+          picture.guillotine('fit');
 
-  //   $.ajax({
-  //     url: "https://api.cloudinary.com/v1_1/ddi3ezx01/image/upload",
-  //     type: "POST",
-  //     data: {
-  //       file: img.src,
-  //       upload_preset: "snqii95m",
-  //       crop: "fill",
-  //       width: size,
-  //       height: size,
-  //       quality: "auto",
-  //     },
-  //     success: function (data) {
-  //       $("#preview").attr("src", data.secure_url);
-  //     },
-  //   });
-  // });
-});
+          // Bind button actions
+          $('#rotate_left').click(function(){ picture.guillotine('rotateLeft'); });
+          $('#rotate_right').click(function(){ picture.guillotine('rotateRight'); });
+          $('#fit').click(function(){ picture.guillotine('fit'); });
+          $('#zoom_in').click(function(){ picture.guillotine('zoomIn'); });
+          $('#zoom_out').click(function(){ picture.guillotine('zoomOut'); });
 
-// const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/ddi3ezx01/upload";
-// const CLOUDINARY_UPLOAD_PRESET = "snqii95m";
+          // Update data on change
+          picture.on('guillotinechange', function(ev, data, action) {
+            data.scale = parseFloat(data.scale.toFixed(4));
+            for(var k in data) { $('#'+k).html(data[k]); }
+          });
+        });
 
-// const imgPreview = document.getElementById("img-preview");
-// const fileUpload = document.getElementById("file-upload");
+        // Make sure the 'load' event is triggered at least once (for cached images)
+        if (picture.prop('complete')) picture.trigger('load')
 
-// fileUpload.addEventListener("change", function (event) {
-//   const file = event.target.files[0];
-//   const formData = new FormData();
-//   formData.append("file", file);
-//   formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+        $('#save-image').click(function(){
+          // let image = $('#image-preview');
+          let data = picture.guillotine('getData');
 
-//   axios({
-//     url: CLOUDINARY_URL,
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/x-www-form-urlencoded",
-//     },
-//     data: formData,
-//   })
-//     .then(function (res) {
-//       console.log(res);
-//     })
-//     .catch(function (err) {
-//       console.log(err);
-//     });
-// });
+          $(".controls").css('display', 'none');
+          $('#upload-image').css('display', 'inline-block');
+          $('#save-image').css('display', 'none');
 
-const imagekit = new ImageKit({
-  publicKey: "public_NvmSDeqlwPDb2eKuraNmfVhJsYo=",
-  urlEndpoint: "https://ik.imagekit.io/4eksvaiete",
-  authenticationEndpoint: "http://127.0.0.1:5500/templates/terapeuti/setari-profil.html",
-});
+          picture.guillotine('disable');
+          $(".guillotine-window body.guillotine-dragging").css('cursor', 'pointer !important')
+                        
 
-function upload(data) {
-  const file = document.getElementById("file1");
-
-  imagekit
-    .upload({
-      file: file.files[0],
-      fileName: "abc1.jpg",
-      tags: ["tag1"],
-      extensions: [
-        {
-          name: "aws-auto-tagging",
-          minConfidence: 80,
-          maxTags: 10,
-        },
-      ],
-    })
-    .then((result) => {
-      console.log(result);
-    })
-    .then((error) => {
-      console.log(error);
+        });
+      });
     });
-}
-
-// For the Activity Switch on therapists Dashboard page
-function checkerFunction() {
-  if ($("#checker").is(":checked")) {
-    $("#toggle-inactive").css("color", "#f44336");
-    $("#toggle-active").css("color", "black");
-    // Terapeut indisponibil
-  } else {
-    $("#toggle-active").css("color", "#108F96");
-    $("#toggle-inactive").css("color", "black");
-    // Terapeut disponibil
+  
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = (err) => reject(err);
+      img.src = src;
+    });
   }
-}
 
-//vezi in ce pagini e
-$(document).ready(function () {
-  // Prepare the preview for profile picture
-  $("#wizard-picture").change(function () {
-    readURL(this);
-  });
+  function resizeImage(image, maxWidth, maxHeight) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const ratio = Math.min(maxWidth / image.width, maxHeight / image.height);
+    canvas.width = image.width * ratio;
+    canvas.height = image.height * ratio;
+
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    return canvas;
+  }
+
+  function compressImage(canvas, targetSize) {
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = () => {
+          const base64data = reader.result;
+          const image = new Image();
+          image.src = base64data;
+          image.onload = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = image.width;
+            canvas.height = image.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(image, 0, 0);
+            canvas.toBlob((webpBlob) => {
+              const webpReader = new FileReader();
+              webpReader.readAsDataURL(webpBlob);
+              webpReader.onloadend = () => {
+                resolve(webpReader.result);
+              };
+            }, 'image/webp', 0.8);
+          };
+        };
+      }, 'image/jpeg', 0.8);
+    });
+  }
+  
+  // Upload image, resize it to 100 kb and then load it to be processed by the user
+  async function readURL(input) {
+    if (input.files && input.files[0]) {
+      let reader = new FileReader();
+      const MAX_WIDTH = 500;
+      const MAX_HEIGHT = 500;
+      // 100KB target size
+      const MAX_SIZE = 100 * 1024;
+
+      reader.onload = async (event) => {
+        try {
+          const image = await loadImage(event.target.result);
+          const resizedCanvas = resizeImage(image, MAX_WIDTH, MAX_HEIGHT);
+          const compressedDataUrl = await compressImage(resizedCanvas, MAX_SIZE); 
+        $("#image-preview").attr("src", compressedDataUrl).fadeIn("slow");
+        } catch (err) {
+          console.error('Error resizing image:', err);
+        }
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      alert('Vă rugăm să încărcați o imagine validă!');
+      return;
+    }
+  }
+
 });
 
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
 
-    reader.onload = function (e) {
-      $("#wizardPicturePreview").attr("src", e.target.result).fadeIn("slow");
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
+// Script pentru sortarea tabelelor - Pagina Pacient
 const rows = document.querySelectorAll(".program-table tr.collapsible");
 
 rows.forEach((row) => {
@@ -453,30 +432,54 @@ rows.forEach((row) => {
   });
 });
 
+//In Pagina Pacient
+function sortTable(table, column, asc) {
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
 
-function sortTable(columnIndex) {
-  const table = document.getElementById("myTable");
-  const rows = Array.from(table.rows).slice(1); // Exclude the header row
-  let ascending = true;
-
-  // Check if the table is already sorted in ascending order
-  if (rows[0].cells[columnIndex].innerHTML > rows[1].cells[columnIndex].innerHTML) {
-    ascending = false;
-  }
-
+  // Sort the rows based on the specified column and order
+  const order = asc ? 1 : -1;
   rows.sort((a, b) => {
-    const aValue = a.cells[columnIndex].innerHTML;
-    const bValue = b.cells[columnIndex].innerHTML;
-
-    if (ascending) {
-      return aValue.localeCompare(bValue);
-    } else {
-      return bValue.localeCompare(aValue);
-    }
+    const aValue = a.querySelectorAll('td')[column].textContent;
+    const bValue = b.querySelectorAll('td')[column].textContent;
+    return order * aValue.localeCompare(bValue);
   });
 
-  // Rebuild the table with the sorted rows
-  for (const row of rows) {
-    table.tBodies[0].appendChild(row);
+  // Empty the table body and add the sorted rows
+  while (tbody.firstChild) {
+    tbody.removeChild(tbody.firstChild);
   }
+  rows.forEach(row => tbody.appendChild(row));
 }
+const table = document.querySelector('#scheduleTable');
+
+// Add buttons and event listeners to table headers with "sort" class
+table.querySelectorAll('thead th').forEach((th, index) => {
+  const button = document.createElement('button');
+  button.classList.add('sort-button');
+  button.textContent = '▼';
+  button.addEventListener('click', () => {
+    const asc = button.textContent === '▲';
+    sortTable(table, index, asc);
+    button.textContent = asc ? '▼' : '▲';
+  });
+  th.appendChild(button);
+});
+
+
+
+// function compressImage(canvas, targetSize) {
+//   let quality = 1;
+//   let imageData = canvas.toDataURL('image/jpeg', quality);
+
+//   while (imageData.length > targetSize) {
+//     quality -= 0.1;
+//     imageData = canvas.toDataURL('image/jpeg', quality);
+//   }
+
+//   return imageData;
+// }
+
+
+
+// cod email: 370055
