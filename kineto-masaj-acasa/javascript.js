@@ -500,19 +500,3 @@ table.querySelectorAll('thead th').forEach((th, index) => {
 });
 
 
-
-// function compressImage(canvas, targetSize) {
-//   let quality = 1;
-//   let imageData = canvas.toDataURL('image/jpeg', quality);
-
-//   while (imageData.length > targetSize) {
-//     quality -= 0.1;
-//     imageData = canvas.toDataURL('image/jpeg', quality);
-//   }
-
-//   return imageData;
-// }
-
-
-
-// cod email: 370055

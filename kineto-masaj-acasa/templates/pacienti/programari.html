@@ -220,854 +220,218 @@
             </div>
           </nav>
           <div class="row gap-2 settings-profil m-0 mt-4 p-2">
-            <div class="row programmer-container m-0 p-0 custom-scrollbar-css">
-              <!-- <div class="tabel h-25 m-0 p-0">
-                            <div class="tabel-header">
-                                <div class="tabel-cell">Terapeut</div>
-                                <div class="tabel-cell">Serviciu</div>
-                                <div class="tabel-cell">Ședințe realizate</div>
-                                <div class="tabel-cell">Ședințe programate</div>
-                                <div class="tabel-cell">Acțiuni</div>
-                            </div>
-                            <div class="tabel-body">
-                                <div class="tabel-row">
-                                    <div class="tabel-cell">
-                                        <div class="name-data">
-                                            <div class="program-profile-img">
-                                                <img src="../../img/profiles/PozaP.webp" alt="profiles">
-                                            </div>
-                                            <span>Petrescu Ana Maria</span>
-                                        </div>
-                                    </div>
-                                    <div class="tabel-cell">Kinetoterapeut</div>
-                                    <div class="tabel-cell">8</div>
-                                    <div class="tabel-cell">2</div>
-                                    <div class="tabel-cell">
-                                        <div class="icon-data">
-                                        <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                                                <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                                            </svg>
-                                        </a>
-                                        <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie" >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-                                            </svg>
-                                        </a>
-                                        <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                                            </svg>
-                                        </a>
-                                        </div>
-                                    </div>
+            <div class="container shadow py-2 table-container ">
+              <div class="schedule-table-header">
+                  <div class="patient-name">
+                      <!-- Numele pacientului selectat -->
+                      <h2>Popescu Ion</h2>
+                  </div>
+                  <div class="terapy-search">
+                      <div class="input-group d-flex justify-content-center text-center p-2 search-box">
+                          <input type="text" class="form-control" placeholder="Caută o terapie..." aria-label="Caută" aria-describedby="search-button" />
+                          <!-- Cu trimitere la pagina de search cu filtrele selectate mai sus -->
+                          <button class="btn btn-success search-button" type="button">
+                            <img src="../../img/search.webp" class="search-icon" alt="Caută" />
+                          </button>
+                        </div>
+                  </div>
+                  
+              </div>
+              <div class="patient-schedule-table">              
+                <table class="patient-schedule-table-content overflow-auto custom-scrollbar-css text-nowrap" id="scheduleTable">
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Început</th>
+                      <th>Sfârșit</th>
+                      <th>Terapeut</th>
+                      <th>Terapie</th>
+                      <th>Stare</th>
+                      <th>Acțiuni</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- De integrat in JS -->
+                    <tr>
+                      <td>14.05.2023</td>
+                      <td>13:00</td>
+                      <td>15:00</td>
+                      <td>Popa Alin</td>
+                      <td>Kinetoterapie</td>
+                      <td>Programat</td>
+                      <td>
+                        <div class="icon-data">
+                          <!-- link catre folderul pacientului - de integrat in JS -->
+                          <a href="#" data-bs-toggle="tooltip" data-bs-title="Deschide fișierele" class="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                              <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                            </svg>
+                          </a>
+                          <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul" class="chat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                              <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                              <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- Umplutura - de sters -->
+                    <tr>
+                      <td>14.05.2023</td>
+                      <td>13:00</td>
+                      <td>15:00</td>
+                      <td>Popa Alin</td>
+                      <td>Kinetoterapie</td>
+                      <td>Realizat</td>
+                      <td>
+                        <div class="icon-data">
+                          <a href="#"  data-bs-title="Modifică">
+                            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                            </svg>
+                          </a>
+                          <a href="#" class="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                              <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>15.05.2023</td>
+                      <td>13:00</td>
+                      <td>15:00</td>
+                      <td>Popa Alin</td>
+                      <td>Kinetoterapie</td>
+                      <td>Anulat</td>
+                      <td>
+                        <div class="icon-data">
+                          <a href="#"  data-bs-title="Modifică">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                            </svg>
+                          </a>
+                          <a href="#" class="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                              <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>16.05.2023</td>
+                      <td>13:00</td>
+                      <td>15:00</td>
+                      <td>George Constantin</td>
+                      <td>Masaj</td>
+                      <td>Realizat</td>
+                      <td>
+                        <div class="icon-data">
+                          <a href="#"  data-bs-title="Modifică">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                            </svg>
+                          </a>
+                          <a href="#" class="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                              <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>17.05.2023</td>
+                      <td>13:00</td>
+                      <td>15:00</td>
+                      <td>George Constantin</td>
+                      <td>Masaj</td>
+                      <td>Programat</td>
+                      <td>
+                        <div class="icon-data">
+                          <a href="#"  data-bs-title="Modifică">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                            </svg>
+                          </a>
+                          <a href="#" class="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                              <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  
+                  <!-- De inserat cu JS -->
+                  <div class="modal fade patient-schedule-table-modal" id="modal_1" tabindex="-1" aria-labelledby="labelModal_1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header modal-border">
+                          <h3 class="modal-title" id="labelModal_1">Programare</h3>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <h4>Popescu Ion</h4>
+                          <div class="input-area">
+                            <div class="row g-3 align-items-center">
+                              <div class="col-xs-2 col-sm-1">
+                                <span class="col-form-label">Terapii:</span>
+                              </div>
+                              
+                              <div class="col-xs-10 col-sm-11">
+                                <div class="dropdown dash-drops">
+                                  <select name="Services" onchange="SelectService(this);" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuServicii" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <option selected>Serviciul selectat</option>
+                                    <option value="dropdown-item" value="Kinetoterapeut">Kinetoterapeut</option>
+                                    <option class="dropdown-item" value="Maseur">Maseur</option>
+                                  </select>
                                 </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row g-3 align-items-center">
+                              <div class="col-auto">
+                                <label for="modal-input-date" class="col-form-label">Dată:</label>
+                              </div>
+                              <div class="col-auto">
+                                <input type="date" id="modal-input-date" class="form-control">
+                              </div>
                             </div>
 
-                        </div> -->
-
-              <table class="tabel-programari overflow-auto">
-                <tr>
-                  <th>
-                    <span>Terapeut</span>
-                  </th>
-                  <th>
-                    <span>Serviciu</span>
-                  </th>
-                  <th>
-                    <span>Ședințe realizate</span>
-                  </th>
-                  <th>
-                    <span>Ședințe programate</span>
-                  </th>
-                  <th>
-                    <span>Acțiuni</span>
-                  </th>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
+                            <div class="row g-3 align-items-center">
+                              <div class="col-auto">
+                                <label for="modal-input-time" class="col-form-label">Interval orar:</label>
+                              </div>
+                              <div class="col-auto">
+                                <input type="time" id="modal-input-time" class="form-control">
+                              </div>
+                              <div class="col-auto">
+                                <span class=""> <i class="bi bi-arrow-right"></i> 10:00</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <h3>Descriere</h3>
+                            <hr>
+                            <div class="mb-3">
+                              <textarea class="form-control" name="description" rows="4"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary">Salvează</button></div>
+                      </div>
                     </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Andrei Popovici</span>
-                  </td>
-                  <td>
-                    <span>Masaj</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Andrei Popovici</span>
-                  </td>
-                  <td>
-                    <span>Masaj</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Ionescu Marin</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="name-data">
-                    <div class="program-profile-img">
-                      <img src="../../img/profiles/PozaP.webp" alt="profiles" />
-                    </div>
-                    <span>Petrescu Ana Maria</span>
-                  </td>
-                  <td>
-                    <span>Kinetoterapie</span>
-                  </td>
-                  <td>
-                    <span>8</span>
-                  </td>
-                  <td>
-                    <span>2</span>
-                  </td>
-                  <td class="icon-data">
-                    <a href="mesagerie.html" data-bs-toggle="tooltip" data-bs-title="Contează terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Acordă o recenzie">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                      </svg>
-                    </a>
-
-                    <a href="" data-bs-toggle="tooltip" data-bs-title="Reclamă terapeutul">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <!-- <div class="tabel-footer">
-                        <div class="tabel-cell"></div>
-                    </div> -->
-            <div class="mx-2 px-2 end-space"></div>
+                  </div>
+                </table>
+              </div>
+          </div>
           </div>
         </div>
       </div>

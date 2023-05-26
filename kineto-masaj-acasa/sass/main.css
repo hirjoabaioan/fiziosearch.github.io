@@ -298,6 +298,25 @@ footer {
   background-color: #194151 !important;
 }
 
+.btn-info {
+  background-color: #9dd0d3;
+  border-radius: 3rem;
+  color: white !important;
+  border: none;
+}
+.btn-info:hover, .btn-info:focus {
+  background-color: #9dd0d3;
+  border: solid 1px #212427;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+.btn-info:active {
+  background-color: #9dd0d3 !important;
+  border: solid 1px #212427;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
 /* Subsolul */
 footer .bi {
   font-size: 1.25rem;
@@ -2613,30 +2632,6 @@ body.guillotine-dragging, body.guillotine-dragging * {
   cursor: pointer;
 }
 
-.programator-nav a {
-  font-size: 0.7rem;
-  width: 45%;
-}
-@media (min-width: 37.5rem) {
-  .programator-nav a {
-    font-size: 0.8rem;
-    width: 35%;
-  }
-}
-@media (min-width: 64rem) {
-  .programator-nav a {
-    width: 25%;
-  }
-}
-
-.programmer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-  height: 75vh;
-}
-
 .tabel {
   display: table;
   background-color: silver;
@@ -2857,12 +2852,6 @@ body.guillotine-dragging, body.guillotine-dragging * {
   }
 }
 
-@media (min-width: 37.5rem) {
-  .tabel-programari {
-    width: 90% !important;
-  }
-}
-
 .table-container {
   width: 90%;
   border-radius: 1rem;
@@ -3037,53 +3026,93 @@ body.guillotine-dragging, body.guillotine-dragging * {
   padding: 0 1rem !important;
 }
 
-.new-table {
+.patient-schedule-table {
   max-height: 70vh;
   overflow-y: auto;
 }
-.new-table table {
+.patient-schedule-table table {
   width: 100%;
   border-collapse: collapse;
 }
-.new-table th, .new-table td {
+.patient-schedule-table tr {
+  margin-top: 0.5rem;
+}
+.patient-schedule-table th, .patient-schedule-table td {
   text-align: center;
   padding: 0.5rem;
 }
-.new-table thead {
+.patient-schedule-table thead {
   position: sticky;
   top: 0;
   z-index: 100;
   background-color: white;
   text-align: center;
 }
-.new-table th {
+.patient-schedule-table th {
   text-align: center;
   padding: 0.2rem;
   position: sticky;
   top: 0;
 }
-.new-table td {
+.patient-schedule-table td {
   font-weight: 300;
 }
-.new-table .sort-button {
+.patient-schedule-table .sort-button {
   font-size: 0.5rem;
   border: none;
   background-color: transparent;
 }
 @media (min-width: 37.5rem) {
-  .new-table .sort-button {
+  .patient-schedule-table .sort-button {
     font-size: 1rem;
   }
 }
-.new-table .icon-data svg {
-  width: clamp(0.5rem, 2.5vw + 0.2rem, 1.5rem);
+.patient-schedule-table .color {
+  margin: 0 auto;
+  width: clamp(0.5rem, 2.5vw + 0.1rem, 1rem);
+  height: clamp(0.5rem, 2.5vw + 0.1rem, 1rem);
+  background-color: red;
+  border-radius: 50%;
 }
-.new-table .icon-data svg:hover path {
+.patient-schedule-table .icon-data {
+  display: flex;
+  place-content: center;
+  gap: 0.5rem;
+}
+.patient-schedule-table .icon-data svg {
+  width: 1rem;
+}
+.patient-schedule-table .icon-data .edit:hover path {
   d: path("M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z");
 }
-.new-table .icon-data i {
-  font-size: clamp(0.5rem, 2.5vw + 0.2rem, 1.5rem);
+.patient-schedule-table .icon-data .folder:hover path {
+  d: path("M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z");
 }
+.patient-schedule-table .icon-data .chat:hover path {
+  d: path("M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z");
+}
+.patient-schedule-table-modal h3 {
+  font-weight: 700;
+}
+.patient-schedule-table-modal .modal-border {
+  border-bottom: solid 4px purple;
+}
+.patient-schedule-table-modal h4 {
+  text-align: center;
+  font-weight: 600;
+}
+.patient-schedule-table-modal .input-area {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.patient-schedule-table-modal textarea {
+  border-radius: 1rem;
+}
+.patient-schedule-table-modal textarea:target, .patient-schedule-table-modal textarea:focus, .patient-schedule-table-modal textarea:active {
+  border-radius: 1rem;
+}
+
 @media (min-width: 37.5rem) {
   .t-p {
     width: 80%;
