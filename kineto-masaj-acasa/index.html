@@ -99,58 +99,35 @@
     </header>
 
     <main class="col-12 d-flex row w-100 m-0 p-0">
-      <div class="d-flex justify-content-center  m-0 p-0 upper-text text-wrap text-break">
+      <div class="d-flex justify-content-center m-0 p-0 upper-text text-wrap text-break">
         <h2 class="m-0 p-2 text-center">Fă-ți cont și caută un terapeut acum!</h2>
       </div>
-      <div class="d-flex justify-content-center  m-0 p-0 banner">
+      <div class="d-flex justify-content-center m-0 p-0 banner">
         <div class="d-flex row justify-content-center align-items-center w-100 m-0 p-0 cover">
           <div class="col-12 text-break text-wrap wide-text">
             <h1 class="text-center">Alegeți terapeutul cel mai apropiat!</h1>
           </div>
-          <form class="col-12 d-flex justify-content-center " action="" method="">
-            <div class="d-flex row justify-content-around align-items-center m-0 p-0 form-container">
-              <!-- Localitatea -->
-              <!--ÎNLOCUIEȘTE CU SELECT-->
-              <div class="d-flex justify-content-center  col-md-3 col-sm-12 mt-2 mb-2 m-0 p-0 dropdown">
-                <select name="ChooseCounty" onchange="NameOfCountry(this);" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labe="Județe">
-                  <option selected>Județ</option>
-                  <option value="1">București</option>
-                  <option value="2">Alba</option>
-                  <option value="3">Arad</option>
-                  <option value="4">Argeș</option>
-                  <option value="5">Bacău</option>
-                  <option value="6">Bihor</option>
-                </select>
-              </div>
-
-              <!-- Serviciile -->
-              <div class="d-flex justify-content-center  col-md-3 col-sm-12 mt-2 mb-2 m-0 p-0 dropdown">
-                <select name="Services" onchange="SelectService(this);" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labe="Județe">
-                  <option selected>Servicii</option>
-                  <option value="1">Kinetoterapeut</option>
-                  <option value="2">Maseur</option>
-                </select>
-              </div>
-
-              <!-- Specializările - în funcție de serviciul ales -->
-              <div class="d-flex justify-content-center  col-md-3 col-sm-12 mt-2 mb-2 m-0 p-0 dropdown">
-                <select name="Specialization" class="w-50 w-sm-50 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSpecializari" data-bs-toggle="dropdown" aria-expanded="false">
-                  <option selected>Specializări</option>
-                  <option value="1">Kinetoterapie</option>
-                  <option value="2">Masaj</option>
-                  <option value="3">Cardiologie</option>
-                  <option value="4">Balneologie</option>
-                  <option value="5">Limfedem</option>
-                </select>
-              </div>
-              <div class="d-flex justify-content-center  col-md-3 col-sm-12 mt-2 mb-2 m-0 p-0">
-                <button class="w-50 w-xl-50 w-lg-50 w-md-100 w-sm-100 w-xs-100 btn btn-secondary searchButtonIndex" type="button">Caută</button>
-              </div>
+          <form class="m-0 p-0 index-form" action="http://127.0.0.1:5500/templates/search.html" method="GET">
+            <div class="mt-2 mb-2 m-2 p-0 selectionDropdown">
+              <input type="text" class="btn btn-secondary" list="placesList" id="dropdownPlace" placeholder="Alege un oraș  ▼" name="place" />
+              <datalist id="placesList"></datalist>
+            </div>
+            <div class="mt-2 mb-2 m-2 p-0 selectionDropdown">
+              <input type="text" class="btn btn-secondary" list="servicesList" id="dropdownService" placeholder="Alege un serviciu  ▼" name="service" />
+              <datalist id="servicesList"></datalist>
+            </div>
+            <div class="mt-2 mb-2 m-2 p-0 selectionDropdown">
+              <input type="text" class="btn btn-secondary" list="specializationList" id="dropdownSpecialization" placeholder="Alege o specializare  ▼" name="specialization" />
+              <datalist id="specializationList"></datalist>
+            </div>
+            <div class="mt-2 mb-2 m-2 p-0 selectionDropdown">
+              <!-- Trimitere pe pagina de cautare cu informatiile preluate din cele 3 imputuri, daca sunt goale, se cauta general -->
+              <input class="btn btn-secondary searchButtonIndex" type="submit" value="Caută" />
             </div>
           </form>
         </div>
       </div>
-     
+
       <div class="scroll-container">
         <div class="m-0 mt-4 p-0 findout-text">
           <h2 class="text-center">Află mai multe!</h2>
@@ -161,16 +138,16 @@
           </span>
         </a>
       </div>
-     
+
       <div class="content-services" id="section-2">
         <!-- Servicii -->
-        <div class="d-flex row justify-content-center  m-0 mt-5 p-0">
+        <div class="d-flex row justify-content-center m-0 mt-5 p-0">
           <h2 class="text-center text-wrap m-0 p-0">Serviciile noastre</h2>
-          <div class="col-12 d-flex row justify-content-center  m-0 mt-2 p-0">
-            <div class="d-flex justify-content-center  m-3 card" style="width: 18rem">
+          <div class="col-12 d-flex row justify-content-center m-0 mt-2 p-0">
+            <div class="d-flex justify-content-center m-3 card" style="width: 18rem">
               <img src="img/Kineto.webp" class="card-img-top" alt="Kinetoterapeuți" />
               <hr />
-              <div class="card-body row d-flex justify-content-center ">
+              <div class="card-body row d-flex justify-content-center">
                 <h3 class="card-title col-12 text-center">Kinetoterapeuți</h3>
                 <p class="card-text text-center">Kinetoterapeuți pregătiți să te ajute în tratamentul de recuperare sau profilactic!</p>
                 <a href="templates/about-kineto.html" class="col-12 mt-2 btn btn-primary">
@@ -180,10 +157,10 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-center  m-3 card" style="width: 18rem">
+            <div class="d-flex justify-content-center m-3 card" style="width: 18rem">
               <img src="img/Masaj.webp" class="card-img-top" alt="Masseuri" />
               <hr />
-              <div class="card-body row d-flex justify-content-center ">
+              <div class="card-body row d-flex justify-content-center">
                 <h3 class="card-title col-12 text-center">Maseuri</h3>
                 <p class="card-text text-center">Răsfață-te cu un masaj relaxant sau tonifiant oferit de un maseur profesionist!</p>
                 <a href="templates/about-masaj.html" class="col-12 mt-2 btn btn-primary">
@@ -197,7 +174,7 @@
       </div>
       <div class="d-flex row justify-content-center align-items-center text-center m-0 mt-5 mb-5 content-howto">
         <h2 class="text-wrap">Cum funcționează?</h2>
-        <div class="d-flex row justify-content-center  mt-4">
+        <div class="d-flex row justify-content-center mt-4">
           <div class="col-md-4 col-sm-12 d-flex row justify-content-center align-items-center my-2">
             <img src="img/HowI.webp" alt="How to Log In" class="col-12" />
             <h4 class="col-12 text-uppercase fw-bold my-2">Crează-ți un cont</h4>
@@ -222,7 +199,7 @@
               <div class="card-flip-inner">
                 <div class="card-flip-body card-flip-body-front">
                   <figure class="card-new">
-                    <img src="img/kineto-card-thumb.webp" alt="Kineto" class="card-new-image">
+                    <img src="img/kineto-card-thumb.webp" alt="Kineto" class="card-new-image" />
                     <figcaption class="card-new-body">
                       <h2 class="card-new-title">Kinetoterapia</h2>
                     </figcaption>
@@ -231,12 +208,9 @@
                 <div class="card-flip-body card-flip-body-back">
                   <a href="templates/articole/kinetoterapia.html" class="card-link">
                     <figure class="card-new">
-                      <img src="img/kineto-card-thumb.webp" alt="Kineto" class="card-new-image">
+                      <img src="img/kineto-card-thumb.webp" alt="Kineto" class="card-new-image" />
                       <figcaption class="card-new-body">
-                        <p class="card-new-text">
-                          Kinetoterapia sau terapia prin mișcare reprezintă un complex de terapii și exerciții atent structurate de către un kinetoterapeut specializat
-                      și adaptate nevoilor fiecărui pacient.
-                        </p>
+                        <p class="card-new-text">Kinetoterapia sau terapia prin mișcare reprezintă un complex de terapii și exerciții atent structurate de către un kinetoterapeut specializat și adaptate nevoilor fiecărui pacient.</p>
                         <p class="card-new-subtitle">Citiți mai multe aici</p>
                       </figcaption>
                     </figure>
@@ -244,12 +218,12 @@
                 </div>
               </div>
             </article>
-  
+
             <article class="card-flip">
               <div class="card-flip-inner">
                 <div class="card-flip-body card-flip-body-front">
                   <figure class="card-new">
-                    <img src="img/massage-card-thumb.webp" alt="Masaj" class="card-new-image">
+                    <img src="img/massage-card-thumb.webp" alt="Masaj" class="card-new-image" />
                     <figcaption class="card-new-body">
                       <h2 class="card-new-title">Masajul</h2>
                       <!-- <p class="card-new-subtitle">Citiți mai multe aici</p> -->
@@ -259,11 +233,9 @@
                 <div class="card-flip-body card-flip-body-back">
                   <a href="templates/articole/masajul.html" class="card-link">
                     <figure class="card-new">
-                      <img src="img/massage-card-thumb.webp" alt="Masaj" class="card-new-image">
+                      <img src="img/massage-card-thumb.webp" alt="Masaj" class="card-new-image" />
                       <figcaption class="card-new-body">
-                        <p class="card-new-text">
-                          Masajul este o formă de terapie manuală cu numeroase beneficii fizice și mentale. 
-                        </p>
+                        <p class="card-new-text">Masajul este o formă de terapie manuală cu numeroase beneficii fizice și mentale.</p>
                         <p class="card-new-subtitle">Citiți mai multe aici</p>
                       </figcaption>
                     </figure>
@@ -272,8 +244,7 @@
               </div>
             </article>
           </div>
-          
-        </div> 
+        </div>
       </div>
     </main>
 

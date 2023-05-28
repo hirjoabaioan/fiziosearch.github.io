@@ -98,34 +98,20 @@
           <form action="" method="" class="col-12 d-flex row justify-content-center p-2 m-0 list-form search-box">
             <div class="col-12 m-0 p-0">
               <div class="input-group d-flex justify-content-center text-center w-100 m-0 p-2">
-                <input type="text" class="form-control" placeholder="Caută o locație sau un terapeut..." aria-label="Caută" aria-describedby="search-button" />
+                <input type="text" class="form-control" placeholder="Caută o locație sau un terapeut..." aria-label="Caută" aria-describedby="search-button" id="inputSearchField" />
                 <button class="btn btn-success" type="button">
                   <img src="../img/search.webp" id="search-icon" alt="Caută" />
                 </button>
               </div>
             </div>
             <div class="col-12 m-0 p-0 my-2 d-flex row justify-content-center gap-2">
-              <div class="col-6 p-0 dropdown">
-                <select title="Servicii" name="Servicii" onchange="" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownServicii" aria-expanded="false">
-                  <option selected>Servicii</option>
-                  <option value="2">București</option>
-                  <option value="3">Alba</option>
-                  <option value="4">Arad</option>
-                  <option value="5">Argeș</option>
-                  <option value="6">Bacău</option>
-                  <option value="7">Bihor</option>
-                </select>
+              <div class="mt-2 mb-2 m-2 p-0 selectionDropdown">
+                <input type="text" class="btn btn-secondary" list="servicesList" id="dropdownService" placeholder="Alege un serviciu  ▼" name="service" />
+                <datalist id="servicesList"></datalist>
               </div>
-              <div class="col-6 p-0 dropdown">
-                <select title="Specializari" name="Specializari" onchange="" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSpecializari" aria-expanded="false">
-                  <option selected>Servicii</option>
-                  <option value="2">București</option>
-                  <option value="3">Alba</option>
-                  <option value="4">Arad</option>
-                  <option value="5">Argeș</option>
-                  <option value="6">Bacău</option>
-                  <option value="7">Bihor</option>
-                </select>
+              <div class="mt-2 mb-2 m-2 p-0 selectionDropdown">
+                <input type="text" class="btn btn-secondary" list="specializationList" id="dropdownSpecialization" placeholder="Alege o specializare  ▼" name="specialization" />
+                <datalist id="specializationList"></datalist>
               </div>
             </div>
           </form>

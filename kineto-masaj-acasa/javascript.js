@@ -1,6 +1,9 @@
-
 // Accessing the Document through jQuery
 $(document).ready(function () {
+  //--------------------------------------------//
+  //                   TOOLS                    //
+  //--------------------------------------------//
+
   // BS Tooltips
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
@@ -18,7 +21,422 @@ $(document).ready(function () {
     new bootstrap.Popover(el, opts);
   });
 
-  // Script pentru dezactivarea trimiterii formularului dacă sunt câmpuri invalide
+  //--------------------------------------------//
+  //               PAGE SPECIFIC                //
+  //--------------------------------------------//
+
+  // Search page (RO) - de adaugat partea de HTML
+  if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
+    $(".contact-info").hide();
+
+    $(window).resize(function () {
+      if ($(window).width() < 750 && $(".list-container").is(":visible")) {
+        $(".info-container").hide();
+      } else if ($(window).width() > 751) {
+        $(".info-container").show();
+      }
+    });
+
+    if (window.matchMedia("(max-width: 47rem)").matches) {
+      $(".info-container").hide();
+    }
+
+    if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+      $(".med").removeClass("btn btn-secondary");
+    }
+
+    $(".contact-button").click(function () {
+      $(".contact-info").show();
+      $(this).hide();
+    });
+
+    $(".person-box").click(function () {
+      if (window.matchMedia("(max-width: 47rem)").matches) {
+        $(".list-container").removeClass("d-flex");
+        $(".list-container").hide();
+      }
+      $(".info-container").show();
+      $(".info-container").addClass("grid");
+    });
+
+    $("#close").click(function () {
+      if (window.matchMedia("(max-width: 47rem)").matches) {
+        $(".list-container").addClass("d-flex");
+        $(".list-container").show();
+        $(".info-container").removeClass("grid");
+        $(".info-container").hide();
+      }
+
+      if (window.matchMedia("(min-width: 47rem)").matches) {
+        var replace = `
+                <div class="grid jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
+                    <span id="txtCheck">Alege un terapeut din listă</span>
+                </div>
+                `;
+
+        $(".info-container").html(replace);
+      }
+    });
+  }
+
+  // Seen check - Notificari - de adaugat partea de html (RO)
+  if (top.location.pathname === "/templates/terapeuti/notificari.html" || top.location.pathname === "/templates/pacienti/notificari.html") {
+    $(".notification-condition").each(function () {
+      if ($(this).text() === "Văzut") {
+        $(this).css({ color: "grey" });
+        $(this).siblings().css({ color: "grey" });
+      }
+    });
+  }
+
+  // Graphic table - de sters sau editat (RO)
+  if (top.location.pathname === "/templates/pacienti/dashboard-pacient.html" || top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html") {
+    let ySums = [300, 450, 200, 150, 300, 400, 100, 150, 300, 150];
+    let xDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+    new Chart("sumChart", {
+      type: "line",
+      data: {
+        labels: xDays,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "#108F96",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: ySums,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 6, max: 16 } }],
+        },
+      },
+    });
+  }
+
+  // Carousel for prices
+  if (top.location.pathname === "/templates/abonamente.html") {
+    // hide next and prev buttons
+    if ($(window).width() > 1023) {
+      $(".rem-carousel").removeClass("carousel carousel-dark slide");
+      $(".rem-inner").removeClass("carousel-inner");
+      $(".rem-item").removeClass("carousel-item");
+      //   $(".inner-cards").addClass("row");
+      $(".desktop-hide").css({ display: "none" });
+    }
+    $(window).resize(function () {
+      if ($(window).width() > 1023) {
+        $(".rem-carousel").removeClass("carousel carousel-dark slide");
+        $(".rem-inner").removeClass("carousel-inner");
+        $(".rem-item").removeClass("carousel-item");
+        $(".inner-cards").addClass("row");
+        $(".desktop-hide").css({ display: "none" });
+      }
+      if ($(window).width() < 1024) {
+        $(".rem-carousel").addClass("carousel carousel-dark slide");
+        $(".rem-inner").addClass("carousel-inner");
+        $(".rem-item").addClass("carousel-item");
+        $(".inner-cards").removeClass("row");
+        $(".desktop-hide").css({ display: "flex" });
+      }
+    });
+  }
+
+  //Add hours and minutes to the dropdowns in the TERAPII page
+  if (top.location.pathname === "/templates/terapeuti/terapii.html") {
+    let dropDownHoursInsert = $("#dropdownDurataOre");
+    let dropDownMinutesInsert = $("#dropdownDurataMin");
+    const MAX_HOURS = 10;
+    const MAX_MINUTES = 60;
+    const MINUTES_INCREMENTATION = 5;
+
+    for (let hour = 0; hour < MAX_HOURS; hour++) {
+      if (hour < 10) {
+        let optionHourElement = $(`<option value="0${hour}">0${hour}</option>`);
+        dropDownHoursInsert.append(optionHourElement);
+      } else {
+        let optionHourElement = $(`<option value="${hour}"0${hour}</option>`);
+        dropDownHoursInsert.append(optionHourElement);
+      }
+    }
+
+    for (let min = 0; min < MAX_MINUTES; min += MINUTES_INCREMENTATION) {
+      if (min < 10) {
+        let optionMinElement = $(`<option value="0${min}">0${min}</option>`);
+        dropDownMinutesInsert.append(optionMinElement);
+      } else {
+        let optionMinElement = $(`<option value="${min}">${min}</option>`);
+        dropDownMinutesInsert.append(optionMinElement);
+      }
+    }
+  }
+
+  // Patient Therapies page - Therapist Point Of View
+  if (top.location.pathname === "/templates/terapeuti/pagina-pacient.html") {
+    // Se preia numele pacientului din Baza de date (mockup)
+    const patientName = "Popescu Ion";
+    // Se preiau tearpiile introduse de terapeutul inregistrat din Baza de date (mockup)
+    const therapies = [
+      {
+        Culoare: "red",
+        Procedura: "Kinetoterapie",
+        Durata: 2,
+        Tarif: 100,
+      },
+      {
+        Culoare: "green",
+        Procedura: "Masaj",
+        Durata: 1,
+        Tarif: 100,
+      },
+    ];
+    // Se preiau procedurile realizate de catre pacient cu terapeutul inregistrat din Baza de date (mockup)
+    const patientTherapies = [
+      {
+        Culoare: "red",
+        Data: "14.05.2023",
+        Ora_inceput: 13,
+        Ora_sfarsit: "15:00",
+        Terapie: "Kinetoterapie",
+        Status: "Realizat",
+      },
+
+      {
+        Culoare: "green",
+        Data: "15.05.2023",
+        Ora_inceput: 10,
+        Ora_sfarsit: "11:00",
+        Terapie: "Masaj",
+        Status: "Programat",
+      },
+
+      {
+        Culoare: "red",
+        Data: "16.05.2023",
+        Ora_inceput: 13,
+        Ora_sfarsit: "15:00",
+        Terapie: "Kinetoterapie",
+        Status: "Programat",
+      },
+
+      {
+        Culoare: "pink",
+        Data: "16.04.2023",
+        Ora_inceput: 16,
+        Ora_sfarsit: "18:00",
+        Terapie: "Kinetoterapie",
+        Status: "Programat",
+      },
+    ];
+
+    const tableBody = $("tbody");
+    const modalInsert = $(".modal-box");
+    let therapiesCounter = 0;
+    // link catre folderul pacientului - de integrat in JS (RO)
+    patientTherapies.forEach((therapy) => {
+      therapiesCounter++;
+      const therapyColor = therapy.Culoare;
+
+      console.log(therapiesCounter);
+
+      const rowToAdd = `
+        <tr>
+          <!-- Se introduce culoarea terapiei selectat de catre utilizator in pagina de terapii -->
+          <td>
+            <div class="color" style="background-color: ${therapyColor};"></div>
+          </td>
+          <td>${therapy.Data}</td>
+          <td>${therapy.Ora_inceput}</td>
+          <td>${therapy.Ora_sfarsit}</td>
+          <td>${therapy.Terapie}</td>
+          <td>${therapy.Status}</td>
+          <td>
+            <div class="icon-data">
+              <!-- data-bs-target => numerele introduse prin js odata cu popularea tabelului, folosit pentru editarea programarii -->
+              <a href="#" data-bs-title="Modifică" data-bs-toggle="modal" data-bs-target="#modal_${therapiesCounter}" class="edit">
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+              </a>
+              <!-- link catre folderul pacientului - de integrat in JS -->
+              <a href="#" class="folder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                </svg>
+              </a>
+            </div>
+          </td>
+
+          
+        </tr>
+      `;
+
+      const modalToAdd = `
+          <div class="modal fade patient-schedule-table-modal" id="modal_${therapiesCounter}" tabindex="-1" aria-labelledby="labelModal_${therapiesCounter}" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header modal-border">
+                <h3 class="modal-title" id="labelModal_${therapiesCounter}">Programare</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h4>${patientName}</h4>
+                <div class="input-area">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-xs-2 col-sm-1">
+                      <span class="col-form-label">Terapii:</span>
+                    </div>
+                    
+                    <div class="col-xs-10 col-sm-11">
+                      <div class="dropdown dash-drops">
+                        <select name="Terapii" onchange="" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuTerapii" data-bs-toggle="dropdown" aria-expanded="false">
+                          <option selected>${therapy.Terapie}</option>
+                          <!--// Inserare optiuni pentru terapii (RO) -->
+                          <option value="dropdown-item" value="Kinetoterapeut">Kinetoterapie</option>
+                          <option class="dropdown-item" value="Maseur">Masaj</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <label for="modal-input-date" class="col-form-label">Dată:</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="date" id="modal-input-date" class="form-control" value="">
+                    </div>
+                  </div>
+
+                  <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <label for="modal-input-time" class="col-form-label">Interval orar:</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="time" id="modal-input-time" class="form-control" value="">
+                    </div>
+                    <div class="col-auto">
+                      <span class=""> <i class="bi bi-arrow-right"></i> </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-2">
+                  <h3>Descriere</h3>
+                  <hr>
+                  <div class="mb-3">
+                    <textarea class="form-control" name="description" rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Salvează</button></div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      tableBody.append(rowToAdd);
+      modalInsert.append(modalToAdd);
+    });
+
+    function calculateDuration(therapy, startHour) {
+      if (therapies.some((element) => element.Terapie === therapy)) {
+        return startHour + therapy.Durata;
+      }
+    }
+  }
+
+  //--------------------------------------------//
+  //                  OTHERS                    //
+  //--------------------------------------------//
+
+  //--------- Popularea dropdown-urilor ---------//
+
+  const placesDropdown = $("#placesList");
+  const servicesDropdown = $("#servicesList");
+  const specializationDropdown = $("#specializationList");
+  const services = ["Kinetoterapie", "Masaj"];
+  const inputDropdownChangeEvent = $("#dropdownService");
+
+  const romanianPlaces = ["București", "Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Abrud", "Adjud", "Agnita", "Aiud", "Alba Iulia", "Aleșd", "Alexandria", "Amara", "Anina", "Aninoasa", "Arad", "Ardud", "Avrig", "Azuga", "Babadag", "Băbeni", "Bacău", "Baia de Aramă", "Baia de Arieș", "Baia Mare", "Baia Sprie", "Băicoi", "Băile Govora", "Băile Herculane", "Băile Olănești", "Băile Tușnad", "Băilești", "Bălan", "Bălcești", "Balș", "Baraolt", "Bârlad", "Bechet", "Beclean", "Beiuș", "Berbești", "Berești", "Bicaz", "Bistrița", "Blaj", "Bocșa", "Boldești-Scăeni", "Bolintin-Vale", "Borșa", "Borsec", "Botoșani", "Brad", "Bragadiru", "Brăila", "Brașov", "Breaza", "Brezoi", "Broșteni", "Bucecea", "Budești", "Buftea", "Buhuși", "Bumbești-Jiu", "Bușteni", "Buzău", "Buziaș", "Cajvana", "Calafat", "Călan", "Călărași", "Călimănești", "Câmpeni", "Câmpia Turzii", "Câmpina", "Câmpulung Moldovenesc", "Câmpulung", "Caracal", "Caransebeș", "Carei", "Cavnic", "Căzănești", "Cehu Silvaniei", "Cernavodă", "Chișineu-Criș", "Chitila", "Ciacova", "Cisnădie", "Cluj-Napoca", "Codlea", "Comănești", "Comarnic", "Constanța", "Copșa Mică", "Corabia", "Costești", "Covasna", "Craiova", "Cristuru Secuiesc", "Cugir", "Curtea de Argeș", "Curtici", "Dăbuleni", "Darabani", "Dărmănești", "Dej", "Deta", "Deva", "Dolhasca", "Dorohoi", "Drăgănești-Olt", "Drăgășani", "Dragomirești", "Drobeta-Turnu Severin", "Dumbrăveni", "Eforie", "Făgăraș", "Făget", "Fălticeni", "Făurei", "Fetești", "Fieni", "Fierbinți-Târg", "Filiași", "Flămânzi", "Focșani", "Frasin", "Fundulea", "Găești", "Galați", "Gătaia", "Geoagiu", "Gheorgheni", "Gherla", "Ghimbav", "Giurgiu", "Gura Humorului", "Hârlău", "Hârșova", "Hațeg", "Horezu", "Huedin", "Hunedoara", "Huși", "Ianca", "Iași", "Iernut", "Ineu", "Însurăței", "Întorsura Buzăului", "Isaccea", "Jibou", "Jimbolia", "Lehliu Gară", "Lipova", "Liteni", "Livada", "Luduș", "Lugoj", "Lupeni", "Măcin", "Măgurele", "Mangalia", "Mărășești", "Marghita", "Medgidia", "Mediaș", "Miercurea Ciuc", "Miercurea Nirajului", "Miercurea Sibiului", "Mihăilești", "Milișăuți", "Mioveni", "Mizil", "Moinești", "Moldova Nouă", "Moreni", "Motru", "Murfatlar", "Murgeni", "Nădlac", "Năsăud", "Năvodari", "Negrești", "Negrești-Oaș", "Negru Vodă", "Nehoiu", "Novaci", "Nucet", "Ocna Mureș", "Ocna Sibiului", "Ocnele Mari", "Odobești", "Odorheiu Secuiesc", "Oltenița", "Onești", "Oradea", "Orăștie", "Oravița", "Orșova", "Oțelu Roșu", "Otopeni", "Ovidiu", "Panciu", "Pâncota", "Pantelimon", "Pașcani", "Pătârlagele", "Pecica", "Petrila", "Petroșani", "Piatra Neamț", "Piatra-Olt", "Pitești", "Ploiești", "Plopeni", "Podu Iloaiei", "Pogoanele", "Popești-Leordeni", "Potcoava", "Predeal", "Pucioasa", "Răcari", "Rădăuți", "Râmnicu Sărat", "Râmnicu Vâlcea", "Râșnov", "Recaș", "Reghin", "Reșița", "Roman", "Roșiorii de Vede", "Rovinari", "Roznov", "Rupea", "Săcele", "Săcueni", "Salcea", "Săliște", "Săliștea de Sus", "Salonta", "Sângeorgiu de Pădure", "Sângeorz-Băi", "Sânnicolau Mare", "Sântana", "Sărmașu", "Satu Mare", "Săveni", "Scornicești", "Sebeș", "Sebiș", "Segarcea", "Seini", "Sfântu Gheorghe", "Sibiu", "Sighetu Marmației", "Sighișoara", "Simeria", "Șimleu Silvaniei", "Sinaia", "Siret", "Slănic", "Slănic-Moldova", "Slatina", "Slobozia", "Solca", "Șomcuta Mare", "Sovata", "Ștefănești", " Argeș", "Ștefănești", " Botoșani", "Ștei", "Strehaia", "Suceava", "Sulina", "Tălmaciu", "Țăndărei", "Târgoviște", "Târgu Bujor", "Târgu Cărbunești", "Târgu Frumos", "Târgu Jiu", "Târgu Lăpuș", "Târgu Mureș", "Târgu Neamț", "Târgu Ocna", "Târgu Secuiesc", "Târnăveni", "Tășnad", "Tăuții-Măgherăuș", "Techirghiol", "Tecuci", "Teiuș", "Țicleni", "Timișoara", "Tismana", "Titu", "Toplița", "Topoloveni", "Tulcea", "Turceni", "Turda", "Turnu Măgurele", "Ulmeni", "Ungheni", "Uricani", "Urlați", "Urziceni", "Valea lui Mihai", "Vălenii de Munte", "Vânju Mare", "Vașcău", "Vaslui", "Vatra Dornei", "Vicovu de Sus", "Victoria", "Videle", "Vișeu de Sus", "Vlăhița", "Voluntari", "Vulcan", "Zalău", "Zărnești", "Zimnicea", "Zlatna", "1 mai", "Aviatorilor", "Aviației", "Băneasa", "Bucureștii Noi", "Centrul Civic", "Dămăroaia", "Domenii", "Dorobanți", "Floreasca", "Gara de Nord", "Grivița", "Pajura", "Piața Romană", "Piepra", "Pipera", "Primăverii", "Străulești", "Victoriei", "Andronache", "Baicului", "Centrul Civic", "Colentina", "Floreasca", "Iancului", "Ion Creangă", "Moșilor", "Obor", "Pantelimon", "Pipera", "Ștefan cel Mare", "Tei", "Vatra Luminoasă", "Balta Albă", "Centru Civic", "Centrul Civic", "Centrul Istoric", "Dristor", "Dudești", "Industriilor", "Mihai Bravu", "Muncii", "Ozana", "Sălăjan", "Titan", "Trapezului", "Unirii", "Vitan", "Berceni", "Centrul Civic", "Giurgiului", "Olteniței", "Timpuri Noi", "Tineretului", "Văcărești", "13 septembrie", "Centrul Civic", "Cotroceni", "Dealul Spirii", "Ferentari", "Ghencea", "Giurgiului", "Rahova", "Sălaj", "Brâncuși", "Centrul Civic", "Crângași", "Drumul Taberei", "Ghencea", "Giulești", "Grozăvești", "Militari", "Andrei Mureșanu", "Becaș", "Borhanci", "Bulgaria", "Bună Ziua", "Centru", "Dâmbul Rotund", "Europa", "Făget", "Gheorgheni", "Grădini Mănăștur (Plopilor)", "Grigorescu", "Gruia", "Iris", "Între Lacuri", "Mănăștur", "Mărăști", "Someșeni", "Sopor", "Agronomie", "Alexandru cel Bun", "Aviației", "Baza 3", "Bucium", "Bucșinescu", "Bularga", "C.U.G. 1 și 2", "Canta", "Ciurchi", "Copou", "Dacia", "Dimitrie Cantemir", "Frumoasa", "Galata 1 și 2", "Gară", "Manta Roșie", "Metalurgie", "Mircea cel Bătrân", "Blașcovici", "Braytim", "Bucovina", "Calea Aradului", "Calea Lipovei", "Calea Șagului", "Cetate", "Ciarda Roșie", "Circumvalațiunii", "Dâmbovița", "Elisabetin", "Fabric", "Fratelia", "Freidorf", "Ghiroda", "Girocului", "Iosefin", "Kuncz", "Mehala", "Abatorul", "Anadalchioi", "Badea Cârțan", "Berechet", "Boreal", "Brătianu", "C.E.T.", "Casa de Cultură", "Centru", "Centrul Vechi", "Coiciu", "Compozitori", "Dacia", "Energia", "Faleza nord", "Faleza sud", "Farul", "Gara", "Groapa", "1 mai", "Bariera Vâlcii", "Bordei", "Brazda lui Novac", "Brestei", "Centru", "Craiovița Nouă", "Craiovița Veche", "Făcăi", "Ghercești", "Lascăr Catargiu", "Lăpuș-Argeș", "Lunca Jiului", "Mofleni", "Nisipuri Dorobănția", "Popoveni", "Romanești", "Rovine", "Sărari", "Astra", "Bartolomeu", "Blumăna", "Brașovechi", "Centrul Civic", "Centrul istoric", "Craiter", "Dârste", "Florilor", "Noua", "Poiana Brașov", "Scriitorilor", "Stupini", "Șcheii Brașovului", "Timiș-Triaj", "Tractorul", "Valea Cetății"];
+
+  const KTspecializations = [
+    "Kinetoterapie", //(preselectată dacă s-a ales fizioterapeut la servicii daca se poate)
+    "Masaj", //(preselectată dacă s-a ales masaj la servicii daca se poate)
+    "Cardiologie",
+    "Balnceologie",
+    "Geriartrie",
+    "Limfedem",
+    "Neurologie",
+    "Pediatrie",
+    "Traumatologie",
+    "Recuperare sportivă",
+  ];
+
+  const Mspecializations = [
+    "Masaj", // (preselectată dacă se alege masuer ca serviciu)
+    "Masaj de relaxare",
+    "Masaj terapeutic",
+    "Masaj anticelulitic",
+    "Masaj de drenaj limfatic",
+    "Reflexoterapie",
+    "Cupping",
+    "Masaj cu miere",
+    "Masaj cu bambus",
+    "Acupunctură",
+  ];
+
+  romanianPlaces.forEach((place) => {
+    placesDropdown.append(`<option value="${place}"></option>`);
+  });
+
+  services.forEach((service) => {
+    servicesDropdown.append(`<option value="${service}"></option>`);
+  });
+
+  //  Populeaza specializarile cu optiunile corespunzatoare serviciilor
+  inputDropdownChangeEvent.on("change", function specializationSetter() {
+    if (inputDropdownChangeEvent.val() === "Kinetoterapie") {
+      specializationDropdown.html("");
+      KTspecializations.forEach((specialization) => {
+        specializationDropdown.append(`<option value="${specialization}"></option>`);
+      });
+    } else if (inputDropdownChangeEvent.val() === "Masaj") {
+      specializationDropdown.html("");
+      Mspecializations.forEach((specialization) => {
+        specializationDropdown.append(`<option value="${specialization}"></option>`);
+      });
+    } else {
+      specializationDropdown.html("");
+      services.forEach((service) => {
+        specializationDropdown.append(`<option value="${service}"></option>`);
+      });
+    }
+  });
+
+  //--------- Index Page Search Form  ---------//
+
+  const searchForm = $(".index-form");
+  const searchURL = "http://127.0.0.1:5500/templates/search.html";
+  searchForm.attr("action", searchURL);
+
+  if (top.location.pathname === "/templates/search.html") {
+    console.log("You are here");
+    const params = new URLSearchParams(window.location.search);
+    const location = $("#inputSearchField");
+    const service = $("#dropdownService");
+    const specialization = $("#dropdownSpecialization");
+
+    location.val(params.get("place"));
+    service.val(params.get("service"));
+    specialization.val(params.get("specialization"));
+  }
+
+  //--------- Form Validation ---------//
+
   (() => {
     "use strict";
 
@@ -131,7 +549,7 @@ $(document).ready(function () {
       const calculatedDate = new Date(todayDate.setFullYear(todayDate.getFullYear() - age));
       return calculatedDate.toJSON().split("T")[0];
     }
-  
+
     function calculateAge(userBirthdate) {
       let today = Date.now();
       let birthday = new Date(userBirthdate);
@@ -140,162 +558,10 @@ $(document).ready(function () {
       let age = Math.abs(year - 1970);
       return age;
     }
-
-
   })();
 
+  //--------- Activity Switch in therapists Dashboard page ---------//
 
-  if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
-    $(".contact-info").hide();
-
-    $(window).resize(function () {
-      if ($(window).width() < 750 && $(".list-container").is(":visible")) {
-        $(".info-container").hide();
-      } else if ($(window).width() > 751) {
-        $(".info-container").show();
-      }
-    });
-
-    if (window.matchMedia("(max-width: 47rem)").matches) {
-      $(".info-container").hide();
-    }
-
-    if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
-      $(".med").removeClass("btn btn-secondary");
-    }
-
-    $(".contact-button").click(function () {
-      $(".contact-info").show();
-      $(this).hide();
-    });
-
-    $(".person-box").click(function () {
-      if (window.matchMedia("(max-width: 47rem)").matches) {
-        $(".list-container").removeClass("d-flex");
-        $(".list-container").hide();
-      }
-      $(".info-container").show();
-      $(".info-container").addClass("grid");
-    });
-
-    $("#close").click(function () {
-      if (window.matchMedia("(max-width: 47rem)").matches) {
-        $(".list-container").addClass("d-flex");
-        $(".list-container").show();
-        $(".info-container").removeClass("grid");
-        $(".info-container").hide();
-      }
-
-      if (window.matchMedia("(min-width: 47rem)").matches) {
-        var replace = `
-                <div class="grid jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
-                    <span id="txtCheck">Alege un terapeut din listă</span>
-                </div>
-                `;
-
-        $(".info-container").html(replace);
-      }
-    });
-  }
-
-  if (top.location.pathname === "/templates/terapeuti/notificari.html" || top.location.pathname === "/templates/pacienti/notificari.html") {
-    $(".notification-condition").each(function () {
-      if ($(this).text() === "Văzut") {
-        $(this).css({ color: "grey" });
-        $(this).siblings().css({ color: "grey" });
-      }
-    });
-  }
-
-  if (top.location.pathname === "/templates/pacienti/dashboard-pacient.html" || top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html") {
-    let ySums = [300, 450, 200, 150, 300, 400, 100, 150, 300, 150];
-    let xDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-    new Chart("sumChart", {
-      type: "line",
-      data: {
-        labels: xDays,
-        datasets: [
-          {
-            fill: false,
-            lineTension: 0,
-            backgroundColor: "#108F96",
-            borderColor: "rgba(0,0,255,0.1)",
-            data: ySums,
-          },
-        ],
-      },
-      options: {
-        legend: { display: false },
-        scales: {
-          yAxes: [{ ticks: { min: 6, max: 16 } }],
-        },
-      },
-    });
-  }
-
-  if (top.location.pathname === "/templates/abonamente.html") {
-    // hide next and prev buttons
-    if ($(window).width() > 1023) {
-      $(".rem-carousel").removeClass("carousel carousel-dark slide");
-      $(".rem-inner").removeClass("carousel-inner");
-      $(".rem-item").removeClass("carousel-item");
-      //   $(".inner-cards").addClass("row");
-      $(".desktop-hide").css({ display: "none" });
-    }
-    $(window).resize(function () {
-      if ($(window).width() > 1023) {
-        $(".rem-carousel").removeClass("carousel carousel-dark slide");
-        $(".rem-inner").removeClass("carousel-inner");
-        $(".rem-item").removeClass("carousel-item");
-        $(".inner-cards").addClass("row");
-        $(".desktop-hide").css({ display: "none" });
-      }
-      if ($(window).width() < 1024) {
-        $(".rem-carousel").addClass("carousel carousel-dark slide");
-        $(".rem-inner").addClass("carousel-inner");
-        $(".rem-item").addClass("carousel-item");
-        $(".inner-cards").removeClass("row");
-        $(".desktop-hide").css({ display: "flex" });
-      }
-    });
-  }
-
-  //Add hours and minutes to the dropdowns on the TERAPII page
-  if (top.location.pathname === "/templates/terapeuti/terapii.html") {
-    let dropDownHoursInsert = $("#dropdownDurataOre");
-    let dropDownMinutesInsert = $("#dropdownDurataMin");
-    const MAX_HOURS = 10;
-    const MAX_MINUTES = 60;
-    const MINUTES_INCREMENTATION = 5;
-
-
-    for( let hour = 0; hour < MAX_HOURS; hour++){
-      if( hour < 10 ){
-        let optionHourElement = $(`<option value="0${hour}">0${hour}</option>`);
-        dropDownHoursInsert.append(optionHourElement);
-      } else {
-        let optionHourElement = $(`<option value="${hour}"0${hour}</option>`);
-        dropDownHoursInsert.append(optionHourElement);
-      }
-    }
-
-    for(let min = 0; min < MAX_MINUTES; min += MINUTES_INCREMENTATION) {
-      if ( min < 10 ) {
-        let optionMinElement = $(`<option value="0${min}">0${min}</option>`);
-        dropDownMinutesInsert.append(optionMinElement);
-      } else {
-        let optionMinElement = $(`<option value="${min}">${min}</option>`);
-        dropDownMinutesInsert.append(optionMinElement);
-      }
-      
-      
-    }
-  }
-  
-
-
-  // For the Activity Switch on therapists Dashboard page
   function checkerFunction() {
     if ($("#checker").is(":checked")) {
       $("#toggle-inactive").css("color", "#f44336");
@@ -308,67 +574,77 @@ $(document).ready(function () {
     }
   }
 
+  //Image upload script - adauga suportul pentur Safari (RO)
+  $("#save-image").css("display", "none");
+  // Prepare the preview for profile picture
+  $("#image-input").change(function () {
+    readURL(this);
 
-  //Image upload script
-    $('#save-image').css('display', 'none');
-    // Prepare the preview for profile picture
-    $("#image-input").change(function () {
-      readURL(this);
+    $(".controls").css("display", "flex");
+    $("#upload-image").css("display", "none");
+    $("#save-image").css("display", "inline-block");
+    // $('.settings-upload').css('height', '')
 
-      $(".controls").css('display', 'flex');
-      $('#upload-image').css('display', 'none');
-      $('#save-image').css('display', 'inline-block');
-      // $('.settings-upload').css('height', '') 
-      
+    jQuery(function () {
+      var picture = $("#image-preview");
 
-      jQuery(function() {
-        var picture = $('#image-preview');
+      // Make sure the image is completely loaded before calling the plugin
+      picture.one("load", function () {
+        // Initialize plugin (with custom event)
+        picture.guillotine({ eventOnChange: "guillotinechange" });
 
-        // Make sure the image is completely loaded before calling the plugin
-        picture.one('load', function(){
-          // Initialize plugin (with custom event)
-          picture.guillotine({eventOnChange: 'guillotinechange'});
+        // Display inital data
+        var data = picture.guillotine("getData");
+        for (var key in data) {
+          $("#" + key).html(data[key]);
+        }
+        picture.guillotine("rotateLeft");
+        picture.guillotine("rotateRight");
+        picture.guillotine("fit");
 
-          // Display inital data
-          var data = picture.guillotine('getData');
-          for(var key in data) { $('#'+key).html(data[key]); }
-          picture.guillotine('rotateLeft');
-          picture.guillotine('rotateRight');
-          picture.guillotine('fit');
-
-          // Bind button actions
-          $('#rotate_left').click(function(){ picture.guillotine('rotateLeft'); });
-          $('#rotate_right').click(function(){ picture.guillotine('rotateRight'); });
-          $('#fit').click(function(){ picture.guillotine('fit'); });
-          $('#zoom_in').click(function(){ picture.guillotine('zoomIn'); });
-          $('#zoom_out').click(function(){ picture.guillotine('zoomOut'); });
-
-          // Update data on change
-          picture.on('guillotinechange', function(ev, data, action) {
-            data.scale = parseFloat(data.scale.toFixed(4));
-            for(var k in data) { $('#'+k).html(data[k]); }
-          });
+        // Bind button actions
+        $("#rotate_left").click(function () {
+          picture.guillotine("rotateLeft");
+        });
+        $("#rotate_right").click(function () {
+          picture.guillotine("rotateRight");
+        });
+        $("#fit").click(function () {
+          picture.guillotine("fit");
+        });
+        $("#zoom_in").click(function () {
+          picture.guillotine("zoomIn");
+        });
+        $("#zoom_out").click(function () {
+          picture.guillotine("zoomOut");
         });
 
-        // Make sure the 'load' event is triggered at least once (for cached images)
-        if (picture.prop('complete')) picture.trigger('load')
-
-        $('#save-image').click(function(){
-          // let image = $('#image-preview');
-          let data = picture.guillotine('getData');
-
-          $(".controls").css('display', 'none');
-          $('#upload-image').css('display', 'inline-block');
-          $('#save-image').css('display', 'none');
-
-          picture.guillotine('disable');
-          $(".guillotine-window body.guillotine-dragging").css('cursor', 'pointer !important')
-                        
-
+        // Update data on change
+        picture.on("guillotinechange", function (ev, data, action) {
+          data.scale = parseFloat(data.scale.toFixed(4));
+          for (var k in data) {
+            $("#" + k).html(data[k]);
+          }
         });
       });
+
+      // Make sure the 'load' event is triggered at least once (for cached images)
+      if (picture.prop("complete")) picture.trigger("load");
+
+      $("#save-image").click(function () {
+        // let image = $('#image-preview');
+        let data = picture.guillotine("getData");
+
+        $(".controls").css("display", "none");
+        $("#upload-image").css("display", "inline-block");
+        $("#save-image").css("display", "none");
+
+        picture.guillotine("disable");
+        $(".guillotine-window body.guillotine-dragging").css("cursor", "pointer !important");
+      });
     });
-  
+  });
+
   function loadImage(src) {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -379,8 +655,8 @@ $(document).ready(function () {
   }
 
   function resizeImage(image, maxWidth, maxHeight) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
     const ratio = Math.min(maxWidth / image.width, maxHeight / image.height);
     canvas.width = image.width * ratio;
@@ -392,32 +668,39 @@ $(document).ready(function () {
 
   function compressImage(canvas, targetSize) {
     return new Promise((resolve, reject) => {
-      canvas.toBlob((blob) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
-        reader.onloadend = () => {
-          const base64data = reader.result;
-          const image = new Image();
-          image.src = base64data;
-          image.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = image.width;
-            canvas.height = image.height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(image, 0, 0);
-            canvas.toBlob((webpBlob) => {
-              const webpReader = new FileReader();
-              webpReader.readAsDataURL(webpBlob);
-              webpReader.onloadend = () => {
-                resolve(webpReader.result);
-              };
-            }, 'image/webp', 0.8);
+      canvas.toBlob(
+        (blob) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = () => {
+            const base64data = reader.result;
+            const image = new Image();
+            image.src = base64data;
+            image.onload = () => {
+              const canvas = document.createElement("canvas");
+              canvas.width = image.width;
+              canvas.height = image.height;
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(image, 0, 0);
+              canvas.toBlob(
+                (webpBlob) => {
+                  const webpReader = new FileReader();
+                  webpReader.readAsDataURL(webpBlob);
+                  webpReader.onloadend = () => {
+                    resolve(webpReader.result);
+                  };
+                },
+                "image/webp",
+                0.8
+              );
+            };
           };
-        };
-      }, 'image/jpeg', 0.8);
+        },
+        "image/jpeg",
+        0.8
+      );
     });
   }
-  
   // Upload image, resize it to 100 kb and then load it to be processed by the user
   async function readURL(input) {
     if (input.files && input.files[0]) {
@@ -431,25 +714,22 @@ $(document).ready(function () {
         try {
           const image = await loadImage(event.target.result);
           const resizedCanvas = resizeImage(image, MAX_WIDTH, MAX_HEIGHT);
-          const compressedDataUrl = await compressImage(resizedCanvas, MAX_SIZE); 
-        $("#image-preview").attr("src", compressedDataUrl).fadeIn("slow");
+          const compressedDataUrl = await compressImage(resizedCanvas, MAX_SIZE);
+          $("#image-preview").attr("src", compressedDataUrl).fadeIn("slow");
         } catch (err) {
-          console.error('Error resizing image:', err);
+          console.error("Error resizing image:", err);
         }
       };
       reader.readAsDataURL(input.files[0]);
     } else {
-      alert('Vă rugăm să încărcați o imagine validă!');
+      alert("Vă rugăm să încărcați o imagine validă!");
       return;
     }
   }
-
 });
 
-
-// Script pentru sortarea tabelelor - Pagina Pacient
+// Table Sorting - Pagina Pacient
 const rows = document.querySelectorAll(".program-table tr.collapsible");
-
 rows.forEach((row) => {
   const contentRow = row.nextElementSibling;
   contentRow.style.display = "none";
@@ -465,16 +745,15 @@ rows.forEach((row) => {
   });
 });
 
-//In Pagina Pacient
 function sortTable(table, column, asc) {
-  const tbody = table.querySelector('tbody');
-  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const tbody = table.querySelector("tbody");
+  const rows = Array.from(tbody.querySelectorAll("tr"));
 
   // Sort the rows based on the specified column and order
   const order = asc ? 1 : -1;
   rows.sort((a, b) => {
-    const aValue = a.querySelectorAll('td')[column].textContent;
-    const bValue = b.querySelectorAll('td')[column].textContent;
+    const aValue = a.querySelectorAll("td")[column].textContent;
+    const bValue = b.querySelectorAll("td")[column].textContent;
     return order * aValue.localeCompare(bValue);
   });
 
@@ -482,21 +761,19 @@ function sortTable(table, column, asc) {
   while (tbody.firstChild) {
     tbody.removeChild(tbody.firstChild);
   }
-  rows.forEach(row => tbody.appendChild(row));
+  rows.forEach((row) => tbody.appendChild(row));
 }
-const table = document.querySelector('#scheduleTable');
+const table = document.querySelector("#scheduleTable");
 
 // Add buttons and event listeners to table headers with "sort" class
-table.querySelectorAll('thead th').forEach((th, index) => {
-  const button = document.createElement('button');
-  button.classList.add('sort-button');
-  button.textContent = '▼';
-  button.addEventListener('click', () => {
-    const asc = button.textContent === '▲';
+table.querySelectorAll("thead th").forEach((th, index) => {
+  const button = document.createElement("button");
+  button.classList.add("sort-button");
+  button.textContent = "▼";
+  button.addEventListener("click", () => {
+    const asc = button.textContent === "▲";
     sortTable(table, index, asc);
-    button.textContent = asc ? '▼' : '▲';
+    button.textContent = asc ? "▼" : "▲";
   });
   th.appendChild(button);
 });
-
-

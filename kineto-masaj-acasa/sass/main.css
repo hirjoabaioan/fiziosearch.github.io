@@ -788,25 +788,64 @@ nav img {
   margin-bottom: 15vh;
 }
 
-.form-container {
-  width: 75vw;
+.dropdown-toggle::-moz-placeholder {
+  color: #212427 !important;
+}
+
+.dropdown-toggle::placeholder {
+  color: #212427 !important;
+}
+
+.index-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 16vh;
+  gap: 0.5rem;
+  width: 60%;
+  min-width: 30%;
   height: auto;
   background-color: rgba(255, 255, 255, 0.616);
   border-radius: 30px;
 }
-.form-container select,
-.form-container button {
-  width: 60% !important;
-}
 @media (min-width: 48rem) {
-  .form-container select,
-  .form-container button {
-    width: 85% !important;
+  .index-form {
+    width: 80%;
+    flex-direction: row;
+    gap: 0;
   }
 }
-@media (min-width: 37.5rem) {
-  .form-container {
-    width: 80vw;
+.index-form .selectionDropdown {
+  display: flex;
+  place-content: center;
+}
+@media (min-width: 48rem) {
+  .index-form .selectionDropdown {
+    width: 25%;
+  }
+}
+.index-form input {
+  margin: 0.135rem;
+  width: 100%;
+}
+@media (min-width: 48rem) {
+  .index-form input {
+    width: 80%;
+  }
+}
+.index-form input::-moz-placeholder {
+  color: #212427 !important;
+}
+.index-form input::placeholder {
+  color: #212427 !important;
+}
+.index-form button {
+  margin: 0.135rem;
+  width: 95%;
+}
+@media (min-width: 48rem) {
+  .index-form button {
+    width: 80%;
   }
 }
 
@@ -3071,7 +3110,6 @@ body.guillotine-dragging, body.guillotine-dragging * {
   margin: 0 auto;
   width: clamp(0.5rem, 2.5vw + 0.1rem, 1rem);
   height: clamp(0.5rem, 2.5vw + 0.1rem, 1rem);
-  background-color: red;
   border-radius: 50%;
 }
 .patient-schedule-table .icon-data {
