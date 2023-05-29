@@ -416,6 +416,7 @@ $(document).ready(function () {
         Name: "Gonea Marian",
         Profile_Picture: "../img/profiles/PozaW.webp",
         Profession: "Maseur",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
         Locations: ["București", "Sector 1", "Aviatorilor"],
         Phone: "0754579331",
         Email: "hirjoaba_ioan@yahoo.com",
@@ -439,6 +440,8 @@ $(document).ready(function () {
     buttonSearch.on("click", function (e) {
       searchTherapists(inputFieldSearch);
     });
+
+    window.onload = searchTherapists(inputFieldSearch);
 
     function nameList() {
       const names = [];
@@ -502,8 +505,8 @@ $(document).ready(function () {
 
       console.log(filteredTherapists);
 
-      // displayTherapists(foundTherapists.sort(() => Math.random() - 0.5));
-      // showTherapistData(foundTherapists);
+      displayTherapists(filteredTherapists.sort(() => Math.random() - 0.5));
+      // showTherapistData(filteredTherapists);
 
       // return filteredTherapists;
     }
@@ -522,7 +525,9 @@ $(document).ready(function () {
 
       if (specialization) {
         serviceFilteredTherapists.forEach((therapist) => {
-          if (therapist.Specialization === specialization) {
+          let specializationMatch = therapist.Specialization.includes(specialization);
+
+          if (specializationMatch) {
             specializationFilteredTherapists.push(therapist);
           }
         });
@@ -533,166 +538,202 @@ $(document).ready(function () {
       }
     }
 
-    const params = new URLSearchParams(window.location.search);
-    const location = $("#inputSearchField");
-    const service = $("#dropdownService");
-    const specialization = $("#dropdownSpecialization");
+    function displayTherapists(therapists) {
+      const listArea = $(".list-area");
+      listArea.html("");
+      therapists.forEach((therapist) => {
+        const id = therapist.id;
+        const profileImage = therapist.Profile_Picture;
+        const name = therapist.Name;
+        const areas = therapist.Locations;
+        const location = [];
+        const therapies = therapist.Therapies.map((therapyName) => therapyName.Procedura);
 
-    location.val(params.get("place"));
-    service.val(params.get("service"));
-    specialization.val(params.get("specialization"));
+        areas.forEach((area) => {
+          location.push(`${area}; `);
+        });
 
-    let therapistCount = 0;
-    therapistsList.forEach((therapist) => {
-      const therapiesList = therapist.Therapies.map((therapyName) => therapyName.Procedura);
-
-      const therapistBox = `
-          <div class="person-box" tabindex="0" id="${therapistCount++}">
-          <div class="person-box-pic">
-            <img src="${therapist.Profile_Picture}" alt="${therapist.Name}'s ProfilePicture" />
-          </div>
-          <div class="row m-0 p-0 person-box-info">
-            <div class="m-0 pe-0">
-              <span class="me-0 pe-0 person-box-name">${therapist.Name}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-              </svg>
+        const therapistBox = `
+            <div class="person-box" tabindex="0" id="${id}">
+            <div class="person-box-pic">
+              <img src="${profileImage}" alt="${name}'s ProfilePicture" />
             </div>
-            <span class="col-12 me-0 pe-0 person-box-locations">${therapist.Locations}</span>
-            <span class="col-12 me-0 pe-0 person-box-therapies">${therapiesList}</span>
-          </div>
-       `;
-
-      const therapistInformations = `
-            <div class="d-flex row info-header">
-            <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
-              <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
-            </div>
-            <div class="header-pn mt-0 pt-0">
-              <div class="m-0 p-0 header-pn-pic">
-                <img src="${therapist.Profile_Picture}" alt="${therapist.Name}'s ProfilePicture" />
+            <div class="row m-0 p-0 person-box-info">
+              <div class="m-0 pe-0">
+                <span class="me-0 pe-0 person-box-name">${name}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                </svg>
               </div>
-              <div class="m-0 p-0 header-pn-name">
-                <div class="d-flex row justify-content-start align-items-center">
-                  <span class="col-8">${therapist.Name}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="col-1 bi bi-dot" viewBox="0 0 16 16">
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                  </svg>
-                </div>
-                <span class="profession">${therapist.Profession}</span>
-              </div>
+              <span class="col-12 me-0 pe-0 person-box-locations">${areas}</span>
+              <span class="col-12 me-0 pe-0 person-box-therapies">${therapies}</span>
             </div>
-            <div class="header-loc-contact">
-              <div class="header-locations">
-                <h5 class="info-titles">Locații</h5>
-                <div class="m-0 mb-2 ps-4 pe-4">
-                  <span>${therapist.Locations}</span>
-                </div>
-              </div>
-              <div class="header-contact">
-                <h5 class="info-titles">Contact</h5>
-                <div class="d-flex row justify-content-center m-0 p-0">
-                  <!-- Butonul dispare dupa ce este apasat si apar datele de contact -->
-                  <button class="btn btn-primary contact-button">Contactează terapeutul</button>
-                  <!-- Datele de contact apar dupa apasarea butonului de deasupra -->
-                  <div class="row m-0 p-0 gap-2 contact-info">
-                    <a href="tel:${therapist.Phone}" class="btn btn-secondary msg-button med text-center" id="search-telefon">${therapist.Phone}</a>
-                    <a href="mailto:${therapist.Email}" class="btn btn-secondary msg-button med text-center" id="search-email">${therapist.Email}</a>
-                    <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        `;
 
-          <div class="info-bio">
-            <div class="mb-4 info-bio-activities">
-              <h5 class="info-titles">Activitate</h5>
-              <div class="m-0 ps-4 pe-4">
-                <!-- Doar unul dintre calificative va fi afișat în funcție de recenziile acordate de pacienți: Foarte Bun | Bun | Rău | Foarte rău -->
-                <div class="d-flex row">
-                  <h6 class="col-8">Rating general:</h6>
-                  <span class="col-4">${therapist.Rating}</span>
-                </div>
-                <div class="d-flex row">
-                  <h6 class="col-8">Recenzii primite:</h6>
-                  <span class="col-4">${therapist.Recenzions}</span>
-                </div>
-                <div class="d-flex row">
-                  <h6 class="col-8">Experiența:</h6>
-                  <span class="col-4">${therapist.Experience} ani</span>
-                </div>
-              </div>
-            </div>
-            <div class="mb-4 info-bio-description">
-              <h5 class="info-titles">Descriere</h5>
-              <p class="m-0 ps-4 pe-4">${therapist.Description}</p>
-            </div>
-            <div class="mb-4 info-bio-courses">
-              <h5 class="info-titles">Cursuri</h5>
-              <p class="m-0 ps-4 pe-4">${therapist.Courses}</p>
-            </div>
-          </div>
+        listArea.append(therapistBox);
+      });
+    }
 
-          <div class="info-long">
-            <div class="col-12 mb-4 table-responsive info-long-services">
-              <h5 class="info-titles">Servicii</h5>
-              <table class="table info-long-table ps-2 pe-2">
-                <tr>
-                  <th class="col">Terapie</th>
-                  <th class="col">Durată</th>
-                  <th class="col">Tarif</th>
-                </tr>
-                <tr>
-                  <td>Masaj</td>
-                  <td class="search-time">30</td>
-                  <td class="search-price">100</td>
-                </tr>
-                <tr>
-                  <td>Terapie manuală</td>
-                  <td class="search-time">30</td>
-                  <td class="search-price">150</td>
-                </tr>
-                <tr>
-                  <td>Ventuze</td>
-                  <td class="search-time">15</td>
-                  <td class="search-price">50</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-12 table-responsive info-long-reviews">
-              <h5 class="info-titles">Recenzii</h5>
-              <div class="overflow-auto reviews-container">
-                <table class="table info-long-table ps-2 pe-2">
-                  <tr>
-                    <th class="col">Client</th>
-                    <th class="col">Recenzie</th>
-                  </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
-                  </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
-                  </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
-                  </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-       `;
+    // const params = new URLSearchParams(window.location.search);
+    // const location = $("#inputSearchField");
+    // const service = $("#dropdownService");
+    // const specialization = $("#dropdownSpecialization");
 
-      $(".list-area").append(therapistBox);
-      $(".info-container").append(therapistInformations);
-    });
+    // location.val(params.get("place"));
+    // service.val(params.get("service"));
+    // specialization.val(params.get("specialization"));
+
+    // let therapistCount = 0;
+    // therapistsList.forEach((therapist) => {
+    //   const therapiesList = therapist.Therapies.map((therapyName) => therapyName.Procedura);
+
+    //   const therapistBox = `
+    //       <div class="person-box" tabindex="0" id="${therapistCount++}">
+    //       <div class="person-box-pic">
+    //         <img src="${therapist.Profile_Picture}" alt="${therapist.Name}'s ProfilePicture" />
+    //       </div>
+    //       <div class="row m-0 p-0 person-box-info">
+    //         <div class="m-0 pe-0">
+    //           <span class="me-0 pe-0 person-box-name">${therapist.Name}</span>
+    //           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+    //             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+    //           </svg>
+    //         </div>
+    //         <span class="col-12 me-0 pe-0 person-box-locations">${therapist.Locations}</span>
+    //         <span class="col-12 me-0 pe-0 person-box-therapies">${therapiesList}</span>
+    //       </div>
+    //    `;
+
+    //   const therapistInformations = `
+    //         <div class="d-flex row info-header">
+    //         <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
+    //           <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
+    //         </div>
+    //         <div class="header-pn mt-0 pt-0">
+    //           <div class="m-0 p-0 header-pn-pic">
+    //             <img src="${therapist.Profile_Picture}" alt="${therapist.Name}'s ProfilePicture" />
+    //           </div>
+    //           <div class="m-0 p-0 header-pn-name">
+    //             <div class="d-flex row justify-content-start align-items-center">
+    //               <span class="col-8">${therapist.Name}</span>
+    //               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="col-1 bi bi-dot" viewBox="0 0 16 16">
+    //                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+    //               </svg>
+    //             </div>
+    //             <span class="profession">${therapist.Profession}</span>
+    //           </div>
+    //         </div>
+    //         <div class="header-loc-contact">
+    //           <div class="header-locations">
+    //             <h5 class="info-titles">Locații</h5>
+    //             <div class="m-0 mb-2 ps-4 pe-4">
+    //               <span>${therapist.Locations}</span>
+    //             </div>
+    //           </div>
+    //           <div class="header-contact">
+    //             <h5 class="info-titles">Contact</h5>
+    //             <div class="d-flex row justify-content-center m-0 p-0">
+    //               <!-- Butonul dispare dupa ce este apasat si apar datele de contact -->
+    //               <button class="btn btn-primary contact-button">Contactează terapeutul</button>
+    //               <!-- Datele de contact apar dupa apasarea butonului de deasupra -->
+    //               <div class="row m-0 p-0 gap-2 contact-info">
+    //                 <a href="tel:${therapist.Phone}" class="btn btn-secondary msg-button med text-center" id="search-telefon">${therapist.Phone}</a>
+    //                 <a href="mailto:${therapist.Email}" class="btn btn-secondary msg-button med text-center" id="search-email">${therapist.Email}</a>
+    //                 <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div class="info-bio">
+    //         <div class="mb-4 info-bio-activities">
+    //           <h5 class="info-titles">Activitate</h5>
+    //           <div class="m-0 ps-4 pe-4">
+    //             <!-- Doar unul dintre calificative va fi afișat în funcție de recenziile acordate de pacienți: Foarte Bun | Bun | Rău | Foarte rău -->
+    //             <div class="d-flex row">
+    //               <h6 class="col-8">Rating general:</h6>
+    //               <span class="col-4">${therapist.Rating}</span>
+    //             </div>
+    //             <div class="d-flex row">
+    //               <h6 class="col-8">Recenzii primite:</h6>
+    //               <span class="col-4">${therapist.Recenzions}</span>
+    //             </div>
+    //             <div class="d-flex row">
+    //               <h6 class="col-8">Experiența:</h6>
+    //               <span class="col-4">${therapist.Experience} ani</span>
+    //             </div>
+    //           </div>
+    //         </div>
+    //         <div class="mb-4 info-bio-description">
+    //           <h5 class="info-titles">Descriere</h5>
+    //           <p class="m-0 ps-4 pe-4">${therapist.Description}</p>
+    //         </div>
+    //         <div class="mb-4 info-bio-courses">
+    //           <h5 class="info-titles">Cursuri</h5>
+    //           <p class="m-0 ps-4 pe-4">${therapist.Courses}</p>
+    //         </div>
+    //       </div>
+
+    //       <div class="info-long">
+    //         <div class="col-12 mb-4 table-responsive info-long-services">
+    //           <h5 class="info-titles">Servicii</h5>
+    //           <table class="table info-long-table ps-2 pe-2">
+    //             <tr>
+    //               <th class="col">Terapie</th>
+    //               <th class="col">Durată</th>
+    //               <th class="col">Tarif</th>
+    //             </tr>
+    //             <tr>
+    //               <td>Masaj</td>
+    //               <td class="search-time">30</td>
+    //               <td class="search-price">100</td>
+    //             </tr>
+    //             <tr>
+    //               <td>Terapie manuală</td>
+    //               <td class="search-time">30</td>
+    //               <td class="search-price">150</td>
+    //             </tr>
+    //             <tr>
+    //               <td>Ventuze</td>
+    //               <td class="search-time">15</td>
+    //               <td class="search-price">50</td>
+    //             </tr>
+    //           </table>
+    //         </div>
+    //         <div class="col-12 table-responsive info-long-reviews">
+    //           <h5 class="info-titles">Recenzii</h5>
+    //           <div class="overflow-auto reviews-container">
+    //             <table class="table info-long-table ps-2 pe-2">
+    //               <tr>
+    //                 <th class="col">Client</th>
+    //                 <th class="col">Recenzie</th>
+    //               </tr>
+    //               <tr tabindex="0">
+    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+    //                 <td>Bună</td>
+    //               </tr>
+    //               <tr tabindex="0">
+    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+    //                 <td>Bună</td>
+    //               </tr>
+    //               <tr tabindex="0">
+    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+    //                 <td>Bună</td>
+    //               </tr>
+    //               <tr tabindex="0">
+    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+    //                 <td>Bună</td>
+    //               </tr>
+    //             </table>
+    //           </div>
+    //         </div>
+    //       </div>
+    //    `;
+
+    //   $(".list-area").append(therapistBox);
+    //   $(".info-container").append(therapistInformations);
+    // });
   }
 
   //--------------------------------------------//
