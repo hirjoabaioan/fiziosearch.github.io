@@ -1262,12 +1262,34 @@ main {
   }
 }
 
+.search-box .selectionDropdown input::-moz-placeholder {
+  color: black !important;
+  font-size: clamp(0.8rem, 0.2vw + 0.5rem, 1rem) !important;
+}
+
+.search-box .selectionDropdown input::placeholder {
+  color: black !important;
+  font-size: clamp(0.8rem, 0.2vw + 0.5rem, 1rem) !important;
+}
+.search-box .dropdown-area {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  gap: 1rem;
+}
+@media (min-width: 100rem) {
+  .search-box .dropdown-area {
+    flex-direction: row;
+  }
+}
+.search-box .btn-secondary {
+  background-color: #dee0e0;
+}
 .search-box input::-moz-placeholder {
   font-size: 0.8rem;
   font-size: clamp(0.25rem, 1vw + 1rem, 1rem);
   font-weight: 200;
 }
-
 .search-box input::placeholder {
   font-size: 0.8rem;
   font-size: clamp(0.25rem, 1vw + 1rem, 1rem);
@@ -1338,9 +1360,14 @@ main {
   border-bottom: 0;
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
+  cursor: pointer;
 }
 .person-box-pic {
-  width: clamp(10rem, 2vw + 0.5rem, 14rem);
+  width: 8rem;
+}
+.person-box-pic img {
+  width: 100%;
+  height: 100%;
 }
 .person-box-info, .person-box-info div {
   display: flex;
@@ -1499,6 +1526,7 @@ main {
 }
 .contact-info .msg-button {
   font-size: 1rem;
+  background-color: #dee0e0;
 }
 @media (min-width: 48rem) {
   .contact-info .msg-button {

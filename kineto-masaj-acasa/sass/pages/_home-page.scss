@@ -93,38 +93,6 @@
   color: $black !important;
 }
 
-// .form-container {
-//   margin-top: 16vh;
-//   width: 100%;
-//   flex-direction: column;
-//   height: auto;
-//   background-color: rgba(255, 255, 255, 0.616);
-//   border-radius: 30px;
-
-//   @include tablet {
-//     // width: 100%;
-//   }
-
-//   .selectionDropdown,
-//   button {
-//     width: 60% !important;
-//     @include tablet-wide {
-//       width: 85% !important;
-//     }
-//   }
-
-//   #dropdownPlace {
-//     &::placeholder {
-//       color: $black !important;
-//     }
-//   }
-
-//   @include tablet {
-//     flex-direction: row;
-//     // width: 70vw;
-//   }
-// }
-
 .index-form {
   display: flex;
   justify-content: space-around;
