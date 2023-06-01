@@ -18,6 +18,17 @@
 }
 
 .list-container {
+  display: flex;
+  width: 75%;
+  @include tablet-wide {
+    width: auto;
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   @include tablet-wide {
     width: 35%;
   }
@@ -64,9 +75,16 @@
 
 .search-box {
   .selectionDropdown {
-    input::placeholder {
-      color: black !important;
-      font-size: clamp(0.8rem, 0.2vw + 0.5rem, 1rem) !important;
+    display: flex;
+    place-content: center;
+
+    input {
+      max-width: 100%;
+
+      &::placeholder {
+        color: black !important;
+        font-size: clamp(0.8rem, 0.2vw + 0.5rem, 1rem) !important;
+      }
     }
   }
 
@@ -115,7 +133,7 @@
 }
 
 .list-area {
-  height: 50rem;
+  height: 60vh;
   padding: 1rem 0;
   border-bottom: 4px solid $white;
   background-color: $white;
@@ -134,12 +152,16 @@
     border-radius: 1rem;
   }
 
+  @include tablet {
+    height: 120vh;
+  }
+
   @include tablet-wide {
-    height: 68rem;
+    height: 120vh;
   }
 
   @include laptop {
-    height: 50rem;
+    height: 50vh;
   }
 }
 
@@ -152,7 +174,10 @@
   background-color: darken($white, 5%);
   padding: 1rem;
 
-  &:hover {
+  &:hover,
+  &:target,
+  &:focus,
+  &:active {
     background-color: #e3e3e3;
     -webkit-box-shadow: 0px 0px 25px -7px rgb(0 0 0 / 75%);
     -moz-box-shadow: 0px 0px 25px -7px rgba(0, 0, 0, 0.75);
@@ -229,6 +254,15 @@
   }
 }
 
+.availability-dot {
+  background: green;
+  margin-left: 1rem;
+  padding: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 30px;
+}
+
 .info-container {
   // display: grid;
   gap: 1rem;
@@ -247,6 +281,12 @@
 
   .info-long {
     grid-area: three;
+  }
+
+  .no-selection-div {
+    display: flex;
+    place-content: center;
+    place-items: center;
   }
 
   @include laptop {
@@ -285,7 +325,11 @@
       font-size: $font-size + 0.5rem;
     }
 
-    div {
+    .name-box {
+      display: flex;
+      flex-direction: row;
+      place-content: start;
+      place-items: center;
       width: 100%;
 
       @include tablet {
@@ -331,7 +375,7 @@
 }
 
 .contact-info {
-  display: flex;
+  display: none;
   justify-items: center;
   align-items: center;
   margin: 1rem 0 !important;

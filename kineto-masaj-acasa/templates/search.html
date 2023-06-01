@@ -89,7 +89,7 @@
       </nav>
     </header>
     <main class="col-12 d-flex row justify-content-center align-items-center m-0 mt-4 mb-4 p-2 gap-2">
-      <div class="d-flex row m-2 p-0 h-100 list-container">
+      <div class="row m-2 p-0 h-100 list-container">
         <div class="search-area">
           <div class="header-container">
             <h2 class="register-title">Listă terapeuți</h2>
@@ -105,11 +105,11 @@
               </div>
             </div>
             <div class="m-0 p-0 my-2 dropdown-area">
-              <div class="mt-2p-0 selectionDropdown">
+              <div class="my-1 p-0 selectionDropdown">
                 <input type="text" class="btn btn-secondary" list="servicesList" id="dropdownService" placeholder="Alege un serviciu  ▼" name="service" />
                 <datalist id="servicesList"></datalist>
               </div>
-              <div class="mb-2 p-0 selectionDropdown">
+              <div class="my-1 p-0 selectionDropdown">
                 <input type="text" class="btn btn-secondary" list="specializationList" id="dropdownSpecialization" placeholder="Alege o specializare  ▼" name="specialization" />
                 <datalist id="specializationList"></datalist>
               </div>
@@ -137,6 +137,10 @@
         </div>
       </div>
       <div class="m-2 p-2 h-100 info-container">
+        <div class="no-selection-div">
+          <h3>Selectați un terapeut din listă!</h3>
+        </div>
+
         <!-- <div class="d-flex row info-header">
           <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
             <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>

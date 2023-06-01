@@ -27,8 +27,6 @@ $(document).ready(function () {
 
   // Search page (RO) - de adaugat partea de HTML
   if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
-    $(".contact-info").hide();
-
     $(window).resize(function () {
       if ($(window).width() < 750 && $(".list-container").is(":visible")) {
         $(".info-container").hide();
@@ -44,11 +42,6 @@ $(document).ready(function () {
     if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
       $(".med").removeClass("btn btn-secondary");
     }
-
-    $(".contact-button").click(function () {
-      $(".contact-info").show();
-      $(this).hide();
-    });
 
     $(".person-box").click(function () {
       if (window.matchMedia("(max-width: 47rem)").matches) {
@@ -240,8 +233,6 @@ $(document).ready(function () {
       therapiesCounter++;
       const therapyColor = therapy.Culoare;
 
-      console.log(therapiesCounter);
-
       const rowToAdd = `
         <tr>
           <!-- Se introduce culoarea terapiei selectat de catre utilizator in pagina de terapii -->
@@ -295,8 +286,8 @@ $(document).ready(function () {
                         <select name="Terapii" onchange="" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuTerapii" data-bs-toggle="dropdown" aria-expanded="false">
                           <option selected>${therapy.Terapie}</option>
                           <!--// Inserare optiuni pentru terapii (RO) -->
-                          <option value="dropdown-item" value="Kinetoterapeut">Kinetoterapie</option>
-                          <option class="dropdown-item" value="Maseur">Masaj</option>
+                          <option value="dropdown-item" value="Kinetoterapie">Kinetoterapie</option>
+                          <option class="dropdown-item" value="Masaj">Masaj</option>
                         </select>
                       </div>
                     </div>
@@ -354,6 +345,16 @@ $(document).ready(function () {
 
     let windowCheck = true;
     const checkText = "Caută un terapeut în apropiere de tine!";
+
+    const params = new URLSearchParams(window.location.search);
+    const location = $("#inputSearchField");
+    const service = $("#dropdownService");
+    const specialization = $("#dropdownSpecialization");
+
+    location.val(params.get("place"));
+    service.val(params.get("service"));
+    specialization.val(params.get("specialization"));
+
     const therapies = [
       {
         Culoare: "red",
@@ -397,14 +398,14 @@ $(document).ready(function () {
         id: 0,
         Name: "Alin Popescu",
         Profile_Picture: "../img/profiles/PozaH.webp",
-        Profession: "Fizioterapeut",
+        Profession: "Kinetoterapie",
         Specialization: ["Kinetoterapie", "Masaj", "Kinetoterapie pediatrică"],
         Locations: ["București", "Sector 1", "Aviatorilor"],
         Phone: "0754579331",
         Email: "hirjoaba_ioan@yahoo.com",
         Rating: "Bun",
-        Recenzions: 4,
-        Experience: 2,
+        Reviews_Number: 4,
+        Experience: 2018,
         Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
         Therapies: therapies,
         Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
@@ -415,14 +416,14 @@ $(document).ready(function () {
         id: 1,
         Name: "Gonea Marian",
         Profile_Picture: "../img/profiles/PozaW.webp",
-        Profession: "Maseur",
+        Profession: "Masaj",
         Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
         Locations: ["București", "Sector 1", "Aviatorilor"],
         Phone: "0754579331",
         Email: "hirjoaba_ioan@yahoo.com",
         Rating: "Bun",
-        Recenzions: 4,
-        Experience: 2,
+        Reviews_Number: 4,
+        Experience: 2020,
         Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
         Therapies: therapies,
         Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
@@ -443,13 +444,13 @@ $(document).ready(function () {
 
     window.onload = searchTherapists(inputFieldSearch);
 
-    function nameList() {
-      const names = [];
-      const locations = [];
-      therapistsList.forEach((therapist) => {
-        names.push(therapist.Name);
-      });
-    }
+    // function nameList() {
+    //   const names = [];
+    //   const locations = [];
+    //   therapistsList.forEach((therapist) => {
+    //     names.push(therapist.Name);
+    //   });
+    // }
 
     function searchTherapists(search) {
       let foundTherapists = [];
@@ -457,16 +458,12 @@ $(document).ready(function () {
       const searchItem = search.val().toLowerCase();
       const service = $("#dropdownService").val();
       const specialization = $("#dropdownSpecialization").val();
-      console.log(searchItem);
 
       if (searchItem) {
-        console.log("Searched word: " + searchItem);
         therapistsList.forEach((therapist) => {
           let match = therapist.Name.toLocaleLowerCase().includes(searchItem);
-          console.log("It matches with: " + therapist.Name + " ? => " + match);
           if (match) {
             foundTherapists.push(therapist);
-            console.log("Therapists founded: " + foundTherapists.length);
           }
 
           match = therapist.Locations.includes(searchItem);
@@ -495,18 +492,14 @@ $(document).ready(function () {
 
       if (service || specialization) {
         filteredTherapists = filterTherapists(service, specialization, foundTherapists);
-        console.log("there are: " + service + " or " + specialization);
       } else {
         filteredTherapists = foundTherapists;
-        console.log("There are not");
       }
 
       filteredTherapists = filteredTherapists.filter((value, index, self) => index === self.findIndex((t) => t.id === value.id));
 
-      console.log(filteredTherapists);
-
       displayTherapists(filteredTherapists.sort(() => Math.random() - 0.5));
-      // showTherapistData(filteredTherapists);
+      showTherapistData(filteredTherapists);
 
       // return filteredTherapists;
     }
@@ -514,7 +507,6 @@ $(document).ready(function () {
     function filterTherapists(service, specialization, foundTherapists) {
       const serviceFilteredTherapists = [];
       const specializationFilteredTherapists = [];
-      console.log("There is " + service);
       if (service) {
         foundTherapists.forEach((therapist) => {
           if (therapist.Profession === service) {
@@ -561,9 +553,7 @@ $(document).ready(function () {
             <div class="row m-0 p-0 person-box-info">
               <div class="m-0 pe-0">
                 <span class="me-0 pe-0 person-box-name">${name}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                </svg>
+                <div class="availability-dot"></div>
               </div>
               <span class="col-12 me-0 pe-0 person-box-locations">${areas}</span>
               <span class="col-12 me-0 pe-0 person-box-therapies">${therapies}</span>
@@ -574,14 +564,198 @@ $(document).ready(function () {
       });
     }
 
-    // const params = new URLSearchParams(window.location.search);
-    // const location = $("#inputSearchField");
-    // const service = $("#dropdownService");
-    // const specialization = $("#dropdownSpecialization");
+    function showTherapistData(therapists) {
+      $(".person-box").click(function () {
+        let idAttribute = $(this).attr("id");
+        const today = new Date();
 
-    // location.val(params.get("place"));
-    // service.val(params.get("service"));
-    // specialization.val(params.get("specialization"));
+        therapists.forEach((therapist) => {
+          const years = today.getFullYear() - new Date(therapist.Experience).getFullYear();
+          let id = Number(therapist.id);
+          let picture = therapist.Profile_Picture;
+          let name = therapist.Name;
+          let phone = therapist.Phone;
+          let email = therapist.Email;
+          let web = therapist.Web;
+          let rating = therapists.Rating;
+          let reviews = therapist.Reviews;
+          let reviewsNumber = therapist.Reviews_Number;
+          let profession = therapist.Profession;
+          let specialization = therapist.Specialization;
+          let experience = years > 1 ? "&nbsp;ani" : "&nbsp;an";
+          let description = therapist.Description;
+          let courses = therapist.Courses;
+          let location = therapist.Locations;
+
+          if (idAttribute == id) {
+            createDetails(id, name, phone, email, web, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location);
+          }
+        });
+
+        $(".btn-close").click(function () {
+          if ($(window).width() < 768) {
+            $(".info-container").hide();
+            $(".list-container").show();
+          } else if ($(window).width() > 768) {
+            $(".list-container").css("display", "flex");
+            const replace = `
+            <div class="no-selection-div">
+              <h3>Selectați un terapeut din listă!</h3>
+            </div>
+            `;
+            $(".info-container").html(replace);
+          } else {
+            const replace = `
+            <div class="no-selection-div">
+              <h3>Selectați un terapeut din listă!</h3>
+            </div>
+            `;
+            $(".info-container").html(replace);
+          }
+        });
+      });
+    }
+
+    function createDetails(id, name, phone, email, web, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location) {
+      let cours = [];
+      let loc = [];
+
+      const therapistInformations = `
+            <div class="d-flex row info-header">
+            <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
+              <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
+            </div>
+            <div class="header-pn mt-0 pt-0">
+              <div class="m-0 p-0 header-pn-pic">
+                <img src="${picture}" alt="${name}'s profile picture" />
+              </div>
+              <div class="m-0 p-0 header-pn-name">
+                <div class="d-flex row justify-content-start align-items-center name-box">
+                  <span class="col-8">${name}</span>
+                  <div class="availability-dot"></div>
+                </div>
+                <span class="profession">${profession}</span>
+              </div>
+            </div>
+            <div class="header-loc-contact">
+              <div class="header-locations">
+                <h5 class="info-titles">Locații</h5>
+                <div class="m-0 mb-2 ps-4 pe-4">
+                  <span>${location}</span>
+                </div>
+              </div>
+              <div class="header-contact">
+                <h5 class="info-titles">Contact</h5>
+                <div class="d-flex row justify-content-center m-0 p-0">
+                  
+                  <button type="button" class="btn btn-primary contact-button">Contactează terapeutul</button>
+                  
+                  <div class="row m-0 p-0 gap-2 contact-info">
+                    <a href="tel:${phone}" class="btn btn-secondary msg-button med text-center" id="search-telefon">${phone}</a>
+                    <a href="mailto:${email}" class="btn btn-secondary msg-button med text-center" id="search-email">${email}</a>
+                    <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-bio">
+            <div class="mb-4 info-bio-activities">
+              <h5 class="info-titles">Activitate</h5>
+              <div class="m-0 ps-4 pe-4">
+                
+                <div class="d-flex row">
+                  <h6 class="col-8">Rating general:</h6>
+                  <span class="col-4">${rating}</span>
+                </div>
+                <div class="d-flex row">
+                  <h6 class="col-8">Recenzii primite:</h6>
+                  <span class="col-4">${reviewsNumber}</span>
+                </div>
+                <div class="d-flex row">
+                  <h6 class="col-8">Experiența:</h6>
+                  <span class="col-4">${experience}</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-4 info-bio-description">
+              <h5 class="info-titles">Descriere</h5>
+              <p class="m-0 ps-4 pe-4">${description}</p>
+            </div>
+            <div class="mb-4 info-bio-courses">
+              <h5 class="info-titles">Cursuri</h5>
+              <p class="m-0 ps-4 pe-4">${courses}</p>
+            </div>
+          </div>
+
+          <div class="info-long">
+            <div class="col-12 mb-4 table-responsive info-long-services">
+              <h5 class="info-titles">Servicii</h5>
+              <table class="table info-long-table ps-2 pe-2">
+                <tr>
+                  <th class="col">Terapie</th>
+                  <th class="col">Durată</th>
+                  <th class="col">Tarif</th>
+                </tr>
+                <tr>
+                  <td>Masaj</td>
+                  <td class="search-time">30</td>
+                  <td class="search-price">100</td>
+                </tr>
+                <tr>
+                  <td>Terapie manuală</td>
+                  <td class="search-time">30</td>
+                  <td class="search-price">150</td>
+                </tr>
+                <tr>
+                  <td>Ventuze</td>
+                  <td class="search-time">15</td>
+                  <td class="search-price">50</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-12 table-responsive info-long-reviews">
+              <h5 class="info-titles">Recenzii</h5>
+              <div class="overflow-auto reviews-container">
+                <table class="table info-long-table ps-2 pe-2">
+                  <tr>
+                    <th class="col">Client</th>
+                    <th class="col">Recenzie</th>
+                  </tr>
+                  <tr tabindex="0">
+                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                    <td>Bună</td>
+                  </tr>
+                  <tr tabindex="0">
+                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                    <td>Bună</td>
+                  </tr>
+                  <tr tabindex="0">
+                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                    <td>Bună</td>
+                  </tr>
+                  <tr tabindex="0">
+                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                    <td>Bună</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+      `;
+
+      document.querySelector(".info-container").innerHTML = therapistInformations;
+      // Aici ai ramas, modifica codul astfel incat sa apara lista atunci cand apasa pe X si sa apara info atunci cand apasa pe therapist-box
+      if ($(window).width() < 768) {
+        $(".list-container").hide();
+        $(".info-container").show();
+      }
+
+      $(".contact-button").click(function () {
+        $(".contact-info").css("display", "flex");
+      });
+    }
 
     // let therapistCount = 0;
     // therapistsList.forEach((therapist) => {
@@ -657,7 +831,7 @@ $(document).ready(function () {
     //             </div>
     //             <div class="d-flex row">
     //               <h6 class="col-8">Recenzii primite:</h6>
-    //               <span class="col-4">${therapist.Recenzions}</span>
+    //               <span class="col-4">${therapist.Reviews_Number}</span>
     //             </div>
     //             <div class="d-flex row">
     //               <h6 class="col-8">Experiența:</h6>
@@ -745,7 +919,7 @@ $(document).ready(function () {
   const placesDropdown = $("#placesList");
   const servicesDropdown = $("#servicesList");
   const specializationDropdown = $("#specializationList");
-  const services = ["Fizioterapeut", "Maseur"];
+  const services = ["Kinetoterapie", "Masaj"];
   const inputDropdownChangeEvent = $("#dropdownService");
 
   const romanianPlaces = ["București", "Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Abrud", "Adjud", "Agnita", "Aiud", "Alba Iulia", "Aleșd", "Alexandria", "Amara", "Anina", "Aninoasa", "Arad", "Ardud", "Avrig", "Azuga", "Babadag", "Băbeni", "Bacău", "Baia de Aramă", "Baia de Arieș", "Baia Mare", "Baia Sprie", "Băicoi", "Băile Govora", "Băile Herculane", "Băile Olănești", "Băile Tușnad", "Băilești", "Bălan", "Bălcești", "Balș", "Baraolt", "Bârlad", "Bechet", "Beclean", "Beiuș", "Berbești", "Berești", "Bicaz", "Bistrița", "Blaj", "Bocșa", "Boldești-Scăeni", "Bolintin-Vale", "Borșa", "Borsec", "Botoșani", "Brad", "Bragadiru", "Brăila", "Brașov", "Breaza", "Brezoi", "Broșteni", "Bucecea", "Budești", "Buftea", "Buhuși", "Bumbești-Jiu", "Bușteni", "Buzău", "Buziaș", "Cajvana", "Calafat", "Călan", "Călărași", "Călimănești", "Câmpeni", "Câmpia Turzii", "Câmpina", "Câmpulung Moldovenesc", "Câmpulung", "Caracal", "Caransebeș", "Carei", "Cavnic", "Căzănești", "Cehu Silvaniei", "Cernavodă", "Chișineu-Criș", "Chitila", "Ciacova", "Cisnădie", "Cluj-Napoca", "Codlea", "Comănești", "Comarnic", "Constanța", "Copșa Mică", "Corabia", "Costești", "Covasna", "Craiova", "Cristuru Secuiesc", "Cugir", "Curtea de Argeș", "Curtici", "Dăbuleni", "Darabani", "Dărmănești", "Dej", "Deta", "Deva", "Dolhasca", "Dorohoi", "Drăgănești-Olt", "Drăgășani", "Dragomirești", "Drobeta-Turnu Severin", "Dumbrăveni", "Eforie", "Făgăraș", "Făget", "Fălticeni", "Făurei", "Fetești", "Fieni", "Fierbinți-Târg", "Filiași", "Flămânzi", "Focșani", "Frasin", "Fundulea", "Găești", "Galați", "Gătaia", "Geoagiu", "Gheorgheni", "Gherla", "Ghimbav", "Giurgiu", "Gura Humorului", "Hârlău", "Hârșova", "Hațeg", "Horezu", "Huedin", "Hunedoara", "Huși", "Ianca", "Iași", "Iernut", "Ineu", "Însurăței", "Întorsura Buzăului", "Isaccea", "Jibou", "Jimbolia", "Lehliu Gară", "Lipova", "Liteni", "Livada", "Luduș", "Lugoj", "Lupeni", "Măcin", "Măgurele", "Mangalia", "Mărășești", "Marghita", "Medgidia", "Mediaș", "Miercurea Ciuc", "Miercurea Nirajului", "Miercurea Sibiului", "Mihăilești", "Milișăuți", "Mioveni", "Mizil", "Moinești", "Moldova Nouă", "Moreni", "Motru", "Murfatlar", "Murgeni", "Nădlac", "Năsăud", "Năvodari", "Negrești", "Negrești-Oaș", "Negru Vodă", "Nehoiu", "Novaci", "Nucet", "Ocna Mureș", "Ocna Sibiului", "Ocnele Mari", "Odobești", "Odorheiu Secuiesc", "Oltenița", "Onești", "Oradea", "Orăștie", "Oravița", "Orșova", "Oțelu Roșu", "Otopeni", "Ovidiu", "Panciu", "Pâncota", "Pantelimon", "Pașcani", "Pătârlagele", "Pecica", "Petrila", "Petroșani", "Piatra Neamț", "Piatra-Olt", "Pitești", "Ploiești", "Plopeni", "Podu Iloaiei", "Pogoanele", "Popești-Leordeni", "Potcoava", "Predeal", "Pucioasa", "Răcari", "Rădăuți", "Râmnicu Sărat", "Râmnicu Vâlcea", "Râșnov", "Recaș", "Reghin", "Reșița", "Roman", "Roșiorii de Vede", "Rovinari", "Roznov", "Rupea", "Săcele", "Săcueni", "Salcea", "Săliște", "Săliștea de Sus", "Salonta", "Sângeorgiu de Pădure", "Sângeorz-Băi", "Sânnicolau Mare", "Sântana", "Sărmașu", "Satu Mare", "Săveni", "Scornicești", "Sebeș", "Sebiș", "Segarcea", "Seini", "Sfântu Gheorghe", "Sibiu", "Sighetu Marmației", "Sighișoara", "Simeria", "Șimleu Silvaniei", "Sinaia", "Siret", "Slănic", "Slănic-Moldova", "Slatina", "Slobozia", "Solca", "Șomcuta Mare", "Sovata", "Ștefănești", " Argeș", "Ștefănești", " Botoșani", "Ștei", "Strehaia", "Suceava", "Sulina", "Tălmaciu", "Țăndărei", "Târgoviște", "Târgu Bujor", "Târgu Cărbunești", "Târgu Frumos", "Târgu Jiu", "Târgu Lăpuș", "Târgu Mureș", "Târgu Neamț", "Târgu Ocna", "Târgu Secuiesc", "Târnăveni", "Tășnad", "Tăuții-Măgherăuș", "Techirghiol", "Tecuci", "Teiuș", "Țicleni", "Timișoara", "Tismana", "Titu", "Toplița", "Topoloveni", "Tulcea", "Turceni", "Turda", "Turnu Măgurele", "Ulmeni", "Ungheni", "Uricani", "Urlați", "Urziceni", "Valea lui Mihai", "Vălenii de Munte", "Vânju Mare", "Vașcău", "Vaslui", "Vatra Dornei", "Vicovu de Sus", "Victoria", "Videle", "Vișeu de Sus", "Vlăhița", "Voluntari", "Vulcan", "Zalău", "Zărnești", "Zimnicea", "Zlatna", "1 mai", "Aviatorilor", "Aviației", "Băneasa", "Bucureștii Noi", "Centrul Civic", "Dămăroaia", "Domenii", "Dorobanți", "Floreasca", "Gara de Nord", "Grivița", "Pajura", "Piața Romană", "Piepra", "Pipera", "Primăverii", "Străulești", "Victoriei", "Andronache", "Baicului", "Centrul Civic", "Colentina", "Floreasca", "Iancului", "Ion Creangă", "Moșilor", "Obor", "Pantelimon", "Pipera", "Ștefan cel Mare", "Tei", "Vatra Luminoasă", "Balta Albă", "Centru Civic", "Centrul Civic", "Centrul Istoric", "Dristor", "Dudești", "Industriilor", "Mihai Bravu", "Muncii", "Ozana", "Sălăjan", "Titan", "Trapezului", "Unirii", "Vitan", "Berceni", "Centrul Civic", "Giurgiului", "Olteniței", "Timpuri Noi", "Tineretului", "Văcărești", "13 septembrie", "Centrul Civic", "Cotroceni", "Dealul Spirii", "Ferentari", "Ghencea", "Giurgiului", "Rahova", "Sălaj", "Brâncuși", "Centrul Civic", "Crângași", "Drumul Taberei", "Ghencea", "Giulești", "Grozăvești", "Militari", "Andrei Mureșanu", "Becaș", "Borhanci", "Bulgaria", "Bună Ziua", "Centru", "Dâmbul Rotund", "Europa", "Făget", "Gheorgheni", "Grădini Mănăștur (Plopilor)", "Grigorescu", "Gruia", "Iris", "Între Lacuri", "Mănăștur", "Mărăști", "Someșeni", "Sopor", "Agronomie", "Alexandru cel Bun", "Aviației", "Baza 3", "Bucium", "Bucșinescu", "Bularga", "C.U.G. 1 și 2", "Canta", "Ciurchi", "Copou", "Dacia", "Dimitrie Cantemir", "Frumoasa", "Galata 1 și 2", "Gară", "Manta Roșie", "Metalurgie", "Mircea cel Bătrân", "Blașcovici", "Braytim", "Bucovina", "Calea Aradului", "Calea Lipovei", "Calea Șagului", "Cetate", "Ciarda Roșie", "Circumvalațiunii", "Dâmbovița", "Elisabetin", "Fabric", "Fratelia", "Freidorf", "Ghiroda", "Girocului", "Iosefin", "Kuncz", "Mehala", "Abatorul", "Anadalchioi", "Badea Cârțan", "Berechet", "Boreal", "Brătianu", "C.E.T.", "Casa de Cultură", "Centru", "Centrul Vechi", "Coiciu", "Compozitori", "Dacia", "Energia", "Faleza nord", "Faleza sud", "Farul", "Gara", "Groapa", "1 mai", "Bariera Vâlcii", "Bordei", "Brazda lui Novac", "Brestei", "Centru", "Craiovița Nouă", "Craiovița Veche", "Făcăi", "Ghercești", "Lascăr Catargiu", "Lăpuș-Argeș", "Lunca Jiului", "Mofleni", "Nisipuri Dorobănția", "Popoveni", "Romanești", "Rovine", "Sărari", "Astra", "Bartolomeu", "Blumăna", "Brașovechi", "Centrul Civic", "Centrul istoric", "Craiter", "Dârste", "Florilor", "Noua", "Poiana Brașov", "Scriitorilor", "Stupini", "Șcheii Brașovului", "Timiș-Triaj", "Tractorul", "Valea Cetății"];
@@ -786,12 +960,12 @@ $(document).ready(function () {
 
   //  Populeaza specializarile cu optiunile corespunzatoare serviciilor
   inputDropdownChangeEvent.on("change", function specializationSetter() {
-    if (inputDropdownChangeEvent.val() === "Fizioterapeut") {
+    if (inputDropdownChangeEvent.val() === "Kinetoterapie") {
       specializationDropdown.html("");
       KTspecializations.forEach((specialization) => {
         specializationDropdown.append(`<option value="${specialization}"></option>`);
       });
-    } else if (inputDropdownChangeEvent.val() === "Maseur") {
+    } else if (inputDropdownChangeEvent.val() === "Masaj") {
       specializationDropdown.html("");
       Mspecializations.forEach((specialization) => {
         specializationDropdown.append(`<option value="${specialization}"></option>`);
