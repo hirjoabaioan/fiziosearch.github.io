@@ -272,6 +272,8 @@
     "three";
 
   .info-header {
+    width: 100%;
+    margin: 0;
     grid-area: one;
   }
 
@@ -331,14 +333,6 @@
       place-content: start;
       place-items: center;
       width: 100%;
-
-      @include tablet {
-        width: 60%;
-      }
-
-      @include tablet-wide {
-        width: 40%;
-      }
     }
   }
 
@@ -380,23 +374,61 @@
   align-items: center;
   margin: 1rem 0 !important;
 
+  .social-media {
+    list-style: none;
+    text-align: center;
+    margin-top: 1rem;
+
+    & li {
+      display: inline-block;
+      margin-right: 1rem;
+      font-size: 180%;
+
+      & a {
+        color: #888;
+        transition: color 0.5s;
+      }
+    }
+
+    .bi-facebook:hover,
+    .bi-facebook:active {
+      color: #3b5998 !important;
+    }
+
+    .bi-instagram:hover,
+    .bi-instagram:active {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+      -webkit-background-clip: text;
+      /* Also define standard property for compatibility */
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bi-tiktok:hover,
+    .bi-tiktok:active {
+      color: #111111;
+      filter: drop-shadow(2px 0px 0px #fd3e3e) drop-shadow(-2px -2px 0px #4de8f4);
+    }
+
+    .bi-linkedin:hover,
+    .bi-linkedin:active {
+      color: #0e76a8 !important;
+    }
+  }
+
   .msg-button {
-    font-size: $font-size;
     background-color: darken($secondary-color, 8%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .bi {
+      font-size: 120%;
+    }
 
     @include tablet-wide {
       width: 48%;
       margin: auto;
-    }
-  }
-
-  @include tablet-wide {
-    #search-telefon::before {
-      content: "Telefon: ";
-    }
-
-    #search-email::before {
-      content: "Email: ";
     }
   }
 

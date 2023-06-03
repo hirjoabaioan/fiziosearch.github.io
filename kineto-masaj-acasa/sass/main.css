@@ -269,6 +269,7 @@ footer {
 }
 .btn-primary:hover, .btn-primary:focus {
   background-color: #12a5ad;
+  transition: color 0.5s ease-in-out;
 }
 .btn-primary:active {
   background-color: #0e797f !important;
@@ -1461,6 +1462,8 @@ main {
   grid-template-areas: "one" "two" "three";
 }
 .info-container .info-header {
+  width: 100%;
+  margin: 0;
   grid-area: one;
 }
 .info-container .info-bio {
@@ -1517,16 +1520,6 @@ main {
   place-items: center;
   width: 100%;
 }
-@media (min-width: 37.5rem) {
-  .header-pn-name .name-box {
-    width: 60%;
-  }
-}
-@media (min-width: 48rem) {
-  .header-pn-name .name-box {
-    width: 40%;
-  }
-}
 .header-pn .profession {
   font-weight: 300;
   font-size: 1.2rem;
@@ -1566,22 +1559,54 @@ main {
   align-items: center;
   margin: 1rem 0 !important;
 }
+.contact-info .social-media {
+  list-style: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+.contact-info .social-media li {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 180%;
+}
+.contact-info .social-media li a {
+  color: #888;
+  transition: color 0.5s;
+}
+.contact-info .social-media .bi-facebook:hover,
+.contact-info .social-media .bi-facebook:active {
+  color: #3b5998 !important;
+}
+.contact-info .social-media .bi-instagram:hover,
+.contact-info .social-media .bi-instagram:active {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  -webkit-background-clip: text;
+  /* Also define standard property for compatibility */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-info .social-media .bi-tiktok:hover,
+.contact-info .social-media .bi-tiktok:active {
+  color: #111111;
+  filter: drop-shadow(2px 0px 0px #fd3e3e) drop-shadow(-2px -2px 0px #4de8f4);
+}
+.contact-info .social-media .bi-linkedin:hover,
+.contact-info .social-media .bi-linkedin:active {
+  color: #0e76a8 !important;
+}
 .contact-info .msg-button {
-  font-size: 1rem;
   background-color: #dee0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.contact-info .msg-button .bi {
+  font-size: 120%;
 }
 @media (min-width: 48rem) {
   .contact-info .msg-button {
     width: 48%;
     margin: auto;
-  }
-}
-@media (min-width: 48rem) {
-  .contact-info #search-telefon::before {
-    content: "Telefon: ";
-  }
-  .contact-info #search-email::before {
-    content: "Email: ";
   }
 }
 @media (min-width: 64rem) {

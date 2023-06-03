@@ -13,6 +13,7 @@
   &:hover,
   &:focus {
     background-color: lighten($primary-color, 5%);
+    transition: color 0.5s ease-in-out;
   }
 
   &:active {
@@ -70,5 +71,4 @@
     box-shadow: none !important;
     outline: 0 !important;
   }
-
 }

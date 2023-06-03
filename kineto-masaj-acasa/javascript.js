@@ -400,9 +400,15 @@ $(document).ready(function () {
         Profile_Picture: "../img/profiles/PozaH.webp",
         Profession: "Kinetoterapie",
         Specialization: ["Kinetoterapie", "Masaj", "Kinetoterapie pediatrică"],
-        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Locations: ["București", "Sector 2", "Aviatorilor"],
         Phone: "0754579331",
-        Email: "hirjoaba_ioan@yahoo.com",
+        SecondPhone: "0123456789",
+        Email: "hirjoaba_ioasafdafdsgdfghsdfsdhggdsfgdgjgdtgfdhgfjhdgxvcn@yahoo.com",
+        Web: "http://google.ro",
+        Facebook: "https://www.facebook.com/hirjoaba.ioan/",
+        Instagram: "https://www.instagram.com/hirjoaba_ioan/",
+        TikTok: "https://www.tiktok.com/?utm_medium=msn",
+        LinkedIn: "https://www.linkedin.com/in/h%C3%AErjoab%C4%83-ioan-266238103/",
         Rating: "Bun",
         Reviews_Number: 4,
         Experience: 2018,
@@ -414,6 +420,150 @@ $(document).ready(function () {
 
       {
         id: 1,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 2,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 3,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 4,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 5,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 6,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 7,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 8,
+        Name: "Gonea Marian",
+        Profile_Picture: "../img/profiles/PozaW.webp",
+        Profession: "Masaj",
+        Specialization: ["Masaj", "Masaj de relaxare", "Reflexoterapie"],
+        Locations: ["București", "Sector 1", "Aviatorilor"],
+        Phone: "0754579331",
+        Email: "hirjoaba_ioan@yahoo.com",
+        Rating: "Bun",
+        Reviews_Number: 4,
+        Experience: 2020,
+        Description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Therapies: therapies,
+        Courses: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.",
+        Reviews: reviews,
+      },
+
+      {
+        id: 9,
         Name: "Gonea Marian",
         Profile_Picture: "../img/profiles/PozaW.webp",
         Profession: "Masaj",
@@ -443,14 +593,6 @@ $(document).ready(function () {
     });
 
     window.onload = searchTherapists(inputFieldSearch);
-
-    // function nameList() {
-    //   const names = [];
-    //   const locations = [];
-    //   therapistsList.forEach((therapist) => {
-    //     names.push(therapist.Name);
-    //   });
-    // }
 
     function searchTherapists(search) {
       let foundTherapists = [];
@@ -575,8 +717,13 @@ $(document).ready(function () {
           let picture = therapist.Profile_Picture;
           let name = therapist.Name;
           let phone = therapist.Phone;
+          let phone_2 = therapist.SecondPhone;
           let email = therapist.Email;
           let web = therapist.Web;
+          let fb = therapist.Facebook;
+          let instagram = therapist.Instagram;
+          let tikTok = therapist.TikTok;
+          let linkedIn = therapist.LinkedIn;
           let rating = therapists.Rating;
           let reviews = therapist.Reviews;
           let reviewsNumber = therapist.Reviews_Number;
@@ -588,7 +735,7 @@ $(document).ready(function () {
           let location = therapist.Locations;
 
           if (idAttribute == id) {
-            createDetails(id, name, phone, email, web, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location);
+            createDetails(id, name, phone, phone_2, email, web, fb, instagram, tikTok, linkedIn, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location);
           }
         });
 
@@ -616,9 +763,84 @@ $(document).ready(function () {
       });
     }
 
-    function createDetails(id, name, phone, email, web, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location) {
+    function createDetails(id, name, phone, phone_2, email, web, fb, instagram, tikTok, linkedIn, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location) {
       let cours = [];
       let loc = [];
+
+      let addSecondPhone = ``;
+      let addWebAddress = ``;
+      let addFacebook = ``;
+      let addInstagram = ``;
+      let addTikTok = ``;
+      let addLinkedIn = ``;
+      let addSocialMedia = ``;
+
+      if (phone_2) {
+        addSecondPhone = `
+          <a href="tel:${phone_2}" class="btn btn-secondary msg-button med text-center">
+            <i class="bi bi-telephone" id="phone_2">${phone_2}</i>
+          </a>
+        `;
+      }
+
+      if (web) {
+        addWebAddress = `
+        <a href="tel:${web}" class="btn btn-secondary msg-button med text-center">
+          <i class="bi bi-envelope-at"> Site personal</i>
+        </a>
+      `;
+      }
+
+      if (fb || instagram || tikTok || linkedIn) {
+        if (fb) {
+          addFacebook = `
+              <li>
+                <a href="${fb}" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+          `;
+        }
+
+        if (instagram) {
+          addInstagram = `
+          <li>
+            <a href="${instagram}" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+      `;
+        }
+
+        if (tikTok) {
+          addTikTok = `
+          <li>
+            <a href="${tikTok}" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-tiktok"></i>
+            </a>
+          </li>
+      `;
+        }
+
+        if (linkedIn) {
+          addLinkedIn = `
+          <li>
+            <a href="${linkedIn}" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+      `;
+        }
+
+        addSocialMedia = `
+          <ul class="social-media">
+            ${addFacebook}
+            ${addInstagram}
+            ${addTikTok}
+            ${addLinkedIn}
+          </ul>
+        `;
+      }
 
       const therapistInformations = `
             <div class="d-flex row info-header">
@@ -648,11 +870,20 @@ $(document).ready(function () {
                 <h5 class="info-titles">Contact</h5>
                 <div class="d-flex row justify-content-center m-0 p-0">
                   
-                  <button type="button" class="btn btn-primary contact-button">Contactează terapeutul</button>
+                  <button type="button" class="btn btn-primary contact-button" id="showContactForIdNo_${id}">Contactează terapeutul</button>
                   
                   <div class="row m-0 p-0 gap-2 contact-info">
-                    <a href="tel:${phone}" class="btn btn-secondary msg-button med text-center" id="search-telefon">${phone}</a>
-                    <a href="mailto:${email}" class="btn btn-secondary msg-button med text-center" id="search-email">${email}</a>
+                    <a href="tel:${phone}" class="btn btn-secondary msg-button med text-center">
+                      <i class="bi bi-telephone"> ${phone}</i>
+                    </a>
+                    ${addSecondPhone}
+                    <a href="mailto:${email}" class="btn btn-secondary msg-button med text-center">
+                      <i class="bi bi-envelope-at"> ${email}</i>
+                    </a>
+                    ${addWebAddress}
+
+                    ${addSocialMedia}
+                    
                     <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
                   </div>
                 </div>
@@ -754,160 +985,71 @@ $(document).ready(function () {
 
       $(".contact-button").click(function () {
         $(".contact-info").css("display", "flex");
+
+        // const messageButtons = document.querySelectorAll(".msg-button");
+
+        // messageButtons.forEach((button) => {
+        //   button.click(function () {
+        //     console.log(button.children.innerText);
+        //     const buttonText = button.children.innerText;
+        //     button.click(copyTextToClipboard(buttonText));
+        //   });
+        // });
       });
     }
 
-    // let therapistCount = 0;
-    // therapistsList.forEach((therapist) => {
-    //   const therapiesList = therapist.Therapies.map((therapyName) => therapyName.Procedura);
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard) {
+        // Modern versions of Chromium browsers, Firefox, etc.
 
-    //   const therapistBox = `
-    //       <div class="person-box" tabindex="0" id="${therapistCount++}">
-    //       <div class="person-box-pic">
-    //         <img src="${therapist.Profile_Picture}" alt="${therapist.Name}'s ProfilePicture" />
-    //       </div>
-    //       <div class="row m-0 p-0 person-box-info">
-    //         <div class="m-0 pe-0">
-    //           <span class="me-0 pe-0 person-box-name">${therapist.Name}</span>
-    //           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-    //             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-    //           </svg>
-    //         </div>
-    //         <span class="col-12 me-0 pe-0 person-box-locations">${therapist.Locations}</span>
-    //         <span class="col-12 me-0 pe-0 person-box-therapies">${therapiesList}</span>
-    //       </div>
-    //    `;
+        navigator.clipboard.writeText(text).then(
+          function () {
+            alert("Text successfully copied to clipboard!");
+          },
+          function (error) {
+            alert("Failed to copy text to clipboard: " + error.message);
+          }
+        );
+      } else if (window.clipboardData) {
+        // Internet Explorer.
 
-    //   const therapistInformations = `
-    //         <div class="d-flex row info-header">
-    //         <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
-    //           <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
-    //         </div>
-    //         <div class="header-pn mt-0 pt-0">
-    //           <div class="m-0 p-0 header-pn-pic">
-    //             <img src="${therapist.Profile_Picture}" alt="${therapist.Name}'s ProfilePicture" />
-    //           </div>
-    //           <div class="m-0 p-0 header-pn-name">
-    //             <div class="d-flex row justify-content-start align-items-center">
-    //               <span class="col-8">${therapist.Name}</span>
-    //               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="col-1 bi bi-dot" viewBox="0 0 16 16">
-    //                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-    //               </svg>
-    //             </div>
-    //             <span class="profession">${therapist.Profession}</span>
-    //           </div>
-    //         </div>
-    //         <div class="header-loc-contact">
-    //           <div class="header-locations">
-    //             <h5 class="info-titles">Locații</h5>
-    //             <div class="m-0 mb-2 ps-4 pe-4">
-    //               <span>${therapist.Locations}</span>
-    //             </div>
-    //           </div>
-    //           <div class="header-contact">
-    //             <h5 class="info-titles">Contact</h5>
-    //             <div class="d-flex row justify-content-center m-0 p-0">
-    //               <!-- Butonul dispare dupa ce este apasat si apar datele de contact -->
-    //               <button class="btn btn-primary contact-button">Contactează terapeutul</button>
-    //               <!-- Datele de contact apar dupa apasarea butonului de deasupra -->
-    //               <div class="row m-0 p-0 gap-2 contact-info">
-    //                 <a href="tel:${therapist.Phone}" class="btn btn-secondary msg-button med text-center" id="search-telefon">${therapist.Phone}</a>
-    //                 <a href="mailto:${therapist.Email}" class="btn btn-secondary msg-button med text-center" id="search-email">${therapist.Email}</a>
-    //                 <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
+        window.clipboardData.setData("Text", text);
 
-    //       <div class="info-bio">
-    //         <div class="mb-4 info-bio-activities">
-    //           <h5 class="info-titles">Activitate</h5>
-    //           <div class="m-0 ps-4 pe-4">
-    //             <!-- Doar unul dintre calificative va fi afișat în funcție de recenziile acordate de pacienți: Foarte Bun | Bun | Rău | Foarte rău -->
-    //             <div class="d-flex row">
-    //               <h6 class="col-8">Rating general:</h6>
-    //               <span class="col-4">${therapist.Rating}</span>
-    //             </div>
-    //             <div class="d-flex row">
-    //               <h6 class="col-8">Recenzii primite:</h6>
-    //               <span class="col-4">${therapist.Reviews_Number}</span>
-    //             </div>
-    //             <div class="d-flex row">
-    //               <h6 class="col-8">Experiența:</h6>
-    //               <span class="col-4">${therapist.Experience} ani</span>
-    //             </div>
-    //           </div>
-    //         </div>
-    //         <div class="mb-4 info-bio-description">
-    //           <h5 class="info-titles">Descriere</h5>
-    //           <p class="m-0 ps-4 pe-4">${therapist.Description}</p>
-    //         </div>
-    //         <div class="mb-4 info-bio-courses">
-    //           <h5 class="info-titles">Cursuri</h5>
-    //           <p class="m-0 ps-4 pe-4">${therapist.Courses}</p>
-    //         </div>
-    //       </div>
+        alert("Text successfully copied to clipboard!");
+      } else {
+        // Fallback method using Textarea.
 
-    //       <div class="info-long">
-    //         <div class="col-12 mb-4 table-responsive info-long-services">
-    //           <h5 class="info-titles">Servicii</h5>
-    //           <table class="table info-long-table ps-2 pe-2">
-    //             <tr>
-    //               <th class="col">Terapie</th>
-    //               <th class="col">Durată</th>
-    //               <th class="col">Tarif</th>
-    //             </tr>
-    //             <tr>
-    //               <td>Masaj</td>
-    //               <td class="search-time">30</td>
-    //               <td class="search-price">100</td>
-    //             </tr>
-    //             <tr>
-    //               <td>Terapie manuală</td>
-    //               <td class="search-time">30</td>
-    //               <td class="search-price">150</td>
-    //             </tr>
-    //             <tr>
-    //               <td>Ventuze</td>
-    //               <td class="search-time">15</td>
-    //               <td class="search-price">50</td>
-    //             </tr>
-    //           </table>
-    //         </div>
-    //         <div class="col-12 table-responsive info-long-reviews">
-    //           <h5 class="info-titles">Recenzii</h5>
-    //           <div class="overflow-auto reviews-container">
-    //             <table class="table info-long-table ps-2 pe-2">
-    //               <tr>
-    //                 <th class="col">Client</th>
-    //                 <th class="col">Recenzie</th>
-    //               </tr>
-    //               <tr tabindex="0">
-    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-    //                 <td>Bună</td>
-    //               </tr>
-    //               <tr tabindex="0">
-    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-    //                 <td>Bună</td>
-    //               </tr>
-    //               <tr tabindex="0">
-    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-    //                 <td>Bună</td>
-    //               </tr>
-    //               <tr tabindex="0">
-    //                 <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-    //                 <td>Bună</td>
-    //               </tr>
-    //             </table>
-    //           </div>
-    //         </div>
-    //       </div>
-    //    `;
+        var textArea = document.createElement("textarea");
 
-    //   $(".list-area").append(therapistBox);
-    //   $(".info-container").append(therapistInformations);
-    // });
+        textArea.value = text;
+
+        textArea.style.position = "fixed";
+
+        textArea.style.top = "-999999px";
+
+        textArea.style.left = "-999999px";
+
+        document.body.appendChild(textArea);
+
+        textArea.focus();
+
+        textArea.select();
+
+        try {
+          var successful = document.execCommand("copy");
+
+          if (successful) {
+            alert("Text successfully copied to clipboard!");
+          } else {
+            alert("Could not copy text to clipboard");
+          }
+        } catch (error) {
+          alert("Failed to copy text to clipboard: " + error.message);
+        }
+
+        document.body.removeChild(textArea);
+      }
+    }
   }
 
   //--------------------------------------------//
