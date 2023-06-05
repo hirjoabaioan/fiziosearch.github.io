@@ -83,7 +83,7 @@ $(document).ready(function () {
   }
 
   // Graphic table - de sters sau editat (RO)
-  if (top.location.pathname === "/templates/pacienti/dashboard-pacient.html" || top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html") {
+  if (top.location.pathname === "/templates/pacienti/dashboard-pacient.html" || top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html" || top.location.pathname === "/templates/terapeuti/dashboard.html") {
     let ySums = [300, 450, 200, 150, 300, 400, 100, 150, 300, 150];
     let xDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -107,6 +107,22 @@ $(document).ready(function () {
           yAxes: [{ ticks: { min: 6, max: 16 } }],
         },
       },
+    });
+
+    const availability = $("#availabilityCheckbox");
+
+    availability.on("change", function () {
+      if (availability.is(":checked")) {
+        $(".availability-change-i").css("color", "#f44336");
+        $(".availability-change-i").css("transition", "1s ease");
+        $(".availability-change-s").css("color", "#8f8f8f");
+        $(".availability-change-s").css("transition", "1s ease");
+      } else {
+        $(".availability-change-i").css("color", "#109198");
+        $(".availability-change-i").css("transition", "1s ease");
+        $(".availability-change-s").css("color", "#212427");
+        $(".availability-change-s").css("transition", "1s ease");
+      }
     });
   }
 
@@ -1253,18 +1269,6 @@ $(document).ready(function () {
 
   //--------- Activity Switch in therapists Dashboard page ---------//
 
-  function checkerFunction() {
-    if ($("#checker").is(":checked")) {
-      $("#toggle-inactive").css("color", "#f44336");
-      $("#toggle-active").css("color", "black");
-      // Terapeut indisponibil
-    } else {
-      $("#toggle-active").css("color", "#108F96");
-      $("#toggle-inactive").css("color", "black");
-      // Terapeut disponibil
-    }
-  }
-
   //Image upload script - adauga suportul pentur Safari (RO)
   $("#save-image").css("display", "none");
   // Prepare the preview for profile picture
@@ -1419,6 +1423,18 @@ $(document).ready(function () {
   }
 });
 
+function checkerFunction() {
+  if ($("#checker").is(":checked")) {
+    $("#toggle-inactive").css("color", "#f44336");
+    $("#toggle-active").css("color", "black");
+    // Terapeut indisponibil
+  } else {
+    $("#toggle-active").css("color", "#108F96");
+    $("#toggle-inactive").css("color", "black");
+    // Terapeut disponibil
+  }
+}
+
 // Table Sorting - Pagina Pacient
 const rows = document.querySelectorAll(".program-table tr.collapsible");
 rows.forEach((row) => {
@@ -1456,15 +1472,17 @@ function sortTable(table, column, asc) {
 }
 const table = document.querySelector("#scheduleTable");
 
-// Add buttons and event listeners to table headers with "sort" class
-table.querySelectorAll("thead th").forEach((th, index) => {
-  const button = document.createElement("button");
-  button.classList.add("sort-button");
-  button.textContent = "▼";
-  button.addEventListener("click", () => {
-    const asc = button.textContent === "▲";
-    sortTable(table, index, asc);
-    button.textContent = asc ? "▼" : "▲";
+if (table) {
+  // Add buttons and event listeners to table headers with "sort" class
+  table.querySelectorAll("thead th").forEach((th, index) => {
+    const button = document.createElement("button");
+    button.classList.add("sort-button");
+    button.textContent = "▼";
+    button.addEventListener("click", () => {
+      const asc = button.textContent === "▲";
+      sortTable(table, index, asc);
+      button.textContent = asc ? "▼" : "▲";
+    });
+    th.appendChild(button);
   });
-  th.appendChild(button);
-});
+}
