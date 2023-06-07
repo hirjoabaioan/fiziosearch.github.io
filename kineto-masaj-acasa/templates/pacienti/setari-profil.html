@@ -53,7 +53,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard-pacient.html" class="">
+                <a href="dashboard.html" class="">
                   <img src="../../img/dashboard icon.webp" alt="Dashboard" />
                 </a>
               </li>
@@ -163,7 +163,7 @@
               <div class="d-flex justify-content-center align-items-start">
                 <ul class="col-6 justify-content-center align-items-center flex-column nav">
                   <li class="col-12 d-flex justify-content-start align-items-start nav-item dash-links m-0 p-0">
-                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="dashboard-pacient.html">
+                    <a class="col-12 d-flex justify-content-start align-items-center nav-link gap-3" aria-current="page" href="dashboard.html">
                       <img class="col-3" src="../../img/dashboard icon.webp" alt="Dashboard" />
                       <span class="col-9">Dashboard</span>
                     </a>
@@ -230,23 +230,20 @@
               <div class="row gap-2 container settings-profil-img mb-4" id="content">
                 <div class="settings-img image-container">
                   <div class="mb-3 settings-upload" id="frame">
-                    <img src="../../img/user icon.png" class="picture-src" id="image-preview" alt="poza-de-profil">
+                    <img src="../../img/user icon.png" class="picture-src" id="image-preview" alt="poza-de-profil" />
                   </div>
                   <div class="controls">
-                    <button id='rotate_left'  type='button' title='Rotate left'> <i class="bi bi-arrow-clockwise"></i> </button>
-                    <button id='zoom_out'     type='button' title='Zoom out'> <i class="bi bi-zoom-out"></i> </button>
-                    <button id='fit'          type='button' title='Fit image'> <i class="bi bi-arrows-move"></i> </button>
-                    <button id='zoom_in'      type='button' title='Zoom in'> <i class="bi bi-zoom-in"></i> </button>
-                    <button id='rotate_right' type='button' title='Rotate right'> <i class="bi bi-arrow-counterclockwise"></i> </button>
+                    <button id="rotate_left" type="button" title="Rotate left"><i class="bi bi-arrow-clockwise"></i></button>
+                    <button id="zoom_out" type="button" title="Zoom out"><i class="bi bi-zoom-out"></i></button>
+                    <button id="fit" type="button" title="Fit image"><i class="bi bi-arrows-move"></i></button>
+                    <button id="zoom_in" type="button" title="Zoom in"><i class="bi bi-zoom-in"></i></button>
+                    <button id="rotate_right" type="button" title="Rotate right"><i class="bi bi-arrow-counterclockwise"></i></button>
                   </div>
-            
+
                   <input type="file" title="image-upload" name="file-upload" id="image-input" class="hidden" />
                   <label for="image-input" class="btn btn-primary" id="upload-image">Alege o poză</label>
 
-                  <button type="button" class="btn btn-primary" id="save-image">
-                    Salvează poza
-                  </button>
-            
+                  <button type="button" class="btn btn-primary" id="save-image">Salvează poza</button>
                 </div>
               </div>
             </form>

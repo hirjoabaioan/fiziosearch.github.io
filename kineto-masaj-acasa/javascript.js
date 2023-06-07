@@ -83,34 +83,17 @@ $(document).ready(function () {
   }
 
   // Graphic table - de sters sau editat (RO)
-  if (top.location.pathname === "/templates/pacienti/dashboard-pacient.html" || top.location.pathname === "/templates/terapeuti/dashboard-terapeut.html" || top.location.pathname === "/templates/terapeuti/dashboard.html") {
-    let ySums = [300, 450, 200, 150, 300, 400, 100, 150, 300, 150];
-    let xDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  if (top.location.pathname === "/templates/pacienti/dashboard.html" || top.location.pathname === "/templates/terapeuti/dashboard.html" || top.location.pathname === "/templates/terapeuti/dashboard.html") {
+    const classToCheck = $(".activity-box");
+    const elementToAddClass = $(".welcome-messsage");
+    if (!classToCheck) {
+      elementToAddClass.addClass("large");
+    } else {
+      elementToAddClass.removeClass("large");
+    }
 
-    new Chart("sumChart", {
-      type: "line",
-      data: {
-        labels: xDays,
-        datasets: [
-          {
-            fill: false,
-            lineTension: 0,
-            backgroundColor: "#108F96",
-            borderColor: "rgba(0,0,255,0.1)",
-            data: ySums,
-          },
-        ],
-      },
-      options: {
-        legend: { display: false },
-        scales: {
-          yAxes: [{ ticks: { min: 6, max: 16 } }],
-        },
-      },
-    });
-
+    //MOdifica pentru mai putine linii de cod (RO)
     const availability = $("#availabilityCheckbox");
-
     availability.on("change", function () {
       if (availability.is(":checked")) {
         $(".availability-change-i").css("color", "#f44336");
