@@ -273,8 +273,11 @@
   }
 
   .card-link {
-    width: 16rem;
-    height: 20rem;
+    // width: 16rem;
+    // height: 20rem;
+
+    width: clamp(12rem, 5vw + 4rem, 20rem);
+    height: clamp(16rem, 5vw + 4rem, 24rem);
     margin: 0;
     padding: 0;
     color: lighten($link-hover, 30%);
@@ -288,8 +291,10 @@
 
   .card-new {
     position: relative;
-    width: 16rem;
-    height: 20rem;
+    // width: 16rem;
+    // height: 20rem;
+    width: clamp(12rem, 5vw + 4rem, 20rem);
+    height: clamp(16rem, 5vw + 4rem, 24rem);
     background-color: $white;
     border-radius: $border-radius - 2.5rem;
     overflow: hidden;
@@ -353,8 +358,10 @@
 }
 
 .card-flip {
-  width: 16rem;
-  height: 20rem;
+  // width: 16rem;
+  // height: 20rem;
+  width: clamp(12rem, 5vw + 4rem, 20rem);
+  height: clamp(16rem, 5vw + 4rem, 24rem);
   perspective: 50rem;
 
   &-inner {

@@ -1,5 +1,4 @@
 // Accessing the Document through jQuery
-
 $(document).ready(function () {
   //--------------------------------------------//
   //                   TOOLS                    //
@@ -27,222 +26,144 @@ $(document).ready(function () {
   //--------------------------------------------//
 
   // Search page (RO) - de adaugat partea de HTML
-  // if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
-  //   $(window).resize(function () {
-  //     if ($(window).width() < 750 && $(".list-container").is(":visible")) {
-  //       $(".info-container").hide();
-  //     } else if ($(window).width() > 751) {
-  //       $(".info-container").show();
-  //     }
-  //   });
-
-  //   if (window.matchMedia("(max-width: 47rem)").matches) {
-  //     $(".info-container").hide();
-  //   }
-
-  //   if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
-  //     $(".med").removeClass("btn btn-secondary");
-  //   }
-
-  //   $(".person-box").click(function () {
-  //     if (window.matchMedia("(max-width: 47rem)").matches) {
-  //       $(".list-container").removeClass("d-flex");
-  //       $(".list-container").hide();
-  //     }
-  //     $(".info-container").show();
-  //     $(".info-container").addClass("grid");
-  //   });
-
-  //   $("#close").click(function () {
-  //     if (window.matchMedia("(max-width: 47rem)").matches) {
-  //       $(".list-container").addClass("d-flex");
-  //       $(".list-container").show();
-  //       $(".info-container").removeClass("grid");
-  //       $(".info-container").hide();
-  //     }
-
-  //     if (window.matchMedia("(min-width: 47rem)").matches) {
-  //       var replace = `
-  //               <div class="grid jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
-  //                   <span id="txtCheck">Alege un terapeut din listă</span>
-  //               </div>
-  //               `;
-
-  //       $(".info-container").html(replace);
-  //     }
-  //   });
-  // }
-
   if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
-    const infoContainer = document.querySelector(".info-container");
-    const listContainer = document.querySelector(".list-container");
-
     window.addEventListener("resize", function () {
-      if (window.innerWidth < 750 && listContainer.style.display !== "none") {
-        infoContainer.style.display = "none";
+      if (window.innerWidth < 750 && document.querySelector(".list-container").style.display !== "none") {
+        document.querySelector(".info-container").style.display = "none";
       } else if (window.innerWidth > 751) {
-        infoContainer.style.display = "block";
+        document.querySelector(".info-container").style.display = "block";
       }
     });
 
     if (window.matchMedia("(max-width: 47rem)").matches) {
-      infoContainer.style.display = "none";
+      document.querySelector(".info-container").style.display = "none";
+    }
+
+    if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+      document.querySelector(".med").classList.remove("btn", "btn-secondary");
     }
 
     document.querySelectorAll(".person-box").forEach(function (element) {
       element.addEventListener("click", function () {
         if (window.matchMedia("(max-width: 47rem)").matches) {
-          listContainer.classList.remove("d-flex");
-          listContainer.style.display = "none";
+          document.querySelector(".list-container").classList.remove("d-flex");
+          document.querySelector(".list-container").style.display = "none";
         }
-        infoContainer.style.display = "block";
-        infoContainer.classList.add("grid");
+        document.querySelector(".info-container").style.display = "block";
+        document.querySelector(".info-container").classList.add("grid");
       });
+    });
+
+    document.querySelector("#close").addEventListener("click", function () {
+      if (window.matchMedia("(max-width: 47rem)").matches) {
+        document.querySelector(".list-container").classList.add("d-flex");
+        document.querySelector(".list-container").style.display = "block";
+        document.querySelector(".info-container").classList.remove("grid");
+        document.querySelector(".info-container").style.display = "none";
+      }
+
+      if (window.matchMedia("(min-width: 47rem)").matches) {
+        var replace = `
+              <div class="grid jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
+                  <span id="txtCheck">Alege un terapeut din listă</span>
+              </div>
+              `;
+
+        document.querySelector(".info-container").innerHTML = replace;
+      }
     });
   }
 
   // Seen check - Notificari - de adaugat partea de html (RO)
   if (top.location.pathname === "/templates/terapeuti/notificari.html" || top.location.pathname === "/templates/pacienti/notificari.html") {
-    const notificationConditions = document.querySelectorAll(".notification-condition");
-    notificationConditions.forEach(function (condition) {
-      // console.log(condition.textContent);
-      if (condition.textContent === "Văzut") {
-        const getSiblings = function (e) {
-          let siblings = [];
-          if (!e.parentNode) {
-            return siblings;
-          }
-
-          let sibling = e.parentNode.firstChild;
-
-          while (sibling) {
-            if (sibling.nodeType === 1 && sibling !== e) {
-              siblings.push(sibling);
-            }
-            sibling = sibling.nextSibling;
-          }
-
-          return siblings;
-        };
-
-        const siblings = getSiblings(condition);
-
-        siblings.map((elem) => (elem.style.color = "grey"));
-        condition.style.color = "grey";
+    $(".notification-condition").each(function () {
+      if ($(this).text() === "Văzut") {
+        $(this).css({ color: "grey" });
+        $(this).siblings().css({ color: "grey" });
       }
     });
   }
 
   // Graphic table - de sters sau editat (RO)
-  if (top.location.pathname === "/templates/terapeuti/dashboard.html") {
-    const classToCheck = document.querySelector(".activity-toggler");
-    const elementToAddClass = document.querySelector(".welcome-message");
+  if (top.location.pathname === "/templates/pacienti/dashboard.html" || top.location.pathname === "/templates/terapeuti/dashboard.html" || top.location.pathname === "/templates/terapeuti/dashboard.html") {
+    const classToCheck = $(".activity-box");
+    const elementToAddClass = $(".welcome-messsage");
     if (!classToCheck) {
-      elementToAddClass.classList.add("large");
+      elementToAddClass.addClass("large");
     } else {
-      elementToAddClass.classList.remove("large");
+      elementToAddClass.removeClass("large");
     }
 
     //MOdifica pentru mai putine linii de cod (RO)
-    const availability = document.querySelector("#availabilityCheckbox");
-
-    availability.addEventListener("change", function () {
-      const parentDiv = document.querySelector(".page-info-grid");
-      const selectAllI = parentDiv.querySelectorAll("i");
-      const selectAllSpan = parentDiv.querySelectorAll("span");
-
-      if (availability.checked) {
-        selectAllI.forEach((i) => i.classList.add("disableI"));
-        selectAllSpan.forEach((s) => s.classList.add("disableS"));
+    const availability = $("#availabilityCheckbox");
+    availability.on("change", function () {
+      if (availability.is(":checked")) {
+        $(".availability-change-i").css("color", "#f44336");
+        $(".availability-change-i").css("transition", "1s ease");
+        $(".availability-change-s").css("color", "#8f8f8f");
+        $(".availability-change-s").css("transition", "1s ease");
       } else {
-        selectAllI.forEach((i) => i.classList.remove("disableI"));
-        selectAllSpan.forEach((s) => s.classList.remove("disableS"));
+        $(".availability-change-i").css("color", "#109198");
+        $(".availability-change-i").css("transition", "1s ease");
+        $(".availability-change-s").css("color", "#212427");
+        $(".availability-change-s").css("transition", "1s ease");
       }
     });
   }
 
   // Carousel for prices
   if (top.location.pathname === "/templates/abonamente.html") {
-    const removeCarousel = document.querySelector(".rem-carousel");
-    const removeInner = document.querySelector(".rem-inner");
-    const removeItems = document.querySelectorAll(".rem-item");
-    const innerCards = document.querySelectorAll(".inner-cards");
-    const desktopHide = document.querySelectorAll(".desktop-hide");
     // hide next and prev buttons
-    if (window.innerWidth > 1023) {
-      removeCarousel.classList.remove("carousel", "carousel-dark", "slide");
-      removeInner.classList.remove("carousel-inner");
-      removeItems.forEach(function (item) {
-        item.classList.remove("carousel-item");
-      });
-      //   document.querySelector(".inner-cards").classList.add("row");
-      desktopHide.forEach(function (item) {
-        item.style.display = "none";
-      });
+    if ($(window).width() > 1023) {
+      $(".rem-carousel").removeClass("carousel carousel-dark slide");
+      $(".rem-inner").removeClass("carousel-inner");
+      $(".rem-item").removeClass("carousel-item");
+      //   $(".inner-cards").addClass("row");
+      $(".desktop-hide").css({ display: "none" });
     }
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 1023) {
-        removeCarousel.classList.remove("carousel", "carousel-dark", "slide");
-        removeInner.classList.remove("carousel-inner");
-        removeItems.forEach(function (item) {
-          item.classList.remove("carousel-item");
-        });
-        innerCards.forEach(function (item) {
-          item.classList.add("row");
-        });
-        desktopHide.forEach(function (item) {
-          item.style.display = "none";
-        });
+    $(window).resize(function () {
+      if ($(window).width() > 1023) {
+        $(".rem-carousel").removeClass("carousel carousel-dark slide");
+        $(".rem-inner").removeClass("carousel-inner");
+        $(".rem-item").removeClass("carousel-item");
+        $(".inner-cards").addClass("row");
+        $(".desktop-hide").css({ display: "none" });
       }
-      if (window.innerWidth < 1024) {
-        removeCarousel.classList.add("carousel", "carousel-dark", "slide");
-        removeInner.classList.add("carousel-inner");
-        removeItems.forEach(function (item) {
-          item.classList.add("carousel-item");
-        });
-        innerCards.forEach(function (item) {
-          item.classList.remove("row");
-        });
-        desktopHide.forEach(function (item) {
-          item.style.display = "flex";
-        });
+      if ($(window).width() < 1024) {
+        $(".rem-carousel").addClass("carousel carousel-dark slide");
+        $(".rem-inner").addClass("carousel-inner");
+        $(".rem-item").addClass("carousel-item");
+        $(".inner-cards").removeClass("row");
+        $(".desktop-hide").css({ display: "flex" });
       }
     });
   }
 
   //Add hours and minutes to the dropdowns in the TERAPII page
   if (top.location.pathname === "/templates/terapeuti/terapii.html") {
-    const dropDownHoursInsert = document.getElementById("dropdownDurataOre");
-    const dropDownMinutesInsert = document.getElementById("dropdownDurataMin");
+    let dropDownHoursInsert = $("#dropdownDurataOre");
+    let dropDownMinutesInsert = $("#dropdownDurataMin");
     const MAX_HOURS = 10;
     const MAX_MINUTES = 60;
     const MINUTES_INCREMENTATION = 5;
 
     for (let hour = 0; hour < MAX_HOURS; hour++) {
       if (hour < 10) {
-        let optionHourElement = document.createElement("option");
-        optionHourElement.value = "0" + hour;
-        optionHourElement.text = "0" + hour;
-        dropDownHoursInsert.add(optionHourElement);
+        let optionHourElement = $(`<option value="0${hour}">0${hour}</option>`);
+        dropDownHoursInsert.append(optionHourElement);
       } else {
-        let optionHourElement = document.createElement("option");
-        optionHourElement.value = hour;
-        optionHourElement.text = hour;
-        dropDownHoursInsert.add(optionHourElement);
+        let optionHourElement = $(`<option value="${hour}"0${hour}</option>`);
+        dropDownHoursInsert.append(optionHourElement);
       }
     }
 
     for (let min = 0; min < MAX_MINUTES; min += MINUTES_INCREMENTATION) {
       if (min < 10) {
-        let optionMinElement = document.createElement("option");
-        optionMinElement.value = "0" + min;
-        optionMinElement.text = "0" + min;
-        dropDownMinutesInsert.add(optionMinElement);
+        let optionMinElement = $(`<option value="0${min}">0${min}</option>`);
+        dropDownMinutesInsert.append(optionMinElement);
       } else {
-        let optionMinElement = document.createElement("option");
-        optionMinElement.value = min;
-        optionMinElement.text = min;
-        dropDownMinutesInsert.add(optionMinElement);
+        let optionMinElement = $(`<option value="${min}">${min}</option>`);
+        dropDownMinutesInsert.append(optionMinElement);
       }
     }
   }
@@ -305,8 +226,8 @@ $(document).ready(function () {
       },
     ];
 
-    const tableBody = document.querySelector("tbody");
-    const modalInsert = document.querySelector(".modal-box");
+    const tableBody = $("tbody");
+    const modalInsert = $(".modal-box");
     let therapiesCounter = 0;
     // link catre folderul pacientului - de integrat in JS (RO)
     patientTherapies.forEach((therapy) => {
@@ -314,103 +235,103 @@ $(document).ready(function () {
       const therapyColor = therapy.Culoare;
 
       const rowToAdd = `
-        <tr>
-          <!-- Se introduce culoarea terapiei selectat de catre utilizator in pagina de terapii -->
-          <td>
-            <div class="color" style="background-color: ${therapyColor};"></div>
-          </td>
-          <td>${therapy.Data}</td>
-          <td>${therapy.Ora_inceput}</td>
-          <td>${therapy.Ora_sfarsit}</td>
-          <td>${therapy.Terapie}</td>
-          <td>${therapy.Status}</td>
-          <td>
-            <div class="icon-data">
-              <!-- data-bs-target => numerele introduse prin js odata cu popularea tabelului, folosit pentru editarea programarii -->
-              <a href="#" data-bs-title="Modifică" data-bs-toggle="modal" data-bs-target="#modal_${therapiesCounter}" class="edit">
-                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                </svg>
-              </a>
-              <!-- link catre folderul pacientului - de integrat in JS -->
-              <a href="#" class="folder">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
-                  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
-                </svg>
-              </a>
-            </div>
-          </td>
-
-          
-        </tr>
-      `;
+          <tr>
+            <!-- Se introduce culoarea terapiei selectat de catre utilizator in pagina de terapii -->
+            <td>
+              <div class="color" style="background-color: ${therapyColor};"></div>
+            </td>
+            <td>${therapy.Data}</td>
+            <td>${therapy.Ora_inceput}</td>
+            <td>${therapy.Ora_sfarsit}</td>
+            <td>${therapy.Terapie}</td>
+            <td>${therapy.Status}</td>
+            <td>
+              <div class="icon-data">
+                <!-- data-bs-target => numerele introduse prin js odata cu popularea tabelului, folosit pentru editarea programarii -->
+                <a href="#" data-bs-title="Modifică" data-bs-toggle="modal" data-bs-target="#modal_${therapiesCounter}" class="edit">
+                  <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                  </svg>
+                </a>
+                <!-- link catre folderul pacientului - de integrat in JS -->
+                <a href="#" class="folder">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                    <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                  </svg>
+                </a>
+              </div>
+            </td>
+  
+            
+          </tr>
+        `;
 
       const modalToAdd = `
-          <div class="modal fade patient-schedule-table-modal" id="modal_${therapiesCounter}" tabindex="-1" aria-labelledby="labelModal_${therapiesCounter}" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header modal-border">
-                <h3 class="modal-title" id="labelModal_${therapiesCounter}">Programare</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <h4>${patientName}</h4>
-                <div class="input-area">
-                  <div class="row g-3 align-items-center">
-                    <div class="col-xs-2 col-sm-1">
-                      <span class="col-form-label">Terapii:</span>
+            <div class="modal fade patient-schedule-table-modal" id="modal_${therapiesCounter}" tabindex="-1" aria-labelledby="labelModal_${therapiesCounter}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header modal-border">
+                  <h3 class="modal-title" id="labelModal_${therapiesCounter}">Programare</h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h4>${patientName}</h4>
+                  <div class="input-area">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-xs-2 col-sm-1">
+                        <span class="col-form-label">Terapii:</span>
+                      </div>
+                      
+                      <div class="col-xs-10 col-sm-11">
+                        <div class="dropdown dash-drops">
+                          <select name="Terapii" onchange="" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuTerapii" data-bs-toggle="dropdown" aria-expanded="false">
+                            <option selected>${therapy.Terapie}</option>
+                            <!--// Inserare optiuni pentru terapii (RO) -->
+                            <option value="dropdown-item" value="Kinetoterapie">Kinetoterapie</option>
+                            <option class="dropdown-item" value="Masaj">Masaj</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div class="col-xs-10 col-sm-11">
-                      <div class="dropdown dash-drops">
-                        <select name="Terapii" onchange="" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuTerapii" data-bs-toggle="dropdown" aria-expanded="false">
-                          <option selected>${therapy.Terapie}</option>
-                          <!--// Inserare optiuni pentru terapii (RO) -->
-                          <option value="dropdown-item" value="Kinetoterapie">Kinetoterapie</option>
-                          <option class="dropdown-item" value="Masaj">Masaj</option>
-                        </select>
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <label for="modal-input-date" class="col-form-label">Dată:</label>
+                      </div>
+                      <div class="col-auto">
+                        <input type="date" id="modal-input-date" class="form-control" value="">
+                      </div>
+                    </div>
+  
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <label for="modal-input-time" class="col-form-label">Interval orar:</label>
+                      </div>
+                      <div class="col-auto">
+                        <input type="time" id="modal-input-time" class="form-control" value="">
+                      </div>
+                      <div class="col-auto">
+                        <span class=""> <i class="bi bi-arrow-right"></i> </span>
                       </div>
                     </div>
                   </div>
-                  
-                  <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                      <label for="modal-input-date" class="col-form-label">Dată:</label>
-                    </div>
-                    <div class="col-auto">
-                      <input type="date" id="modal-input-date" class="form-control" value="">
-                    </div>
-                  </div>
-
-                  <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                      <label for="modal-input-time" class="col-form-label">Interval orar:</label>
-                    </div>
-                    <div class="col-auto">
-                      <input type="time" id="modal-input-time" class="form-control" value="">
-                    </div>
-                    <div class="col-auto">
-                      <span class=""> <i class="bi bi-arrow-right"></i> </span>
+                  <div class="mt-2">
+                    <h3>Descriere</h3>
+                    <hr>
+                    <div class="mb-3">
+                      <textarea class="form-control" name="description" rows="4"></textarea>
                     </div>
                   </div>
                 </div>
-                <div class="mt-2">
-                  <h3>Descriere</h3>
-                  <hr>
-                  <div class="mb-3">
-                    <textarea class="form-control" name="description" rows="4"></textarea>
-                  </div>
-                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Salvează</button></div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Salvează</button></div>
             </div>
           </div>
-        </div>
-      `;
+        `;
 
-      tableBody.insertAdjacentHTML("beforeend", rowToAdd);
-      modalInsert.insertAdjacentHTML("beforeend", modalToAdd);
+      tableBody.append(rowToAdd);
+      modalInsert.append(modalToAdd);
     });
 
     function calculateDuration(therapy, startHour) {
@@ -427,13 +348,13 @@ $(document).ready(function () {
     const checkText = "Caută un terapeut în apropiere de tine!";
 
     const params = new URLSearchParams(window.location.search);
-    const location = document.querySelector("#inputSearchField");
-    const service = document.querySelector("#dropdownService");
-    const specialization = document.querySelector("#dropdownSpecialization");
+    const location = $("#inputSearchField");
+    const service = $("#dropdownService");
+    const specialization = $("#dropdownSpecialization");
 
-    location.value = params.get("place");
-    service.value = params.get("service");
-    specialization.value = params.get("specialization");
+    location.val(params.get("place"));
+    service.val(params.get("service"));
+    specialization.val(params.get("specialization"));
 
     const therapies = [
       {
@@ -661,14 +582,14 @@ $(document).ready(function () {
       },
     ];
 
-    const inputFieldSearch = document.querySelector("#inputSearchField");
-    inputFieldSearch.addEventListener("keypress", function (e) {
+    const inputFieldSearch = $("#inputSearchField");
+    inputFieldSearch.on("keypress", function (e) {
       if (e.which === 13) {
         searchTherapists(inputFieldSearch);
       }
     });
-    const buttonSearch = document.querySelector("#btnSearch");
-    buttonSearch.addEventListener("click", function (e) {
+    const buttonSearch = $("#btnSearch");
+    buttonSearch.on("click", function (e) {
       searchTherapists(inputFieldSearch);
     });
 
@@ -677,9 +598,9 @@ $(document).ready(function () {
     function searchTherapists(search) {
       let foundTherapists = [];
       let filteredTherapists = [];
-      const searchItem = search.value.toLowerCase();
-      const service = document.querySelector("#dropdownService").value;
-      const specialization = document.querySelector("#dropdownSpecialization").value;
+      const searchItem = search.val().toLowerCase();
+      const service = $("#dropdownService").val();
+      const specialization = $("#dropdownSpecialization").val();
 
       if (searchItem) {
         therapistsList.forEach((therapist) => {
@@ -693,6 +614,20 @@ $(document).ready(function () {
           for (let location = 0; location < fAdress.length; location++) {
             if (fAdress[location].toLowerCase().includes(searchItem)) foundTherapists.push(therapist);
           }
+
+          // const keys = Object.getOwnPropertyNames(locations);
+          // keys.forEach((key) => {
+          //   const fAddress = therapist.Locations;
+          //   if (key === searchItem) {
+          //     for (let terLoc = 0; terLoc < fAddress.length; terLoc++) {
+          //       for (var j = 0; j < locations[key].length; j++) {
+          //         if (locations[key][j] === fAdress[terLoc]) {
+          //         }
+          //         foundTherapists.push(therapist);
+          //       }
+          //     }
+          //   }
+          // });
         });
       } else {
         foundTherapists = therapistsList;
@@ -739,8 +674,8 @@ $(document).ready(function () {
     }
 
     function displayTherapists(therapists) {
-      const listArea = document.querySelector(".list-area");
-      listArea.innerHTML = "";
+      const listArea = $(".list-area");
+      listArea.html("");
       therapists.forEach((therapist) => {
         const id = therapist.id;
         const profileImage = therapist.Profile_Picture;
@@ -750,86 +685,81 @@ $(document).ready(function () {
         const therapies = therapist.Therapies.map((therapyName) => therapyName.Procedura);
 
         areas.forEach((area) => {
-          location.push(`; `);
+          location.push(`${area}; `);
         });
 
         const therapistBox = `
-            <div class="person-box" tabindex="0" id="${id}">
-            <div class="person-box-pic">
-              <img src="${profileImage}" alt="${name}'s ProfilePicture" />
-            </div>
-            <div class="row m-0 p-0 person-box-info">
-              <div class="m-0 pe-0">
-                <span class="me-0 pe-0 person-box-name">${name}</span>
-                <div class="availability-dot"></div>
+              <div class="person-box" tabindex="0" id="${id}">
+              <div class="person-box-pic">
+                <img src="${profileImage}" alt="${name}'s ProfilePicture" />
               </div>
-              <span class="col-12 me-0 pe-0 person-box-locations">${areas}</span>
-              <span class="col-12 me-0 pe-0 person-box-therapies">${therapies}</span>
-            </div>
-        `;
+              <div class="row m-0 p-0 person-box-info">
+                <div class="m-0 pe-0">
+                  <span class="me-0 pe-0 person-box-name">${name}</span>
+                  <div class="availability-dot"></div>
+                </div>
+                <span class="col-12 me-0 pe-0 person-box-locations">${areas}</span>
+                <span class="col-12 me-0 pe-0 person-box-therapies">${therapies}</span>
+              </div>
+          `;
 
-        listArea.insertAdjacentHTML("beforeend", therapistBox);
+        listArea.append(therapistBox);
       });
     }
 
     function showTherapistData(therapists) {
-      const personBoxes = document.querySelectorAll(".person-box");
+      $(".person-box").click(function () {
+        let idAttribute = $(this).attr("id");
+        const today = new Date();
 
-      personBoxes.forEach((personBox) => {
-        personBox.addEventListener("click", function () {
-          const idAttribute = $(this).attr("id");
-          const today = new Date();
+        therapists.forEach((therapist) => {
+          const years = today.getFullYear() - new Date(therapist.Experience).getFullYear();
+          let id = Number(therapist.id);
+          let picture = therapist.Profile_Picture;
+          let name = therapist.Name;
+          let phone = therapist.Phone;
+          let phone_2 = therapist.SecondPhone;
+          let email = therapist.Email;
+          let web = therapist.Web;
+          let fb = therapist.Facebook;
+          let instagram = therapist.Instagram;
+          let tikTok = therapist.TikTok;
+          let linkedIn = therapist.LinkedIn;
+          let rating = therapists.Rating;
+          let reviews = therapist.Reviews;
+          let reviewsNumber = therapist.Reviews_Number;
+          let profession = therapist.Profession;
+          let specialization = therapist.Specialization;
+          let experience = years > 1 ? "&nbsp;ani" : "&nbsp;an";
+          let description = therapist.Description;
+          let courses = therapist.Courses;
+          let location = therapist.Locations;
 
-          therapists.forEach((therapist) => {
-            const years = today.getFullYear() - new Date(therapist.Experience).getFullYear();
-            const id = Number(therapist.id);
-            const picture = therapist.Profile_Picture;
-            const name = therapist.Name;
-            const phone = therapist.Phone;
-            const phone_2 = therapist.SecondPhone;
-            const email = therapist.Email;
-            const web = therapist.Web;
-            const fb = therapist.Facebook;
-            const instagram = therapist.Instagram;
-            const tikTok = therapist.TikTok;
-            const linkedIn = therapist.LinkedIn;
-            const rating = therapists.Rating;
-            const reviews = therapist.Reviews;
-            const reviewsNumber = therapist.Reviews_Number;
-            const profession = therapist.Profession;
-            const specialization = therapist.Specialization;
-            const experience = years > 1 ? "&nbsp;ani" : "&nbsp;an";
-            const description = therapist.Description;
-            const courses = therapist.Courses;
-            const location = therapist.Locations;
+          if (idAttribute == id) {
+            createDetails(id, name, phone, phone_2, email, web, fb, instagram, tikTok, linkedIn, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location);
+          }
+        });
 
-            if (idAttribute == id) {
-              createDetails(id, name, phone, phone_2, email, web, fb, instagram, tikTok, linkedIn, picture, rating, reviews, reviewsNumber, profession, specialization, experience, description, courses, location);
-            }
-          });
-          const btnClose = document.querySelector(".btn-close");
-
-          btnClose.addEventListener("click", function () {
-            const infoContainer = document.querySelector(".info-container");
-            const listContainer = document.querySelector(".list-container");
-            if (window.innerWidth < 768) {
-              infoContainer.style.display = "none";
-              listContainer.style.display = "block";
-            } else if (window.innerWidth > 768) {
-              listContainer.style.display = "flex";
-              infoContainer.innerHTML = `
-                <div class="no-selection-div">
-                  <h3>Selectați un terapeut din listă!</h3>
-                </div>
+        $(".btn-close").click(function () {
+          if ($(window).width() < 768) {
+            $(".info-container").hide();
+            $(".list-container").show();
+          } else if ($(window).width() > 768) {
+            $(".list-container").css("display", "flex");
+            const replace = `
+              <div class="no-selection-div">
+                <h3>Selectați un terapeut din listă!</h3>
+              </div>
               `;
-            } else {
-              infoContainer.innerHTML = `
-                <div class="no-selection-div">
-                  <h3>Selectați un terapeut din listă!</h3>
-                </div>
+            $(".info-container").html(replace);
+          } else {
+            const replace = `
+              <div class="no-selection-div">
+                <h3>Selectați un terapeut din listă!</h3>
+              </div>
               `;
-            }
-          });
+            $(".info-container").html(replace);
+          }
         });
       });
     }
@@ -848,214 +778,224 @@ $(document).ready(function () {
 
       if (phone_2) {
         addSecondPhone = `
-          <a href="tel:${phone_2}" class="btn btn-secondary msg-button med text-center">
-            <i class="bi bi-telephone" id="phone_2">${phone_2}</i>
-          </a>
-        `;
+            <a href="tel:${phone_2}" class="btn btn-secondary msg-button med text-center">
+              <i class="bi bi-telephone" id="phone_2">${phone_2}</i>
+            </a>
+          `;
       }
 
       if (web) {
         addWebAddress = `
-        <a href="tel:${web}" class="btn btn-secondary msg-button med text-center">
-          <i class="bi bi-envelope-at"> Site personal</i>
-        </a>
-      `;
+          <a href="tel:${web}" class="btn btn-secondary msg-button med text-center">
+            <i class="bi bi-envelope-at"> Site personal</i>
+          </a>
+        `;
       }
 
       if (fb || instagram || tikTok || linkedIn) {
         if (fb) {
           addFacebook = `
-              <li>
-                <a href="${fb}" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-facebook"></i>
-                </a>
-              </li>
-          `;
+                <li>
+                  <a href="${fb}" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                </li>
+            `;
         }
 
         if (instagram) {
           addInstagram = `
-          <li>
-            <a href="${instagram}" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-instagram"></i>
-            </a>
-          </li>
-      `;
+            <li>
+              <a href="${instagram}" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </li>
+        `;
         }
 
         if (tikTok) {
           addTikTok = `
-          <li>
-            <a href="${tikTok}" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-tiktok"></i>
-            </a>
-          </li>
-      `;
+            <li>
+              <a href="${tikTok}" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </li>
+        `;
         }
 
         if (linkedIn) {
           addLinkedIn = `
-          <li>
-            <a href="${linkedIn}" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-linkedin"></i>
-            </a>
-          </li>
-      `;
+            <li>
+              <a href="${linkedIn}" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </li>
+        `;
         }
 
         addSocialMedia = `
-          <ul class="social-media">
-            ${addFacebook}
-            ${addInstagram}
-            ${addTikTok}
-            ${addLinkedIn}
-          </ul>
-        `;
+            <ul class="social-media">
+              ${addFacebook}
+              ${addInstagram}
+              ${addTikTok}
+              ${addLinkedIn}
+            </ul>
+          `;
       }
 
       const therapistInformations = `
-            <div class="d-flex row info-header">
-            <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
-              <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
-            </div>
-            <div class="header-pn mt-0 pt-0">
-              <div class="m-0 p-0 header-pn-pic">
-                <img src="${picture}" alt="${name}'s profile picture" />
+              <div class="d-flex row info-header">
+              <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
+                <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
               </div>
-              <div class="m-0 p-0 header-pn-name">
-                <div class="d-flex row justify-content-start align-items-center name-box">
-                  <span class="col-8">${name}</span>
-                  <div class="availability-dot"></div>
+              <div class="header-pn mt-0 pt-0">
+                <div class="m-0 p-0 header-pn-pic">
+                  <img src="${picture}" alt="${name}'s profile picture" />
                 </div>
-                <span class="profession">${profession}</span>
-              </div>
-            </div>
-            <div class="header-loc-contact">
-              <div class="header-locations">
-                <h5 class="info-titles">Locații</h5>
-                <div class="m-0 mb-2 ps-4 pe-4">
-                  <span>${location}</span>
+                <div class="m-0 p-0 header-pn-name">
+                  <div class="d-flex row justify-content-start align-items-center name-box">
+                    <span class="col-8">${name}</span>
+                    <div class="availability-dot"></div>
+                  </div>
+                  <span class="profession">${profession}</span>
                 </div>
               </div>
-              <div class="header-contact">
-                <h5 class="info-titles">Contact</h5>
-                <div class="d-flex row justify-content-center m-0 p-0">
-                  
-                  <button type="button" class="btn btn-primary contact-button" id="showContactForIdNo_${id}">Contactează terapeutul</button>
-                  
-                  <div class="row m-0 p-0 gap-2 contact-info">
-                    <a href="tel:${phone}" class="btn btn-secondary msg-button med text-center">
-                      <i class="bi bi-telephone"> ${phone}</i>
-                    </a>
-                    ${addSecondPhone}
-                    <a href="mailto:${email}" class="btn btn-secondary msg-button med text-center">
-                      <i class="bi bi-envelope-at"> ${email}</i>
-                    </a>
-                    ${addWebAddress}
-
-                    ${addSocialMedia}
+              <div class="header-loc-contact">
+                <div class="header-locations">
+                  <h5 class="info-titles">Locații</h5>
+                  <div class="m-0 mb-2 ps-4 pe-4">
+                    <span>${location}</span>
+                  </div>
+                </div>
+                <div class="header-contact">
+                  <h5 class="info-titles">Contact</h5>
+                  <div class="d-flex row justify-content-center m-0 p-0">
                     
-                    <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+                    <button type="button" class="btn btn-primary contact-button" id="showContactForIdNo_${id}">Contactează terapeutul</button>
+                    
+                    <div class="row m-0 p-0 gap-2 contact-info">
+                      <a href="tel:${phone}" class="btn btn-secondary msg-button med text-center">
+                        <i class="bi bi-telephone"> ${phone}</i>
+                      </a>
+                      ${addSecondPhone}
+                      <a href="mailto:${email}" class="btn btn-secondary msg-button med text-center">
+                        <i class="bi bi-envelope-at"> ${email}</i>
+                      </a>
+                      ${addWebAddress}
+  
+                      ${addSocialMedia}
+                      
+                      <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="info-bio">
-            <div class="mb-4 info-bio-activities">
-              <h5 class="info-titles">Activitate</h5>
-              <div class="m-0 ps-4 pe-4">
-                
-                <div class="d-flex row">
-                  <h6 class="col-8">Rating general:</h6>
-                  <span class="col-4">${rating}</span>
-                </div>
-                <div class="d-flex row">
-                  <h6 class="col-8">Recenzii primite:</h6>
-                  <span class="col-4">${reviewsNumber}</span>
-                </div>
-                <div class="d-flex row">
-                  <h6 class="col-8">Experiența:</h6>
-                  <span class="col-4">${experience}</span>
+  
+            <div class="info-bio">
+              <div class="mb-4 info-bio-activities">
+                <h5 class="info-titles">Activitate</h5>
+                <div class="m-0 ps-4 pe-4">
+                  
+                  <div class="d-flex row">
+                    <h6 class="col-8">Rating general:</h6>
+                    <span class="col-4">${rating}</span>
+                  </div>
+                  <div class="d-flex row">
+                    <h6 class="col-8">Recenzii primite:</h6>
+                    <span class="col-4">${reviewsNumber}</span>
+                  </div>
+                  <div class="d-flex row">
+                    <h6 class="col-8">Experiența:</h6>
+                    <span class="col-4">${experience}</span>
+                  </div>
                 </div>
               </div>
+              <div class="mb-4 info-bio-description">
+                <h5 class="info-titles">Descriere</h5>
+                <p class="m-0 ps-4 pe-4">${description}</p>
+              </div>
+              <div class="mb-4 info-bio-courses">
+                <h5 class="info-titles">Cursuri</h5>
+                <p class="m-0 ps-4 pe-4">${courses}</p>
+              </div>
             </div>
-            <div class="mb-4 info-bio-description">
-              <h5 class="info-titles">Descriere</h5>
-              <p class="m-0 ps-4 pe-4">${description}</p>
-            </div>
-            <div class="mb-4 info-bio-courses">
-              <h5 class="info-titles">Cursuri</h5>
-              <p class="m-0 ps-4 pe-4">${courses}</p>
-            </div>
-          </div>
-
-          <div class="info-long">
-            <div class="col-12 mb-4 table-responsive info-long-services">
-              <h5 class="info-titles">Servicii</h5>
-              <table class="table info-long-table ps-2 pe-2">
-                <tr>
-                  <th class="col">Terapie</th>
-                  <th class="col">Durată</th>
-                  <th class="col">Tarif</th>
-                </tr>
-                <tr>
-                  <td>Masaj</td>
-                  <td class="search-time">30</td>
-                  <td class="search-price">100</td>
-                </tr>
-                <tr>
-                  <td>Terapie manuală</td>
-                  <td class="search-time">30</td>
-                  <td class="search-price">150</td>
-                </tr>
-                <tr>
-                  <td>Ventuze</td>
-                  <td class="search-time">15</td>
-                  <td class="search-price">50</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-12 table-responsive info-long-reviews">
-              <h5 class="info-titles">Recenzii</h5>
-              <div class="overflow-auto reviews-container">
+  
+            <div class="info-long">
+              <div class="col-12 mb-4 table-responsive info-long-services">
+                <h5 class="info-titles">Servicii</h5>
                 <table class="table info-long-table ps-2 pe-2">
                   <tr>
-                    <th class="col">Client</th>
-                    <th class="col">Recenzie</th>
+                    <th class="col">Terapie</th>
+                    <th class="col">Durată</th>
+                    <th class="col">Tarif</th>
                   </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
+                  <tr>
+                    <td>Masaj</td>
+                    <td class="search-time">30</td>
+                    <td class="search-price">100</td>
                   </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
+                  <tr>
+                    <td>Terapie manuală</td>
+                    <td class="search-time">30</td>
+                    <td class="search-price">150</td>
                   </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
-                  </tr>
-                  <tr tabindex="0">
-                    <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                    <td>Bună</td>
+                  <tr>
+                    <td>Ventuze</td>
+                    <td class="search-time">15</td>
+                    <td class="search-price">50</td>
                   </tr>
                 </table>
               </div>
+              <div class="col-12 table-responsive info-long-reviews">
+                <h5 class="info-titles">Recenzii</h5>
+                <div class="overflow-auto reviews-container">
+                  <table class="table info-long-table ps-2 pe-2">
+                    <tr>
+                      <th class="col">Client</th>
+                      <th class="col">Recenzie</th>
+                    </tr>
+                    <tr tabindex="0">
+                      <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                      <td>Bună</td>
+                    </tr>
+                    <tr tabindex="0">
+                      <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                      <td>Bună</td>
+                    </tr>
+                    <tr tabindex="0">
+                      <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                      <td>Bună</td>
+                    </tr>
+                    <tr tabindex="0">
+                      <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
+                      <td>Bună</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
-          </div>
-      `;
+        `;
 
       document.querySelector(".info-container").innerHTML = therapistInformations;
       // Aici ai ramas, modifica codul astfel incat sa apara lista atunci cand apasa pe X si sa apara info atunci cand apasa pe therapist-box
-      if (window.innerWidth < 768) {
-        document.querySelector(".list-container").style.display = "none";
-        document.querySelector(".info-container").style.display = "block";
+      if ($(window).width() < 768) {
+        $(".list-container").hide();
+        $(".info-container").show();
       }
 
-      document.querySelector(".contact-button").addEventListener("click", function () {
-        document.querySelector(".contact-info").style.display = "flex";
+      $(".contact-button").click(function () {
+        $(".contact-info").css("display", "flex");
+
+        // const messageButtons = document.querySelectorAll(".msg-button");
+
+        // messageButtons.forEach((button) => {
+        //   button.click(function () {
+        //     console.log(button.children.innerText);
+        //     const buttonText = button.children.innerText;
+        //     button.click(copyTextToClipboard(buttonText));
+        //   });
+        // });
       });
     }
 
@@ -1184,7 +1124,7 @@ $(document).ready(function () {
   //--------- Index Page Search Form  ---------//
 
   const searchForm = $(".index-form");
-  const searchURL = "templates/search.html";
+  const searchURL = "http://127.0.0.1:5500/templates/search.html";
   searchForm.attr("action", searchURL);
 
   //--------- Form Validation ---------//

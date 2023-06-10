@@ -151,6 +151,14 @@
   i {
     font-size: clamp($font-size + 1.5rem, 3vw + 0.2rem, $font-size + 2rem);
     color: $primary-color;
+
+    &:not(.disableI) {
+      transition: 0.8s ease-in-out;
+    }
+  }
+
+  span:not(.disableS) {
+    transition: 0.8s ease-in-out;
   }
 
   .card {
@@ -189,6 +197,19 @@
     @include tablet-wide {
       display: inline-block;
     }
+  }
+
+  .disabelI,
+  .disableS {
+    transition: 0.8s ease-in-out;
+  }
+
+  .disableI {
+    color: $deny;
+  }
+
+  .disableS {
+    color: $dark-gray;
   }
 }
 
