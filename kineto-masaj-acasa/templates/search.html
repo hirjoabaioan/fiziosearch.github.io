@@ -88,182 +88,46 @@
         </div>
       </nav>
     </header>
-    <main class="col-12 d-flex row justify-content-center align-items-center m-0 mt-4 mb-4 p-2 gap-2">
-      <div class="row m-2 p-0 h-100 list-container">
-        <div class="search-area">
-          <div class="header-container">
-            <h2 class="register-title">Listă terapeuți</h2>
-            <span class="text-muted register-subtitle">Găsește terapeutul cel mai apropiat</span>
-          </div>
-          <form action="" method="" class="col-12 d-flex row justify-content-center p-2 m-0 list-form search-box">
-            <div class="col-12 m-0 p-0">
-              <div class="input-group d-flex justify-content-center text-center w-100 m-0 p-2">
-                <input type="text" class="form-control" placeholder="Caută o locație sau un terapeut..." aria-label="Caută" aria-describedby="search-button" id="inputSearchField" />
-                <button class="btn btn-success" type="button" id="btnSearch">
-                  <img src="../img/search.webp" id="search-icon" alt="Caută" />
-                </button>
-              </div>
+
+    <!-- Continutul diferit pe ficare pagina -->
+    <main class="col-12 d-flex row w-100 m-0 p-0 mb-4">
+      <div class="col-12 d-flex row justify-content-center align-items-center m-0 mt-4 mb-4 p-2 gap-2 w-100 h-100">
+        <div class="row m-2 p-0 h-100 list-container">
+          <div class="search-area">
+            <div class="header-container">
+              <h2 class="register-title">Listă terapeuți</h2>
+              <span class="text-muted register-subtitle">Găsește terapeutul cel mai apropiat</span>
             </div>
-            <div class="m-0 p-0 my-2 dropdown-area">
-              <div class="my-1 p-0 selectionDropdown">
-                <input type="text" class="btn btn-secondary" list="servicesList" id="dropdownService" placeholder="Alege un serviciu  ▼" name="service" />
-                <datalist id="servicesList"></datalist>
-              </div>
-              <div class="my-1 p-0 selectionDropdown">
-                <input type="text" class="btn btn-secondary" list="specializationList" id="dropdownSpecialization" placeholder="Alege o specializare  ▼" name="specialization" />
-                <datalist id="specializationList"></datalist>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="mt-0 p-0 list-area-container">
-          <div class="my-0 py-0 overflow-auto list-area">
-            <!-- <div class="person-box" tabindex="0">
-              <div class="person-box-pic">
-                <img src="../img/profiles/PozaW.webp" alt="{Nume_Terapeut}" />
-              </div>
-              <div class="row m-0 p-0 person-box-info">
-                <div class="m-0 pe-0">
-                  <span class="me-0 pe-0 person-box-name">Hîrjoabă Ioan</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                  </svg>
-                </div>
-                <span class="col-12 me-0 pe-0 person-box-locations">Locație 1, Locație 2, Locație 3, Locație 4</span>
-                <span class="col-12 me-0 pe-0 person-box-therapies">Terapie 1, Terapie 2, Terapie 3, Terapie 4</span>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </div>
-      <div class="m-0 p-0 h-100 info-container custom-scrollbar-css overflow-auto">
-        <div class="no-selection-div">
-          <h3>Selectați un terapeut din listă!</h3>
-        </div>
-        <!-- <div class="d-flex row info-header">
-          <div class="d-flex m-0 pb-0 justify-content-end align-items-center" id="close">
-            <button type="button" class="btn-close" aria-label="Close" name="closeData" text="X"></button>
-          </div>
-          <div class="header-pn mt-0 pt-0">
-            <div class="m-0 p-0 header-pn-pic">
-              <img src="../img/profiles/PozaH.webp" alt="{Nume terapeut}" />
-            </div>
-            <div class="m-0 p-0 header-pn-name">
-              <div class="d-flex row justify-content-start align-items-center">
-                <span class="col-8">Hîrjoabă Ioan</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="col-1 bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                </svg>
-              </div>
-              <span class="profession">Fizioterapeut</span>
-            </div>
-          </div>
-          <div class="header-loc-contact">
-            <div class="header-locations">
-              <h5 class="info-titles">Locații</h5>
-              <div class="m-0 mb-2 ps-4 pe-4">
-                <span>Locație 1, Locație 2, Locație 3, Locație 4</span>
-              </div>
-            </div>
-            <div class="header-contact">
-              <h5 class="info-titles">Contact</h5>
-              <div class="d-flex row justify-content-center m-0 p-0">
-                
-                <button class="btn btn-primary contact-button">Contactează terapeutul</button>
-                
-                <div class="row m-0 p-0 gap-2 contact-info">
-                  <a href="tel:075-457-9331" class="btn btn-secondary msg-button med text-center" id="search-telefon">0754579331</a>
-                  <a href="mailto:hirjoaba_ioan@yahoo.com" class="btn btn-secondary msg-button med text-center" id="search-email">hirjoaba_ioan@yahoo.com</a>
-                  <button class="btn btn-secondary msg-button">Trimite un mesaj prin platformă</button>
+            <form action="" method="" class="col-12 d-flex row justify-content-center p-2 m-0 list-form search-box">
+              <div class="col-12 m-0 p-0">
+                <div class="input-group d-flex justify-content-center text-center w-100 m-0 p-2">
+                  <input type="text" class="form-control" placeholder="Caută o locație sau un terapeut..." aria-label="Caută" aria-describedby="search-button" id="inputSearchField" />
+                  <button class="btn btn-success" type="button" id="btnSearch">
+                    <img src="../img/search.webp" id="search-icon" alt="Caută" />
+                  </button>
                 </div>
               </div>
-            </div>
+              <div class="m-0 p-0 my-2 dropdown-area">
+                <div class="my-1 p-0 selectionDropdown">
+                  <input type="text" class="btn btn-secondary" list="servicesList" id="dropdownService" placeholder="Alege un serviciu  ▼" name="service" />
+                  <datalist id="servicesList"></datalist>
+                </div>
+                <div class="my-1 p-0 selectionDropdown">
+                  <input type="text" class="btn btn-secondary" list="specializationList" id="dropdownSpecialization" placeholder="Alege o specializare  ▼" name="specialization" />
+                  <datalist id="specializationList"></datalist>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="mt-0 p-0 list-area-container">
+            <div class="my-0 py-0 overflow-auto list-area"></div>
           </div>
         </div>
-
-        <div class="info-bio">
-          <div class="mb-4 info-bio-activities">
-            <h5 class="info-titles">Activitate</h5>
-            <div class="m-0 ps-4 pe-4">
-              
-              <div class="d-flex row">
-                <h6 class="col-8">Rating general:</h6>
-                <span class="col-4">Bun</span>
-              </div>
-              <div class="d-flex row">
-                <h6 class="col-8">Recenzii primite:</h6>
-                <span class="col-4">40</span>
-              </div>
-              <div class="d-flex row">
-                <h6 class="col-8">Experiența:</h6>
-                <span class="col-4">4 ani</span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-4 info-bio-description">
-            <h5 class="info-titles">Descriere</h5>
-            <p class="m-0 ps-4 pe-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aliquam autem ipsum sint magnam accusantium, aut facere iure quae ab similique hic animi at dolor ea eius consequatur laudantium veniam.</p>
-          </div>
-          <div class="mb-4 info-bio-courses">
-            <h5 class="info-titles">Cursuri</h5>
-            <p class="m-0 ps-4 pe-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores voluptatem.</p>
+        <div class="m-0 p-0 h-100 info-container custom-scrollbar-css overflow-auto">
+          <div class="no-selection-div">
+            <h3>Selectați un terapeut din listă!</h3>
           </div>
         </div>
-
-        <div class="info-long">
-          <div class="col-12 mb-4 table-responsive info-long-services">
-            <h5 class="info-titles">Servicii</h5>
-            <table class="table info-long-table ps-2 pe-2">
-              <tr>
-                <th class="col">Terapie</th>
-                <th class="col">Durată</th>
-                <th class="col">Tarif</th>
-              </tr>
-              <tr>
-                <td>Masaj</td>
-                <td class="search-time">30</td>
-                <td class="search-price">100</td>
-              </tr>
-              <tr>
-                <td>Terapie manuală</td>
-                <td class="search-time">30</td>
-                <td class="search-price">150</td>
-              </tr>
-              <tr>
-                <td>Ventuze</td>
-                <td class="search-time">15</td>
-                <td class="search-price">50</td>
-              </tr>
-            </table>
-          </div>
-          <div class="col-12 table-responsive info-long-reviews">
-            <h5 class="info-titles">Recenzii</h5>
-            <div class="overflow-auto reviews-container">
-              <table class="table info-long-table ps-2 pe-2">
-                <tr>
-                  <th class="col">Client</th>
-                  <th class="col">Recenzie</th>
-                </tr>
-                <tr tabindex="0">
-                  <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                  <td>Bună</td>
-                </tr>
-                <tr tabindex="0">
-                  <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                  <td>Bună</td>
-                </tr>
-                <tr tabindex="0">
-                  <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                  <td>Bună</td>
-                </tr>
-                <tr tabindex="0">
-                  <td><span>Gheorghe</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, minus, voluptate ea iure, eius temporibus soluta similique dicta debitis repellendus rem ex! Voluptatum magni unde quos quidem! Deleniti, obcaecati iusto.</td>
-                  <td>Bună</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div> -->
       </div>
     </main>
 

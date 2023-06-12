@@ -4,21 +4,9 @@
 .uppernav-menu {
   position: inherit !important;
   background: rgba(145, 203, 207, 1);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(145, 203, 207, 1) 5%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(145, 203, 207, 1) 5%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(145, 203, 207, 1) 5%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: -moz-linear-gradient(180deg, rgba(145, 203, 207, 1) 5%, rgba(255, 255, 255, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(145, 203, 207, 1) 5%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(180deg, rgba(145, 203, 207, 1) 5%, rgba(255, 255, 255, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#91cbcf",endColorstr="#ffffff",GradientType=1);
 }
 
@@ -122,424 +110,569 @@
   }
 }
 
-.dash-patients,
-.dash-therapists {
-  @include laptop {
-    max-width: 80vw;
+.dash-search {
+  .selectionDropdown {
+    display: flex;
+    justify-content: center;
+
+    input {
+      width: 80%;
+    }
   }
 }
 
-.dash-patients {
+.page-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  padding: 0.5rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 85%;
+  height: 90%;
+  border: 1px solid lighten($black, 80%);
+  border-radius: 1rem;
+  box-shadow: 5px 4px 16px -6px rgba(0, 0, 0, 0.6);
+  font-size: clamp($font-size - 0.8rem, 3vw + 0.2rem, $font-size + 0.2rem); //standard pentru tot textul (RO)
+
+  .disponibility {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include phone {
+      flex-direction: column !important;
+    }
+
+    .knobs,
+    .layer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .button {
+      position: relative;
+      width: 3rem;
+      height: 1.5rem;
+      margin: 0.5rem;
+      overflow: hidden;
+    }
+
+    .button.r,
+    .button.r .layer {
+      border-radius: 5rem;
+    }
+
+    .checkbox {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .knobs {
+      z-index: 2;
+    }
+
+    .layer {
+      width: 100%;
+      background-color: #ebf7fc;
+      transition: 0.3s ease all;
+      z-index: 1;
+    }
+
+    #button-1 .knobs:before {
+      content: "Activ";
+      position: absolute;
+      top: 0.06rem;
+      left: 0.1rem;
+      width: 1.45rem;
+      height: 0.5rem;
+      color: #fff;
+      font-size: 0.4rem;
+      font-weight: bold;
+      line-height: 1;
+      padding: 0.7rem 0.4rem;
+      background-color: $primary-color;
+      border-radius: 50%;
+      transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+    }
+
+    #button-1 .checkbox:checked + .knobs:before {
+      content: "Inactiv";
+      left: 1.45rem;
+      padding: 0.7rem 0.4rem;
+      background-color: $deny;
+    }
+
+    #button-1 .checkbox:checked ~ .layer {
+      background-color: #fcebeb;
+    }
+
+    #button-1 .knobs,
+    #button-1 .knobs:before,
+    #button-1 .layer {
+      transition: 0.3s ease all;
+    }
+  }
+
+  .dash-toggle-sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    // font-size: $font-size - 0.2rem;
+
+    #toggle-active {
+      color: $primary-color;
+    }
+
+    #toggle-separator {
+      color: $tertiary-color;
+      //   font-size: $font-size + 0.2rem;
+      font-weight: $fw-bolder;
+      border: 1px solid $black;
+      width: 1px;
+      height: clamp($font-size - 0.8rem, 3vw + 0.2rem, $font-size + 0.2rem);
+    }
+  }
+}
+
+.page-info-grid {
   display: grid;
-  grid-template-areas: "contacts" "terapies" "notif" "schedule";
-  align-items: center;
-  justify-items: center;
-  gap: 1rem;
-  color: $tertiary-color;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.6fr 0.5fr 0.5fr;
+  gap: 0.25rem 0.25rem;
+  margin: 0.125rem;
+  transition: all 0.5s ease-in-out;
 
   @include tablet {
-    max-height: 50%;
+    grid-template-rows: 1fr 0.6fr repeat(2, 1fr);
+    margin: 2rem;
+    grid-auto-columns: 1fr;
   }
 
   @include tablet-wide {
-    margin-top: 10% !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
-  h3 {
-    font-size: $font-size + 0.3rem;
-  }
+  i {
+    font-size: clamp($font-size + 1.5rem, 3vw + 0.2rem, $font-size + 2rem);
+    color: $primary-color;
 
-  .info-contacts {
-    grid-area: contacts;
-    flex: 0 0 auto;
-    width: 100%;
-
-    @include tablet-wide {
-      width: 75%;
-    }
-
-    @include laptop {
-      width: 60%;
-    }
-
-    .title-underline {
-      border: 2px solid $white;
-      margin: 0;
+    &:not(.disableI) {
+      transition: 0.8s ease-in-out;
     }
   }
 
-  .info-terapii {
-    grid-area: terapies;
-    width: 100%;
-    flex: 0 0 auto;
+  span:not(.disableS) {
+    transition: 0.8s ease-in-out;
+  }
 
-    @include tablet-wide {
-      width: 75%;
-    }
-
-    @include laptop {
-      width: 60%;
-    }
+  .card {
+    border: 0px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 2px 2px 10px -5px #454545;
+    box-shadow: 2px 2px 10px -5px #454545;
+    background-color: darken($white, 1%);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 1rem;
 
     span {
-      font-size: $font-size + 1rem;
+      font-size: clamp($font-size - 0.8rem, 3vw + 0.2rem, $font-size + 0.2rem);
+      font-weight: $fw-bold;
+    }
+
+    .days {
+      font-size: clamp($font-size, 3vw + 0.2rem, $font-size + 1rem);
+
+      &::after {
+        content: " zile";
+      }
+    }
+
+    &:hover {
+      transition: 0.5s ease;
+      -webkit-box-shadow: 4px 4px 10px -5px #454545;
+      box-shadow: 4px 4px 10px -5px #454545;
     }
   }
 
-  .info-notif {
-    grid-area: notif;
-    font-size: $font-size - 0.2rem;
-    width: 100%;
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .hide-small {
+    display: none;
 
-    @include phone {
-      margin: 2rem 0;
+    @include tablet-wide {
+      display: inline-block;
     }
   }
 
-  .info-programari {
-    grid-area: schedule;
-    font-size: $font-size - 0.2rem;
-    width: 100%;
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .disabelI,
+  .disableS {
+    transition: 0.8s ease-in-out;
   }
 
-  .info-contacts,
-  .info-terapii {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .disableI {
+    color: $deny;
   }
 
-  @include tablet {
-    gap: 2rem;
-    grid-template-areas: "contacts notif" "terapies schedule";
+  .disableS {
+    color: $dark-gray;
   }
 }
 
-.dash-therapists {
+.status-box {
+  display: grid;
+  //   grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-rows: repeat(4, 1fr);
+  grid-area: 1 / 1 / 2 / 2;
+  gap: 0.125rem 0.125rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column dense;
+  }
+}
+
+.welcome-message {
+  grid-area: 1 / 1 / 2 / 2;
+  margin-top: 2rem;
+  margin-left: 2rem;
+
+  h2 {
+    font-weight: $fw-bold;
+    color: $primary-color;
+  }
+
+  span {
+    color: $primary-color;
+  }
+}
+
+.large {
+  grid-area: 1 / 1 / 4 / 4 !important;
+}
+
+.activity-toggler {
+  grid-area: 2 / 1 / 3 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-
-  @include desktop {
-    width: calc(30vw + (25rem + 10%));
-  }
-
-  .first-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & > * {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .abo-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      @include tablet-wide {
-        flex-direction: row;
-        // gap: 0 !important;
-      }
-    }
-
-    .disponibility {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      @include phone {
-        flex-direction: column !important;
-      }
-
-      .knobs,
-      .layer {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-
-      .button {
-        position: relative;
-        width: 3rem;
-        height: 1.5rem;
-        margin: 0.5rem;
-        overflow: hidden;
-      }
-
-      .button.r,
-      .button.r .layer {
-        border-radius: 5rem;
-      }
-
-      .checkbox {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 3;
-      }
-
-      .knobs {
-        z-index: 2;
-      }
-
-      .layer {
-        width: 100%;
-        background-color: #ebf7fc;
-        transition: 0.3s ease all;
-        z-index: 1;
-      }
-
-      #button-1 .knobs:before {
-        content: "";
-        position: absolute;
-        top: 0.06rem;
-        left: 0.1rem;
-        width: 1.45rem;
-        height: 0.5rem;
-        color: #fff;
-        font-size: 0.4rem;
-        font-weight: bold;
-        line-height: 1;
-        padding: 0.7rem 0.4rem;
-        background-color: $primary-color;
-        border-radius: 50%;
-        transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-      }
-
-      #button-1 .checkbox:checked + .knobs:before {
-        content: "";
-        left: 1.45rem;
-        padding: 0.7rem 0.4rem;
-        background-color: $deny;
-      }
-
-      #button-1 .checkbox:checked ~ .layer {
-        background-color: #fcebeb;
-      }
-
-      #button-1 .knobs,
-      #button-1 .knobs:before,
-      #button-1 .layer {
-        transition: 0.3s ease all;
-      }
-    }
-
-    .dash-toggle-sub {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-size: $font-size - 0.2rem;
-
-      #toggle-active {
-        color: $primary-color;
-      }
-
-      #toggle-separator {
-        color: $tertiary-color;
-        font-size: $font-size + 0.2rem;
-        font-weight: $fw-bolder;
-      }
-    }
-
-    .dash-expire-dates {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      @include phone {
-        flex-direction: column;
-      }
-
-      @include tablet {
-        width: 45%;
-      }
-
-      @include tablet-wide {
-        width: 100%;
-      }
-
-      // @include laptop {
-      //   width: 20%;
-      // }
-    }
-
-    .expire-dates {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      @include phone {
-        padding: 0;
-        font-size: $font-size - 0.2rem;
-      }
-    }
-
-    .dash-info-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      @include phone {
-        flex-direction: column;
-      }
-    }
-
-    .dash-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      &-table {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-
-    #sumChart {
-      width: 100%;
-      max-width: 30rem;
-    }
-  }
-
-  .second-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-
-    @include tablet {
-      padding: 1rem;
-    }
-  }
-}
-
-.info-contacts,
-.info-terapii,
-.info-notif,
-.info-programari {
-  background-color: lighten($primary-color, 63%);
-  border-radius: 10px;
-  padding: 1rem;
-  min-height: 12rem;
-}
-
-.row-link::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
-.dash-table {
-  padding: 0;
-  margin: 0;
+  min-height: 8rem !important;
 
   @include tablet {
-    padding: 1rem;
+    grid-area: 1 / 2 / 2 / 3;
   }
+}
 
-  table {
-    position: relative;
-    margin: 0;
-    font-size: $font-size - 0.2rem;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.alp {
+  grid-area: 3 / 1 / 4 / 2;
+
+  @include tablet {
+    grid-area: 2 / 1 / 3 / 2;
   }
+}
 
-  tr {
-    height: 1.5rem;
-    line-height: 1.5rem;
+.subscription {
+  grid-area: 4 / 1 / 5 / 2;
 
-    &:nth-child(4) td:nth-child(2) {
-      // padding-bottom: 0.2rem !important;
-    }
+  @include tablet {
+    grid-area: 2 / 2 / 3 / 3;
   }
+}
 
-  td {
-    padding-bottom: 1rem;
+.activity-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 0.5fr);
+  grid-area: 2 / 1 / 3 / 2;
+  gap: 0.125rem 0.125rem;
 
-    @include phone {
-      font-size: $font-size - 0.35rem;
-    }
-
-    &:nth-child(2) {
-      padding-left: 1.5rem;
-      @include tablet-wide {
-        padding-left: 3rem;
-      }
-
-      @include laptop {
-        padding-left: 5rem;
-      }
-    }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
   }
 
   @include tablet-wide {
-    width: 45%;
-  }
-
-  tr:hover,
-  a:hover {
-    color: lighten($primary-color, 10%) !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-area: 1 / 2 / 2 / 3;
   }
 }
 
-.dash-titles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: $tertiary-color;
-  font-weight: $fw-bolder;
+.therapies {
+  grid-area: 1 / 1 / 2 / 2;
 }
 
-.dash-sub {
-  @include phone {
-    font-size: $font-size + 0.5rem;
+.contacts {
+  grid-area: 2 / 1 / 3 / 2;
+
+  @include tablet {
+    grid-area: 1 / 2 / 2 / 3;
   }
-  font-size: $font-size + 1rem;
-  font-weight: $fw-bold;
+
+  @include tablet-wide {
+    grid-area: 2 / 1 / 3 / 2;
+  }
 }
 
-.dash-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.next-schedules-box {
+  grid-area: 3 / 1 / 4 / 2;
+  background-color: #ebffff !important;
+
+  @include tablet-wide {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+}
+
+.news-box {
+  background-color: #dbfbeb !important;
+  grid-area: 4 / 1 / 5 / 2;
+
+  //   padding: 2rem 1rem;
+
+  @include tablet {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  @include tablet-wide {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+.next-schedules-box,
+.news-box {
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: clamp($font-size - 0.8rem, 3vw + 0.2rem, $font-size + 0.1rem);
+    padding: 0.5rem;
+  }
+
+  .entry-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+
+    background: rgba(252, 252, 252, 0.67);
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(230, 230, 230, 0.37);
+
+    @media (hover: none) {
+      text-decoration: underline !important;
+      color: $link-hover;
+    }
+
+    &:hover {
+      transform: translate(-0.125rem, -0.125rem);
+      transition: 0.3s ease-in-out;
+    }
+
+    @include tablet-wide {
+      gap: 0.5rem;
+    }
+
+    .date {
+      width: 50%;
+      text-align: start;
+
+      @include tablet {
+        width: 35%;
+      }
+    }
+
+    .name {
+      max-width: 50%;
+      text-align: start;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-align: start;
+
+      @include tablet {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.status-box {
+  $width: clamp(3rem, 5vw + 1rem, 8rem);
+  $height: calc($width / 3);
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: $width;
+    height: $height;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: $height;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+  }
+
+  .toggle input {
+    display: none;
+  }
+
+  .toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $height;
+    background-color: lighten($input-color, 20%);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle .slider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc($height);
+    height: calc($height);
+    border-radius: calc($height / 2);
+    background-color: $primary-color;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle input:checked + .slider {
+    background-color: lighten($deny, 35%);
+  }
+
+  .toggle input:checked + .slider::before {
+    transform: translateX(calc($width - $height));
+    background-color: $deny;
+  }
+
+  .toggle .labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+
+    @include tablet-wide {
+      top: 2px;
+    }
+
+    @include laptop {
+      top: 0.5rem;
+    }
+  }
+
+  .toggle .labels::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    color: $white;
+    font-weight: $fw-bolder;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+
+    @include tablet-wide {
+      content: attr(data-off);
+    }
+  }
+
+  .toggle .labels::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    color: $dark-gray;
+    font-weight: $fw-bolder;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+
+    @include tablet-wide {
+      content: attr(data-on);
+    }
+  }
+
+  .toggle input:checked ~ .labels::after {
+    opacity: 0;
+  }
+
+  .toggle input:checked ~ .labels::before {
+    opacity: 1;
+  }
+
+  .toggle .small-text::after {
+    content: attr(data-off);
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    color: $primary-color;
+    font-weight: $fw-bolder;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+
+    @include tablet {
+      top: 1.25rem;
+      left: 0;
+    }
+
+    @include tablet-wide {
+      content: "";
+    }
+  }
+
+  .toggle .small-text::before {
+    content: attr(data-on);
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    color: $deny;
+    font-weight: $fw-bolder;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+
+    @include tablet {
+      top: 1.25rem;
+      left: 0;
+    }
+
+    @include tablet-wide {
+      content: "";
+    }
+  }
+
+  .toggle input:checked ~ .small-text::after {
+    opacity: 0;
+  }
+
+  .toggle input:checked ~ .small-text::before {
+    opacity: 1;
+  }
 }
 
 .end-space {
