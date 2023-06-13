@@ -1609,7 +1609,11 @@ if (table) {
 const isNotLogged = document.querySelector("#loggedOut");
 
 if (isNotLogged) {
-  isNotLogged.removeAttribute("data-bs-content-id");
-  document.querySelector(".auth").setAttribute("href", "templates/autentificare.html");
-  document.querySelector("#popover-content").innerHTML = "";
+  document.querySelector(".auth").style.display = "none";
+  document.querySelector(".logIn").style.display = "block";
+} else {
+  document.querySelector(".auth").style.display = "block";
+  document.querySelector(".logIn").style.display = "none";
+  document.querySelector(".popover-name").innerText = "George";
+  document.querySelector(".popover-function").innerText = "Kinetoterapeut";
 }

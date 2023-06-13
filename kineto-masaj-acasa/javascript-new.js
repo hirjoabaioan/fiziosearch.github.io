@@ -8,6 +8,7 @@ const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootst
 
 // BS Popovers
 const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+console.log(list);
 list.map((el) => {
   let opts = {
     animation: true,
@@ -22,53 +23,163 @@ list.map((el) => {
 //--------------------------------------------//
 //               PAGE SPECIFIC                //
 //--------------------------------------------//
+const currentPage = top.location.pathname;
 
-// Search page (RO) - de adaugat partea de HTML
+const searchPaths = ["/templates/search.html", "/templates/pacienti/mesagerie.html", "/templates/terapeuti/mesagerie.html"];
 
-if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
-  window.addEventListener("resize", function () {
-    if (window.innerWidth < 750 && document.querySelector(".list-container").style.display !== "none") {
-      document.querySelector(".info-container").style.display = "none";
-    } else if (window.innerWidth > 751) {
-      document.querySelector(".info-container").style.display = "block";
-    }
-  });
+const notificationPaths = ["/templates/terapeuti/notificari.html", "/templates/pacienti/notificari.html"];
 
-  if (window.matchMedia("(max-width: 47rem)").matches) {
-    document.querySelector(".info-container").style.display = "none";
-  }
+const infoContainer = document.querySelector(".info-container");
+const listContainer = document.querySelector(".list-container");
 
-  if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
-    document.querySelector(".med").classList.remove("btn", "btn-secondary");
-  }
+window.addEventListener("resize", handleResize);
 
-  document.querySelectorAll(".person-box").forEach(function (element) {
-    element.addEventListener("click", function () {
+if (searchPaths.includes(currentPage)) {
+  handleResize();
+
+  document.querySelectorAll(".person-box").forEach((element) => {
+    element.addEventListener("click", () => {
       if (window.matchMedia("(max-width: 47rem)").matches) {
-        document.querySelector(".list-container").classList.remove("d-flex");
-        document.querySelector(".list-container").style.display = "none";
+        listContainer.classList.remove("d-flex");
+        listContainer.style.display = "none";
       }
-      document.querySelector(".info-container").style.display = "block";
-      document.querySelector(".info-container").classList.add("grid");
+      infoContainer.style.display = "block";
+      infoContainer.classList.add("grid");
     });
   });
+}
 
-  document.querySelector("#close").addEventListener("click", function () {
-    if (window.matchMedia("(max-width: 47rem)").matches) {
-      document.querySelector(".list-container").classList.add("d-flex");
-      document.querySelector(".list-container").style.display = "block";
-      document.querySelector(".info-container").classList.remove("grid");
-      document.querySelector(".info-container").style.display = "none";
-    }
+// Seen check - Notificari - de adaugat partea de html (RO)
+if (notificationPaths.includes(currentPage)) {
+  const notificationConditions = document.querySelectorAll(".notification-condition");
+  notificationConditions.forEach((condition) => {
+    if (condition.textContent === "Văzut") {
+      const getSiblings = (e) => {
+        let siblings = [];
+        if (!e.parentNode) {
+          return siblings;
+        }
 
-    if (window.matchMedia("(min-width: 47rem)").matches) {
-      var replace = `
-                <div class="grid jusify-content-start align-items-center" style="width: 500px;"  id="startPage">
-                    <span id="txtCheck">Alege un terapeut din listă</span>
-                </div>
-                `;
+        let sibling = e.parentNode.firstChild;
 
-      document.querySelector(".info-container").innerHTML = replace;
+        while (sibling) {
+          if (sibling.nodeType === 1 && sibling !== e) {
+            siblings.push(sibling);
+          }
+          sibling = sibling.nextSibling;
+        }
+
+        return siblings;
+      };
+
+      const siblings = getSiblings(condition);
+
+      siblings.map((elem) => (elem.style.color = "grey"));
+      condition.style.color = "grey";
     }
   });
 }
+
+if (currentPage === "/templates/terapeuti/dashboard.html") {
+  const activityToggler = document.querySelector(".activity-toggler");
+  const welcomeMessage = document.querySelector(".welcome-message");
+
+  if (!activityToggler) {
+    welcomeMessage.classList.add("large");
+  } else {
+    welcomeMessage.classList.remove("large");
+  }
+
+  const availability = document.querySelector("#availabilityCheckbox");
+
+  availability.addEventListener("change", function () {
+    const parentDiv = document.querySelector(".page-info-grid");
+    const selectAllI = parentDiv.querySelectorAll("i");
+    const selectAllSpan = parentDiv.querySelectorAll("span");
+
+    selectAllI.forEach((i) => {
+      if (availability.checked) {
+        i.classList.add("disableI");
+      } else {
+        i.classList.remove("disableI");
+      }
+    });
+
+    selectAllSpan.forEach((s) => {
+      if (availability.checked) {
+        s.classList.add("disableS");
+      } else {
+        s.classList.remove("disableS");
+      }
+    });
+  });
+}
+
+// Carousel for prices
+if (top.location.pathname === "/templates/abonamente.html") {
+  handleWindowResize();
+  window.addEventListener("resize", handleWindowResize);
+
+  const CAROUSEL_BREAKPOINT = 1023;
+  const removeCarousel = document.querySelector(".rem-carousel");
+  const removeInner = document.querySelector(".rem-inner");
+  const removeItems = document.querySelectorAll(".rem-item");
+  const innerCards = document.querySelectorAll(".inner-cards");
+  const desktopHide = document.querySelectorAll(".desktop-hide");
+
+  function removeCarouselClasses() {
+    removeCarousel.classList.remove("carousel", "carousel-dark", "slide");
+    removeInner.classList.remove("carousel-inner");
+    removeItems.forEach(function (item) {
+      item.classList.remove("carousel-item");
+    });
+  }
+
+  function addCarouselClasses() {
+    removeCarousel.classList.add("carousel", "carousel-dark", "slide");
+    removeInner.classList.add("carousel-inner");
+    removeItems.forEach(function (item) {
+      item.classList.add("carousel-item");
+    });
+  }
+
+  function setInnerCardsDisplay(display) {
+    innerCards.forEach(function (item) {
+      item.style.display = display;
+    });
+  }
+
+  function setDesktopHideDisplay(display) {
+    desktopHide.forEach(function (item) {
+      item.style.display = display;
+    });
+  }
+
+  function handleWindowResize() {
+    if (window.innerWidth > CAROUSEL_BREAKPOINT) {
+      removeCarouselClasses();
+      setInnerCardsDisplay("flex");
+      setDesktopHideDisplay("none");
+    } else {
+      addCarouselClasses();
+      setInnerCardsDisplay("block");
+      setDesktopHideDisplay("flex");
+    }
+  }
+}
+
+//--------------------------------------------//
+//                 FUNCTIONS                  //
+//--------------------------------------------//
+
+const handleResize = () => {
+  if (window.innerWidth < 750 && listContainer.style.display !== "none") {
+    infoContainer.style.display = "none";
+  } else if (window.innerWidth > 751) {
+    infoContainer.style.display = "block";
+  }
+
+  if (window.matchMedia("(max-width: 47rem)").matches) {
+    infoContainer.style.display = "none";
+  }
+};
