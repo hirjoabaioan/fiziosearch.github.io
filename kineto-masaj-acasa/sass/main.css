@@ -454,7 +454,7 @@ nav img {
 .auth-profile {
   width: 3rem;
   height: 3rem;
-  background-image: url("../../img/profiles/PozaW.webp");
+  background-image: url("../../img/TopbarProfile.webp");
   -webkit-border-radius: 50%;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 50%;
@@ -464,6 +464,9 @@ nav img {
   float: left;
   background-size: cover;
   background-position: center center;
+}
+.auth-profile:not(#loggedOut) {
+  background-image: url("../../img/profiles/PozaW.webp") !important;
 }
 @media (min-width: 64rem) {
   .auth-profile {

@@ -11,6 +11,7 @@ $(document).ready(function () {
 
   // BS Popovers
   const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  console.log(list);
   list.map((el) => {
     let opts = {
       animation: true,
@@ -1603,4 +1604,12 @@ if (table) {
     });
     th.appendChild(button);
   });
+}
+
+const isNotLogged = document.querySelector("#loggedOut");
+
+if (isNotLogged) {
+  isNotLogged.removeAttribute("data-bs-content-id");
+  document.querySelector(".auth").setAttribute("href", "templates/autentificare.html");
+  document.querySelector("#popover-content").innerHTML = "";
 }
