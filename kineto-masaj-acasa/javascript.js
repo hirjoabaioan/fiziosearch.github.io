@@ -1193,13 +1193,14 @@ $(document).ready(function () {
 
   //--------- Popularea dropdown-urilor ---------//
 
+  const romanianPlaces = ["București", "Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Abrud", "Adjud", "Agnita", "Aiud", "Alba Iulia", "Aleșd", "Alexandria", "Amara", "Anina", "Aninoasa", "Arad", "Ardud", "Avrig", "Azuga", "Babadag", "Băbeni", "Bacău", "Baia de Aramă", "Baia de Arieș", "Baia Mare", "Baia Sprie", "Băicoi", "Băile Govora", "Băile Herculane", "Băile Olănești", "Băile Tușnad", "Băilești", "Bălan", "Bălcești", "Balș", "Baraolt", "Bârlad", "Bechet", "Beclean", "Beiuș", "Berbești", "Berești", "Bicaz", "Bistrița", "Blaj", "Bocșa", "Boldești-Scăeni", "Bolintin-Vale", "Borșa", "Borsec", "Botoșani", "Brad", "Bragadiru", "Brăila", "Brașov", "Breaza", "Brezoi", "Broșteni", "Bucecea", "Budești", "Buftea", "Buhuși", "Bumbești-Jiu", "Bușteni", "Buzău", "Buziaș", "Cajvana", "Calafat", "Călan", "Călărași", "Călimănești", "Câmpeni", "Câmpia Turzii", "Câmpina", "Câmpulung Moldovenesc", "Câmpulung", "Caracal", "Caransebeș", "Carei", "Cavnic", "Căzănești", "Cehu Silvaniei", "Cernavodă", "Chișineu-Criș", "Chitila", "Ciacova", "Cisnădie", "Cluj-Napoca", "Codlea", "Comănești", "Comarnic", "Constanța", "Copșa Mică", "Corabia", "Costești", "Covasna", "Craiova", "Cristuru Secuiesc", "Cugir", "Curtea de Argeș", "Curtici", "Dăbuleni", "Darabani", "Dărmănești", "Dej", "Deta", "Deva", "Dolhasca", "Dorohoi", "Drăgănești-Olt", "Drăgășani", "Dragomirești", "Drobeta-Turnu Severin", "Dumbrăveni", "Eforie", "Făgăraș", "Făget", "Fălticeni", "Făurei", "Fetești", "Fieni", "Fierbinți-Târg", "Filiași", "Flămânzi", "Focșani", "Frasin", "Fundulea", "Găești", "Galați", "Gătaia", "Geoagiu", "Gheorgheni", "Gherla", "Ghimbav", "Giurgiu", "Gura Humorului", "Hârlău", "Hârșova", "Hațeg", "Horezu", "Huedin", "Hunedoara", "Huși", "Ianca", "Iași", "Iernut", "Ineu", "Însurăței", "Întorsura Buzăului", "Isaccea", "Jibou", "Jimbolia", "Lehliu Gară", "Lipova", "Liteni", "Livada", "Luduș", "Lugoj", "Lupeni", "Măcin", "Măgurele", "Mangalia", "Mărășești", "Marghita", "Medgidia", "Mediaș", "Miercurea Ciuc", "Miercurea Nirajului", "Miercurea Sibiului", "Mihăilești", "Milișăuți", "Mioveni", "Mizil", "Moinești", "Moldova Nouă", "Moreni", "Motru", "Murfatlar", "Murgeni", "Nădlac", "Năsăud", "Năvodari", "Negrești", "Negrești-Oaș", "Negru Vodă", "Nehoiu", "Novaci", "Nucet", "Ocna Mureș", "Ocna Sibiului", "Ocnele Mari", "Odobești", "Odorheiu Secuiesc", "Oltenița", "Onești", "Oradea", "Orăștie", "Oravița", "Orșova", "Oțelu Roșu", "Otopeni", "Ovidiu", "Panciu", "Pâncota", "Pantelimon", "Pașcani", "Pătârlagele", "Pecica", "Petrila", "Petroșani", "Piatra Neamț", "Piatra-Olt", "Pitești", "Ploiești", "Plopeni", "Podu Iloaiei", "Pogoanele", "Popești-Leordeni", "Potcoava", "Predeal", "Pucioasa", "Răcari", "Rădăuți", "Râmnicu Sărat", "Râmnicu Vâlcea", "Râșnov", "Recaș", "Reghin", "Reșița", "Roman", "Roșiorii de Vede", "Rovinari", "Roznov", "Rupea", "Săcele", "Săcueni", "Salcea", "Săliște", "Săliștea de Sus", "Salonta", "Sângeorgiu de Pădure", "Sângeorz-Băi", "Sânnicolau Mare", "Sântana", "Sărmașu", "Satu Mare", "Săveni", "Scornicești", "Sebeș", "Sebiș", "Segarcea", "Seini", "Sfântu Gheorghe", "Sibiu", "Sighetu Marmației", "Sighișoara", "Simeria", "Șimleu Silvaniei", "Sinaia", "Siret", "Slănic", "Slănic-Moldova", "Slatina", "Slobozia", "Solca", "Șomcuta Mare", "Sovata", "Ștefănești", " Argeș", "Ștefănești", " Botoșani", "Ștei", "Strehaia", "Suceava", "Sulina", "Tălmaciu", "Țăndărei", "Târgoviște", "Târgu Bujor", "Târgu Cărbunești", "Târgu Frumos", "Târgu Jiu", "Târgu Lăpuș", "Târgu Mureș", "Târgu Neamț", "Târgu Ocna", "Târgu Secuiesc", "Târnăveni", "Tășnad", "Tăuții-Măgherăuș", "Techirghiol", "Tecuci", "Teiuș", "Țicleni", "Timișoara", "Tismana", "Titu", "Toplița", "Topoloveni", "Tulcea", "Turceni", "Turda", "Turnu Măgurele", "Ulmeni", "Ungheni", "Uricani", "Urlați", "Urziceni", "Valea lui Mihai", "Vălenii de Munte", "Vânju Mare", "Vașcău", "Vaslui", "Vatra Dornei", "Vicovu de Sus", "Victoria", "Videle", "Vișeu de Sus", "Vlăhița", "Voluntari", "Vulcan", "Zalău", "Zărnești", "Zimnicea", "Zlatna", "1 mai", "Aviatorilor", "Aviației", "Băneasa", "Bucureștii Noi", "Centrul Civic", "Dămăroaia", "Domenii", "Dorobanți", "Floreasca", "Gara de Nord", "Grivița", "Pajura", "Piața Romană", "Piepra", "Pipera", "Primăverii", "Străulești", "Victoriei", "Andronache", "Baicului", "Centrul Civic", "Colentina", "Floreasca", "Iancului", "Ion Creangă", "Moșilor", "Obor", "Pantelimon", "Pipera", "Ștefan cel Mare", "Tei", "Vatra Luminoasă", "Balta Albă", "Centru Civic", "Centrul Civic", "Centrul Istoric", "Dristor", "Dudești", "Industriilor", "Mihai Bravu", "Muncii", "Ozana", "Sălăjan", "Titan", "Trapezului", "Unirii", "Vitan", "Berceni", "Centrul Civic", "Giurgiului", "Olteniței", "Timpuri Noi", "Tineretului", "Văcărești", "13 septembrie", "Centrul Civic", "Cotroceni", "Dealul Spirii", "Ferentari", "Ghencea", "Giurgiului", "Rahova", "Sălaj", "Brâncuși", "Centrul Civic", "Crângași", "Drumul Taberei", "Ghencea", "Giulești", "Grozăvești", "Militari", "Andrei Mureșanu", "Becaș", "Borhanci", "Bulgaria", "Bună Ziua", "Centru", "Dâmbul Rotund", "Europa", "Făget", "Gheorgheni", "Grădini Mănăștur (Plopilor)", "Grigorescu", "Gruia", "Iris", "Între Lacuri", "Mănăștur", "Mărăști", "Someșeni", "Sopor", "Agronomie", "Alexandru cel Bun", "Aviației", "Baza 3", "Bucium", "Bucșinescu", "Bularga", "C.U.G. 1 și 2", "Canta", "Ciurchi", "Copou", "Dacia", "Dimitrie Cantemir", "Frumoasa", "Galata 1 și 2", "Gară", "Manta Roșie", "Metalurgie", "Mircea cel Bătrân", "Blașcovici", "Braytim", "Bucovina", "Calea Aradului", "Calea Lipovei", "Calea Șagului", "Cetate", "Ciarda Roșie", "Circumvalațiunii", "Dâmbovița", "Elisabetin", "Fabric", "Fratelia", "Freidorf", "Ghiroda", "Girocului", "Iosefin", "Kuncz", "Mehala", "Abatorul", "Anadalchioi", "Badea Cârțan", "Berechet", "Boreal", "Brătianu", "C.E.T.", "Casa de Cultură", "Centru", "Centrul Vechi", "Coiciu", "Compozitori", "Dacia", "Energia", "Faleza nord", "Faleza sud", "Farul", "Gara", "Groapa", "1 mai", "Bariera Vâlcii", "Bordei", "Brazda lui Novac", "Brestei", "Centru", "Craiovița Nouă", "Craiovița Veche", "Făcăi", "Ghercești", "Lascăr Catargiu", "Lăpuș-Argeș", "Lunca Jiului", "Mofleni", "Nisipuri Dorobănția", "Popoveni", "Romanești", "Rovine", "Sărari", "Astra", "Bartolomeu", "Blumăna", "Brașovechi", "Centrul Civic", "Centrul istoric", "Craiter", "Dârste", "Florilor", "Noua", "Poiana Brașov", "Scriitorilor", "Stupini", "Șcheii Brașovului", "Timiș-Triaj", "Tractorul", "Valea Cetății"];
+
   const placesDropdown = $("#placesList");
   const servicesDropdown = $("#servicesList");
   const specializationDropdown = $("#specializationList");
   const services = ["Kinetoterapie", "Masaj"];
   const inputDropdownChangeEvent = $("#dropdownService");
-
-  const romanianPlaces = ["București", "Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Abrud", "Adjud", "Agnita", "Aiud", "Alba Iulia", "Aleșd", "Alexandria", "Amara", "Anina", "Aninoasa", "Arad", "Ardud", "Avrig", "Azuga", "Babadag", "Băbeni", "Bacău", "Baia de Aramă", "Baia de Arieș", "Baia Mare", "Baia Sprie", "Băicoi", "Băile Govora", "Băile Herculane", "Băile Olănești", "Băile Tușnad", "Băilești", "Bălan", "Bălcești", "Balș", "Baraolt", "Bârlad", "Bechet", "Beclean", "Beiuș", "Berbești", "Berești", "Bicaz", "Bistrița", "Blaj", "Bocșa", "Boldești-Scăeni", "Bolintin-Vale", "Borșa", "Borsec", "Botoșani", "Brad", "Bragadiru", "Brăila", "Brașov", "Breaza", "Brezoi", "Broșteni", "Bucecea", "Budești", "Buftea", "Buhuși", "Bumbești-Jiu", "Bușteni", "Buzău", "Buziaș", "Cajvana", "Calafat", "Călan", "Călărași", "Călimănești", "Câmpeni", "Câmpia Turzii", "Câmpina", "Câmpulung Moldovenesc", "Câmpulung", "Caracal", "Caransebeș", "Carei", "Cavnic", "Căzănești", "Cehu Silvaniei", "Cernavodă", "Chișineu-Criș", "Chitila", "Ciacova", "Cisnădie", "Cluj-Napoca", "Codlea", "Comănești", "Comarnic", "Constanța", "Copșa Mică", "Corabia", "Costești", "Covasna", "Craiova", "Cristuru Secuiesc", "Cugir", "Curtea de Argeș", "Curtici", "Dăbuleni", "Darabani", "Dărmănești", "Dej", "Deta", "Deva", "Dolhasca", "Dorohoi", "Drăgănești-Olt", "Drăgășani", "Dragomirești", "Drobeta-Turnu Severin", "Dumbrăveni", "Eforie", "Făgăraș", "Făget", "Fălticeni", "Făurei", "Fetești", "Fieni", "Fierbinți-Târg", "Filiași", "Flămânzi", "Focșani", "Frasin", "Fundulea", "Găești", "Galați", "Gătaia", "Geoagiu", "Gheorgheni", "Gherla", "Ghimbav", "Giurgiu", "Gura Humorului", "Hârlău", "Hârșova", "Hațeg", "Horezu", "Huedin", "Hunedoara", "Huși", "Ianca", "Iași", "Iernut", "Ineu", "Însurăței", "Întorsura Buzăului", "Isaccea", "Jibou", "Jimbolia", "Lehliu Gară", "Lipova", "Liteni", "Livada", "Luduș", "Lugoj", "Lupeni", "Măcin", "Măgurele", "Mangalia", "Mărășești", "Marghita", "Medgidia", "Mediaș", "Miercurea Ciuc", "Miercurea Nirajului", "Miercurea Sibiului", "Mihăilești", "Milișăuți", "Mioveni", "Mizil", "Moinești", "Moldova Nouă", "Moreni", "Motru", "Murfatlar", "Murgeni", "Nădlac", "Năsăud", "Năvodari", "Negrești", "Negrești-Oaș", "Negru Vodă", "Nehoiu", "Novaci", "Nucet", "Ocna Mureș", "Ocna Sibiului", "Ocnele Mari", "Odobești", "Odorheiu Secuiesc", "Oltenița", "Onești", "Oradea", "Orăștie", "Oravița", "Orșova", "Oțelu Roșu", "Otopeni", "Ovidiu", "Panciu", "Pâncota", "Pantelimon", "Pașcani", "Pătârlagele", "Pecica", "Petrila", "Petroșani", "Piatra Neamț", "Piatra-Olt", "Pitești", "Ploiești", "Plopeni", "Podu Iloaiei", "Pogoanele", "Popești-Leordeni", "Potcoava", "Predeal", "Pucioasa", "Răcari", "Rădăuți", "Râmnicu Sărat", "Râmnicu Vâlcea", "Râșnov", "Recaș", "Reghin", "Reșița", "Roman", "Roșiorii de Vede", "Rovinari", "Roznov", "Rupea", "Săcele", "Săcueni", "Salcea", "Săliște", "Săliștea de Sus", "Salonta", "Sângeorgiu de Pădure", "Sângeorz-Băi", "Sânnicolau Mare", "Sântana", "Sărmașu", "Satu Mare", "Săveni", "Scornicești", "Sebeș", "Sebiș", "Segarcea", "Seini", "Sfântu Gheorghe", "Sibiu", "Sighetu Marmației", "Sighișoara", "Simeria", "Șimleu Silvaniei", "Sinaia", "Siret", "Slănic", "Slănic-Moldova", "Slatina", "Slobozia", "Solca", "Șomcuta Mare", "Sovata", "Ștefănești", " Argeș", "Ștefănești", " Botoșani", "Ștei", "Strehaia", "Suceava", "Sulina", "Tălmaciu", "Țăndărei", "Târgoviște", "Târgu Bujor", "Târgu Cărbunești", "Târgu Frumos", "Târgu Jiu", "Târgu Lăpuș", "Târgu Mureș", "Târgu Neamț", "Târgu Ocna", "Târgu Secuiesc", "Târnăveni", "Tășnad", "Tăuții-Măgherăuș", "Techirghiol", "Tecuci", "Teiuș", "Țicleni", "Timișoara", "Tismana", "Titu", "Toplița", "Topoloveni", "Tulcea", "Turceni", "Turda", "Turnu Măgurele", "Ulmeni", "Ungheni", "Uricani", "Urlați", "Urziceni", "Valea lui Mihai", "Vălenii de Munte", "Vânju Mare", "Vașcău", "Vaslui", "Vatra Dornei", "Vicovu de Sus", "Victoria", "Videle", "Vișeu de Sus", "Vlăhița", "Voluntari", "Vulcan", "Zalău", "Zărnești", "Zimnicea", "Zlatna", "1 mai", "Aviatorilor", "Aviației", "Băneasa", "Bucureștii Noi", "Centrul Civic", "Dămăroaia", "Domenii", "Dorobanți", "Floreasca", "Gara de Nord", "Grivița", "Pajura", "Piața Romană", "Piepra", "Pipera", "Primăverii", "Străulești", "Victoriei", "Andronache", "Baicului", "Centrul Civic", "Colentina", "Floreasca", "Iancului", "Ion Creangă", "Moșilor", "Obor", "Pantelimon", "Pipera", "Ștefan cel Mare", "Tei", "Vatra Luminoasă", "Balta Albă", "Centru Civic", "Centrul Civic", "Centrul Istoric", "Dristor", "Dudești", "Industriilor", "Mihai Bravu", "Muncii", "Ozana", "Sălăjan", "Titan", "Trapezului", "Unirii", "Vitan", "Berceni", "Centrul Civic", "Giurgiului", "Olteniței", "Timpuri Noi", "Tineretului", "Văcărești", "13 septembrie", "Centrul Civic", "Cotroceni", "Dealul Spirii", "Ferentari", "Ghencea", "Giurgiului", "Rahova", "Sălaj", "Brâncuși", "Centrul Civic", "Crângași", "Drumul Taberei", "Ghencea", "Giulești", "Grozăvești", "Militari", "Andrei Mureșanu", "Becaș", "Borhanci", "Bulgaria", "Bună Ziua", "Centru", "Dâmbul Rotund", "Europa", "Făget", "Gheorgheni", "Grădini Mănăștur (Plopilor)", "Grigorescu", "Gruia", "Iris", "Între Lacuri", "Mănăștur", "Mărăști", "Someșeni", "Sopor", "Agronomie", "Alexandru cel Bun", "Aviației", "Baza 3", "Bucium", "Bucșinescu", "Bularga", "C.U.G. 1 și 2", "Canta", "Ciurchi", "Copou", "Dacia", "Dimitrie Cantemir", "Frumoasa", "Galata 1 și 2", "Gară", "Manta Roșie", "Metalurgie", "Mircea cel Bătrân", "Blașcovici", "Braytim", "Bucovina", "Calea Aradului", "Calea Lipovei", "Calea Șagului", "Cetate", "Ciarda Roșie", "Circumvalațiunii", "Dâmbovița", "Elisabetin", "Fabric", "Fratelia", "Freidorf", "Ghiroda", "Girocului", "Iosefin", "Kuncz", "Mehala", "Abatorul", "Anadalchioi", "Badea Cârțan", "Berechet", "Boreal", "Brătianu", "C.E.T.", "Casa de Cultură", "Centru", "Centrul Vechi", "Coiciu", "Compozitori", "Dacia", "Energia", "Faleza nord", "Faleza sud", "Farul", "Gara", "Groapa", "1 mai", "Bariera Vâlcii", "Bordei", "Brazda lui Novac", "Brestei", "Centru", "Craiovița Nouă", "Craiovița Veche", "Făcăi", "Ghercești", "Lascăr Catargiu", "Lăpuș-Argeș", "Lunca Jiului", "Mofleni", "Nisipuri Dorobănția", "Popoveni", "Romanești", "Rovine", "Sărari", "Astra", "Bartolomeu", "Blumăna", "Brașovechi", "Centrul Civic", "Centrul istoric", "Craiter", "Dârste", "Florilor", "Noua", "Poiana Brașov", "Scriitorilor", "Stupini", "Șcheii Brașovului", "Timiș-Triaj", "Tractorul", "Valea Cetății"];
+  const romanianPlacess = ["București", "Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6"];
 
   const KTspecializations = [
     "Kinetoterapie", //(preselectată dacă s-a ales fizioterapeut la servicii daca se poate)
@@ -1257,57 +1258,44 @@ $(document).ready(function () {
 
   //--------- Index Page Search Form  ---------//
 
-  const searchForm = $(".index-form");
+  const searchForm = document.querySelector(".index-form");
   const searchURL = "templates/search.html";
-  searchForm.attr("action", searchURL);
+  if (searchForm) searchForm.setAttribute("action", searchURL);
 
   //--------- Form Validation ---------//
 
   (() => {
     "use strict";
 
-    const forms = $(".needs-validation");
+    const forms = document.querySelector(".needs-validation");
 
-    // Loop over forms and prevent submission
-    Array.from(forms).forEach((form) => {
-      // Required Age
-      let requiredAge = 18;
-      if (form.birthday) {
-        // verifica daca este fiziotearpeut sau nu
-        if (top.location.pathname === "/templates/terapeuti/setari-profil.html") {
-          requiredAge = 20;
+    if (forms) {
+      // Loop over forms and prevent submission
+      Array.from(forms).forEach((form) => {
+        // Required Age
+        let requiredAge = 18;
+        if (form.birthday) {
+          // verifica daca este fiziotearpeut sau nu
+          if (top.location.pathname === "/templates/terapeuti/setari-profil.html") {
+            requiredAge = 20;
+          }
+          form.birthday.min = calculateDate(100);
+          form.birthday.max = calculateDate(requiredAge);
         }
-        form.birthday.min = calculateDate(100);
-        form.birthday.max = calculateDate(requiredAge);
-      }
 
-      form.addEventListener(
-        "submit",
-        (event) => {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
 
-            // Register password check
-            if (form.password) {
-              const password = form.password;
-              const passwordCheck = form.passwordCheck;
-              const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
-              if (password.value !== passwordCheck.value) {
-                if (passwordRegex.test(passwordCheck.value)) {
-                  form.passwordCheck.parentNode.querySelector(".invalid-feedback").innerText = "Parolele nu corespund!";
-                }
-                form.passwordCheck.setCustomValidity("Invalid");
-              } else {
-                form.passwordCheck.setCustomValidity("");
-              }
-
-              // Check if password matches if the user changes the password after pressing submit button
-              form.passwordCheck.addEventListener("keyup", (event) => {
+              // Register password check
+              if (form.password) {
+                const password = form.password;
+                const passwordCheck = form.passwordCheck;
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
                 if (password.value !== passwordCheck.value) {
-                  event.preventDefault();
-                  event.stopPropagation();
-
                   if (passwordRegex.test(passwordCheck.value)) {
                     form.passwordCheck.parentNode.querySelector(".invalid-feedback").innerText = "Parolele nu corespund!";
                   }
@@ -1315,74 +1303,89 @@ $(document).ready(function () {
                 } else {
                   form.passwordCheck.setCustomValidity("");
                 }
-              });
+
+                // Check if password matches if the user changes the password after pressing submit button
+                form.passwordCheck.addEventListener("keyup", (event) => {
+                  if (password.value !== passwordCheck.value) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    if (passwordRegex.test(passwordCheck.value)) {
+                      form.passwordCheck.parentNode.querySelector(".invalid-feedback").innerText = "Parolele nu corespund!";
+                    }
+                    form.passwordCheck.setCustomValidity("Invalid");
+                  } else {
+                    form.passwordCheck.setCustomValidity("");
+                  }
+                });
+              }
             }
-          }
 
-          // Login password check
-          if (form.loginEmail && form.loginPassword) {
-            console.log("Introdu script pentru verificarea adresei de email si a parolei introduse cu cele salvate in baza de date");
-            const userEmail = "email@email.com";
-            const userPassword = "1234";
+            // Login password check
+            if (form.loginEmail && form.loginPassword) {
+              console.log("Introdu script pentru verificarea adresei de email si a parolei introduse cu cele salvate in baza de date");
+              const userEmail = "email@email.com";
+              const userPassword = "1234";
 
-            if ((form.loginEmail.value !== userEmail && form.loginPassword.value !== userPassword) || (form.loginEmail.value === userEmail && form.loginPassword.value !== userPassword) || (form.loginEmail.value !== userEmail && form.loginPassword.value === userPassword) || (form.loginEmail.value === "" && form.loginPassword.value === "") || (form.loginEmail.value === userEmail && form.loginPassword.value === "") || (form.loginEmail.value === "" && form.loginPassword.value === userPassword)) {
-              form.loginEmail.setCustomValidity("Invalid");
-              form.loginPassword.setCustomValidity("Invalid");
-            } else {
-              form.loginEmail.setCustomValidity("");
-              form.loginPassword.setCustomValidity("");
+              if ((form.loginEmail.value !== userEmail && form.loginPassword.value !== userPassword) || (form.loginEmail.value === userEmail && form.loginPassword.value !== userPassword) || (form.loginEmail.value !== userEmail && form.loginPassword.value === userPassword) || (form.loginEmail.value === "" && form.loginPassword.value === "") || (form.loginEmail.value === userEmail && form.loginPassword.value === "") || (form.loginEmail.value === "" && form.loginPassword.value === userPassword)) {
+                form.loginEmail.setCustomValidity("Invalid");
+                form.loginPassword.setCustomValidity("Invalid");
+              } else {
+                form.loginEmail.setCustomValidity("");
+                form.loginPassword.setCustomValidity("");
+              }
             }
-          }
 
-          // Birthday check
-          if (form.birthday) {
-            // Verifică vârsta
-            const age = calculateAge(form.birthday.value);
-            const birthdayParent = document.querySelector("#birthday").parentNode;
-            const invalidFeedback = birthdayParent.querySelector(".invalid-feedback");
+            // Birthday check
+            if (form.birthday) {
+              // Verifică vârsta
+              const age = calculateAge(form.birthday.value);
+              const birthdayParent = document.querySelector("#birthday").parentNode;
+              const invalidFeedback = birthdayParent.querySelector(".invalid-feedback");
 
-            if (age < requiredAge) {
-              invalidFeedback.innerText = "Nu aveți vârsta necesară pentru a vă putea înregistra!";
+              if (age < requiredAge) {
+                invalidFeedback.innerText = "Nu aveți vârsta necesară pentru a vă putea înregistra!";
+              }
             }
-          }
 
-          // Activity checkboxes
-          if (form.activity) {
-            const formChecks = document.querySelector(".specializari-checks").querySelectorAll(".form-check-input");
-            const checkedCheckboxes = Array.from(formChecks).filter((checkBox) => checkBox.checked);
+            // Activity checkboxes
+            if (form.activity) {
+              const formChecks = document.querySelector(".specializari-checks").querySelectorAll(".form-check-input");
+              const checkedCheckboxes = Array.from(formChecks).filter((checkBox) => checkBox.checked);
 
-            if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 6) {
-              formChecks.forEach((checkBox) => {
-                checkBox.setCustomValidity("Invalid");
-                document.querySelector(".activity-feedback").style.display = "block";
-              });
-            } else {
-              formChecks.forEach((checkBox) => {
-                checkBox.setCustomValidity("");
-                checkBox.required = false;
-              });
+              if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 6) {
+                formChecks.forEach((checkBox) => {
+                  checkBox.setCustomValidity("Invalid");
+                  document.querySelector(".activity-feedback").style.display = "block";
+                });
+              } else {
+                formChecks.forEach((checkBox) => {
+                  checkBox.setCustomValidity("");
+                  checkBox.required = false;
+                });
+              }
             }
-          }
 
-          form.classList.add("was-validated");
-        },
-        false
-      );
-    });
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
 
-    function calculateDate(age) {
-      const todayDate = new Date();
-      const calculatedDate = new Date(todayDate.setFullYear(todayDate.getFullYear() - age));
-      return calculatedDate.toJSON().split("T")[0];
-    }
+      function calculateDate(age) {
+        const todayDate = new Date();
+        const calculatedDate = new Date(todayDate.setFullYear(todayDate.getFullYear() - age));
+        return calculatedDate.toJSON().split("T")[0];
+      }
 
-    function calculateAge(userBirthdate) {
-      let today = Date.now();
-      let birthday = new Date(userBirthdate);
-      let month = new Date(today - birthday.getTime());
-      let year = month.getUTCFullYear();
-      let age = Math.abs(year - 1970);
-      return age;
+      function calculateAge(userBirthdate) {
+        let today = Date.now();
+        let birthday = new Date(userBirthdate);
+        let month = new Date(today - birthday.getTime());
+        let year = month.getUTCFullYear();
+        let age = Math.abs(year - 1970);
+        return age;
+      }
     }
   })();
 
@@ -1542,17 +1545,17 @@ $(document).ready(function () {
   }
 });
 
-function checkerFunction() {
-  if ($("#checker").is(":checked")) {
-    $("#toggle-inactive").css("color", "#f44336");
-    $("#toggle-active").css("color", "black");
-    // Terapeut indisponibil
-  } else {
-    $("#toggle-active").css("color", "#108F96");
-    $("#toggle-inactive").css("color", "black");
-    // Terapeut disponibil
-  }
-}
+// function checkerFunction() {
+//   if ($("#checker").is(":checked")) {
+//     $("#toggle-inactive").css("color", "#f44336");
+//     $("#toggle-active").css("color", "black");
+//     // Terapeut indisponibil
+//   } else {
+//     $("#toggle-active").css("color", "#108F96");
+//     $("#toggle-inactive").css("color", "black");
+//     // Terapeut disponibil
+//   }
+// }
 
 // Table Sorting - Pagina Pacient
 const rows = document.querySelectorAll(".program-table tr.collapsible");
