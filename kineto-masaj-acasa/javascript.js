@@ -60,7 +60,7 @@ $(document).ready(function () {
   }
 
   // Seen check - Notificari - de adaugat partea de html (RO)
-  if (topLocation === "/templates/terapeuti/notificari.html" || topLocation === "/templates/pacienti/notificari.html") {
+  if (topLocation.includes("notificari.html")) {
     const notificationConditions = document.querySelectorAll(".notification-condition");
     notificationConditions.forEach(function (condition) {
       // console.log(condition.textContent);
@@ -92,7 +92,7 @@ $(document).ready(function () {
   }
 
   // Graphic table - de sters sau editat (RO)
-  if (topLocation === "/templates/terapeuti/dashboard.html") {
+  if (topLocation.includes("dashboard.html")) {
     const classToCheck = document.querySelector(".activity-toggler");
     const elementToAddClass = document.querySelector(".welcome-message");
     if (!classToCheck) {
@@ -120,7 +120,7 @@ $(document).ready(function () {
   }
 
   // Carousel for prices
-  if (topLocation === "/templates/abonamente.html") {
+  if (topLocation.includes("abonamente.html")) {
     const removeCarousel = document.querySelector(".rem-carousel");
     const removeInner = document.querySelector(".rem-inner");
     const removeItems = document.querySelectorAll(".rem-item");
@@ -169,7 +169,7 @@ $(document).ready(function () {
   }
 
   //Add hours and minutes to the dropdowns in the TERAPII page
-  if (topLocation === "/templates/terapeuti/terapii.html") {
+  if (topLocation.includes("terapii.html")) {
     const dropDownHoursInsert = document.getElementById("dropdownDurataOre");
     const dropDownMinutesInsert = document.getElementById("dropdownDurataMin");
     const MAX_HOURS = 10;
@@ -206,7 +206,7 @@ $(document).ready(function () {
   }
 
   // Patient Therapies page - Therapist Point Of View
-  if (topLocation === "/templates/terapeuti/pagina-pacient.html") {
+  if (topLocation.includes("pagina-pacient.html")) {
     // Se preia numele pacientului din Baza de date (mockup)
     const patientName = "Popescu Ion";
     // Se preiau tearpiile introduse de terapeutul inregistrat din Baza de date (mockup)
