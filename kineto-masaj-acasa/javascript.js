@@ -27,7 +27,11 @@ $(document).ready(function () {
   //               PAGE SPECIFIC                //
   //--------------------------------------------//
 
-  if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
+  const topLocation = top.location.pathname;
+  const searchLocationScript = ["search.html", "mesagerie.html"];
+  const topLocationCheck = (element) => topLocation.includes(element);
+
+  if (searchLocationScript.some(topLocationCheck)) {
     const infoContainer = document.querySelector(".info-container");
     const listContainer = document.querySelector(".list-container");
 
@@ -56,7 +60,7 @@ $(document).ready(function () {
   }
 
   // Seen check - Notificari - de adaugat partea de html (RO)
-  if (top.location.pathname === "/templates/terapeuti/notificari.html" || top.location.pathname === "/templates/pacienti/notificari.html") {
+  if (topLocation === "/templates/terapeuti/notificari.html" || topLocation === "/templates/pacienti/notificari.html") {
     const notificationConditions = document.querySelectorAll(".notification-condition");
     notificationConditions.forEach(function (condition) {
       // console.log(condition.textContent);
@@ -88,7 +92,7 @@ $(document).ready(function () {
   }
 
   // Graphic table - de sters sau editat (RO)
-  if (top.location.pathname === "/templates/terapeuti/dashboard.html") {
+  if (topLocation === "/templates/terapeuti/dashboard.html") {
     const classToCheck = document.querySelector(".activity-toggler");
     const elementToAddClass = document.querySelector(".welcome-message");
     if (!classToCheck) {
@@ -116,7 +120,7 @@ $(document).ready(function () {
   }
 
   // Carousel for prices
-  if (top.location.pathname === "/templates/abonamente.html") {
+  if (topLocation === "/templates/abonamente.html") {
     const removeCarousel = document.querySelector(".rem-carousel");
     const removeInner = document.querySelector(".rem-inner");
     const removeItems = document.querySelectorAll(".rem-item");
@@ -165,7 +169,7 @@ $(document).ready(function () {
   }
 
   //Add hours and minutes to the dropdowns in the TERAPII page
-  if (top.location.pathname === "/templates/terapeuti/terapii.html") {
+  if (topLocation === "/templates/terapeuti/terapii.html") {
     const dropDownHoursInsert = document.getElementById("dropdownDurataOre");
     const dropDownMinutesInsert = document.getElementById("dropdownDurataMin");
     const MAX_HOURS = 10;
@@ -202,7 +206,7 @@ $(document).ready(function () {
   }
 
   // Patient Therapies page - Therapist Point Of View
-  if (top.location.pathname === "/templates/terapeuti/pagina-pacient.html") {
+  if (topLocation === "/templates/terapeuti/pagina-pacient.html") {
     // Se preia numele pacientului din Baza de date (mockup)
     const patientName = "Popescu Ion";
     // Se preiau tearpiile introduse de terapeutul inregistrat din Baza de date (mockup)
@@ -374,7 +378,7 @@ $(document).ready(function () {
     }
   }
 
-  if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
+  if (searchLocationScript.some(topLocationCheck)) {
     // Inserting GET parameters in the input fields for searching
 
     const params = new URLSearchParams(window.location.search);
@@ -382,7 +386,7 @@ $(document).ready(function () {
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
 
-    if (top.location.pathname === "/templates/search.html") {
+    if (topLocation === "/templates/search.html") {
       location.value = params.get("place");
       service.value = params.get("service");
       specialization.value = params.get("specialization");
@@ -706,7 +710,7 @@ $(document).ready(function () {
 
         let therapistBox = ``;
 
-        if (top.location.pathname !== "/templates/search.html") {
+        if (topLocation !== "/templates/search.html") {
           therapistBox = `
           <div class="person-box" tabindex="0" id="${id}">
           <div class="person-box-pic">
@@ -778,7 +782,7 @@ $(document).ready(function () {
 
           let btnClose;
 
-          if (top.location.pathname === "/templates/search.html") {
+          if (topLocation === "/templates/search.html") {
             btnClose = document.querySelector(".btn-close");
           } else {
             btnClose = document.querySelectorAll(".btn-close");
@@ -891,7 +895,7 @@ $(document).ready(function () {
         `;
       }
 
-      if (top.location.pathname === "/templates/search.html") {
+      if (topLocation === "/templates/search.html") {
         therapistInformations = `
               <div class="d-flex row info-header">
               <div class="d-flex m-0 mt-2 pb-0 justify-content-end align-items-center" id="close">
@@ -1126,7 +1130,7 @@ $(document).ready(function () {
         document.querySelector(".info-container").style.display = "block";
       }
 
-      if (top.location.pathname === "/templates/search.html") {
+      if (topLocation === "/templates/search.html") {
         document.querySelector(".contact-button").addEventListener("click", function () {
           document.querySelector(".contact-info").style.display = "flex";
         });
@@ -1276,7 +1280,7 @@ $(document).ready(function () {
         let requiredAge = 18;
         if (form.birthday) {
           // verifica daca este fiziotearpeut sau nu
-          if (top.location.pathname === "/templates/terapeuti/setari-profil.html") {
+          if (topLocation === "/templates/terapeuti/setari-profil.html") {
             requiredAge = 20;
           }
           form.birthday.min = calculateDate(100);
