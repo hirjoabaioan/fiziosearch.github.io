@@ -386,7 +386,7 @@ $(document).ready(function () {
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
 
-    if (topLocation === "/templates/search.html") {
+    if (topLocation.includes("search.html")) {
       location.value = params.get("place");
       service.value = params.get("service");
       specialization.value = params.get("specialization");
@@ -710,7 +710,7 @@ $(document).ready(function () {
 
         let therapistBox = ``;
 
-        if (topLocation !== "/templates/search.html") {
+        if (!topLocation.includes("search.html")) {
           therapistBox = `
           <div class="person-box" tabindex="0" id="${id}">
           <div class="person-box-pic">
@@ -782,7 +782,7 @@ $(document).ready(function () {
 
           let btnClose;
 
-          if (topLocation === "/templates/search.html") {
+          if (topLocation.includes("search.html")) {
             btnClose = document.querySelector(".btn-close");
           } else {
             btnClose = document.querySelectorAll(".btn-close");
@@ -895,7 +895,7 @@ $(document).ready(function () {
         `;
       }
 
-      if (topLocation === "/templates/search.html") {
+      if (topLocation.includes("search.html")) {
         therapistInformations = `
               <div class="d-flex row info-header">
               <div class="d-flex m-0 mt-2 pb-0 justify-content-end align-items-center" id="close">
@@ -1130,7 +1130,7 @@ $(document).ready(function () {
         document.querySelector(".info-container").style.display = "block";
       }
 
-      if (topLocation === "/templates/search.html") {
+      if (topLocation.includes("search.html")) {
         document.querySelector(".contact-button").addEventListener("click", function () {
           document.querySelector(".contact-info").style.display = "flex";
         });
@@ -1280,7 +1280,7 @@ $(document).ready(function () {
         let requiredAge = 18;
         if (form.birthday) {
           // verifica daca este fiziotearpeut sau nu
-          if (topLocation === "/templates/terapeuti/setari-profil.html") {
+          if (topLocation.includes("setari-profil.html")) {
             requiredAge = 20;
           }
           form.birthday.min = calculateDate(100);
