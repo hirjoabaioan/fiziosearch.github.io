@@ -255,157 +255,136 @@
 }
 
 .index-articles {
-  gap: 2rem;
+  h2 {
+    font-size: clamp($font-size - 0.5rem, 5vw + 3rem, $font-size + 1.5rem);
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
 
   .container {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    margin-top: 1rem;
-    padding: 0;
-    gap: 2rem;
-
-    @include tablet {
-      flex-direction: row;
-    }
+    flex-wrap: wrap;
+    gap: 6rem 3rem;
+    // gap: 100px 100px;
+    // padding: 100px 50px;
+    padding: 10rem 4rem;
   }
 
-  .card-link {
-    // width: 16rem;
-    // height: 20rem;
-
-    width: clamp(12rem, 5vw + 4rem, 20rem);
-    height: clamp(16rem, 5vw + 4rem, 24rem);
-    margin: 0;
-    padding: 0;
-    color: lighten($link-hover, 30%);
-    color: $white;
-    font-weight: $fw-bold;
-
-    &:hover {
-      color: $white !important;
-    }
-  }
-
-  .card-new {
+  .container .article-card {
     position: relative;
-    // width: 16rem;
-    // height: 20rem;
-    width: clamp(12rem, 5vw + 4rem, 20rem);
-    height: clamp(16rem, 5vw + 4rem, 24rem);
-    background-color: $white;
-    border-radius: $border-radius - 2.5rem;
-    overflow: hidden;
-    transition: transform 0.5s;
-
-    &:hover {
-      transform: translateY(-0.313rem);
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      transform-origin: bottom;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.4), $black);
-      transition: transform 0.25s;
-    }
-
-    &:hover::before {
-      transform: scaleY(1);
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    &-image {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    &-body {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px;
-    }
-
-    &-title {
-      font-size: clamp($font-size + 0.5rem, 4vw + 0.25rem, $font-size + 1rem);
-      line-height: 1rem;
-      margin-bottom: 1rem;
-      font-weight: $fw-bold;
-    }
-
-    &-text {
-      font-size: clamp($font-size - 0.15rem, 1.5vw + 0.25rem, $font-size);
-      margin: 1rem 0;
-    }
-
-    &-subtitle {
-      font-size: clamp($font-size, 2.5vw + 0.25rem, $font-size + 0.2rem);
-      opacity: 1;
-      color: $white !important;
-      font-weight: $fw-bolder !important;
-    }
-  }
-}
-
-.card-flip {
-  // width: 16rem;
-  // height: 20rem;
-  width: clamp(12rem, 5vw + 4rem, 20rem);
-  height: clamp(16rem, 5vw + 4rem, 24rem);
-  perspective: 50rem;
-
-  &-inner {
-    position: relative;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: white;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
   }
 
-  &:hover &-inner {
-    transform: rotateY(180deg);
+  .container .article-card:hover {
+    height: 400px;
   }
 
-  &-body {
+  .container .article-card .img-box {
     position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    backface-visibility: hidden;
-    border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+  }
 
-    &-front {
-      background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-      color: $white !important;
+  .container .article-card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  }
 
-      h2 {
-        padding-bottom: 1rem;
-      }
+  .container .article-card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container .article-card .content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .container .article-card:hover .content {
+    top: 130px;
+    height: 250px;
+  }
+
+  .container .article-card .content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+  .container .article-card .content p {
+    color: #333;
+  }
+
+  .container .article-card .content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: $primary-color;
+    color: white;
+    font-weight: 500;
+  }
+
+  .container .article-card .content a:hover {
+    color: $white !important;
+    opacity: 0.8;
+  }
+
+  @include phone {
+    .container .article-card {
+      width: 230px;
+      border-radius: 15px;
     }
 
-    &-back {
-      background-image: rgba(255, 255, 255, 0);
-      transform: rotateY(180deg);
+    .container .article-card .img-box {
+      width: 185px;
+      border-radius: 10px;
+    }
 
-      img {
-        opacity: 0.2;
-      }
+    .container .article-card .content p {
+      font-size: 0.8rem;
+    }
+
+    .container .article-card .content a {
+      font-size: 0.9rem;
     }
   }
-}
 
-.media {
-  @include laptop {
-    width: 80%;
+  .media {
+    @include laptop {
+      width: 80%;
+    }
   }
 }
