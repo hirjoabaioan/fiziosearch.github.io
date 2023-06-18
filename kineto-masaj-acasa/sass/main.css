@@ -416,17 +416,7 @@ nav {
   background-color: #fafafa !important;
 }
 nav .nav-link {
-  font-size: 1.2rem;
-}
-@media (min-width: 56.25rem) {
-  nav .nav-link {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 64rem) {
-  nav .nav-link {
-    font-size: 1.4rem;
-  }
+  font-size: clamp(0.5rem, 1.5vw + 0.2rem, 1.2rem);
 }
 nav .navbar-brand {
   width: 50%;

@@ -5,15 +5,16 @@ nav {
   background-color: darken($white, 2%) !important;
 
   .nav-link {
-    font-size: $font-size + 0.2rem;
+    // font-size: $font-size + 0.2rem;
 
-    @include tablet-landscape {
-      font-size: $font-size + 0.5rem;
-    }
+    // @include tablet-landscape {
+    //   font-size: $font-size + 0.5rem;
+    // }
 
-    @include laptop {
-      font-size: $font-size + 0.4rem;
-    }
+    // @include laptop {
+    //   font-size: $font-size + 0.4rem;
+    // }
+    font-size: clamp($font-size - 0.5rem, 1.5vw + 0.2rem, $font-size + 0.2rem);
   }
 
   .navbar-brand {
