@@ -4,6 +4,11 @@
 .list-container,
 .info-container {
   background-color: darken($white, 5%);
+
+  @include laptop {
+    max-height: 48rem !important;
+  }
+
   border-radius: 2rem;
   padding-bottom: 2rem !important;
   width: 90%;

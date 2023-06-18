@@ -1202,6 +1202,12 @@ main {
   padding-bottom: 2rem !important;
   width: 90%;
 }
+@media (min-width: 64rem) {
+  .list-container,
+  .info-container {
+    max-height: 48rem !important;
+  }
+}
 .list-container img,
 .info-container img {
   border-radius: 50%;
