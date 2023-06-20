@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinomas | Resetare parolă</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .email-wrapper {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .email-wrapper h1 {
+        font-size: clamp(1.4rem, 5vw + 0.5rem, 2.5rem);
+        margin: 0;
+      }
+
+      .email-wrapper h2 {
+        font-size: clamp(1rem, 5vw + 0.5rem, 2rem);
+      }
+
+      .email-wrapper p {
+        font-size: clamp(0.5rem, 5vw + 0.5rem, 1rem);
+      }
+
+      .email-wrapper .header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        background-color: #109198;
+        padding: 1rem 0;
+        color: white;
+      }
+
+      .email-wrapper .header .title {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .email-wrapper .content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 80%;
+        margin: 2rem 0;
+      }
+
+      .email-wrapper hr {
+        border: 1px solid #109198;
+        width: 100%;
+      }
+
+      .email-wrapper a {
+        text-decoration: none;
+      }
+
+      .email-wrapper .button {
+        align-self: center;
+        padding: 1rem 1.5rem;
+        background-color: #109198;
+        color: white;
+        border-radius: 15px;
+      }
+
+      .email-wrapper .button:hover {
+        opacity: 0.8;
+      }
+
+      .email-wrapper .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        background-color: #109198;
+        color: white;
+        padding: 1rem 0;
+      }
+
+      @media only screen and (min-width: 800px) {
+        body {
+          width: 50%;
+        }
+        .email-wrapper {
+          /* height: 100%; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="email-wrapper">
+      <div class="header">
+        <!-- Logoul firmei -->
+        <img class="logo" src="./assets/img/logo.png" alt="Kinomas logo" />
+        <div class="title">
+          <h1>Kinomas</h1>
+          <span class="subtitle">Terapeuți la tine acasă</span>
+        </div>
+      </div>
+      <div class="content">
+        <!-- Numele autogenerat -->
+        <h2>Bună, Ioan</h2>
+        <p>Ai solicitat resetarea parolei tale pentru contul de pe platforma Kinomas. Apasă butonul de mai jos pentru a o reseta.</p>
+        <a class="button" href="https://kinomas.ro/resetare-parolă/123456789">Resetează parola</a>
+        <p>Dacă nu tu ești cel care a făcut solicitarea, te rugăm să ignori acest email sau trimite-ne un mesaj pentru a rezolva problema. Această cerere de resetare a parolei este valabilă timp de 30 de minute.</p>
+        <p>
+          Mulțumim, <br />
+          Echipa Kinomas
+        </p>
+
+        <hr />
+        <p>Dacă întâmpini probleme cu apăsarea butonului de resetarea a parolei, copiază și inserează URL-ul de mai jos în browserul tău web.</p>
+        <!-- Link autogenerat -->
+        <a class="" href="https://kinomas.ro/resetare-parolă/123456789">https://kinomas.ro/resetare-parolă/123456789</a>
+      </div>
+      <div class="footer">
+        <small>Kinomas</small>
+        <small>Terapeuți la tine acasă</small>
+        <a href="kinomas.ro/contact">Contactează-ne</a>
+        <small>&copy; 2023 Home Help Search | Toate drepturile rezervate</small>
+      </div>
+    </main>
+  </body>
+</html>

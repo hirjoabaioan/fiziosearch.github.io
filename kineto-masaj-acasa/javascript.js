@@ -11,7 +11,6 @@ $(document).ready(function () {
 
   // BS Popovers
   const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-  console.log(list);
   list.map((el) => {
     let opts = {
       animation: true,
@@ -63,7 +62,6 @@ $(document).ready(function () {
   if (topLocation.includes("notificari.html")) {
     const notificationConditions = document.querySelectorAll(".notification-condition");
     notificationConditions.forEach(function (condition) {
-      // console.log(condition.textContent);
       if (condition.textContent === "Văzut") {
         const getSiblings = function (e) {
           let siblings = [];
@@ -790,7 +788,6 @@ $(document).ready(function () {
           }
 
           btnClose.addEventListener("click", function () {
-            console.log("CLOSE");
             const infoContainer = document.querySelector(".info-container");
             const listContainer = document.querySelector(".list-container");
             if (window.innerWidth < 768) {
@@ -1271,13 +1268,15 @@ $(document).ready(function () {
   (() => {
     "use strict";
 
-    const forms = document.querySelector(".needs-validation");
+    const forms = document.querySelectorAll(".needs-validation");
 
     if (forms) {
       // Loop over forms and prevent submission
+
       Array.from(forms).forEach((form) => {
         // Required Age
         let requiredAge = 18;
+
         if (form.birthday) {
           // verifica daca este fiziotearpeut sau nu
           if (topLocation.includes("setari-profil.html")) {
@@ -1286,7 +1285,6 @@ $(document).ready(function () {
           form.birthday.min = calculateDate(100);
           form.birthday.max = calculateDate(requiredAge);
         }
-
         form.addEventListener(
           "submit",
           (event) => {
@@ -1613,14 +1611,16 @@ if (table) {
   });
 }
 
-const isNotLogged = document.querySelector("#loggedOut");
+const isLoggedIn = document.querySelector("#loggedIn");
+const isAuth = document.querySelector(".auth");
 
-if (isNotLogged) {
-  document.querySelector(".auth").style.display = "none";
-  document.querySelector(".logIn").style.display = "block";
-} else {
+if (isLoggedIn !== null && isAuth !== null) {
   document.querySelector(".auth").style.display = "block";
   document.querySelector(".logIn").style.display = "none";
+  console.log("De adaugat numele si functia in modal");
   document.querySelector(".popover-name").innerText = "George";
   document.querySelector(".popover-function").innerText = "Kinetoterapeut";
+} else if (isAuth !== null) {
+  document.querySelector(".auth").style.display = "none";
+  document.querySelector(".logIn").style.display = "block";
 }
