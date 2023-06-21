@@ -1,33 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="sass/main.css"> -->
-
+  <head>
+    <title>Toggle Password Visibility</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <style>
-        .m-5 {
-            border: 1px solid red;
-            width: min(100% - 3rem, 52.5rem);
-            margin-inline: auto;
-        }
+      form i {
+        margin-left: -30px;
+        cursor: pointer;
+      }
 
+      input,
+      input::placeholder {
+        color: black !important;
+      }
+
+      .form-control,
+      .form-control:active,
+      .form-control:focus,
+      .form-control:focus:active {
+        background-color: #f1f1f1;
+        border-radius: 3rem;
+        color: white;
+        box-shadow: none !important;
+      }
+
+      .form-control::-moz-placeholder,
+      .form-control:active::-moz-placeholder,
+      .form-control:focus::-moz-placeholder,
+      .form-control:focus:active::-moz-placeholder {
+        color: white;
+      }
+      .form-control::placeholder,
+      .form-control:active::placeholder,
+      .form-control:focus::placeholder,
+      .form-control:focus:active::placeholder {
+        color: white;
+      }
+      .form-control:hover,
+      .form-control:focus,
+      .form-control:active:hover,
+      .form-control:active:focus,
+      .form-control:focus:hover,
+      .form-control:focus:focus,
+      .form-control:focus:active:hover,
+      .form-control:focus:active:focus {
+        border-color: #109198;
+      }
+
+      .form-text {
+        font-size: 0.6rem;
+        color: red;
+      }
+
+      .schedule-table-header .form-control {
+        max-height: 2rem;
+      }
     </style>
-</head>
-<body class="custom-scrollbar-css overflow-auto h-100">
-
-    <main class="m-5">
-        <h1>ĂÎÂȘȚăîâșț</h1>
-        <h2>ĂÎÂȘȚăîâșț</h2>
-        <h3>ĂÎÂȘȚăîâșț</h3>
-        <h4>ĂÎÂȘȚăîâșț</h4>
-        <p>ĂÎÂȘȚăîâșț</p>
-
-    </main>
-
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign In</h1>
+      <form>
+        <p>
+          <label>Username:</label>
+          <input type="text" name="userID" id="userID" />
+        </p>
+        <div class="d-flex row mb-3">
+          <!-- <label>Password:</label> -->
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Parola" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" autocomplete="password" spellcheck="false" autocorrect="off" autocapitalize="off" required />
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+          </div>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary">Log In</button>
+      </form>
+    </div>
+    <script>
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+      togglePassword.addEventListener("click", () => {
+        // Toggle the type attribute using
+        // getAttribure() method
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        // Toggle the eye and bi-eye icon
+        this.classList.toggle("bi-eye");
+      });
+    </script>
+  </body>
 </html>

@@ -1547,18 +1547,6 @@ $(document).ready(function () {
   }
 });
 
-// function checkerFunction() {
-//   if ($("#checker").is(":checked")) {
-//     $("#toggle-inactive").css("color", "#f44336");
-//     $("#toggle-active").css("color", "black");
-//     // Terapeut indisponibil
-//   } else {
-//     $("#toggle-active").css("color", "#108F96");
-//     $("#toggle-inactive").css("color", "black");
-//     // Terapeut disponibil
-//   }
-// }
-
 // Table Sorting - Pagina Pacient
 const rows = document.querySelectorAll(".program-table tr.collapsible");
 rows.forEach((row) => {
