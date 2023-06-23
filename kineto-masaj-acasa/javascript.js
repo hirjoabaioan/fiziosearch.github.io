@@ -27,7 +27,7 @@ $(document).ready(function () {
   //--------------------------------------------//
 
   const topLocation = top.location.pathname;
-  const searchLocationScript = ["search.html", "mesagerie.html"];
+  const searchLocationScript = ["search", "mesagerie"];
   const topLocationCheck = (element) => topLocation.includes(element);
 
   if (searchLocationScript.some(topLocationCheck)) {
@@ -59,7 +59,7 @@ $(document).ready(function () {
   }
 
   // Seen check - Notificari - de adaugat partea de html (RO)
-  if (topLocation.includes("notificari.html")) {
+  if (topLocation.includes("notificari")) {
     const notificationConditions = document.querySelectorAll(".notification-condition");
     notificationConditions.forEach(function (condition) {
       if (condition.textContent === "Văzut") {
@@ -90,7 +90,7 @@ $(document).ready(function () {
   }
 
   // Graphic table - de sters sau editat (RO)
-  if (topLocation.includes("dashboard.html")) {
+  if (topLocation.includes("dashboard")) {
     const classToCheck = document.querySelector(".activity-toggler");
     const elementToAddClass = document.querySelector(".welcome-message");
     if (!classToCheck) {
@@ -118,7 +118,7 @@ $(document).ready(function () {
   }
 
   // Carousel for prices
-  if (topLocation.includes("abonamente.html")) {
+  if (topLocation.includes("abonamente")) {
     const removeCarousel = document.querySelector(".rem-carousel");
     const removeInner = document.querySelector(".rem-inner");
     const removeItems = document.querySelectorAll(".rem-item");
@@ -167,7 +167,7 @@ $(document).ready(function () {
   }
 
   //Add hours and minutes to the dropdowns in the TERAPII page
-  if (topLocation.includes("terapii.html")) {
+  if (topLocation.includes("terapii")) {
     const dropDownHoursInsert = document.getElementById("dropdownDurataOre");
     const dropDownMinutesInsert = document.getElementById("dropdownDurataMin");
     const MAX_HOURS = 10;
@@ -204,7 +204,7 @@ $(document).ready(function () {
   }
 
   // Patient Therapies page - Therapist Point Of View
-  if (topLocation.includes("pagina-pacient.html")) {
+  if (topLocation.includes("pagina-pacient")) {
     // Se preia numele pacientului din Baza de date (mockup)
     const patientName = "Popescu Ion";
     // Se preiau tearpiile introduse de terapeutul inregistrat din Baza de date (mockup)
@@ -384,7 +384,7 @@ $(document).ready(function () {
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
 
-    if (topLocation.includes("search.html")) {
+    if (topLocation.includes("search")) {
       location.value = params.get("place");
       service.value = params.get("service");
       specialization.value = params.get("specialization");
@@ -708,7 +708,7 @@ $(document).ready(function () {
 
         let therapistBox = ``;
 
-        if (!topLocation.includes("search.html")) {
+        if (!topLocation.includes("search")) {
           therapistBox = `
           <div class="person-box" tabindex="0" id="${id}">
           <div class="person-box-pic">
@@ -780,7 +780,7 @@ $(document).ready(function () {
 
           let btnClose;
 
-          if (topLocation.includes("search.html")) {
+          if (topLocation.includes("search")) {
             btnClose = document.querySelector(".btn-close");
           } else {
             btnClose = document.querySelectorAll(".btn-close");
@@ -892,7 +892,7 @@ $(document).ready(function () {
         `;
       }
 
-      if (topLocation.includes("search.html")) {
+      if (topLocation.includes("search")) {
         therapistInformations = `
               <div class="d-flex row info-header">
               <div class="d-flex m-0 mt-2 pb-0 justify-content-end align-items-center" id="close">
@@ -1127,7 +1127,7 @@ $(document).ready(function () {
         document.querySelector(".info-container").style.display = "block";
       }
 
-      if (topLocation.includes("search.html")) {
+      if (topLocation.includes("search")) {
         document.querySelector(".contact-button").addEventListener("click", function () {
           document.querySelector(".contact-info").style.display = "flex";
         });
@@ -1260,6 +1260,7 @@ $(document).ready(function () {
   //--------- Index Page Search Form  ---------//
 
   const searchForm = document.querySelector(".index-form");
+  // Introdu aici URL-ul pentur pagina de search pentru trimiterea informatiilor
   const searchURL = "templates/search.html";
   if (searchForm) searchForm.setAttribute("action", searchURL);
 
@@ -1279,7 +1280,7 @@ $(document).ready(function () {
 
         if (form.birthday) {
           // verifica daca este fiziotearpeut sau nu
-          if (topLocation.includes("setari-profil.html")) {
+          if (topLocation.includes("setari-profil")) {
             requiredAge = 20;
           }
           form.birthday.min = calculateDate(100);
