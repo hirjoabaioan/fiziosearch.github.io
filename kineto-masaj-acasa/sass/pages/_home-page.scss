@@ -114,6 +114,7 @@
   .selectionDropdown {
     display: flex;
     place-content: center;
+    caret-color: transparent;
 
     @include tablet-wide {
       width: 25%;
@@ -271,9 +272,11 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 6rem 3rem;
-    // gap: 100px 100px;
-    // padding: 100px 50px;
-    padding: 10rem 4rem;
+    // padding: 0 4rem;
+
+    @include tablet {
+      padding: 10rem 4rem;
+    }
   }
 
   .container .article-card {

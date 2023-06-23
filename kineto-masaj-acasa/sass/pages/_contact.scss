@@ -1,9 +1,17 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .contact {
-    background-image: url("../img/contact.webp");
+  background-image: url("../img/contact.webp");
 }
 
-.contact-form textarea {
+.contact-form {
+  & textarea {
     border-radius: $border-radius - 1.25rem !important;
+    resize: none;
+    color: $black !important;
+
+    &::placeholder {
+      color: $black !important;
+    }
+  }
 }

@@ -71,13 +71,15 @@ nav {
 //   flex-direction: column;
 // }
 
-.logIn a::before {
-  content: "";
-  border-left: 2px solid black;
-  padding-right: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  opacity: 0.2;
+@include tablet-wide {
+  .logIn a::before {
+    content: "";
+    border-left: 2px solid black;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    opacity: 0.2;
+  }
 }
 
 .popover-body {

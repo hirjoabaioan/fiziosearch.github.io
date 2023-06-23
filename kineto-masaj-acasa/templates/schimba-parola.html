@@ -102,19 +102,10 @@
           <form class="needs-validation register-form" novalidate>
             <div class="d-flex row mb-3">
               <div class="col-12 mb-3">
-                <input type="password" class="form-control" type="text" id="pass" name="password" placeholder="Parola" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" required />
-
+                <!-- <input type="password" class="form-control" type="text" id="pass" name="password" placeholder="Parola" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" required /> -->
+                <input type="email" class="form-control" id="email" placeholder="Email" required />
                 <div class="valid-feedback">Este în regulă!</div>
-                <div class="invalid-feedback">
-                  Introdu o parolă care să conțină:
-                  <ul>
-                    <li>minim 8 caractere;</li>
-                    <li>cel puțin o literă mică;</li>
-                    <li>cel puțin o literă mare;</li>
-                    <li>cel puțin un număr;</li>
-                    <li>cel puțin un caracter special;</li>
-                  </ul>
-                </div>
+                <div class="invalid-feedback">Introdu o adresă de email validă!</div>
               </div>
               <div class="col-12 mb-3">
                 <input type="password" class="form-control" type="text" id="passCheck" name="passwordCheck" placeholder="Repetă parola" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$" required />
