@@ -376,13 +376,18 @@ $(document).ready(function () {
     }
   }
 
-  if (searchLocationScript.some(topLocationCheck)) {
+  // console.log(searchLocationScript.some(topLocationCheck(searchLocationScript)));
+  console.log(topLocationCheck(searchLocationScript));
+
+  // if (searchLocationScript.some(topLocationCheck)) {
+  if (topLocationCheck(searchLocationScript)) {
     // Inserting GET parameters in the input fields for searching
 
     const params = new URLSearchParams(window.location.search);
     const location = document.querySelector("#inputSearchField");
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
+    console.log(params);
 
     if (topLocation.includes("search")) {
       console.log(topLocation.includes("search"));
