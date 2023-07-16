@@ -380,6 +380,7 @@ $(document).ready(function () {
   }
 
   // if (searchLocationScript.some(topLocationCheck)) {
+  console.log(topLocationCheck);
   if (topLocationCheck) {
     // Inserting GET parameters in the input fields for searching
 
