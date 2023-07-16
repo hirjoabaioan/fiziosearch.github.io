@@ -32,7 +32,10 @@ $(document).ready(function () {
   if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
     topLocationCheck = true;
   }
-  console.log(topLocationCheck);
+  console.log("topLocation> " + topLocation);
+  console.log("topLocation.inlcudes('search')> " + topLocation.includes(searchLocationScript[0]));
+  console.log("topLocation.inlcudes('mesagerie')> " + topLocation.includes(searchLocationScript[1]));
+  console.log("topLocationCheck> " + topLocationCheck);
 
   if (topLocationCheck) {
     const infoContainer = document.querySelector(".info-container");
