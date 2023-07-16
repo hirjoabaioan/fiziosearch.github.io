@@ -32,6 +32,7 @@ $(document).ready(function () {
   if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
     topLocationCheck = true;
   }
+  console.log(topLocationCheck);
 
   if (topLocationCheck) {
     const infoContainer = document.querySelector(".info-container");
