@@ -32,10 +32,6 @@ $(document).ready(function () {
   if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
     topLocationCheck = true;
   }
-  console.log("topLocation> " + topLocation);
-  console.log("topLocation.inlcudes('search-therapist')> " + topLocation.includes(searchLocationScript[0]));
-  console.log("topLocation.inlcudes('mesagerie')> " + topLocation.includes(searchLocationScript[1]));
-  console.log("topLocationCheck> " + topLocationCheck);
 
   if (topLocationCheck) {
     const infoContainer = document.querySelector(".info-container");
@@ -384,7 +380,6 @@ $(document).ready(function () {
   }
 
   // if (searchLocationScript.some(topLocationCheck)) {
-  console.log(topLocationCheck);
   if (topLocationCheck) {
     // Inserting GET parameters in the input fields for searching
 
@@ -394,7 +389,6 @@ $(document).ready(function () {
     const specialization = document.querySelector("#dropdownSpecialization");
 
     if (topLocation.includes("search-therapist")) {
-      console.log(topLocationCheck);
       location.value = params.get("place");
       service.value = params.get("service");
       specialization.value = params.get("specialization");
