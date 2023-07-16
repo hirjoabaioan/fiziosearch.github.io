@@ -28,9 +28,12 @@ $(document).ready(function () {
 
   const topLocation = top.location.pathname;
   const searchLocationScript = ["search", "mesagerie"];
-  const topLocationCheck = (element) => topLocation.includes(element);
+  let topLocationCheck = false;
+  if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
+    topLocationCheck = true;
+  }
 
-  if (searchLocationScript.some(topLocationCheck)) {
+  if (topLocationCheck) {
     const infoContainer = document.querySelector(".info-container");
     const listContainer = document.querySelector(".list-container");
 
@@ -376,21 +379,16 @@ $(document).ready(function () {
     }
   }
 
-  // console.log(searchLocationScript.some(topLocationCheck(searchLocationScript)));
-  console.log(topLocationCheck(searchLocationScript));
-
   // if (searchLocationScript.some(topLocationCheck)) {
-  if (topLocationCheck(searchLocationScript)) {
+  if (topLocationCheck) {
     // Inserting GET parameters in the input fields for searching
 
     const params = new URLSearchParams(window.location.search);
     const location = document.querySelector("#inputSearchField");
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
-    console.log(params);
 
     if (topLocation.includes("search")) {
-      console.log(topLocation.includes("search"));
       location.value = params.get("place");
       service.value = params.get("service");
       specialization.value = params.get("specialization");
