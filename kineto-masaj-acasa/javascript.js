@@ -385,7 +385,7 @@ $(document).ready(function () {
     const specialization = document.querySelector("#dropdownSpecialization");
 
     if (topLocation.includes("search")) {
-      console.log(topLocation);
+      console.log(topLocation.includes("search"));
       location.value = params.get("place");
       service.value = params.get("service");
       specialization.value = params.get("specialization");
