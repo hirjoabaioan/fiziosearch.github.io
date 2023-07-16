@@ -26,7 +26,7 @@ $(document).ready(function () {
   //--------------------------------------------//
 
   // Search page (RO) - de adaugat partea de HTML
-  if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
+  if (top.location.pathname === "/templates/search-therapist.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
     window.addEventListener("resize", function () {
       if (window.innerWidth < 750 && document.querySelector(".list-container").style.display !== "none") {
         document.querySelector(".info-container").style.display = "none";
@@ -341,7 +341,7 @@ $(document).ready(function () {
     }
   }
 
-  if (top.location.pathname === "/templates/search.html") {
+  if (top.location.pathname === "/templates/search-therapist.html") {
     // Inserting GET parameters in the input fields for searching
 
     let windowCheck = true;
@@ -1124,7 +1124,7 @@ $(document).ready(function () {
   //--------- Index Page Search Form  ---------//
 
   const searchForm = $(".index-form");
-  const searchURL = "http://127.0.0.1:5500/templates/search.html";
+  const searchURL = "http://127.0.0.1:5500/templates/search-therapist.html";
   searchForm.attr("action", searchURL);
 
   //--------- Form Validation ---------//

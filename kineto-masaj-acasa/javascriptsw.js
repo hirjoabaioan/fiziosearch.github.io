@@ -25,7 +25,7 @@ list.map((el) => {
 //--------------------------------------------//
 const currentPage = top.location.pathname;
 
-const searchPaths = ["/templates/search.html", "/templates/pacienti/mesagerie.html", "/templates/terapeuti/mesagerie.html"];
+const searchPaths = ["/templates/search-therapist.html", "/templates/pacienti/mesagerie.html", "/templates/terapeuti/mesagerie.html"];
 
 const notificationPaths = ["/templates/terapeuti/notificari.html", "/templates/pacienti/notificari.html"];
 
@@ -362,7 +362,7 @@ if (currentPage === "/templates/terapeuti/pagina-pacient.html") {
   }
 }
 
-if (top.location.pathname === "/templates/search.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
+if (top.location.pathname === "/templates/search-therapist.html" || top.location.pathname === "/templates/pacienti/mesagerie.html" || top.location.pathname === "/templates/terapeuti/mesagerie.html") {
   // Inserting GET parameters in the input fields for searching
 
   const params = new URLSearchParams(window.location.search);
@@ -370,7 +370,7 @@ if (top.location.pathname === "/templates/search.html" || top.location.pathname 
   const service = document.querySelector("#dropdownService");
   const specialization = document.querySelector("#dropdownSpecialization");
 
-  if (top.location.pathname === "/templates/search.html") {
+  if (top.location.pathname === "/templates/search-therapist.html") {
     location.value = params.get("place");
     service.value = params.get("service");
     specialization.value = params.get("specialization");
@@ -694,7 +694,7 @@ if (top.location.pathname === "/templates/search.html" || top.location.pathname 
 
       let therapistBox = ``;
 
-      if (top.location.pathname !== "/templates/search.html") {
+      if (top.location.pathname !== "/templates/search-therapist.html") {
         therapistBox = `
         <div class="person-box" tabindex="0" id="${id}">
         <div class="person-box-pic">
@@ -766,7 +766,7 @@ if (top.location.pathname === "/templates/search.html" || top.location.pathname 
 
         let btnClose;
 
-        if (top.location.pathname === "/templates/search.html") {
+        if (top.location.pathname === "/templates/search-therapist.html") {
           btnClose = document.querySelector(".btn-close");
         } else {
           btnClose = document.querySelectorAll(".btn-close");
@@ -879,7 +879,7 @@ if (top.location.pathname === "/templates/search.html" || top.location.pathname 
       `;
     }
 
-    if (top.location.pathname === "/templates/search.html") {
+    if (top.location.pathname === "/templates/search-therapist.html") {
       therapistInformations = `
             <div class="d-flex row info-header">
             <div class="d-flex m-0 mt-2 pb-0 justify-content-end align-items-center" id="close">
@@ -1114,7 +1114,7 @@ if (top.location.pathname === "/templates/search.html" || top.location.pathname 
       document.querySelector(".info-container").style.display = "block";
     }
 
-    if (top.location.pathname === "/templates/search.html") {
+    if (top.location.pathname === "/templates/search-therapist.html") {
       document.querySelector(".contact-button").addEventListener("click", function () {
         document.querySelector(".contact-info").style.display = "flex";
       });
@@ -1237,7 +1237,7 @@ inputDropdown.on("change", function () {
 //--------- Index Page Search Form  ---------//
 
 const searchForm = document.querySelector(".index-form");
-const searchURL = "templates/search.html";
+const searchURL = "templates/search-therapist.html";
 searchForm.action = searchURL;
 
 //--------- Form Validation ---------//

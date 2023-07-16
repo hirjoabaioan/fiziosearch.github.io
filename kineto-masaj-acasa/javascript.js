@@ -27,13 +27,13 @@ $(document).ready(function () {
   //--------------------------------------------//
 
   const topLocation = top.location.pathname;
-  const searchLocationScript = ["search", "mesagerie"];
+  const searchLocationScript = ["search-therapist", "mesagerie"];
   let topLocationCheck = false;
   if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
     topLocationCheck = true;
   }
   console.log("topLocation> " + topLocation);
-  console.log("topLocation.inlcudes('search')> " + topLocation.includes(searchLocationScript[0]));
+  console.log("topLocation.inlcudes('search-therapist')> " + topLocation.includes(searchLocationScript[0]));
   console.log("topLocation.inlcudes('mesagerie')> " + topLocation.includes(searchLocationScript[1]));
   console.log("topLocationCheck> " + topLocationCheck);
 
@@ -393,7 +393,7 @@ $(document).ready(function () {
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
 
-    if (topLocation.includes("search")) {
+    if (topLocation.includes("search-therapist")) {
       console.log(topLocationCheck);
       location.value = params.get("place");
       service.value = params.get("service");
@@ -718,7 +718,7 @@ $(document).ready(function () {
 
         let therapistBox = ``;
 
-        if (!topLocation.includes("search")) {
+        if (!topLocation.includes("search-therapist")) {
           therapistBox = `
           <div class="person-box" tabindex="0" id="${id}">
           <div class="person-box-pic">
@@ -790,7 +790,7 @@ $(document).ready(function () {
 
           let btnClose;
 
-          if (topLocation.includes("search")) {
+          if (topLocation.includes("search-therapist")) {
             btnClose = document.querySelector(".btn-close");
           } else {
             btnClose = document.querySelectorAll(".btn-close");
@@ -902,7 +902,7 @@ $(document).ready(function () {
         `;
       }
 
-      if (topLocation.includes("search")) {
+      if (topLocation.includes("search-therapist")) {
         therapistInformations = `
               <div class="d-flex row info-header">
               <div class="d-flex m-0 mt-2 pb-0 justify-content-end align-items-center" id="close">
@@ -1137,7 +1137,7 @@ $(document).ready(function () {
         document.querySelector(".info-container").style.display = "block";
       }
 
-      if (topLocation.includes("search")) {
+      if (topLocation.includes("search-therapist")) {
         document.querySelector(".contact-button").addEventListener("click", function () {
           document.querySelector(".contact-info").style.display = "flex";
         });
@@ -1271,7 +1271,7 @@ $(document).ready(function () {
 
   const searchForm = document.querySelector(".index-form");
   // Introdu aici URL-ul pentur pagina de search pentru trimiterea informatiilor
-  const searchURL = "templates/search.html";
+  const searchURL = "templates/search-therapist.html";
   if (searchForm) searchForm.setAttribute("action", searchURL);
 
   //--------- Form Validation ---------//
