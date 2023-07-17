@@ -28,12 +28,13 @@ $(document).ready(function () {
 
   const topLocation = top.location.pathname;
   const searchLocationScript = ["search-therapist", "mesagerie"];
-  let topLocationCheck = false;
-  if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
-    topLocationCheck = true;
-  }
+  const isSearchLocation = topLocation.includes(searchLocationScript);
+  // let topLocationCheck = false;
+  // if (topLocation.includes(searchLocationScript[0]) || topLocation.includes(searchLocationScript[1])) {
+  //   topLocationCheck = true;
+  // }
 
-  if (topLocationCheck) {
+  if (isSearchLocation) {
     const infoContainer = document.querySelector(".info-container");
     const listContainer = document.querySelector(".list-container");
 
@@ -380,7 +381,7 @@ $(document).ready(function () {
   }
 
   // if (searchLocationScript.some(topLocationCheck)) {
-  if (topLocationCheck) {
+  if (isSearchLocation) {
     // Inserting GET parameters in the input fields for searching
 
     const params = new URLSearchParams(window.location.search);
@@ -388,11 +389,9 @@ $(document).ready(function () {
     const service = document.querySelector("#dropdownService");
     const specialization = document.querySelector("#dropdownSpecialization");
 
-    if (topLocation.includes("search-therapist")) {
-      location.value = params.get("place");
-      service.value = params.get("service");
-      specialization.value = params.get("specialization");
-    }
+    location.value = params.get("place");
+    service.value = params.get("service");
+    specialization.value = params.get("specialization");
 
     const therapies = [
       {
