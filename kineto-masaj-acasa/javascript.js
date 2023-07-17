@@ -1397,7 +1397,7 @@ $(document).ready(function () {
 
   //--------- Activity Switch in therapists Dashboard page ---------//
 
-  //Image upload script - adauga suportul pentur Safari (RO)
+  //Image upload script - adauga suportul pentru Safari (RO)
   $("#save-image").css("display", "none");
   // Prepare the preview for profile picture
   $("#image-input").change(function () {
