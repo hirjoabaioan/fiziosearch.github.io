@@ -1,3 +1,4 @@
+
 @use "animations" as *;
 @use "variables" as *;
 
@@ -73,20 +74,6 @@
   animation: slide-bottom $duration $timing $iteration $direction $fill;
 }
 
-/* =============
-    Others
-   =============
-*/
-
-// @mixin font-size ($extra-size: 0rem, $operator: '+', $view-width){
-
-//     @if $operator == '-' {
-//         font-size: calc(1rem - $extra-size - $view-height);
-//     }
-
-//     font-size: calc(1rem + $extra-size + $view-height);
-
-// }
 
 /* =============
     Font-size

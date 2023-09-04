@@ -1,3 +1,7 @@
+/* =============
+    Reset
+   =============
+*/
 /* Box sizing rules */
 *,
 *::before,
@@ -60,6 +64,14 @@ picture {
     scroll-behavior: auto !important;
   }
 }
+/* =============
+    Colors
+   =============
+*/
+/* =============
+    Animations
+   =============
+*/
 @keyframes slide-bottom {
   0% {
     transform: translateY(0);
@@ -77,6 +89,10 @@ picture {
   }
 }
 /* =============
+    Variables
+   =============
+*/
+/* =============
     Breakpoints
    =============
 */
@@ -85,11 +101,11 @@ picture {
    =============
 */
 /* =============
-    Others
+    Font-size
    =============
 */
 /* =============
-    Font-size
+    Typography
    =============
 */
 @font-face {
@@ -101,9 +117,9 @@ body {
 }
 
 .title {
-  color: #109198;
+  color: rgb(16, 145, 152);
   font-weight: 600;
-  border-bottom: 3px solid #109198;
+  border-bottom: 3px solid rgb(16, 145, 152);
   line-height: 180%;
   padding-right: 10%;
 }
@@ -117,6 +133,10 @@ body {
   padding-left: 1.5rem;
 }
 
+/* =============
+    Base classes
+   =============
+*/
 html {
   font-size: 1rem;
   box-sizing: border-box;
@@ -196,19 +216,23 @@ footer {
   width: 75%;
   margin-left: 12.5% !important;
   margin: 4%;
-  border: 2px solid #109198;
+  border: 2px solid rgb(16, 145, 152);
   opacity: 1;
   border-radius: 3rem;
 }
 
+/* =============
+    Forms
+   =============
+*/
 .form-check-input {
   box-shadow: none !important;
 }
 .form-check-input:hover, .form-check-input:focus {
-  border-color: #109198;
+  border-color: rgb(16, 145, 152);
 }
 .form-check-input:checked {
-  background-color: #109198;
+  background-color: rgb(16, 145, 152);
 }
 
 .form-control, .form-control:active, .form-control:focus, .form-control:focus:active {
@@ -224,7 +248,7 @@ footer {
   color: white;
 }
 .form-control:hover, .form-control:focus, .form-control:active:hover, .form-control:active:focus, .form-control:focus:hover, .form-control:focus:focus, .form-control:focus:active:hover, .form-control:focus:active:focus {
-  border-color: #109198;
+  border-color: rgb(16, 145, 152);
 }
 
 .form-text {
@@ -232,6 +256,10 @@ footer {
   color: red;
 }
 
+/* =============
+    images
+   =============
+*/
 .img-hide {
   display: none;
 }
@@ -257,13 +285,17 @@ footer {
   }
 }
 
+/* =============
+    Buttons
+   =============
+*/
 .btn {
   padding: 0.5rem !important;
   font-size: clamp(0.8rem, 0.2vw + 0.5rem, 1.5rem) !important;
 }
 
 .btn-primary {
-  background-color: #109198;
+  background-color: rgb(16, 145, 152);
   border-radius: 3rem;
   font-weight: bold;
 }
@@ -318,7 +350,10 @@ footer {
   outline: 0 !important;
 }
 
-/* Subsolul */
+/* =============
+    Footer
+   =============
+*/
 footer .bi {
   font-size: 1.25rem;
 }
@@ -412,6 +447,10 @@ footer ul li {
   }
 }
 
+/* =============
+    NavBar
+   =============
+*/
 nav {
   background-color: #fafafa !important;
 }
@@ -528,6 +567,10 @@ nav img {
   font-size: 1rem;
 }
 
+/* =============
+    Sidebar
+   =============
+*/
 .dash-container .position-absolute {
   font-size: 0.6rem;
   padding: 0.15rem;
@@ -699,8 +742,12 @@ nav img {
   }
 }
 
+/* =============
+    INDEX Page
+   =============
+*/
 .upper-text {
-  background-color: #109198;
+  background-color: rgb(16, 145, 152);
   color: white;
 }
 .upper-text h2 {
@@ -1040,7 +1087,7 @@ nav img {
 .index-articles .container .article-card .content h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 .index-articles .container .article-card .content p {
   color: #333;
@@ -1051,7 +1098,7 @@ nav img {
   display: inline-block;
   padding: 12px 25px;
   text-decoration: none;
-  background: #109198;
+  background: rgb(16, 145, 152);
   color: white;
   font-weight: 500;
 }
@@ -1081,6 +1128,10 @@ nav img {
   }
 }
 
+/* =============
+    About KT
+   =============
+*/
 main {
   justify-content: center;
   align-items: center;
@@ -1093,15 +1144,15 @@ main {
 }
 
 .servicii-title {
-  color: #109198;
+  color: rgb(16, 145, 152);
   font-weight: bold;
-  border-bottom: 3px solid #109198;
+  border-bottom: 3px solid rgb(16, 145, 152);
   line-height: 180%;
   padding-right: 10%;
 }
 .servicii h4 {
   font-weight: bold;
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 .servicii .img-container {
   display: flex;
@@ -1118,6 +1169,10 @@ main {
   color: white;
 }
 
+/* =============
+    About US
+   =============
+*/
 .about-us-found {
   width: 50vw;
 }
@@ -1162,12 +1217,16 @@ main {
 }
 @media (min-width: 37.5rem) {
   #about-us-first {
-    border-right: 3px solid #109198;
+    border-right: 3px solid rgb(16, 145, 152);
     margin-bottom: 0;
     margin-right: 2%;
   }
 }
 
+/* =============
+    Log IN
+   =============
+*/
 .auth-text {
   font-size: 1.2rem;
   display: grid;
@@ -1183,6 +1242,10 @@ main {
   background-color: currentColor;
 }
 
+/* =============
+    Contact
+   =============
+*/
 .contact {
   background-image: url("../img/contact.webp");
 }
@@ -1199,6 +1262,10 @@ main {
   color: #212427 !important;
 }
 
+/* =============
+    Search Page
+   =============
+*/
 .list-container,
 .info-container {
   background-color: #f2f2f2;
@@ -1678,6 +1745,10 @@ main {
   }
 }
 
+/* =============
+    Register
+   =============
+*/
 .patient {
   background-image: url("../img/pacienti-register.webp");
 }
@@ -1695,7 +1766,7 @@ main {
 }
 
 .register-form a {
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 
 .auth-link img {
@@ -1716,6 +1787,10 @@ input::placeholder {
   color: #212427 !important;
 }
 
+/* =============
+    Dashboard
+   =============
+*/
 .uppernav-menu {
   position: inherit !important;
   background: rgb(145, 203, 207);
@@ -1801,7 +1876,7 @@ input::placeholder {
 .uppernav-menu-buttons .active:active,
 .uppernav-menu-buttons .active:target {
   background-color: #cbcfcf !important;
-  color: #109198 !important;
+  color: rgb(16, 145, 152) !important;
 }
 @media (min-width: 64rem) {
   .uppernav-menu-buttons {
@@ -1912,7 +1987,7 @@ input::placeholder {
   font-weight: bold;
   line-height: 1;
   padding: 0.7rem 0.4rem;
-  background-color: #109198;
+  background-color: rgb(16, 145, 152);
   border-radius: 50%;
   transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
@@ -1940,7 +2015,7 @@ input::placeholder {
   margin-top: 0.5rem;
 }
 .page-information .dash-toggle-sub #toggle-active {
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 .page-information .dash-toggle-sub #toggle-separator {
   color: #1f5065;
@@ -1973,7 +2048,7 @@ input::placeholder {
 }
 .page-info-grid i {
   font-size: clamp(2.5rem, 3vw + 0.2rem, 3rem);
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 .page-info-grid i:not(.disableI) {
   transition: 0.8s ease-in-out;
@@ -2045,10 +2120,10 @@ input::placeholder {
 }
 .welcome-message h2 {
   font-weight: 600;
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 .welcome-message span {
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 
 .large {
@@ -2248,7 +2323,7 @@ input::placeholder {
   width: calc(clamp(3rem, 5vw + 1rem, 8rem) / 3);
   height: calc(clamp(3rem, 5vw + 1rem, 8rem) / 3);
   border-radius: calc(clamp(3rem, 5vw + 1rem, 8rem) / 3 / 2);
-  background-color: #109198;
+  background-color: rgb(16, 145, 152);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   transition: all 0.4s ease-in-out;
 }
@@ -2320,7 +2395,7 @@ input::placeholder {
   position: absolute;
   top: 1.5rem;
   left: 0.5rem;
-  color: #109198;
+  color: rgb(16, 145, 152);
   font-weight: 700;
   opacity: 1;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -2371,6 +2446,10 @@ input::placeholder {
   min-height: 1vh;
 }
 
+/* =============
+    Profile Settings
+   =============
+*/
 .settings-profil {
   align-items: center;
   justify-content: center;
@@ -2696,6 +2775,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   content: " RON";
 }
 
+/* =============
+    Infos
+   =============
+*/
 .info-files {
   text-align: center;
   display: flex;
@@ -2738,6 +2821,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   font-size: clamp(0.7rem, 5vw + 1rem, 0.9rem);
 }
 
+/* =============
+    Terapies
+   =============
+*/
 @media (min-width: 37.5rem) {
   .terap-container {
     width: 80% !important;
@@ -2812,6 +2899,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   color: #cc0000;
 }
 
+/* =============
+    Messages
+   =============
+*/
 .messages {
   align-items: center;
   justify-content: center;
@@ -2911,6 +3002,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   font-size: 1rem;
   cursor: pointer;
 }
+/* =============
+    Notifications
+   =============
+*/
 @media (min-width: 64rem) {
   .notificari {
     width: 75%;
@@ -2921,6 +3016,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   cursor: pointer;
 }
 
+/* =============
+    Schedules
+   =============
+*/
 .tabel {
   display: table;
   background-color: silver;
@@ -3125,6 +3224,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   border-radius: 3rem;
 }
 
+/* =============
+    Scheduler
+   =============
+*/
 .programator-nav a {
   font-size: 0.7rem;
   width: 45%;
@@ -3401,6 +3504,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   border-radius: 1rem;
 }
 
+/* =============
+    Polices
+   =============
+*/
 @media (min-width: 37.5rem) {
   .t-p {
     width: 80%;
@@ -3434,9 +3541,13 @@ body.guillotine-dragging, body.guillotine-dragging * {
 .t-p-header {
   line-height: 1rem;
   border: none;
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 
+/* =============
+    Subscriptions
+   =============
+*/
 .subscriptions {
   display: flex;
   flex-direction: row;
@@ -3636,7 +3747,7 @@ body.guillotine-dragging, body.guillotine-dragging * {
 }
 .subscriptions .card-content .group-box .bi-check,
 .subscriptions .card-content .group-box .marks-check {
-  color: #109198;
+  color: rgb(16, 145, 152);
 }
 .subscriptions .card-content .group-box .bi-x,
 .subscriptions .card-content .group-box .marks-x {
@@ -3672,6 +3783,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   font-weight: 600;
 }
 
+/* =============
+    Calendar
+   =============
+*/
 .calendar {
   display: flex;
   flex-wrap: wrap;
@@ -3715,6 +3830,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   text-align: center;
 }
 
+/* =============
+    Pass change
+   =============
+*/
 .password-change-img {
   display: none !important;
 }
@@ -3735,6 +3854,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   }
 }
 
+/* =============
+    Profile view
+   =============
+*/
 .profile-view {
   display: grid;
   width: 100%;
@@ -3788,6 +3911,10 @@ body.guillotine-dragging, body.guillotine-dragging * {
   font-size: clamp(0.4rem, 0.2vw + 0.5rem, 1.5rem) !important;
 }
 
+/* =============
+    Articles
+   =============
+*/
 @media (min-width: 37.5rem) {
   .articles {
     width: 80%;
@@ -3815,7 +3942,7 @@ body.guillotine-dragging, body.guillotine-dragging * {
 }
 .articles a {
   text-decoration: underline !important;
-  color: #109198;
+  color: rgb(16, 145, 152);
   font-weight: 600;
 }
 .articles a.btn {

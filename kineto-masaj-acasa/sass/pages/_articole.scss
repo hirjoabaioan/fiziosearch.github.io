@@ -2,6 +2,11 @@
 @use "../components" as *;
 @use "../base" as *;
 
+/* =============
+    Articles
+   =============
+*/
+
 .articles {
 
     @include tablet {

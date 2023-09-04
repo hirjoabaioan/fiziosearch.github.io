@@ -1,6 +1,11 @@
 @use "../abstracts" as *;
 @use "../base" as *;
 
+/* =============
+    Scheduler
+   =============
+*/
+
 .programator-nav {
   a {
     font-size: $font-size - 0.3rem;

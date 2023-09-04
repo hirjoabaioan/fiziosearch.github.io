@@ -1,6 +1,11 @@
 @use "../abstracts" as *;
 @use "../base" as *;
 
+/* =============
+    Search Page
+   =============
+*/
+
 .list-container,
 .info-container {
   background-color: darken($white, 5%);
