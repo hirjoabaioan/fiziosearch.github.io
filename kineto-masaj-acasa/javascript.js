@@ -1610,7 +1610,7 @@ if (isLoggedIn !== null && isAuth !== null) {
   document.querySelector(".auth").style.display = "block";
   document.querySelector(".logIn").style.display = "none";
   console.log("De adaugat numele si functia in modal");
-  document.querySelector(".popover-name").innerText = "George";
+  document.querySelector(".popover-name").innerText = "George Andrei Anderson";
   document.querySelector(".popover-function").innerText = "Kinetoterapeut";
 } else if (isAuth !== null) {
   document.querySelector(".auth").style.display = "none";
