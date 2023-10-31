@@ -60,7 +60,7 @@ nav {
   background-position: center center;
 
   &:not(#loggedOut) {
-    background-image: url("../../img/profiles/PozaW.webp") !important;
+    background-image: url("../img/profiles/PozaW.webp") !important;
   }
 
   @include laptop {
